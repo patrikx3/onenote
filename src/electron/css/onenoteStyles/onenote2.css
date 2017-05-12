@@ -1,0 +1,160 @@
+/* Chat Area Background */
+.swx .conversationHistory .messageHistory,
+:root .swx .chat .conversationHeader .headerMain .roster .grid {
+	background: #282828;
+}
+
+:root .swx .side {
+	background: #232323;
+}
+
+/* Chat message bubble from another user */
+.swx .chat .conversation .message .bubble .content {
+	background: #424242;
+}
+
+/* Chat message bubble from you*/
+.swx .chat .conversation .me.message:not(.media) .bubble .content {
+	background: #333333;
+}
+
+/* Chat Bubbles */
+.swx .chat .message .bubble .content {
+	border-radius: 4px;
+	margin-bottom: 2px;
+	color: #e1e1e1;
+
+}
+
+/* Hide ugly chat bubble borders */
+:root .swx .themeLight.chat .conversation .message.their .bubble,
+:root .swx .themeLight.chat .conversation .message.me .bubble {
+  background: inherit;
+}
+
+/* Hide chat arrow images, as they're images and can't be styled */
+.arrow:after {
+	display: none;
+}
+
+/* Typing indicator area */
+.typing {
+	background: #282828;
+}
+
+/* User/Group Avatars */
+.swx .tile>.tileAvatar.circle,
+.swx .chat .message .tileAvatar,
+.swx .chat .indicator .tileAvatar {
+	background: inherit;
+	border-radius: 999px;
+	border: 2px solid #bcd;
+}
+
+/* Chat Header */
+:root .swx .chat .conversationHeader {
+	background: #282828;
+}
+
+/* Text in chat header */
+:root .swx .chat .conversationHeader .headerMain .roster .grid.group .tile.conversationTopic h3>a,
+:root .swx .chat .conversationHeader .headerMain .roster .grid.group .tile.conversationTopic .displayMessage>a {
+	 color: #e1e1e1;
+}
+
+/* Text input area */
+:root .swx .chat .input {
+	background: #282828;
+}
+
+
+/* TOP DIVIDER LINE */
+.swx .chat .conversationHeader:after {
+	border-color: #464E59 !important;
+}
+
+/* BOTTOM DIVIDER LINE */
+.swx .chat .input:before {
+    display: none;
+}
+
+/* SIDEBAR DIVIDER LINE */
+.swx .themeWhite.side:before {
+      border-color: #464E59 !important;
+}
+
+.shell.main {
+      background: #f0f !important;
+}
+
+
+/* Sidebar */
+.tileName h4 {
+	color: #d1d1d1;
+}
+
+:root .swx .peoplePicker .recent.active:before,
+:root .swx .peoplePicker .recent:hover:before,
+:root .swx .peoplePicker .searchItem.active:before,
+:root .swx .peoplePicker .searchItem:hover:before,
+:root .swx .side .recent.active:before,
+:root .swx .side .recent:hover:before,
+:root .swx .side .searchItem.active:before,
+:root .swx .side .searchItem:hover:before {
+	background: #313131;
+  border-right: 1px solid #464E59;
+}
+
+:root .swx .fragmentsContainer div.fragment,
+:root .swx .chat .conversation .history,
+:root .swx .conversationHistory {
+	background: #282828;
+}
+
+.themeBlue {
+  background: #303030 !important;
+  border: 1px solid #464E59 !important;
+}
+
+:root .swx .search .input:before {
+  border-bottom: 1px solid #464E59;
+}
+
+:root .swx a {
+  color: #77bbee;
+}
+
+:root .swx a:hover, :root .swx a:focus {
+  color: #99ddff;
+}
+
+:root .swx .search .input input {
+  color: #99ddff;
+}
+
+.inputField .fontSize-p {
+  color: #f00;
+}
+
+.swx .chat .input.active
+{
+  background: #282828 !important;
+}
+
+#footer {
+	display: none;
+}
+
+/* Message type area */
+.swx .chat .input form textarea {
+    color: #e1e1e1 !important;
+    background: #fff;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+:root .swx .btn>.iconfont:before {
+	background: #444;
+	color: #999;
+	border: none;
+}

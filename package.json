@@ -1,0 +1,44 @@
+{
+    "name": "p3x-onenote",
+    "version": "1.0.39-11",
+    "description": "Electron Linux Onenote",
+    "main": "src/index.js",
+    "corifeus": {
+        "prefix": "p3x-",
+        "publish": true,
+        "type": "p3x"
+    },
+    "bin": {
+        "p3x-onenote": "bin/p3x-onenote.js"
+    },
+    "scripts": {
+        "test": "grunt"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/patrikx3/corifeus.git"
+    },
+    "keywords": [
+        "onenote",
+        "electron",
+        "wrapper"
+    ],
+    "author": "Patrik Laszlo <alabard@gmail.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/patrikx3/corifeus/issues"
+    },
+    "homepage": "https://pages.corifeus.tk/onenote",
+    "dependencies": {
+        "configstore": "^3.1.0",
+        "corifeus-utils": "^1.1.120-15",
+        "electron": "^1.6.7",
+        "electron-packager": "^8.7.0"
+    },
+    "devDependencies": {
+        "corifeus-builder": "^1.7.534-16"
+    },
+    "engines": {
+        "node": ">=7.8.0"
+    }
+}

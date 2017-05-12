@@ -1,0 +1,120 @@
+body {
+	background: #222;
+	/*overflow: hidden;*/
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	margin-bottom: 30px;		/* set this to the same size as navBar height */
+}
+
+#navBar {
+	background: #292D33;
+	-webkit-app-region: drag;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-content: center;
+	align-items: center;
+	padding: 0 10px;
+	height: 30px;
+
+}
+
+#navBar h1 {
+	color: #777;
+	font-size: 10pt;
+	font-family: sans-serif;
+	/*font-weight: bold;*/
+	-webkit-app-region: no-drag;
+	cursor: default;
+}
+
+#navBar h1 span {
+	top: -100px;
+	/*left: 30px;*/
+	position: absolute;
+}
+
+#navBar h1:hover span {
+	background: red;
+	animation-delay: 2s;
+	animation-duration: 0.3s;
+	animation-fill-mode: forwards;
+	animation-name: slideIn;
+}
+
+#navBar ul {
+	flex-direction: row;
+	justify-content: flex-end;
+	align-content: flex-end;
+	align-items: flex-end;
+}
+
+.button {
+	-webkit-app-region: no-drag;
+}
+
+@keyframes slideIn {
+	from {
+		top: -100px;
+	}
+	to {
+		top: 10px;
+	}
+}
+
+#navBar ul li {
+	font-family: sans-serif;
+	/*font-weight: bold;*/
+	font-size: 23pt;
+	display: inline-flex;
+	/*background: blue;*/
+	/*color: #aaa;*/
+	padding: 0px 4px;
+	cursor: pointer;
+}
+
+#min-btn {
+	color: rgba(27, 201, 60, 0.3);
+
+}
+
+#max-btn {
+	color: rgba(254, 190, 0, 0.3);
+
+}
+
+#close-btn {
+	color: rgba(255, 93, 80, 0.3);
+
+}
+
+
+#min-btn:hover {
+	color: rgba(27, 201, 60, 1);
+	text-shadow: 0px 0px 10px rgba(27, 201, 60, 1);
+}
+
+#max-btn:hover {
+	color: rgba(254, 190, 0, 1);
+	text-shadow: 0px 0px 10px rgba(254, 190, 0, 1);
+
+}
+
+#close-btn:hover {
+	color: rgba(255, 93, 80, 1);
+	text-shadow: 0px 0px 10px rgba(255, 93, 80, 1);
+
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* IE/Edge */
+  user-select: none;           /* non-prefixed version, currently
+                                  not supported by any browser */
+}

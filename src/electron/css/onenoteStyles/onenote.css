@@ -1,0 +1,273 @@
+/*
+  Source: https://userstyles.org/styles/120125/skype-dark-atomish
+*/
+
+
+:root .swx {
+    color: #D3DAE3 !important;
+  }
+  
+  :root .swx .themeLight.chat {
+    background-color: #2F343B !important;
+  }
+  
+  
+  :root .swx.themeBlue, :root .swx .themeBlue {
+    fill: #2F343B !important;
+    color: #D3DAE3 !important;
+    background-color: #2F343B !important;
+  }
+  
+  :root .swx .themeBlue .tile.online .presence::before, :root .swx .themeBlue .tile.mobile .presence::before, :root .swx .themeBlue .tile.idle .presence::before, :root .swx .themeBlue .tile.busy .presence::before, :root .swx .themeBlue .tile.offline .presence::before, :root .swx .themeBlue .tile.callForwarded .presence::before, :root .swx .themeBlue .tile.unknown .presence::before, :root .swx .themeBlue .tile.blocked .presence::before {
+    background-color: #2F343B !important;
+  }
+  
+  :root .swx .shell.cover.visible {
+    background: rgba(47, 52, 59, 0.75) none repeat scroll 0% 0% !important;
+  }
+  
+  .meComponent.expanded {
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3) !important;
+  }
+  
+  :root .swx .chat .conversationHeader .headerMain .roster .grid .tile.conversationTopic h3 .hoverWrap > a {
+    color: #9196A3 !important;
+  }
+  :root .swx .themeLight.chat .conversation .message.their .bubble, :root .swx .themeLight.chat .conversation .message.their .arrow::after,
+  :root .swx .chat .conversation .their.message.media .content p.urlPreviewText {
+    background-color: #3B414A !important;
+  }
+  :root .swx .themeLight.chat .conversation .message.me .bubble, :root .swx .themeLight.chat .conversation .message.me .arrow::after,
+  :root .swx .chat .conversation .message.media.me .content p.urlPreviewText {
+    background-color: #292D33 !important;
+    color: #C0C7D0 !important;
+  }
+  :root .swx a {
+    color: #3EC2AE !important;
+  }
+  :root .swx a:hover, :root .swx a:focus {
+    color: #5DE3CF !important;
+  }
+  
+  :root .swx .chat .conversationHeader .headerMain .roster .grid .tile.conversationTopic .tileText > .tileName + .tileMessage::before {
+    display: none !important;
+  }
+  
+  :root .swx .chat .input::before {
+    border-top: 1px solid #353A42 !important;
+  }
+  
+  :root .swx .chat .conversationHeader::after {
+    border-bottom: 1px solid #353A42 !important;
+  }
+  
+  :root .swx .hyperscroll .rail:hover, :root .swx .hyperscroll.scrolling .rail {
+    background-color: rgba(0,0,0,0.2) !important;
+    border-color: transparent !important;
+    opacity: 0.9 !important;
+    border-radius: 6px !important;
+  }
+  :root .swx .hyperscroll.scrolling .rail .slider, :root .swx .hyperscroll:hover .rail .slider {
+    background: rgba(255,255,255,0.3) !important;
+    border-color: transparent !important;
+  }
+  
+  :root .swx .themeLight .tile.online .presence::before, :root .swx .themeLight .tile.mobile .presence::before, :root .swx .themeLight .tile.idle .presence::before, :root .swx .themeLight .tile.busy .presence::before, :root .swx .themeLight .tile.offline .presence::before, :root .swx .themeLight .tile.callForwarded .presence::before, :root .swx .themeLight .tile.unknown .presence::before, :root .swx .themeLight .tile.blocked .presence::before,
+  :root .swx .themeLight .tile.online .presence::after, :root .swx .themeLight .tile.mobile .presence::after, :root .swx .themeLight .tile.idle .presence::after, :root .swx .themeLight .tile.unknown .presence::after {
+    background-color: #2F343B !important;
+  }
+  
+  :root .swx .tile > .tileAvatar > .tileImage {
+    background-color: #2F343B !important;
+  }
+  
+  :root .swx.themeWhite, :root .swx .themeWhite {
+    background-color: #292D33 !important;
+    fill: #FFF !important;
+    color: #D3DAE3 !important;
+  }
+  
+  :root .swx .chat .input.active {
+    background-color: #2F343B !important;
+  }
+  :root .swx .chat .input form textarea{
+    color: #596370 !important;
+  }
+  :root .swx .chat .input.active form textarea{
+    color: #D3DAE3 !important;
+  }
+  :root .swx .chat .input form textarea::-moz-placeholder{
+    color: #596370 !important;
+  }
+  :root .swx .chat .input.active form textarea::-moz-placeholder{
+    color: #515A66 !important;
+  }
+  :root .swx .themeWhite.side::before,
+  :root .swx .meApp .summary{
+    border-right: 0px solid #353A42 !important;
+    /*border-right: 0px solid #ff0000 !important;*/
+  }
+  :root .swx .meApp .skyContainer {
+    background-color: #292D33 !important;
+  }
+  :root .swx .meApp .skyContainer::after,
+  :root .swx .meApp .skyContainer::before {
+    display: none !important;
+  }
+  
+  :root .swx .meApp .skyContainer::before,
+  :root .swx .meApp .skyContainer .sky {
+    display: none !important;
+  }
+  
+  :root .swx .tile.online .presence::before, :root .swx .tile.mobile .presence::before, :root .swx .tile.idle .presence::before, :root .swx .tile.busy .presence::before, :root .swx .tile.offline .presence::before, :root .swx .tile.callForwarded .presence::before, :root .swx .tile.unknown .presence::before, :root .swx .tile.blocked .presence::before {
+    background-color: #292D33 !important;
+  }
+  :root .swx .themeWhite.side .recent.active, :root .swx .themeWhite.side .searchItem.active {
+    background-color: rgba(0,0,0,0.2) !important;
+  }
+  :root .swx .side .timeline .history swx-recent-item {
+    margin-right: 16px !important;
+  }
+  :root .swx .themeWhite.side .recent:hover, :root .swx .themeWhite.side .recent.hover, :root .swx .themeWhite.side .recent:focus, :root .swx .themeWhite.side .recent.focus, :root .swx .themeWhite.side .searchItem:hover, :root .swx .themeWhite.side .searchItem.hover, :root .swx .themeWhite.side .searchItem:focus, :root .swx .themeWhite.side .searchItem.focus {
+    background-color: #2F343B !important;
+  }
+  :root .swx .themeWhite.side .recent .tileName, :root .swx .themeWhite.side .searchItem .tileName {
+    color: #B7BDC4 !important;
+  }
+  :root .swx .themeWhite .tile.online .presence::before, :root .swx .themeWhite .tile.mobile .presence::before, :root .swx .themeWhite .tile.idle .presence::before, :root .swx .themeWhite .tile.busy .presence::before, :root .swx .themeWhite .tile.offline .presence::before, :root .swx .themeWhite .tile.callForwarded .presence::before, :root .swx .themeWhite .tile.unknown .presence::before, :root .swx .themeWhite .tile.blocked .presence::before {
+    background-color: #292D33 !important;
+  }
+  :root .swx .themeWhite .tile.online .presence::before, :root .swx .themeWhite .tile.mobile .presence::before, :root .swx .themeWhite .tile.idle .presence::before, :root .swx .themeWhite .tile.busy .presence::before, :root .swx .themeWhite .tile.offline .presence::before, :root .swx .themeWhite .tile.callForwarded .presence::before, :root .swx .themeWhite .tile.unknown .presence::before, :root .swx .themeWhite .tile.blocked .presence::before {
+    background-color: #292D33 !important;
+  }
+  :root .swx .themeWhite.side .navigation .navItem .icon,
+  :root .swx .themeWhite.side .navigation .navItem .text,
+  :root .swx .search .input .icon {
+    color: #3EC2AE !important;
+  }
+  :root .swx .search .input input::-moz-placeholder,
+  :root .swx .search .input.active input::-moz-placeholder {
+    color: #39514D !important;
+  }
+  :root .swx .search .input.active input {
+    color: #B7BDC4 !important;
+  }
+  :root .swx .search .splitter {
+    background-color: #353A42 !important;
+  }
+  
+  
+  :root .swx .themeLight .btn::before, :root .swx .themeLight .btn.primary::before {
+    background-color: #3EC2AE !important;
+  }
+ :root .swx .themeLight .btn.disabled:hover::before, :root .swx .themeLight .btn.disabled:focus::before, :root .swx .themeLight .btn.disabled:active::before, :root .swx .themeLight .btn.primary.disabled:hover::before, :root .swx .themeLight .btn.primary.disabled:focus::before, :root .swx .themeLight .btn.primary.disabled:active::before {
+    background-color: #5DE3CF !important;
+  }
+  
+  :root .swx .themeLight .btn:hover::before, :root .swx .themeLight .btn:focus::before, :root .swx .themeLight .btn.primary:hover::before, :root .swx .themeLight .btn.primary:focus::before {
+
+      background-color: #5DE3CF !important;
+
+  }
+  
+  :root .swx .themeLight .btn.secondary.circle.stroke::after {
+    border-color: #3EC2AE !important;
+  }
+   :root .swx .themeLight .btn.secondary.circle.stroke > span {
+    color: #3EC2AE !important;
+  }
+   :root .swx .themeLight .btn.secondary.circle.stroke:hover::after {
+    border-color: #5DE3CF !important;
+  }
+   :root .swx .themeLight .btn.secondary.circle.stroke:hover > span {
+    color: #5DE3CF !important;
+  }
+  .send-button-holder .iconfont::before {
+    color: #2F343B !important;
+  }
+  .btn.transparent.circle .iconfont::before {
+    color: #3EC2AE !important;
+  }
+  :root .swx .chatInputActionPicker .menuContainer .action .filePicker .icon::before {
+    color: #3EC2AE !important;
+  }
+  :root .swx .chatInputActionPicker .menuContainer .action:hover .filePicker .icon::before {
+    color: #5DE3CF !important;
+  }
+  :root .swx .chatInputActionPicker .menuContainer .action .icon {
+    color: #3EC2AE !important;
+  }
+  :root .swx .chatInputActionPicker .menuContainer .action:hover .icon::before {
+    color: #5DE3CF !important;
+}
+  :root .swx .meApp .summary .tile .summaryText:hover .summaryName p {
+    color: #5DE3CF !important;
+  }
+  :root .swx .meApp .summary .innerSummary.focused .tile .summaryText .summaryName p {
+    color: #3EC2AE !important;
+  }
+  :root .swx .themeBlue .btn.secondary::before {
+    background-color: #3EC2AE !important;
+  }
+  :root .swx .themeBlue .btn.secondary:hover::before {
+    background-color: #5DE3CF !important;
+  }
+  
+:root .swx .themeWhite.side .recent.active .tile.online .presence::before, :root .swx .themeWhite.side .recent.active .tile.mobile .presence::before, :root .swx .themeWhite.side .recent.active .tile.idle .presence::before, :root .swx .themeWhite.side .recent.active .tile.busy .presence::before, :root .swx .themeWhite.side .recent.active .tile.offline .presence::before, :root .swx .themeWhite.side .recent.active .tile.callForwarded .presence::before, :root .swx .themeWhite.side .recent.active .tile.unknown .presence::before, :root .swx .themeWhite.side .recent.active .tile.blocked .presence::before, :root .swx .themeWhite.side .searchItem.active .tile.online .presence::before, :root .swx .themeWhite.side .searchItem.active .tile.mobile .presence::before, :root .swx .themeWhite.side .searchItem.active .tile.idle .presence::before, :root .swx .themeWhite.side .searchItem.active .tile.busy .presence::before, :root .swx .themeWhite.side .searchItem.active .tile.offline .presence::before, :root .swx .themeWhite.side .searchItem.active .tile.callForwarded .presence::before, :root .swx .themeWhite.side .searchItem.active .tile.unknown .presence::before, :root .swx .themeWhite.side .searchItem.active .tile.blocked .presence::before {
+
+    background-color: #212429 !important;
+
+  }
+  
+  :root .swx swx-expression-picker .bubble {
+    background-color: #2F343B !important;
+    color: #D3DAE3 !important;
+    border: 1px solid #3EC2AE !important;
+    border-radius: 4px !important;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1) !important;
+  }
+  :root .swx swx-expression-picker .arrow-down {
+    display: none !important;
+  }
+  #footer {
+   display: none !important;
+ }
+  :root .swx .themeWhite .timeline .recent.unread:not(.active) .message,
+  :root .swx .themeWhite .timeline .recent.unread:not(.active) .message a {
+    color: #FF8C00 !important;
+  }
+
+
+/*URLS */
+.content .messageTextWrapper {
+  background-color: #3B414A !important;
+}
+
+
+
+
+/* FIXES / UPDATES */
+
+.Me {
+  background: #000 !important;
+}
+.Me-small:before {
+  border: none;
+}
+
+.Me-sky {
+  display: none !important;
+}
+
+.Me-skyContainer {
+  background: #292D33 !important;
+}
+
+.Me-skyContainer:after , .Me-skyContainer:before {
+  display: none !important;
+}
+
+.TranslatorSettings {
+  display: none !important;
+}
