@@ -1,6 +1,5 @@
 /build
 /node_modules
 /*.log
-/*.iws
 /yarn.lock
 

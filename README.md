@@ -1,9 +1,6 @@
 [//]: #@corifeus-header
 
 
----
-
-# Electron Linux Onenote
 
 ### Node Version Requirement 
 ``` 
@@ -18,6 +15,8 @@ https://nodejs.org/en/download/package-manager/
 # Description
 
 
+---
+
 [//]: #@corifeus-header:end
 
 This is a Linux Onenote.
@@ -29,18 +28,21 @@ npm install -g p3x-onenote
 p3x-onenote
 ```
 
+## Dev
+* Save last page, instead always start for empty
+
 ## Screenshot
 
-![Screenshot 1](artifacts/screenshoft/1.png)
+![Screenshot 1](https://cdn.corifeus.tk/git/onenote/artifacts/screenshoft/1.png)
 
 
 
 [//]: #@corifeus-footer
 
 ---
-[**P3X-ONENOTE**](https://pages.corifeus.tk/onenote) Build v1.0.39-11
+[**P3X-ONENOTE**](https://pages.corifeus.tk/onenote) Build v1.0.47-19
 
-[Corifeus](http://github.com/patrikx3/corifeus) by [Patrik Laszlo](http://patrikx3.tk)
+[Corifeus](http://www.corifeus.tk) by [Patrik Laszlo](http://patrikx3.tk)
  
 
 [//]: #@corifeus-footer:end

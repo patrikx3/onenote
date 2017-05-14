@@ -1,0 +1,39 @@
+checks:
+  javascript: true
+filter:
+  excluded_paths:
+    - test/*
+    - node_modules/*
+    - build/*
+    - docs/*
+
+build:
+  environment:
+    node: 7.8
+    variables:
+      CXX: g++-4.8
+
+  dependencies:
+    before:
+      - sudo apt-get -y install software-properties-common python-software-properties
+#      - sudo apt-cache policy gcc++
+#      - sudo apt-cache policy g++
+#      - sudo apt update -y
+      - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
+      - sudo apt update -y
+      - sudo apt-get install -y gcc-4.8
+      - sudo apt-get install -y g++-4.8
+      - sudo apt-get install -y libglib2.0-dev
+      - npm install -g node-gyp
+      - npm install -g grunt-cli
+      - git config remote.origin.url
+      - node -v
+
+  tests:
+    override:
+      -
+        command: 'grunt'
+        coverage:
+          file: 'build/coverage/clover.xml'
+          format: 'clover'
+
