@@ -57,7 +57,7 @@ p3x-onenote
 [//]: #@corifeus-footer
 
 ---
-[**P3X-ONENOTE**](https://pages.corifeus.tk/onenote) Build v1.0.78-53
+[**P3X-ONENOTE**](https://pages.corifeus.tk/onenote) Build v1.0.80-55
 
 [Corifeus](http://www.corifeus.tk) by [Patrik Laszlo](http://patrikx3.tk)
 
