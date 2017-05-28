@@ -4,19 +4,18 @@ const shell = electron.shell;
 const ipc = electron.ipcRenderer;
 const remote = electron.remote;
 
+/*
 const cssPath = __dirname + '/css/onenoteStyles/onenote.css';
-let cssData;
-
 const BrowserWindow =  electron.BrowserWindow;
 
 fs.readFile(cssPath, 'utf-8', function(err, data) {
 	if (err) {
 		console.log(err);
     }
-	cssData = data;
-	window.cssData = cssData;
-	console.log("set data");
+	window.cssData = data;
+	console.log("loaded css");
 });
+*/
 
 const data = {
 	url: ''
@@ -35,58 +34,20 @@ window.electronWindowSetup = function() {
 	ipc.on('action', function(event, data) {
 		switch (data.action) {
 			case 'restart':
-                let session = webview.getWebContents().session;
-                session.cookies.get({}, async function(error, cookies) {
-                    if (error) {
-                    	alert(error.message);
-                    	console.error(error);
-                    	return;
-					};
-                    for (var i = cookies.length - 1; i >= 0; i--) {
-                    	const cookie = cookies[i];
-                        let domain = cookie.domain;
-                        if (domain.startsWith('.')) {
-                            domain = domain.substring(1);
-                        }
-                        const url = "http" + (cookie.secure ? "s" : "") + "://" + domain  + cookie.path;
-                        console.info(`
-cookie.domain: ${cookie.domain} 
-cookie.hostOnly: ${cookie.hostOnly}
-cookie.httpOnly: ${cookie.httpOnly}
-cookie.name: ${cookie.name}
-cookie.path: ${cookie.path}
-cookie.secure: ${cookie.secure}
-cookie.session: ${cookie.session} 
-cookie.value: ${cookie.value} 
-url: ${url} 
-                        `);
-                        const promises = [];
+                const session = webview.getWebContents().session;
+                session.clearStorageData(() => {
+                    console.log('storage cleared');
+                    webview.reload();
+				})
+                break;
 
-                        promises.push(
-                        	new Promise((resolve) => {
-                                session.cookies.remove(url, name, function (error) {
-                                        if (error) {
-                                            alert(error.message);
-                                            console.error(error);
-                                            return;
-                                        };
-                                        resolve();
-                                        console.log('cookie delete : ', cookie.name);
-                                    }
-                                );
-							})
-						)
-						await Promise.all(promises);
-                        webview.reload();
-                    };
-                });
-
-
+            case 'home':
+                webview.src = 'https://www.onenote.com/notebooks'
                 break;
 		}
 	})
 
-    const webview = document.getElementById("onenote-webview");
+    const webview = document.getElementById("p3x-onenote-webview");
 	webview.addEventListener('did-stop-loading', function(event) {
 		webview.insertCSS(window.cssData);
 	});
@@ -97,7 +58,7 @@ url: ${url}
     });
 
 	webview.addEventListener('new-window', function(event) {
-		shell.openExternal(event.url);
+        webview.src = event.url;
 	});
 
     ipc.send('did-finish-load');
@@ -121,3 +82,52 @@ url: ${url}
 	});
 	*/
 }
+
+const removeCookies = (webview) => {
+    let session = webview.getWebContents().session;
+    session.cookies.get({}, async function(error, cookies) {
+        if (error) {
+            alert(error.message);
+            console.error(error);
+            return;
+        };
+        for (var i = cookies.length - 1; i >= 0; i--) {
+            const cookie = cookies[i];
+            let domain = cookie.domain;
+            if (domain.startsWith('.')) {
+                domain = domain.substring(1);
+            }
+            const url = "http" + (cookie.secure ? "s" : "") + "://" + domain  + cookie.path;
+            console.info(`
+cookie.domain: ${cookie.domain} 
+cookie.hostOnly: ${cookie.hostOnly}
+cookie.httpOnly: ${cookie.httpOnly}
+cookie.name: ${cookie.name}
+cookie.path: ${cookie.path}
+cookie.secure: ${cookie.secure}
+cookie.session: ${cookie.session} 
+cookie.value: ${cookie.value} 
+url: ${url} 
+                        `);
+            const promises = [];
+
+            promises.push(
+                new Promise((resolve) => {
+                    session.cookies.remove(url, name, function (error) {
+                            if (error) {
+                                alert(error.message);
+                                console.error(error);
+                                return;
+                            };
+                            resolve();
+                            console.log('cookie delete : ', cookie.name);
+                        }
+                    );
+                })
+            )
+            await Promise.all(promises);
+            webview.reload();
+        };
+    });
+}
+

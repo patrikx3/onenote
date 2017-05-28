@@ -12,4 +12,4 @@
 /*.lock
 *.log
 /corifeus-boot.json
-
+/dist

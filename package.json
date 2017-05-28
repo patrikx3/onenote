@@ -1,8 +1,8 @@
 {
     "name": "p3x-onenote",
-    "version": "1.0.80-55",
-    "description": "Linux Onenote",
-    "main": "src/index.js",
+    "version": "1.0.109-87",
+    "description": "P3X Onenote Linux",
+    "main": "src/electron/main.js",
     "corifeus": {
         "prefix": "p3x-",
         "publish": true,
@@ -13,11 +13,12 @@
         "p3x-onenote": "bin/p3x-onenote.js"
     },
     "scripts": {
-        "test": "grunt"
+        "test": "grunt",
+        "build": "grunt && build build/dist"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/patrikx3/corifeus.git"
+        "url": "git+https://github.com/patrikx3/onenote.git"
     },
     "keywords": [
         "onenote",
@@ -31,14 +32,22 @@
     "homepage": "https://pages.corifeus.tk/onenote",
     "dependencies": {
         "configstore": "^3.1.0",
-        "corifeus-utils": "^1.1.279-63",
-        "electron": "^1.6.8",
-        "electron-packager": "^8.7.0"
+        "corifeus-utils": "^1.1.303-88"
     },
     "devDependencies": {
-        "corifeus-builder": "^1.7.615-57"
+        "corifeus-builder": "^1.7.632-74",
+        "electron-builder": "^18.1.0",
+        "electron": "^1.6.10"
     },
     "engines": {
         "node": ">=7.8.0"
+    },
+    "build": {
+        "appId": "p3x.onenote",
+        "copyright": "MIT",
+        "productName": "P3X OneNote Linux",
+        "linux": {
+            "icon": "src/electron/images/"
+        }
     }
 }

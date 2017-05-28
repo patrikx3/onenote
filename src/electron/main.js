@@ -1,117 +1,260 @@
 const electron = require('electron');
+const { app, Menu, Tray, shell} = require('electron')
 const ipc = electron.ipcMain;
-
-const BrowserWindow = electron.BrowserWindow;
-
-const configstore = require('configstore');
-const pkg = require('../../package.json');
-const conf = new configstore(pkg.name);
-const {app, Menu} = require('electron')
-
+let tray;
 let mainWindow;
+const iconFile = `${__dirname}/images/256x256.png`;
 
-function createWindow () {
+const shouldQuit = app.makeSingleInstance((commandLine, workingDirectory) => {
+    // Someone tried to run a second instance, we should focus our window.
+    if (myWindow) {
+        if (myWindow.isMinimized()) myWindow.restore()
+        myWindow.focus()
+    }
+})
+//console.log(`shouldQuit: ${shouldQuit}`)
 
-    const template = [
-        {
-            label: 'File',
-            submenu: [
+if (shouldQuit) {
+    app.quit()
+} else {
+    const BrowserWindow = electron.BrowserWindow;
+    const configstore = require('configstore');
+    const pkg = require('../../package.json');
+    const conf = new configstore(pkg.name);
+
+
+    const action = {
+        restart: () => {
+            mainWindow.webContents.send('action', {
+                action: 'restart'
+            })
+        },
+        home: () => {
+            mainWindow.show();
+            mainWindow.webContents.send('action', {
+                action: 'home'
+            })
+        },
+        toggleVisible: () => {
+            if (mainWindow === undefined) {
+                return;
+            }
+            setVisible(!mainWindow.isVisible());
+        },
+        quit: function () {
+            app.isQuiting = true;
+            app.quit();
+        },
+        github: () => {
+            shell.openExternal('https://github.com/patrikx3/onenote')
+        },
+        patrik: () => {
+            shell.openExternal('https://patrikx3.tk')
+        },
+        p3x: () => {
+            shell.openExternal('https://github.com/patrikx3')
+        },
+        corifeus: () => {
+            shell.openExternal('https://corifeus.tk')
+        },
+        npm: () => {
+            shell.openExternal('https://www.npmjs.com/~patrikx3')
+        },
+        download: () => {
+            shell.openExternal('https://github.com/patrikx3/onenote/releases')
+        },
+    }
+
+    const menus = {
+        default: () => {
+
+            let visible = false;
+            if (mainWindow !== undefined) {
+                visible = mainWindow.isVisible() ? true : false;
+            }
+            return [
                 {
-                    label: 'Restart',
-                    click () {
-                        mainWindow.webContents.send('action', {
-                            action: 'restart'
-                        });
-                    }
+                    label: 'Home',
+                    click: action.home
                 },
-                {role: 'minimize'},
-                {role: 'close'}
-            ]
-        },
-        {
-            label: 'Edit',
-            submenu: [
-                {role: 'undo'},
-                {role: 'redo'},
-                {type: 'separator'},
-                {role: 'cut'},
-                {role: 'copy'},
-                {role: 'paste'},
-                {role: 'pasteandmatchstyle'},
-                {role: 'delete'},
-                {role: 'selectall'}
-            ]
-        },
-        {
-            label: 'View',
-            submenu: [
-                {role: 'reload'},
-                {role: 'forcereload'},
-                {role: 'toggledevtools'},
-                {type: 'separator'},
-                {role: 'resetzoom'},
-                {role: 'zoomin'},
-                {role: 'zoomout'},
-                {type: 'separator'},
-                {role: 'togglefullscreen'}
-            ]
-        },
-        {
-            role: 'help',
-            submenu: [
                 {
-                    label: 'Info',
-                    click () { require('electron').shell.openExternal('https://github.com/patrikx3/onenote') }
+                    label: 'Restart / Logout',
+                    tooltip: 'You logout and can login again',
+                    click: action.restart
+                },
+                {
+                    label: visible ? 'Hide' : 'Show',
+                    click: action.toggleVisible
+                },
+                {
+                    label: 'Download',
+                    click: action.download
+                },
+                {
+                    label: 'Quit',
+                    click: action.quit
                 }
             ]
         }
-    ]
-
-    const menu = Menu.buildFromTemplate(template)
-    Menu.setApplicationMenu(menu)
-
-    mainWindow = new BrowserWindow({
-		icon: `${__dirname}/images/icon.png`,
-        toolbar: false,
-    });
-
-     mainWindow.loadURL('file://' + __dirname + '/index.html');
-
-	mainWindow.on('closed', function() {
-		mainWindow = null;
-	});
-
-    const windowBounds = conf.get('windowBounds');
-    if (windowBounds !== null && windowBounds !== undefined) {
-       mainWindow.setBounds(windowBounds);
     }
 
+    function createMenu() {
+        const template = [
+            {
+                label: 'P3X OneNote',
+                submenu: menus.default(),
+            },
+            {
+                label: 'Edit',
+                submenu: [
+                    {role: 'undo'},
+                    {role: 'redo'},
+                    {type: 'separator'},
+                    {role: 'cut'},
+                    {role: 'copy'},
+                    {role: 'paste'},
+                    {role: 'pasteandmatchstyle'},
+                    {role: 'delete'},
+                    {role: 'selectall'}
+                ]
+            },
+            {
+                label: 'View',
+                submenu: [
+                    {role: 'reload'},
+                    {role: 'forcereload'},
+                    {role: 'toggledevtools'},
+                    {type: 'separator'},
+                    {role: 'resetzoom'},
+                    {role: 'zoomin'},
+                    {role: 'zoomout'},
+                    {type: 'separator'},
+                    {role: 'togglefullscreen'}
+                ]
+            },
+            {
+                role: 'help',
+                submenu: [
+                    {
+                        label: 'Download',
+                        click: action.download
+                    },
+                    {
+                        label: 'GitHub',
+                        click: action.github
+                    },
+                    {
+                        label: 'Patrik Laszlo',
+                        click: action.patrik
+                    },
+                    {
+                        label: 'P3X',
+                        click: action.p3x
+                    },
+                    {
+                        label: 'Corifeus',
+                        click: action.corifeus
+                    },
+                    {
+                        label: 'Npm',
+                        click: action.npm
+                    },
+                ]
+            }
+        ]
+
+        const menu = Menu.buildFromTemplate(template)
+        Menu.setApplicationMenu(menu)
+    }
+
+    function createTray() {
+        if (tray === undefined) {
+            tray = new Tray(iconFile)
+            tray.setToolTip('P3X OneNote')
+            tray.on('click', action.toggleVisible)
+        }
+        const contextMenu = Menu.buildFromTemplate(menus.default())
+        tray.setContextMenu(contextMenu)
+    }
+
+    function setVisible(visible = true) {
+        if (visible === null) {
+            visible = true;
+        }
+        if (mainWindow !== undefined) {
+            if (visible) {
+                mainWindow.show();
+            } else {
+                mainWindow.hide();
+            }
+        }
+        conf.set('visible', visible);
+        createMenu();
+        createTray()
+    }
+
+
+    function createWindow() {
+
+        mainWindow = new BrowserWindow({
+            icon: iconFile,
+            toolbar: false,
+        });
+
+
+        setVisible(conf.get('visible'));
+
+        mainWindow.loadURL('file://' + __dirname + '/index.html');
+
+        mainWindow.on('minimize', function (event) {
+            event.preventDefault()
+            setVisible(false);
+        });
+
+        mainWindow.on('close', function (event) {
+            if (!app.isQuiting) {
+                event.preventDefault()
+                setVisible(false);
+            }
+            return false;
+        });
+
+        const windowBounds = conf.get('windowBounds');
+        if (windowBounds !== null && windowBounds !== undefined) {
+            mainWindow.setBounds(windowBounds);
+        }
+
+
+
+    }
+    ipc.on('did-finish-load', function () {
+        const hostData = conf.get('toHost');
+//    console.log('Loading data', hostData);
+        if (hostData !== undefined && hostData !== null) {
+            mainWindow.webContents.send('onload-user', hostData);
+        }
+    });
+
+    ipc.on('save', function (event, data) {
+//    console.log('Save', data)
+        conf.set('toHost', data);
+        conf.set('windowBounds', mainWindow.getBounds());
+    })
+
+    app.on('ready', createWindow);
+
+    app.on('window-all-closed', function () {
+
+        if (process.platform !== 'darwin') {
+            app.quit();
+        }
+    });
+
+    app.on('activate', function () {
+        if (mainWindow === null) {
+            createWindow();
+        }
+    });
+
 }
-ipc.on('did-finish-load',function(){
-	const hostData = conf.get('toHost');
-	console.log('Loading data', hostData);
-	if (hostData !== undefined && hostData !== null) {
-        mainWindow.webContents.send('onload-user', hostData);
-	}
-});
 
-ipc.on('save', function(event, data) {
-    console.log('Save', data)
-    conf.set('toHost', data);
-    conf.set('windowBounds', mainWindow.getBounds());
-})
-
-app.on('ready', createWindow);
-
-app.on('window-all-closed', function () {
-
-    if (process.platform !== 'darwin') {
-		app.quit();
-	}
-});
-
-app.on('activate', function () {
-	if (mainWindow === null) {
-		createWindow();
-	}
-});

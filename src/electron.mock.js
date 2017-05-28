@@ -4,14 +4,19 @@ var originalRequire = Module.prototype.require;
 
 global.window = {};
 Module.prototype.require = function(name){
-    if (name === 'electron') {
-        const mock = {
-            on: () => {},
-        };
-        return {
-            ipcMain: mock,
-            app: mock
-        };
+    switch(name) {
+        case 'electron':
+            const mock = {
+                on: () => {},
+            };
+            return {
+                ipcMain: mock,
+                app: Object.assign({
+                    makeSingleInstance: () => {}
+                }, mock)
+            };
+
+            break;
     }
     //do your thing here
     return originalRequire.apply(this, arguments);
