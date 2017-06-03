@@ -58,7 +58,11 @@ window.electronWindowSetup = function() {
     });
 
 	webview.addEventListener('new-window', function(event) {
-        webview.src = event.url;
+	    if (/https?:\/\/(www\.)?onenote\.com/.test(event.url)) {
+            webview.src = event.url;
+        } else {
+            shell.openExternal(event.url);
+        }
 	});
 
     ipc.send('did-finish-load');
