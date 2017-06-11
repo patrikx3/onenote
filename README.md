@@ -25,7 +25,7 @@ Besides, when I can support, please note, I cannot support old versions, only th
    
 ### Built on Node 
 ``` 
-v8.0.0
+v8.1.0
 ```   
    
 The ```async``` and ```await``` keywords are required.
@@ -34,7 +34,7 @@ Install NodeJs:
 https://nodejs.org/en/download/package-manager/    
   
 ### Updating
-Since, I work full time, I can work only on weekends and Github updates are released only Sundays. Minor errors can be released any time, but reflects will be shown only in NPM.     
+Since, I work full time, I can work only on weekends. Github updates are released only Sundays. Minor errors can be released any time, but reflects will be shown only in NPM.     
   
 # Description  
 
@@ -49,7 +49,8 @@ https://github.com/patrikx3/onenote/releases
 ## CLI Install
 
 ```bash
-npm install -g p3x-onenote
+# this is some weird NPM error, you need like this:
+sudo npm install -g p3x-onenote --unsafe-perm=true --allow-root
 p3x-onenote
 ```
 
@@ -74,7 +75,7 @@ After last startup and you logout and login again, you will have a menu.
 [//]: #@corifeus-footer
 
 ---
-[**P3X-ONENOTE**](https://pages.corifeus.tk/onenote) Build v1.0.118-12
+[**P3X-ONENOTE**](https://pages.corifeus.tk/onenote) Build v1.0.126-19
 
 [Corifeus](http://www.corifeus.tk) by [Patrik Laszlo](http://patrikx3.tk)
 
