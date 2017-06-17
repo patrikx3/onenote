@@ -25,7 +25,7 @@ Besides, when I can support, please note, I cannot support old versions, only th
    
 ### Built on Node 
 ``` 
-v8.1.0
+v8.1.2
 ```   
    
 The ```async``` and ```await``` keywords are required.
@@ -75,7 +75,7 @@ After last startup and you logout and login again, you will have a menu.
 [//]: #@corifeus-footer
 
 ---
-[**P3X-ONENOTE**](https://pages.corifeus.tk/onenote) Build v1.0.126-19
+[**P3X-ONENOTE**](https://pages.corifeus.tk/onenote) Build v1.0.128-24
 
 [Corifeus](http://www.corifeus.tk) by [Patrik Laszlo](http://patrikx3.tk)
 
