@@ -9,7 +9,7 @@ filter:
 
 build:
   environment:
-    node: 7.8
+    node: 8.1.0
     variables:
       CXX: g++-4.8
 
