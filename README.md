@@ -9,14 +9,7 @@
  
 # P3X Onenote Linux
 
-## Issues / Support
-This is an open source project. Time is a precious thing, so I have rarely time to give support and fix issues for someone else. I fix a bug, when I have an error that I need. If you got an issue, error or bug, I hope someone will have time to do it for you, otherwise, you are on your own.
-
-Though, if I know the solution, I will tell you. Besides, core errors will be fixed by me.
-
-***If you want to extend, fix bugs or add in new features, I promptly merge pull requests or you can become a ```patrikx3``` member.***
-
-Besides, when I can support, please note, I cannot support old versions, only the current/latest version.
+This is an open source project. Just code.
 
 ### Node Version Requirement 
 ``` 
@@ -32,10 +25,7 @@ The ```async``` and ```await``` keywords are required.
 
 Install NodeJs:    
 https://nodejs.org/en/download/package-manager/    
-  
-### Updating
-Since, I work full time, I can work only on weekends. Github updates are released only Sundays. Minor errors can be released any time, but reflects will be shown only in NPM.     
-  
+
 # Description  
 
                         
@@ -75,7 +65,7 @@ After last startup and you logout and login again, you will have a menu.
 [//]: #@corifeus-footer
 
 ---
-[**P3X-ONENOTE**](https://pages.corifeus.tk/onenote) Build v1.0.128-24
+[**P3X-ONENOTE**](https://pages.corifeus.tk/onenote) Build v1.0.131-32
 
 [Corifeus](http://www.corifeus.tk) by [Patrik Laszlo](http://patrikx3.tk)
 
