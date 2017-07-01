@@ -26,7 +26,7 @@ Terminal=false
         await mz.fs.chmod(desktopEntry , '0755');
         await utils.childProcess.exec('gtk-update-icon-cache || true');
     }
-    await utils.childProcess.exec(`${__dirname}/../node_modules/.bin/electron ${__dirname}/../src/electron/main.js`, true);
+    await utils.childProcess.exec(`${__dirname}/../node_modules/.bin/electron ${__dirname}/../src/electron/app.js`, true);
 }
 
 start();

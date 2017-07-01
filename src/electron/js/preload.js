@@ -49,7 +49,7 @@ window.electronWindowSetup = function() {
 
     const webview = document.getElementById("p3x-onenote-webview");
 	webview.addEventListener('did-stop-loading', function(event) {
-		webview.insertCSS(window.cssData);
+//		webview.insertCSS(window.cssData);
 	});
 
     webview.addEventListener('did-navigate', function(event, url) {

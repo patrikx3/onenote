@@ -9,12 +9,15 @@ filter:
 
 build:
   environment:
-    node: 8.1.0
     variables:
       CXX: g++-4.8
 
+
   dependencies:
     before:
+      - export LATEST=$(nvm ls-remote | tail -1)
+      - nvm install $LATEST
+#      - nvm use $LATEST  dependencies:
       - sudo apt-get -y install software-properties-common python-software-properties
 #      - sudo apt-cache policy gcc++
 #      - sudo apt-cache policy g++
