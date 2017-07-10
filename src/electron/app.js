@@ -40,13 +40,13 @@ const action = {
         shell.openExternal('https://github.com/patrikx3/onenote')
     },
     patrik: () => {
-        shell.openExternal('https://patrikx3.tk')
+        shell.openExternal('https://patrikx3.com')
     },
     p3x: () => {
         shell.openExternal('https://github.com/patrikx3')
     },
     corifeus: () => {
-        shell.openExternal('https://corifeus.tk')
+        shell.openExternal('https://corifeus.com')
     },
     npm: () => {
         shell.openExternal('https://www.npmjs.com/~patrikx3')
@@ -190,6 +190,7 @@ function createWindow() {
     mainWindow = new BrowserWindow({
         icon: iconFile,
         toolbar: false,
+        title: title,
     });
 
 

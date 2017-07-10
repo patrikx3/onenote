@@ -45,6 +45,9 @@ p3x-onenote
 ```
 
 After last startup and you logout and login again, you will have a menu.
+  
+Fedora: https://github.com/patrikx3/onenote/issues/3#issuecomment-312711801
+  
 
 # Featrues
 * GNOME menu (`````~/.local/share/applications/p3x-onenote.desktop`````)
@@ -58,7 +61,7 @@ After last startup and you logout and login again, you will have a menu.
 
 ## Screenshot
 
-![Screenshot 1](https://cdn.corifeus.tk/git/onenote/artifacts/screenshot/1.png)
+![Screenshot 1](https://cdn.corifeus.com/git/onenote/artifacts/screenshot/1.png)
 
 
 
@@ -66,8 +69,8 @@ After last startup and you logout and login again, you will have a menu.
 
 ---
 
-[**P3X-ONENOTE**](https://pages.corifeus.tk/onenote) Build v1.0.137-43
+[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v1.0.154-54
 
-[Corifeus](http://www.corifeus.tk) by [Patrik Laszlo](http://patrikx3.tk)
+[Corifeus](http://www.corifeus.com) by [Patrik Laszlo](http://patrikx3.com)
 
 [//]: #@corifeus-footer:end
