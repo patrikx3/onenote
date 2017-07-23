@@ -1,6 +1,6 @@
 {
     "name": "p3x-onenote",
-    "version": "1.0.159-61",
+    "version": "1.0.160-62",
     "description": "P3X Onenote Linux",
     "main": "src/electron/app.js",
     "corifeus": {
@@ -31,13 +31,13 @@
     },
     "homepage": "https://pages.corifeus.com/onenote",
     "dependencies": {
-        "configstore": "^3.1.0",
-        "corifeus-utils": "^1.1.365-59",
+        "configstore": "^3.1.1",
+        "corifeus-utils": "^1.1.367-61",
         "electron": "^1.6.11"
     },
     "devDependencies": {
-        "corifeus-builder": "^1.7.706-44",
-        "electron-builder": "^19.16.0"
+        "corifeus-builder": "^1.7.708-46",
+        "electron-builder": "^19.16.2"
     },
     "engines": {
         "node": ">=7.8.0"
