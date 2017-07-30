@@ -2,13 +2,6 @@
 /dist
 /node_modules
 /*.log
-/yarn.lock
-/package-lock.json
-
-
 /*.iws
-
-
 .idea/workspace.xml
 .idea/tasks.xml
-
