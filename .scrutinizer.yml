@@ -8,8 +8,8 @@ filter:
     - docs/*
 
 build:
-	cache:
-		disabled: true
+  cache:
+    disabled: true
   environment:
     variables:
       CXX: g++-4.8
