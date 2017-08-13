@@ -18,7 +18,7 @@ This is an open source project. Just code.
    
 ### Built on Node 
 ``` 
-v8.2.1
+v8.3.0
 ```   
    
 The ```async``` and ```await``` keywords are required.
@@ -40,6 +40,8 @@ https://github.com/patrikx3/onenote/releases
 
 ```bash
 # this is some weird NPM error, you need like this:
+node -v
+# make sure it is above 7.8!!!
 sudo npm install -g p3x-onenote --unsafe-perm=true --allow-root
 p3x-onenote
 ```
@@ -69,7 +71,7 @@ Fedora: https://github.com/patrikx3/onenote/issues/3#issuecomment-312711801
 
 ---
 
-[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v1.0.180-89
+[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v1.0.185-96
 
 [Corifeus](http://www.corifeus.com) by [Patrik Laszlo](http://patrikx3.com)
 
