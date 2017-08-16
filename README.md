@@ -51,7 +51,7 @@ After last startup and you logout and login again, you will have a menu.
 Fedora: https://github.com/patrikx3/onenote/issues/3#issuecomment-312711801
   
 
-# Featrues
+# Features
 * GNOME menu (`````~/.local/share/applications/p3x-onenote.desktop`````)
 * Icon
 * Tray
