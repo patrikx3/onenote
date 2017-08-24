@@ -33,8 +33,12 @@ https://nodejs.org/en/download/package-manager/
 
 This is a Linux Onenote.
 
-### Warning
-If you have enough RAM and you can install VirtualBox with Windows and OneNote, it is simpler than ```p3x-oenote```. For my workstation with 4.8Ghz, 4 cores, 32 GB-ram, I use VirtualBox Windows Onenote, and for my Laptop I use ```p3x-onenote```.
+### Some info about P3X Onenote vs VirtualBox
+If you have enough RAM or buffy workstation and you can install VirtualBox inside Windows and use the Marketplace based OneNote or install Office. I think, you do not need  ```p3x-onenote``` at all.  
+
+For my workstation, with a 4.8Ghz CPU, 4 cores, 32 GB-ram, I use VirtualBox on Windows with Office Onenote (I use 6 GB RAM, 4 cores), but unfortunately my Laptop is old and has only 16GB RAM. Given, I develop a lot (NodeJs), I need the RAM, so for my Laptop, I use ```p3x-onenote``` and it's enough. Once the pages are loaded. It is fast, since it's own process without a browser and is in the tray, you don't have to re-load everything again. So it is very usable and after all pages are loaded, quick.
+
+**You can try, you loose nothing.**
 
 ## Downloadable installer
 https://github.com/patrikx3/onenote/releases
@@ -74,7 +78,7 @@ Fedora: https://github.com/patrikx3/onenote/issues/3#issuecomment-312711801
 
 ---
 
-[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v1.0.208-115
+[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v1.0.216-124
 
 [Corifeus](http://www.corifeus.com) by [Patrik Laszlo](http://patrikx3.com)
 
