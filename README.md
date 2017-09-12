@@ -18,7 +18,7 @@ This is an open source project. Just code.
    
 ### Built on Node 
 ``` 
-v8.4.0
+v8.5.0
 ```   
    
 The ```async``` and ```await``` keywords are required.
@@ -78,7 +78,7 @@ Fedora: https://github.com/patrikx3/onenote/issues/3#issuecomment-312711801
 
 ---
 
-[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v1.0.247-152
+[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v1.0.249-153
 
 [Corifeus](http://www.corifeus.com) by [Patrik Laszlo](http://patrikx3.com)
 
