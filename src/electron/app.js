@@ -13,6 +13,15 @@ const configstore = require('configstore');
 const pkg = require('../../package.json');
 const conf = new configstore(pkg.name);
 
+const isSecondInstance = app.makeSingleInstance((commandLine, workingDirectory) => {
+    setVisible(true);
+    mainWindow.webContents.reload();
+})
+
+if (isSecondInstance) {
+    app.quit()
+}
+
 
 const action = {
     restart: () => {
