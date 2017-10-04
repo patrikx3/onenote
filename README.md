@@ -68,6 +68,10 @@ Fedora: https://github.com/patrikx3/onenote/issues/3#issuecomment-312711801
 * Quit
 * Loads last visibility state
 
+# Corporate
+
+* Now, there is a menu ```Corporate home```
+
 ## Screenshot
 
 ![Screenshot 1](https://cdn.corifeus.com/git/onenote/artifacts/screenshot/1.png)
@@ -78,7 +82,7 @@ Fedora: https://github.com/patrikx3/onenote/issues/3#issuecomment-312711801
 
 ---
 
-[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v1.0.286-175
+[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v1.0.293-180
 
 [Corifeus](http://www.corifeus.com) by [Patrik Laszlo](http://patrikx3.com)
 

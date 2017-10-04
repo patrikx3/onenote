@@ -35,6 +35,12 @@ const action = {
             action: 'home'
         })
     },
+    corporate: () => {
+        mainWindow.show();
+        mainWindow.webContents.send('action', {
+            action: 'corporate'
+        })
+    },
     toggleVisible: () => {
         if (mainWindow === undefined) {
             return;
@@ -76,6 +82,10 @@ const menus = {
             {
                 label: 'Home',
                 click: action.home
+            },
+            {
+                label: 'Corporate home',
+                click: action.corporate
             },
             {
                 label: 'Restart / Logout',

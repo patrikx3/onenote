@@ -44,6 +44,10 @@ window.electronWindowSetup = function() {
             case 'home':
                 webview.src = 'https://www.onenote.com/notebooks'
                 break;
+
+            case 'corporate':
+                webview.src = 'https://www.onenote.com/notebooks?auth=2&auth_upn=my_corporate_email_address'
+                break;
 		}
 	})
 
