@@ -45,7 +45,7 @@ https://github.com/patrikx3/onenote/releases
 
 ### You can find it in Atom Apps as well
 
-https://electron.atom.io/apps
+https://electron.atom.io/apps/?q=onenote
 
 
 ## CLI Install
