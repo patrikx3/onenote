@@ -43,6 +43,11 @@ For my workstation, with a 4.8Ghz CPU, 4 cores, 32 GB-ram, I use VirtualBox on W
 ## Downloadable installer
 https://github.com/patrikx3/onenote/releases
 
+### You can find it in Atom Apps as well
+
+https://electron.atom.io/apps
+
+
 ## CLI Install
 
 ```bash
