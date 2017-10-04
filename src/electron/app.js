@@ -80,7 +80,7 @@ const menus = {
         }
         return [
             {
-                label: 'Home',
+                label: 'Personal home',
                 click: action.home
             },
             {
