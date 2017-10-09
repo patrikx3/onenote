@@ -10,7 +10,11 @@ filter:
 build:
   cache:
     disabled: true
+
   environment:
+    google_chrome:
+      use_latest: true
+
     variables:
       CXX: g++-4.8
 
