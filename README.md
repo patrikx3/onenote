@@ -33,6 +33,10 @@ https://nodejs.org/en/download/package-manager/
 
 This is a Linux Onenote.
 
+# Warning
+Microsoft online Onenote has issues right now, they are saying they are working on it.
+
+
 ### Some info about P3X Onenote vs VirtualBox
 If you have enough RAM or buffy workstation and you can install VirtualBox inside Windows and use the Marketplace based OneNote or install Office. I think, you do not need  ```p3x-onenote``` at all.  
 
@@ -87,8 +91,9 @@ Fedora: https://github.com/patrikx3/onenote/issues/3#issuecomment-312711801
 
 ---
 
-[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v1.0.298-184
+[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v1.0.319-200 
 
-[Corifeus](http://www.corifeus.com) by [Patrik Laszlo](http://patrikx3.com)
+[![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) 
+ 
 
 [//]: #@corifeus-footer:end
