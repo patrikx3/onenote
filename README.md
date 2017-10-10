@@ -37,22 +37,22 @@ This is a Linux Onenote.
 Microsoft online Onenote has issues right now, they are saying they are working on it.
 
 
-### Some info about P3X Onenote vs VirtualBox
+# Some info about P3X Onenote vs VirtualBox
 If you have enough RAM or buffy workstation and you can install VirtualBox inside Windows and use the Marketplace based OneNote or install Office. I think, you do not need  ```p3x-onenote``` at all.  
 
 For my workstation, with a 4.8Ghz CPU, 4 cores, 32 GB-ram, I use VirtualBox on Windows with Office Onenote (I use 6 GB RAM, 4 cores), but unfortunately my Laptop is old and has only 16GB RAM. Given, I develop a lot (NodeJs), I need the RAM, so for my Laptop, I use ```p3x-onenote``` and it's enough. Once the pages are loaded. It is fast, since it's own process without a browser and is in the tray, you don't have to re-load everything again. So it is very usable and after all pages are loaded, quick.
 
 **You can try, you loose nothing.**
 
-## Downloadable installer
+# Downloadable installer
 https://github.com/patrikx3/onenote/releases
 
-### You can find it in Atom Apps as well
+# You can find it in Atom Apps as well
 
 https://electron.atom.io/apps/?q=onenote
 
 
-## CLI Install
+# CLI Install
 
 ```bash
 # this is some weird NPM error, you need like this:
@@ -81,7 +81,7 @@ Fedora: https://github.com/patrikx3/onenote/issues/3#issuecomment-312711801
 
 * Now, there is a menu ```Corporate home```
 
-## Screenshot
+# Screenshot
 
 ![Screenshot 1](https://cdn.corifeus.com/git/onenote/artifacts/screenshot/1.png)
 
