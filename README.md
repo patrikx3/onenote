@@ -91,7 +91,7 @@ Fedora: https://github.com/patrikx3/onenote/issues/3#issuecomment-312711801
 
 ---
 
-[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v1.0.324-206 
+[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v1.0.325-208 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) 
  
