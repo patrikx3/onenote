@@ -36,6 +36,21 @@ This is a Linux Onenote.
 # Warning
 Microsoft online Onenote has issues right now, they are saying they are working on it.
 
+Right now you can login in ```OneDrive``` at:  
+https://onedrive.live.com/?gologin=1 , but only in a browser.
+
+Choose in your folders and open from there.
+
+Right now, I cannot do it, since it is an internal ```javascript```, I have no access to it.
+
+We have to wait for ```Microsoft``` to fix it.
+
+https://answers.microsoft.com/en-us/msoffice/forum/msoffice_onenote-mso_win10/the-microsoft-account-login-server-has-detected/1292869d-8f06-42fc-abe4-4d80cd1bfffc
+
+
+## Hack
+
+I will try to hack it, but it will take some time.
 
 # Some info about P3X Onenote vs VirtualBox
 If you have enough RAM or buffy workstation and you can install VirtualBox inside Windows and use the Marketplace based OneNote or install Office. I think, you do not need  ```p3x-onenote``` at all.  
