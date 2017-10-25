@@ -39,7 +39,7 @@
     },
     "devDependencies": {
         "corifeus-builder": "^1.7.930-190",
-        "electron-builder": "^19.37.2"
+        "electron-builder": "^19.40.0"
     },
     "engines": {
         "node": ">=7.8.0"
