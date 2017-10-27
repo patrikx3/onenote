@@ -25,21 +25,44 @@ if (isSecondInstance) {
 
 const action = {
     restart: () => {
+        mainWindow.webContents.session.clearStorageData(() => {
+            console.log('storage cleared');
+            mainWindow.loadURL(conf.get('lastUrl'));
+        })
+        /*
         mainWindow.webContents.send('action', {
             action: 'restart'
         })
+        */
     },
     home: () => {
         mainWindow.show();
+
+        if (typeof conf.get('lastUrl') === 'string') {
+            mainWindow.loadURL(conf.get('lastUrl'));
+        } else {
+            mainWindow.loadURL('https://www.onenote.com/notebooks');
+        }
+        /*
         mainWindow.webContents.send('action', {
             action: 'home'
         })
+        */
     },
     corporate: () => {
         mainWindow.show();
+
+        if (typeof conf.get('lastUrl') === 'string') {
+            mainWindow.loadURL(conf.get('lastUrl'));
+        } else {
+            mainWindow.loadURL('https://www.onenote.com/notebooks?auth=2&auth_upn=my_corporate_email_address');
+        }
+
+        /*
         mainWindow.webContents.send('action', {
             action: 'corporate'
         })
+        */
     },
     toggleVisible: () => {
         if (mainWindow === undefined) {
@@ -215,7 +238,9 @@ function createWindow() {
 
     setVisible(conf.get('visible'));
 
-    mainWindow.loadURL('file://' + __dirname + '/index.html');
+//    mainWindow.loadURL('file://' + __dirname + '/index.html');
+    action.home();
+//    mainWindow.loadURL('https://www.onenote.com/hdr');
 
     mainWindow.on('minimize', function (event) {
         event.preventDefault()
@@ -229,6 +254,14 @@ function createWindow() {
         }
         return false;
     });
+
+    mainWindow.on('page-title-updated', function(event, title) {
+        if (Array.isArray(event.sender.history) && event.sender.history.length > 0) {
+            const lastUrl = event.sender.history[event.sender.history.length - 1];
+            console.log(lastUrl);
+            conf.set('lastUrl', lastUrl);
+        }
+    })
 
     const windowBounds = conf.get('windowBounds');
     if (windowBounds !== null && windowBounds !== undefined) {
