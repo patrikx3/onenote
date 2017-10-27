@@ -1,6 +1,6 @@
 {
     "name": "p3x-onenote",
-    "version": "1.1.11-234",
+    "version": "1.1.15-236",
     "description": "P3X Onenote Linux",
     "main": "src/electron/app.js",
     "corifeus": {
@@ -47,7 +47,7 @@
     "build": {
         "appId": "p3x.onenote",
         "copyright": "MIT",
-        "productName": "P3X OneNote Linux",
+        "productName": "P3X OneNote",
         "linux": {
             "category": "Office",
             "icon": "src/electron/images/"
