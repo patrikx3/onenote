@@ -27,7 +27,8 @@ const action = {
     restart: () => {
         mainWindow.webContents.session.clearStorageData(() => {
 //            console.log('storage cleared');
-            mainWindow.loadURL(conf.get('lastUrl'));
+            conf.clear();
+            action.home();
         })
         /*
         mainWindow.webContents.send('action', {
@@ -111,7 +112,7 @@ const menus = {
                 click: action.corporate
             },
             {
-                label: 'Restart / Logout',
+                label: 'White blank screen fix',
                 tooltip: 'You logout and can login again',
                 click: action.restart
             },
