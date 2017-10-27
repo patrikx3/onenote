@@ -28,7 +28,7 @@ const action = {
         mainWindow.webContents.session.clearStorageData(() => {
 //            console.log('storage cleared');
             conf.clear();
-            action.home();
+            mainWindow.loadURL('file://' + __dirname + '/blank.html');
         })
         /*
         mainWindow.webContents.send('action', {
@@ -38,12 +38,10 @@ const action = {
     },
     home: () => {
         mainWindow.show();
-
-        if (typeof conf.get('lastUrl') === 'string') {
-            mainWindow.loadURL(conf.get('lastUrl'));
-        } else {
+        mainWindow.webContents.session.clearStorageData(() => {
+            conf.clear();
             mainWindow.loadURL('https://www.onenote.com/notebooks');
-        }
+        })
         /*
         mainWindow.webContents.send('action', {
             action: 'home'
@@ -53,17 +51,23 @@ const action = {
     corporate: () => {
         mainWindow.show();
 
-        if (typeof conf.get('lastUrl') === 'string') {
-            mainWindow.loadURL(conf.get('lastUrl'));
-        } else {
+        mainWindow.webContents.session.clearStorageData(() => {
+            conf.clear();
             mainWindow.loadURL('https://www.onenote.com/notebooks?auth=2&auth_upn=my_corporate_email_address');
-        }
+        })
 
         /*
         mainWindow.webContents.send('action', {
             action: 'corporate'
         })
         */
+    },
+    'last-page': () => {
+        if (typeof conf.get('lastUrl') === 'string' && !conf.get('lastUrl').startsWith('file')) {
+            mainWindow.loadURL(conf.get('lastUrl'));
+        } else {
+            mainWindow.loadURL('file://' + __dirname + '/blank.html');
+        }
     },
     toggleVisible: () => {
         if (mainWindow === undefined) {
@@ -104,15 +108,19 @@ const menus = {
         }
         return [
             {
-                label: 'Personal home',
+                label: 'Personal login',
                 click: action.home
             },
             {
-                label: 'Corporate home',
+                label: 'Corporate login',
                 click: action.corporate
             },
             {
-                label: 'White blank screen fix',
+                label: 'Your last page',
+                click: action['last-page']
+            },
+            {
+                label: 'Clear session and logout',
                 tooltip: 'You logout and can login again',
                 click: action.restart
             },
@@ -225,6 +233,10 @@ function setVisible(visible = true) {
     conf.set('visible', visible);
     createMenu();
     createTray()
+
+    if (typeof conf.get('lastUrl') === 'string' && !conf.get('lastUrl').startsWith('file')) {
+        mainWindow.loadURL(conf.get('lastUrl'));
+    }
 }
 
 

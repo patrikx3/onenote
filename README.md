@@ -34,7 +34,7 @@ https://nodejs.org/en/download/package-manager/
 This is a Linux Onenote.
 
 # There were lots of changes
-Please update, now it will work. There is also a new release.
+Please update. There is a new release as well. Though, it still loops with the login. Sometimes it works, sometimes it loops. Working on it...  
 
 # Some info about P3X Onenote vs VirtualBox
 If you have enough RAM or buffy workstation and you can install VirtualBox inside Windows and use the Marketplace based OneNote or install Office. I think, you do not need  ```p3x-onenote``` at all.  
@@ -90,7 +90,7 @@ Fedora: https://github.com/patrikx3/onenote/issues/3#issuecomment-312711801
 
 ---
 
-[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v1.1.9-231 
+[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v1.1.11-234 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) 
  
