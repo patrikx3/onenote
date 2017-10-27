@@ -34,7 +34,17 @@ https://nodejs.org/en/download/package-manager/
 This is a Linux Onenote.
 
 # There were lots of changes
-Please update. There is a new release as well. Though, it still loops with the login. Sometimes it works, sometimes it loops. Working on it...  
+Please update. There is a new release as well.
+  
+Though, sometimes, or often, it still loops with the login.
+  
+Sometimes it works, sometimes it loops. 
+  
+Working on it... 
+  
+Electron is using Chrome 59. Since the latest real Chrome uses 62 and now always works (before it was giving the same error). I am sure, there is a bug in 59, so I am working on the hack or a new Electron Chrome release will be.  
+  
+Hang tight.
 
 # Some info about P3X Onenote vs VirtualBox
 If you have enough RAM or buffy workstation and you can install VirtualBox inside Windows and use the Marketplace based OneNote or install Office. I think, you do not need  ```p3x-onenote``` at all.  
