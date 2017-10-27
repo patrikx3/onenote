@@ -26,7 +26,7 @@ if (isSecondInstance) {
 const action = {
     restart: () => {
         mainWindow.webContents.session.clearStorageData(() => {
-            console.log('storage cleared');
+//            console.log('storage cleared');
             mainWindow.loadURL(conf.get('lastUrl'));
         })
         /*
@@ -258,7 +258,7 @@ function createWindow() {
     mainWindow.on('page-title-updated', function(event, title) {
         if (Array.isArray(event.sender.history) && event.sender.history.length > 0) {
             const lastUrl = event.sender.history[event.sender.history.length - 1];
-            console.log(lastUrl);
+//            console.log(lastUrl);
             conf.set('lastUrl', lastUrl);
         }
     })
