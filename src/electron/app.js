@@ -29,6 +29,7 @@ const action = {
 //            console.log('storage cleared');
             conf.clear();
             mainWindow.loadURL('file://' + __dirname + '/blank.html');
+            mainWindow.show();
         })
         /*
         mainWindow.webContents.send('action', {
@@ -63,6 +64,8 @@ const action = {
         */
     },
     'last-page': () => {
+        mainWindow.show();
+
         if (typeof conf.get('lastUrl') === 'string' && !conf.get('lastUrl').startsWith('file')) {
             mainWindow.loadURL(conf.get('lastUrl'));
         } else {
