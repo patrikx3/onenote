@@ -13,12 +13,12 @@ This is an open source project. Just code.
 
 ### Node Version Requirement 
 ``` 
->=7.8.0 
+>=8.9.0 
 ```  
    
 ### Built on Node 
 ``` 
-v8.8.1
+v8.9.0
 ```   
    
 The ```async``` and ```await``` keywords are required.
@@ -102,7 +102,7 @@ Fedora: https://github.com/patrikx3/onenote/issues/3#issuecomment-312711801
 
 ---
 
-[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v1.1.27-248 
+[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v1.1.29-249 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=LFRV89WPRMMVE&lc=HU&item_name=Patrik%20Laszlo&item_number=patrikx3&currency_code=HUF&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted) 
 
