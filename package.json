@@ -34,7 +34,7 @@
     "dependencies": {
         "electron": "^1.8.2-beta.1",
         "configstore": "^3.1.1",
-        "corifeus-utils": "^1.1.587-206"
+        "corifeus-utils": "^1.1.588-208"
     },
     "devDependencies": {
         "corifeus-builder": "^1.7.956-206",
