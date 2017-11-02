@@ -18,7 +18,7 @@ This is an open source project. Just code.
    
 ### Built on Node 
 ``` 
-v8.9.0
+v9.0.0
 ```   
    
 The ```async``` and ```await``` keywords are required.
@@ -33,20 +33,9 @@ https://nodejs.org/en/download/package-manager/
 
 This is a Linux Onenote.
 
-# There were lots of changes
-Please update. There is a new release as well.
-  
-Though, sometimes, or often, it still loops with the login.
-  
-Sometimes it works, sometimes it loops. 
-  
-Working on it... 
-  
-Electron is using Chrome 59. Since the latest real Chrome uses 62 and now always works (before it was giving the same error). I am sure, there is a bug in 59, so I am working on the hack or a new Electron Chrome release will be.  
-  
-## Hacking Onenote Online
+# You cannot log in
 
-Well, I spent 2 days hacking it, bit it looks like if you sign in a lot without log out, then you get this loop and get a Microsoft error, then you cannot do anything with it. **I think we need to wait until Electron will be updated to Chrome 62 at least and/or sign off trim.** 
+I think it only happens, if you kill the OneNote Linux and you then login again a lot. So to be safe, always ```sign out```, it is on the top right!!!
 
 # Some info about P3X Onenote vs VirtualBox
 If you have enough RAM or buffy workstation and you can install VirtualBox inside Windows and use the Marketplace based OneNote or install Office. I think, you do not need  ```p3x-onenote``` at all.  
@@ -102,7 +91,7 @@ Fedora: https://github.com/patrikx3/onenote/issues/3#issuecomment-312711801
 
 ---
 
-[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v1.1.30-250 
+[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v1.2.33-256 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=LFRV89WPRMMVE&lc=HU&item_name=Patrik%20Laszlo&item_number=patrikx3&currency_code=HUF&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted) 
 

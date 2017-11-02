@@ -42,7 +42,7 @@ window.electronWindowSetup = function() {
                 break;
 
             case 'home':
-                webview.src = 'https://www.onenote.com/hdr'
+                webview.src = 'https://www.onenote.com/notebooks'
                 break;
 
             case 'corporate':

@@ -25,52 +25,21 @@ if (isSecondInstance) {
 
 const action = {
     restart: () => {
-        mainWindow.webContents.session.clearStorageData(() => {
-//            console.log('storage cleared');
-            conf.clear();
-            mainWindow.loadURL('file://' + __dirname + '/blank.html');
-            mainWindow.show();
-        })
-        /*
         mainWindow.webContents.send('action', {
             action: 'restart'
         })
-        */
     },
     home: () => {
         mainWindow.show();
-        mainWindow.webContents.session.clearStorageData(() => {
-            conf.clear();
-            mainWindow.loadURL('https://www.onenote.com/notebooks');
-        })
-        /*
         mainWindow.webContents.send('action', {
             action: 'home'
         })
-        */
     },
     corporate: () => {
         mainWindow.show();
-
-        mainWindow.webContents.session.clearStorageData(() => {
-            conf.clear();
-            mainWindow.loadURL('https://www.onenote.com/notebooks?auth=2&auth_upn=my_corporate_email_address');
-        })
-
-        /*
         mainWindow.webContents.send('action', {
             action: 'corporate'
         })
-        */
-    },
-    'last-page': () => {
-        mainWindow.show();
-
-        if (typeof conf.get('lastUrl') === 'string' && !conf.get('lastUrl').startsWith('file')) {
-            mainWindow.loadURL(conf.get('lastUrl'));
-        } else {
-            mainWindow.loadURL('file://' + __dirname + '/blank.html');
-        }
     },
     toggleVisible: () => {
         if (mainWindow === undefined) {
@@ -111,20 +80,15 @@ const menus = {
         }
         return [
             {
-                label: 'Personal login',
+                label: 'Personal home',
                 click: action.home
             },
             {
-                label: 'Corporate login',
+                label: 'Corporate home',
                 click: action.corporate
             },
             {
-                label: 'Your last page',
-                click: action['last-page']
-            },
-            {
-                label: 'Clear session and logout',
-                tooltip: 'You logout and can login again',
+                label: 'First sign off, then click this menu option to clear the cache',
                 click: action.restart
             },
             {
@@ -236,10 +200,6 @@ function setVisible(visible = true) {
     conf.set('visible', visible);
     createMenu();
     createTray()
-
-    if (typeof conf.get('lastUrl') === 'string' && !conf.get('lastUrl').startsWith('file')) {
-        mainWindow.loadURL(conf.get('lastUrl'));
-    }
 }
 
 
@@ -254,9 +214,7 @@ function createWindow() {
 
     setVisible(conf.get('visible'));
 
-//    mainWindow.loadURL('file://' + __dirname + '/index.html');
-    action.home();
-//    mainWindow.loadURL('https://www.onenote.com/hdr');
+    mainWindow.loadURL('file://' + __dirname + '/index.html');
 
     mainWindow.on('minimize', function (event) {
         event.preventDefault()
@@ -270,14 +228,6 @@ function createWindow() {
         }
         return false;
     });
-
-    mainWindow.on('page-title-updated', function(event, title) {
-        if (Array.isArray(event.sender.history) && event.sender.history.length > 0) {
-            const lastUrl = event.sender.history[event.sender.history.length - 1];
-//            console.log(lastUrl);
-            conf.set('lastUrl', lastUrl);
-        }
-    })
 
     const windowBounds = conf.get('windowBounds');
     if (windowBounds !== null && windowBounds !== undefined) {
