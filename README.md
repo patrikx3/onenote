@@ -57,7 +57,7 @@ https://electron.atom.io/apps/?q=onenote
 ```bash
 # this is some weird NPM error, you need like this:
 node -v
-# make sure it is above 7.8!!!
+# make sure it is above 8.9.0!!!
 sudo npm install -g p3x-onenote --unsafe-perm=true --allow-root
 p3x-onenote
 ```
