@@ -7,7 +7,7 @@
 ---
 
  
-# P3X Onenote Linux v1.2.109-286  
+# P3X Onenote Linux v1.2.117-290  
 
 This is an open source project. Just code. If you like this code, please add a star in GitHub and you really like, you can donate as well. Thanks you so much!
 
@@ -18,7 +18,7 @@ This is an open source project. Just code. If you like this code, please add a s
    
 ### Built on Node 
 ``` 
-v9.2.0
+v9.2.1
 ```   
    
 The ```async``` and ```await``` keywords are required.
@@ -91,7 +91,7 @@ Fedora: https://github.com/patrikx3/onenote/issues/3#issuecomment-312711801
 
 ---
 
-[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v1.2.109-286 
+[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v1.2.117-290 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=LFRV89WPRMMVE&lc=HU&item_name=Patrik%20Laszlo&item_number=patrikx3&currency_code=HUF&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
 
