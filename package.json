@@ -37,7 +37,7 @@
         "corifeus-utils": "^1.1.740-255"
     },
     "devDependencies": {
-        "corifeus-builder": "^1.7.1103-260",
+        "corifeus-builder": "^1.7.1110-261",
         "electron-builder": "^19.50.0"
     },
     "engines": {
