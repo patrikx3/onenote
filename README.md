@@ -74,7 +74,8 @@ Fedora: https://github.com/patrikx3/onenote/issues/3#issuecomment-312711801
   
 # Change language
 
-With don't have an option right now, once this feature in online of Electron, I will put it in.
+Right now, with online it reverts even though on the main page I changed, but once it goes to do the actual pages it reverts.
+If Electron could set the language I think it would automatically use that. Right now it uses the Chrome settings. There is an investigation.
 
 https://github.com/patrikx3/onenote/issues/14
 
