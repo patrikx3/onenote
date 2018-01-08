@@ -74,6 +74,8 @@ Fedora: https://github.com/patrikx3/onenote/issues/3#issuecomment-312711801
   
 # Change language
 
+With don't have an option right now, once this feature in online of Electron, I will put it in.
+
 https://github.com/patrikx3/onenote/issues/14
 
 
