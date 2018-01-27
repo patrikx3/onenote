@@ -7,7 +7,7 @@
 ---
 
  
-# P3X Onenote Linux v1.2.187-327  
+# P3X Onenote Linux v1.2.201-332  
 
 This is an open source project. Just code. If you like this code, please add a star in GitHub and you really like, you can donate as well. Thanks you so much!
 
@@ -42,6 +42,11 @@ This is a Linux Onenote.
 # You cannot log in
 
 I think it only happens, if you kill the OneNote Linux and you then login again a lot. So to be safe, always ```sign out```, it is on the top right!!!
+
+# Gentoo latest Gnome
+
+Right now, for some weird, the new latest Gnome, with dash-to-panel they removed the legacy tray icons or changed so that with Electron is not working with the original tray, I am investigating, how to find a good solution.  
+Please hang on.
 
 # Some info about P3X Onenote vs VirtualBox
 If you have enough RAM or buffy workstation and you can install VirtualBox inside Windows and use the Marketplace based OneNote or install Office. I think, you do not need  ```p3x-onenote``` at all.  
@@ -104,11 +109,15 @@ https://github.com/patrikx3/onenote/issues/14
 
 ---
 
-[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v1.2.187-327 
+[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v1.2.201-332 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=LFRV89WPRMMVE&lc=HU&item_name=Patrik%20Laszlo&item_number=patrikx3&currency_code=HUF&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
 
 
+## Sponsor
+
+[![JetBrains](https://www.patrikx3.com/images/jetbrains-logo.svg)](https://www.jetbrains.com/)
+  
  
 
 [//]: #@corifeus-footer:end
