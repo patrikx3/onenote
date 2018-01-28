@@ -43,10 +43,10 @@ This is a Linux Onenote.
 
 I think it only happens, if you kill the OneNote Linux and you then login again a lot. So to be safe, always ```sign out```, it is on the top right!!!
 
-# Gentoo latest Gnome
+# Latest Gnome with dah-to-panel
 
-Right now, for some weird, the new latest Gnome, with dash-to-panel they removed the legacy tray icons or changed so that with Electron is not working with the original tray, I am investigating, how to find a good solution.  
-Please hang on.
+Right now, for some weird, the new latest Gnome, with dash-to-panel they removed the legacy tray icons or changed so that with Electron (as well many programs, including Skype ) is not working with the original tray, I am investigating, how to find a good solution.  
+Please hang on. Probably it is too new, they will fix it, I think.
 
 # Some info about P3X Onenote vs VirtualBox
 If you have enough RAM or buffy workstation and you can install VirtualBox inside Windows and use the Marketplace based OneNote or install Office. I think, you do not need  ```p3x-onenote``` at all.  
