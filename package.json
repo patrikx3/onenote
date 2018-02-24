@@ -1,6 +1,6 @@
 {
     "name": "p3x-onenote",
-    "version": "1.2.240-353",
+    "version": "1.2.242-354",
     "description": "P3X Onenote Linux",
     "main": "src/electron/app.js",
     "corifeus": {
@@ -32,11 +32,11 @@
     },
     "homepage": "https://pages.corifeus.com/onenote",
     "dependencies": {
+        "electron": "^1.8.2",
         "configstore": "^3.1.1",
         "corifeus-utils": "^1.1.832-290"
     },
     "devDependencies": {
-        "electron": "^1.8.2",
         "corifeus-builder": "^1.7.1225-311",
         "electron-builder": "^20.2.0"
     },
