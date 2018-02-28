@@ -37,27 +37,12 @@ https://nodejs.org/en/download/package-manager/
                         
 [//]: #@corifeus-header:end
 
-This is a Linux Onenote.
+This is a Linux Onenote. 
 
-# You cannot log in
+**Actually, the preferred installation is the ```AppImage``` and you do not even need to install ```NodeJs``` at all.**
 
-I think it only happens, if you kill the ```P3X OneNote Linux``` and you then login again a lot. So, if you test and/or ```kill``` the program often, to be safe ,  ```sign out```, it is on the top right (inside the Electron browser frame itself). 
+Issues are on the bottom of the ```README.md```.
 
-### BUT! 
-
-**If you properly ```quit``` from ```p3x-onenote``` with the menu or the tray, then this problem will never happen.**
-
-# Latest Gnome with dash-to-panel
-
-Right now, for some weird, the new latest ```Gnome```, with ```dash-to-panel``` they removed the ```legacy tray``` icons or changed so that with ```Electron``` (as well many programs, including ```Skype``` ) is not working with the ```real original tray```. This is not an ```Electron``` or ```p3x-onenote``` issue, but the ```Gnome``` ```dash-to-panel``` problem.   
-Probably it is too new, they will fix it, I think.
-
-# Some info about P3X Onenote vs VirtualBox
-If you have enough RAM or buffy workstation and you can install VirtualBox inside Windows and use the Marketplace based OneNote or install Office. I think, you do not need  ```p3x-onenote``` at all.  
-
-For my workstation, with a 4.8Ghz CPU, 4 cores, 32 GB-ram, I use VirtualBox on Windows with Office Onenote (I use 6 GB RAM, 4 cores), but unfortunately my Laptop is old and has only 16GB RAM. Given, I develop a lot (NodeJs), I need the RAM, so for my Laptop, I use ```p3x-onenote``` and it's enough. Once the pages are loaded. It is fast, since it's own process without a browser and is in the tray, you don't have to re-load everything again. So it is very usable and after all pages are loaded, quick.
-
-**You can try, you loose nothing.**
 
 # Downloadable installer
 
@@ -92,16 +77,6 @@ p3x-onenote
 ```
 
 After last startup and you logout and login again, you will have a menu.
-  
-Fedora: https://github.com/patrikx3/onenote/issues/3#issuecomment-312711801
-  
-# Change language
-
-Right now, with online, it reverts even though on the main page I changed, but once it goes to do the actual pages - it reverts.
-There is an investigation.
-
-https://github.com/patrikx3/onenote/issues/14
-
 
 # Features
 * GNOME menu (`````~/.local/share/applications/p3x-onenote.desktop`````)
@@ -121,6 +96,39 @@ https://github.com/patrikx3/onenote/issues/14
 
 ![Screenshot 1](https://cdn.corifeus.com/git/onenote/artifacts/screenshot/1.png)
 
+# Some info about P3X Onenote vs VirtualBox
+
+If you have enough RAM or buffy workstation and you can install VirtualBox inside Windows and use the Marketplace based OneNote or install Office. I think, you do not need  ```p3x-onenote``` at all.  
+
+For my workstation, with a 4.8Ghz CPU, 4 cores, 32 GB-ram, I use VirtualBox on Windows with Office Onenote (I use 6 GB RAM, 4 cores), but unfortunately my Laptop is old and has only 16GB RAM. Given, I develop a lot (NodeJs), I need the RAM, so for my Laptop, I use ```p3x-onenote``` and it's enough. Once the pages are loaded. It is fast, since it's own process without a browser and is in the tray, you don't have to re-load everything again. So it is very usable and after all pages are loaded, quick.
+
+**You can try, you loose nothing.**
+
+# Issues
+
+## You cannot log in
+
+I think it only happens, if you kill the ```P3X OneNote Linux``` and you then login again a lot. So, if you test and/or ```kill``` the program often, to be safe ,  ```sign out```, it is on the top right (inside the Electron browser frame itself). 
+
+### BUT! 
+
+**If you properly ```quit``` from ```p3x-onenote``` with the menu or the tray, then this problem will never happen.**
+
+## Latest Gnome with dash-to-panel
+
+Right now, for some weird, the new latest ```Gnome```, with ```dash-to-panel``` they removed the ```legacy tray``` icons or changed so that with ```Electron``` (as well many programs, including ```Skype``` ) is not working with the ```real original tray```. This is not an ```Electron``` or ```p3x-onenote``` issue, but the ```Gnome``` ```dash-to-panel``` problem.   
+Probably it is too new, they will fix it, I think.
+  
+## Fedora
+
+https://github.com/patrikx3/onenote/issues/3#issuecomment-312711801
+  
+## Change language
+
+Right now, with online, it reverts even though on the main page I changed, but once it goes to do the actual pages - it reverts.
+There is an investigation.
+
+https://github.com/patrikx3/onenote/issues/14
 
 
 [//]: #@corifeus-footer
