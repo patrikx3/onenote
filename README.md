@@ -79,6 +79,7 @@ p3x-onenote
 After last startup and you logout and login again, you will have a menu.
 
 # Features
+
 * GNOME menu (`````~/.local/share/applications/p3x-onenote.desktop`````)
 * Icon
 * Tray
@@ -88,7 +89,7 @@ After last startup and you logout and login again, you will have a menu.
 * Quit
 * Loads last visibility state
 
-# Corporate
+## Corporate
 
 * Now, there is a menu ```Corporate home```
 
