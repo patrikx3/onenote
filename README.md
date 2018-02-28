@@ -81,6 +81,8 @@ https://electron.atom.io/apps/?q=onenote
 
 The ```CLI``` install is not always working because of some Linux distros are different by time to time, so it is possible then, the ```configstore``` is only working with ```sudo```, so the preferred way is to use the ```released``` ```AppImage``` as above! 
 
+Besides, you do not even need to install ```NodeJs```, the ```AppImage``` includes everything all you need.
+
 ```bash
 # this is some weird NPM error, you need like this:
 node -v
