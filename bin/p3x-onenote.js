@@ -10,7 +10,7 @@ const path = require('path');
 const mz = require('mz');
 
 const start = async() => {
-
+/*
     const desktopEntry = `${process.env.HOME}/.local/share/applications/p3x-onenote.desktop`;
     const exists = await utils.fs.ensureFile(desktopEntry, `[Desktop Entry]
 Version=1.0
@@ -26,6 +26,7 @@ Terminal=false
         await mz.fs.chmod(desktopEntry , '0755');
         await utils.childProcess.exec('gtk-update-icon-cache || true');
     }
+*/
     await utils.childProcess.exec(`${__dirname}/../node_modules/.bin/electron ${__dirname}/../src/electron/app.js`, true);
 }
 

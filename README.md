@@ -7,7 +7,7 @@
 ---
 
  
-# P3X Onenote Linux v1.2.247-364  
+# P3X Onenote Linux v1.2.251-366  
 
 This is an open source project. Just code. If you like this code, please add a star in GitHub and you really like, you can donate as well. Thanks you so much!
 
@@ -22,7 +22,7 @@ All my domains (patrikx3.com and corifeus.com) could have errors right now, sinc
    
 ### Built on Node 
 ``` 
-v9.6.1
+v9.7.1
 ```   
    
 The ```async``` and ```await``` keywords are required.
@@ -63,6 +63,12 @@ https://electron.atom.io/apps/?q=onenote
 
 
 # CLI Install
+
+## The CLI Install is DEPRECATED entirely!
+
+Please, do not use anymore.
+
+## The old method is problematic
 
 The ```CLI``` install is not always working because of some Linux distros are different by time to time, so it is possible then, the ```configstore``` is only working with ```sudo```, so the preferred way is to use the ```released``` ```AppImage``` as above! 
 
@@ -136,7 +142,7 @@ https://github.com/patrikx3/onenote/issues/14
 
 ---
 
-[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v1.2.247-364 
+[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v1.2.251-366 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
 
