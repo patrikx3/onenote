@@ -41,14 +41,14 @@ This is a Linux Onenote.
 
 **Actually, the preferred installation is the ```AppImage``` and you do not even need to install ```NodeJs``` at all.**
 
-Issues are on the bottom of the ```README.md```
+Issues are on the bottom of this ```README```.
 
 
 # Downloadable installer
 
 https://github.com/patrikx3/onenote/releases
 
-After you downloaded to ```AppImage``` you still want to make it executable:
+After you downloaded the ```AppImage```, you still want to make it executable:
 ```bash
 chmod +x p3x-onenote-a.b.c-d-x86_64.AppImage
 # then
