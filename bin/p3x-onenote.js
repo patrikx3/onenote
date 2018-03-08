@@ -1,6 +1,12 @@
 #!/usr/bin/env node
+//const os = require('os');
+//const process = require('process');
+//const cores = os.cpus().length < 4 ? 4 : os.cpus().length;
+//process.env.UV_THREADPOOL_SIZE = cores;
+//console.debug(`P3X sets UV_THREADPOOL_SIZE to ${cores} thread pool`)
+
 if (!require('fs').existsSync(`${__dirname}/../node_modules`)) {
-    require('child_process').execSync(`cd ${__dirname}/..; npm install`, {
+    require('child_process').execSync(`cd ${__dirname}/..; npm install --only=prod`, {
         stdio: 'inherit'
     });
 }
