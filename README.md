@@ -59,6 +59,10 @@ chmod +x p3x-onenote-a.b.c-d-x86_64.AppImage
 
 Then it works as expected.
 
+## Trick
+
+It is important, that you check the ```Keep me signed in``` checkbox when you enter your password and then choose some page (not notebook!!!, PAGE :) after you logged in, otherwise if will not save your login. If so, then you will be always logged in.
+
 # You can find it in Atom Apps as well
 
 https://electron.atom.io/apps/?q=onenote
