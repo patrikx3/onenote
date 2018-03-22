@@ -43,7 +43,7 @@ chmod +x p3x-onenote-a.b.c-d-x86_64.AppImage
 
 The app can also be found on [Atom Apps](https://electron.atom.io/apps/?q=onenote)
 
-If you want to install it on NodeJs instead of the AppImage, it is deprecated, but available [here](https://github.com/patrikx3/onenote/blob/c78e77c540e21b89e0e063cd50a10707faae722e/README.md)
+If you want to install it on NodeJs instead of the AppImage, it is deprecated, but available [here](https://github.com/patrikx3/onenote/blob/c78e77c540e21b89e0e063cd50a10707faae722e/README.md#cli-install)
 
 <!--
 ## Important Note
