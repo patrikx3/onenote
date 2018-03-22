@@ -1,13 +1,13 @@
 [//]: #@corifeus-header
 
-  [![Build Status](https://travis-ci.org/patrikx3/onenote.svg?branch=master)](https://travis-ci.org/patrikx3/onenote)  [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/patrikx3/onenote/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/patrikx3/onenote/?branch=master)  [![Code Coverage](https://scrutinizer-ci.com/g/patrikx3/onenote/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/patrikx3/onenote/?branch=master)
+  [![Build Status](https://travis-ci.org/patrikx3/onenote.svg?branch=master)](https://travis-ci.org/patrikx3/onenote)  [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/patrikx3/onenote/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/patrikx3/onenote/?branch=master)  [![Code Coverage](https://scrutinizer-ci.com/g/patrikx3/onenote/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/patrikx3/onenote/?branch=master) 
 
-
+  
 [![NPM](https://nodei.co/npm/p3x-onenote.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/p3x-onenote/)
 ---
 
-
-# P3X Onenote Linux v1.2.279-390  
+ 
+# P3X Onenote Linux v1.2.289-393  
 
 This is an open-source project. Star this repository if you like it, or even donate!  Thank you so much! :)
 
@@ -16,30 +16,19 @@ I run my own server with dynamic IP address so it may happen that the server can
 All my domains (patrikx3.com and corifeus.com) could have errors since I am developing in my free time. However, it is usually stable.
 
 
+    
+
+
+
 # Description  
 
-
+                        
 [//]: #@corifeus-header:end
 
 A Linux compatible version of OneNote
 
 
 ![Screenshot 1](https://cdn.corifeus.com/git/onenote/artifacts/screenshot/1.png)
-
-### Node Version Requirement
-```
->=8.9.0
-```  
-
-### Built on Node
-```
-v9.8.0
-```   
-
-The ```async``` and ```await``` keywords are required.
-
-Install NodeJs:    
-https://nodejs.org/en/download/package-manager/    
 
 # Downloadable installer
 
@@ -54,6 +43,9 @@ chmod +x p3x-onenote-a.b.c-d-x86_64.AppImage
 
 The app can also be found on [Atom Apps](https://electron.atom.io/apps/?q=onenote)
 
+If you want to install it on NodeJs instead of the AppImage, it is deprecated, but available [here](https://github.com/patrikx3/onenote/blob/c78e77c540e21b89e0e063cd50a10707faae722e/README.md)
+
+<!--
 ## Important Note
 
 Check the ```Keep me signed in``` checkbox when entering your password then choose any page (but not a notebook) after logging in. This will keep you logged in.
@@ -74,10 +66,11 @@ p3x-onenote
 ```
 
 Logout and relogin, and a menu will now appear.
+-->
 
 # Features
 
-* GNOME menu (`````~/.local/share/applications/p3x-onenote.desktop`````)
+* GNOME menu <!-- (`````~/.local/share/applications/p3x-onenote.desktop`````) -->
 * Icon
 * Tray
 * Restart button (empty your cache, you can login again if there is an error)
@@ -129,15 +122,15 @@ https://github.com/patrikx3/onenote/issues/14
 
 ---
 
-[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v1.2.279-390
+[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v1.2.289-393 
 
-[![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact)
+[![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
 
 
 ## Sponsor
 
 [![JetBrains](https://www.patrikx3.com/images/jetbrains-logo.svg)](https://www.jetbrains.com/)
-
-
+  
+ 
 
 [//]: #@corifeus-footer:end

@@ -5,6 +5,7 @@ module.exports = (grunt) => {
         replacer: {
             type: 'p3x',
             npmio: true,
+            nodejsinfo: false,
         },
     });
     grunt.registerTask('default', builder.config.task.build.js);
