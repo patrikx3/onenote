@@ -35,9 +35,11 @@ https://github.com/patrikx3/onenote/releases
 
 After downloading the ```AppImage```, make it an executable.
 ```bash
-chmod +x p3x-onenote-a.b.c-d-x86_64.AppImage
+sudo mkdir -p /opt
+sudo mv ~/Downloads/p3x-onenote-a.b.c-d-x86_64.AppImage /opt/p3x-onenote.Appimage
+sudo chmod +x /opt/p3x-onenote.AppImage
 # Then you can run it
-./p3x-onenote-a.b.c-d-x86_64.AppImage
+/opt/p3x-onenote.AppImage &
 ```
 
 The app can also be found on [Atom Apps](https://electron.atom.io/apps/?q=onenote)
