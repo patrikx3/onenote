@@ -6,7 +6,7 @@
 
 
  
-# P3X Onenote Linux v1.2.343-423  
+# 📚 P3X Onenote Linux v1.2.343-423  
 
 This is an open-source project. Star this repository if you like it, or even donate!  Thank you so much! :)
 
