@@ -23,7 +23,7 @@ const data = {
 
 window.electronWindowSetup = function() {
 
-    ipc.on('onload-user', function(event, data) {
+    ipc.on('p3x-onenote-onload-user', function(event, data) {
     	if (data !== null && data !== undefined) {
     		if (data.hasOwnProperty('url')) {
 				webview.src = data.url;
@@ -31,7 +31,7 @@ window.electronWindowSetup = function() {
 		}
     })
 
-	ipc.on('action', function(event, data) {
+	ipc.on('p3x-onenote-action', function(event, data) {
 		switch (data.action) {
 			case 'restart':
                 const session = webview.getWebContents().session;
@@ -52,13 +52,15 @@ window.electronWindowSetup = function() {
 	})
 
     const webview = document.getElementById("p3x-onenote-webview");
+    /*
 	webview.addEventListener('did-stop-loading', function(event) {
 //		webview.insertCSS(window.cssData);
 	});
+	*/
 
     webview.addEventListener('did-navigate', function(event, url) {
     	data.url = webview.src;
-        ipc.send('save', data);
+        ipc.send('p3x-onenote-save', data);
     });
 
 	webview.addEventListener('new-window', function(event) {

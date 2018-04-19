@@ -26,19 +26,19 @@ if (isSecondInstance) {
 
 const action = {
     restart: () => {
-        mainWindow.webContents.send('action', {
+        mainWindow.webContents.send('p3x-onenote-action', {
             action: 'restart'
         })
     },
     home: () => {
         mainWindow.show();
-        mainWindow.webContents.send('action', {
+        mainWindow.webContents.send('p3x-onenote-action', {
             action: 'home'
         })
     },
     corporate: () => {
         mainWindow.show();
-        mainWindow.webContents.send('action', {
+        mainWindow.webContents.send('p3x-onenote-action', {
             action: 'corporate'
         })
     },
@@ -166,7 +166,7 @@ function createMenu() {
                     click: action.corifeus
                 },
                 {
-                    label: 'Npm',
+                    label: 'NPM',
                     click: action.npm
                 },
             ]
@@ -230,7 +230,7 @@ function createWindow() {
         return false;
     });
 
-    const windowBounds = conf.get('windowBounds');
+    const windowBounds = conf.get('window-bounds');
     if (windowBounds !== null && windowBounds !== undefined) {
         mainWindow.setBounds(windowBounds);
     }
@@ -239,17 +239,17 @@ function createWindow() {
 
 }
 ipc.on('did-finish-load', function () {
-    const hostData = conf.get('toHost');
+    const toWebview = conf.get('to-webview');
 //    console.log('Loading data', hostData);
-    if (hostData !== undefined && hostData !== null) {
-        mainWindow.webContents.send('onload-user', hostData);
+    if (toWebview !== undefined && toWebview !== null) {
+        mainWindow.webContents.send('p3x-onenote-onload-user', toWebview);
     }
 });
 
-ipc.on('save', function (event, data) {
-//    console.log('Save', data)
-    conf.set('toHost', data);
-    conf.set('windowBounds', mainWindow.getBounds());
+ipc.on('p3x-onenote-save', function (event, data) {
+//    console.log('p3x-onenote-save', data)
+    conf.set('to-webview', data);
+    conf.set('window-bounds', mainWindow.getBounds());
 })
 
 app.on('ready', createWindow);
