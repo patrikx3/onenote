@@ -70,7 +70,7 @@ p3x-onenote
 Logout and relogin, and a menu will now appear.
 -->
 
-## If you are NodeJs Ninja
+## If you are a NodeJs Ninja
 
 [readme](./artifacts/npm.md)
 
