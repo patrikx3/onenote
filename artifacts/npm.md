@@ -11,7 +11,7 @@ If you know what you are doing and you are a Ninja, here you go:
 
 ```bash
 sudo npm install -g p3x-onenote --unsafe-perm=true --allow-root
-p3x-onenote
+p3x-onenote &
 ```
 
 ## Warning

@@ -44,9 +44,10 @@ sudo chmod +x /opt/p3x-onenote.AppImage
 
 The app can also be found on [Atom Apps](https://electron.atom.io/apps/?q=onenote)
 
+<!--
+
 If you want to install it on NodeJs instead of the AppImage, it is deprecated, but available [here](https://github.com/patrikx3/onenote/blob/c78e77c540e21b89e0e063cd50a10707faae722e/README.md#cli-install)
 
-<!--
 ## Important Note
 
 Check the ```Keep me signed in``` checkbox when entering your password then choose any page (but not a notebook) after logging in. This will keep you logged in.
@@ -69,7 +70,7 @@ p3x-onenote
 Logout and relogin, and a menu will now appear.
 -->
 
-## If you are NodeJs master
+## If you are NodeJs Ninja
 
 [readme](./artifacts/npm.md)
 
