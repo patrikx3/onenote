@@ -69,6 +69,10 @@ p3x-onenote
 Logout and relogin, and a menu will now appear.
 -->
 
+## If you are NodeJs master
+
+[readme](./artifacts/npm.md)
+
 # Features
 
 * GNOME menu <!-- (`````~/.local/share/applications/p3x-onenote.desktop`````) -->
