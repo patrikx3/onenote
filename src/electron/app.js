@@ -225,19 +225,18 @@ function createTray() {
     tray.setContextMenu(contextMenu)
 }
 
-function setVisible(visible = true) {
+function setVisible(visible = true, force = false) {
     if (visible === null) {
         visible = true;
     }
     if (mainWindow !== undefined) {
 
-        if (visible || mainWindow.isMinimized()) {
+        if (visible || (mainWindow.isMinimized() && !force)) {
             visible = true;
             mainWindow.show();
         } else {
-            if (disableHide) {
-                mainWindow.minimize()
-            } else {
+            mainWindow.minimize()
+            if (!disableHide) {
                 mainWindow.hide();
             }
         }
@@ -263,7 +262,7 @@ function createWindow() {
 
     mainWindow.on('minimize', function (event) {
         event.preventDefault()
-        setVisible(false);
+        setVisible(false, true);
     });
 
     mainWindow.on('close', function (event) {
