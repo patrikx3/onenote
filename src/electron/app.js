@@ -1,5 +1,5 @@
 const electron = require('electron');
-const { app, Menu, Tray, shell} = require('electron')
+const { app, Menu, Tray, shell, dialog} = require('electron')
 const ipc = electron.ipcMain;
 let tray;
 let mainWindow;
@@ -12,6 +12,13 @@ const BrowserWindow = electron.BrowserWindow;
 const configstore = require('configstore');
 const pkg = require('../../package.json');
 const conf = new configstore(pkg.name);
+
+let disableHide = conf.get('disable-hide')
+if (disableHide === undefined) {
+    conf.set('disable-hide', true)
+    disableHide = true;
+}
+
 
 /*
 const isSecondInstance = app.makeSingleInstance((commandLine, workingDirectory) => {
@@ -79,7 +86,8 @@ const menus = {
         if (mainWindow !== undefined) {
             visible = mainWindow.isVisible() ? true : false;
         }
-        return [
+
+        let menus = [
             {
                 label: 'Personal home',
                 click: action.home
@@ -92,27 +100,57 @@ const menus = {
                 label: 'First sign off, then click this menu option to clear the cache',
                 click: action.restart
             },
-            {
-                label: visible ? 'Hide' : 'Show',
-                click: action.toggleVisible
-            },
-            {
-                label: 'Download',
-                click: action.download
-            },
+
             {
                 label: 'Quit',
                 click: action.quit
             }
         ]
+
+        if (!disableHide) {
+            const hideMenu = {
+                label: visible ? 'Hide' : 'Show',
+                click: action.toggleVisible
+            }
+            menus.splice( 3, 0, hideMenu );
+        }
+
+
+        return menus;
     }
 }
 
 function createMenu() {
+
+    const minimizationBehaviorLabel = !disableHide ? 'Disable hiding the main window' : 'Enable hiding the main window'
+
     const template = [
         {
             label: title,
             submenu: menus.default(),
+        },
+        {
+            label: 'Settings',
+            submenu: [
+                {
+                    label: minimizationBehaviorLabel,
+                    click: () => {
+                        disableHide = !disableHide;
+                        conf.set('disable-hide', disableHide);
+
+                        const message = disableHide ? 'For now, the main window is always shown' : 'For now, when you minimize the window it will be hidden and can be only shown in the tray.'
+
+                        dialog.showMessageBox(mainWindow, {
+                            type: 'info',
+                            title: 'Minimization behavior',
+                            message: message,
+                            buttons: ['OK']
+                        })
+                        createMenu()
+                        createTray()
+                    }
+                }
+            ],
         },
         {
             label: 'Edit',
@@ -192,10 +230,16 @@ function setVisible(visible = true) {
         visible = true;
     }
     if (mainWindow !== undefined) {
-        if (visible) {
+
+        if (visible || mainWindow.isMinimized()) {
+            visible = true;
             mainWindow.show();
         } else {
-            mainWindow.hide();
+            if (disableHide) {
+                mainWindow.minimize()
+            } else {
+                mainWindow.hide();
+            }
         }
     }
     conf.set('visible', visible);
@@ -213,7 +257,7 @@ function createWindow() {
     });
 
 
-    setVisible(conf.get('visible'));
+    setVisible(true);
 
     mainWindow.loadURL('file://' + __dirname + '/index.html');
 

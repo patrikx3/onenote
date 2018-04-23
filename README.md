@@ -109,8 +109,7 @@ This only happens if you kill ```P3X OneNote Linux``` and then relogin many time
 
 ## Latest Gnome with dash-to-panel
 
-The latest ```Gnome``` version with ```dash-to-panel``` removed the ```legacy tray``` icons so that ```Electron``` (and other programs, including ```Skype``` ) do not work with the ```real original tray```. This is not an ```Electron``` or ```p3x-onenote``` issue, but a ```Gnome``` ```dash-to-panel``` problem.   
-
+For now, I set a `Menu > Settings -> Disable hiding the main window | Enable hiding the main window`, where you can enable or disable hiding, so if the Electron Tray is not working for you, you can set it with this `Setting`.
 
 ## Fedora
 
