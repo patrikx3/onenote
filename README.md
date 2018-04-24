@@ -6,7 +6,7 @@
 
 
  
-# 📚 P3X Onenote Linux v1.2.366-448  
+# 📚 P3X Onenote Linux v1.2.367-449  
 
 This is an open-source project. Star this repository if you like it, or even donate!  Thank you so much! :)
 
@@ -93,7 +93,7 @@ Right now, do not click the P3X Linux Onenote launcher multiple times, because i
     * If you have nested tray or not showing the tray, use this
     * **THIS IS THE DEFAULT AS IS THE FALLBACK**
 * Tray - show / hide by 1 click and hide the window list
-  * If in the Settings menu, you use the **Enable hiding the main window** is set, you can hide the window list and only show the tray, give you more space (but some Linux distros are not like Linux Mint, just try the settings)
+  * If in the Settings menu, you set the **Enable hiding the main window** option, you can hide the window list and only show the tray, give you more space (but some Linux distros are not like Linux Mint, just try the settings, it can be awesome 👌)
 
 <!--
 * Loads last visibility state
@@ -141,7 +141,7 @@ https://github.com/patrikx3/onenote/issues/14
 
 ---
 
-[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v1.2.366-448 
+[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v1.2.367-449 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
 
