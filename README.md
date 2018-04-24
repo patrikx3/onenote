@@ -6,7 +6,7 @@
 
 
  
-# 📚 P3X Onenote Linux v1.2.357-440  
+# 📚 P3X Onenote Linux v1.2.358-441  
 
 This is an open-source project. Star this repository if you like it, or even donate!  Thank you so much! :)
 
@@ -76,6 +76,8 @@ Logout and relogin, and a menu will now appear.
 
 # Features
 
+* **IMPORTANT**
+  * Right now, do not click the P3X Linux Onenote launcher multiple times, because it will spawn multiple copies and the Online Onenote limits the logins.  I haven't enough time to properly implement this function (to when you click the launcher it should not spawn a new P3X Onenote, but just show the existing window), so I had issues, I removed this Electron singleton spawn function, but once it will works, it will be released.
 * GNOME menu <!-- (`````~/.local/share/applications/p3x-onenote.desktop`````) -->
 * Icon
 * Tray
@@ -137,7 +139,7 @@ https://github.com/patrikx3/onenote/issues/14
 
 ---
 
-[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v1.2.357-440 
+[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v1.2.358-441 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
 
