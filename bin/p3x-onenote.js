@@ -6,7 +6,7 @@
 //console.debug(`P3X sets UV_THREADPOOL_SIZE to ${cores} thread pool`)
 
 if (!require('fs').existsSync(`${__dirname}/../node_modules`)) {
-    require('child_process').execSync(`cd ${__dirname}/..; npm install --only=prod`, {
+    require('child_process').execSync(`cd ${__dirname}/.. && npm install --only=prod`, {
         stdio: 'inherit'
     });
 }
