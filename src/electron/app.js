@@ -244,6 +244,10 @@ function setVisible(visible = true, force = false) {
     conf.set('visible', visible);
     createMenu();
     createTray()
+
+    mainWindow.webContents.send('p3x-onenote-action', {
+        action: 'focus'
+    })
 }
 
 

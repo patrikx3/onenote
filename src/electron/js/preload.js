@@ -33,6 +33,12 @@ window.electronWindowSetup = function() {
 
 	ipc.on('p3x-onenote-action', function(event, data) {
 		switch (data.action) {
+            case 'focus':
+                if (webview !== undefined) {
+                    webview.focus()
+                }
+                break;
+
 			case 'restart':
                 const session = webview.getWebContents().session;
                 session.clearStorageData(() => {
@@ -52,6 +58,9 @@ window.electronWindowSetup = function() {
 	})
 
     const webview = document.getElementById("p3x-onenote-webview");
+
+    webview.focus()
+
     /*
 	webview.addEventListener('did-stop-loading', function(event) {
 //		webview.insertCSS(window.cssData);
