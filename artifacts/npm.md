@@ -20,7 +20,7 @@ This installation is not supported at all.
 
 ###  Note 🤔
 
-Though I am using it, but some distros are different and I only use Linux Mint and still I can't support this way. 😃 
+Though, I am using it, but some distros are different and I only use Linux Mint and still, I can't support this way. 🤗 
 
 
 [//]: #@corifeus-footer
