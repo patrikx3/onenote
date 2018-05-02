@@ -1,21 +1,6 @@
 const electron =require('electron');
-const fs = require('fs');
 const shell = electron.shell;
 const ipc = electron.ipcRenderer;
-const remote = electron.remote;
-
-/*
-const cssPath = __dirname + '/css/onenoteStyles/onenote.css';
-const BrowserWindow =  electron.BrowserWindow;
-
-fs.readFile(cssPath, 'utf-8', function(err, data) {
-	if (err) {
-		console.log(err);
-    }
-	window.cssData = data;
-	console.log("loaded css");
-});
-*/
 
 const data = {
 	url: ''
@@ -33,9 +18,24 @@ window.electronWindowSetup = function() {
 
 	ipc.on('p3x-onenote-action', function(event, data) {
 		switch (data.action) {
+/*
+            case 'focus-save':
+//console.log('focus-save')
+                webview.getWebContents().executeJavaScript(`window.p3xOnenoteActiveElement = document.activeElement; window.p3xIframe = document.getElementById('sdx_ow_iframe'); window.p3xIframeDoc = window.p3xIframe.contentDocument || window.p3xIframe.contentWindow.document; console.log(window.p3xIframeDoc.activeElement);`)
+                break;
+*/
             case 'focus':
+//                webview.openDevTools();
                 if (webview !== undefined) {
                     webview.focus()
+                    /*
+                    webview.getWebContents().executeJavaScript(`var a = 'foo'; Promise.resolve(a);`).then(result => {
+                        console.log(result)
+                    }).catch(e => console.error(e))
+                    */
+                    //webview.getWebContents().executeJavaScript(`console.log(window.p3xOnenoteActiveElement)`)
+
+                    //document.activeElement
                 }
                 break;
 
@@ -61,6 +61,7 @@ window.electronWindowSetup = function() {
 
     webview.focus()
 
+
     /*
 	webview.addEventListener('did-stop-loading', function(event) {
 //		webview.insertCSS(window.cssData);
@@ -82,24 +83,6 @@ window.electronWindowSetup = function() {
 
     ipc.send('did-finish-load');
 
-	/*
-	document.getElementById('openConsoleBtn').addEventListener('click', function(event) {
-		BrowserWindow.getFocusedWindow().webContents.openDevTools();
-	});
-
-	document.getElementById('min-btn').addEventListener('click', function(event) {
-		BrowserWindow.getFocusedWindow().minimize();
-	});
-
-	document.getElementById('max-btn').addEventListener('click', function(event) {
-		BrowserWindow.getFocusedWindow().maximize();
-	});
-
-	// use an IPC for this one so we can get the window state and save it to a file before it closes
-	document.getElementById('close-btn').addEventListener('click', function(event) {
-		ipc.send('appClose');
-	});
-	*/
 }
 
 const removeCookies = (webview) => {

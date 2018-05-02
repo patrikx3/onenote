@@ -229,6 +229,16 @@ function setVisible(visible = true, force = false) {
     if (visible === null) {
         visible = true;
     }
+
+
+    /*
+    else {
+        mainWindow.webContents.send('p3x-onenote-action', {
+            action: 'focus-save'
+        })
+    }
+    */
+
     if (mainWindow !== undefined) {
 
         if (visible || (mainWindow.isMinimized() && !force)) {
@@ -245,9 +255,12 @@ function setVisible(visible = true, force = false) {
     createMenu();
     createTray()
 
-    mainWindow.webContents.send('p3x-onenote-action', {
-        action: 'focus'
-    })
+
+    if (visible || force) {
+        mainWindow.webContents.send('p3x-onenote-action', {
+            action: 'focus'
+        })
+    }
 }
 
 
@@ -276,6 +289,14 @@ function createWindow() {
         }
         return false;
     });
+
+    mainWindow.on('focus', () => {
+
+        mainWindow.webContents.send('p3x-onenote-action', {
+            action: 'focus'
+        })
+    })
+
 
     const windowBounds = conf.get('window-bounds');
     if (windowBounds !== null && windowBounds !== undefined) {
