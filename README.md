@@ -2,9 +2,11 @@
   
 [![NPM](https://nodei.co/npm/p3x-onenote.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/p3x-onenote/)
 
-  [![Build Status](https://travis-ci.org/patrikx3/onenote.svg?branch=master)](https://travis-ci.org/patrikx3/onenote)  [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/patrikx3/onenote/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/patrikx3/onenote/?branch=master)  [![Code Coverage](https://scrutinizer-ci.com/g/patrikx3/onenote/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/patrikx3/onenote/?branch=master)  [![Backers on Open Collective](https://opencollective.com/onenote/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/onenote/sponsors/badge.svg)](#sponsors) 
+  [![Build Status](https://travis-ci.org/patrikx3/onenote.svg?branch=master)](https://travis-ci.org/patrikx3/onenote)  [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/patrikx3/onenote/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/patrikx3/onenote/?branch=master)  [![Code Coverage](https://scrutinizer-ci.com/g/patrikx3/onenote/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/patrikx3/onenote/?branch=master) [![Backers on Open Collective](https://opencollective.com/p3x-onenote/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/p3x-onenote/sponsors/badge.svg)](#sponsors) 
+
+
  
-# 📚 P3X Onenote Linux v1.2.377-462  
+# 📚 P3X Onenote Linux v1.2.387-469  
 
 This is an open-source project. Star this repository if you like it, or even donate!  Thank you so much! :)
 
@@ -21,9 +23,6 @@ All my domains (patrikx3.com and corifeus.com) could have errors since I am deve
 
                         
 [//]: #@corifeus-header:end
-
-
-
 
 A Linux compatible version of OneNote
 
@@ -142,7 +141,7 @@ https://github.com/patrikx3/onenote/issues/14
 
 ---
 
-[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v1.2.377-462 
+[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v1.2.387-469 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
 
@@ -156,36 +155,37 @@ https://github.com/patrikx3/onenote/issues/14
 [The Smartest IDE for MongoDB](https://www.nosqlbooster.com)
   
   
- 
 
-[//]: #@corifeus-footer:end
 
 ## Contributors
 
-This project exists thanks to all the people who contribute. 
-<a href="graphs/contributors"><img src="https://opencollective.com/onenote/contributors.svg?width=890&button=false" /></a>
+This project exists thanks to all the people who contribute.  
+   
+<a href="https://github.com/patrikx3/p3x-onenote/graphs/contributors"><img src="https://opencollective.com/p3x-onenote/contributors.svg?width=890&button=false" /></a>
 
 
 ## Backers
 
-Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/onenote#backer)]
+Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/p3x-onenote#backer)]
 
-<a href="https://opencollective.com/onenote#backers" target="_blank"><img src="https://opencollective.com/onenote/backers.svg?width=890"></a>
+<a href="https://opencollective.com/p3x-onenote#backers" target="_blank"><img src="https://opencollective.com/p3x-onenote/backers.svg?width=890"></a>
 
 
 ## Sponsors
 
-Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://opencollective.com/onenote#sponsor)]
+Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://opencollective.com/p3x-onenote#sponsor)]
 
-<a href="https://opencollective.com/onenote/sponsor/0/website" target="_blank"><img src="https://opencollective.com/onenote/sponsor/0/avatar.svg"></a>
-<a href="https://opencollective.com/onenote/sponsor/1/website" target="_blank"><img src="https://opencollective.com/onenote/sponsor/1/avatar.svg"></a>
-<a href="https://opencollective.com/onenote/sponsor/2/website" target="_blank"><img src="https://opencollective.com/onenote/sponsor/2/avatar.svg"></a>
-<a href="https://opencollective.com/onenote/sponsor/3/website" target="_blank"><img src="https://opencollective.com/onenote/sponsor/3/avatar.svg"></a>
-<a href="https://opencollective.com/onenote/sponsor/4/website" target="_blank"><img src="https://opencollective.com/onenote/sponsor/4/avatar.svg"></a>
-<a href="https://opencollective.com/onenote/sponsor/5/website" target="_blank"><img src="https://opencollective.com/onenote/sponsor/5/avatar.svg"></a>
-<a href="https://opencollective.com/onenote/sponsor/6/website" target="_blank"><img src="https://opencollective.com/onenote/sponsor/6/avatar.svg"></a>
-<a href="https://opencollective.com/onenote/sponsor/7/website" target="_blank"><img src="https://opencollective.com/onenote/sponsor/7/avatar.svg"></a>
-<a href="https://opencollective.com/onenote/sponsor/8/website" target="_blank"><img src="https://opencollective.com/onenote/sponsor/8/avatar.svg"></a>
-<a href="https://opencollective.com/onenote/sponsor/9/website" target="_blank"><img src="https://opencollective.com/onenote/sponsor/9/avatar.svg"></a>
+<a href="https://opencollective.com/p3x-onenote/sponsor/0/website" target="_blank"><img src="https://opencollective.com/p3x-onenote/sponsor/0/avatar.svg"></a>
+<a href="https://opencollective.com/p3x-onenote/sponsor/1/website" target="_blank"><img src="https://opencollective.com/p3x-onenote/sponsor/1/avatar.svg"></a>
+<a href="https://opencollective.com/p3x-onenote/sponsor/2/website" target="_blank"><img src="https://opencollective.com/p3x-onenote/sponsor/2/avatar.svg"></a>
+<a href="https://opencollective.com/p3x-onenote/sponsor/3/website" target="_blank"><img src="https://opencollective.com/p3x-onenote/sponsor/3/avatar.svg"></a>
+<a href="https://opencollective.com/p3x-onenote/sponsor/4/website" target="_blank"><img src="https://opencollective.com/p3x-onenote/sponsor/4/avatar.svg"></a>
+<a href="https://opencollective.com/p3x-onenote/sponsor/5/website" target="_blank"><img src="https://opencollective.com/p3x-onenote/sponsor/5/avatar.svg"></a>
+<a href="https://opencollective.com/p3x-onenote/sponsor/6/website" target="_blank"><img src="https://opencollective.com/p3x-onenote/sponsor/6/avatar.svg"></a>
+<a href="https://opencollective.com/p3x-onenote/sponsor/7/website" target="_blank"><img src="https://opencollective.com/p3x-onenote/sponsor/7/avatar.svg"></a>
+<a href="https://opencollective.com/p3x-onenote/sponsor/8/website" target="_blank"><img src="https://opencollective.com/p3x-onenote/sponsor/8/avatar.svg"></a>
+<a href="https://opencollective.com/p3x-onenote/sponsor/9/website" target="_blank"><img src="https://opencollective.com/p3x-onenote/sponsor/9/avatar.svg"></a>
+        
+ 
 
-
+[//]: #@corifeus-footer:end
