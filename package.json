@@ -15,7 +15,8 @@
     },
     "scripts": {
         "test": "grunt",
-        "build": "build build/dist"
+        "build": "build build/dist",
+        "postinstall": "opencollective postinstall"
     },
     "repository": {
         "type": "git",
@@ -32,9 +33,10 @@
     },
     "homepage": "https://pages.corifeus.com/onenote",
     "dependencies": {
-        "electron": "^1.8.6",
         "configstore": "^3.1.2",
-        "corifeus-utils": "^1.2.15-358"
+        "corifeus-utils": "^1.2.15-358",
+        "electron": "^1.8.6",
+        "opencollective": "^1.0.3"
     },
     "devDependencies": {
         "corifeus-builder": "^1.7.1350-372",
@@ -52,5 +54,9 @@
             "icon": "src/electron/images/",
             "target": "appimage"
         }
+    },
+    "collective": {
+        "type": "opencollective",
+        "url": "https://opencollective.com/onenote"
     }
 }
