@@ -3,9 +3,6 @@
 [![NPM](https://nodei.co/npm/p3x-onenote.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/p3x-onenote/)
 
   [![Build Status](https://travis-ci.org/patrikx3/onenote.svg?branch=master)](https://travis-ci.org/patrikx3/onenote)  [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/patrikx3/onenote/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/patrikx3/onenote/?branch=master)  [![Code Coverage](https://scrutinizer-ci.com/g/patrikx3/onenote/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/patrikx3/onenote/?branch=master) 
-  [![Backers on Open Collective](https://opencollective.com/onenote/backers/badge.svg)](#backers)
- [![Sponsors on Open Collective](https://opencollective.com/onenote/sponsors/badge.svg)](#sponsors) 
-
 
  
 # 📚 P3X Onenote Linux v1.2.377-462  
@@ -25,6 +22,11 @@ All my domains (patrikx3.com and corifeus.com) could have errors since I am deve
 
                         
 [//]: #@corifeus-header:end
+
+[![Backers on Open Collective](https://opencollective.com/onenote/backers/badge.svg)](#backers)
+[![Sponsors on Open Collective](https://opencollective.com/onenote/sponsors/badge.svg)](#sponsors) 
+
+
 
 A Linux compatible version of OneNote
 
@@ -160,6 +162,7 @@ https://github.com/patrikx3/onenote/issues/14
  
 
 [//]: #@corifeus-footer:end
+
 ## Contributors
 
 This project exists thanks to all the people who contribute. 
