@@ -27,7 +27,7 @@ Though, I am using it, but some distros are different and I only use Linux Mint 
 
 ---
 
-[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v1.2.387-469 
+[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v1.2.397-482 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
 
@@ -47,7 +47,7 @@ Though, I am using it, but some distros are different and I only use Linux Mint 
 
 This project exists thanks to all the people who contribute.  
    
-<a href="https://github.com/patrikx3/p3x-onenote/graphs/contributors"><img src="https://opencollective.com/p3x-onenote/contributors.svg?width=890&button=false" /></a>
+<a href="https://github.com/patrikx3/onenote/graphs/contributors"><img src="https://opencollective.com/p3x-onenote/contributors.svg?width=890&button=false" /></a>
 
 
 ## Backers
