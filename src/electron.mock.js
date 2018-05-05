@@ -1,8 +1,6 @@
-var Module = require('module');
-var originalRequire = Module.prototype.require;
+const Module = require('module');
+const originalRequire = Module.prototype.require;
 
-
-global.window = {};
 Module.prototype.require = function(name){
     switch(name) {
         case 'electron':
@@ -21,3 +19,9 @@ Module.prototype.require = function(name){
     //do your thing here
     return originalRequire.apply(this, arguments);
 };
+
+const { JSDOM } = require("jsdom");
+const dom = new JSDOM(`<!DOCTYPE html><p>Hello world</p>`);
+
+global.document = dom.window.document;
+global.window = dom.window
