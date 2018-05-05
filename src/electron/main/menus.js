@@ -4,8 +4,8 @@ const menus = {
     default: () => {
 
         let visible = false;
-        if (global.p3x.onenote.mainWindow !== undefined) {
-            visible = global.p3x.onenote.mainWindow.isVisible() ? true : false;
+        if (global.p3x.onenote.window.onenote !== undefined) {
+            visible = global.p3x.onenote.window.onenote.isVisible() ? true : false;
         }
 
         let menus = [

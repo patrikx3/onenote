@@ -12,25 +12,25 @@ function setVisible(visible = true, force = false) {
     }
     */
 
-    if (global.p3x.onenote.mainWindow !== undefined) {
+    if (global.p3x.onenote.window.onenote !== undefined) {
 
-        if (visible || (global.p3x.onenote.mainWindow.isMinimized() && !force)) {
+        if (visible || (global.p3x.onenote.window.onenote.isMinimized() && !force)) {
             visible = true;
-            global.p3x.onenote.mainWindow.show();
+            global.p3x.onenote.window.onenote.show();
         } else {
-            global.p3x.onenote.mainWindow.minimize()
+            global.p3x.onenote.window.onenote.minimize()
             if (!global.p3x.onenote.disableHide) {
-                global.p3x.onenote.mainWindow.hide();
+                global.p3x.onenote.window.onenote.hide();
             }
         }
     }
     global.p3x.onenote.conf.set('visible', visible);
-    global.p3x.onenote.createMenu();
-    global.p3x.onenote.createTray()
+    global.p3x.onenote.mainMenu();
+    global.p3x.onenote.mainTray()
 
 
     if (visible || force) {
-        global.p3x.onenote.mainWindow.webContents.send('p3x-onenote-action', {
+        global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-action', {
             action: 'focus'
         })
     }

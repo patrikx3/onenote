@@ -4,27 +4,27 @@ const action = {
     setProxy: require('./actions/set-proxy'),
 
     restart: () => {
-        global.p3x.onenote.mainWindow.webContents.send('p3x-onenote-action', {
+        global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-action', {
             action: 'restart'
         })
     },
     home: () => {
-        global.p3x.onenote.mainWindow.show();
-        global.p3x.onenote.mainWindow.webContents.send('p3x-onenote-action', {
+        global.p3x.onenote.window.onenote.show();
+        global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-action', {
             action: 'home'
         })
     },
     corporate: () => {
-        global.p3x.onenote.mainWindow.show();
-        global.p3x.onenote.mainWindow.webContents.send('p3x-onenote-action', {
+        global.p3x.onenote.window.onenote.show();
+        global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-action', {
             action: 'corporate'
         })
     },
     toggleVisible: () => {
-        if (global.p3x.onenote.mainWindow === undefined) {
+        if (global.p3x.onenote.window.onenote === undefined) {
             return;
         }
-        global.p3x.onenote.setVisible(!global.p3x.onenote.mainWindow.isVisible());
+        global.p3x.onenote.setVisible(!global.p3x.onenote.window.onenote.isVisible());
     },
     quit: function () {
         app.isQuiting = true;

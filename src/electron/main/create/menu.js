@@ -2,9 +2,9 @@ const { dialog, Menu } = require('electron')
 const menus = require('../menus');
 const action = require('../action');
 
-const createTray = require('./tray')
+const mainTray = require('./tray')
 
-function createMenu() {
+function mainMenu() {
 
     const minimizationBehaviorLabel = !global.p3x.onenote.disableHide ? global.p3x.onenote.lang.label.disableHide.no : global.p3x.onenote.lang.label.disableHide.yes
 
@@ -24,14 +24,14 @@ function createMenu() {
 
                         const message = global.p3x.onenote.disableHide ? global.p3x.onenote.lang.label.disableHide.message.yes : global.p3x.onenote.lang.label.disableHide.message.no
 
-                        dialog.showMessageBox(global.p3x.onenote.mainWindow, {
+                        dialog.showMessageBox(global.p3x.onenote.window.onenote, {
                             type: 'info',
                             title: global.p3x.onenote.lang.dialog.minimizationBehavior.title,
                             message: message,
                             buttons: [ global.p3x.onenote.lang.button.ok ]
                         })
-                        createMenu()
-                        createTray()
+                        mainMenu()
+                        mainTray()
                     }
                 },
                 {
@@ -103,4 +103,4 @@ function createMenu() {
     Menu.setApplicationMenu(menu)
 }
 
-module.exports = createMenu;
+module.exports = mainMenu;

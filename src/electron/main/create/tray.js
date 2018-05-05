@@ -3,7 +3,7 @@ const { Menu, Tray } = require('electron')
 const menus = require('../menus');
 const action = require('../action');
 
-function createTray() {
+function mainTray() {
     if (global.p3x.onenote.tray === undefined) {
         global.p3x.onenote.tray = new Tray(global.p3x.onenote.iconFile)
         global.p3x.onenote.tray.setToolTip(global.p3x.onenote.title)
@@ -13,4 +13,4 @@ function createTray() {
     global.p3x.onenote.tray.setContextMenu(contextMenu)
 }
 
-module.exports = createTray;
+module.exports = mainTray;

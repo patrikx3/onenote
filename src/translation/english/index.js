@@ -1,5 +1,5 @@
 const translation = {
-    title: 'P3X OneNote',
+    title: 'P3X Linux OneNote',
     label: {
         disableHide: {
             yes: 'Enable hiding the main window',

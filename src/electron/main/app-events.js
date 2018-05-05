@@ -1,6 +1,6 @@
 const { app } = require('electron')
 
-app.on('ready', global.p3x.onenote.createWindow);
+app.on('ready', global.p3x.onenote.createWindow.onenote);
 
 app.on('window-all-closed', function () {
 
@@ -10,7 +10,7 @@ app.on('window-all-closed', function () {
 });
 
 app.on('activate', function () {
-    if (global.p3x.onenote.mainWindow === null) {
-        global.p3x.onenote.createWindow();
+    if (global.p3x.onenote.window.onenote === null) {
+        global.p3x.onenote.createWindow.onenote();
     }
 });

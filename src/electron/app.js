@@ -12,12 +12,16 @@ global.p3x = {
         disableHide: true,
         iconFile: `${__dirname}/asset/256x256.png`,
         tray: undefined,
-        mainWindow: undefined,
+        window: {
+          onenote: undefined,
+        },
         action: undefined,
         menus: undefined,
-        createMenu: undefined,
+        mainMenu: undefined,
         setVisible: undefined,
-        createWindow: undefined,
+        createWindow: {
+            onenote: undefined,
+        },
     }
 }
 
@@ -31,16 +35,16 @@ if (global.p3x.onenote.disableHide === undefined) {
 // loading
 global.p3x.onenote.action = require('./main/action');
 global.p3x.onenote.menus = require('./main/menus');
-global.p3x.onenote.createMenu = require('./main/create/menu')
-global.p3x.onenote.createTray = require('./main/create/tray')
+global.p3x.onenote.mainMenu = require('./main/create/menu')
+global.p3x.onenote.mainTray = require('./main/create/tray')
 global.p3x.onenote.setVisible = require('./main/set-visible')
-global.p3x.onenote.createWindow = require('./main/create/window')
+global.p3x.onenote.createWindow.onenote = require('./main/create/window/onenote')
 
 
 /*
 const isSecondInstance = app.makeSingleInstance((commandLine, workingDirectory) => {
     global.p3x.onenote.setVisible(true);
-    global.p3x.onenote.mainWindow.webContents.reload();
+    global.p3x.onenote.window.onenote.webContents.reload();
 })
 
 if (isSecondInstance) {

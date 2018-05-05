@@ -19,8 +19,9 @@ module.exports = (data) => {
         callback: function (value) {
             try {
                 global.p3x.onenote.data.proxy = value;
-                console.log('set-proxy', global.p3x.onenote.data.proxy)
+                //console.log('set-proxy', global.p3x.onenote.data.proxy)
                 ipcRenderer.send('p3x-onenote-save', global.p3x.onenote.data);
+                require('./load-proxy')()
             } catch(e) {
                 console.error(e)
             }
