@@ -95,7 +95,7 @@ Right now, do not click the P3X Linux Onenote launcher multiple times, because i
 * Tray - show / hide by 1 click and hide the window list
   * If in the Settings menu, you set the **Enable hiding the main window** option, you can hide the window list and only show the tray, give you more space (but some Linux distros are not like Linux Mint, just try the settings, it can be awesome 👌)
 * The OneNote language is controlled by Microsoft, but the Electron UI is now able to use any language. The default is only implemented now English. If you want to request a new language, there is a `./translation/english/index.js` file, if you create a file like `./translation/chinese/index.js` and implement these keys, I will add a permanent setting in the menu (`Language chooser`).
-* You are able set a proxy in the settings menu.
+* You are able to set a proxy in the settings menu.
 
 <!--
 * Loads last visibility state
