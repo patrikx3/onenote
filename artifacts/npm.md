@@ -27,12 +27,12 @@ Though, I am using it, but some distros are different and I only use Linux Mint 
 
 ---
 
-[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v1.4.15-519 
+[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v1.4.17-521 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
 
 
-## Sponsors
+## P3X Sponsors
 
 [IntelliJ - The most intelligent Java IDE](https://www.jetbrains.com)
   
@@ -43,6 +43,8 @@ Though, I am using it, but some distros are different and I only use Linux Mint 
   
 
 
+# Open collective
+
 ## Contributors
 
 This project exists thanks to all the people who contribute.  
@@ -52,15 +54,19 @@ This project exists thanks to all the people who contribute.
 
 ## Backers
 
-Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/p3x-onenote#backer)]
-
+Thank you to all our backers!   
+  
+🙏 [Become a backer](https://opencollective.com/p3x-onenote#backer)
+  
 <a href="https://opencollective.com/p3x-onenote#backers" target="_blank"><img src="https://opencollective.com/p3x-onenote/backers.svg?width=890"></a>
 
 
 ## Sponsors
 
-Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://opencollective.com/p3x-onenote#sponsor)]
-
+Support this project by becoming a sponsor. Your logo will show up here with a link to your website. 
+  
+🙏 [Become a sponsor](https://opencollective.com/p3x-onenote#sponsor)  
+  
 <a href="https://opencollective.com/p3x-onenote/sponsor/0/website" target="_blank"><img src="https://opencollective.com/p3x-onenote/sponsor/0/avatar.svg"></a>
 <a href="https://opencollective.com/p3x-onenote/sponsor/1/website" target="_blank"><img src="https://opencollective.com/p3x-onenote/sponsor/1/avatar.svg"></a>
 <a href="https://opencollective.com/p3x-onenote/sponsor/2/website" target="_blank"><img src="https://opencollective.com/p3x-onenote/sponsor/2/avatar.svg"></a>

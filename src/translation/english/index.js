@@ -29,8 +29,8 @@ const translation = {
         },
         setProxy: {
             placeholder: 'Proxy setting',
-            info: 'To clear the proxy, just save as empty',
-            clear: 'The proxy it turned off.',
+            info: 'To clear the proxy, use an empty string.',
+            clear: 'The proxy is turned off.',
             set: (value) => {
                 return `The proxy is set as ${value}`
             }
