@@ -3,6 +3,7 @@ const loadProxy = () => {
     const webview = global.p3x.onenote.webview;
     const session = webview.getWebContents().session;
     const proxy = global.p3x.onenote.data.proxy.trim();
+
     session.setProxy({
         proxyRules: proxy
     }, () => {

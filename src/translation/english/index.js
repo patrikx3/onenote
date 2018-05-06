@@ -1,5 +1,5 @@
 const translation = {
-    title: 'P3X Linux OneNote',
+    title: 'P3X OneNote',
     label: {
         disableHide: {
             yes: 'Enable hiding the main window',
@@ -28,7 +28,12 @@ const translation = {
             title: 'Minimization behavior',
         },
         setProxy: {
-            placeholder: 'Proxy setting'
+            placeholder: 'Proxy setting',
+            info: 'To clear the proxy, just save as empty',
+            clear: 'The proxy it turned off.',
+            set: (value) => {
+                return `The proxy is set as ${value}`
+            }
         }
     },
     button: {
