@@ -18,4 +18,4 @@ addons:
     - libglib2.0-dev
 before_script:
 - npm install -g node-gyp
-- npm install grunt-cli -g
+- npm install -g grunt-cli npm
