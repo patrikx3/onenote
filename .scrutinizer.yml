@@ -21,8 +21,8 @@ build:
 
   dependencies:
     before:
-      - export LATEST=$(nvm ls-remote | tail -1)
-      - nvm install $LATEST
+      #- export LATEST=$(nvm ls-remote | tail -1)
+      #- nvm install $LATEST
 #      - nvm use $LATEST  dependencies:
       - sudo apt-get -y install software-properties-common python-software-properties
 #      - sudo apt-cache policy gcc++
@@ -34,7 +34,7 @@ build:
       - sudo apt-get install -y g++-4.8
       - sudo apt-get install -y libglib2.0-dev
       - npm install -g node-gyp
-      - npm install -g grunt-cli
+      - npm install -g grunt-cli npm
       - git config remote.origin.url
       - node -v
 
