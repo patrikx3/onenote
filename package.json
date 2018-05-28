@@ -36,6 +36,7 @@
     },
     "homepage": "https://pages.corifeus.com/onenote",
     "dependencies": {
+        "electron": "^2.0.2",
         "angular": "^1.7.0",
         "angular-animate": "^1.7.0",
         "angular-aria": "^1.7.0",
@@ -43,7 +44,6 @@
         "angular-messages": "^1.7.0",
         "configstore": "^3.1.2",
         "corifeus-utils": "^1.2.83-391",
-        "electron": "^2.0.2",
         "opencollective": "^1.0.3",
         "typeface-roboto": "0.0.54"
     },

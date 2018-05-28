@@ -83,10 +83,6 @@ Props for Peter Forgacs! 😎
 
 # Features
 
-## Important 🤔
-
-Right now, do not click the P3X Linux Onenote launcher multiple times, because it will spawn multiple copies and the Online Onenote limits the logins.  I didn't have enough time to implement properly this function (so, when you click the launcher, it should not spawn a new P3X Onenote window, but just show the existing window), but I had issues, so, I removed this Electron singleton spawn function, but once it will works, it will be released.
-
 ## Default features
 
 * GNOME menu <!-- (`````~/.local/share/applications/p3x-onenote.desktop`````) -->

@@ -2,6 +2,8 @@ const configstore = require('configstore');
 const pkg = require('../../package.json');
 const conf = new configstore(pkg.name);
 
+const { app } = require('electron');
+
 const translation = require('../translation/default')
 
 global.p3x = {
@@ -41,16 +43,14 @@ global.p3x.onenote.setVisible = require('./main/set-visible')
 global.p3x.onenote.createWindow.onenote = require('./main/create/window/onenote')
 
 
-/*
 const isSecondInstance = app.makeSingleInstance((commandLine, workingDirectory) => {
     global.p3x.onenote.setVisible(true);
     global.p3x.onenote.window.onenote.webContents.reload();
 })
 
 if (isSecondInstance) {
-    app.quit()
+    return app.quit()
 }
-*/
 
 // app and ipc main events and configuration
 require('./main/ipc-main')
