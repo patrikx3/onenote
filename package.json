@@ -50,7 +50,7 @@
     "devDependencies": {
         "jsdom": "^11.11.0",
         "angular-mocks": "^1.7.2",
-        "corifeus-builder": "^1.8.37-440",
+        "corifeus-builder": "^1.8.40-440",
         "electron-builder": "^20.20.4"
     },
     "engines": {
