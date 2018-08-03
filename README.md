@@ -2,11 +2,14 @@
   
 [![NPM](https://nodei.co/npm/p3x-onenote.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/p3x-onenote/)
 
-  [![Build Status](https://travis-ci.org/patrikx3/onenote.svg?branch=master)](https://travis-ci.org/patrikx3/onenote) [![Backers on Open Collective](https://opencollective.com/p3x-onenote/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/p3x-onenote/sponsors/badge.svg)](#sponsors) 
+  [![Build Status](https://travis-ci.org/patrikx3/onenote.svg?branch=master)](https://travis-ci.org/patrikx3/onenote) 
+[![Uptime Robot ratio (30 days)](https://img.shields.io/uptimerobot/ratio/m780749701-41bcade28c1ea8154eda7cca.svg)](https://uptimerobot.patrikx3.com/)
+
+ [![Backers on Open Collective](https://opencollective.com/p3x-onenote/backers/badge.svg)](#backers) [![Sponsors on Open Collective](https://opencollective.com/p3x-onenote/sponsors/badge.svg)](#sponsors) 
 
 
  
-# 📚 P3X Onenote Linux v1.4.59-551  
+# 📚 P3X Onenote Linux v1.4.63-554  
 
 This is an open-source project. Star this repository, if you like it, or even donate! Thank you so much! :)
 
@@ -146,7 +149,7 @@ https://github.com/patrikx3/onenote/issues/14
 
 ---
 
-[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v1.4.59-551 
+[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v1.4.63-554 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
 
