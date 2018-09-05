@@ -1,6 +1,6 @@
 {
     "name": "p3x-onenote",
-    "version": "1.4.77-560",
+    "version": "2018.9.5-2",
     "description": "📚 P3X Onenote Linux",
     "main": "src/electron/app.js",
     "corifeus": {
@@ -18,7 +18,7 @@
     },
     "scripts": {
         "test": "grunt",
-        "build": "build build/dist",
+        "build": "build --ia32 --x64  build/dist",
         "postinstall": "opencollective postinstall"
     },
     "repository": {
@@ -43,18 +43,18 @@
         "angular-material": "^1.1.10",
         "angular-messages": "^1.7.3",
         "configstore": "^4.0.0",
-        "corifeus-utils": "^1.2.119-413",
+        "corifeus-utils": "^2018.9.5-2",
         "opencollective": "^1.0.3",
         "typeface-roboto": "0.0.54"
     },
     "devDependencies": {
         "jsdom": "^12.0.0",
         "angular-mocks": "^1.7.3",
-        "corifeus-builder": "^1.9.20-457",
+        "corifeus-builder": "^2018.9.5-2",
         "electron-builder": "^20.28.2"
     },
     "engines": {
-        "node": ">=10.8.0"
+        "node": ">=10.9.0"
     },
     "build": {
         "appId": "p3x.onenote",
@@ -63,7 +63,9 @@
         "linux": {
             "category": "Office",
             "icon": "src/electron/asset/",
-            "target": "appimage"
+            "target": [
+                "AppImage"
+            ]
         }
     },
     "collective": {

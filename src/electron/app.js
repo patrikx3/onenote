@@ -8,6 +8,7 @@ const translation = require('../translation/default')
 
 global.p3x = {
     onenote: {
+        pkg: pkg,
         lang: translation,
         title: translation.title,
         conf: conf,
