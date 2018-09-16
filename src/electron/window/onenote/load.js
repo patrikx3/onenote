@@ -4,6 +4,7 @@ global.p3x = {
     onenote: {
         ng:undefined,
         webview: undefined,
+        pkg: require('../../../../package'),
         lang: require('../../../translation/default'),
         data: {
             url: 'about:blank',
@@ -14,7 +15,7 @@ global.p3x = {
     }
 }
 
-document.title = global.p3x.onenote.lang.title;
+document.title = `${global.p3x.onenote.lang.title} v${global.p3x.onenote.pkg.version}`;
 
 require('./angular')
 
