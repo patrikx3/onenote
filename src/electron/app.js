@@ -13,7 +13,7 @@ global.p3x = {
         title: translation.title,
         conf: conf,
         disableHide: true,
-        iconFile: `${__dirname}/asset/256x256.jpg`,
+        iconFile: `${__dirname}/asset/256x256.png`,
         tray: undefined,
         window: {
           onenote: undefined,
