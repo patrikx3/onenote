@@ -43,15 +43,18 @@ global.p3x.onenote.mainTray = require('./main/create/tray')
 global.p3x.onenote.setVisible = require('./main/set-visible')
 global.p3x.onenote.createWindow.onenote = require('./main/create/window/onenote')
 
+const gotTheLock = app.requestSingleInstanceLock()
 
-const isSecondInstance = app.makeSingleInstance((commandLine, workingDirectory) => {
+if (!gotTheLock) {
+    app.quit()
+    return
+}
+app.on('second-instance', (event, commandLine, workingDirectory) => {
+    // Someone tried to run a second instance, we should focus our window.
     global.p3x.onenote.setVisible(true);
     global.p3x.onenote.window.onenote.webContents.reload();
 })
 
-if (isSecondInstance) {
-    return app.quit()
-}
 
 // app and ipc main events and configuration
 require('./main/ipc-main')
