@@ -22,6 +22,8 @@ const translation = {
         quit: 'Quit',
         show: 'Show',
         hide: 'Hide',
+        copyLocation: 'Copy this location to the clipboard',
+        copyLocationCopied: 'The location is copied to the clipboard.',
     },
     dialog: {
         minimizationBehavior: {

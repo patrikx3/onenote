@@ -18,8 +18,8 @@
 </head>
 
 <body onload="window.p3xOneNoteOnLoad()" id="p3x-onenote-bootstrap">
-
-	<webview id="p3x-onenote-webview" src="about:blank" allowpopups style="overflow: hidden; width:100%; height:100%;">
+    <div style="cursor: pointer; position: fixed; bottom: 0px; left: 0px; width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; height: 20px; font-site: 18px; background-color: black; color: grey;" title="{{ $root.p3x.onenote.lang.label.copyLocation }}" ng-click="$root.p3x.onenote.copyLocation()">{{ $root.p3x.onenote.location }}</div>
+	<webview id="p3x-onenote-webview" allowpopups style="position: fixed; top: 0px; left: 0px; overflow: hidden; width:100%; height: calc(100% - 20px);">
     </webview>
 
 

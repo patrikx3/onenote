@@ -12,6 +12,7 @@ global.p3x = {
         },
         prompt: undefined,
         toast: undefined,
+        root: undefined,
     }
 }
 

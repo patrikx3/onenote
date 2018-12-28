@@ -43,6 +43,15 @@ function mainMenu() {
         {
             label: global.p3x.onenote.lang.label.edit,
             submenu: [
+                {
+                    label: global.p3x.onenote.lang.label.copyLocation,
+                    click: () => {
+                        global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-action', {
+                            action: 'get-location'
+                        })
+                    }
+                },
+                {type: 'separator'},
                 {role: 'undo'},
                 {role: 'redo'},
                 {type: 'separator'},

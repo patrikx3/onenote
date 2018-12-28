@@ -9,7 +9,7 @@
 
 
  
-# 📚 P3X Onenote Linux v2018.12.28-2  
+# 📚 P3X Onenote Linux v2018.12.28-5  
 
 This is an open-source project. Star this repository, if you like it, or even donate! Thank you so much! :)
 
@@ -90,6 +90,12 @@ Props for Peter Forgacs! 😎
 
 * GNOME menu <!-- (`````~/.local/share/applications/p3x-onenote.desktop`````) -->
 * Icon
+* There is a bottom bar
+  * It shows the current location
+  * When you click on this bar, the location URL is copied into the clipboard
+* There is a new button on the Edit menu
+  * Copy this location to the clipboard
+    * This is the same function that is on the bottom bar when you click on it
 * Restart button (empty your cache, you can login again if there is an error)
 * Remember last notebook (as much Online Onenote allows ...)
 * Menu > Settings 
@@ -149,7 +155,7 @@ https://github.com/patrikx3/onenote/issues/14
 
 ---
 
-[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v2018.12.28-2 
+[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v2018.12.28-5 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
 

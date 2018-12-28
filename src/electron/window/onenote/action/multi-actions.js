@@ -39,6 +39,10 @@ const multiActions = (data) => {
         case 'corporate':
             webview.src = 'https://www.onenote.com/notebooks?auth=2&auth_upn=my_corporate_email_address'
             break;
+
+        case 'get-location':
+            require('./get-location')()
+            break;
     }
 }
 
