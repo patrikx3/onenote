@@ -12,8 +12,10 @@ const handler = (options) => {
      */
 
     setInterval(() => {
+        console.log(webview.src, global.p3x.onenote.root.p3x.onenote.location)
         if (global.p3x.onenote.root.p3x.onenote.location !== webview.src) {
             global.p3x.onenote.root.p3x.onenote.location = webview.src
+            global.p3x.onenote.data.url = webview.src
             global.p3x.onenote.root.$digest()
             ipc.send('p3x-onenote-save', global.p3x.onenote.data);
         }

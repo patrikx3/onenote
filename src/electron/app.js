@@ -14,7 +14,7 @@ global.p3x = {
         title: translation.title,
         conf: conf,
         disableHide: true,
-        iconFile: path.resolve(`${__dirname}/asset/256x256.png`),
+        iconFile: path.resolve(`${__dirname}/images/256x256.png`),
         tray: undefined,
         window: {
           onenote: undefined,
@@ -44,18 +44,32 @@ global.p3x.onenote.mainTray = require('./main/create/tray')
 global.p3x.onenote.setVisible = require('./main/set-visible')
 global.p3x.onenote.createWindow.onenote = require('./main/create/window/onenote')
 
-const gotTheLock = app.requestSingleInstanceLock()
 
-if (!gotTheLock) {
-    app.quit()
-    return
+const semver = require('semver')
+if (semver.gt(process.versions.electron, '3.0.0')) {
+    const gotTheLock = app.requestSingleInstanceLock()
+
+    app.on('second-instance', (event, commandLine, workingDirectory) => {
+        // Someone tried to run a second instance, we should focus our window.
+        global.p3x.onenote.setVisible(true);
+        global.p3x.onenote.window.onenote.webContents.reload();
+    })
+
+    if (!gotTheLock) {
+        app.quit()
+        return
+    }
+
+} else {
+    const isSecondInstance = app.makeSingleInstance((commandLine, workingDirectory) => {
+        global.p3x.onenote.setVisible(true);
+        global.p3x.onenote.window.onenote.webContents.reload();
+    })
+
+    if (isSecondInstance) {
+        return app.quit()
+    }
 }
-app.on('second-instance', (event, commandLine, workingDirectory) => {
-    // Someone tried to run a second instance, we should focus our window.
-    global.p3x.onenote.setVisible(true);
-    global.p3x.onenote.window.onenote.webContents.reload();
-})
-
 
 // app and ipc main events and configuration
 require('./main/ipc-main')

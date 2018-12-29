@@ -6,9 +6,10 @@
 }
 
 body {
-    background-color: var(--p3x-onenote-navbar-bg);
+    background-color: white;
     padding: 0;
     margin: 0;
+    overflow: hidden;
 }
 
 #p3x-onenote-bottom-bar {
