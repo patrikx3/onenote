@@ -12,7 +12,7 @@ function mainTray() {
             action.toggleVisible()
         }
         global.p3x.onenote.tray.on('click', click)
-        global.p3x.onenote.tray.on('right-click', click)
+
     }
     const contextMenu = Menu.buildFromTemplate(menus.default())
     global.p3x.onenote.tray.setContextMenu(contextMenu)
