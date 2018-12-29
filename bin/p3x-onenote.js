@@ -22,7 +22,7 @@ const start = async() => {
 Version=1.0
 Type=Application
 Name=P3X Onenote
-Icon=${path.resolve(__dirname + '/../src/electron/asset/256x256.jpg')}
+Icon=${path.resolve(__dirname + '/../src/electron/images/256x256.png')}
 Exec=${__filename}
 Comment=https://www.patrikx3.com
 Categories=Office;

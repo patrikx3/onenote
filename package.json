@@ -1,6 +1,6 @@
 {
     "name": "p3x-onenote",
-    "version": "2018.12.29-2",
+    "version": "2018.12.29-24",
     "description": "📚 P3X Onenote Linux",
     "main": "src/electron/app.js",
     "corifeus": {
@@ -33,7 +33,7 @@
     "author": "Patrik Laszlo <alabard@gmail.com>",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/patrikx3/corifeus/issues"
+        "url": "https://github.com/patrikx3/onenote/issues"
     },
     "homepage": "https://pages.corifeus.com/onenote",
     "dependencies": {
@@ -61,10 +61,10 @@
     "build": {
         "appId": "p3x.onenote",
         "copyright": "MIT",
-        "productName": "P3X OneNote",
+        "productName": "p3x-onenote",
         "linux": {
             "category": "Office",
-            "icon": "src/electron/asset/",
+            "icon": "src/electron/images/",
             "target": [
                 "AppImage"
             ]

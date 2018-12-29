@@ -46,7 +46,7 @@ global.p3x.onenote.createWindow.onenote = require('./main/create/window/onenote'
 
 
 const semver = require('semver')
-if (semver.gt(process.versions.electron, '3.0.0')) {
+if (semver.gt(process.versions.electron === undefined ? '4.0.0' : process.versions.electron, '3.0.0')) {
     const gotTheLock = app.requestSingleInstanceLock()
 
     app.on('second-instance', (event, commandLine, workingDirectory) => {
