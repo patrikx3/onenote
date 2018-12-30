@@ -1,6 +1,6 @@
 {
     "name": "p3x-onenote",
-    "version": "2018.12.30-3",
+    "version": "2018.12.30-5",
     "description": "📚 P3X Onenote Linux",
     "main": "src/electron/app.js",
     "corifeus": {
@@ -21,7 +21,7 @@
         "build": "build --ia32 --x64  build/dist",
         "postinstall": "opencollective postinstall",
         "start": "node ./node_modules/.bin/electron ./src/electron/app.js",
-        "publish": "build --ia32 --x64 --linux -p always"
+        "publish-electron": "build --ia32 --x64 --linux -p always"
     },
     "repository": {
         "type": "git",
