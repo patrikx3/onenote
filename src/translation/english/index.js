@@ -69,6 +69,10 @@ const translation = {
                 zoomout: 'Zoom out',
                 togglefullscreen: 'Toggle full screen',
             }
+        },
+        help: {
+            title: 'Help',
+            checkUpdates: 'Check updates'
         }
     },
     updater: {
@@ -81,7 +85,7 @@ const translation = {
         'download-progress': (opts) => {
             return 'Downloaded ' + opts.progressObj.percent + '%'
         },
-        'update-downloaded': 'Update downloaded.'
+        'update-downloaded': 'Update downloaded. You may restart the app to update.'
     }
 };
 

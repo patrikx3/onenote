@@ -1,6 +1,6 @@
 {
     "name": "p3x-onenote",
-    "version": "2018.12.30-5",
+    "version": "2018.12.30-17",
     "description": "📚 P3X Onenote Linux",
     "main": "src/electron/app.js",
     "corifeus": {

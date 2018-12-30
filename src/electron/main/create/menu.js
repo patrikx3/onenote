@@ -1,4 +1,4 @@
-const { dialog, Menu, shell } = require('electron')
+const {dialog, Menu, shell} = require('electron')
 const menus = require('../menus');
 const action = require('../action');
 
@@ -43,7 +43,7 @@ function mainMenu() {
                             type: 'info',
                             title: global.p3x.onenote.lang.dialog.minimizationBehavior.title,
                             message: message,
-                            buttons: [ global.p3x.onenote.lang.button.ok ]
+                            buttons: [global.p3x.onenote.lang.button.ok]
                         })
                         mainMenu()
                         mainTray()
@@ -131,6 +131,7 @@ function mainMenu() {
             ]
         },
         {
+            label: global.p3x.onenote.lang.menu.help.title,
             role: 'help',
             submenu: [
                 {
@@ -166,6 +167,18 @@ function mainMenu() {
             }
         },
     ]
+
+    if (process.env.APPIMAGE !== undefined) {
+        template[5].submenu.push({type: 'separator'})
+        template[5].submenu.push({
+                label: global.p3x.onenote.lang.menu.help.checkUpdates,
+                click: () => {
+                    const {autoUpdater} = require("electron-updater");
+                    autoUpdater.checkForUpdatesAndNotify();
+                }
+            },
+        )
+    }
 
     const menu = Menu.buildFromTemplate(template)
     Menu.setApplicationMenu(menu)

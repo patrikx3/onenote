@@ -35,9 +35,33 @@ function createWindow() {
 
 
     const windowBounds = global.p3x.onenote.conf.get('window-bounds');
-    if (windowBounds !== null && windowBounds !== undefined) {
+    const maximized = global.p3x.onenote.conf.get('maximized');
+
+    if (maximized === true) {
+        global.p3x.onenote.window.onenote.maximize()
+    } else if (windowBounds !== null && windowBounds !== undefined) {
         global.p3x.onenote.window.onenote.setBounds(windowBounds);
     }
+
+    global.p3x.onenote.window.onenote.on('close', () => {
+        if (global.p3x.onenote.conf.get('maximized') !== true) {
+            global.p3x.onenote.conf.set('window-bounds', global.p3x.onenote.window.onenote.getBounds())
+        }
+    })
+
+    global.p3x.onenote.window.onenote.on('maximize', () => {
+        global.p3x.onenote.conf.set('maximized', true)
+    })
+
+
+    global.p3x.onenote.window.onenote.on('unmaximize', () => {
+        global.p3x.onenote.conf.set('maximized', false)
+        const windowBounds = global.p3x.onenote.conf.get('window-bounds');
+        if (windowBounds !== null && windowBounds !== undefined) {
+            global.p3x.onenote.window.onenote.setBounds(windowBounds);
+        }
+    })
+
 
 
     const {autoUpdater} = require("electron-updater");
