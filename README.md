@@ -9,7 +9,7 @@
 
 
  
-# 📚 P3X Onenote Linux v2018.12.29-25  
+# 📚 P3X Onenote Linux v2018.12.30-3  
 
 This is an open-source project. Star this repository, if you like it, or even donate! Thank you so much! :)
 
@@ -39,12 +39,14 @@ https://github.com/patrikx3/onenote/releases
 
 After downloading the ```AppImage```, make it an executable.
 ```bash
-sudo mkdir -p /opt
-sudo mv ~/Downloads/p3x-onenote-a.b.c-d-x86_64.AppImage /opt/p3x-onenote
-sudo chmod +x /opt/p3x-onenote
+mkdir -p $HOME/opt
+mv ~/Downloads/p3x-onenote-a.b.c-d-x86_64.AppImage $HOME/opt/
+chmod +x $HOME/opt/p3x-onenote-a.b.c-d-x86_64.AppImage
 # Then you can run it
-/opt/p3x-onenote &
+$HOME/opt/p3x-onenote-a.b.c-d-x86_64.AppImage &
 ```
+
+It then actually integrates itself into the menus and it will auto update itself.
 
 The app can also be found on [Atom Apps](https://electronjs.org/apps/p3x-onenote)
 
@@ -157,7 +159,7 @@ Since Electron v3 the try click is executing the right click, for some reason. S
 
 ---
 
-[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v2018.12.29-25 
+[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v2018.12.30-3 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
 

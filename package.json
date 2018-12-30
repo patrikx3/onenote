@@ -1,6 +1,6 @@
 {
     "name": "p3x-onenote",
-    "version": "2018.12.29-25",
+    "version": "2018.12.30-3",
     "description": "📚 P3X Onenote Linux",
     "main": "src/electron/app.js",
     "corifeus": {
@@ -20,7 +20,8 @@
         "test": "grunt",
         "build": "build --ia32 --x64  build/dist",
         "postinstall": "opencollective postinstall",
-        "start": "node ./node_modules/.bin/electron ./src/electron/app.js"
+        "start": "node ./node_modules/.bin/electron ./src/electron/app.js",
+        "publish": "build --ia32 --x64 --linux -p always"
     },
     "repository": {
         "type": "git",
@@ -37,7 +38,7 @@
     },
     "homepage": "https://pages.corifeus.com/onenote",
     "dependencies": {
-        "electron": "^2.0.16",
+        "electron": "^4.0.0",
         "angular": "^1.7.5",
         "angular-animate": "^1.7.5",
         "angular-aria": "^1.7.5",
@@ -45,6 +46,7 @@
         "angular-messages": "^1.7.5",
         "configstore": "^4.0.0",
         "corifeus-utils": "^2018.12.28-1",
+        "electron-updater": "^4.0.6",
         "opencollective": "^1.0.3",
         "semver": "^5.6.0",
         "typeface-roboto": "0.0.54"
@@ -59,9 +61,16 @@
         "node": ">=10.13.0"
     },
     "build": {
+        "publish": [
+            {
+                "provider": "github",
+                "owner": "patrikx3",
+                "repo": "onenote"
+            }
+        ],
         "appId": "p3x.onenote",
         "copyright": "MIT",
-        "productName": "p3x-onenote",
+        "productName": "P3X OneNote",
         "linux": {
             "category": "Office",
             "icon": "src/electron/images/",

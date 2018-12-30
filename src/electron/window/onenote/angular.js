@@ -18,7 +18,7 @@ global.p3x.onenote.ng.run((p3xOnenotePrompt, p3xOnenoteToast, $rootScope) => {
         onenote: {
             lang: global.p3x.onenote.lang,
             location: undefined,
-            copyLocation: require('./action/get-location'),
+            copyLocation: require('./action/multi-action/get-location'),
         }
     }
 })

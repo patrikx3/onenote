@@ -13,3 +13,4 @@
 *.log
 /corifeus-boot.json
 /dist
+/secure

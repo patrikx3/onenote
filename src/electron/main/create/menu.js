@@ -1,4 +1,4 @@
-const { dialog, Menu } = require('electron')
+const { dialog, Menu, shell } = require('electron')
 const menus = require('../menus');
 const action = require('../action');
 
@@ -6,12 +6,27 @@ const mainTray = require('./tray')
 
 function mainMenu() {
 
+    const copyLocation = {
+        label: global.p3x.onenote.lang.label.copyLocation,
+        click: () => {
+            global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-action', {
+                action: 'get-location'
+            })
+        }
+    }
+
     const minimizationBehaviorLabel = !global.p3x.onenote.disableHide ? global.p3x.onenote.lang.label.disableHide.no : global.p3x.onenote.lang.label.disableHide.yes
 
     const template = [
         {
             label: global.p3x.onenote.title,
             submenu: menus.default(),
+        },
+        {
+            label: p3x.onenote.lang.menu.action,
+            submenu: [
+                copyLocation,
+            ]
         },
         {
             label: global.p3x.onenote.lang.label.settings,
@@ -43,38 +58,76 @@ function mainMenu() {
         {
             label: global.p3x.onenote.lang.label.edit,
             submenu: [
+                copyLocation,
+                {type: 'separator'},
                 {
-                    label: global.p3x.onenote.lang.label.copyLocation,
-                    click: () => {
-                        global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-action', {
-                            action: 'get-location'
-                        })
-                    }
+                    label: p3x.onenote.lang.menu.role.edit.undo,
+                    role: 'undo'
+                },
+                {
+                    label: p3x.onenote.lang.menu.role.edit.redo,
+                    role: 'redo'
                 },
                 {type: 'separator'},
-                {role: 'undo'},
-                {role: 'redo'},
-                {type: 'separator'},
-                {role: 'cut'},
-                {role: 'copy'},
-                {role: 'paste'},
-                {role: 'pasteandmatchstyle'},
-                {role: 'delete'},
-                {role: 'selectall'}
+                {
+                    label: p3x.onenote.lang.menu.role.edit.cut,
+                    role: 'cut'
+                },
+                {
+                    label: p3x.onenote.lang.menu.role.edit.copy,
+                    role: 'copy'
+                },
+                {
+                    label: p3x.onenote.lang.menu.role.edit.paste,
+                    role: 'paste'
+                },
+                {
+                    label: p3x.onenote.lang.menu.role.edit.pasteandmatchstyle,
+                    role: 'pasteandmatchstyle'
+                },
+                {
+                    label: p3x.onenote.lang.menu.role.edit.delete,
+                    role: 'delete'
+                },
+                {
+                    label: p3x.onenote.lang.menu.role.edit.selectall,
+                    role: 'selectall'
+                }
             ]
         },
         {
             label: global.p3x.onenote.lang.label.view,
             submenu: [
-                {role: 'reload'},
-                {role: 'forcereload'},
-                {role: 'toggledevtools'},
+                {
+                    label: p3x.onenote.lang.menu.role.view.reload,
+                    role: 'reload'
+                },
+                {
+                    label: p3x.onenote.lang.menu.role.view.forcereload,
+                    role: 'forcereload'
+                },
+                {
+                    label: p3x.onenote.lang.menu.role.view.toggledevtools,
+                    role: 'toggledevtools'
+                },
                 {type: 'separator'},
-                {role: 'resetzoom'},
-                {role: 'zoomin'},
-                {role: 'zoomout'},
+                {
+                    label: p3x.onenote.lang.menu.role.view.resetzoom,
+                    role: 'resetzoom'
+                },
+                {
+                    label: p3x.onenote.lang.menu.role.view.zoomin,
+                    role: 'zoomin'
+                },
+                {
+                    label: p3x.onenote.lang.menu.role.view.zoomout,
+                    role: 'zoomout'
+                },
                 {type: 'separator'},
-                {role: 'togglefullscreen'}
+                {
+                    label: p3x.onenote.lang.menu.role.view.togglefullscreen,
+                    role: 'togglefullscreen'
+                }
             ]
         },
         {
@@ -105,7 +158,13 @@ function mainMenu() {
                     click: action.npm
                 },
             ]
-        }
+        },
+        {
+            label: global.p3x.onenote.lang.label.donate,
+            click: () => {
+                shell.openExternal('https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6')
+            }
+        },
     ]
 
     const menu = Menu.buildFromTemplate(template)

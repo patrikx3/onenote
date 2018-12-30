@@ -3,14 +3,14 @@ global.p3x.onenote.ng.factory('p3xOnenoteToast', ($mdToast) => {
     const toast = (options) => {
         if (typeof options === 'string') {
             options = {
-                text: options,
+                message: options,
             }
         }
         $mdToast.show(
             $mdToast.simple()
-                .textContent(options.text)
+                .textContent(options.message)
                 .position('bottom right')
-                .hideDelay(3000)
+                .hideDelay(5000)
         );
     }
 

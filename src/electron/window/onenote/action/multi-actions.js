@@ -41,7 +41,11 @@ const multiActions = (data) => {
             break;
 
         case 'get-location':
-            require('./get-location')()
+            require('./multi-action/get-location')()
+            break;
+
+        case 'toast':
+            require('./multi-action/toast')(data)
             break;
     }
 }
