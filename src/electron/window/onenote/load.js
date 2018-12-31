@@ -1,5 +1,12 @@
 const { ipcRenderer } = require('electron');
 
+// fontawesome
+require('@fortawesome/fontawesome-free/js/all')
+
+// jquery
+global.$ = require('jquery/dist/jquery.slim')
+global.jQuery = global.$
+
 /*
 const fs = require('fs')
 
@@ -16,6 +23,9 @@ fs.readFile(__dirname + '/hack.css', 'utf-8', function(err, data) {
 
 global.p3x = {
     onenote: {
+        ui: {
+
+        },
         hackCss: undefined,
         ng:undefined,
         webview: undefined,
@@ -31,11 +41,21 @@ global.p3x = {
     }
 }
 
+
 document.title = `${global.p3x.onenote.lang.title} v${global.p3x.onenote.pkg.version}`;
 
+
+require('./core/overlay')
 require('./angular')
 
 window.p3xOneNoteOnLoad = function() {
+
+
+    $(() => {
+        global.$body = $('body');
+    })
+
+
     const webview = document.getElementById("p3x-onenote-webview");
     global.p3x.onenote.webview = webview;
     webview.focus()

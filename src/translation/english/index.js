@@ -25,6 +25,7 @@ const translation = {
         hide: 'Hide',
         copyLocation: 'Copy this location to the clipboard',
         copyLocationCopied: 'The location is copied to the clipboard.',
+        disallowedContent: 'Disallowed content, soon redirecting to home ...'
     },
     dialog: {
         minimizationBehavior: {
