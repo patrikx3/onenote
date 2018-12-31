@@ -48,7 +48,8 @@ $HOME/opt/p3x-onenote-a.b.c-d-x86_64.AppImage &
 
 It then actually integrates itself into the menus and it will auto update itself.
 
-The app can also be found on [Atom Apps](https://electronjs.org/apps/p3x-onenote)
+(The GitHub versions are always instant, while the ElectronJs Apps releases are delayed.)  11
+The app can also be found on [ElectronJs Apps](https://electronjs.org/apps/p3x-onenote)
 
 <!--
 
@@ -81,7 +82,6 @@ Logout and relogin, and a menu will now appear.
 [readme](artifacts/npm.md)
 
 # Original version
-
 https://github.com/peterforgacs/electron-onenote
 
 Props for Peter Forgacs! 😎
