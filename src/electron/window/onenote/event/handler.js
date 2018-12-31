@@ -21,7 +21,32 @@ const handler = (options) => {
         }
     }, 1000)
 
+    /*
+    webview.addEventListener('did-stop-loading', function(event) {
+        webview.insertCSS(p3x.onenote.hackCss);
+    });
+
+    webview.addEventListener('will-navigate', function(event, url) {
+        ipc.send('p3x-debug', {
+            'will-navigate': event,
+            url: url,
+        });
+    });
+
+    webview.addEventListener('will-redirect', function(event, url) {
+        ipc.send('p3x-debug', {
+            'will-redirect': event,
+            url: url,
+        });
+    });
+    */
+
     webview.addEventListener('did-navigate', function(event, url) {
+        ipc.send('p3x-debug', {
+            'did-navigate': event,
+            url: url,
+        });
+
         global.p3x.onenote.data.url = webview.src;
         ipc.send('p3x-onenote-save', global.p3x.onenote.data);
 
@@ -29,9 +54,15 @@ const handler = (options) => {
         global.p3x.onenote.root.$digest()
     });
 
+    const allowedUrlRegex = /^((https?:\/\/((onedrive\.live\.com\/redir\?resid\=)|((www\.)?onenote\.com))|(about\:blank)))/
     webview.addEventListener('new-window', function(event) {
+        ipc.send('p3x-debug', {
+            'new-window': event,
+            allowed: allowedUrlRegex.test(event.url)
+        })
+        event.preventDefault()
         //console.log(event.url)
-        if (/^https?:\/\/((onedrive\.live\.com\/redir\?resid\=)|((www\.)?onenote\.com))/.test(event.url) ) {
+        if (allowedUrlRegex.test(event.url) ) {
             webview.src = event.url;
         } else {
             shell.openExternal(event.url);

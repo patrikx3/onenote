@@ -10,3 +10,7 @@ ipcMain.on('p3x-onenote-save', function (event, data) {
     global.p3x.onenote.conf.set('webview-onenote', data);
     global.p3x.onenote.conf.set('window-bounds', global.p3x.onenote.window.onenote.getBounds());
 })
+
+ipcMain.on('p3x-debug', (event, data) => {
+    console.log(data)
+})
