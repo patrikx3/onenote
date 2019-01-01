@@ -54,6 +54,7 @@ if (process.versions.hasOwnProperty('electron')) {
             //console.warn('p3xr.ui.overlay hide')
             $body.find('#p3xr-overlay').remove()
             shown = false
+            showCount = 0
         }
     }
 

@@ -11,7 +11,7 @@ const handler = (options) => {
      });
      */
     const allowedUrlRegex = /^((https?:\/\/((onedrive\.live\.com\/((redir\?resid\=)|((redir|edit).aspx\?)))|((www\.)?onenote\.com))|(about\:blank)))/i
-    const disalledUrl = /^((https?:\/\/))/i
+    //const disalledUrl = /^((https?:\/\/))/i
 
 
     setInterval(() => {
