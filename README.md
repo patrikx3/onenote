@@ -13,7 +13,7 @@
 
 
  
-# 📚 P3X Onenote Linux v2019.1.4-3  
+# 📚 P3X Onenote Linux v2019.1.6-1  
 
   
 This is an open-source project. Star this repository, if you like it, or even donate! Thank you so much! :)
@@ -161,11 +161,14 @@ https://github.com/patrikx3/onenote/issues/14
 ## Electron problem
 Since Electron v3 the try click is executing the right click, for some reason.  
 
+# Development
+If you try to build the app with AppImage, you have to change from `electron` `dependencies` to `devDependencies`, this is because it is created to be able to run this app from `NPM` instead of an `AppImage`.
+
 [//]: #@corifeus-footer
 
 ---
 
-[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v2019.1.4-3 
+[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v2019.1.6-1 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
 
