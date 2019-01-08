@@ -11,10 +11,10 @@
 
 
  
-# 📚 P3X Onenote Linux v2019.1.8-1  
+# 📚 P3X Onenote Linux v2019.1.8-6  
 
   
-This is an open-source project. Star this repository, if you like it, or even donate to maintain the servers and the development. Thank you so much! :)
+🙏 This is an open-source project. Star this repository, if you like it, or even donate to maintain the servers and the development. Thank you so much!
 
 I run my own server with dynamic IP address, so, it may happen, that the server can not be reachable for about max 15 minutes, due to nature of the dynamic DNS. The server may also be unreachable, when I backup the SSD with Clonzilla (very rarely) or an electrical issue (but this should not happen again). When the server is down, please hang on for 15-30 minutes and the server will be back up.
 
@@ -166,7 +166,7 @@ If you try to build the app with AppImage, you have to change from `electron` `d
 
 ---
 
-[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v2019.1.8-1 
+[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v2019.1.8-6 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
 
