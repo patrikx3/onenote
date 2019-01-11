@@ -3,11 +3,11 @@ const translation = {
     label: {
         donate: 'Donate',
         disableHide: {
-            yes: 'Enable hiding the main window',
-            no: 'Disable hiding the main window',
+            yes: 'Close button - will minimize to the tray instead of quit',
+            no: 'Close button - default quit close button behaviour',
             message: {
-                yes: 'For now, the main window is always shown',
-                no: 'For now, when you minimize the window it will be hidden and can be only shown in the tray.',
+                yes: 'The close button really closed the app.',
+                no: 'The close button instead of quitting it minimizes the app to the tray.',
 
             }
         },

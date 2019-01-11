@@ -15,14 +15,16 @@ function createWindow() {
     global.p3x.onenote.window.onenote.loadURL(`file://${__dirname}/../../../window/onenote/index.html`);
 
     global.p3x.onenote.window.onenote.on('minimize', function (event) {
-        event.preventDefault()
-        global.p3x.onenote.setVisible(false, true);
+        //event.preventDefault()
+        //global.p3x.onenote.setVisible(false, true);
     });
 
     global.p3x.onenote.window.onenote.on('close', function (event) {
         if (!app.isQuiting) {
-            event.preventDefault()
-            global.p3x.onenote.setVisible(false);
+            if (!global.p3x.onenote.disableHide) {
+                event.preventDefault()
+                global.p3x.onenote.setVisible(false);
+            }
         }
         return false;
     });
