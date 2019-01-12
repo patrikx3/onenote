@@ -105,14 +105,9 @@ Props for Peter Forgacs! 😎
 * Restart button (empty your cache, you can login again if there is an error)
 * Remember last notebook (as much Online Onenote allows ...)
 * Menu > Settings 
-  * Enable hiding the main window
-    * If you access the tray easy, by 1 click, use this
-  * **Disable hiding the main window**
-    * If you have nested tray or not showing the tray, use this
-    * **THIS IS THE DEFAULT AS IS THE FALLBACK**
-* Settings - Close button 
-  * Either you can close the button as it is by default
-  * Or the close button can move to the tray
+  * Close button 
+    * Either you can close the button as it is by default
+    * Or the close button can move to the tray
 * The OneNote language is controlled by Microsoft, but the Electron UI is now able to use any language. The default is only implemented now English. If you want to request a new language, there is a `./translation/english/index.js` file, if you create a file like `./translation/chinese/index.js` and implement these keys, I will add a permanent setting in the menu (`Language chooser`).
 * You are able to set a proxy in the settings menu.
 
