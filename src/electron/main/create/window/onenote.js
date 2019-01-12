@@ -80,7 +80,15 @@ function createWindow() {
             message: global.p3x.onenote.lang.updater["update-available"]
         })
     })
+
+    let firstCheck = true
     autoUpdater.on('update-not-available', (info) => {
+
+        if (firstCheck) {
+            firstCheck = false
+            return
+        }
+
         global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-action', {
             action: 'toast',
             message: global.p3x.onenote.lang.updater["update-not-available"]
