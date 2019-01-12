@@ -63,7 +63,7 @@ if (semver.gt(process.versions.electron === undefined ? '4.0.0' : process.versio
 } else {
     const isSecondInstance = app.makeSingleInstance((commandLine, workingDirectory) => {
         global.p3x.onenote.setVisible(true);
-        global.p3x.onenote.window.onenote.webContents.reload();
+        //global.p3x.onenote.window.onenote.webContents.reload();
     })
 
     if (isSecondInstance) {
