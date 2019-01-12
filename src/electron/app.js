@@ -52,7 +52,7 @@ if (semver.gt(process.versions.electron === undefined ? '4.0.0' : process.versio
     app.on('second-instance', (event, commandLine, workingDirectory) => {
         // Someone tried to run a second instance, we should focus our window.
         global.p3x.onenote.setVisible(true);
-        global.p3x.onenote.window.onenote.webContents.reload();
+        //global.p3x.onenote.window.onenote.webContents.reload();
     })
 
     if (!gotTheLock) {
