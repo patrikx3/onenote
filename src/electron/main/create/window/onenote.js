@@ -36,12 +36,14 @@ function createWindow() {
     })
 
 
-    const windowBounds = global.p3x.onenote.conf.get('window-bounds');
+    //const windowBounds = global.p3x.onenote.conf.get('window-bounds');
     const maximized = global.p3x.onenote.conf.get('maximized');
 
     if (maximized === true) {
         global.p3x.onenote.window.onenote.maximize()
-    } else if (windowBounds !== null && windowBounds !== undefined) {
+    }
+    /*
+    else if (windowBounds !== null && windowBounds !== undefined) {
         global.p3x.onenote.window.onenote.setBounds(windowBounds);
     }
 
@@ -50,6 +52,7 @@ function createWindow() {
             global.p3x.onenote.conf.set('window-bounds', global.p3x.onenote.window.onenote.getBounds())
         }
     })
+    */
 
     global.p3x.onenote.window.onenote.on('maximize', () => {
         global.p3x.onenote.conf.set('maximized', true)
@@ -58,10 +61,13 @@ function createWindow() {
 
     global.p3x.onenote.window.onenote.on('unmaximize', () => {
         global.p3x.onenote.conf.set('maximized', false)
+
+        /*
         const windowBounds = global.p3x.onenote.conf.get('window-bounds');
         if (windowBounds !== null && windowBounds !== undefined) {
             global.p3x.onenote.window.onenote.setBounds(windowBounds);
         }
+        */
     })
 
 

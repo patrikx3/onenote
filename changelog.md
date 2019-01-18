@@ -5,22 +5,10 @@
                         
 [//]: #@corifeus-header:end
 
-# NPM install
+## Change log
 
-If you know what you are doing and you are a Ninja, here you go:
-
-```bash
-sudo npm install -g p3x-onenote --unsafe-perm=true --allow-root
-p3x-onenote &
-```
-
-## Warning
-
-This installation is not supported at all.  
-
-###  Note 🤔
-
-Though, I am using it, but some distros are different and I only use Linux Mint and still, I can't support this way. 🤗 
+### v2019.01.18
+* BUGFIX: it was saving the window position and size, but it is not correct, because the user could change 1 monitor and 2 monitors and could save incorrect positions, so I disabled this option
 
 
 [//]: #@corifeus-footer
