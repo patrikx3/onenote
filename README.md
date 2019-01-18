@@ -55,6 +55,9 @@ It then actually integrates itself into the menus and it will auto update itself
 (The GitHub versions are always instant, while the ElectronJs Apps releases are delayed.)    
 The app can be found on [ElectronJs Apps](https://electronjs.org/apps/p3x-onenote)
 
+[Change log](changelog.md)
+
+
 <!--
 
 If you want to install it on NodeJs instead of the AppImage, it is deprecated, but available [here](https://github.com/patrikx3/onenote/blob/c78e77c540e21b89e0e063cd50a10707faae722e/README.md#cli-install)
