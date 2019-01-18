@@ -8,7 +8,7 @@
 ## Change log
 
 ### v2019.01.18
-* BUGFIX: it was saving the window position and size, but it is not correct, because the user could change 1 monitor and 2 monitors and could save incorrect positions, so I disabled this option
+* BUGFIX: it was saving the window position and size, but it is not correct, because the user could change 2 monitors to 1 monitor and could save incorrect positions, so I disabled this option
 
 
 [//]: #@corifeus-footer
