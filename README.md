@@ -161,6 +161,16 @@ Since Electron v3 the try click is executing the right click, for some reason.
 # Development
 If you try to build the app with AppImage, you have to change from `electron` `dependencies` to `devDependencies`, this is because it is created to be able to run this app from `NPM` instead of an `AppImage`.
 
+# URL links
+
+
+[P3X OneNote Linux playground](https://patrikx3.com/hu/ajto/jatszoter/14/p3x-linux-onenote#PG14)  
+
+[Corifeus P3X OneNote Linux pages](https://pages.corifeus.com/onenote/)  
+
+[AlternativeTo OneNote Linux](https://alternativeto.net/software/p3x-onenote/)  
+
+
 [//]: #@corifeus-footer
 
 ---
