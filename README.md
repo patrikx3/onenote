@@ -95,6 +95,8 @@ Props for Peter Forgacs! 😎
 
 # Features
 
+OneNote Linux is actually a frame for the online real OneNote. The main functions are that is independent from any browser, as it works in it's own process, and, it provides a tray, that allows you to close while it is running in the tray, besides, because you are not closing the Linux OneNote, the data is cached and is faster than always opening a new window. Besides, it allows you to sign in with the corporate or the personal login. When there is a new update, it auto updates itself.
+
 ## Default features
 
 * GNOME menu <!-- (`````~/.local/share/applications/p3x-onenote.desktop`````) -->
@@ -139,11 +141,7 @@ This only happens if you kill ```P3X OneNote Linux``` and then relogin many time
 ### BUT!
 
 **Exiting using ```quit``` from the ```p3x-onenote``` menu or the tray, will prevent the problem.**
-
-## Latest Gnome with dash-to-panel
-
-For now, I set a `Menu > Settings -> Disable hiding the main window | Enable hiding the main window`, where you can enable or disable hiding, so if the Electron Tray is not working for you, you can set it with this `Setting`.
-
+.
 ## Fedora
 
 https://github.com/patrikx3/onenote/issues/3#issuecomment-312711801
@@ -170,6 +168,7 @@ If you try to build the app with AppImage, you have to change from `electron` `d
 
 [AlternativeTo OneNote Linux](https://alternativeto.net/software/p3x-onenote/)  
 
+[NPM P3X OneNote](https://www.npmjs.com/package/p3x-onenote)
 
 [//]: #@corifeus-footer
 
