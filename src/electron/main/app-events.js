@@ -14,3 +14,4 @@ app.on('activate', function () {
         global.p3x.onenote.createWindow.onenote();
     }
 });
+

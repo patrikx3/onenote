@@ -13,26 +13,38 @@ const handler = (options) => {
     const allowedUrlRegex = /^((https?:\/\/((onedrive\.live\.com\/((redir\?resid\=)|((redir|edit).aspx\?)))|((www\.)?onenote\.com))|(about\:blank)))/i
     //const disalledUrl = /^((https?:\/\/))/i
 
+    let windowInterval
 
-    setInterval(() => {
-        //console.log(webview.src, global.p3x.onenote.root.p3x.onenote.location)
+    const generateInterval = () => {
+        windowInterval = setInterval(() => {
+            //console.log(webview.src, global.p3x.onenote.root.p3x.onenote.location)
 
-        if (!allowedUrlRegex.test(webview.src) && (webview.src.startsWith('https://onedrive.live.com') || webview.src.startsWith('http://onedrive.live.com'))) {
-            p3x.onenote.ui.overlay.show({
-                message: p3x.onenote.lang.label.disallowedContent
-            })
-        } else {
-            p3x.onenote.ui.overlay.hide()
+            if (!allowedUrlRegex.test(webview.src) && (webview.src.startsWith('https://onedrive.live.com') || webview.src.startsWith('http://onedrive.live.com'))) {
+                p3x.onenote.ui.overlay.show({
+                    message: p3x.onenote.lang.label.disallowedContent
+                })
+            } else {
+                p3x.onenote.ui.overlay.hide()
+            }
+
+
+            if (global.p3x.onenote.root.p3x.onenote.location !== webview.src) {
+                global.p3x.onenote.root.p3x.onenote.location = webview.src
+                global.p3x.onenote.data.url = webview.src
+                global.p3x.onenote.root.$digest()
+                ipc.send('p3x-onenote-save', global.p3x.onenote.data);
+            }
+        }, 1500)
+    }
+
+    generateInterval()
+
+    ipc.on('p3x-onenote-window-state', function(event, data) {
+        clearInterval(windowInterval)
+        if (data.action === 'focus') {
+            generateInterval()
         }
-
-
-        if (global.p3x.onenote.root.p3x.onenote.location !== webview.src) {
-            global.p3x.onenote.root.p3x.onenote.location = webview.src
-            global.p3x.onenote.data.url = webview.src
-            global.p3x.onenote.root.$digest()
-            ipc.send('p3x-onenote-save', global.p3x.onenote.data);
-        }
-    }, 1000)
+    })
 
     /*
     webview.addEventListener('did-stop-loading', function(event) {

@@ -36,6 +36,29 @@ function createWindow() {
     })
 
 
+
+    global.p3x.onenote.window.onenote.on('focus', function () {
+        global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-window-state', {
+            action: 'focus'
+        })
+    });
+
+
+    global.p3x.onenote.window.onenote.on('blur', function () {
+        global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-window-state', {
+            action: 'blur'
+        })
+    });
+
+
+    global.p3x.onenote.window.onenote.on('hide', function () {
+        global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-window-state', {
+            action: 'blur'
+        })
+    });
+
+
+
     //const windowBounds = global.p3x.onenote.conf.get('window-bounds');
     const maximized = global.p3x.onenote.conf.get('maximized');
 
@@ -69,7 +92,6 @@ function createWindow() {
         }
         */
     })
-
 
 
     const {autoUpdater} = require("electron-updater");
