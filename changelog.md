@@ -7,6 +7,9 @@
 
 ## Change log
 
+### v2019.02.04
+* BUGFIX: Donation button was Hungarian, now is supposed to be automatically by browser locale.
+
 ### v2019.02.02
 * FEATURE: Disable/enable main timer on window blur/focus
 * CHORE: upgrade to Electron 4.0.4 
