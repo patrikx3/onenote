@@ -133,12 +133,14 @@ function createWindow() {
         })
     })
 
+    /*
     autoUpdater.on('download-progress', (progressObj) => {
         /*
         let log_message = "Download speed: " + progressObj.bytesPerSecond;
         log_message = log_message + ' - Downloaded ' + progressObj.percent + '%';
         log_message = log_message + ' (' + progressObj.transferred + "/" + progressObj.total + ')';
         */
+    /*
         global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-action', {
             action: 'toast',
             message: p3x.onenote.lang.updater["download-progress"]({
@@ -146,6 +148,8 @@ function createWindow() {
             })
         })
     })
+    */
+
     autoUpdater.on('update-downloaded', (info) => {
         global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-action', {
             action: 'toast',

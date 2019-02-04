@@ -163,7 +163,7 @@ function mainMenu() {
         {
             label: global.p3x.onenote.lang.label.donate,
             click: () => {
-                shell.openExternal('https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6')
+                shell.openExternal('https://paypal.me/patrikx3')
             }
         },
     ]
