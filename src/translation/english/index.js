@@ -76,7 +76,7 @@ const translation = {
             checkUpdates: 'Check updates'
         }
     },
-    redirecting: 'Hang on, redirecting to a new notebooks, it takes some time...',
+    redirecting: 'Hang on, redirecting to a new notebook. It takes some time...',
     slow: 'Hang on, loading a notebook takes some time...',
     updater: {
         'checking-for-update': 'Checking for update ...',
