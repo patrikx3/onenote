@@ -23,6 +23,9 @@ fs.readFile(__dirname + '/hack.css', 'utf-8', function(err, data) {
 
 global.p3x = {
     onenote: {
+        url: {
+          notebooks: 'https://www.onenote.com/notebooks',
+        },
         ui: {
 
         },

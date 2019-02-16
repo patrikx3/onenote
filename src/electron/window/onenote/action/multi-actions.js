@@ -33,7 +33,7 @@ const multiActions = (data) => {
             break;
 
         case 'home':
-            webview.src = 'https://www.onenote.com/notebooks'
+            webview.src = global.p3x.onenote.url.notebooks
             break;
 
         case 'corporate':

@@ -7,6 +7,9 @@
 
 ## Change log
 
+### v2019.02.16
+* BUGFIX: On the sidebar on notebooks it was opening a new window, it is quite hacky, but is supposed to be working.
+
 ### v2019.02.04
 * BUGFIX: Donation button was Hungarian, now is supposed to be automatically by browser locale.
 
@@ -26,7 +29,7 @@
 
 ---
 
-[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v2019.2.15-2 
+[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v2019.2.16-1 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
 

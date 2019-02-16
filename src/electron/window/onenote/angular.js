@@ -14,6 +14,9 @@ global.p3x.onenote.ng.run((p3xOnenotePrompt, p3xOnenoteToast, $rootScope) => {
     global.p3x.onenote.prompt = p3xOnenotePrompt;
     global.p3x.onenote.toast = p3xOnenoteToast;
     global.p3x.onenote.root = $rootScope
+
+    p3x.onenote.toast.action(p3x.onenote.lang.slow)
+
     $rootScope.p3x = {
         onenote: {
             lang: global.p3x.onenote.lang,
