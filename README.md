@@ -11,7 +11,7 @@
 
 
  
-# 📚 P3X Onenote Linux v2019.2.16-3  
+# 📚 P3X Onenote Linux v2019.2.16-5  
 
   
 🙏 This is an open-source project. Star this repository, if you like it, or even donate to maintain the servers and the development. Thank you so much!
@@ -93,11 +93,16 @@ https://github.com/peterforgacs/electron-onenote
 
 Props for Peter Forgacs! 😎
 
-# Features
+# Main Features
 
-OneNote Linux is actually a frame for the online real OneNote. The main functions are that is independent from any browser, as it works in it's own process, and, it provides a tray, that allows you to close while it is running in the tray, besides, because you are not closing the Linux OneNote, the data is cached and is faster than always opening a new window. Besides, it allows you to sign in with the corporate or the personal login. When there is a new update, it auto updates itself.
+P3X OneNote Linux is, actually, an independent browser window for the online OneNote. You can use this program without having to clutter your browser. The main functions are:
+* that is independent from any browser, as it works in it's own process
+* it provides a tray, that allows you to close your browser while it keeps running in the tray
+* the data is cached and is faster than always opening a new window. 
+* it allows you to sign in with the corporate or the personal login
+* when there is a new update, it auto updates itself.
 
-## Default features
+## Verbose features info
 
 * GNOME menu <!-- (`````~/.local/share/applications/p3x-onenote.desktop`````) -->
 * Icon
@@ -174,7 +179,7 @@ If you try to build the app with AppImage, you have to change from `electron` `d
 
 ---
 
-[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v2019.2.16-3 
+[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v2019.2.16-5 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
 
