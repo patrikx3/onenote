@@ -165,7 +165,7 @@ This is being investigated.
 https://github.com/patrikx3/onenote/issues/14
 
 ## Electron problem
-Since Electron v3 the try click is executing the right click, for some reason.  
+Since Electron v3 the tray left click is executing the as right click, for some reason (Electron bug 🐛).  
 
 # Development
 If you try to build the app with AppImage, you have to change from `electron` `dependencies` to `devDependencies`, this is because it is created to be able to run this app from `NPM` instead of an `AppImage`.
