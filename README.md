@@ -100,7 +100,7 @@ Props for Peter Forgacs! 😎
 P3X OneNote Linux is, actually, an independent browser window for the online OneNote. You can use this program without having to clutter your browser. The main functions are:
 * that is independent from any browser, as it works in it's own process
 * it provides a tray, that allows you to close your browser while it keeps running in the tray
-* the data is cached and is faster than always opening a new window. 
+* the data is cached and is faster than always opening a new window
 * it allows you to sign in with the corporate or the personal login
 * when there is a new update, it auto updates itself.
 
@@ -120,7 +120,7 @@ P3X OneNote Linux is, actually, an independent browser window for the online One
   * Close button 
     * Either you can close the button as it is by default
     * Or the close button can move to the tray
-* The OneNote language is controlled by Microsoft, but the Electron UI is now able to use any language. The default is only implemented now English. If you want to request a new language, there is a `./translation/english/index.js` file, if you create a file like `./translation/chinese/index.js` and implement these keys, I will add a permanent setting in the menu (`Language chooser`).
+* The OneNote language is controlled by Microsoft, but the Electron UI is now able to use any language. The default is only implemented now English. If you want to request a new language, there is a `./translation/en.js` file, if you create a file like `./translation/zn.js` (Chinese) and implement these keys, I will add a permanent setting in the menu (`Language chooser`).
 * You are able to set a proxy in the settings menu.
 
 <!--
@@ -141,6 +141,8 @@ For my workstation, with a 4.8Ghz CPU, 4 cores, 32 GB-ram, I use VirtualBox on W
 
 # Issues
 
+
+<!--
 ## Unable to log in
 
 This only happens if you kill ```P3X OneNote Linux``` and then relogin many times. So, If the program needs to be killed often, ```sign out``` (on the top right of the Electron browser frame) just to be safe.
@@ -148,7 +150,9 @@ This only happens if you kill ```P3X OneNote Linux``` and then relogin many time
 ### BUT!
 
 **Exiting using ```quit``` from the ```p3x-onenote``` menu or the tray, will prevent the problem.**
-.
+
+-->
+
 ## Fedora
 
 https://github.com/patrikx3/onenote/issues/3#issuecomment-312711801
