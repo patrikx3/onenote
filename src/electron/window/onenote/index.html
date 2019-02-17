@@ -21,7 +21,7 @@
 
 <body onload="window.p3xOneNoteOnLoad()" id="p3x-onenote-bootstrap">
     <div id="p3x-onenote-bottom-bar" title="{{ $root.p3x.onenote.lang.label.copyLocation }}" ng-click="$root.p3x.onenote.copyLocation()">&nbsp;{{ $root.p3x.onenote.location }}</div>
-	<webview id="p3x-onenote-webview" allowpopups>
+	<webview id="p3x-onenote-webview"  webpreferences="nativeWindowOpen=true"`>
     </webview>
 
 
