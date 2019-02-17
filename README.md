@@ -11,7 +11,7 @@
 
 
  
-# 📚 P3X Onenote Linux v2019.2.16-5  
+# 📚 P3X Onenote Linux v2019.2.17-1  
 
   
 🙏 This is an open-source project. Star this repository, if you like it, or even donate to maintain the servers and the development. Thank you so much!
@@ -34,6 +34,8 @@ All my domains ([patrikx3.com](https://patrikx3.com) and [corifeus.com](https://
 
 A Linux compatible version of OneNote
 
+
+**Warning**: Microsoft does not support such a program like P3X OneNote and it is not possible to create a case for every url that Microsoft generates (and it often changes) so if you are lost in a page, just click on the **P3X OneNote** menu and choose **Personal home** or **Corporate home** and you will go back to home. It is possible to click on a button that will open a new window and is ugly. Microsoft created such in a way that we have no control how to render the Online Onenote or like hide parts of the view. **But, if you get to know P3X Onenote and you stop clicking on unrelated buttons, it will be useful for you.**
 
 ![Screenshot 1](https://cdn.corifeus.com/git/onenote/artifacts/screenshot/screenshot-2019.png)
 
@@ -182,7 +184,7 @@ If you try to build the app with AppImage, you have to change from `electron` `d
 
 ---
 
-[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v2019.2.16-5 
+[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v2019.2.17-1 
 
 [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) 
 

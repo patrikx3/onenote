@@ -10,7 +10,7 @@ const handler = (options) => {
  //		webview.insertCSS(window.cssData);
      });
      */
-    const allowedUrlRegex = /^((https?:\/\/((onedrive\.live\.com\/((redir\?resid\=)|((redir|edit).aspx\?)))|((www\.)?onenote\.com))|(about\:blank)))/i
+    const allowedUrlRegex = /^((https?:\/\/((onedrive\.live\.com\/((redir\?resid\=)|((redir|edit).aspx\?)))|((www\.)?onenote\.com)|(login\.)|(q\.live\.))|(about\:blank)))/i
     const allowedUrlRegex2 = /^https?:\/\/d\.docs\.live\.net\/([a-z0-9]{16})\//i
 
     //const disalledUrl = /^((https?:\/\/))/i
@@ -20,6 +20,12 @@ const handler = (options) => {
     const generateInterval = () => {
         windowInterval = setInterval(() => {
             //console.log(webview.src, global.p3x.onenote.root.p3x.onenote.location)
+
+
+            ipc.send('p3x-debug', {
+                'new-window': webview.src,
+                allowed: allowedUrlRegex.test(webview.src)
+            })
 
             if (!allowedUrlRegex.test(webview.src)) {
                 p3x.onenote.ui.overlay.show({
@@ -84,13 +90,14 @@ const handler = (options) => {
     });
 
     webview.addEventListener('new-window', function(event) {
-        /*
+
+        event.preventDefault()
+
         ipc.send('p3x-debug', {
             'new-window': event.url,
             allowed: allowedUrlRegex.test(event.url)
         })
-        */
-        event.preventDefault()
+
         //console.log(event.url)
         if (allowedUrlRegex2.test(event.url)) {
             // https://onedrive.live.com/redir?resid=3B992A1F2BEDFFA7%21955&page=Edit

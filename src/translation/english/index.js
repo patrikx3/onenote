@@ -77,7 +77,7 @@ const translation = {
         }
     },
     redirecting: 'Hang on, redirecting to a new notebook. It takes some time...',
-    slow: 'Hang on, loading a notebook takes some time...',
+    slow: 'Hang on, loading OneNote takes some time...',
     updater: {
         'checking-for-update': 'Checking for update ...',
         'update-available': 'Downloading latest release ...',
