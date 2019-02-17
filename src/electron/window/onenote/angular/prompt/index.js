@@ -11,8 +11,8 @@ global.p3x.onenote.ng.factory('p3xOnenotePrompt', ($mdDialog) => {
                 .initialValue(global.p3x.onenote.data.proxy)
                 //.targetEvent(ev)
                 //.required(true)
+                .cancel(p3x.onenote.lang.button.cancel)
                 .ok(p3x.onenote.lang.button.save)
-                .cancel(p3x.onenote.lang.button.cancel);
 
             return $mdDialog.show(confirm)
         }

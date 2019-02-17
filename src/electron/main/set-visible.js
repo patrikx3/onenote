@@ -30,6 +30,8 @@ function setVisible(visible = true, force = false) {
 
 
     if (visible || force) {
+        global.p3x.onenote.window.onenote.focus();
+
         global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-action', {
             action: 'focus'
         })

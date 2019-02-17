@@ -24,7 +24,7 @@ const action = {
         if (global.p3x.onenote.window.onenote === undefined) {
             return;
         }
-        global.p3x.onenote.setVisible(!global.p3x.onenote.window.onenote.isVisible());
+        global.p3x.onenote.setVisible(!global.p3x.onenote.isVisible());
     },
     quit: function () {
         app.isQuiting = true;

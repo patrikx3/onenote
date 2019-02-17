@@ -5,7 +5,7 @@ const menus = {
 
         let visible = false;
         if (global.p3x.onenote.window.onenote !== undefined) {
-            visible = global.p3x.onenote.window.onenote.isVisible() ? true : false;
+            visible = global.p3x.onenote.isVisible() ? true : false;
         }
 
         let menus = [

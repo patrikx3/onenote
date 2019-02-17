@@ -28,6 +28,7 @@ const handler = (options) => {
             })
             */
 
+            /*
             if (!allowedUrlRegex.test(webview.src)) {
                 p3x.onenote.ui.overlay.show({
                     message: p3x.onenote.lang.label.disallowedContent
@@ -35,7 +36,7 @@ const handler = (options) => {
             } else {
                 p3x.onenote.ui.overlay.hide()
             }
-
+            */
 
             if (global.p3x.onenote.root.p3x.onenote.location !== webview.src) {
                 global.p3x.onenote.root.p3x.onenote.location = webview.src
@@ -93,6 +94,8 @@ const handler = (options) => {
     webview.addEventListener('new-window', function(event) {
 
         event.preventDefault()
+        p3x.onenote.toast.action(p3x.onenote.lang.label.unknownLink)
+        webview.src = event.url;
 
         /*
         ipc.send('p3x-debug', {
@@ -116,12 +119,14 @@ const handler = (options) => {
             webview.src = `https://onedrive.live.com/redir?resid=${urlParts[1]}%21955&page=Edit`;
         } else
         */
+        /*
         if (allowedUrlRegex.test(event.url) || allowedUrlRegex2.test(event.url)) {
             p3x.onenote.toast.action(p3x.onenote.lang.redirecting)
             webview.src = event.url;
         } else {
             shell.openExternal(event.url);
         }
+        */
     });
 
 

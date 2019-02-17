@@ -158,14 +158,6 @@ function mainMenu() {
                     label: 'NPM',
                     click: action.npm
                 },
-                {type: 'separator'},
-                {
-                    label: global.p3x.onenote.lang.menu.help.checkUpdates,
-                    click: () => {
-                        const {autoUpdater} = require("electron-updater");
-                        autoUpdater.checkForUpdatesAndNotify();
-                    }
-                }
             ]
         },
         {

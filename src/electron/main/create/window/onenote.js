@@ -41,6 +41,8 @@ function createWindow() {
         global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-window-state', {
             action: 'focus'
         })
+        global.p3x.onenote.mainMenu();
+        global.p3x.onenote.mainTray()
     });
 
 
@@ -48,6 +50,8 @@ function createWindow() {
         global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-window-state', {
             action: 'blur'
         })
+        global.p3x.onenote.mainMenu();
+        global.p3x.onenote.mainTray()
     });
 
 

@@ -50,7 +50,7 @@ global.p3x = {
 document.title = `${global.p3x.onenote.lang.title} v${global.p3x.onenote.pkg.version}`;
 
 
-require('./core/overlay')
+//require('./core/overlay')
 require('./angular')
 
 window.p3xOneNoteOnLoad = function() {

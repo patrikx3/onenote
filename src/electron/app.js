@@ -26,6 +26,9 @@ global.p3x = {
         createWindow: {
             onenote: undefined,
         },
+        isVisible: () => {
+            return global.p3x.onenote.window.onenote.isVisible() && global.p3x.onenote.window.onenote.isFocused()
+        }
     }
 }
 
