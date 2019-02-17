@@ -106,7 +106,7 @@ P3X OneNote Linux is, actually, an independent browser window for the online One
 
 ## Verbose features info
 
-* GNOME menu <!-- (`````~/.local/share/applications/p3x-onenote.desktop`````) -->
+* Desktop menu <!-- (`````~/.local/share/applications/p3x-onenote.desktop`````) -->
 * Icon
 * There is a bottom bar
   * It shows the current location
