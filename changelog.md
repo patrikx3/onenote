@@ -9,7 +9,8 @@
 
 
 ### v2019.02.17
-* FEATURE: Added info, that not every case can be handles.
+* BUGFIX: Added info, that not every case can be handled.
+* BUGFIX: On the sidebar on notebooks it was opening a new window, it is quite hacky, but is supposed to be working.
 
 ### v2019.02.16
 * BUGFIX: On the sidebar on notebooks it was opening a new window, it is quite hacky, but is supposed to be working.
