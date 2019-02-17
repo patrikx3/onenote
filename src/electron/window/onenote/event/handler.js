@@ -43,7 +43,7 @@ const handler = (options) => {
                 global.p3x.onenote.root.$digest()
                 ipc.send('p3x-onenote-save', global.p3x.onenote.data);
             }
-        }, 1500)
+        }, p3x.onenote.wrongUrlTimeout)
     }
 
     generateInterval()
@@ -94,12 +94,15 @@ const handler = (options) => {
 
         event.preventDefault()
 
+        /*
         ipc.send('p3x-debug', {
             'new-window': event.url,
             allowed: allowedUrlRegex.test(event.url)
         })
+        */
 
         //console.log(event.url)
+        /*
         if (allowedUrlRegex2.test(event.url)) {
             // https://onedrive.live.com/redir?resid=3B992A1F2BEDFFA7%21955&page=Edit
             const urlParts = event.url.match(allowedUrlRegex2)
@@ -108,9 +111,13 @@ const handler = (options) => {
                 urlParts: urlParts
             })
             */
+        /*
             p3x.onenote.toast.action(p3x.onenote.lang.redirecting)
             webview.src = `https://onedrive.live.com/redir?resid=${urlParts[1]}%21955&page=Edit`;
-        } else if (allowedUrlRegex.test(event.url)) {
+        } else
+        */
+        if (allowedUrlRegex.test(event.url) || allowedUrlRegex2.test(event.url)) {
+            p3x.onenote.toast.action(p3x.onenote.lang.redirecting)
             webview.src = event.url;
         } else {
             shell.openExternal(event.url);

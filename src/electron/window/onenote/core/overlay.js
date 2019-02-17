@@ -28,7 +28,7 @@ if (process.versions.hasOwnProperty('electron')) {
             */
             showCount++
 
-            if (showCount > 5) {
+            if (showCount > p3x.onenote.wrongUrlMaxAllowed) {
                 require('../action/multi-actions')({
                     action: 'home'
                 })

@@ -15,7 +15,7 @@
   align-content: center;
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.9);
-  z-index: 99999;
+  z-index: 100;
   color: rgba(128, 128, 128, 0.5);
 }
 

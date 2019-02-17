@@ -33,7 +33,7 @@ global.p3x = {
         ng:undefined,
         webview: undefined,
         pkg: require('../../../../package'),
-        lang: require('../../../translation/default'),
+        lang: require('../../../translation/en'),
         data: {
             url: 'about:blank',
             proxy: '',
@@ -41,6 +41,8 @@ global.p3x = {
         prompt: undefined,
         toast: undefined,
         root: undefined,
+        wrongUrlTimeout: 1000,
+        wrongUrlMaxAllowed: 5,
     }
 }
 

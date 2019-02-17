@@ -4,7 +4,7 @@ const conf = new configstore(pkg.name);
 
 const { app } = require('electron');
 
-const translation = require('../translation/default')
+const translation = require('../translation/en')
 const path = require('path')
 
 global.p3x = {
