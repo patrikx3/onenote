@@ -123,22 +123,8 @@ P3X OneNote Linux is, actually, an independent browser window for the online One
     * Or the close button can move to the tray
 * You are able to set a proxy in the settings menu.
 * The OneNote language is controlled by Microsoft, but the Electron UI is now able to use any language. The default is only implemented now English. If you want to request a new language, there is a `./translation/en.js` file, if you create a file like `./translation/zn.js` (Chinese) and implement these keys, I will add a permanent setting in the menu (`Language chooser`).
-
-<!--
-* Loads last visibility state
--->
-
-## Corporate
-
 * There is now a menu called ```Corporate home```
-
-# Info about P3X Onenote vs VirtualBox
-
-If you have enough RAM or buffy workstation and you can install Linux VirtualBox inside Windows and use the Marketplace based OneNote or install Office. I think, you do not need  ```p3x-onenote``` at all.  
-
-For my workstation, with a 4.8Ghz CPU, 4 cores, 32 GB-ram, I use VirtualBox on Windows with Office Onenote (I use 6 GB RAM, 4 cores), but unfortunately my Laptop is old and has only 16GB RAM. Given, I develop a lot (NodeJs), I need the RAM, so for my Laptop, I use ```p3x-onenote``` and it's enough. Once the pages are loaded. It is fast, since it's own process without a browser and is in the tray, you don't have to re-load everything again. So it is very usable and after all pages are loaded, quick.
-
-**You can try, you loose nothing. Personally, by now, I even use this program on my buffy workstation**
+* Loads last visibility state
 
 # Issues
 
