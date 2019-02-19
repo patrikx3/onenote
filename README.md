@@ -120,7 +120,7 @@ P3X OneNote Linux is, actually, an independent browser window for the online One
 * Menu > Settings 
   * Close button 
     * Close button - will minimize to the tray instead of quit
-    * Close button - default quit close button behaviour (quit)
+    * Close button - default quit close button behaviour (quit the app)
 * You are able to set a proxy in the settings menu.
 * There is now a menu called ```Corporate home```
 * Loads last visibility state
