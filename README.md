@@ -123,7 +123,6 @@ P3X OneNote Linux is, actually, an independent browser window for the online One
     * Close button - default quit close button behaviour (quit the app)
 * You are able to set a proxy in the settings menu.
 * There is now a menu called ```Corporate home```
-* Loads last visibility state
 * The OneNote language is controlled by Microsoft, but the Electron UI is now able to use any language. The default is only implemented now English. If you want to request a new language, there is a `./translation/en.js` file, if you create a file like `./translation/zn.js` (Chinese) and implement these keys, I will add a permanent setting in the menu (`Language chooser`).
 
 # Issues
