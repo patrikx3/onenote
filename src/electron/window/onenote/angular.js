@@ -10,6 +10,12 @@ global.p3x.onenote.ng =  angular.module('p3x-onenote', [
 require('./angular/prompt');
 require('./angular/toast');
 
+global.p3x.onenote.ng.config(($mdAriaProvider) => {
+
+    $mdAriaProvider.disableWarnings();
+
+})
+
 global.p3x.onenote.ng.run((p3xOnenotePrompt, p3xOnenoteToast, $rootScope) => {
     global.p3x.onenote.prompt = p3xOnenotePrompt;
     global.p3x.onenote.toast = p3xOnenoteToast;

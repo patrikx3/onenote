@@ -4,7 +4,7 @@ const translation = {
         donate: 'Donate',
         disableHide: {
             yes: 'Close button - will minimize to the tray instead of quit',
-            no: 'Close button - default quit close button behaviour',
+            no: 'Close button - default quit close button behaviour (quit the app)',
             message: {
                 yes: 'The close button really closed the app.',
                 no: 'The close button instead of quitting it minimizes the app to the tray.',
