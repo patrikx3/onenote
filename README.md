@@ -105,7 +105,7 @@ P3X OneNote Linux is, actually, an independent browser window for the online One
 * when there is a new update, it auto updates itself.
 * the program allows to use other Microsoft online applications, but the dedicated purpose is to use OneNote
 
-## Verbose features info
+## Verbose feature info
 
 * Desktop menu <!-- (`````~/.local/share/applications/p3x-onenote.desktop`````) -->
 * Icon
