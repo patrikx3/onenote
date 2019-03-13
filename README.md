@@ -127,6 +127,8 @@ P3X OneNote Linux is, actually, an independent browser window for the online One
 
 # Issues
 
+## Not loading the pages
+Sometimes, it is possible, that OneNote Online does not load properly, the solutions is to quit and start the program again. 
 
 <!--
 ## Unable to log in
