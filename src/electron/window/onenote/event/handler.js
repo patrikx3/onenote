@@ -91,11 +91,18 @@ const handler = (options) => {
         global.p3x.onenote.root.$digest()
     });
 
-    webview.addEventListener('new-window', function(event) {
+    webview.addEventListener('new-window', async function(event) {
 
         event.preventDefault()
-        p3x.onenote.toast.action(p3x.onenote.lang.label.unknownLink)
-        webview.src = event.url;
+        //p3x.onenote.toast.action(p3x.onenote.lang.label.unknownLink)
+
+        global.p3x.onenote.prompt.redirect({ url: event.url } ).then(() => {
+            webview.src = event.url;
+        }, () => {
+            shell.openExternal(event.url)
+        })
+
+        //;
 
         /*
         ipc.send('p3x-debug', {

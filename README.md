@@ -11,7 +11,7 @@
 
 
  
-# 📚 P3X Onenote Linux v2019.4.7  
+# 📚 P3X Onenote Linux v2019.4.8  
 
   
 🙏 This is an open-source project. Star this repository, if you like it, or even donate to maintain the servers and the development. Thank you so much!
@@ -45,10 +45,10 @@ https://github.com/patrikx3/onenote/releases
 After downloading the ```AppImage```, make it an executable.
 ```bash
 mkdir -p $HOME/opt
-mv ~/Downloads/p3x-onenote-a.b.c-d-x86_64.AppImage $HOME/opt/
-chmod +x $HOME/opt/p3x-onenote-a.b.c-d-x86_64.AppImage
+mv ~/Downloads/p3x-onenote-a.b.c-x86_64.AppImage $HOME/opt/
+chmod +x $HOME/opt/p3x-onenote-a.b.c-x86_64.AppImage
 # Then you can run it
-$HOME/opt/p3x-onenote-a.b.c-d-x86_64.AppImage &
+$HOME/opt/p3x-onenote-a.b.c-x86_64.AppImage &
 ```
 
 It then actually integrates itself into the menus and it will auto update itself.
@@ -175,7 +175,7 @@ If you try to build the app with AppImage, you have to change from `electron` `d
 
 ---
 
-[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v2019.4.7 
+[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v2019.4.8 
 
 [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) 
 
