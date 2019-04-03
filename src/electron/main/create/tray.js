@@ -20,6 +20,7 @@ function mainTray() {
     } else {
         if (global.p3x.onenote.tray !== undefined) {
             global.p3x.onenote.tray.destroy()
+            global.p3x.onenote.tray = undefined
         }
     }
 }

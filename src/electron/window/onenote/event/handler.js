@@ -96,6 +96,10 @@ const handler = (options) => {
         event.preventDefault()
         //p3x.onenote.toast.action(p3x.onenote.lang.label.unknownLink)
 
+        if (event.url.trim() === 'about:blank') {
+            //webview.src = event.url;
+            return
+        }
         global.p3x.onenote.prompt.redirect({ url: event.url } ).then(() => {
             webview.src = event.url;
         }, () => {
