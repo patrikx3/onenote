@@ -3,11 +3,12 @@ const translation = {
     label: {
         donate: 'Donate',
         disableHide: {
-            yes: 'Set the close button behaviour that will minimize to the tray instead of quitting',
-            no: 'Set the close button behaviour as to really quit the app',
+            //yes: 'Set the close button behaviour that will minimize to the tray instead of quitting',
+            //no: 'Set the close button behaviour as to really quit the app',
+            checkbox: 'Close to the tray',
             message: {
-                yes: 'The close button really closed the app.',
-                no: 'The close button instead of quitting it minimizes the app to the tray.',
+                yes: 'The close button really closes the app.',
+                no: 'The close button, instead of quitting, it minimizes the app to the tray.',
 
             }
         },

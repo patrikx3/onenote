@@ -32,7 +32,9 @@ function mainMenu() {
             label: global.p3x.onenote.lang.label.settings,
             submenu: [
                 {
-                    label: minimizationBehaviorLabel,
+                    label: global.p3x.onenote.lang.label.disableHide.checkbox,
+                    type: 'checkbox',
+                    checked: !global.p3x.onenote.disableHide,
                     click: () => {
                         global.p3x.onenote.disableHide = !global.p3x.onenote.disableHide;
                         global.p3x.onenote.conf.set('disable-hide', global.p3x.onenote.disableHide);
