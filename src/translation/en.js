@@ -1,5 +1,5 @@
 const translation = {
-    title: '📚 P3X OneNote',
+    title: 'P3X OneNote',
     label: {
         donate: 'Donate',
         disableHide: {
