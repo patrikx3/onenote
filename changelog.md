@@ -1,6 +1,6 @@
 [//]: #@corifeus-header
 
-# 📚 P3X Onenote Linux
+# 📚 P3X OneNote Linux
 
                         
 [//]: #@corifeus-header:end

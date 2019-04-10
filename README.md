@@ -11,7 +11,7 @@
 
 
  
-# 📚 P3X Onenote Linux v2019.4.16  
+# 📚 P3X OneNote Linux v2019.4.16  
 
   
 🙏 This is an open-source project. Star this repository, if you like it, or even donate to maintain the servers and the development. Thank you so much!
@@ -39,6 +39,8 @@ A Linux compatible version of OneNote
 ![Screenshot 1](https://cdn.corifeus.com/git/onenote/artifacts/screenshot/screenshot-2019.png)
 
 # Downloadable installer
+
+[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/p3x-onenote)
 
 https://github.com/patrikx3/onenote/releases
 
@@ -170,6 +172,8 @@ If you try to build the app with AppImage, you have to change from `electron` `d
 [AlternativeTo OneNote Linux](https://alternativeto.net/software/p3x-onenote/)  
 
 [NPM P3X OneNote](https://www.npmjs.com/package/p3x-onenote)
+
+[Snap Store](https://snapcraft.io/p3x-onenote)
 
 [//]: #@corifeus-footer
 
