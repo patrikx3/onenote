@@ -2,6 +2,13 @@ const translation = {
     title: 'P3X OneNote',
     label: {
         donate: 'Donate',
+        allowMultiple: {
+            checkbox: 'Allow multiple instances (with some quirks)',
+            message: {
+                yes: 'Now you can use multiple instance with some quirks.',
+                no: 'Now, it allows only one instance, no quirks'
+            }
+        },
         disableHide: {
             //yes: 'Set the close button behaviour that will minimize to the tray instead of quitting',
             //no: 'Set the close button behaviour as to really quit the app',
@@ -31,6 +38,7 @@ const translation = {
         //unknownLink: 'Hang on, it might change while loading to the destination. If this is not a OneNote page, free to click on the P3X OneNote menu home'
     },
     dialog: {
+        info: 'Info',
         minimizationBehavior: {
             title: 'Minimization behavior',
         },

@@ -11,7 +11,7 @@
 
 
  
-# 📚 P3X OneNote Linux v2019.4.23  
+# 📚 P3X OneNote Linux v2019.4.25  
 
   
 🙏 This is an open-source project. Star this repository, if you like it, or even donate to maintain the servers and the development. Thank you so much!
@@ -128,6 +128,8 @@ P3X OneNote Linux is, actually, an independent browser window for the online One
 * You are able to set a proxy in the settings menu.
 * There is now a menu called `Corporate home`
 * The OneNote language is controlled by Microsoft, but the Electron UI is now able to use any language. The default is only implemented now English. If you want to request a new language, there is a `./translation/en.js` file, if you create a file like `./translation/zn.js` (Chinese) and implement these keys, I will add a permanent setting in the menu (`Language chooser`).
+* Allows using multiple instances (with some quirks, as the config will not be synchronized using multiple instances at once, so it can provide wrong settings).
+  * Multiple instances is not recommended (it was requested and provided).
 
 # Issues
 
@@ -179,7 +181,7 @@ If you try to build the app with AppImage, you have to change from `electron` `d
 
 ---
 
-[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v2019.4.23 
+[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v2019.4.25 
 
 [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) 
 

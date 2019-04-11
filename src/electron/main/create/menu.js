@@ -52,6 +52,27 @@ function mainMenu() {
                     }
                 },
                 {
+                    label: global.p3x.onenote.lang.label.allowMultiple.checkbox,
+                    type: 'checkbox',
+                    checked: global.p3x.onenote.allowMultiple,
+                    click: () => {
+                        global.p3x.onenote.allowMultiple = !global.p3x.onenote.allowMultiple;
+                        global.p3x.onenote.conf.set('allow-multiple', global.p3x.onenote.allowMultiple);
+
+                        const message = global.p3x.onenote.allowMultiple ? global.p3x.onenote.lang.label.allowMultiple.message.yes : global.p3x.onenote.lang.label.allowMultiple.message.no
+
+                        dialog.showMessageBox(global.p3x.onenote.window.onenote, {
+                            type: 'info',
+                            title: global.p3x.onenote.lang.dialog.info,
+                            message: message,
+                            buttons: [global.p3x.onenote.lang.button.ok]
+                        })
+                        mainMenu()
+                        mainTray()
+                    }
+                },
+
+                {
                     label: global.p3x.onenote.lang.label.setProxy,
                     click: action.setProxy,
                 }

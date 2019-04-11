@@ -14,6 +14,7 @@ global.p3x = {
         title: translation.title,
         conf: conf,
         disableHide: true,
+        allowMultiple: false,
         iconFile: path.resolve(`${__dirname}/images/256x256.png`),
         tray: undefined,
         window: {
@@ -39,6 +40,13 @@ if (global.p3x.onenote.disableHide === undefined) {
     global.p3x.onenote.disableHide = true;
 }
 
+// configuration
+global.p3x.onenote.allowMultiple = conf.get('allow-multiple')
+if (global.p3x.onenote.allowMultiple === undefined) {
+    conf.set('allow-multiple', false)
+    global.p3x.onenote.allowMultiple = false;
+}
+
 // loading
 global.p3x.onenote.action = require('./main/action');
 global.p3x.onenote.menus = require('./main/menus');
@@ -48,31 +56,34 @@ global.p3x.onenote.setVisible = require('./main/set-visible')
 global.p3x.onenote.createWindow.onenote = require('./main/create/window/onenote')
 
 
-const semver = require('semver')
-if (semver.gt(process.versions.electron === undefined ? '4.0.0' : process.versions.electron, '3.0.0')) {
-    const gotTheLock = app.requestSingleInstanceLock()
+if (global.p3x.onenote.allowMultiple === false) {
+    const semver = require('semver')
+    if (semver.gt(process.versions.electron === undefined ? '4.0.0' : process.versions.electron, '3.0.0')) {
+        const gotTheLock = app.requestSingleInstanceLock()
 
-    app.on('second-instance', (event, commandLine, workingDirectory) => {
-        // Someone tried to run a second instance, we should focus our window.
-        global.p3x.onenote.setVisible(true);
-        //global.p3x.onenote.window.onenote.webContents.reload();
-    })
+        app.on('second-instance', (event, commandLine, workingDirectory) => {
+            // Someone tried to run a second instance, we should focus our window.
+            global.p3x.onenote.setVisible(true);
+            //global.p3x.onenote.window.onenote.webContents.reload();
+        })
 
-    if (!gotTheLock) {
-        app.quit()
-        return
-    }
+        if (!gotTheLock) {
+            app.quit()
+            return
+        }
 
-} else {
-    const isSecondInstance = app.makeSingleInstance((commandLine, workingDirectory) => {
-        global.p3x.onenote.setVisible(true);
-        //global.p3x.onenote.window.onenote.webContents.reload();
-    })
+    } else {
+        const isSecondInstance = app.makeSingleInstance((commandLine, workingDirectory) => {
+            global.p3x.onenote.setVisible(true);
+            //global.p3x.onenote.window.onenote.webContents.reload();
+        })
 
-    if (isSecondInstance) {
-        return app.quit()
+        if (isSecondInstance) {
+            return app.quit()
+        }
     }
 }
+
 
 // app and ipc main events and configuration
 require('./main/ipc-main')
