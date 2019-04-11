@@ -8,7 +8,7 @@
 ## Change log
 
 ### v2019.4.24
-FEATURE: Allow using multiple instances (with some quirks, as the config will not be synchronized, so it can provide wrong settings)
+FEATURE: Allows using multiple instances (with some quirks, as the config will not be synchronized, so it can provide wrong settings)
 
 ### v2019.4.21
 FEATURE: Reverted added emoji in the title (notebook)
