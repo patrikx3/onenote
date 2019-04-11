@@ -128,7 +128,7 @@ P3X OneNote Linux is, actually, an independent browser window for the online One
 * You are able to set a proxy in the settings menu.
 * There is now a menu called `Corporate home`
 * The OneNote language is controlled by Microsoft, but the Electron UI is now able to use any language. The default is only implemented now English. If you want to request a new language, there is a `./translation/en.js` file, if you create a file like `./translation/zn.js` (Chinese) and implement these keys, I will add a permanent setting in the menu (`Language chooser`).
-* Allows using multiple instances (with some quirks, as the config will not be synchronized using multiple instances at once, so it can provide wrong settings).
+* Allows using multiple instances (with some quirks, as the config will not be synchronized using multiple instances at once, so it can provide wrong false results - to make it to work, configure with 1 instance and then exit and then use multiple instances).
   * Multiple instances is not recommended (it was requested and provided).
 
 # Issues
