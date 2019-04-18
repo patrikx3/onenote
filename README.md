@@ -11,12 +11,12 @@
 
 
  
-# 📚 P3X OneNote Linux v2019.4.27  
+# 📚 P3X OneNote Linux v2019.4.30  
 
   
 🙏 This is an open-source project. Star this repository, if you like it, or even donate to maintain the servers and the development. Thank you so much!
 
-Possible, this server, rarely, is down, please hang on for 15-30 minutes and the server will be back up.
+Possible, this server, rarely, is down, please, hang on for 15-30 minutes and the server will be back up.
 
 All my domains ([patrikx3.com](https://patrikx3.com) and [corifeus.com](https://corifeus.com)) could have minor errors, since I am developing in my free time. However, it is usually stable.
 
@@ -40,7 +40,10 @@ A Linux compatible version of OneNote
 
 # Downloadable installer
 
+## Snap
 [![LINK](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/p3x-onenote#cory-non-external)
+
+## AppImage
 
 https://github.com/patrikx3/onenote/releases
 
@@ -106,12 +109,12 @@ P3X OneNote Linux is, actually, an independent browser window for the online One
 * it provides a tray, that allows you to close your browser while it keeps running in the tray
 * the data is cached and is faster than always opening a new window
 * it allows you to sign in with the corporate or the personal login
-* when there is a new update, it auto updates itself.
+* when there is a new update, it auto updates itself (Only in the `AppImage` version.)
 * the program allows to use other Microsoft online applications, but the dedicated purpose is to use OneNote
 
 ## Verbose feature info
 
-* Desktop menu <!-- (`````~/.local/share/applications/p3x-onenote.desktop`````) -->
+* Desktop menu 
 * Icon
 * There is a bottom bar
   * It shows the current location
@@ -130,6 +133,8 @@ P3X OneNote Linux is, actually, an independent browser window for the online One
 * The OneNote language is controlled by Microsoft, but the Electron UI is now able to use any language. The default is only implemented now English. If you want to request a new language, there is a `./translation/en.js` file, if you create a file like `./translation/zn.js` (Chinese) and implement these keys, I will add a permanent setting in the menu (`Language chooser`).
 * Allows using multiple instances (with some quirks, as the config will not be synchronized using multiple instances at once, so it can provide wrong results - to make it to work, configure with 1 instance, exit, then use multiple instances).
   * Multiple instances is not recommended (it was requested and provided).
+
+<!-- (`````~/.local/share/applications/p3x-onenote.desktop`````) -->
 
 # Issues
 
@@ -181,7 +186,7 @@ If you try to build the app with AppImage, you have to change from `electron` `d
 
 ---
 
-[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v2019.4.27 
+[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v2019.4.30 
 
 [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) 
 
