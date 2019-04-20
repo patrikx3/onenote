@@ -10,8 +10,8 @@ const handler = (options) => {
  //		webview.insertCSS(window.cssData);
      });
      */
-    const allowedUrlRegex = /^((https?:\/\/((onedrive\.live\.com\/((redir\?resid\=)|((redir|edit).aspx\?)))|((www\.)?onenote\.com)|(login\.)|(g\.live\.))|(about\:blank)))/i
-    const allowedUrlRegex2 = /^https?:\/\/d\.docs\.live\.net\/([a-z0-9]{16})\//i
+ //   const allowedUrlRegex = /^((https?:\/\/((onedrive\.live\.com\/((redir\?resid\=)|((redir|edit).aspx\?)))|((www\.)?onenote\.com)|(login\.)|(g\.live\.))|(about\:blank)))/i
+ //   const allowedUrlRegex2 = /^https?:\/\/d\.docs\.live\.net\/([a-z0-9]{16})\//i
 
     //const disalledUrl = /^((https?:\/\/))/i
 
@@ -100,10 +100,12 @@ const handler = (options) => {
             //webview.src = event.url;
             return
         }
-        global.p3x.onenote.prompt.redirect({ url: event.url } ).then(() => {
-            webview.src = event.url;
-        }, () => {
-            shell.openExternal(event.url)
+        global.p3x.onenote.prompt.redirect({ url: event.url } ).then((answer) => {
+            if (answer === 'internal') {
+                webview.src = event.url;
+            } else {
+                shell.openExternal(event.url)
+            }
         })
 
         //;

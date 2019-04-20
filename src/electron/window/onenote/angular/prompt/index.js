@@ -18,17 +18,43 @@ global.p3x.onenote.ng.factory('p3xOnenotePrompt', ($mdDialog) => {
         }
 
         this.redirect = (opts) => {
-            const confirm = $mdDialog.confirm()
-                .title(p3x.onenote.lang.label.promptRedirectUrlTitle)
-                .textContent(p3x.onenote.lang.dialog.redirect.url({url: opts.url}))
-//                .placeholder(p3x.onenote.lang.dialog.setProxy.placeholder)
-//                .ariaLabel(p3x.onenote.lang.dialog.setProxy.placeholder)
-//                .initialValue(global.p3x.onenote.data.proxy)
-                //.targetEvent(ev)
-                //.required(true)
-                .cancel(p3x.onenote.lang.dialog.redirect.urlExternal)
-                .ok(p3x.onenote.lang.dialog.redirect.urlInternal)
-            return $mdDialog.show(confirm)
+
+            return $mdDialog.show({
+                template: `
+                    <md-dialog>
+
+                      <md-dialog-content>
+                        <md-content layout-padding>
+                            <h3 flex>
+                                ${p3x.onenote.lang.label.promptRedirectUrlTitle}
+                            </h3>
+                            <div layout-padding>
+                                ${p3x.onenote.lang.dialog.redirect.url({url: opts.url})}                            
+                            </div>
+                        </md-content>
+                      </md-dialog-content>
+
+                      <md-dialog-actions>
+                        <md-button ng-click="exit('external')" class="md-primary">
+                           ${p3x.onenote.lang.dialog.redirect.urlExternal}
+                        </md-button>
+                        <md-button ng-click="exit('internal')" class="md-primary">
+                           ${p3x.onenote.lang.dialog.redirect.urlInternal}
+                        </md-button>
+                        <md-button ng-click="cancel()" class="md-primary">
+                           ${p3x.onenote.lang.button.cancel}
+                        </md-button>
+                      </md-dialog-actions>
+                    </md-dialog>`,
+                controller: function($mdDialog, $scope) {
+                    $scope.exit = (answer) => {
+                        $mdDialog.hide(answer);
+                    }
+
+                    $scope.cancel = $mdDialog.cancel
+                }
+            });
+
         }
     }
 
