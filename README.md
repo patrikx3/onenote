@@ -1,6 +1,6 @@
 [//]: #@corifeus-header
   
-[![NPM](https://nodei.co/npm/p3x-onenote.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/p3x-onenote/)
+[![NPM](https://nodei.co/npm/p3x-onenote.png?downloads=true&downloadRank=true)](https://www.npmjs.com/package/p3x-onenote/)
 
   
 
