@@ -8,6 +8,10 @@ function createWindow() {
         icon: global.p3x.onenote.iconFile,
         title: `${global.p3x.onenote.title} v${global.p3x.onenote.pkg.version}`,
         backgroundColor: 'black',
+        webPreferences: {
+            nodeIntegration: true,
+            webviewTag: true,
+        }
     });
 
     global.p3x.onenote.setVisible(true);

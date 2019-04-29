@@ -48,6 +48,7 @@
         "angular-messages": "^1.7.8",
         "configstore": "^4.0.0",
         "corifeus-utils": "^2019.4.13",
+        "electron": "^5.0.0",
         "electron-updater": "^4.0.6",
         "jquery": "^3.4.0",
         "opencollective": "^1.0.3",
@@ -55,7 +56,7 @@
         "typeface-roboto": "0.0.54"
     },
     "devDependencies": {
-        "jsdom": "^14.0.0",
+        "jsdom": "^15.0.0",
         "angular-mocks": "^1.7.8",
         "corifeus-builder": "^2019.4.12",
         "electron-builder": "^20.39.0"
