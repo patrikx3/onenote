@@ -42,7 +42,7 @@ A Linux compatible version of OneNote
 
 ## Snap
 
-The main source is the `AppImage`, so, the themes are not implemented. If you want the themes to be implemented (dark vs light), I suggest using the `AppImage` as it supports the themes natively.
+The main source installer is the `AppImage`, so, the themes are not implemented (the main menus). If you want the themes to be implemented (dark vs light), I suggest using the `AppImage` as it supports the themes natively. Besides, the auto self update function is not implemented in `Snap`, only in `AppImage` version.  
 
 [![LINK](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/p3x-onenote#cory-non-external)
 
