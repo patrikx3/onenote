@@ -17,6 +17,22 @@ global.p3x.onenote.ng.factory('p3xOnenotePrompt', ($mdDialog) => {
             return $mdDialog.show(confirm)
         }
 
+        this.goToUrl = () => {
+            const confirm = $mdDialog.prompt()
+                .title(p3x.onenote.lang.label.openUrl)
+                .textContent(p3x.onenote.lang.dialog.openUrl.info)
+                .placeholder(p3x.onenote.lang.dialog.openUrl.placeholder)
+                .ariaLabel(p3x.onenote.lang.dialog.openUrl.placeholder)
+                //.initialValue(global.p3x.onenote.data.proxy)
+                //.targetEvent(ev)
+                //.required(true)
+                .cancel(p3x.onenote.lang.button.cancel)
+                .ok(p3x.onenote.lang.button.go)
+
+            return $mdDialog.show(confirm)
+
+        }
+
         this.redirect = (opts) => {
 
             return $mdDialog.show({

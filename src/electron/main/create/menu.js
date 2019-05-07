@@ -26,6 +26,12 @@ function mainMenu() {
             label: p3x.onenote.lang.menu.action,
             submenu: [
                 copyLocation,
+                {
+                    label: global.p3x.onenote.lang.label.openUrl,
+                    click: () => {
+                        global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-action-open-url')
+                    }
+                }
             ]
         },
         {

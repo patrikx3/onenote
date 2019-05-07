@@ -21,6 +21,7 @@ const translation = {
         },
         settings: 'Settings',
         setProxy: 'Set proxy',
+        openUrl: 'Open an URL',
         promptRedirectUrlTitle: 'Redirect to url',
         edit: 'Edit',
         view: 'View',
@@ -39,6 +40,11 @@ const translation = {
     },
     dialog: {
         info: 'Info',
+        openUrl: {
+            info: 'You can go to any URL you wish',
+            placeholder: 'a valid URL',
+
+        },
         minimizationBehavior: {
             title: 'Minimization behavior',
         },
@@ -65,6 +71,8 @@ const translation = {
         cancel: 'Cancel',
         save: 'Save',
         clear: 'Clear',
+        go: 'Go',
+
     },
     menu: {
         action: 'Action',

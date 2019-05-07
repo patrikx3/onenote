@@ -31,6 +31,25 @@ const handler = (options) => {
         setProxy(data);
     })
 
+    ipcRenderer.on('p3x-onenote-action-open-url', async(event, data) => {
+        let url = '';
+        let cancelled = false;
+        try {
+            url = await global.p3x.onenote.prompt.goToUrl();
+            url = url === undefined ? '' : url.trim();
+        } catch(e) {
+            if (e !== undefined) {
+                console.error(e);
+            } else {
+                cancelled = true;
+            }
+        } finally {
+            if (!cancelled) {
+                global.p3x.onenote.webview.src = url
+            }
+        }
+    })
+
 }
 
 module.exports = handler
