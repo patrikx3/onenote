@@ -159,7 +159,7 @@ This only happens if you kill ```P3X OneNote Linux``` and then relogin many time
 
 https://github.com/patrikx3/onenote/issues/3#issuecomment-312711801
 
-## Change language
+## Online OneNote Change language
 
 Although the main page's language can be changed, it reverts back when an actual page is accessed.
 This is being investigated.
