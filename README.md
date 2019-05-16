@@ -155,10 +155,6 @@ This only happens if you kill ```P3X OneNote Linux``` and then relogin many time
 
 -->
 
-## Fedora
-
-https://github.com/patrikx3/onenote/issues/3#issuecomment-312711801
-
 ## Online OneNote Change language
 
 Although the main page's language can be changed, it reverts back when an actual page is accessed.
@@ -175,6 +171,10 @@ https://github.com/patrikx3/onenote/issues/62
 🐞 Since Electron v3, the tray left click is executing as the right click, Electron bug.    
   
 https://github.com/patrikx3/onenote/issues/38  
+
+## Fedora
+
+https://github.com/patrikx3/onenote/issues/3#issuecomment-312711801
     
 # Development
 If you try to build the app with AppImage, you have to change from `electron` `dependencies` to `devDependencies`, this is because it is created to be able to run this app from `NPM` instead of an `AppImage`.
