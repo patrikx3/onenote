@@ -26,6 +26,13 @@ const pkg = require('../../../../package.json');
 const conf = new configstore(pkg.name);
 let translationKey = conf.get('lang')
 
+const langTranslations = {
+    'en-US': require('../../../translation/en-US'),
+    'de-DE': require('../../../translation/de-DE'),
+}
+
+const translation = langTranslations[translationKey]
+
 global.p3x = {
     onenote: {
         url: {
@@ -43,7 +50,8 @@ https://www.onenote.com/notebooks?omkt=hu-HU
         ng:undefined,
         webview: undefined,
         pkg: require('../../../../package'),
-        lang: require('../../../translation/' + translationKey),
+        translations: langTranslations,
+        lang: translation,
         data: {
             url: 'about:blank',
             proxy: '',

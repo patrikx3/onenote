@@ -29,7 +29,7 @@ function mainMenu() {
                 checked: global.p3x.onenote.conf.get('lang') === trans,
                 click: () => {
                     global.p3x.onenote.conf.set('lang', trans)
-                    global.p3x.onenote.lang = require('../../../translation/' + trans)
+                    global.p3x.onenote.lang = global.p3x.onenote.translations[trans]
                     mainMenu()
                     mainTray()
                     global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-language', {

@@ -32,7 +32,7 @@ const handler = (options) => {
     })
 
     ipcRenderer.on('p3x-onenote-language', async (event, data) => {
-        global.p3x.onenote.lang = require('../../../../translation/' + data.translation)
+        global.p3x.onenote.lang = global.p3x.onenote.translations[data.translation]
         global.p3x.onenote.toast.action(global.p3x.onenote.lang.menu.language.alert)
 
         let type = '';

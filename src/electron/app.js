@@ -10,14 +10,22 @@ if (translationKey === undefined) {
     conf.set('lang', translationKey)
 }
 
-const translation = require('../translation/' + translationKey)
 const path = require('path')
+
+const langTranslations = {
+    'en-US': require('../translation/en-US'),
+    'de-DE': require('../translation/de-DE'),
+}
+
+const translation = langTranslations[translationKey]
+
 
 global.p3x = {
     onenote: {
         pkg: pkg,
         lang: translation,
         translationKey: translationKey,
+        translations: undefined,
         title: translation.title,
         conf: conf,
         disableHide: true,
@@ -39,6 +47,8 @@ global.p3x = {
         }
     }
 }
+
+global.p3x.onenote.translations = langTranslations
 
 // configuration
 global.p3x.onenote.disableHide = conf.get('disable-hide')
