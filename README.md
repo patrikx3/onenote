@@ -162,7 +162,7 @@ This is being investigated.
 
 https://github.com/patrikx3/onenote/issues/14
 
-### Meeting Details
+## Meeting Details
 It is a known bug, that it freezes P3X OneNote.  
   
 https://github.com/patrikx3/onenote/issues/62  
