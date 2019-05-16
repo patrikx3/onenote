@@ -21,9 +21,19 @@ fs.readFile(__dirname + '/hack.css', 'utf-8', function(err, data) {
 });
 */
 
+const configstore = require('configstore');
+const pkg = require('../../../../package.json');
+const conf = new configstore(pkg.name);
+let translationKey = conf.get('lang')
+
 global.p3x = {
     onenote: {
         url: {
+/*
+https://www.onenote.com/notebooks?omkt=en-US
+https://www.onenote.com/notebooks?omkt=de-DE
+https://www.onenote.com/notebooks?omkt=hu-HU
+*/
           notebooks: 'https://www.onenote.com/notebooks',
         },
         ui: {
@@ -33,7 +43,7 @@ global.p3x = {
         ng:undefined,
         webview: undefined,
         pkg: require('../../../../package'),
-        lang: require('../../../translation/en'),
+        lang: require('../../../translation/' + translationKey),
         data: {
             url: 'about:blank',
             proxy: '',

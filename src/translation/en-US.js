@@ -100,7 +100,20 @@ const translation = {
         help: {
             title: 'Help',
             checkUpdates: 'Check updates'
-        }
+        },
+        language: {
+            label: 'Language',
+            alert: 'Language set to english.',
+            dialog: {
+              label: 'Try to configure Online OneNote language?',
+              coperate: 'Coperate',
+              personal: 'Personal',
+            },
+            translations: {
+                'en-US': 'English',
+                'de-DE': 'Deutsch / German',
+            }
+        },
     },
     redirecting: 'Hang on, redirecting to a new notebook. It takes some time...',
     slow: 'Hang on, loading OneNote takes some time...',

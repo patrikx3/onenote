@@ -17,6 +17,30 @@ function mainMenu() {
 
     const minimizationBehaviorLabel = !global.p3x.onenote.disableHide ? global.p3x.onenote.lang.label.disableHide.no : global.p3x.onenote.lang.label.disableHide.yes
 
+
+    const languageCheckbox = [
+    ];
+    for(let trans of Object.keys(global.p3x.onenote.lang.menu.language.translations)) {
+        const transLabel = global.p3x.onenote.lang.menu.language.translations[trans]
+        const transMenu = ((trans) => {
+            return {
+                label: transLabel,
+                type: 'radio',
+                checked: global.p3x.onenote.conf.get('lang') === trans,
+                click: () => {
+                    global.p3x.onenote.conf.set('lang', trans)
+                    global.p3x.onenote.lang = require('../../../translation/' + trans)
+                    mainMenu()
+                    mainTray()
+                    global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-language', {
+                        translation: trans,
+                    })
+                }
+            }
+        })(trans)
+        languageCheckbox.push(transMenu)
+    }
+
     const template = [
         {
             label: global.p3x.onenote.title,
@@ -83,6 +107,10 @@ function mainMenu() {
                     click: action.setProxy,
                 }
             ],
+        },
+        {
+            label: global.p3x.onenote.lang.menu.language.label,
+            submenu: languageCheckbox,
         },
         {
             label: global.p3x.onenote.lang.label.edit,

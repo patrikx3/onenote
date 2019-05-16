@@ -33,6 +33,43 @@ global.p3x.onenote.ng.factory('p3xOnenotePrompt', ($mdDialog) => {
 
         }
 
+        this.configureLanguge  = (opts) => {
+
+            return $mdDialog.show({
+                template: `
+                    <md-dialog>
+
+                      <md-dialog-content>
+                        <md-content layout-padding>
+                            <h3 flex>
+                                ${p3x.onenote.lang.menu.language.dialog.label}
+                            </h3>
+                        </md-content>
+                      </md-dialog-content>
+
+                      <md-dialog-actions>
+                        <md-button ng-click="exit('personal', ${opts.translation})" class="md-primary">
+                           ${p3x.onenote.lang.menu.language.dialog.personal}
+                        </md-button>
+                        <md-button ng-click="exit('corporate', ${opts.translation})" class="md-primary">
+                           ${p3x.onenote.lang.menu.language.dialog.coperate}
+                        </md-button>
+                        <md-button ng-click="cancel()" class="md-primary">
+                           ${p3x.onenote.lang.button.cancel}
+                        </md-button>
+                      </md-dialog-actions>
+                    </md-dialog>`,
+                controller: function($mdDialog, $scope) {
+                    $scope.exit = (answer) => {
+                        $mdDialog.hide(answer);
+                    }
+
+                    $scope.cancel = $mdDialog.cancel
+                }
+            });
+
+        }
+
         this.redirect = (opts) => {
 
             return $mdDialog.show({

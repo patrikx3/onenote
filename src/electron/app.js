@@ -4,18 +4,25 @@ const conf = new configstore(pkg.name);
 
 const { app } = require('electron');
 
-const translation = require('../translation/en')
+let translationKey = conf.get('lang')
+if (translationKey === undefined) {
+    translationKey = 'en-US'
+    conf.set('lang', translationKey)
+}
+
+const translation = require('../translation/' + translationKey)
 const path = require('path')
 
 global.p3x = {
     onenote: {
         pkg: pkg,
         lang: translation,
+        translationKey: translationKey,
         title: translation.title,
         conf: conf,
         disableHide: true,
         allowMultiple: false,
-        iconFile: path.resolve(`${__dirname}/images/256x256.png`),
+        iconFile: path.resolve(`${__dirname}/images/1024x1024.png`),
         tray: undefined,
         window: {
           onenote: undefined,

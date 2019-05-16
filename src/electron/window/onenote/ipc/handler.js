@@ -31,6 +31,33 @@ const handler = (options) => {
         setProxy(data);
     })
 
+    ipcRenderer.on('p3x-onenote-language', async (event, data) => {
+        global.p3x.onenote.lang = require('../../../../translation/' + data.translation)
+        global.p3x.onenote.toast.action(global.p3x.onenote.lang.menu.language.alert)
+
+        let type = '';
+        let cancelled = false;
+        try {
+            type = await global.p3x.onenote.prompt.configureLanguge(data);
+            type = type === undefined ? '' : type.trim();
+        } catch(e) {
+            if (e !== undefined) {
+                console.error(e);
+            } else {
+                cancelled = true;
+            }
+        } finally {
+            if (!cancelled) {
+                if (type === 'corporate') {
+                    global.p3x.onenote.webview.src = 'https://www.onenote.com/notebooks?auth=2&auth_upn=my_corporate_email_address&omkt=' + data.translation
+                } else {
+                    global.p3x.onenote.webview.src = 'https://www.onenote.com/notebooks?omkt=' + data.translation
+                }
+            }
+        }
+
+    })
+
     ipcRenderer.on('p3x-onenote-action-open-url', async(event, data) => {
         let url = '';
         let cancelled = false;
