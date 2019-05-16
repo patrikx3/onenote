@@ -8,7 +8,7 @@
 ## Change log
 
 ### v2019.4.42
-* BUGFIX: Revert Electron to v4.2.1 as there is a SUID permission
+* BUGFIX: Revert Electron to v4.2.1 as there is a SUID permission, https://github.com/patrikx3/onenote/issues/63
 
 ### v2019.4.39
 * FEATURE: New `OneNote 2019` icon
