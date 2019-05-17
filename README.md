@@ -11,7 +11,7 @@
 
 
  
-# 📚 P3X OneNote Linux v2019.4.43  
+# 📚 P3X OneNote Linux v2019.4.44  
 
   
 🙏 This is an open-source project. Star this repository, if you like it, or even donate to maintain the servers and the development. Thank you so much!
@@ -164,11 +164,6 @@ This is being investigated.
 
 https://github.com/patrikx3/onenote/issues/14
 
-## Meeting Details
-It is a known bug, that it freezes P3X OneNote.  
-  
-https://github.com/patrikx3/onenote/issues/62  
-
 ## Electron problem
 🐞 Since Electron v3, the tray left click is executing as the right click, Electron bug.    
   
@@ -198,7 +193,7 @@ If you try to build the app with AppImage, you have to change from `electron` `d
 
 ---
 
-[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v2019.4.43 
+[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v2019.4.44 
 
 [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software) 
 
