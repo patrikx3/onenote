@@ -9,7 +9,7 @@
 
 ### v2019.4.104
 * CHORE: Upgraded to Electron v5
-* BUGFIX: Electron was not working sandbox, I worked it out with a script in `src/after-pack.js`
+* BUGFIX: Electron was not working sandbox, I worked it out with a script in `src/build/after-pack.js`
 
 ### v2019.4.101
 * BUGFIX: Minor translation issue.
