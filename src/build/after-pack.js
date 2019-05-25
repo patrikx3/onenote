@@ -1,5 +1,5 @@
 const fs = require('fs-extra')
-const pkg = require('../package')
+const pkg = require('../../package')
 const { spawn } = require('child_process')
 const { chdir } = require('process')
 
