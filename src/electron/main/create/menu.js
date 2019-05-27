@@ -226,8 +226,8 @@ function mainMenu() {
     ]
 
     if (process.env.APPIMAGE !== undefined) {
-        template[5].submenu.push({type: 'separator'})
-        template[5].submenu.push({
+        template[6].submenu.push({type: 'separator'})
+        template[6].submenu.push({
                 label: global.p3x.onenote.lang.menu.help.checkUpdates,
                 click: () => {
                     const {autoUpdater} = require("electron-updater");
