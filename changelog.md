@@ -7,7 +7,7 @@
 
 ## Change log
 
-### v2019.4.115
+### v2019.4.122
 * BUGFIX: configstore v5 is not working with SNAP, had to revert to configstore v4
   * https://github.com/patrikx3/onenote/issues/68
 
