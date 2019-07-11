@@ -1,19 +1,19 @@
-const { ipcRenderer } =require('electron');
+const {ipcRenderer} = require('electron');
 
 const setProxy = require('../action/set-proxy');
 const multiActions = require('../action/multi-actions');
 
 const handler = (options) => {
-    const { webview } = options;
+    const {webview} = options;
 
-    ipcRenderer.on('p3x-onenote-onload-user', function(event, data) {
+    ipcRenderer.on('p3x-onenote-onload-user', function (event, data) {
         if (data !== null) {
             global.p3x.onenote.data = data;
         }
 
         //console.log('p3x-onenote-onload-user', data)
 
-        if (typeof(global.p3x.onenote.data) === 'object' && global.p3x.onenote.data.hasOwnProperty('url') && global.p3x.onenote.data.url !== 'about:blank') {
+        if (typeof (global.p3x.onenote.data) === 'object' && global.p3x.onenote.data.hasOwnProperty('url') && global.p3x.onenote.data.url !== 'about:blank') {
             webview.src = global.p3x.onenote.data.url;
         } else {
             webview.src = 'https://www.onenote.com/notebooks'
@@ -23,7 +23,7 @@ const handler = (options) => {
         }
     })
 
-    ipcRenderer.on('p3x-onenote-action', function(event, data) {
+    ipcRenderer.on('p3x-onenote-action', function (event, data) {
         multiActions(data);
     })
 
@@ -40,7 +40,7 @@ const handler = (options) => {
         try {
             type = await global.p3x.onenote.prompt.configureLanguge(data);
             type = type === undefined ? '' : type.trim();
-        } catch(e) {
+        } catch (e) {
             if (e !== undefined) {
                 console.error(e);
             } else {
@@ -58,13 +58,13 @@ const handler = (options) => {
 
     })
 
-    ipcRenderer.on('p3x-onenote-action-open-url', async(event, data) => {
+    ipcRenderer.on('p3x-onenote-action-open-url', async (event, data) => {
         let url = '';
         let cancelled = false;
         try {
             url = await global.p3x.onenote.prompt.goToUrl();
             url = url === undefined ? '' : url.trim();
-        } catch(e) {
+        } catch (e) {
             if (e !== undefined) {
                 console.error(e);
             } else {

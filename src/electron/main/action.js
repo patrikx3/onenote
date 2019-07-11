@@ -1,4 +1,4 @@
-const { shell, app } = require('electron')
+const {shell, app} = require('electron')
 
 const action = {
     setProxy: require('./actions/set-proxy'),

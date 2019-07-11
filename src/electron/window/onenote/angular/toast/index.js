@@ -14,9 +14,9 @@ global.p3x.onenote.ng.factory('p3xOnenoteToast', ($mdToast) => {
         );
     }
 
-    return new function() {
+    return new function () {
         this.action = toast;
-        this.setProxy = new function() {
+        this.setProxy = new function () {
             this.clear = () => toast(p3x.onenote.lang.dialog.setProxy.clear)
             this.set = (value) => toast(p3x.onenote.lang.dialog.setProxy.set(value))
         }

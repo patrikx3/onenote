@@ -33,7 +33,7 @@ const menus = {
                 label: visible ? global.p3x.onenote.lang.label.hide : global.p3x.onenote.lang.label.show,
                 click: action.toggleVisible
             }
-            menus.splice( 3, 0, hideMenu );
+            menus.splice(3, 0, hideMenu);
         }
 
 

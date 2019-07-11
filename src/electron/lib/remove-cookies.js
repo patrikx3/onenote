@@ -1,18 +1,19 @@
 const removeCookies = (webview) => {
     let session = webview.getWebContents().session;
-    session.cookies.get({}, async function(error, cookies) {
+    session.cookies.get({}, async function (error, cookies) {
         if (error) {
             alert(error.message);
             console.error(error);
             return;
-        };
+        }
+        ;
         for (var i = cookies.length - 1; i >= 0; i--) {
             const cookie = cookies[i];
             let domain = cookie.domain;
             if (domain.startsWith('.')) {
                 domain = domain.substring(1);
             }
-            const url = "http" + (cookie.secure ? "s" : "") + "://" + domain  + cookie.path;
+            const url = "http" + (cookie.secure ? "s" : "") + "://" + domain + cookie.path;
             console.info(`
 cookie.domain: ${cookie.domain} 
 cookie.hostOnly: ${cookie.hostOnly}
@@ -33,7 +34,8 @@ url: ${url}
                                 alert(error.message);
                                 console.error(error);
                                 return;
-                            };
+                            }
+                            ;
                             resolve();
                             console.log('cookie delete : ', cookie.name);
                         }
@@ -42,7 +44,8 @@ url: ${url}
             )
             await Promise.all(promises);
             webview.reload();
-        };
+        }
+        ;
     });
 }
 

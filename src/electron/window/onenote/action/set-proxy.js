@@ -1,13 +1,13 @@
-const { ipcRenderer}  = require('electron');
+const {ipcRenderer} = require('electron');
 
-module.exports = async(data) => {
+module.exports = async (data) => {
 
     let valueProxy = '';
     let cancelled = false;
     try {
         valueProxy = await global.p3x.onenote.prompt.setProxy();
         valueProxy = valueProxy === undefined ? '' : valueProxy.trim();
-    } catch(e) {
+    } catch (e) {
         if (e !== undefined) {
             console.error(e);
         } else {

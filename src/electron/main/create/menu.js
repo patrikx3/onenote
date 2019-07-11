@@ -18,9 +18,8 @@ function mainMenu() {
     const minimizationBehaviorLabel = !global.p3x.onenote.disableHide ? global.p3x.onenote.lang.label.disableHide.no : global.p3x.onenote.lang.label.disableHide.yes
 
 
-    const languageCheckbox = [
-    ];
-    for(let trans of Object.keys(global.p3x.onenote.lang.menu.language.translations)) {
+    const languageCheckbox = [];
+    for (let trans of Object.keys(global.p3x.onenote.lang.menu.language.translations)) {
         const transLabel = global.p3x.onenote.lang.menu.language.translations[trans]
         const transMenu = ((trans) => {
             return {

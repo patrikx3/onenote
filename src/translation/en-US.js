@@ -105,9 +105,9 @@ const translation = {
             label: 'Language',
             alert: 'Language set to english.',
             dialog: {
-              label: 'Try to configure Online OneNote language?',
-              coperate: 'Coperate',
-              personal: 'Personal',
+                label: 'Try to configure Online OneNote language?',
+                coperate: 'Coperate',
+                personal: 'Personal',
             },
             translations: {
                 'en-US': 'English',

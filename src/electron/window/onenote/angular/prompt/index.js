@@ -1,6 +1,6 @@
 global.p3x.onenote.ng.factory('p3xOnenotePrompt', ($mdDialog) => {
 
-    return new function() {
+    return new function () {
 
         this.setProxy = () => {
             const confirm = $mdDialog.prompt()
@@ -33,7 +33,7 @@ global.p3x.onenote.ng.factory('p3xOnenotePrompt', ($mdDialog) => {
 
         }
 
-        this.configureLanguge  = (opts) => {
+        this.configureLanguge = (opts) => {
 
             return $mdDialog.show({
                 template: `
@@ -59,7 +59,7 @@ global.p3x.onenote.ng.factory('p3xOnenotePrompt', ($mdDialog) => {
                         </md-button>
                       </md-dialog-actions>
                     </md-dialog>`,
-                controller: function($mdDialog, $scope) {
+                controller: function ($mdDialog, $scope) {
                     $scope.exit = (answer) => {
                         $mdDialog.hide(answer);
                     }
@@ -99,7 +99,7 @@ global.p3x.onenote.ng.factory('p3xOnenotePrompt', ($mdDialog) => {
                         </md-button>
                       </md-dialog-actions>
                     </md-dialog>`,
-                controller: function($mdDialog, $scope) {
+                controller: function ($mdDialog, $scope) {
                     $scope.exit = (answer) => {
                         $mdDialog.hide(answer);
                     }

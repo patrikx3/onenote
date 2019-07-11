@@ -5,7 +5,7 @@ let showCount = 0
 
 if (process.versions.hasOwnProperty('electron')) {
 
-    p3x.onenote.ui.overlay = new function() {
+    p3x.onenote.ui.overlay = new function () {
         const template = (options = {}) => {
 
             return `

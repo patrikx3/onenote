@@ -2,7 +2,7 @@ const configstore = require('configstore');
 const pkg = require('../../package.json');
 const conf = new configstore(pkg.name);
 
-const { app } = require('electron');
+const {app} = require('electron');
 
 let translationKey = conf.get('lang')
 if (translationKey === undefined) {
@@ -33,7 +33,7 @@ global.p3x = {
         iconFile: path.resolve(`${__dirname}/images/256x256.png`),
         tray: undefined,
         window: {
-          onenote: undefined,
+            onenote: undefined,
         },
         action: undefined,
         menus: undefined,

@@ -1,10 +1,10 @@
 const fs = require('fs-extra')
 const pkg = require('../../package')
-const { spawn } = require('child_process')
-const { chdir } = require('process')
+const {spawn} = require('child_process')
+const {chdir} = require('process')
 
 const exec = async function exec(cmd, args = []) {
-    const child = spawn(cmd, args, { shell: true })
+    const child = spawn(cmd, args, {shell: true})
     redirectOutputFor(child)
     await waitFor(child)
 }
@@ -25,13 +25,13 @@ const redirectOutputFor = (child) => {
     })
 }
 
-const waitFor = async function(child) {
+const waitFor = async function (child) {
     return new Promise((resolve) => {
         child.once('close', () => resolve())
     })
 }
 
-module.exports = async function(context) {
+module.exports = async function (context) {
     //console.log(context)
     console.warn('p3x disable sandbox')
     const isLinux = context.targets.find(target => target.name === 'appImage' || target.name === 'snap')

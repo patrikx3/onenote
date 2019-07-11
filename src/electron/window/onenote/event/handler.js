@@ -1,17 +1,17 @@
-const electron =require('electron');
+const electron = require('electron');
 const shell = electron.shell;
 const ipc = electron.ipcRenderer;
 
 const handler = (options) => {
-    const { webview } = options;
+    const {webview} = options;
 
     /*
      webview.addEventListener('did-stop-loading', function(event) {
  //		webview.insertCSS(window.cssData);
      });
      */
- //   const allowedUrlRegex = /^((https?:\/\/((onedrive\.live\.com\/((redir\?resid\=)|((redir|edit).aspx\?)))|((www\.)?onenote\.com)|(login\.)|(g\.live\.))|(about\:blank)))/i
- //   const allowedUrlRegex2 = /^https?:\/\/d\.docs\.live\.net\/([a-z0-9]{16})\//i
+    //   const allowedUrlRegex = /^((https?:\/\/((onedrive\.live\.com\/((redir\?resid\=)|((redir|edit).aspx\?)))|((www\.)?onenote\.com)|(login\.)|(g\.live\.))|(about\:blank)))/i
+    //   const allowedUrlRegex2 = /^https?:\/\/d\.docs\.live\.net\/([a-z0-9]{16})\//i
 
     //const disalledUrl = /^((https?:\/\/))/i
 
@@ -49,7 +49,7 @@ const handler = (options) => {
 
     generateInterval()
 
-    ipc.on('p3x-onenote-window-state', function(event, data) {
+    ipc.on('p3x-onenote-window-state', function (event, data) {
         clearInterval(windowInterval)
         if (data.action === 'focus') {
             generateInterval()
@@ -76,7 +76,7 @@ const handler = (options) => {
     });
     */
 
-    webview.addEventListener('did-navigate', function(event, url) {
+    webview.addEventListener('did-navigate', function (event, url) {
         /*
         ipc.send('p3x-debug', {
             'did-navigate': event,
@@ -97,7 +97,7 @@ const handler = (options) => {
         webview.focus();
     });
 
-    webview.addEventListener('new-window', async function(event) {
+    webview.addEventListener('new-window', async function (event) {
 
         event.preventDefault()
         //p3x.onenote.toast.action(p3x.onenote.lang.label.unknownLink)
@@ -106,7 +106,7 @@ const handler = (options) => {
             //webview.src = event.url;
             return
         }
-        global.p3x.onenote.prompt.redirect({ url: event.url } ).then((answer) => {
+        global.p3x.onenote.prompt.redirect({url: event.url}).then((answer) => {
             if (answer === 'internal') {
                 webview.src = event.url;
             } else {
@@ -151,4 +151,4 @@ const handler = (options) => {
 
 }
 
-module.exports =handler
+module.exports = handler

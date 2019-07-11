@@ -1,4 +1,4 @@
-const { ipcRenderer } = require('electron');
+const {ipcRenderer} = require('electron');
 
 // fontawesome
 require('@fortawesome/fontawesome-free/js/all')
@@ -36,18 +36,16 @@ const translation = langTranslations[translationKey]
 global.p3x = {
     onenote: {
         url: {
-/*
-https://www.onenote.com/notebooks?omkt=en-US
-https://www.onenote.com/notebooks?omkt=de-DE
-https://www.onenote.com/notebooks?omkt=hu-HU
-*/
-          notebooks: 'https://www.onenote.com/notebooks',
+            /*
+            https://www.onenote.com/notebooks?omkt=en-US
+            https://www.onenote.com/notebooks?omkt=de-DE
+            https://www.onenote.com/notebooks?omkt=hu-HU
+            */
+            notebooks: 'https://www.onenote.com/notebooks',
         },
-        ui: {
-
-        },
+        ui: {},
         hackCss: undefined,
-        ng:undefined,
+        ng: undefined,
         webview: undefined,
         pkg: require('../../../../package'),
         translations: langTranslations,
@@ -71,7 +69,7 @@ document.title = `${global.p3x.onenote.lang.title} v${global.p3x.onenote.pkg.ver
 //require('./core/overlay')
 require('./angular')
 
-window.p3xOneNoteOnLoad = function() {
+window.p3xOneNoteOnLoad = function () {
 
 
     $(() => {

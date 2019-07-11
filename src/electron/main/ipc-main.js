@@ -1,4 +1,4 @@
-const { ipcMain } = require('electron')
+const {ipcMain} = require('electron')
 
 ipcMain.on('did-finish-load', function () {
     const toWebview = global.p3x.onenote.conf.get('webview-onenote');

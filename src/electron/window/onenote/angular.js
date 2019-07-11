@@ -4,7 +4,7 @@ require('angular-animate');
 require('angular-messages');
 require('angular-material');
 
-global.p3x.onenote.ng =  angular.module('p3x-onenote', [
+global.p3x.onenote.ng = angular.module('p3x-onenote', [
     'ngMaterial', 'ngMessages'
 ]);
 require('./angular/prompt');

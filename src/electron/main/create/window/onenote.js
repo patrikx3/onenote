@@ -1,4 +1,4 @@
-const { BrowserWindow, app } = require('electron');
+const {BrowserWindow, app} = require('electron');
 
 
 function createWindow() {
@@ -40,7 +40,6 @@ function createWindow() {
     })
 
 
-
     global.p3x.onenote.window.onenote.on('focus', function () {
         global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-window-state', {
             action: 'focus'
@@ -64,7 +63,6 @@ function createWindow() {
             action: 'blur'
         })
     });
-
 
 
     //const windowBounds = global.p3x.onenote.conf.get('window-bounds');
