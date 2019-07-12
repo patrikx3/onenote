@@ -1,4 +1,4 @@
-[//]: #@corifeus-header
+    [//]: #@corifeus-header
   
 [![NPM](https://nodei.co/npm/p3x-onenote.png?downloads=true&downloadRank=true)](https://www.npmjs.com/package/p3x-onenote/)
 
@@ -129,6 +129,8 @@ P3X OneNote Linux is, actually, an independent browser window for the online One
     * Close button - default quit close button behaviour (quit the app)
 * You are able to set a proxy in the settings menu.
 * There is now a menu called `Corporate home`
+  * Given, I do not have a `Corporate` login, I cannot debug it at all.
+    * If something is not working, the only way is to provide your login and I could probably fix it.
 * The OneNote language is controlled by Microsoft, and we try to work with Oneline OneNote, but we are getting a hard time, but the Electron UI is now able to use any language.
   * You can translate any language @
     * https://github.com/patrikx3/onenote/tree/master/src/translation
