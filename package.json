@@ -19,11 +19,11 @@
     },
     "scripts": {
         "test": "grunt",
-        "build": "build --ia32 --x64  build/dist",
+        "build": "electron-builder --ia32 --x64  build/dist",
         "postinstall": "opencollective postinstall",
         "start": "node ./node_modules/.bin/electron ./src/electron/app.js",
-        "publish-electron": "build --ia32 --x64 --linux -p always",
-        "publish-electron-snap": "build --linux snap"
+        "publish-electron": "electron-builder --ia32 --x64 --linux -p always",
+        "publish-electron-snap": "electron-builder --linux snap"
     },
     "repository": {
         "type": "git",
