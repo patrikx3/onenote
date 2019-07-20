@@ -83,8 +83,14 @@
             "category": "Office",
             "icon": "src/electron/images/",
             "target": [
-                "AppImage"
+                "AppImage",
+                "snap"
             ]
+        },
+        "snap": {
+          "environment": {
+            "DISABLE_WAYLAND": 1
+          }
         }
     },
     "collective": {
