@@ -52,10 +52,10 @@
         "jquery": "^3.4.1",
         "opencollective": "^1.0.3",
         "semver": "^6.2.0",
-        "typeface-roboto": "0.0.54",
-        "electron": "=4.2.6"
+        "typeface-roboto": "0.0.54"
     },
     "devDependencies": {
+        "electron": "=4.2.6",
         "fs-extra": "^8.1.0",
         "jsdom": "^15.1.1",
         "angular-mocks": "^1.7.8",
