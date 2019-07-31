@@ -1,6 +1,6 @@
 {
     "name": "p3x-onenote",
-    "version": "2019.10.124",
+    "version": "2019.10.127",
     "description": "📚 P3X OneNote Linux",
     "main": "src/electron/app.js",
     "corifeus": {
@@ -20,6 +20,7 @@
     "scripts": {
         "test": "grunt",
         "build": "electron-builder --ia32 --x64  build/dist",
+        "build-test": "electron-builder build/dist",
         "postinstall": "opencollective postinstall",
         "start": "node ./node_modules/.bin/electron ./src/electron/app.js",
         "publish-electron": "electron-builder --ia32 --x64 --linux -p always",
@@ -53,22 +54,21 @@
         "opencollective": "^1.0.3",
         "semver": "^6.3.0",
         "typeface-roboto": "0.0.75",
-        "electron": "=4.2.6"
+        "electron": "^6.0.0"
     },
     "devDependencies": {
         "fs-extra": "^8.1.0",
         "jsdom": "^15.1.1",
         "angular-mocks": "^1.7.8",
         "corifeus-builder": "^2019.10.130",
-        "electron-builder": "^21.1.5"
+        "electron-builder": "^21.2.0"
     },
     "engines": {
         "node": ">=10.16.0"
     },
-    "build-save": {
-        "afterPack": "./src/build/after-pack.js"
-    },
+    "build-save": {},
     "build": {
+        "afterPack": "./src/build/after-pack2.js",
         "publish": [
             {
                 "provider": "github",
