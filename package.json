@@ -1,6 +1,6 @@
 {
     "name": "p3x-onenote",
-    "version": "2019.10.202",
+    "version": "2019.10.211",
     "description": "📚 P3X OneNote Linux",
     "main": "src/electron/app.js",
     "corifeus": {
@@ -23,7 +23,7 @@
         "build-test": "electron-builder build/dist",
         "postinstall": "opencollective postinstall",
         "start": "node ./node_modules/.bin/electron ./src/electron/app.js",
-        "publish-electron": "electron-builder --ia32 --x64 --linux -p always",
+        "publish-electron": "rm -rf dist && electron-builder -p onTagOrDraft --ia32 --x64 --linux",
         "publish-electron-snap": "electron-builder --linux snap"
     },
     "repository": {
@@ -54,22 +54,21 @@
         "opencollective": "^1.0.3",
         "semver": "^6.3.0",
         "typeface-roboto": "0.0.75",
-        "electron": "^4.2.8"
+        "electron": "^6.0.0"
     },
     "devDependencies": {
-        "fs-extra": "^8.1.0",
-        "jsdom": "^15.1.1",
         "angular-mocks": "^1.7.8",
         "corifeus-builder": "^2019.10.130",
-        "electron-builder": "^21.2.0"
+        "electron-builder": "^21.2.0",
+        "escape-string-regexp": "^2.0.0",
+        "fs-extra": "^8.1.0",
+        "jsdom": "^15.1.1"
     },
     "engines": {
         "node": ">=10.16.0"
     },
-    "build-save": {
-        "afterPack": "./src/build/after-pack2.js"
-    },
     "build": {
+        "afterAllArtifactBuild": "./src/build/after-all-artifact-build.js",
         "publish": [
             {
                 "provider": "github",
