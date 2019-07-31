@@ -98,4 +98,8 @@ module.exports = async function (context) {
     }
     await exec('rm', ['-rf', packageDir])
     chdir(originalDir)
+
+    await new Promise((resolve) => {
+        setTimeout(resolve, 10000)
+    })
 }

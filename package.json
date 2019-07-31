@@ -1,6 +1,6 @@
 {
     "name": "p3x-onenote",
-    "version": "2019.10.212",
+    "version": "2019.10.213",
     "description": "📚 P3X OneNote Linux",
     "main": "src/electron/app.js",
     "corifeus": {
@@ -20,7 +20,7 @@
     "scripts": {
         "test": "grunt",
         "build": "electron-builder --ia32 --x64  build/dist",
-        "build-test": "electron-builder build/dist",
+        "build-test": "electron-builder build/dist -p always",
         "postinstall": "opencollective postinstall",
         "start": "node ./node_modules/.bin/electron ./src/electron/app.js",
         "publish-electron": "rm -rf dist && electron-builder -p onTagOrDraft --ia32 --x64 --linux",
