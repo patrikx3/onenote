@@ -1,5 +1,7 @@
 language: node_js
 sudo: required
+cache:
+    npm: false
 node_js:
 - node
 env:
