@@ -1,36 +1,8 @@
 const fs = require('fs-extra')
-const pkg = require('../../package')
-const {spawn} = require('child_process')
 const {chdir} = require('process')
 const path = require('path')
 
-const exec = async function exec(cmd, args = []) {
-    const child = spawn(cmd, args, {shell: true})
-    redirectOutputFor(child)
-    await waitFor(child)
-}
-
-const redirectOutputFor = (child) => {
-    const printStdout = (data) => {
-        process.stdout.write(data.toString())
-    }
-    const printStderr = (data) => {
-        process.stderr.write(data.toString())
-    }
-    child.stdout.on('data', printStdout)
-    child.stderr.on('data', printStderr)
-
-    child.once('close', () => {
-        child.stdout.off('data', printStdout)
-        child.stderr.off('data', printStderr)
-    })
-}
-
-const waitFor = async function (child) {
-    return new Promise((resolve) => {
-        child.once('close', () => resolve())
-    })
-}
+const exec = require('./lib').exec
 
 const escapeStringRegexp = require('escape-string-regexp');
 
@@ -43,8 +15,15 @@ module.exports = async function (context) {
 
     const packageDir = 'squashfs-root'
 
+
     let downloaded = false
     const appimagetool = 'appimagetool';
+
+    const assetsUploads = [
+     //   'latest-linux.yml',
+     //   'latest-linux-ia32.yml',
+    ]
+
 
     for(let artifact of context.artifactPaths) {
         if (artifact.toLowerCase().endsWith('appimage')) {
@@ -87,19 +66,72 @@ module.exports = async function (context) {
 
             fs.writeFileSync(shFile, content);
 
+          //  await exec('rm', ['-rf', artifact])
+
+            const uploadArtifact = artifact.replace(/ /g, '-')
             await exec(dirname + '/' + appimagetool, [
                 '-n',
                 '--comp',
                 'xz',
                 packageDir,
-                artifact,
+                uploadArtifact,
             ])
+            assetsUploads.unshift(
+                path.basename(uploadArtifact)
+            )
         }
     }
-    await exec('rm', ['-rf', packageDir])
-    chdir(originalDir)
 
-    await new Promise((resolve) => {
-        setTimeout(resolve, 10000)
+    await exec('find',[
+        `-iname "* *.AppImage"`,
+        `-delete`
+    ])
+
+    const githubToken = fs.readFileSync(`${originalDir}/secure/token.txt`)
+    const GitHub = require('github-api');
+    var gh = new GitHub({
+        username: 'p3x-robot',
+        token: githubToken
+        /* also acceptable:
+           token: 'MY_OAUTH_TOKEN'
+         */
+    });
+    const pkg = require('../../package')
+    const repo = await gh.getRepo('patrikx3', pkg.corifeus.reponame)
+    const result = await repo.createRelease({
+        "tag_name": 'v' + pkg.version,
+        "target_commitish": "master",
+        "name": pkg.version,
+        "body": `
+https://github.com/patrikx3/${pkg.corifeus.reponame}/blob/master/changelog.md#v${pkg.version.replace(/\./g, '')}
+
+[![Snapcraft](https://snapcraft.io/static/images/badges/en/snap-store-white.svg)](https://snapcraft.io/${pkg.name}#cory-non-external)
+`,
+        "draft": true,
+        "prerelease": false
     })
+
+    const upload_url = result.data.upload_url.replace('{?name,label}', '')
+///    console.log('results', result)
+
+    for (let uploadAsset of assetsUploads) {
+        const args = [
+            `--request POST`,
+            `--data-binary @${dirname + '/' + uploadAsset}`,
+            `-H "Authorization: token ${githubToken}"`,
+            `-H "Content-Type: application/octet-stream"`,
+            `${upload_url}?name=${uploadAsset}`,
+            //``,
+        ]
+        if (uploadAsset.endsWith('yml')) {
+            await exec('cat', [
+                dirname + '/' + uploadAsset
+            ])
+        }
+        console.info('curl args', args)
+        await exec('curl', args)
+    }
+    await exec('rm', ['-rf', packageDir])
+
+    chdir(originalDir)
 }
