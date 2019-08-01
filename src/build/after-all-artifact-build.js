@@ -12,6 +12,9 @@ module.exports = async function (context) {
         return
     }
 
+    if (/^win/i.test(process.platform)) {
+        return
+    }
 
     //console.log(context)
     const originalDir = process.cwd()
