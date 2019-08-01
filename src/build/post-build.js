@@ -6,6 +6,10 @@ const sha512 = require('./lib').sha512
 
 const run = async() => {
 
+    if (process.env.hasOwnProperty('TRAVIS')) {
+        return
+    }
+
     const originalDir = process.cwd()
 
     const dirname = originalDir + '/' + 'dist'

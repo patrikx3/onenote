@@ -7,6 +7,12 @@ const exec = require('./lib').exec
 const escapeStringRegexp = require('escape-string-regexp');
 
 module.exports = async function (context) {
+
+    if (process.env.hasOwnProperty('TRAVIS')) {
+        return
+    }
+
+
     //console.log(context)
     const originalDir = process.cwd()
 
