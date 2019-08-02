@@ -1,6 +1,6 @@
 {
     "name": "p3x-onenote",
-    "version": "2019.10.275",
+    "version": "2019.10.281",
     "description": "📚 P3X OneNote Linux",
     "main": "src/electron/app.js",
     "corifeus": {
@@ -24,8 +24,8 @@
         "postinstall": "opencollective postinstall",
         "start": "node ./node_modules/.bin/electron ./src/electron/app.js",
         "publish-electron": "rm -rf dist && electron-builder -p onTagOrDraft --ia32 --x64 --linux",
-        "publish-electron-snap": "electron-builder --linux snap",
-        "publish-electron-yml": "node ./src/build/post-build.js"
+        "publish-electron-snap": "electron-builder --linux snap -p never",
+        "publish-electron-yml": "node ./node_modules/corifeus-builder/src/utils/appimage/post-build.js"
     },
     "repository": {
         "type": "git",
@@ -42,7 +42,7 @@
     },
     "homepage": "https://pages.corifeus.com/onenote",
     "dependencies": {
-        "@fortawesome/fontawesome-free": "^5.10.0",
+        "@fortawesome/fontawesome-free": "^5.10.1",
         "angular": "^1.7.8",
         "angular-animate": "^1.7.8",
         "angular-aria": "^1.7.8",
@@ -54,12 +54,11 @@
         "jquery": "^3.4.1",
         "opencollective": "^1.0.3",
         "semver": "^6.3.0",
-        "typeface-roboto": "0.0.75",
-        "electron": "^6.0.0"
+        "typeface-roboto": "0.0.75"
     },
     "devDependencies": {
         "angular-mocks": "^1.7.8",
-        "corifeus-builder": "^2019.10.216",
+        "corifeus-builder": "^2019.10.223",
         "electron-builder": "^21.2.0",
         "escape-string-regexp": "^2.0.0",
         "fs-extra": "^8.1.0",
@@ -72,7 +71,7 @@
         "node": ">=10.16.0"
     },
     "build": {
-        "afterAllArtifactBuild": "./src/build/after-all-artifact-build.js",
+        "afterAllArtifactBuild": "./node_modules/corifeus-builder/src/utils/appimage/after-all-artifact-build.js",
         "publish": [
             {
                 "provider": "github",
