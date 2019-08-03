@@ -48,7 +48,7 @@
         "angular-aria": "^1.7.8",
         "angular-material": "^1.1.19",
         "angular-messages": "^1.7.8",
-        "configstore": "^4.0.0",
+        "configstore": "^5.0.0",
         "corifeus-utils": "^2019.10.140",
         "electron-updater": "^4.1.2",
         "jquery": "^3.4.1",
@@ -58,7 +58,7 @@
     },
     "devDependencies": {
         "angular-mocks": "^1.7.8",
-        "corifeus-builder": "^2019.10.223",
+        "corifeus-builder": "^2019.10.224",
         "electron-builder": "^21.2.0",
         "escape-string-regexp": "^2.0.0",
         "fs-extra": "^8.1.0",
