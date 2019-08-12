@@ -30,7 +30,7 @@ global.p3x = {
         conf: conf,
         disableHide: true,
         allowMultiple: false,
-        iconFile: path.resolve(`${__dirname}/images/256x256.png`),
+        iconFile: path.resolve(`${__dirname}/images/1024x1024.png`),
         tray: undefined,
         window: {
             onenote: undefined,
