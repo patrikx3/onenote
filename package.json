@@ -1,7 +1,7 @@
 {
     "name": "p3x-onenote",
-    "version": "2019.10.285",
-    "description": "📚 P3X OneNote Linux",
+    "version": "2019.10.296",
+    "description": "P3X OneNote Linux",
     "main": "src/electron/app.js",
     "corifeus": {
         "snap": true,
@@ -19,7 +19,7 @@
     },
     "scripts": {
         "test": "grunt",
-        "build": "electron-builder --ia32 --x64  build/dist",
+        "build": "electron-builder --x64  build/dist",
         "build-test": "electron-builder build/dist -p always",
         "postinstall": "opencollective postinstall",
         "start": "node ./node_modules/.bin/electron ./src/electron/app.js",
@@ -49,17 +49,17 @@
         "angular-material": "^1.1.19",
         "angular-messages": "^1.7.8",
         "configstore": "^5.0.0",
-        "corifeus-utils": "^2019.10.144",
-        "electron": "^6.0.1",
+        "corifeus-utils": "^2019.10.153",
         "electron-updater": "^4.1.2",
         "jquery": "^3.4.1",
         "opencollective": "^1.0.3",
         "semver": "^6.3.0",
-        "typeface-roboto": "0.0.75"
+        "typeface-roboto": "0.0.75",
+        "electron": "^6.0.2"
     },
     "devDependencies": {
         "angular-mocks": "^1.7.8",
-        "corifeus-builder": "^2019.10.227",
+        "corifeus-builder": "^2019.10.235",
         "electron-builder": "^21.2.0",
         "escape-string-regexp": "^2.0.0",
         "fs-extra": "^8.1.0",
@@ -85,7 +85,7 @@
         "productName": "P3X OneNote",
         "linux": {
             "category": "Office",
-            "icon": "src/electron/images/",
+            "icon": "../src/electron/images/",
             "target": [
                 "AppImage"
             ]
