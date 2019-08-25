@@ -125,9 +125,9 @@ P3X OneNote Linux is, actually, an independent browser window for the online One
 * Restart button (empty your cache, you can login again if there is an error)
 * Remember last notebook (as much Online Onenote allows ...)
 * Menu > Settings 
-  * Close button 
-    * Close button - will minimize to the tray instead of quit
-    * Close button - default quit close button behaviour (quit the app)
+  * Close to the tray 
+    * If checked, will minimize to the tray instead of quit
+    * If un-checked, default quit close button behaviour (quit the app)
 * You are able to set a proxy in the settings menu.
 * There is now a menu called `Corporate home`
   * Given, I do not have a `Corporate` login, I cannot debug it at all.
