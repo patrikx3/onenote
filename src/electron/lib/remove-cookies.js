@@ -1,12 +1,7 @@
-const removeCookies = (webview) => {
+const removeCookies = async(webview) => {
     let session = webview.getWebContents().session;
-    session.cookies.get({}, async function (error, cookies) {
-        if (error) {
-            alert(error.message);
-            console.error(error);
-            return;
-        }
-        ;
+    try {
+        const cookies = await session.cookies.get({});
         for (var i = cookies.length - 1; i >= 0; i--) {
             const cookie = cookies[i];
             let domain = cookie.domain;
@@ -25,28 +20,19 @@ cookie.session: ${cookie.session}
 cookie.value: ${cookie.value} 
 url: ${url} 
                         `);
-            const promises = [];
-
-            promises.push(
-                new Promise((resolve) => {
-                    session.cookies.remove(url, name, function (error) {
-                            if (error) {
-                                alert(error.message);
-                                console.error(error);
-                                return;
-                            }
-                            ;
-                            resolve();
-                            console.log('cookie delete : ', cookie.name);
-                        }
-                    );
-                })
-            )
-            await Promise.all(promises);
-            webview.reload();
+            try {
+                await session.cookies.remove(url, name)
+                console.log('cookie delete : ', cookie.name);
+            } catch(error) {
+                alert(error.message);
+                console.error(error);
+            }
         }
-        ;
-    });
+        webview.reload();
+    } catch(error) {
+        alert(error.message);
+        console.error(error);
+    }
 }
 
 module.exports = removeCookies;
