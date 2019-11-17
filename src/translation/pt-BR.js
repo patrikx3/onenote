@@ -32,7 +32,7 @@ const translation = {
         clearCache: 'Primeiro saia, depois clique nessa opção para limpar o cache',
         quit: 'Sair',
         show: 'Mostrar',
-        hide: 'ESconder',
+        hide: 'Esconder',
         copyLocation: 'Copiar para área de transferência',
         copyLocationCopied: 'A localização foi copiada para a área de transferência.',
         //disallowedContent: 'Disallowed content! If not working, hang on, it will reset to the default home. (Max 5 seconds).',
