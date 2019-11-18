@@ -112,6 +112,7 @@ const translation = {
             translations: {
                 'en-US': 'Englisch / English',
                 'de-DE': 'Deutsch / German',
+                'pt-BR': 'Portuguese / Português',
             },
         },
     },

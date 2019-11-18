@@ -112,7 +112,7 @@ const translation = {
             translations: {
                 'en-US': 'English',
                 'de-DE': 'Deutsch / German',
-                'pt-BR': 'Português / Brasileiro',
+                'pt-BR': 'Português / Portuguese',
             }
         },
     },
