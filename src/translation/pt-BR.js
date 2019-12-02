@@ -102,8 +102,8 @@ const translation = {
             checkUpdates: 'Verificar atualizações'
         },
         language: {
-            label: 'Idioma',
-            alert: 'Idioma definido para inglês.',
+            label: 'Idioma / Language',
+            alert: 'Idioma definido para português.',
             dialog: {
                 label: 'Tentar configurar idioma do OneNote Online?',
                 coperate: 'Colaborar',
