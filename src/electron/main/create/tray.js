@@ -15,8 +15,13 @@ function mainTray() {
             global.p3x.onenote.tray.on('click', click)
 
         }
-        const contextMenu = Menu.buildFromTemplate(menus.default())
+        const menu = menus.default()
+
+        menu.splice(menu.length  - 3, 0, require('./menu-display')())
+
+        const contextMenu = Menu.buildFromTemplate(menu)
         global.p3x.onenote.tray.setContextMenu(contextMenu)
+
     } else {
         if (global.p3x.onenote.tray !== undefined) {
             global.p3x.onenote.tray.destroy()

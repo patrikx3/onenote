@@ -1,6 +1,7 @@
 const translation = {
     title: 'P3X OneNote',
     label: {
+        hideMenu: 'Mostrar menu principal',
         donate: 'Doar',
         allowMultiple: {
             checkbox: 'Permitir múltiplas instâncias (com algumas pecularidades)',

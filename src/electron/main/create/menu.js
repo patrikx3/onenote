@@ -6,6 +6,11 @@ const mainTray = require('./tray')
 
 function mainMenu() {
 
+    if (global.p3x.onenote.hideMenu && !global.p3x.onenote.disableHide) {
+        Menu.setApplicationMenu(null)
+        return
+    }
+
     const copyLocation = {
         label: global.p3x.onenote.lang.label.copyLocation,
         click: () => {
@@ -235,6 +240,7 @@ function mainMenu() {
             },
         )
     }
+
 
     const menu = Menu.buildFromTemplate(template)
     Menu.setApplicationMenu(menu)

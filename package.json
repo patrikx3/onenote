@@ -1,6 +1,6 @@
 {
     "name": "p3x-onenote",
-    "version": "2019.10.321",
+    "version": "2020.4.100",
     "description": "📚 P3X OneNote Linux",
     "main": "src/electron/app.js",
     "corifeus": {
@@ -9,7 +9,7 @@
         "publish": true,
         "type": "p3x",
         "code": "Linux",
-        "nodejs": "v12.13.1",
+        "nodejs": "v12.14.0",
         "opencollective": true,
         "reponame": "onenote",
         "build": true
@@ -43,7 +43,7 @@
     },
     "homepage": "https://pages.corifeus.com/onenote",
     "dependencies": {
-        "@fortawesome/fontawesome-free": "^5.11.2",
+        "@fortawesome/fontawesome-free": "^5.12.0",
         "angular": "^1.7.9",
         "angular-animate": "^1.7.9",
         "angular-aria": "^1.7.9",
@@ -54,9 +54,9 @@
         "electron-updater": "^4.2.0",
         "jquery": "^3.4.1",
         "opencollective": "^1.0.3",
-        "semver": "^6.3.0",
+        "semver": "^7.1.1",
         "typeface-roboto": "0.0.75",
-        "electron": "^7.1.3"
+        "electron": "^7.1.7"
     },
     "devDependencies": {
         "angular-mocks": "^1.7.9",

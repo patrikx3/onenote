@@ -21,7 +21,7 @@ const menus = {
                 label: global.p3x.onenote.lang.label.clearCache,
                 click: action.restart
             },
-
+            { type: 'separator' },
             {
                 label: global.p3x.onenote.lang.label.quit,
                 click: action.quit
