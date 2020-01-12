@@ -1,6 +1,6 @@
 {
     "name": "p3x-onenote",
-    "version": "2020.4.100",
+    "version": "2020.4.103",
     "description": "📚 P3X OneNote Linux",
     "main": "src/electron/app.js",
     "corifeus": {
@@ -9,7 +9,7 @@
         "publish": true,
         "type": "p3x",
         "code": "Linux",
-        "nodejs": "v12.14.0",
+        "nodejs": "v12.14.1",
         "opencollective": true,
         "reponame": "onenote",
         "build": true
@@ -47,30 +47,30 @@
         "angular": "^1.7.9",
         "angular-animate": "^1.7.9",
         "angular-aria": "^1.7.9",
-        "angular-material": "^1.1.20",
+        "angular-material": "^1.1.21",
         "angular-messages": "^1.7.9",
         "configstore": "^4.0.0",
-        "corifeus-utils": "^2019.10.173",
+        "corifeus-utils": "^2020.4.101",
         "electron-updater": "^4.2.0",
         "jquery": "^3.4.1",
         "opencollective": "^1.0.3",
         "semver": "^7.1.1",
         "typeface-roboto": "0.0.75",
-        "electron": "^7.1.7"
+        "electron": "^7.1.8"
     },
     "devDependencies": {
         "angular-mocks": "^1.7.9",
-        "corifeus-builder": "^2019.10.256",
+        "corifeus-builder": "^2020.4.101",
         "electron-builder": "^21.2.0",
         "escape-string-regexp": "^2.0.0",
         "fs-extra": "^8.1.0",
         "github-api": "^3.3.0",
-        "globby": "^10.0.1",
+        "globby": "^11.0.0",
         "jsdom": "^15.2.1",
         "yaml": "^1.7.2"
     },
     "engines": {
-        "node": ">=10.16.0"
+        "node": ">=12.13.0"
     },
     "build": {
         "afterAllArtifactBuild": "./node_modules/corifeus-builder/src/utils/appimage/after-all-artifact-build.js",
