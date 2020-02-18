@@ -7,6 +7,9 @@
 
 ## Change log
 
+### v2020.4.104
+* CHORE: Upgrade to Electron v8.
+
 ### v2020.4.100
 * FEAT: Ability to hide the main menu (in tray mode only).
 
