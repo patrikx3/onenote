@@ -7,7 +7,7 @@
 
 ## Change log
 
-### v2020.4.104
+### v2020.4.109
 * CHORE: Upgrade to Electron v8.
 
 ### v2020.4.100
