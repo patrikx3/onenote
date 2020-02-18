@@ -3,6 +3,7 @@ const pkg = require('../../package.json');
 const conf = new configstore(pkg.name);
 
 const {app} = require('electron');
+app.allowRendererProcessReuse = true
 
 let translationKey = conf.get('lang')
 if (translationKey === undefined) {
