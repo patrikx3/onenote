@@ -1,6 +1,6 @@
 {
     "name": "p3x-onenote",
-    "version": "2020.4.109",
+    "version": "2020.4.110",
     "description": "📚 P3X OneNote Linux",
     "main": "src/electron/app.js",
     "corifeus": {
@@ -9,7 +9,7 @@
         "publish": true,
         "type": "p3x",
         "code": "Linux",
-        "nodejs": "v12.15.0",
+        "nodejs": "v12.16.0",
         "opencollective": true,
         "reponame": "onenote",
         "build": true
