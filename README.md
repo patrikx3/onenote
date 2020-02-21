@@ -34,11 +34,15 @@ A Linux compatible version of OneNote
 ![Screenshot 1](https://cdn.corifeus.com/git/onenote/artifacts/screenshot/screenshot-2019.png)
 
 ## Warning
-**If you want to use the tray and you are on Linux Mint/Cinnamon, this how you can enable the tray:**  
+
+#### If you want to use the tray and you are on Linux Mint/Cinnamon, this how you can enable the tray  
 "System Settings" -> "General" -> "Enable support for indicators"
   
 I only use Linux Mint, so it is possible the tray in Electron v8 might not work perfectly in other distro as well.
 
+#### Error in auto-updater: Redirect was cancelled  
+Sometimes, you get an `AppImage` error for update, just download the latest release and replace the `AppImage` from here:  
+https://github.com/patrikx3/onenote/releases
 
 # Downloadable installer
 
