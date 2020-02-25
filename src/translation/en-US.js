@@ -114,6 +114,7 @@ const translation = {
                 'en-US': 'English',
                 'de-DE': 'Deutsch / German',
                 'pt-BR': 'Português / Portuguese',
+                'es-ES': 'Español / Spanish',
             }
         },
     },

@@ -30,6 +30,7 @@ const langTranslations = {
     'en-US': require('../../../translation/en-US'),
     'de-DE': require('../../../translation/de-DE'),
     'pt-BR': require('../../../translation/pt-BR'),
+    'es-ES': require('../../../translation/es-ES'),
 }
 
 const translation = langTranslations[translationKey]
