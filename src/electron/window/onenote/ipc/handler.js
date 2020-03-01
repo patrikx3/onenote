@@ -7,7 +7,7 @@ const handler = (options) => {
     const {webview} = options;
 
     ipcRenderer.on('p3x-onenote-onload-user', function (event, data) {
-        if (data !== null) {
+        if (data !== null && data !== undefined) {
             global.p3x.onenote.data = data;
         }
 
