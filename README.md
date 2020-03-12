@@ -143,7 +143,7 @@ P3X OneNote Linux is, actually, an independent browser window for the online One
 * There is now a menu called `Corporate home`
   * Given, I do not have a `Corporate` login, I cannot debug it at all.
     * If something is not working, the only way is to provide your login and I could probably fix it. Otherwise, I see nothing.
-* The OneNote language is controlled by Microsoft, and we try to work with Oneline OneNote, but we are getting a hard time, but the Electron UI is now able to use any language.
+* The OneNote language is controlled by Microsoft, and we try to work with Online OneNote, but we are getting a hard time, but the Electron UI is now able to use any language.
   * You can translate any language @
     * https://github.com/patrikx3/onenote/tree/master/src/translation
 * Allows using multiple instances (with some quirks, as the config will not be synchronized using multiple instances at once, so it can provide wrong results - to make it to work, configure with 1 instance, exit, then use multiple instances).
