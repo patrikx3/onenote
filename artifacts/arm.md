@@ -4,11 +4,11 @@
 
                         
 [//]: #@corifeus-header:end
-# New translation
 
-* `onenote/src/electron/app.js`
-* `onenote/src/electron/window/onenote/load.js`
-* `translation/en-US.js/menu.language`
+```bash
+sudo apt-get install qemu-user qemu-user-static qemu-user-binfmt
+sudo apt-get remove --purge qemu-user qemu-user-static qemu-user-binfmt
+```
 
 [//]: #@corifeus-footer
 

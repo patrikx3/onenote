@@ -11,7 +11,7 @@
 
 
 
-# 📚 P3X OneNote Linux v2020.4.154
+# 📚 P3X OneNote Linux v2020.4.155
 
 
 
@@ -43,6 +43,9 @@ I only use Linux Mint, so it is possible the tray in Electron might not work per
 #### Error in auto-updater: Redirect was cancelled  
 Sometimes, you get an `AppImage` error for update, just download the latest release and replace the `AppImage` from here:  
 https://github.com/patrikx3/onenote/releases
+
+#### Rasberry and ARM is expermintal
+I have no ARM computer to test it out, I could build `AppImage` on ARM, but I think, it is required to add an argument to the program with the `--no-sandbox` argument.
 
 # Downloadable installer
 
@@ -218,7 +221,7 @@ All my domains ([patrikx3.com](https://patrikx3.com) and [corifeus.com](https://
 
 ---
 
-[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v2020.4.154
+[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v2020.4.155
 
 [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software)
 
