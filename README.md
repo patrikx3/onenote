@@ -44,7 +44,7 @@ I only use Linux Mint, so it is possible the tray in Electron might not work per
 Sometimes, you get an `AppImage` error for update, just download the latest release and replace the `AppImage` from here:  
 https://github.com/patrikx3/onenote/releases
 
-#### Rasberry and ARM is expermintal
+#### Rasberry and ARM is experimental
 I have no ARM computer to test it out, I could build `AppImage` on ARM, but I think, it is required to add an argument to the program with the `--no-sandbox` argument.
 
 # Downloadable installer
