@@ -7,6 +7,9 @@
 
 ## Change log
 
+### v2020.4.131
+* CHORE: Updates deps.
+
 ### v2020.4.119
 * BUG: The set proxy menu was not working.
 
