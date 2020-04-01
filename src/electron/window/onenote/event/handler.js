@@ -112,13 +112,17 @@ const handler = (options) => {
             //webview.src = event.url;
             return
         }
-        global.p3x.onenote.prompt.redirect({url: event.url}).then((answer) => {
-            if (answer === 'internal') {
-                webview.src = event.url;
-            } else {
-                shell.openExternal(event.url)
-            }
-        })
+        if (global.p3x.onenote.conf.get('option-to-disable-internal-external-popup') === true) {
+            webview.src = event.url
+        } else {
+            global.p3x.onenote.prompt.redirect({url: event.url}).then((answer) => {
+                if (answer === 'internal') {
+                    webview.src = event.url;
+                } else {
+                    shell.openExternal(event.url)
+                }
+            })
+        }
 
         //;
 

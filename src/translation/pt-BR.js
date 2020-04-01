@@ -20,6 +20,7 @@ const translation = {
 
             }
         },
+        optionToDisableInternalExternalPopup: 'Desativar pop-up interno / externo (todos link interno)',
         settings: 'Configurações',
         setProxy: 'Definir um proxy',
         openUrl: 'Abrir uma URL',

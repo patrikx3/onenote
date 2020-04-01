@@ -20,6 +20,7 @@ const translation = {
 
             }
         },
+        optionToDisableInternalExternalPopup: 'Deshabilitar ventana emergente interna / externa (alle link intern)',
         settings: 'Einstellungen',
         setProxy: 'Proxy-Einstellungen',
         openUrl: 'URL öffnen',

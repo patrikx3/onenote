@@ -105,7 +105,18 @@ function mainMenu() {
                         mainTray()
                     }
                 },
+                {
+                    label: global.p3x.onenote.lang.label.optionToDisableInternalExternalPopup,
+                    type: 'checkbox',
+                    checked: global.p3x.onenote.optionToDisableInternalExternalPopup,
+                    click: () => {
+                        global.p3x.onenote.optionToDisableInternalExternalPopup = !global.p3x.onenote.optionToDisableInternalExternalPopup;
+                        global.p3x.onenote.conf.set('option-to-disable-internal-external-popup', global.p3x.onenote.optionToDisableInternalExternalPopup);
 
+                        mainMenu()
+                        mainTray()
+                    }
+                },
                 {
                     label: global.p3x.onenote.lang.label.setProxy,
                     click: action.setProxy,

@@ -37,6 +37,7 @@ const translation = langTranslations[translationKey]
 
 global.p3x = {
     onenote: {
+        conf: conf,
         url: {
             /*
             https://www.onenote.com/notebooks?omkt=en-US
