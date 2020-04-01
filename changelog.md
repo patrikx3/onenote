@@ -8,7 +8,7 @@
 ## Change log
 
 ### v2020.4.157
-* FEATURE: Takes care of [Github Issue #97](https://github.com/patrikx3/onenote/issues/97)
+* FEATURE: Takes care of [Github Issue #97](https://github.com/patrikx3/onenote/issues/97) - Option to Disable Internal / External Popup 
 
 ### v2020.4.154
 * FEATURE: Added ARM version.
