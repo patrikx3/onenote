@@ -1,7 +1,7 @@
 const translation = {
     title: 'P3X OneNote',
     label: {
-        hideMenu: 'Esconder Menu Principal',
+        hideMenu: 'Esconder Menú Principal',
         donate: 'Donar',
         allowMultiple: {
             checkbox: 'Permitir múltiples instancias (podría haber algún comportamiento extraño)',
@@ -107,7 +107,7 @@ const translation = {
             label: 'Lenguaje / Language',
             alert: 'Idioma configurado para español.',
             dialog: {
-                label: 'Configurar el lenguaje en la herramienta en línea de Onenote?',
+                label: '¿Configurar el lenguaje en la herramienta en línea de Onenote?',
                 corporate: 'Corporativo',
                 personal: 'Personal',
             },
