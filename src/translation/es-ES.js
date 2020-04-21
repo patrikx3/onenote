@@ -108,7 +108,7 @@ const translation = {
             alert: 'Idioma configurado para español.',
             dialog: {
                 label: 'Configurar el lenguaje en la herramienta en línea de Onenote?',
-                coperate: 'Cooperar',
+                corporate: 'Corporativo',
                 personal: 'Personal',
             },
             translations: {
