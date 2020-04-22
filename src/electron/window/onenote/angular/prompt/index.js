@@ -52,7 +52,7 @@ global.p3x.onenote.ng.factory('p3xOnenotePrompt', ($mdDialog) => {
                            ${p3x.onenote.lang.menu.language.dialog.personal}
                         </md-button>
                         <md-button ng-click="exit('corporate', ${opts.translation})" class="md-primary">
-                           ${p3x.onenote.lang.menu.language.dialog.coperate}
+                           ${p3x.onenote.lang.menu.language.dialog.corporate}
                         </md-button>
                         <md-button ng-click="cancel()" class="md-primary">
                            ${p3x.onenote.lang.button.cancel}
@@ -82,7 +82,7 @@ global.p3x.onenote.ng.factory('p3xOnenotePrompt', ($mdDialog) => {
                                 ${p3x.onenote.lang.label.promptRedirectUrlTitle}
                             </h3>
                             <div layout-padding>
-                                ${p3x.onenote.lang.dialog.redirect.url({url: opts.url})}                            
+                                ${p3x.onenote.lang.dialog.redirect.url({url: opts.url})}
                             </div>
                         </md-content>
                       </md-dialog-content>
