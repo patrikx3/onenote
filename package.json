@@ -1,6 +1,6 @@
 {
     "name": "p3x-onenote",
-    "version": "2020.4.166",
+    "version": "2020.4.168",
     "description": "📚 P3X OneNote Linux",
     "main": "src/electron/app.js",
     "corifeus": {
@@ -28,7 +28,7 @@
         "publish-electron-arm-test": "rm -rf dist && electron-builder --armv7l --arm64 --linux",
         "publish-electron-snap": "electron-builder --linux snap -p never",
         "publish-electron-yml": "node ./node_modules/corifeus-builder/src/utils/appimage/post-build.js",
-        "help-release-snap": "snapcraft release p3x-onenote 70 stable"
+        "help-release-snap": "snapcraft release p3x-onenote 71 stable"
     },
     "repository": {
         "type": "git",
@@ -61,15 +61,8 @@
         "electron": "^8.2.3"
     },
     "devDependencies": {
-        "angular-mocks": "^1.7.9",
-        "corifeus-builder": "^2020.4.164",
-        "electron-builder": "^22.5.1",
-        "escape-string-regexp": "^3.0.0",
-        "fs-extra": "^9.0.0",
-        "github-api": "^3.3.0",
-        "globby": "^11.0.0",
-        "jsdom": "^16.2.2",
-        "yaml": "^1.8.3"
+        "corifeus-builder": "^2020.4.166",
+        "electron-builder": "^22.5.1"
     },
     "engines": {
         "node": ">=12.13.0"

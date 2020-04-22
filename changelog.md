@@ -7,6 +7,9 @@
 
 ## Change log
 
+### v2020.4.167
+* BUGFIX: Minor translation fix, based on [Github Pull 100](https://github.com/patrikx3/onenote/pull/100)
+
 ### v2020.4.157
 * FEATURE: Takes care of [Github Issue #97](https://github.com/patrikx3/onenote/issues/97) - Option to Disable Internal / External Popup 
 
@@ -152,7 +155,7 @@ All my domains ([patrikx3.com](https://patrikx3.com) and [corifeus.com](https://
 
 ---
 
-[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v2020.4.166
+[**P3X-ONENOTE**](https://pages.corifeus.com/onenote) Build v2020.4.168
 
 [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software)
 
