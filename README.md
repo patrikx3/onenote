@@ -35,10 +35,14 @@ A Linux compatible version of OneNote
 
 ## Warning
 
-#### If you want to use the tray and you are on Linux Mint/Cinnamon, this how you can enable the tray  
-"System Settings" -> "General" -> "Enable support for indicators"
+### TRAY ISSUES
+It is possible, that the tray is not working, it is an upstream issue!
+    
+For me, on Linux Mint, is only working, if I am using the `AppImage`, and have `System Settings` -> `General` -> `Enable support for indicators`.
   
-I only use Linux Mint, so it is possible the tray in Electron might not work perfectly in other distro as well.
+Snap is working on Linux Mint as well, except the tray....
+
+I only test Linux Mint, help is welcome!
 
 #### Error in auto-updater: Redirect was cancelled  
 Sometimes, you get an `AppImage` error for update, just download the latest release and replace the `AppImage` from here:  
