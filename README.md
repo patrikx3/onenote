@@ -35,6 +35,9 @@ A Linux compatible version of OneNote
 
 ## Warning
 
+### Not working on SNAP on some versions
+Usually, on stable distros are working with SNAP, but usually non stable Linux distros could not work. Please, try using the `AppImage`, that is usually better than SNAP.
+
 ### TRAY ISSUES
 It is possible, that the tray is not working, it is an upstream issue!
     
