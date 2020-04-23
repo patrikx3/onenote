@@ -3,7 +3,7 @@ sudo: required
 cache:
     npm: false
 node_js:
-- lts
+- lts/*
 env:
   matrix:
   - CXX=g++-4.8
