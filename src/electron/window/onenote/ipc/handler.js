@@ -64,6 +64,9 @@ const handler = (options) => {
         try {
             url = await global.p3x.onenote.prompt.goToUrl();
             url = url === undefined ? '' : url.trim();
+            if (!url.startsWith('http')) {
+                url = 'https://' + url
+            }
         } catch (e) {
             if (e !== undefined) {
                 console.error(e);
