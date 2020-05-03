@@ -11,7 +11,7 @@
 
 
 
-# 📚 P3X OneNote Linux v2020.4.172
+# 📚 P3X OneNote Linux v2020.4.175
 
 
 
@@ -204,8 +204,8 @@ If you try to build the app with AppImage, you have to change from `electron` `d
 
 
 [P3X OneNote Linux playground](https://patrikx3.com/hu/ajto/jatszoter/14/p3x-linux-onenote#PG14)  
-
-[Corifeus P3X OneNote Linux pages](https://corifeus.com/onenote/)  
+  
+[Corifeus P3X OneNote Linux](https://corifeus.com/onenote/)  
 
 [AlternativeTo OneNote Linux](https://alternativeto.net/software/p3x-onenote/)  
 
@@ -228,7 +228,7 @@ All my domains ([patrikx3.com](https://patrikx3.com) and [corifeus.com](https://
 
 ---
 
-[**P3X-ONENOTE**](https://corifeus.com/onenote) Build v2020.4.172
+[**P3X-ONENOTE**](https://corifeus.com/onenote) Build v2020.4.175
 
 [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software)
 
