@@ -203,7 +203,7 @@ If you try to build the app with AppImage, you have to change from `electron` `d
 # URL links
 
 
-[P3X OneNote Linux playground](https://patrikx3.com/hu/ajto/jatszoter/14/p3x-linux-onenote#PG14)  
+[P3X OneNote Linux playground](https://www.patrikx3.com/en/front/playground/14/p3x-linux-onenote#PG14)  
   
 [Corifeus P3X OneNote Linux](https://corifeus.com/onenote/)  
 
