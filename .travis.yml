@@ -21,3 +21,4 @@ addons:
 before_script:
 - npm install -g node-gyp
 - npm install -g grunt-cli npm
+- npm install -g p3x-onenote

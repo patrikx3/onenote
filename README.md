@@ -11,7 +11,7 @@
 
 
 
-# 📚 P3X OneNote Linux v2020.4.175
+# 📚 P3X OneNote Linux v2020.4.176
 
 
 
@@ -34,6 +34,9 @@ A Linux compatible version of OneNote
 ![Screenshot 1](https://cdn.corifeus.com/git/onenote/artifacts/screenshot/screenshot-2019.png)
 
 ## Warning
+
+### Suspend/Sleep/Wake up
+I recognized, that after suspend/sleep and then wake up, the app is not saving the pages anymore. For now, the solution is, that after wake up, restart the app.
 
 ### Not working on SNAP on some versions
 Usually, on stable distros are working with SNAP, but usually non stable Linux distros could not work. Please, try using the `AppImage`, that is usually better than SNAP.
@@ -228,7 +231,7 @@ All my domains ([patrikx3.com](https://patrikx3.com) and [corifeus.com](https://
 
 ---
 
-[**P3X-ONENOTE**](https://corifeus.com/onenote) Build v2020.4.175
+[**P3X-ONENOTE**](https://corifeus.com/onenote) Build v2020.4.176
 
 [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software)
 
