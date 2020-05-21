@@ -1,5 +1,8 @@
+const { remote } = require('electron')
+
 const removeCookies = async(webview) => {
-    let session = webview.getWebContents().session;
+    //let session = webview.getWebContents().session;
+    let session = remote.webContents.fromId(webview.getWebContentsId()).session
     try {
         const cookies = await session.cookies.get({});
         for (var i = cookies.length - 1; i >= 0; i--) {
@@ -10,15 +13,15 @@ const removeCookies = async(webview) => {
             }
             const url = "http" + (cookie.secure ? "s" : "") + "://" + domain + cookie.path;
             console.info(`
-cookie.domain: ${cookie.domain} 
+cookie.domain: ${cookie.domain}
 cookie.hostOnly: ${cookie.hostOnly}
 cookie.httpOnly: ${cookie.httpOnly}
 cookie.name: ${cookie.name}
 cookie.path: ${cookie.path}
 cookie.secure: ${cookie.secure}
-cookie.session: ${cookie.session} 
-cookie.value: ${cookie.value} 
-url: ${url} 
+cookie.session: ${cookie.session}
+cookie.value: ${cookie.value}
+url: ${url}
                         `);
             try {
                 await session.cookies.remove(url, name)

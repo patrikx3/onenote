@@ -1,3 +1,5 @@
+const { remote } = require('electron')
+
 const multiActions = (data) => {
     const webview = global.p3x.onenote.webview;
 
@@ -25,7 +27,8 @@ const multiActions = (data) => {
 
 
         case 'restart':
-            const session = webview.getWebContents().session;
+            //const session = webview.getWebContents().session;
+            const session = remote.webContents.fromId(webview.getWebContentsId()).session
             session.clearStorageData(() => {
                 //console.log('storage cleared');
                 webview.reload();
