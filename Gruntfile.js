@@ -6,7 +6,6 @@ module.exports = (grunt) => {
             type: 'p3x',
             npmio: true,
             nodejsinfo: false,
-            opencollective: true,
         },
     });
     grunt.registerTask('default', builder.config.task.build.js);
