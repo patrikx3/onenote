@@ -1,12 +1,5 @@
 const {ipcRenderer} = require('electron');
 
-// fontawesome
-require('@fortawesome/fontawesome-free/js/all')
-
-// jquery
-global.$ = require('jquery/dist/jquery.slim')
-global.jQuery = global.$
-
 /*
 const fs = require('fs')
 
@@ -74,10 +67,6 @@ require('./angular')
 
 window.p3xOneNoteOnLoad = function () {
 
-
-    $(() => {
-        global.$body = $('body');
-    })
 
 
     const webview = document.getElementById("p3x-onenote-webview");
