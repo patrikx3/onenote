@@ -12,6 +12,11 @@ body {
     overflow: hidden;
 }
 
+
+body * {
+    transition: none !important;
+}
+
 #p3x-onenote-bottom-bar {
     cursor: pointer;
     position: fixed;

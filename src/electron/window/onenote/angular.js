@@ -17,7 +17,8 @@ global.p3x.onenote.ng.config(($mdAriaProvider, $mdThemingProvider) => {
     $mdThemingProvider.theme('default').primaryPalette('purple').accentPalette('blue')//.warnPalette('amber');
 })
 
-global.p3x.onenote.ng.run((p3xOnenotePrompt, p3xOnenoteToast, $rootScope) => {
+global.p3x.onenote.ng.run((p3xOnenotePrompt, p3xOnenoteToast, $rootScope, $animate) => {
+    $animate.enabled(false)
     global.p3x.onenote.prompt = p3xOnenotePrompt;
     global.p3x.onenote.toast = p3xOnenoteToast;
     global.p3x.onenote.root = $rootScope
