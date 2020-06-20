@@ -12,6 +12,13 @@ body {
     overflow: hidden;
 }
 
+md-dialog md-dialog-actions {
+    display: block !important;
+}
+
+md-dialog md-dialog-actions button {
+    float: right !important;
+}
 
 body * {
     transition: none !important;
