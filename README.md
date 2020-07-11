@@ -138,6 +138,7 @@ P3X OneNote Linux is, actually, an independent browser window for the online One
 
 ## Verbose feature info
 
+* To show the menu, click ALT
 * Desktop menu 
 * Icon
 * There is a bottom bar
