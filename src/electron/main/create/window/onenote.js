@@ -8,6 +8,7 @@ function createWindow() {
         icon: global.p3x.onenote.iconFile,
         title: `${global.p3x.onenote.title} v${global.p3x.onenote.pkg.version}`,
         backgroundColor: 'black',
+        autoHideMenuBar: true,
         webPreferences: {
             nodeIntegration: true,
             webviewTag: true,

@@ -22,12 +22,6 @@ const langTranslations = {
 
 const translation = langTranslations[translationKey]
 
-let hideMenuConf = conf.get('hide-menu')
-if (hideMenuConf === undefined) {
-    hideMenuConf = false
-    conf.set('hide-menu', hideMenuConf)
-}
-
 global.p3x = {
     onenote: {
         pkg: pkg,
@@ -37,7 +31,6 @@ global.p3x = {
         title: translation.title,
         conf: conf,
         disableHide: true,
-        hideMenu: hideMenuConf,
         allowMultiple: false,
         optionToDisableInternalExternalPopup: false,
         iconFile: path.resolve(`${__dirname}/images/256x256.png`),
