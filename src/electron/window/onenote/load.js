@@ -55,7 +55,6 @@ global.p3x = {
         root: undefined,
         wrongUrlTimeout: 1000,
         wrongUrlMaxAllowed: 5,
-        $rootScope: undefined,
     }
 }
 

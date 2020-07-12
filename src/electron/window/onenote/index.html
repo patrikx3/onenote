@@ -24,19 +24,16 @@
 
 <body onload="window.p3xOneNoteOnLoad()" id="p3x-onenote-bootstrap">
 <div id="p3x-onenote-bottom-bar" title="{{ $root.p3x.onenote.lang.label.copyLocation }}">
-        <div layout="row" layout-fill layout-align="end center">
-            <div ng-click="$root.p3x.onenote.copyLocation()" style="overflow: hidden; width: calc(100% - 100px);">
-                &nbsp;{{ $root.p3x.onenote.location }}
-            </div>
-            <div flex="125px" >
-                <div style="float: right;">
-                    <md-button ng-click="$root.p3x.onenote.donate()" style="padding: 0; margin: 0; min-height: auto; line-height: 20px;">
-                        <i class="fas fa-donate"></i>
-                        {{ $root.p3x.onenote.lang.label.donate }}
-                    </md-button>
-                </div>
-            </div>
+    <div style="float: right;">
+        <md-button ng-click="$root.p3x.onenote.donate()" style="padding: 0; margin: 0; min-height: auto; line-height: 20px;">
+            <i class="fas fa-donate"></i>
+            {{ $root.p3x.onenote.lang.label.donate }}
+        </md-button>
     </div>
+    <span ng-click="$root.p3x.onenote.copyLocation()" style="overflow: hidden; width: 100%;">
+        &nbsp;{{ $root.p3x.onenote.location }}
+    </span>
+</div>
 
 
 </div>

@@ -6,12 +6,19 @@ global.p3x.onenote.ng.factory('p3xOnenoteToast', ($mdToast) => {
                 message: options,
             }
         }
-        $mdToast.show(
-            $mdToast.simple()
-                .textContent(options.message)
-                .position('bottom right')
-                .hideDelay(5000)
-        );
+
+        const template = '<md-toast class="md-toast" style="cursor: pointer;" ng-click="closeToast()">' + options.message + '</md-toast>'
+
+        $mdToast.show({
+            controller: function ($scope, $mdToast) {
+                $scope.closeToast = function() {
+                    $mdToast.hide();
+                };
+            },
+            template: template,
+            hideDelay: 5000,
+            position: 'bottom right'
+        });
     }
 
     return new function () {
