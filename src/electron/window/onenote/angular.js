@@ -1,3 +1,5 @@
+const {shell} = require('electron');
+
 require('angular/angular');
 require('angular-aria');
 require('angular-animate');
@@ -17,11 +19,13 @@ global.p3x.onenote.ng.config(($mdAriaProvider, $mdThemingProvider) => {
     $mdThemingProvider.theme('default').primaryPalette('purple').accentPalette('blue')//.warnPalette('amber');
 })
 
-global.p3x.onenote.ng.run((p3xOnenotePrompt, p3xOnenoteToast, $rootScope, $animate) => {
+global.p3x.onenote.ng.run((p3xOnenotePrompt, p3xOnenoteToast, $rootScope, $animate, $mdMedia) => {
     $animate.enabled(false)
     global.p3x.onenote.prompt = p3xOnenotePrompt;
     global.p3x.onenote.toast = p3xOnenoteToast;
     global.p3x.onenote.root = $rootScope
+
+    $rootScope.$mdMedia = $mdMedia
 
     p3x.onenote.toast.action(p3x.onenote.lang.slow)
 
@@ -30,6 +34,9 @@ global.p3x.onenote.ng.run((p3xOnenotePrompt, p3xOnenoteToast, $rootScope, $anima
             lang: global.p3x.onenote.lang,
             location: undefined,
             copyLocation: require('./action/multi-action/get-location'),
+            donate: () => {
+                shell.openExternal('https://paypal.me/patrikx3')
+            }
         }
     }
 })

@@ -35,6 +35,8 @@ const handler = (options) => {
         global.p3x.onenote.lang = global.p3x.onenote.translations[data.translation]
         global.p3x.onenote.toast.action(global.p3x.onenote.lang.menu.language.alert)
 
+        global.p3x.onenote.root.p3x.onenote.lang = global.p3x.onenote.lang
+
         let type = '';
         let cancelled = false;
         try {

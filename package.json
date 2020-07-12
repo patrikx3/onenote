@@ -1,6 +1,6 @@
 {
     "name": "p3x-onenote",
-    "version": "2020.10.101",
+    "version": "2020.10.103",
     "description": "📚 P3X OneNote Linux",
     "main": "src/electron/app.js",
     "corifeus": {
@@ -44,6 +44,7 @@
     },
     "homepage": "https://corifeus.com/onenote",
     "dependencies": {
+        "@fortawesome/fontawesome-free": "^5.13.1",
         "angular": "^1.8.0",
         "angular-animate": "^1.8.0",
         "angular-aria": "^1.8.0",

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../../../../node_modules/typeface-roboto/index.css"/>
     <link rel="stylesheet" href="../../../../node_modules/angular/angular-csp.css">
     <link rel="stylesheet" href="../../../../node_modules/angular-material/angular-material.css">
+    <link rel="stylesheet" href="../../../../node_modules/@fortawesome/fontawesome-free/css/all.css">
     <link rel="stylesheet" href="./style.css">
     <!--
     <link rel="stylesheet" href="./core/overlay.css ">
@@ -22,8 +23,22 @@
 </head>
 
 <body onload="window.p3xOneNoteOnLoad()" id="p3x-onenote-bootstrap">
-<div id="p3x-onenote-bottom-bar" title="{{ $root.p3x.onenote.lang.label.copyLocation }}"
-     ng-click="$root.p3x.onenote.copyLocation()">&nbsp;{{ $root.p3x.onenote.location }}
+<div id="p3x-onenote-bottom-bar" title="{{ $root.p3x.onenote.lang.label.copyLocation }}">
+        <div layout="row" layout-fill layout-align="end center">
+            <div ng-click="$root.p3x.onenote.copyLocation()" style="overflow: hidden; width: calc(100% - 100px);">
+                &nbsp;{{ $root.p3x.onenote.location }}
+            </div>
+            <div flex="125px" >
+                <div style="float: right;">
+                    <md-button ng-click="$root.p3x.onenote.donate()" style="padding: 0; margin: 0; min-height: auto; line-height: 20px;">
+                        <i class="fas fa-donate"></i>
+                        {{ $root.p3x.onenote.lang.label.donate }}
+                    </md-button>
+                </div>
+            </div>
+    </div>
+
+
 </div>
 <webview id="p3x-onenote-webview" webpreferences="nativeWindowOpen=true">
 </webview>
