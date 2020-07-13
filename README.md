@@ -31,7 +31,7 @@
 
 A Linux compatible version of OneNote
 
-![Screenshot 1](https://cdn.corifeus.com/git/onenote/artifacts/screenshot/screenshot-2019.png)
+![Screenshot 1](https://cdn.corifeus.com/git/onenote/artifacts/screenshot/screenshot-2020.png)
 
 ## Warning
 
