@@ -36,9 +36,9 @@ global.p3x.onenote.ng.run((p3xOnenotePrompt, p3xOnenoteToast, $rootScope, $anima
             },
             canGo: (action) => {
                 if (action === 'back') {
-                    return global.p3x.onenote.webview.canGoBack()
+                    return global.p3x.onenote.webview && global.p3x.onenote.webview.canGoBack()
                 }
-                return global.p3x.onenote.webview.canGoForward()
+                return global.p3x.onenote.webview && global.p3x.onenote.webview.canGoForward()
             },
             lang: global.p3x.onenote.lang,
             location: undefined,
