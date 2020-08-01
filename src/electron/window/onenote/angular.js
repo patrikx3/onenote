@@ -31,6 +31,15 @@ global.p3x.onenote.ng.run((p3xOnenotePrompt, p3xOnenoteToast, $rootScope, $anima
 
     $rootScope.p3x = {
         onenote: {
+            go: (action) => {
+                global.p3x.onenote.webview[action === 'back' ? 'goBack' : 'goForward']()
+            },
+            canGo: (action) => {
+                if (action === 'back') {
+                    return global.p3x.onenote.webview.canGoBack()
+                }
+                return global.p3x.onenote.webview.canGoForward()
+            },
             lang: global.p3x.onenote.lang,
             location: undefined,
             copyLocation: require('./action/multi-action/get-location'),

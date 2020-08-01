@@ -33,7 +33,7 @@ global.p3x = {
         disableHide: true,
         allowMultiple: false,
         optionToDisableInternalExternalPopup: false,
-        iconFile: path.resolve(`${__dirname}/images/256x256.png`),
+        iconFile: path.resolve(`${__dirname}/images/128x128.png`),
         tray: undefined,
         window: {
             onenote: undefined,

@@ -16,21 +16,34 @@
     -->
 
     <!-- must be last -->
-    <link rel="icon" type="image/png" href="../../images/256x256.png"/>
+    <link rel="icon" type="image/png" href="../../images/128x128.png"/>
 
     <script type="text/javascript" src="./load.js"></script>
 
 </head>
 
 <body onload="window.p3xOneNoteOnLoad()" id="p3x-onenote-bootstrap">
-<div id="p3x-onenote-bottom-bar" title="{{ $root.p3x.onenote.lang.label.copyLocation }}">
+<div id="p3x-onenote-bottom-bar" >
+
+    <div style="float: left;">
+        <md-button ng-click="$root.p3x.onenote.go('back')" ng-disabled="!$root.p3x.onenote.canGo('back')" style="padding: 0; margin: 0; padding-left: 8px; padding-right: 8px; min-height: auto; line-height: 20px; min-width: auto">
+            <md-tooltip md-direction="top">{{ $root.p3x.onenote.lang.label.back }}</md-tooltip>
+            <i class="fas fa-chevron-left"></i>
+        </md-button>
+        <md-button ng-click="$root.p3x.onenote.go('forward')" ng-disabled="!$root.p3x.onenote.canGo('forward')" style="padding: 0; margin: 0; padding-left: 8px; padding-right: 8px; min-height: auto; line-height: 20px; min-width: auto">
+            <md-tooltip md-direction="top">{{ $root.p3x.onenote.lang.label.forward }}</md-tooltip>
+            <i class="fas fa-chevron-right"></i>
+        </md-button>
+    </div>
+
     <div style="float: right;">
-        <md-button ng-click="$root.p3x.onenote.donate()" style="padding: 0; margin: 0; min-height: auto; line-height: 20px;">
+        <md-button ng-click="$root.p3x.onenote.donate()" style="padding: 0; margin: 0; padding-left: 8px; padding-right: 8px; min-height: auto; line-height: 20px; min-width: auto">
             <i class="fas fa-donate"></i>
             {{ $root.p3x.onenote.lang.label.donate }}
         </md-button>
     </div>
     <span ng-click="$root.p3x.onenote.copyLocation()" style="overflow: hidden; width: 100%;">
+        <md-tooltip md-direction="top">{{ $root.p3x.onenote.lang.label.copyLocation }}</md-tooltip>
         &nbsp;{{ $root.p3x.onenote.location }}
     </span>
 </div>

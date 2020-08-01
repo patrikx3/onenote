@@ -39,6 +39,9 @@ const translation = {
         copyLocationCopied: 'Dirección copiada al portapapeles.',
         //disallowedContent: '¡Contenido no permitido!.Si no funciona, espere. Se reseteará al home por defecto. (Máx 5 segundos).',
         //unknownLink: 'Espere, cambiará mientras carga el destino. Si esto no es una página de OneNote, haga clic en el menú dentro de P3X OneNote home'
+        back: 'Espalda',
+        forward: 'Adelante',
+
     },
     dialog: {
         info: 'Info',

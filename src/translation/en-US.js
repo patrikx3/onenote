@@ -38,7 +38,9 @@ const translation = {
         copyLocation: 'Copy this location to the clipboard',
         copyLocationCopied: 'The location is copied to the clipboard.',
         //disallowedContent: 'Disallowed content! If not working, hang on, it will reset to the default home. (Max 5 seconds).',
-        //unknownLink: 'Hang on, it might change while loading to the destination. If this is not a OneNote page, free to click on the P3X OneNote menu home'
+        //unknownLink: 'Hang on, it might change while loading to the destination. If this is not a OneNote page, free to click on the P3X OneNote menu home',
+        back: 'Back',
+        forward: 'Forward',
     },
     dialog: {
         info: 'Info',

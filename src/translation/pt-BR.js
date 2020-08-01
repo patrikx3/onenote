@@ -38,7 +38,9 @@ const translation = {
         copyLocation: 'Copiar para área de transferência',
         copyLocationCopied: 'A localização foi copiada para a área de transferência.',
         //disallowedContent: 'Disallowed content! If not working, hang on, it will reset to the default home. (Max 5 seconds).',
-        //unknownLink: 'Hang on, it might change while loading to the destination. If this is not a OneNote page, free to click on the P3X OneNote menu home'
+        //unknownLink: 'Hang on, it might change while loading to the destination. If this is not a OneNote page, free to click on the P3X OneNote menu home',
+        back: 'Costas',
+        forward: 'Frente',
     },
     dialog: {
         info: 'Informações',

@@ -10,6 +10,7 @@ function createWindow() {
         backgroundColor: 'black',
         autoHideMenuBar: true,
         webPreferences: {
+            enableRemoteModule: true,
             nodeIntegration: true,
             webviewTag: true,
         }

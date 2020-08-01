@@ -52,5 +52,7 @@ body * {
 
 .md-toast-content {
     z-index: 110;
+}
 
+.p3x-onenote-toast-default .md-toast-content {
 }
