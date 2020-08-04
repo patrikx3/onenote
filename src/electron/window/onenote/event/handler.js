@@ -108,7 +108,7 @@ const handler = (options) => {
         event.preventDefault()
         //p3x.onenote.toast.action(p3x.onenote.lang.label.unknownLink)
 
-        if (event.url.trim() === 'about:blank') {
+        if (event.url.trim().startsWith('about:blank')) {
             //webview.src = event.url;
             return
         }

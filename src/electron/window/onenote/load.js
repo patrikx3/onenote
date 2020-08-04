@@ -67,8 +67,6 @@ require('./angular')
 
 window.p3xOneNoteOnLoad = function () {
 
-
-
     const webview = document.getElementById("p3x-onenote-webview");
     global.p3x.onenote.webview = webview;
     webview.focus()
