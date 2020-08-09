@@ -217,6 +217,8 @@ If you try to build the app with AppImage, you have to change from `electron` `d
 
 [Snap Store](https://snapcraft.io/p3x-onenote)
 
+[Github.IO Page](https://patrikx3.github.io/onenote/)
+
 [//]: #@corifeus-footer
 
 ---
