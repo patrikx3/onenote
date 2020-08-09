@@ -27,7 +27,7 @@
                         
 [//]: #@corifeus-header:end
 
-
+First of all, **thanks for all the donations** for my hard work.  
 
 A Linux compatible version of OneNote
 
