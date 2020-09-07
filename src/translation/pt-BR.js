@@ -11,8 +11,8 @@ const translation = {
             }
         },
         disableHide: {
-            //yes: 'Set the close button behaviour that will minimize to the tray instead of quitting',
-            //no: 'Set the close button behaviour as to really quit the app',
+            yes: 'Defina o comportamento do botão Fechar que irá minimizar para a bandeja em vez de sair',
+            no: 'Defina o comportamento do botão Fechar para realmente sair da aplicação',
             checkbox: 'Fechar bandeja',
             message: {
                 yes: 'O botão de fechar realmente fecha o app.',
@@ -37,10 +37,10 @@ const translation = {
         hide: 'Esconder',
         copyLocation: 'Copiar para área de transferência',
         copyLocationCopied: 'A localização foi copiada para a área de transferência.',
-        //disallowedContent: 'Disallowed content! If not working, hang on, it will reset to the default home. (Max 5 seconds).',
-        //unknownLink: 'Hang on, it might change while loading to the destination. If this is not a OneNote page, free to click on the P3X OneNote menu home',
-        back: 'Costas',
-        forward: 'Frente',
+        disallowedContent: 'Conteúdo desabilitado! Se não estiver funcionando, espere, ele será redefinido para o padrão. (Máximo de 5 segundos).',
+        unknownLink: 'Espere um pouco, pode mudar durante o carregamento para o destino. Se esta não for uma página do OneNote, sinta-se livre para clicar na página inicial do P3X no menu',
+        back: 'Voltar',
+        forward: 'Prosseguir',
     },
     dialog: {
         info: 'Informações',
