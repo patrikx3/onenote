@@ -103,7 +103,7 @@ const handler = (options) => {
 
     });
 
-    webview.addEventListener('new-window', async function (event) {
+    webview.addEventListener('new-window', function (event) {
 
         event.preventDefault()
         //p3x.onenote.toast.action(p3x.onenote.lang.label.unknownLink)

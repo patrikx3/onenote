@@ -15,3 +15,13 @@ app.on('activate', function () {
     }
 });
 
+
+//FIXME: webview new-window changed
+app.on('web-contents-created', function (webContentsCreatedEvent, contents) {
+    if (contents.getType() === 'webview') {
+        contents.on('new-window', function (newWindowEvent, url) {
+            newWindowEvent.preventDefault();
+        });
+    }
+});
+

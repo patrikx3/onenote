@@ -11,6 +11,7 @@ function createWindow() {
         autoHideMenuBar: true,
         webPreferences: {
             enableRemoteModule: true,
+            worldSafeExecuteJavaScript: true,
             nodeIntegration: true,
             webviewTag: true,
         }
