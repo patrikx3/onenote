@@ -53,7 +53,7 @@ Sometimes, you get an `AppImage` error for update, just download the latest rele
 https://github.com/patrikx3/onenote/releases
 
 #### Rasberry and ARM is experimental
-I have no ARM computer to test it out, I could build `AppImage` on ARM, but I think, it is required to add an argument to the program with the `--no-sandbox` argument.
+I have no ARM computer to test it out, I could build `AppImage` on ARM, but I have no idea if has an error, it crash or it works.
 
 # Downloadable installer
 
