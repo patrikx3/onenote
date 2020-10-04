@@ -13,7 +13,8 @@ const handler = (options) => {
 
         //console.log('p3x-onenote-onload-user', data)
 
-        if (typeof (global.p3x.onenote.data) === 'object' && global.p3x.onenote.data.hasOwnProperty('url') && global.p3x.onenote.data.url !== 'about:blank') {
+
+        if (typeof (global.p3x.onenote.data) === 'object' && global.p3x.onenote.data.hasOwnProperty('url') && !global.p3x.onenote.data.url.startsWith('about:blank')) {
             webview.src = global.p3x.onenote.data.url;
         } else {
             webview.src = 'https://www.onenote.com/notebooks'
