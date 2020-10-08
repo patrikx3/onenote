@@ -7,7 +7,7 @@
 
 ## Change log
 
-### v2020.10.157
+### v2020.10.159
 * BUGFIX: French build fix.
 
 ### v2020.10.157
