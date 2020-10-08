@@ -119,6 +119,7 @@ const translation = {
                 'de-DE': 'Alemán / German',
                 'pt-BR': 'Português / Portuguese',
                 'es-ES': 'Español / Spanish',
+                'fr-FR': 'Français / French',
             }
         },
     },

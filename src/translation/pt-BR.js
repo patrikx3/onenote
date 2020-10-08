@@ -118,6 +118,8 @@ const translation = {
                 'de-DE': 'Deutsch / German',
                 'pt-BR': 'Português / Portuguese',
                 'es-ES': 'Español / Spanish',
+                'fr-FR': 'Français / French',
+
             }
         },
     },
