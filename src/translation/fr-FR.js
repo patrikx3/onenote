@@ -106,7 +106,7 @@ const translation = {
             checkUpdates: 'Rechercher des mises à jour'
         },
         language: {
-            label: 'Langue',
+            label: 'Langue / Language',
             alert: 'Langue paramétrée à Français.',
             dialog: {
                 label: 'Essayer de configurer la langue de OneNote en ligne ?',
