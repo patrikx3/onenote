@@ -13,127 +13,128 @@ const translation = {
         disableHide: {
             //yes: 'Set the close button behaviour that will minimize to the tray instead of quitting',
             //no: 'Set the close button behaviour as to really quit the app',
-            checkbox: 'Close to the tray', //Tray en francais ?
+            checkbox: 'Fermeture dans la barre des tâches',
             message: {
                 yes: 'Le bouton de fermeture quitte l\'application.',
                 no: 'Le bouton de fermeture réduit l\'application dans la barre des tâches.',
 
             }
         },
-        optionToDisableInternalExternalPopup: 'Disable Internal / External Popup (all link internal)',
-        settings: 'Settings',
-        setProxy: 'Set proxy',
-        openUrl: 'Open an URL',
-        promptRedirectUrlTitle: 'Redirect to url',
-        edit: 'Edit',
-        view: 'View',
-        download: 'Download',
+        optionToDisableInternalExternalPopup: 'Désactiver les popups interne et externe',
+        settings: 'Paramètres',
+        setProxy: 'Sélection du proxy',
+        openUrl: 'Ouvrir une URL',
+        promptRedirectUrlTitle: 'Redirige vers l\'URL',
+        edit: 'Edition',
+        view: 'Affichage',
+        download: 'Télécharger',
         developer: 'Patrik Laszlo',
-        personalHome: 'Personal home',
-        corporateHome: 'Corporate home',
-        clearCache: 'First sign off, then click this menu option to clear the cache',
-        quit: 'Quit',
-        show: 'Show',
-        hide: 'Hide',
-        copyLocation: 'Copy this location to the clipboard',
-        copyLocationCopied: 'The location is copied to the clipboard.',
+        personalHome: 'Compte personnel',
+        corporateHome: 'Compte professionnel',
+        clearCache: 'Premièrement déconnectez-vous, puis sélectionnez cette option pour nettoyer le cache',
+        quit: 'Quitter',
+        show: 'Afficher',
+        hide: 'Cacher',
+        copyLocation: 'Copier cette emplacement',
+        copyLocationCopied: 'Cette emplacement a été copié dans le presse-papier.',
         //disallowedContent: 'Disallowed content! If not working, hang on, it will reset to the default home. (Max 5 seconds).',
         //unknownLink: 'Hang on, it might change while loading to the destination. If this is not a OneNote page, free to click on the P3X OneNote menu home',
-        back: 'Back',
-        forward: 'Forward',
+        back: 'Reculer',
+        forward: 'Avancer',
     },
     dialog: {
         info: 'Info',
         openUrl: {
-            info: 'You can go to any URL you wish',
-            placeholder: 'a valid URL',
+            info: 'Il est possible d\'aller sur n\'importe quelle URL',
+            placeholder: 'Une URL valide',
 
         },
         minimizationBehavior: {
-            title: 'Minimization behavior',
+            title: 'Comportement pour le bouton de fermeture',
         },
         setProxy: {
-            placeholder: 'Proxy setting',
-            info: 'To clear the proxy, use an empty string.',
-            clear: 'The proxy is turned off.',
+            placeholder: 'Paramètre du proxy',
+            info: 'Pour supprimer le proxy, utilisez un champ vide.',
+            clear: 'Le proxy est désactivé',
             set: (value) => {
-                return `The proxy is set as ${value}`
+                return `Le paramètre du proxy est : ${value}`
             }
         },
         redirect: {
             url: (opts) => {
                 return `${opts.url}`
             },
-            urlExternal: 'External',
-            urlInternal: 'Internal',
+            urlExternal: 'Externe',
+            urlInternal: 'Interne',
         }
     },
     button: {
-        yes: 'Yes',
-        no: 'No',
+        yes: 'Oui',
+        no: 'Non',
         ok: 'OK',
-        cancel: 'Cancel',
-        save: 'Save',
-        clear: 'Clear',
-        go: 'Go',
+        cancel: 'Annuler',
+        save: 'Sauvegarder',
+        clear: 'Nettoyer',
+        go: 'Aller à',
 
     },
     menu: {
         action: 'Action',
         role: {
             edit: {
-                undo: 'Undo',
-                redo: 'Redo',
-                cut: 'Cut',
-                copy: 'Copy',
-                paste: 'Paste',
-                pasteandmatchstyle: 'Paste and match style',
-                delete: 'Delete',
-                selectall: 'Select all',
+                undo: 'Annuler',
+                redo: 'Rétablir',
+                cut: 'Couper',
+                copy: 'Copier',
+                paste: 'Coller',
+                pasteandmatchstyle: 'Coller en gardant le style d\'origine',
+                delete: 'Supprimer',
+                selectall: 'Tout sélectionner',
             },
             view: {
-                reload: 'Reload',
-                forcereload: 'Force reload',
-                toggledevtools: 'Toggle development tools',
-                resetzoom: 'Reset Zoom',
-                zoomin: 'Zoom In',
-                zoomout: 'Zoom out',
-                togglefullscreen: 'Toggle full screen',
+                reload: 'Actualiser',
+                forcereload: 'Forcer l\'actualisation',
+                toggledevtools: 'Afficher les outils de développement',
+                resetzoom: 'Réintialiser le zoom',
+                zoomin: 'Zoomer',
+                zoomout: 'Dézoomer',
+                togglefullscreen: 'Activer le mode plein écran',
             }
         },
         help: {
-            title: 'Help',
-            checkUpdates: 'Check updates'
+            title: 'Aide',
+            checkUpdates: 'Rechercher des mises à jour'
         },
         language: {
-            label: 'Language',
-            alert: 'Language set to english.',
+            label: 'Langue',
+            alert: 'Langue paramétrée à Français.',
             dialog: {
-                label: 'Try to configure Online OneNote language?',
-                corporate: 'Corporate',
-                personal: 'Personal',
+                label: 'Essayer de configurer la langue de OneNote en ligne ?',
+                corporate: 'Entreprise',
+                personal: 'Personnel',
             },
             translations: {
                 'en-US': 'English',
                 'de-DE': 'Deutsch / German',
                 'pt-BR': 'Português / Portuguese',
                 'es-ES': 'Español / Spanish',
+                'fr-FR': 'Français',
             }
         },
     },
-    redirecting: 'Hang on, redirecting to a new notebook. It takes some time...',
-    slow: 'Hang on, loading OneNote takes some time...',
+    redirecting: 'Veuillez patienter, redirection en cours ...',
+    slow: 'Veuillez patienter, le chargement de OneNote peut être lent ...',
     updater: {
-        'checking-for-update': 'Checking for update ...',
-        'update-available': 'Downloading latest release ...',
-        'update-not-available': 'No new update.',
+        'checking-for-update': 'Recherche de mise à jour ...',
+        'update-available': 'Téléchargement des dernière mises à jour ...',
+        'update-not-available': 'Pas de nouvelles mise à jour.',
         error: (opts) => {
-            return `Error in auto-updater: ${opts.errorMessage}`
+            return `Erreur dans la mise à jour automatique : ${opts.errorMessage}`
         },
         'download-progress': (opts) => {
-            return 'Downloaded ' + opts.progressObj.percent + '%'
+            return 'Téléchargé ' + opts.progressObj.percent + '%'
         },
-        'update-downloaded': 'Update downloaded. You may restart the app to update.'
+        'update-downloaded': 'Mise à jour terminée. Vous devez rédemarrer l\'application pour finir la mise à jour.'
     }
 };
 
