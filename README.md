@@ -11,7 +11,7 @@
 
 
 
-# 📚 P3X OneNote Linux v2020.10.178
+# 📚 P3X OneNote Linux v2020.10.181
 
 
 
@@ -53,7 +53,7 @@ Sometimes, you get an `AppImage` error for update, just download the latest rele
 https://github.com/patrikx3/onenote/releases
 
 #### Rasberry and ARM is experimental
-I have no ARM computer to test it out, I could build `AppImage` on ARM, but I have no idea if has an error, it crash or it works.
+I have no ARM computer to test it out, I could build `AppImage` on ARM, but I have no idea if has an error, it crashes or it works.
 
 # Downloadable installer
 
@@ -78,9 +78,9 @@ chmod +x $HOME/opt/p3x-onenote-a.b.c-x86_64.AppImage
 $HOME/opt/p3x-onenote-a.b.c-x86_64.AppImage &
 ```
 
+<!--
 It then actually integrates itself into the menus and it will auto update itself.
 
-<!--
 (The GitHub versions are always instant, while the ElectronJs Apps releases are delayed.)    
 -->
   
@@ -232,7 +232,7 @@ All my domains ([patrikx3.com](https://patrikx3.com) and [corifeus.com](https://
 
 ---
 
-[**P3X-ONENOTE**](https://corifeus.com/onenote) Build v2020.10.178
+[**P3X-ONENOTE**](https://corifeus.com/onenote) Build v2020.10.181
 
 [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software)
 

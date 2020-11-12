@@ -1,6 +1,6 @@
 {
     "name": "p3x-onenote",
-    "version": "2020.10.178",
+    "version": "2020.10.181",
     "description": "📚 P3X OneNote Linux",
     "main": "src/electron/app.js",
     "corifeus": {
@@ -12,7 +12,8 @@
         "nodejs": "v14.15.0",
         "reponame": "onenote",
         "build": true,
-        "opencollective": false
+        "opencollective": false,
+        "install-appimage-launcher": "sudo add-apt-repository ppa:appimagelauncher-team/stable && sudo apt install -y appimagelauncher"
     },
     "bin": {
         "p3x-onenote": "bin/p3x-onenote.js"
@@ -23,7 +24,7 @@
         "build-test": "electron-builder build/dist -p always",
         "postinstall": "opencollective postinstall",
         "start": "node ./node_modules/.bin/electron ./src/electron/app.js",
-        "publish-electron": "rm -rf dist && electron-builder -p onTagOrDraft --ia32 --x64 --linux",
+        "publish-electron": "rm -rf dist && electron-builder -p onTagOrDraft --linux",
         "publish-electron-arm": "rm -rf dist && electron-builder --armv7l --arm64 --linux --publish=always",
         "publish-electron-arm-test": "rm -rf dist && electron-builder --armv7l --arm64 --linux",
         "publish-electron-snap": "electron-builder --linux snap -p never",
@@ -51,7 +52,7 @@
         "angular-material": "^1.2.1",
         "angular-messages": "^1.8.2",
         "configstore": "^4.0.0",
-        "corifeus-utils": "^2020.10.134",
+        "corifeus-utils": "^2020.10.136",
         "electron-updater": "^4.3.5",
         "opencollective": "^1.0.3",
         "semver": "^7.3.2",
@@ -59,7 +60,7 @@
         "electron": "^10.1.5"
     },
     "devDependencies": {
-        "corifeus-builder": "^2020.10.140",
+        "corifeus-builder": "^2020.10.144",
         "electron-builder": "^22.9.1"
     },
     "engines": {
