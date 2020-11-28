@@ -13,6 +13,7 @@ function createWindow() {
             enableRemoteModule: true,
             worldSafeExecuteJavaScript: true,
             nodeIntegration: true,
+            contextIsolation: false,
             webviewTag: true,
         }
     });
