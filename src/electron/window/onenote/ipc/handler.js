@@ -83,6 +83,26 @@ const handler = (options) => {
         }
     })
 
+    ipcRenderer.on('p3x-onenote-action-bookmark-open', (event, data) => {
+        global.p3x.onenote.webview.src = data.url
+    })
+
+    ipcRenderer.on('p3x-onenote-action-bookmark-add', async (event, data) => {
+        try {
+            const result = await global.p3x.onenote.prompt.bookmarks(data);
+            ipcRenderer.send('p3x-onenote-action-bookmark-result', result);
+
+        } catch (e) {
+            if (e !== undefined) {
+                alert(e.message)
+                console.error(e);
+            }
+        }
+    })
+
+
+
+
 }
 
 module.exports = handler

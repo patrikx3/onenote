@@ -76,7 +76,7 @@ const translation = {
         save: 'Sauvegarder',
         clear: 'Nettoyer',
         go: 'Aller à',
-
+        delete: 'Supprimer',
     },
     menu: {
         action: 'Action',
@@ -135,7 +135,20 @@ const translation = {
             return 'Téléchargé ' + opts.progressObj.percent + '%'
         },
         'update-downloaded': 'Mise à jour terminée. Vous devez rédemarrer l\'application pour finir la mise à jour.'
-    }
+    },
+    bookmarks: {
+        title: 'Favoris',
+        add: 'Ajouter un marque-page',
+        edit: 'Modifier les favoris',
+        form: {
+            title: 'Titre',
+            url: 'URL'
+        }
+    },
+    validation: {
+        required: 'Obligatoire',
+        url: 'URL invalide',
+    },
 };
 
 module.exports = translation;

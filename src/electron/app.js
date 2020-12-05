@@ -43,6 +43,7 @@ global.p3x = {
         menus: undefined,
         mainMenu: undefined,
         setVisible: undefined,
+        bookmarksEditMode: false,
         createWindow: {
             onenote: undefined,
         },

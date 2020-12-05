@@ -77,7 +77,7 @@ const translation = {
         save: 'Salvar',
         clear: 'Limpiar',
         go: 'Ir',
-
+        delete: 'Eliminar',
     },
     menu: {
         action: 'Acción',
@@ -136,7 +136,20 @@ const translation = {
             return 'Bajado ' + opts.progressObj.percent + '%'
         },
         'update-downloaded': 'Actualización bajada. Reinicie la aplicación para actualizar.'
-    }
+    },
+    bookmarks: {
+        title: 'Marcadores',
+        add: 'Añadir marcador',
+        edit: 'Editar marcadores',
+        form: {
+            title: 'Título',
+            url: 'URL'
+        }
+    },
+    validation: {
+        required: 'Necesaria',
+        url: 'URL invalida',
+    },
 };
 
 module.exports = translation;

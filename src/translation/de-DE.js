@@ -75,7 +75,7 @@ const translation = {
         save: 'Speichern',
         clear: 'Neu',
         go: 'Los',
-
+        delete: 'Löschen',
     },
     menu: {
         action: 'Bearbeiten',
@@ -134,7 +134,20 @@ const translation = {
             return 'Heruntergeladen ' + opts.progressObj.percent + '%'
         },
         'update-downloaded': 'Aktuellste Version geladen. Neustarten um den Updatevorgang abzuschließen.'
-    }
+    },
+    bookmarks: {
+        title: 'Lesezeichen',
+        add: 'Lesezeichen hinzufügen',
+        edit: 'Lesezeichen bearbeiten',
+        form: {
+            title: 'Titel',
+            url: 'URL'
+        }
+    },
+    validation: {
+        required: 'Erforderlich',
+        url: 'Ungültige URL',
+    },
 };
 
 module.exports = translation;

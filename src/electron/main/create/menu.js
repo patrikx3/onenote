@@ -41,10 +41,60 @@ function mainMenu() {
         languageCheckbox.push(transMenu)
     }
 
+    const bookmarksMenu = [
+        {
+            label: global.p3x.onenote.lang.bookmarks.add,
+            click: () => {
+                global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-action-bookmark-add', {
+                    edit: false,
+                })
+            }
+        },
+    ]
+
+    const bookmarks = global.p3x.onenote.conf.get('bookmarks') || []
+
+    if (bookmarks.length > 0) {
+        bookmarksMenu.push({
+            label: global.p3x.onenote.lang.bookmarks.edit,
+            type: 'checkbox',
+            checked: global.p3x.onenote.bookmarksEditMode,
+            click: () => {
+                global.p3x.onenote.bookmarksEditMode = !global.p3x.onenote.bookmarksEditMode
+            }
+        })
+        bookmarksMenu.push({
+            type: 'separator'
+        })
+    }
+
+    for(let bookmarkIndex in bookmarks) {
+        const bookmark = bookmarks[bookmarkIndex]
+        const thisBookmarkIndex = bookmarkIndex
+        bookmarksMenu.push({
+            label: bookmark.title,
+            click: () => {
+                if (global.p3x.onenote.bookmarksEditMode !== true) {
+                    global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-action-bookmark-open', bookmark)
+                } else {
+                    global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-action-bookmark-add', {
+                        edit: true,
+                        index: thisBookmarkIndex,
+                        model: bookmark,
+                    })
+                }
+            }
+        })
+    }
+
     const template = [
         {
             label: global.p3x.onenote.title,
             submenu: menus.default(),
+        },
+        {
+            label: global.p3x.onenote.lang.bookmarks.title,
+            submenu: bookmarksMenu
         },
         {
             label: p3x.onenote.lang.menu.action,

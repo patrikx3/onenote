@@ -76,7 +76,7 @@ const translation = {
         save: 'Save',
         clear: 'Clear',
         go: 'Go',
-
+        delete: 'Delete',
     },
     menu: {
         action: 'Action',
@@ -135,7 +135,20 @@ const translation = {
             return 'Downloaded ' + opts.progressObj.percent + '%'
         },
         'update-downloaded': 'Update downloaded. You may restart the app to update.'
-    }
+    },
+    bookmarks: {
+        title: 'Bookmarks',
+        add: 'Add bookmark',
+        edit: 'Edit bookmarks',
+        form: {
+            title: 'Title',
+            url: 'URL'
+        }
+    },
+    validation: {
+        required: 'Required',
+        url: 'Invalid url',
+    },
 };
 
 module.exports = translation;
