@@ -112,12 +112,16 @@ global.p3x.onenote.ng.factory('p3xOnenotePrompt', ($mdDialog) => {
 
         this.bookmarks = (opts) => {
             let deleteButton = ''
+            let title
             if (opts.edit === true) {
                 deleteButton = `
                         <md-button ng-click="delete()" class="md-primary">
                            ${p3x.onenote.lang.button.delete}
                         </md-button>
                 `
+                title = p3x.onenote.lang.bookmarks.edit
+            } else {
+                title = p3x.onenote.lang.bookmarks.add
             }
             return $mdDialog.show({
                 template: `
@@ -127,7 +131,7 @@ global.p3x.onenote.ng.factory('p3xOnenotePrompt', ($mdDialog) => {
                       <md-dialog-content>
                         <md-content layout-padding>
                             <h3 flex>
-                                ${p3x.onenote.lang.bookmarks.add}
+                                ${title}
                             </h3>
                             <div>
                                 <md-input-container class="md-block">
