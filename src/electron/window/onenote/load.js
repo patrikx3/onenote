@@ -32,6 +32,7 @@ const translation = langTranslations[translationKey]
 global.p3x = {
     onenote: {
         conf: conf,
+        domReady: false,
         url: {
             /*
             https://www.onenote.com/notebooks?omkt=en-US
@@ -63,14 +64,18 @@ global.p3x = {
 document.title = `${global.p3x.onenote.lang.title} v${global.p3x.onenote.pkg.version}`;
 
 
-//require('./core/overlay')
-require('./angular')
 
 window.p3xOneNoteOnLoad = function () {
 
     const webview = document.getElementById("p3x-onenote-webview");
     global.p3x.onenote.webview = webview;
     webview.focus()
+
+    global.p3x.onenote.webview.addEventListener("dom-ready", function () {
+//require('./core/overlay')
+        require('./angular')
+    })
+
 
     const ipcHandler = require('./ipc/handler');
     ipcHandler({
