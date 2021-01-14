@@ -45,12 +45,6 @@ Usually, on stable distros are working with SNAP, but usually non stable Linux d
 #### Tray issues
 It is possible, that the tray is not working, it is an upstream issue!
     
-For me, on Linux Mint, is only working, if I am using the `AppImage`, and have `System Settings` -> `General` -> `Enable support for indicators`.
-  
-Snap is working on Linux Mint as well, except the tray....
-
-I only test Linux Mint, help is welcome!
-
 #### Error in auto-updater: Redirect was cancelled  
 Sometimes, you get an `AppImage` error for update, just download the latest release and replace the `AppImage` from here:  
 https://github.com/patrikx3/onenote/releases
