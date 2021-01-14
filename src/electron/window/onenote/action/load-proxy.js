@@ -2,18 +2,7 @@ const { remote } = require('electron')
 
 const loadProxy = async () => {
     //console.log('load proxy');
-    await new Promise(resolve => {
-        let timeout
-        const exec = () => {
-            if (p3x.onenote.domReady !== true) {
-                clearTimeout(timeout)
-                timeout = setTimeout(exec, 250)
-            } else {
-                resolve()
-            }
-        }
-        exec()
-    })
+    await p3x.onenote.wait.domReady()
 
     const webview = global.p3x.onenote.webview;
 

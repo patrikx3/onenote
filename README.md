@@ -31,26 +31,50 @@ A Linux compatible version of OneNote
 
 ![Screenshot 1](https://cdn.corifeus.com/git/onenote/artifacts/screenshot/screenshot-2020.png)
 
-## Warning
+# Original version
+https://github.com/peterforgacs/electron-onenote
 
-### Corporate login
-The corporate login is unstable, either it works or not. Only the personal account that I can provide some minimal support.
+Props for Peter Forgacs! 😎
 
-#### Suspend/Sleep/Wake up
-I recognized, that after suspend/sleep and then wake up, the app is not saving the pages anymore. For now, the solution is, that after wake up, restart the app.
+# Main Features
 
-#### Not working on SNAP on some versions
-Usually, on stable distros are working with SNAP, but usually non stable Linux distros could not work. Please, try using the `AppImage`, that is usually better than SNAP.
+P3X OneNote Linux is, actually, an independent browser window for the online OneNote. You can use this program without having to clutter your browser. The main functions are:
+* that is independent from any browser, as it works in it's own process
+* it provides a tray, that allows you to close your browser while it keeps running in the tray
+* the data is cached and is faster than always opening a new window
+* it allows you to sign in with the corporate or the personal login
+* when there is a new update, it auto updates itself (Only in the `AppImage` version.)
+* the program allows to use other Microsoft online applications, but the dedicated purpose is to use OneNote
 
-#### Tray issues
-It is possible, that the tray is not working, it is an upstream issue!
-    
-#### Error in auto-updater: Redirect was cancelled  
-Sometimes, you get an `AppImage` error for update, just download the latest release and replace the `AppImage` from here:  
-https://github.com/patrikx3/onenote/releases
+## Verbose feature info
 
-#### Rasberry and ARM is experimental
-I have no ARM computer to test it out, I could build `AppImage` on ARM, but I have no idea if has an error, it crashes or it works.
+* To show the menu, click ALT
+* Desktop menu
+* Icon
+* There is a bottom bar
+    * It shows the current location
+    * When you click on this bar, the location URL is copied into the clipboard
+* There is a new button on the Edit menu
+    * Copy this location to the clipboard
+        * This is the same function that is on the bottom bar when you click on it
+* Restart button (empty your cache, you can login again if there is an error)
+* Remember last notebook (as much Online Onenote allows ...)
+* Menu > Settings
+    * Close to the tray
+        * If checked, will minimize to the tray instead of quit
+        * If un-checked, default quit close button behaviour (quit the app)
+* You are able to set a proxy in the settings menu.
+* There is now a menu called `Corporate home`
+    * Given, I do not have a `Corporate` login, I cannot debug it at all.
+        * If something is not working, the only way is to provide your login and I could probably fix it. Otherwise, I see nothing.
+* The OneNote language is controlled by Microsoft, and we try to work with Online OneNote, but we are getting a hard time, but the Electron UI is now able to use any language.
+    * You can translate any language @
+        * https://github.com/patrikx3/onenote/tree/master/src/translation
+* Allows using multiple instances (with some quirks, as the config will not be synchronized using multiple instances at once, so it can provide wrong results - to make it to work, configure with 1 instance, exit, then use multiple instances).
+    * Multiple instances is not recommended (it was requested and provided).
+
+<!-- (`````~/.local/share/applications/p3x-onenote.desktop`````) -->
+
 
 # Downloadable installer
 
@@ -116,53 +140,29 @@ Logout and relogin, and a menu will now appear.
 
 [You want to install via NPM...](artifacts/npm.md)
 
-# Original version
-https://github.com/peterforgacs/electron-onenote
-
-Props for Peter Forgacs! 😎
-
-# Main Features
-
-P3X OneNote Linux is, actually, an independent browser window for the online OneNote. You can use this program without having to clutter your browser. The main functions are:
-* that is independent from any browser, as it works in it's own process
-* it provides a tray, that allows you to close your browser while it keeps running in the tray
-* the data is cached and is faster than always opening a new window
-* it allows you to sign in with the corporate or the personal login
-* when there is a new update, it auto updates itself (Only in the `AppImage` version.)
-* the program allows to use other Microsoft online applications, but the dedicated purpose is to use OneNote
-
-## Verbose feature info
-
-* To show the menu, click ALT
-* Desktop menu 
-* Icon
-* There is a bottom bar
-  * It shows the current location
-  * When you click on this bar, the location URL is copied into the clipboard
-* There is a new button on the Edit menu
-  * Copy this location to the clipboard
-    * This is the same function that is on the bottom bar when you click on it
-* Restart button (empty your cache, you can login again if there is an error)
-* Remember last notebook (as much Online Onenote allows ...)
-* Menu > Settings 
-  * Close to the tray 
-    * If checked, will minimize to the tray instead of quit
-    * If un-checked, default quit close button behaviour (quit the app)
-* You are able to set a proxy in the settings menu.
-* There is now a menu called `Corporate home`
-  * Given, I do not have a `Corporate` login, I cannot debug it at all.
-    * If something is not working, the only way is to provide your login and I could probably fix it. Otherwise, I see nothing.
-* The OneNote language is controlled by Microsoft, and we try to work with Online OneNote, but we are getting a hard time, but the Electron UI is now able to use any language.
-  * You can translate any language @
-    * https://github.com/patrikx3/onenote/tree/master/src/translation
-* Allows using multiple instances (with some quirks, as the config will not be synchronized using multiple instances at once, so it can provide wrong results - to make it to work, configure with 1 instance, exit, then use multiple instances).
-  * Multiple instances is not recommended (it was requested and provided).
-
-<!-- (`````~/.local/share/applications/p3x-onenote.desktop`````) -->
 
 # Issues
 
-## Not loading the pages / freezes
+#### Corporate login
+The corporate login is unstable, either it works or not. Only the personal account that I can provide some minimal support.
+
+#### Suspend/Sleep/Wake up
+I recognized, that after suspend/sleep and then wake up, the app is not saving the pages anymore. For now, the solution is, that after wake up, restart the app.
+
+#### Not working on SNAP on some versions
+Usually, on stable distros are working with SNAP, but usually non stable Linux distros could not work. Please, try using the `AppImage`, that is usually better than SNAP.
+
+#### Tray issues
+It is possible, that the tray is not working, it is an upstream issue!
+
+#### Error in auto-updater: Redirect was cancelled
+Sometimes, you get an `AppImage` error for update, just download the latest release and replace the `AppImage` from here:  
+https://github.com/patrikx3/onenote/releases
+
+#### Rasberry and ARM is experimental
+I have no ARM computer to test it out, I could build `AppImage` on ARM, but I have no idea if has an error, it crashes or it works.
+
+#### Not loading the pages / freezes
 Sometimes, it is possible, that OneNote Online does not load properly or freezes, the solutions is to quit and start the program again. (I know, you won't like it at all! 😡) 
 
 <!--
@@ -176,19 +176,19 @@ This only happens if you kill ```P3X OneNote Linux``` and then relogin many time
 
 -->
 
-## Online OneNote Change language
+#### Online OneNote Change language
 
 Although the main page's language can be changed, it reverts back when an actual page is accessed.
 This is being investigated.
 
 https://github.com/patrikx3/onenote/issues/14
 
-## Electron problem
+#### Electron problem
 🐞 Since Electron v3, the tray left click is executing as the right click, Electron bug.    
   
 https://github.com/patrikx3/onenote/issues/38  
 
-## Fedora
+#### Fedora
 
 https://github.com/patrikx3/onenote/issues/3#issuecomment-312711801
     

@@ -57,6 +57,34 @@ global.p3x = {
         root: undefined,
         wrongUrlTimeout: 1000,
         wrongUrlMaxAllowed: 5,
+        wait: {
+            angular: (cb) => {
+                let timeout
+                const exec = () => {
+                    if (global.p3x.onenote.root === undefined) {
+                        clearTimeout(timeout)
+                        timeout = setTimeout(exec, 250)
+                    } else {
+                        cb()
+                    }
+                }
+                exec()
+            },
+            domReady: async () => {
+                return new Promise(resolve => {
+                    let timeout
+                    const exec = () => {
+                        if (p3x.onenote.domReady !== true) {
+                            clearTimeout(timeout)
+                            timeout = setTimeout(exec, 250)
+                        } else {
+                            resolve()
+                        }
+                    }
+                    exec()
+                })
+            }
+        }
     }
 }
 

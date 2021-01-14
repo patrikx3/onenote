@@ -38,22 +38,15 @@ const handler = (options) => {
             }
             */
 
-            let timeout
-            const exec = () => {
-                if (global.p3x.onenote.root === undefined) {
-                    clearTimeout(timeout)
-                    timeout = setTimeout(exec, 250)
-                } else {
-                    if (global.p3x.onenote.root.p3x.onenote.location !== webview.src) {
+
+            if (global.p3x.onenote.root.p3x.onenote.location !== webview.src) {
+                p3x.onenote.wait.angular(() => {
                         global.p3x.onenote.root.p3x.onenote.location = webview.src
                         global.p3x.onenote.data.url = webview.src
                         global.p3x.onenote.root.$digest()
                         ipc.send('p3x-onenote-save', global.p3x.onenote.data);
-                    }
-                }
+                })
             }
-            exec()
-
 
         }, p3x.onenote.wrongUrlTimeout)
     }
@@ -98,17 +91,10 @@ const handler = (options) => {
         global.p3x.onenote.data.url = webview.src;
         ipc.send('p3x-onenote-save', global.p3x.onenote.data);
 
-        let timeout
-        const exec = () => {
-            if (global.p3x.onenote.root === undefined) {
-                clearTimeout(timeout)
-                timeout = setTimeout(exec, 250)
-            } else {
-                global.p3x.onenote.root.p3x.onenote.location = webview.src
-                global.p3x.onenote.root.$digest()
-            }
-        }
-        exec()
+        p3x.onenote.wait.angular(() => {
+            global.p3x.onenote.root.p3x.onenote.location = webview.src
+            global.p3x.onenote.root.$digest()
+        })
 
     });
 
