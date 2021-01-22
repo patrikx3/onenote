@@ -39,7 +39,7 @@ const handler = (options) => {
             */
 
 
-            if (global.p3x.onenote.root.p3x.onenote.location !== webview.src) {
+            if (global.p3x.onenote.root && global.p3x.onenote.root.p3x.onenote.location !== webview.src) {
                 p3x.onenote.wait.angular(() => {
                         global.p3x.onenote.root.p3x.onenote.location = webview.src
                         global.p3x.onenote.data.url = webview.src
