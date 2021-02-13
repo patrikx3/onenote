@@ -56,8 +56,8 @@
         "electron-updater": "^4.3.5",
         "opencollective": "^1.0.3",
         "semver": "^7.3.4",
-        "fontsource-roboto": "^3.1.5",
-        "electron": "^11.2.1"
+        "@fontsource/roboto": "^4.2.0",
+        "electron": "^11.2.3"
     },
     "devDependencies": {
         "corifeus-builder": "^2021.4.102",
