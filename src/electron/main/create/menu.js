@@ -121,7 +121,7 @@ function mainMenu() {
 
                         const message = global.p3x.onenote.disableHide ? global.p3x.onenote.lang.label.disableHide.message.yes : global.p3x.onenote.lang.label.disableHide.message.no
 
-                        dialog.showMessageBox(global.p3x.onenote.window.onenote, {
+                        dialog.showMessageBoxSync(global.p3x.onenote.window.onenote, {
                             type: 'info',
                             title: global.p3x.onenote.lang.dialog.minimizationBehavior.title,
                             message: message,
@@ -287,8 +287,8 @@ function mainMenu() {
     ]
 
     if (process.env.APPIMAGE !== undefined) {
-        template[6].submenu.push({type: 'separator'})
-        template[6].submenu.push({
+        template[7].submenu.push({type: 'separator'})
+        template[7].submenu.push({
                 label: global.p3x.onenote.lang.menu.help.checkUpdates,
                 click: () => {
                     const {autoUpdater} = require("electron-updater");
