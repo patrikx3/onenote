@@ -10,7 +10,13 @@ const destroyTray  = () => {
     }
 }
 
-function mainTray() {
+function mainTray(opts) {
+
+    if (opts === undefined) {
+        opts = {
+            allowQuit: false
+        }
+    }
 
 //    app.whenReady().then(() => {
         //destroyTray();
@@ -33,9 +39,11 @@ function mainTray() {
             const contextMenu = Menu.buildFromTemplate(menu)
             global.p3x.onenote.tray.setContextMenu(contextMenu)
 
-        } else if (global.p3x.onenote.tray !== undefined) {
+        } else if (global.p3x.onenote.tray !== undefined && opts.allowQuit === true) {
             let { args } = require('electron')
             //console.log('args', args, 'process.env.APPIMAGE', process.env.APPIMAGE)
+
+            //console.trace()
 
             if (process.env.APPIMAGE) {
                 if (args === undefined) {

@@ -125,20 +125,22 @@ function mainMenu() {
                             if (global.p3x.onenote.disableHide === true && global.p3x.onenote.tray !== undefined) {
                                 message += `
 
-${global.p3x.onenote.lang.restart}`
+${global.p3x.onenote.lang.restart}
+
+${global.p3x.onenote.lang.slow}
+`
                             }
 
-                            /*
-                            dialog.showMessageBoxSync( global.p3x.onenote.window.onenote, {
+                            dialog.showMessageBox( global.p3x.onenote.window.onenote, {
                                 type: 'info',
                                 title: global.p3x.onenote.lang.dialog.minimizationBehavior.title,
                                 message: message,
                                 buttons: [global.p3x.onenote.lang.button.ok]
+                            }).then(() => {
+                                console.log('reloading tray settings')
+                                mainMenu()
+                                mainTray({ allowQuit: true })
                             })
-                             */
-
-                            mainMenu()
-                            mainTray()
 
                         } catch(e) {
                             console.error(e)
