@@ -10,8 +10,6 @@ const destroyTray  = () => {
     }
 }
 
-let shownRestart = false
-
 function mainTray() {
 
     app.whenReady().then(() => {
@@ -38,16 +36,6 @@ function mainTray() {
         } else if (global.p3x.onenote.tray !== undefined) {
             let { args, dialog} = require('electron')
             //console.log('args', args, 'process.env.APPIMAGE', process.env.APPIMAGE)
-
-            if (shownRestart === false) {
-                shownRestart = true
-                dialog.showMessageBoxSync(global.p3x.onenote.window.onenote, {
-                    type: 'info',
-                    title: global.p3x.onenote.lang.title,
-                    message: global.p3x.onenote.lang.restart,
-                    buttons: [global.p3x.onenote.lang.button.ok]
-                })
-            }
 
             if (process.env.APPIMAGE) {
                 if (args === undefined) {

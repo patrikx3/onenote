@@ -119,7 +119,13 @@ function mainMenu() {
                         global.p3x.onenote.disableHide = !global.p3x.onenote.disableHide;
                         global.p3x.onenote.conf.set('disable-hide', global.p3x.onenote.disableHide);
 
-                        const message = global.p3x.onenote.disableHide ? global.p3x.onenote.lang.label.disableHide.message.yes : global.p3x.onenote.lang.label.disableHide.message.no
+                        let message = global.p3x.onenote.disableHide ? global.p3x.onenote.lang.label.disableHide.message.yes : global.p3x.onenote.lang.label.disableHide.message.no
+
+                        if (global.p3x.onenote.disableHide === true && global.p3x.onenote.tray !== undefined) {
+                           message += `
+
+${global.p3x.onenote.lang.restart}`
+                        }
 
                         dialog.showMessageBoxSync(global.p3x.onenote.window.onenote, {
                             type: 'info',
