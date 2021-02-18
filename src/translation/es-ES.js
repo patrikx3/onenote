@@ -1,5 +1,6 @@
 const translation = {
     title: 'P3X OneNote',
+    restart: 'Espere, la aplicación se está reiniciando.',
     label: {
         hideMenu: 'Esconder Menú Principal',
         donate: 'Donar',

@@ -1,4 +1,4 @@
-const {app, Menu, Tray} = require('electron')
+const {app, Menu, Tray } = require('electron')
 
 const menus = require('../menus');
 const action = require('../action');
@@ -34,8 +34,35 @@ function mainTray() {
             global.p3x.onenote.tray.setContextMenu(contextMenu)
 
         } else if (global.p3x.onenote.tray !== undefined) {
-            app.relaunch()
-            app.exit()
+            let { args, dialog} = require('electron')
+            //console.log('args', args, 'process.env.APPIMAGE', process.env.APPIMAGE)
+
+            /*
+            dialog.showMessageBox(global.p3x.onenote.window.onenote, {
+                type: 'info',
+                title: global.p3x.onenote.lang.title,
+                message: global.p3x.onenote.lang.restart,
+                buttons: [global.p3x.onenote.lang.button.ok]
+            })
+             */
+
+            if (process.env.APPIMAGE) {
+                if (args === undefined) {
+                    args = []
+                }
+                const options = {args};
+                if (process.env.APPIMAGE) {
+                    options.execPath = process.env.APPIMAGE;
+                    options.args.unshift('--appimage-extract-and-run');
+                }
+                app.relaunch(options);
+                app.exit(0);
+            } else {
+                app.relaunch();
+                app.exit(0);
+            }
+
+
         }
     })
 
