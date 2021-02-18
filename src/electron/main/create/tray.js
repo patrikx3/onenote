@@ -12,21 +12,21 @@ const destroyTray  = () => {
 
 function mainTray() {
 
-    app.whenReady().then(() => {
+//    app.whenReady().then(() => {
         //destroyTray();
 
         if (!global.p3x.onenote.disableHide) {
 
             if (global.p3x.onenote.tray === undefined ) {
                 global.p3x.onenote.tray = new Tray(global.p3x.onenote.iconFile)
+                const click = () => {
+                    console.info('tray on click is executed - if not shown in console. this click is not executed.')
+                    action.toggleVisible()
+                }
+                global.p3x.onenote.tray.on('click', click)
             }
 
             global.p3x.onenote.tray.setToolTip(`${global.p3x.onenote.title} v${global.p3x.onenote.pkg.version}`)
-            const click = () => {
-                console.info('tray on click is executed - if not shown in console. this click is not executed.')
-                action.toggleVisible()
-            }
-            global.p3x.onenote.tray.on('click', click)
 
             const menu = menus.default()
 
@@ -34,7 +34,7 @@ function mainTray() {
             global.p3x.onenote.tray.setContextMenu(contextMenu)
 
         } else if (global.p3x.onenote.tray !== undefined) {
-            let { args, dialog} = require('electron')
+            let { args } = require('electron')
             //console.log('args', args, 'process.env.APPIMAGE', process.env.APPIMAGE)
 
             if (process.env.APPIMAGE) {
@@ -42,10 +42,8 @@ function mainTray() {
                     args = []
                 }
                 const options = {args};
-                if (process.env.APPIMAGE) {
-                    options.execPath = process.env.APPIMAGE;
-                    options.args.unshift('--appimage-extract-and-run');
-                }
+                options.execPath = process.env.APPIMAGE;
+                options.args.unshift('--appimage-extract-and-run');
                 app.relaunch(options);
                 app.exit(0);
             } else {
@@ -55,7 +53,7 @@ function mainTray() {
 
 
         }
-    })
+//    })
 
 }
 

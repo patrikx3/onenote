@@ -17,6 +17,7 @@ function createWindow() {
             webviewTag: true,
         }
     });
+    //global.p3x.onenote.window.onenote.openDevTools()
 
     global.p3x.onenote.setVisible(true);
 
