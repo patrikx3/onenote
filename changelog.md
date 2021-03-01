@@ -7,7 +7,7 @@
 
 ## Change log
 
-### v2021.4.143
+### v2021.4.144
 * FEATURE: Add `rpm` package format.
 
 ### v2021.4.140
