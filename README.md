@@ -11,7 +11,7 @@
 
 
 
-# 📚 P3X OneNote Linux v2021.4.140
+# 📚 P3X OneNote Linux v2021.4.144
 
 
 
@@ -199,6 +199,11 @@ Please apply the `.editorconfig` settings in your IDE.
 
 If you try to build the app with AppImage, you have to change from `electron` `dependencies` to `devDependencies`, this is because it is created to be able to run this app from `NPM` instead of an `AppImage`.
 
+For generating `rpm` on `Ubuntu` distro, you can use:
+```bash
+sudo apt-get install rpm
+```
+
 # URL links
 
 
@@ -229,7 +234,7 @@ All my domains ([patrikx3.com](https://patrikx3.com) and [corifeus.com](https://
 
 ---
 
-[**P3X-ONENOTE**](https://corifeus.com/onenote) Build v2021.4.140
+[**P3X-ONENOTE**](https://corifeus.com/onenote) Build v2021.4.144
 
 [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software)
 
