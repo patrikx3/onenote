@@ -34,6 +34,7 @@ global.p3x = {
         disableHide: true,
         allowMultiple: false,
         optionToDisableInternalExternalPopup: false,
+        optionToHideMenu: false,
         iconFile: path.resolve(`${__dirname}/images/128x128.png`),
         tray: undefined,
         window: {
@@ -60,6 +61,13 @@ global.p3x.onenote.disableHide = conf.get('disable-hide')
 if (global.p3x.onenote.disableHide === undefined) {
     conf.set('disable-hide', true)
     global.p3x.onenote.disableHide = true;
+}
+
+// optionToHideMenu
+global.p3x.onenote.optionToHideMenu = conf.get('option-to-hide-menu')
+if (global.p3x.onenote.optionToHideMenu === undefined) {
+    conf.set('option-to-hide-menu', false)
+    global.p3x.onenote.optionToHideMenu = false;
 }
 
 // configuration

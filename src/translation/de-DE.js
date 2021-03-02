@@ -2,6 +2,10 @@ const translation = {
     title: 'P3X OneNote',
     restart: 'Bitte warten Sie, die Anwendung wird neu gestartet.',
     label: {
+        hideMenu: 'Hauptmenü ausblenden (mit ALT anzeigen)',
+        optionToHideMenuState: {
+            yes: 'Nach dem Neustart wird das Menü ausgeblendet und auf ALT angezeigt.',
+        },
         donate: 'Spenden',
         allowMultiple: {
             checkbox: 'Mehrere App-Instanzen erlauben (möglicherweise mit Quirks)',

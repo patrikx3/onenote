@@ -8,7 +8,7 @@ function createWindow() {
         icon: global.p3x.onenote.iconFile,
         title: `${global.p3x.onenote.title} v${global.p3x.onenote.pkg.version}`,
         backgroundColor: 'black',
-        autoHideMenuBar: true,
+        autoHideMenuBar: global.p3x.onenote.optionToHideMenu,
         webPreferences: {
             enableRemoteModule: true,
             worldSafeExecuteJavaScript: true,

@@ -2,7 +2,10 @@ const translation = {
     title: 'P3X OneNote',
     restart: 'Aguarde, o aplicativo está reiniciando.',
     label: {
-        hideMenu: 'Mostrar menu principal',
+        hideMenu: 'Esconder o menu principal (mostrar com ALT)',
+        optionToHideMenuState: {
+            yes: 'Após reiniciar, ele irá ocultar o menu e mostrar no ALT.',
+        },
         donate: 'Doar',
         allowMultiple: {
             checkbox: 'Permitir múltiplas instâncias (com algumas pecularidades)',

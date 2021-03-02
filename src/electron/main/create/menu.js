@@ -112,6 +112,45 @@ function mainMenu() {
             label: global.p3x.onenote.lang.label.settings,
             submenu: [
                 {
+                    label: global.p3x.onenote.lang.label.hideMenu,
+                    type: 'checkbox',
+                    checked: global.p3x.onenote.optionToHideMenu,
+                    click: () => {
+                        try {
+
+                            global.p3x.onenote.optionToHideMenu = !global.p3x.onenote.optionToHideMenu
+                            global.p3x.onenote.conf.set('option-to-hide-menu', global.p3x.onenote.optionToHideMenu,);
+
+                            if (!global.p3x.onenote.optionToHideMenu) {
+                                global.p3x.onenote.window.onenote.setAutoHideMenuBar(false)
+                                global.p3x.onenote.window.onenote.setMenuBarVisibility(true)
+                            } else {
+                                const message = `
+${global.p3x.onenote.lang.label.optionToHideMenuState.yes}
+
+${global.p3x.onenote.lang.restart}
+
+${global.p3x.onenote.lang.slow}
+`
+
+                                dialog.showMessageBox( global.p3x.onenote.window.onenote, {
+                                    type: 'info',
+//                                title: global.p3x.onenote.lang.dialog.minimizationBehavior.title,
+                                    message: message,
+                                    buttons: [global.p3x.onenote.lang.button.ok]
+                                }).then(() => {
+                                    require('../actions/relaunch')()
+                                }).catch(e => console.error(e))
+
+                            }
+
+
+                        } catch(e) {
+                            console.error(e)
+                        }
+                    }
+                },
+                {
                     label: global.p3x.onenote.lang.label.disableHide.checkbox,
                     type: 'checkbox',
                     checked: !global.p3x.onenote.disableHide,
