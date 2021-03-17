@@ -40,7 +40,7 @@ const multiActions = (data) => {
             break;
 
         case 'corporate':
-            webview.src = 'https://www.onenote.com/notebooks?auth=2&auth_upn=my_corporate_email_address'
+            webview.src = 'https://www.onenote.com/notebooks?auth=2'
             break;
 
         case 'get-location':

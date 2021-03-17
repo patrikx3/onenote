@@ -52,7 +52,7 @@ const handler = (options) => {
         } finally {
             if (!cancelled) {
                 if (type === 'corporate') {
-                    global.p3x.onenote.webview.src = 'https://www.onenote.com/notebooks?auth=2&auth_upn=my_corporate_email_address&omkt=' + data.translation
+                    global.p3x.onenote.webview.src = 'https://www.onenote.com/notebooks?auth=2&omkt=' + data.translation
                 } else {
                     global.p3x.onenote.webview.src = 'https://www.onenote.com/notebooks?omkt=' + data.translation
                 }
