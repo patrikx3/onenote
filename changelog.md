@@ -7,6 +7,9 @@
 
 ## Change log
 
+### v2021.4.152
+* FEATURE: Corporate login fix.
+
 ### v2021.4.147
 * FEATURE: The menu is by default will show the menu, but in the settings, you can hide it and only show with ALT.
 
