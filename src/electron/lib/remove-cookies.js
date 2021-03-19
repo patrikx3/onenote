@@ -1,4 +1,4 @@
-const { remote } = require('electron')
+const { remote } = require('@electron/remote')
 
 const removeCookies = async(webview) => {
     //let session = webview.getWebContents().session;

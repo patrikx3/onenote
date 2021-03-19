@@ -1,4 +1,4 @@
-const { remote } = require('electron')
+const { remote } = require('@electron/remote')
 
 const multiActions = (data) => {
     const webview = global.p3x.onenote.webview;

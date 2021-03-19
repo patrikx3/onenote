@@ -1,4 +1,4 @@
-const { remote } = require('electron')
+const { remote } = require('@electron/remote')
 
 const loadProxy = async () => {
     //console.log('load proxy');
