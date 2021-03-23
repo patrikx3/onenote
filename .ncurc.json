@@ -1,6 +1,5 @@
 {
     "reject": [
-        "configstore",
-        "electron"
+        "configstore"
     ]
 }
