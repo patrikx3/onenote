@@ -110,7 +110,7 @@ const translation = {
             checkUpdates: 'Controleer op updates'
         },
         language: {
-            label: 'Taal',
+            label: 'Taal / Language',
             alert: 'Taal ingesteld naar Nederlands.',
             dialog: {
                 label: 'Probeert u de Online OneNote taal te configureren?',

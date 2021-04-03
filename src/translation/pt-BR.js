@@ -123,6 +123,7 @@ const translation = {
                 'pt-BR': 'Português / Portuguese',
                 'es-ES': 'Español / Spanish',
                 'fr-FR': 'Français / French',
+                'nl-NL': 'Nederlands / Dutch',
 
             }
         },

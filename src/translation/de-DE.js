@@ -123,6 +123,8 @@ const translation = {
                 'pt-BR': 'Portuguese / Português',
                 'es-ES': 'Español / Spanish',
                 'fr-FR': 'Français / French',
+                'nl-NL': 'Nederlands / Dutch',
+
             },
         },
     },
