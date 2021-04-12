@@ -15,7 +15,7 @@ function createWindow() {
             nodeIntegration: true,
             nodeIntegrationInSubFrames: true,
             contextIsolation: false,
-            webviewTag: true,
+            webviewTag: true
         }
     });
     //global.p3x.onenote.window.onenote.openDevTools()
