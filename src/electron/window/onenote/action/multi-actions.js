@@ -50,6 +50,15 @@ const multiActions = (data) => {
         case 'toast':
             require('./multi-action/toast')(data)
             break;
+
+        case 'dark-theme-invert':
+            document.body.classList.remove('p3x-dark-mode-invert-quirks')
+            if (data.darkThemeInvert === true) {
+                document.body.classList.add('p3x-dark-mode-invert-quirks')
+            }
+
+//            alert(`darkThemeInvert: ${data.darkThemeInvert}`)
+            break;
     }
 }
 

@@ -10,6 +10,11 @@ if (translationKey === undefined) {
     translationKey = 'en-US'
     conf.set('lang', translationKey)
 }
+let darkThemeInvert = conf.get('darkThemeInvert')
+if (darkThemeInvert === undefined) {
+    darkThemeInvert = false
+    conf.set('darkThemeInvert', darkThemeInvert)
+}
 
 const path = require('path')
 
@@ -27,6 +32,7 @@ const translation = langTranslations[translationKey]
 global.p3x = {
     onenote: {
         pkg: pkg,
+        darkThemeInvert: darkThemeInvert,
         lang: translation,
         translationKey: translationKey,
         translations: undefined,

@@ -2,6 +2,9 @@ const translation = {
     title: 'P3X OneNote',
     restart: 'Aguarde, o aplicativo está reiniciando.',
     label: {
+        darkThemeInvert: {
+            title: 'Ative o modo escuro com peculiaridades (usando inverter)'
+        },
         hideMenu: 'Esconder o menu principal (mostrar com ALT)',
         optionToHideMenuState: {
             yes: 'Após reiniciar, ele irá ocultar o menu e mostrar no ALT.',

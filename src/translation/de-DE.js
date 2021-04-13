@@ -2,6 +2,9 @@ const translation = {
     title: 'P3X OneNote',
     restart: 'Bitte warten Sie, die Anwendung wird neu gestartet.',
     label: {
+        darkThemeInvert: {
+            title: 'Aktivieren Sie den Dunkelmodus mit Macken (mit invertieren)'
+        },
         hideMenu: 'Hauptmenü ausblenden (mit ALT anzeigen)',
         optionToHideMenuState: {
             yes: 'Nach dem Neustart wird das Menü ausgeblendet und auf ALT angezeigt.',

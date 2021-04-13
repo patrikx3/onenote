@@ -5,6 +5,13 @@
     --p3x-onenote-bottom-bar-font-size: 12px;
 }
 
+body.p3x-dark-mode-invert-quirks {
+    -webkit-filter: invert(100%);
+    -moz-filter: invert(100%);
+    -o-filter: invert(100%);
+    -ms-filter: invert(100%);
+}
+
 body {
     background-color: white;
     padding: 0;

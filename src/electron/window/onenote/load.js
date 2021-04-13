@@ -97,6 +97,10 @@ document.title = `${global.p3x.onenote.lang.title} v${global.p3x.onenote.pkg.ver
 
 window.p3xOneNoteOnLoad = function () {
 
+    if (conf.get('darkThemeInvert') === true) {
+        document.body.classList.add('p3x-dark-mode-invert-quirks')
+    }
+
     const webview = document.getElementById("p3x-onenote-webview");
     global.p3x.onenote.webview = webview;
     webview.focus()

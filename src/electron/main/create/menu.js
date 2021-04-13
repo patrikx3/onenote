@@ -221,7 +221,21 @@ ${global.p3x.onenote.lang.slow}
                 {
                     label: global.p3x.onenote.lang.label.setProxy,
                     click: action.setProxy,
+                },
+                {
+                    label: global.p3x.onenote.lang.label.darkThemeInvert.title,
+                    type: 'checkbox',
+                    checked: global.p3x.onenote.darkThemeInvert,
+                    click: () => {
+                        global.p3x.onenote.darkThemeInvert = !global.p3x.onenote.darkThemeInvert
+                        global.p3x.onenote.conf.set('darkThemeInvert', global.p3x.onenote.darkThemeInvert)
+                        global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-action', {
+                            action: 'dark-theme-invert',
+                            darkThemeInvert: global.p3x.onenote.darkThemeInvert,
+                        })
+                    },
                 }
+
             ],
         },
         {
