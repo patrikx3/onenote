@@ -11,7 +11,7 @@
 
 
 
-# 📚 P3X OneNote Linux v2021.4.169
+# 📚 P3X OneNote Linux v2021.4.171
 
 
 
@@ -31,11 +31,6 @@ A Linux compatible version of OneNote
 
 ![Screenshot 1](https://cdn.corifeus.com/git/onenote/artifacts/screenshot/screenshot-2020.png)
 
-# Original version
-https://github.com/peterforgacs/electron-onenote
-
-Props for Peter Forgacs! 😎
-
 # Main Features
 
 P3X OneNote Linux is, actually, an independent browser window for the online OneNote. You can use this program without having to clutter your browser. The main functions are:
@@ -48,6 +43,7 @@ P3X OneNote Linux is, actually, an independent browser window for the online One
 
 ## Verbose feature info
 
+* Dark mode is enabled (but it is a hack, not supported by Microsoft, so quirky)
 * To show the menu, click ALT
 * Desktop menu
 * Icon
@@ -80,9 +76,6 @@ P3X OneNote Linux is, actually, an independent browser window for the online One
 
 ## Snap
 
-<!--
-The main source installer is the `AppImage`, so, the themes are not implemented (the main menus). If you want the themes to be implemented (dark vs light), I suggest using the `AppImage` as it supports the themes natively. Besides, the auto self update function is not implemented in `Snap`, only in `AppImage` version.  
--->
 
 [![LINK](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/p3x-onenote#cory-non-external)
 
@@ -152,9 +145,6 @@ I recognized, that after suspend/sleep and then wake up, the app is not saving t
 #### Not working on SNAP on some versions
 Usually, on stable distros are working with SNAP, but usually non stable Linux distros could not work. Please, try using the `AppImage`, that is usually better than SNAP.
 
-#### Tray issues
-It is possible, that the tray is not working, it is an upstream issue!
-
 #### Error in auto-updater: Redirect was cancelled
 Sometimes, you get an `AppImage` error for update, just download the latest release and replace the `AppImage` from here:  
 https://github.com/patrikx3/onenote/releases
@@ -162,10 +152,14 @@ https://github.com/patrikx3/onenote/releases
 #### Rasberry and ARM is experimental
 I have no ARM computer to test it out, I could build `AppImage` on ARM, but I have no idea if has an error, it crashes or it works.
 
+<!--
+#### Tray issues
+It is possible, that the tray is not working, it is an upstream issue!
+
 #### Not loading the pages / freezes
 Sometimes, it is possible, that OneNote Online does not load properly or freezes, the solutions is to quit and start the program again. (I know, you won't like it at all! 😡) 
 
-<!--
+
 ## Unable to log in
 
 This only happens if you kill ```P3X OneNote Linux``` and then relogin many times. So, If the program needs to be killed often, ```sign out``` (on the top right of the Electron browser frame) just to be safe.
@@ -234,7 +228,7 @@ All my domains ([patrikx3.com](https://patrikx3.com) and [corifeus.com](https://
 
 ---
 
-[**P3X-ONENOTE**](https://corifeus.com/onenote) Build v2021.4.169
+[**P3X-ONENOTE**](https://corifeus.com/onenote) Build v2021.4.171
 
 [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software)
 

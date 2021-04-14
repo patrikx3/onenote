@@ -127,6 +127,7 @@ const translation = {
                 'es-ES': 'Español / Spanish',
                 'fr-FR': 'Français / French',
                 'nl-NL': 'Nederlands / Dutch',
+                'it-IT': 'Italiano / Italian',
 
             },
         },
