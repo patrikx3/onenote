@@ -68,8 +68,12 @@ function mainMenu() {
         })
     }
 
-    for(let bookmarkIndex in bookmarks) {
-        const bookmark = bookmarks[bookmarkIndex]
+    const naturalCompareDocument = require('../../lib/natural-compare-document')
+    let bookmarksSort = bookmarks.sort(naturalCompareDocument({
+        byProperty: 'title'
+    }))
+    for(let bookmarkIndex in bookmarksSort) {
+        const bookmark = bookmarksSort[bookmarkIndex]
         const thisBookmarkIndex = bookmarkIndex
         bookmarksMenu.push({
             label: bookmark.title,

@@ -12,7 +12,14 @@ ipcMain.on('p3x-onenote-save', function (event, data) {
 
 ipcMain.on('p3x-onenote-action-bookmark-result', function (event, data) {
     //console.log('p3x-onenote-action-bookmark-result', data)
-    const bookmarks = global.p3x.onenote.conf.get('bookmarks') || []
+    const bookmarksOriginal = global.p3x.onenote.conf.get('bookmarks') || []
+
+    const naturalCompareDocument = require('../lib/natural-compare-document')
+    const sort = naturalCompareDocument({
+        byProperty: 'title'
+    })
+    let bookmarks = bookmarksOriginal.sort(sort)
+
     if (data.opts.edit !== true) {
         bookmarks.push(data.model)
     } else {
@@ -23,7 +30,7 @@ ipcMain.on('p3x-onenote-action-bookmark-result', function (event, data) {
         }
     }
 
-    global.p3x.onenote.conf.set('bookmarks', bookmarks)
+    global.p3x.onenote.conf.set('bookmarks', bookmarks.sort(sort))
 
     global.p3x.onenote.mainMenu();
     global.p3x.onenote.mainTray()
