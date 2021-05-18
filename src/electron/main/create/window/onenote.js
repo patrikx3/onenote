@@ -18,6 +18,9 @@ function createWindow() {
             webviewTag: true,
         }
     });
+
+    require('@electron/remote/main').initialize()
+
     //global.p3x.onenote.window.onenote.openDevTools()
 
     global.p3x.onenote.setVisible(true);
@@ -170,6 +173,7 @@ function createWindow() {
 
     });
     autoUpdater.checkForUpdatesAndNotify();
+
 }
 
 module.exports = createWindow;
