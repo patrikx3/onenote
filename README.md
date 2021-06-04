@@ -29,7 +29,7 @@
 
 A Linux compatible version of OneNote
 
-![Screenshot 1](https://cdn.corifeus.com/git/onenote/artifacts/screenshot/screenshot-2020.png)
+![Screenshot 1](https://cdn.corifeus.com/git/onenote/artifacts/screenshot/screenshot-2021.png)
 
 # Main Features
 
