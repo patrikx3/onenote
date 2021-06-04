@@ -27,7 +27,7 @@
 
 </head>
 
-<body onload="window.p3xOneNoteOnLoad()" id="p3x-onenote-bootstrap">
+<body onload="window.p3xOneNoteOnLoad()" id="p3x-onenote-bootstrap" ng-cloak>
 <div id="p3x-onenote-bottom-bar" >
 
     <div style="float: left;">
@@ -42,10 +42,19 @@
     </div>
 
     <div style="float: right;">
+        <md-button ng-click="$root.p3x.onenote.zoom(-1)" style="padding: 0; margin: 0; padding-left: 8px; padding-right: 8px; min-height: auto; line-height: 20px; min-width: auto">
+            <i class="fas fa-search-minus"></i>
+        </md-button>
+        <span>{{ $root.p3x.onenote.zoomFactor }}%</span>
+        <md-button ng-click="$root.p3x.onenote.zoom(1)" style="padding: 0; margin: 0; padding-left: 8px; padding-right: 8px; min-height: auto; line-height: 20px; min-width: auto">
+            <i class="fas fa-search-plus"></i>
+        </md-button>
+
         <md-button ng-click="$root.p3x.onenote.donate()" style="padding: 0; margin: 0; padding-left: 8px; padding-right: 8px; min-height: auto; line-height: 20px; min-width: auto">
             <i class="fas fa-donate"></i>
             <span ng-bind="$root.p3x.onenote.lang.label.donate"></span>
         </md-button>
+
     </div>
     <span ng-click="$root.p3x.onenote.copyLocation()" style="overflow: hidden; width: 100%;">
         <md-tooltip md-direction="top" ng-bind="$root.p3x.onenote.lang.label.copyLocation"></md-tooltip>
