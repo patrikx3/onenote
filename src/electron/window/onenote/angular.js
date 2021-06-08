@@ -20,13 +20,16 @@ let zoom = p3x.onenote.conf.get('zoom')
 if (zoom === undefined) {
     zoom = 1.0
 }
-win.webContents.setZoomFactor(zoom);
+if (zoom !== 1.0) {
+    win.webContents.setZoomFactor(zoom);
+}
 
+/*
 win.webContents
     .setVisualZoomLevelLimits(1, 5)
     .then(console.log("Zoom Levels Have been Set between 100% and 500%"))
     .catch((err) => console.error(err));
-
+ */
 
 
 global.p3x.onenote.ng.config(($mdAriaProvider, $mdThemingProvider) => {
