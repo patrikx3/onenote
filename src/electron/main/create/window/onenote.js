@@ -21,7 +21,9 @@ function createWindow() {
 
     require('@electron/remote/main').initialize()
 
-    //global.p3x.onenote.window.onenote.openDevTools()
+    if (process.env.NODE_ENV === 'debug') {
+        global.p3x.onenote.window.onenote.openDevTools()
+    }
 
     global.p3x.onenote.setVisible(true);
 
