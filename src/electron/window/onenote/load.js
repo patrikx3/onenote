@@ -106,11 +106,12 @@ window.p3xOneNoteOnLoad = function () {
     global.p3x.onenote.webview = webview;
     webview.focus()
 
+    /*
     global.p3x.onenote.webview.addEventListener("dom-ready", function () {
 //require('./core/overlay')
         require('./angular')
     })
-
+     */
 
     const ipcHandler = require('./ipc/handler');
     ipcHandler({
