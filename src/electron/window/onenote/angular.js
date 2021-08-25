@@ -9,7 +9,7 @@ const execAsync = async () => {
     while(!win) {
         const BrowserWindow = remote.BrowserWindow;
         win = BrowserWindow.getFocusedWindow();
-        await new Promise(resolve => setTimeout(resolve, 100))
+        await new Promise(resolve => setTimeout(resolve, 500))
     }
 
     require('angular/angular');
