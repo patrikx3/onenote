@@ -91,11 +91,11 @@ global.p3x.onenote.ng.factory('p3xOnenotePrompt', ($mdDialog) => {
                         <md-button ng-click="cancel()" class="md-primary">
                            ${p3x.onenote.lang.button.cancel}
                         </md-button>
-                        <md-button ng-click="exit('external')" class="md-primary">
-                           ${p3x.onenote.lang.dialog.redirect.urlExternal}
-                        </md-button>
                         <md-button ng-click="exit('internal')" class="md-primary">
                            ${p3x.onenote.lang.dialog.redirect.urlInternal}
+                        </md-button>
+                        <md-button ng-click="exit('external')" class="md-primary">
+                           ${p3x.onenote.lang.dialog.redirect.urlExternal}
                         </md-button>
                       </md-dialog-actions>
                     </md-dialog>`,
