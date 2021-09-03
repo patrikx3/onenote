@@ -14,11 +14,9 @@ fs.readFile(__dirname + '/hack.css', 'utf-8', function(err, data) {
 });
 */
 
-const configstore = require('configstore');
-const pkg = require('../../../../package.json');
-const conf = new configstore(pkg.name);
+const Store = require('electron-store');
+const conf = new Store();
 let translationKey = conf.get('lang')
-
 const langTranslations = {
     'en-US': require('../../../translation/en-US'),
     'de-DE': require('../../../translation/de-DE'),
@@ -29,7 +27,9 @@ const langTranslations = {
     'it-IT': require('../../../translation/it-IT'),
 
 }
-
+if (!translationKey) {
+    translationKey = 'en-US'
+}
 const translation = langTranslations[translationKey]
 
 global.p3x = {

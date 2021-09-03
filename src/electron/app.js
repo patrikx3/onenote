@@ -1,6 +1,6 @@
-const configstore = require('configstore');
 const pkg = require('../../package.json');
-const conf = new configstore(pkg.name);
+const Store = require('electron-store');
+const conf = new Store();
 
 const {app} = require('electron');
 app.allowRendererProcessReuse = true
@@ -15,7 +15,6 @@ if (darkThemeInvert === undefined) {
     darkThemeInvert = false
     conf.set('darkThemeInvert', darkThemeInvert)
 }
-
 const path = require('path')
 
 const langTranslations = {
