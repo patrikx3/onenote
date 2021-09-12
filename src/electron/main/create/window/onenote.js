@@ -10,6 +10,7 @@ function createWindow() {
         backgroundColor: 'black',
         autoHideMenuBar: global.p3x.onenote.optionToHideMenu,
         webPreferences: {
+            nativeWindowOpen: true,
             enableRemoteModule: true,
             worldSafeExecuteJavaScript: true,
             nodeIntegration: true,
