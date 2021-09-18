@@ -3,6 +3,8 @@ const {BrowserWindow, app} = require('electron');
 
 function createWindow() {
 
+    const remoteMain = require("@electron/remote/main")
+    remoteMain.initialize()
 
     global.p3x.onenote.window.onenote = new BrowserWindow({
         icon: global.p3x.onenote.iconFile,
@@ -11,7 +13,6 @@ function createWindow() {
         autoHideMenuBar: global.p3x.onenote.optionToHideMenu,
         webPreferences: {
             nativeWindowOpen: true,
-            enableRemoteModule: true,
             worldSafeExecuteJavaScript: true,
             nodeIntegration: true,
             nodeIntegrationInSubFrames: true,
@@ -20,7 +21,8 @@ function createWindow() {
         }
     });
 
-    require('@electron/remote/main').initialize()
+    remoteMain.enable(global.p3x.onenote.window.onenote.webContents)
+
 
     if (process.env.NODE_ENV === 'debug') {
         global.p3x.onenote.window.onenote.openDevTools()
