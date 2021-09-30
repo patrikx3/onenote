@@ -28,7 +28,7 @@ function createWindow() {
         global.p3x.onenote.window.onenote.openDevTools()
     }
 
-    global.p3x.onenote.setVisible(true);
+    global.p3x.onenote.setVisible(process.argv.includes('--minimized') ? false : true);
 
     global.p3x.onenote.window.onenote.loadURL(`file://${__dirname}/../../../window/onenote/index.html`);
 
@@ -78,13 +78,16 @@ function createWindow() {
         })
     });
 
+    if (!process.argv.includes('--minimized')) {
+        //const windowBounds = global.p3x.onenote.conf.get('window-bounds');
+        const maximized = global.p3x.onenote.conf.get('maximized');
 
-    //const windowBounds = global.p3x.onenote.conf.get('window-bounds');
-    const maximized = global.p3x.onenote.conf.get('maximized');
+        if (maximized === true) {
+            global.p3x.onenote.window.onenote.maximize()
+        }
 
-    if (maximized === true) {
-        global.p3x.onenote.window.onenote.maximize()
     }
+
     /*
     else if (windowBounds !== null && windowBounds !== undefined) {
         global.p3x.onenote.window.onenote.setBounds(windowBounds);

@@ -33,7 +33,7 @@ Terminal=false
             await utils.childProcess.exec('gtk-update-icon-cache || true');
         }
 
-        await utils.childProcess.exec(`${__dirname}/../node_modules/.bin/electron ${path.resolve(__dirname + '/../')}`, true);
+        await utils.childProcess.exec(`${__dirname}/../node_modules/.bin/electron ${path.resolve(__dirname + '/../')} ${process.argv.join(' ')}`, true);
     } catch (e) {
         console.error(e);
         throw e;
