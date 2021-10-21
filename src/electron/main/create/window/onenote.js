@@ -20,6 +20,7 @@ function createWindow() {
             webviewTag: true,
         }
     });
+    global.p3x.onenote.window.onenote.loadURL(`file://${__dirname}/../../../window/onenote/index.html`);
 
     remoteMain.enable(global.p3x.onenote.window.onenote.webContents)
 
@@ -29,8 +30,6 @@ function createWindow() {
     }
 
     global.p3x.onenote.setVisible(process.argv.includes('--minimized') ? false : true);
-
-    global.p3x.onenote.window.onenote.loadURL(`file://${__dirname}/../../../window/onenote/index.html`);
 
     global.p3x.onenote.window.onenote.on('minimize', function (event) {
         //event.preventDefault()

@@ -5,12 +5,7 @@ const execAsync = async () => {
     const {shell} = require('electron');
     const remote = require('@electron/remote')
 
-    let win
-    while(!win) {
-        const BrowserWindow = remote.BrowserWindow;
-        win = BrowserWindow.getFocusedWindow();
-        await new Promise(resolve => setTimeout(resolve, 500))
-    }
+    const win = remote.getCurrentWindow()
 
     require('angular/angular');
     require('angular-aria');
