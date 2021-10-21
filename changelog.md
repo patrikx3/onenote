@@ -7,7 +7,8 @@
 
 ## Change log
 
-### v2021.10.155 - 10/21/2021
+### v2021.10.155
+Released on 10/21/2021
 * FEATURE: Optimized boot speed.
 
 ### v2021.10.133 - 9/30/2021
