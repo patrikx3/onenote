@@ -102,7 +102,7 @@ It then actually integrates itself into the menus and it will auto update itself
   
 The app can be found on [ElectronJs Apps](https://electronjs.org/apps/p3x-onenote)
 
-[Change log](changelog.md)
+[Change log](change-log.md)
 
 
 <!--
