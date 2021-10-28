@@ -8,7 +8,7 @@
 ## Change log
 
 
-### v2021.10.166
+### v2021.10.167
 Released on 10/28/2021
 * BUGFIX: Enhance boot speed - 1 second faster (but it is still very slow, because the Electron webview issues)
 
