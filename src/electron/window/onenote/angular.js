@@ -23,8 +23,11 @@ const execAsync = async () => {
     if (zoom === undefined) {
         zoom = 1.0
     }
+
+    const webview = document.querySelector('webview')
+
     if (zoom !== 1.0) {
-        win.webContents.setZoomFactor(zoom);
+        webview.setZoomFactor(zoom);
     }
 
     /*
@@ -70,7 +73,7 @@ const execAsync = async () => {
                     shell.openExternal('https://paypal.me/patrikx3')
                 },
                 zoom: (zoom) => {
-                    const currentZoom = win.webContents.getZoomFactor();
+                    const currentZoom = webview.getZoomFactor();
                     let value
                     if (zoom >= 0) {
                         value = currentZoom + 0.1;
@@ -78,12 +81,12 @@ const execAsync = async () => {
                         value = currentZoom - 0.1;
                     }
                     if (value >= 0.75 && value <= 5.0) {
-                        win.webContents.zoomFactor = value
-                        p3x.onenote.conf.set('zoom', win.webContents.zoomFactor)
+                        webview.setZoomFactor(value)
+                        p3x.onenote.conf.set('zoom', value)
                     }
                 },
                 get zoomFactor() {
-                    return (win.webContents.zoomFactor * 100).toFixed(0)
+                    return (webview.getZoomFactor() * 100).toFixed(0)
                 }
             }
         }
