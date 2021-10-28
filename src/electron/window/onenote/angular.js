@@ -1,11 +1,9 @@
-const remote = require("@electron/remote");
-const {shell} = require("electron");
+//const remote = require("@electron/remote");
+//const {shell} = require("electron");
 const execAsync = async () => {
 
     const {shell} = require('electron');
-    const remote = require('@electron/remote')
-
-    const win = remote.getCurrentWindow()
+    //const remote = require('@electron/remote')
 
     require('angular/angular');
     require('angular-aria');
@@ -24,10 +22,8 @@ const execAsync = async () => {
         zoom = 1.0
     }
 
-    const webview = document.querySelector('webview')
-
     if (zoom !== 1.0) {
-        webview.setZoomFactor(zoom);
+        global.p3x.onenote.webview.setZoomFactor(zoom);
     }
 
     /*
@@ -73,7 +69,7 @@ const execAsync = async () => {
                     shell.openExternal('https://paypal.me/patrikx3')
                 },
                 zoom: (zoom) => {
-                    const currentZoom = webview.getZoomFactor();
+                    const currentZoom = global.p3x.onenote.webview.getZoomFactor();
                     let value
                     if (zoom >= 0) {
                         value = currentZoom + 0.1;
@@ -81,12 +77,12 @@ const execAsync = async () => {
                         value = currentZoom - 0.1;
                     }
                     if (value >= 0.75 && value <= 5.0) {
-                        webview.setZoomFactor(value)
+                        global.p3x.onenote.webview.setZoomFactor(value)
                         p3x.onenote.conf.set('zoom', value)
                     }
                 },
                 get zoomFactor() {
-                    return (webview.getZoomFactor() * 100).toFixed(0)
+                    return (global.p3x.onenote.webview.getZoomFactor() * 100).toFixed(0)
                 }
             }
         }

@@ -109,9 +109,7 @@ const handler = (options) => {
             webview.openDevTools()
         }
 
-        setTimeout(() => {
-            require('../angular')
-        }, 1000)
+        require('../angular')
     });
 
     webview.addEventListener('new-window', function (event) {
