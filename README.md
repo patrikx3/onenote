@@ -88,7 +88,9 @@ https://github.com/patrikx3/onenote/releases
 #### To integrate into the menu
 Execute:
 ```bash
-sudo apt install -y appimagelauncher
+sudo add-apt-repository ppa:appimagelauncher-team/stable
+sudo apt-get update
+sudo apt-get install appimagelauncher
 ```
 
 #### After downloading the ```AppImage```, make it an executable.
