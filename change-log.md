@@ -8,6 +8,10 @@
 ## Change log
 
 
+### v022.4.104
+Released on 05/01/2022
+* CHORE: Update deps.
+
 ### v2021.10.167
 Released on 10/28/2021
 * BUGFIX: Enhance boot speed - 1 second faster (but it is still very slow, because the Electron webview issues)
@@ -321,7 +325,7 @@ All my domains ([patrikx3.com](https://patrikx3.com) and [corifeus.com](https://
 
 ---
 
-[**P3X-ONENOTE**](https://corifeus.com/onenote) Build v2022.4.102
+[**P3X-ONENOTE**](https://corifeus.com/onenote) Build v2022.4.104
 
 [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software)
 
