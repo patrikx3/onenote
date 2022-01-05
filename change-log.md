@@ -8,7 +8,7 @@
 ## Change log
 
 
-### v022.4.104
+### v2022.4.104
 Released on 05/01/2022
 * CHORE: Update deps.
 
