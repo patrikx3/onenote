@@ -8,7 +8,8 @@
 ## Change log
 
 
-### v2022.4.112 (02/05/2022)
+### v2022.4.112
+Released on 02/05/2022
 * CHORE: Upgraded to latest versions
 
 ### v2022.4.104
