@@ -128,6 +128,7 @@ const translation = {
                 'fr-FR': 'Französisch / French',
                 'nl-NL': 'Niederländisch / Dutch',
                 'it-IT': 'Italiänisch / Italian',
+                'zh-CN': '简体中文 / Simplified Chinese',
 
             },
         },
