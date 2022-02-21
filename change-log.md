@@ -7,6 +7,9 @@
 
 ## Change log
 
+### v2022.4.114
+Released on 02/21/2022
+* FEATURE: Simplified-Chinese Translation.
 
 ### v2022.4.112
 Released on 02/05/2022
@@ -329,7 +332,7 @@ All my domains ([patrikx3.com](https://patrikx3.com) and [corifeus.com](https://
 
 ---
 
-[**P3X-ONENOTE**](https://corifeus.com/onenote) Build v2022.4.112
+[**P3X-ONENOTE**](https://corifeus.com/onenote) Build v2022.4.114
 
 [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software)
 

@@ -113,7 +113,7 @@ const translation = {
             checkUpdates: '检查更新'
         },
         language: {
-            label: '语言',
+            label: '语言 / Language',
             alert: '语言设置为中文',
             dialog: {
                 label: '尝试改变在线OneNote的语言配置?',
