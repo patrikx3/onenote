@@ -130,6 +130,7 @@ const translation = {
                 'nl-NL': 'Nederlands / Dutch',
                 'it-IT': 'Italiano / Italian',
                 'zh-CN': '简体中文 / Simplified Chinese',
+                'ru-RU': 'Русский / Russian',
 
             }
         },
