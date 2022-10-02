@@ -113,7 +113,7 @@ const translation = {
             checkUpdates: 'Проверить обновления',
         },
         language: {
-            label: 'Язык',
+            label: 'Язык / Language',
             alert: 'Язык изменён на русский.',
             dialog: {
                 label: 'Try to configure Online OneNote language?',

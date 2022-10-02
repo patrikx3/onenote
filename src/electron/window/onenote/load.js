@@ -26,7 +26,7 @@ const langTranslations = {
     'nl-NL': require('../../../translation/nl-NL'),
     'it-IT': require('../../../translation/it-IT'),
     'zh-CN': require('../../../translation/zh-CN'),
-
+    'ru-RU': require('../../../translation/ru-RU'),
 }
 if (!translationKey) {
     translationKey = 'en-US'
