@@ -1,8 +1,12 @@
 module.exports = () => {
     let { args, app } = require('electron')
-    //console.log('args', args, 'process.env.APPIMAGE', process.env.APPIMAGE)
+    console.log('args', args, 'process.env.APPIMAGE', process.env.APPIMAGE)
 
-    //console.trace()
+    console.trace()
+    app.relaunch();
+    app.exit(0);
+
+    /*
     if (process.env.APPIMAGE) {
         if (args === undefined) {
             args = []
@@ -16,6 +20,7 @@ module.exports = () => {
         app.relaunch();
         app.exit(0);
     }
+    */
 
 
 }
