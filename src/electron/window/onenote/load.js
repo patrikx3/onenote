@@ -27,6 +27,7 @@ const langTranslations = {
     'it-IT': require('../../../translation/it-IT'),
     'zh-CN': require('../../../translation/zh-CN'),
     'ru-RU': require('../../../translation/ru-RU'),
+    'pl-PL': require('../../../translation/pl-PL'),
 }
 if (!translationKey) {
     translationKey = 'en-US'
@@ -94,8 +95,6 @@ global.p3x = {
 
 
 document.title = `${global.p3x.onenote.lang.title} v${global.p3x.onenote.pkg.version}`;
-
-
 
 window.p3xOneNoteOnLoad = function () {
 
