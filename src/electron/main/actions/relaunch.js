@@ -9,7 +9,7 @@ module.exports = () => {
         }
         const options = {args};
         options.execPath = process.env.APPIMAGE;
-        options.args.unshift('--appimage-extract-and-run');
+        //options.args.unshift('--appimage-extract-and-run');
         app.relaunch(options);
         app.exit(0);
     } else {

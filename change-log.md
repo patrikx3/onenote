@@ -7,8 +7,8 @@
 
 ## Change log
 
-### v2023.4.111
-Released on 01/10/2024
+### v2023.4.113
+Released on 01/10/2023
 * FEATURE: Added Polish
 
 ### v2022.10.117
@@ -353,7 +353,7 @@ All my domains ([patrikx3.com](https://patrikx3.com) and [corifeus.com](https://
 
 ---
 
-[**P3X-ONENOTE**](https://corifeus.com/onenote) Build v2023.4.111
+[**P3X-ONENOTE**](https://corifeus.com/onenote) Build v2023.4.113
 
 [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software)
 
