@@ -132,6 +132,7 @@ const translation = {
                 'zh-CN': '简体中文 / Simplified Chinese',
                 'ru-RU': 'Русский / Russian',
                 'pl-PL': 'Polski / Polish',
+                'tr-TR': 'Türkçe / Turkish',
 
             }
         },
