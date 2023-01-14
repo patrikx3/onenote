@@ -113,7 +113,7 @@ const translation = {
             checkUpdates: 'Güncellemeleri kontrol et'
         },
         language: {
-            label: 'Dil',
+            label: 'Dil / Language',
             alert: 'Dil Türkçe olarak ayarlandı.',
             dialog: {
                 label: 'Çevrimiçi OneNote dilini yapılandırmayı denediniz mi?',
