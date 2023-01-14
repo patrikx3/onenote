@@ -131,6 +131,7 @@ const translation = {
                 'zh-CN': 'Chiński uproszczony / Simplified Chinese',
                 'ru-RU': 'Rosyjski / Russian',
                 'pl-PL': 'Polski / Polish',
+                'tr-TR': 'Türkçe / Turkish',
             }
         },
     },

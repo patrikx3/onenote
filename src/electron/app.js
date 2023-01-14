@@ -28,6 +28,7 @@ const langTranslations = {
     'zh-CN': require('../translation/zh-CN'),
     'ru-RU': require('../translation/ru-RU'),
     'pl-PL': require('../translation/pl-PL'),
+    'tr-TR': require('../translation/tr-TR'),
 
 }
 
