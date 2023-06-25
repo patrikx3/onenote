@@ -8,15 +8,15 @@
 ## Change log
 
 ### v2023.4.119
-Released on 10/23/2022
+Released on 6/25/2022
 * FEATURE: Update deps
 
 ### v2023.4.117
-Released on 01/141/2023
+Released on 1/14/2023
 * FEATURE: Added Turkish
 
 ### v2023.4.113
-Released on 01/10/2023
+Released on 1/10/2023
 * FEATURE: Added Polish
 
 ### v2022.10.117
