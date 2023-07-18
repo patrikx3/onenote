@@ -146,13 +146,16 @@ function createWindow() {
     })
     autoUpdater.on('error', (error) => {
         console.error(error)
-        global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-action', {
-            action: 'toast',
-            error: error,
-            message: global.p3x.onenote.lang.updater["error"]({
-                errorMessage: error.message.split('\n')[0]
-            })
-        })
+
+        if (global.p3x.onenote.window.onenote) {
+            global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-action', {
+                action: 'toast',
+                error: error,
+                message: global.p3x.onenote.lang.updater["error"]({
+                    errorMessage: error.message.split('\n')[0]
+                })
+            })    
+        }
     })
 
     /*
