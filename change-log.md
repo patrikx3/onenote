@@ -7,7 +7,7 @@
 
 ## Change log
 
-### v2023.10.128
+### v2023.10.130
 Released on 07/18/2022
 * FEATURE: Enhance boot startup speed
 * BUGFIX: Auto upload stopped working
