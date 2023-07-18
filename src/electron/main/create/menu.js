@@ -359,7 +359,7 @@ ${global.p3x.onenote.lang.slow}
         },
     ]
 
-    if (process.env.APPIMAGE !== undefined) {
+    //if (process.env.APPIMAGE !== undefined) {
         template[7].submenu.push({type: 'separator'})
         template[7].submenu.push({
                 label: global.p3x.onenote.lang.menu.help.checkUpdates,
@@ -369,7 +369,7 @@ ${global.p3x.onenote.lang.slow}
                 }
             },
         )
-    }
+    //}
 
 
     const menu = Menu.buildFromTemplate(template)
