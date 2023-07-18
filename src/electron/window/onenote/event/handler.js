@@ -4,7 +4,9 @@ const ipc = electron.ipcRenderer;
 
 const handler = (options) => {
     const {webview} = options;
-
+    
+    require('../angular')
+    
     /*
      webview.addEventListener('did-stop-loading', function(event) {
  //		webview.insertCSS(window.cssData);
@@ -109,7 +111,7 @@ const handler = (options) => {
             webview.openDevTools()
         }
 
-        require('../angular')
+        
     });
 
     webview.addEventListener('new-window', function (event) {

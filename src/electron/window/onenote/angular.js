@@ -17,14 +17,16 @@ const execAsync = async () => {
     require('./angular/prompt');
     require('./angular/toast');
 
-    let zoom = p3x.onenote.conf.get('zoom')
-    if (zoom === undefined) {
-        zoom = 1.0
-    }
-
-    if (zoom !== 1.0) {
-        global.p3x.onenote.webview.setZoomFactor(zoom);
-    }
+    p3x.onenote.wait.domReady().then(() => {
+        let zoom = p3x.onenote.conf.get('zoom')
+        if (zoom === undefined) {
+            zoom = 1.0
+        }
+    
+        if (zoom !== 1.0) {
+            global.p3x.onenote.webview.setZoomFactor(zoom);
+        }    
+    })
 
     /*
     win.webContents
@@ -57,6 +59,9 @@ const execAsync = async () => {
                     global.p3x.onenote.webview[action === 'back' ? 'goBack' : 'goForward']()
                 },
                 canGo: (action) => {
+                    if (!p3x.onenote.domReady) {
+                        return false;
+                    }
                     if (action === 'back') {
                         return global.p3x.onenote.webview && global.p3x.onenote.webview.canGoBack()
                     }
@@ -82,6 +87,9 @@ const execAsync = async () => {
                     }
                 },
                 get zoomFactor() {
+                    if (!p3x.onenote.domReady) {
+                        return 100.00;
+                    }
                     return (global.p3x.onenote.webview.getZoomFactor() * 100).toFixed(0)
                 }
             }
