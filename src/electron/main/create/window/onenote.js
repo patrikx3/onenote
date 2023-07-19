@@ -117,6 +117,7 @@ function createWindow() {
 
 
     const {autoUpdater} = require("electron-updater");
+    autoUpdater.channel = "latest"
 
     autoUpdater.on('checking-for-update', () => {
         global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-action', {
