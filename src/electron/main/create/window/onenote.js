@@ -125,7 +125,7 @@ function createWindow() {
         })
     })
     autoUpdater.on('update-available', (info) => {
-        global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-action', {
+        global.p3x.onenote.window.onenote.webContents.send(1, {
             action: 'toast',
             message: global.p3x.onenote.lang.updater["update-available"]
         })
@@ -147,6 +147,7 @@ function createWindow() {
     autoUpdater.on('error', (error) => {
         console.error(error)
 
+        /*
         if (global.p3x.onenote.window.onenote) {
             global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-action', {
                 action: 'toast',
@@ -155,7 +156,7 @@ function createWindow() {
                     errorMessage: error.message.split('\n')[0]
                 })
             })    
-        }
+        }*/
     })
 
     /*
