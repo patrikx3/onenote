@@ -38,7 +38,7 @@ P3X OneNote Linux is, actually, an independent browser window for the online One
 * it provides a tray, that allows you to close your browser while it keeps running in the tray
 * the data is cached and is faster than always opening a new window
 * it allows you to sign in with the corporate or the personal login
-* when there is a new update, it auto updates itself (Only in the `AppImage` version.)
+* when there is a new update, it auto updates itself
 * the program allows to use other Microsoft online applications, but the dedicated purpose is to use OneNote
 
 ## Verbose feature info
