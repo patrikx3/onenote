@@ -1,6 +1,6 @@
 {
     "name": "p3x-onenote",
-    "version": "2023.10.191",
+    "version": "2023.10.193",
     "description": "📚 P3X OneNote Linux",
     "main": "src/electron/app.js",
     "corifeus": {
@@ -28,7 +28,6 @@
         "postinstall-save": "opencollective postinstall",
         "start": "node ./node_modules/.bin/electron ./src/electron/app.js",
         "publish-electron": "rm -rf dist && electron-builder --p onTagOrDraft --linux --armv7l --arm64 --linux AppImage deb rpm --x64",
-        "publish-electron-arm": "rm -rf dist && electron-builder --armv7l --arm64 --linux AppImage dep rpm --publish=always",
         "publish-electron-snap": "rm -rf dist && electron-builder --linux snap -p never",
         "publish-electron-yml": "node ./node_modules/corifeus-builder/src/utils/appimage/post-build.js"
     },
