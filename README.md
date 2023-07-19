@@ -110,7 +110,7 @@ It then actually integrates itself into the menus and it will auto update itself
 (The GitHub versions are always instant, while the ElectronJs Apps releases are delayed.)    
 -->
   
-The app can be found on [ElectronJs Apps](https://electronjs.org/apps/p3x-onenote)
+The app can be found on [ElectronJs Apps](https://electronjs.org/apps) and search for `P3X`, you will find it.
 
 [Change log](change-log.md)
 
