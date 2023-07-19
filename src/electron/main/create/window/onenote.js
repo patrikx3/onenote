@@ -119,14 +119,16 @@ function createWindow() {
     const {autoUpdater} = require("electron-updater");
     autoUpdater.channel = "latest"
 
-    autoUpdater.on('checking-for-update', () => {
+    autoUpdater.on('checking-for-update', (info) => {
+        console.log('checking-for-update', info)
         global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-action', {
             action: 'toast',
             message: global.p3x.onenote.lang.updater["checking-for-update"]
         })
     })
     autoUpdater.on('update-available', (info) => {
-        global.p3x.onenote.window.onenote.webContents.send(1, {
+        console.log('update-available', info)
+        global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-action', {
             action: 'toast',
             message: global.p3x.onenote.lang.updater["update-available"]
         })
@@ -134,6 +136,7 @@ function createWindow() {
 
     let firstCheck = true
     autoUpdater.on('update-not-available', (info) => {
+        console.log('update-not-available', info)
 
         if (firstCheck) {
             firstCheck = false
@@ -146,7 +149,7 @@ function createWindow() {
         })
     })
     autoUpdater.on('error', (error) => {
-        console.error(error)
+        console.error('error', error)
 
         /*
         if (global.p3x.onenote.window.onenote) {

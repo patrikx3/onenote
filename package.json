@@ -1,6 +1,6 @@
 {
     "name": "p3x-onenote",
-    "version": "2023.10.205",
+    "version": "2023.10.214",
     "description": "📚 P3X OneNote Linux",
     "main": "src/electron/app.js",
     "corifeus": {
@@ -28,6 +28,7 @@
         "postinstall-save": "opencollective postinstall",
         "start": "node ./node_modules/.bin/electron ./src/electron/app.js",
         "publish-electron": "rm -rf dist && electron-builder --p onTagOrDraft --linux --armv7l --arm64 --linux AppImage deb rpm --x64",
+        "publish-electron-test": "rm -rf dist && electron-builder --p onTagOrDraft --linux --linux AppImage deb --x64",
         "publish-electron-snap": "rm -rf dist && electron-builder --linux snap -p never",
         "publish-electron-yml": "node ./node_modules/corifeus-builder/src/utils/appimage/post-build.js"
     },
@@ -61,19 +62,21 @@
         "electron": "^25.3.0"
     },
     "devDependencies": {
-        "corifeus-builder": "^2023.10.127",
-        "electron-builder": "^24.4.0"
+        "corifeus-builder": "^2023.10.128",
+        "electron-builder": "^24.6.1"
     },
     "engines": {
         "node": ">=12.13.0"
     },
     "build": {
+        "generateUpdatesFilesForAllChannels": true,
         "afterAllArtifactBuild": "./node_modules/corifeus-builder/src/utils/appimage/after-all-artifact-build.js",
         "publish": [
             {
                 "provider": "github",
                 "owner": "patrikx3",
-                "repo": "onenote"
+                "repo": "onenote",
+                "channel": "latest"
             }
         ],
         "appId": "p3x.onenote",
@@ -82,9 +85,7 @@
         "linux": {
             "category": "Office",
             "icon": "./src/electron/images/",
-            "target": [
-                "AppImage"
-            ]
+            "target": "deb"
         },
         "snap": {
             "environment": {
