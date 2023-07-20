@@ -1,4 +1,4 @@
-const {ipcRenderer} = require('electron');
+const {shell, ipcRenderer} = require('electron');
 
 const setProxy = require('../action/set-proxy');
 const multiActions = require('../action/multi-actions');
@@ -101,7 +101,23 @@ const handler = (options) => {
     })
 
 
-
+    ipcRenderer.on('p3x-onenote-new-window', (event, data) => {
+        if (data.url.trim().startsWith('about:blank')) {
+            //webview.src = event.url;
+            return
+        }
+        if (global.p3x.onenote.conf.get('option-to-disable-internal-external-popup') === true) {
+            webview.src = event.url
+        } else {
+            global.p3x.onenote.prompt.redirect({url: data.url}).then((answer) => {
+                if (answer === 'internal') {
+                    webview.src = data.url;
+                } else {
+                    shell.openExternal(data.url)
+                }
+            })
+        }
+    })
 
 }
 

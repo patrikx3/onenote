@@ -1,19 +1,5 @@
 const {ipcRenderer} = require('electron');
 
-/*
-const fs = require('fs')
-
-fs.readFile(__dirname + '/hack.css', 'utf-8', function(err, data) {
-    if (err) {
-        ipc.send('p3x-debug', {
-            'messsage': 'hack.css is not working',
-            error: err,
-        });
-    }
-    p3x.onenote.hackCss = data;
-});
-*/
-
 const Store = require('electron-store');
 const conf = new Store();
 let translationKey = conf.get('lang')

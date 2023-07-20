@@ -17,31 +17,12 @@ const handler = (options) => {
 
     //const disalledUrl = /^((https?:\/\/))/i
 
+    /*
     let windowInterval
-
     const generateInterval = () => {
-        windowInterval = setInterval(() => {
-            //console.log(webview.src, global.p3x.onenote.root.p3x.onenote.location)
-
-            /*
-            ipc.send('p3x-debug', {
-                'new-window': webview.src,
-                allowed: allowedUrlRegex.test(webview.src)
-            })
-            */
-
-            /*
-            if (!allowedUrlRegex.test(webview.src)) {
-                p3x.onenote.ui.overlay.show({
-                    message: p3x.onenote.lang.label.disallowedContent
-                })
-            } else {
-                p3x.onenote.ui.overlay.hide()
-            }
-            */
-
-
+        windowInterval = setInterval(() => {       
             if (global.p3x.onenote.root && global.p3x.onenote.root.p3x.onenote.location !== webview.src) {
+                console.log('changed the url via interval', webview.src)
                 p3x.onenote.wait.angular(() => {
                         global.p3x.onenote.root.p3x.onenote.location = webview.src
                         global.p3x.onenote.data.url = webview.src
@@ -61,6 +42,7 @@ const handler = (options) => {
             generateInterval()
         }
     })
+    */
 
     /*
     webview.addEventListener('did-stop-loading', function(event) {
@@ -82,25 +64,34 @@ const handler = (options) => {
     });
     */
 
-    webview.addEventListener('did-navigate', function (event, url) {
-        /*
-        ipc.send('p3x-debug', {
-            'did-navigate': event,
-            url: url,
+    for(let eventName of ['did-navigate', 'did-navigate-in-page']) {
+        webview.addEventListener(eventName, function (event, url) {
+            /*
+            ipc.send('p3x-debug', {
+                'did-navigate': event,
+                url: url,
+            });
+            */
+            console.log(`changed the url via ${eventName}`, webview.src)
+        
+            global.p3x.onenote.data.url = webview.src;
+            ipc.send('p3x-onenote-save', global.p3x.onenote.data);
+    
+            p3x.onenote.wait.angular(() => {
+                global.p3x.onenote.root.p3x.onenote.location = webview.src
+                global.p3x.onenote.root.$digest()
+            })
+    
         });
-        */
+    
+    
+    }
 
-        global.p3x.onenote.data.url = webview.src;
-        ipc.send('p3x-onenote-save', global.p3x.onenote.data);
+    
 
-        p3x.onenote.wait.angular(() => {
-            global.p3x.onenote.root.p3x.onenote.location = webview.src
-            global.p3x.onenote.root.$digest()
-        })
 
-    });
 
-    webview.addEventListener("dom-ready", event => {
+    webview.addEventListener('dom-ready', event => {
         //TODO Remove this once https://github.com/electron/electron/issues/14474 is fixed
         webview.blur();
         webview.focus();
@@ -114,7 +105,10 @@ const handler = (options) => {
         
     });
 
+    /*
     webview.addEventListener('new-window', function (event) {
+
+        console.log('new-window', event.url)
 
         event.preventDefault()
         //p3x.onenote.toast.action(p3x.onenote.lang.label.unknownLink)
@@ -134,41 +128,30 @@ const handler = (options) => {
                 }
             })
         }
-
-        //;
-
-        /*
-        ipc.send('p3x-debug', {
-            'new-window': event.url,
-            allowed: allowedUrlRegex.test(event.url)
-        })
-        */
-
-        //console.log(event.url)
-        /*
-        if (allowedUrlRegex2.test(event.url)) {
-            // https://onedrive.live.com/redir?resid=3B992A1F2BEDFFA7%21955&page=Edit
-            const urlParts = event.url.match(allowedUrlRegex2)
-            /*
-            ipc.send('p3x-debug', {
-                urlParts: urlParts
-            })
-            */
-        /*
-            p3x.onenote.toast.action(p3x.onenote.lang.redirecting)
-            webview.src = `https://onedrive.live.com/redir?resid=${urlParts[1]}%21955&page=Edit`;
-        } else
-        */
-        /*
-        if (allowedUrlRegex.test(event.url) || allowedUrlRegex2.test(event.url)) {
-            p3x.onenote.toast.action(p3x.onenote.lang.redirecting)
-            webview.src = event.url;
-        } else {
-            shell.openExternal(event.url);
-        }
-        */
     });
+    */
 
+    /*
+    for(let event of [
+        'did-finish-load',
+        'did-frame-finish-load', 
+        'did-start-loading', 
+        'page-title-updated', 
+        'will-navigate', 
+        'did-start-navigation', 
+        'did-redirect-navigation', 
+        'did-navigate',
+        'did-frame-navigate',
+        'did-navigate-in-page',
+        'update-target-url',
+    ]) {
+        webview.addEventListener(event, function(eventData) {
+            if (eventData.url) {
+                console.log(event, event.url)
+            }
+        })
+    }
+    */
 
 }
 

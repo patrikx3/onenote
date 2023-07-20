@@ -22,9 +22,16 @@ function createWindow() {
     });
     global.p3x.onenote.window.onenote.loadURL(`file://${__dirname}/../../../window/onenote/index.html`);
 
+    global.p3x.onenote.window.onenote.webContents.on("did-attach-webview", (_, contents) => {
+        contents.setWindowOpenHandler((details) => {
+            global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-new-window', details);
+            return { action: 'deny' }
+        })
+      })
+
     remoteMain.enable(global.p3x.onenote.window.onenote.webContents)
 
-
+      
     if (process.env.NODE_ENV === 'debug') {
         global.p3x.onenote.window.onenote.openDevTools()
     }
@@ -117,7 +124,6 @@ function createWindow() {
 
 
     const {autoUpdater} = require("electron-updater");
-    autoUpdater.channel = "latest"
 
     autoUpdater.on('checking-for-update', (info) => {
         console.log('checking-for-update', info)
