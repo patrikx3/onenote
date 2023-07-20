@@ -63,7 +63,7 @@
         "electron": "^25.3.1"
     },
     "devDependencies": {
-        "corifeus-builder": "^2023.10.128",
+        "corifeus-builder": "^2023.10.129",
         "electron-builder": "^24.6.1"
     },
     "engines": {
