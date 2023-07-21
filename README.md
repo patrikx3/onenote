@@ -145,6 +145,7 @@ Logout and relogin, and a menu will now appear.
 
 [You want to install via NPM...](artifacts/npm.md)
 
+<!--
 
 # Issues
 
@@ -164,7 +165,6 @@ https://github.com/patrikx3/onenote/releases
 #### Rasberry and ARM is experimental
 I have no ARM computer to test it out, I could build `AppImage` on ARM, but I have no idea if has an error, it crashes or it works.
 
-<!--
 #### Tray issues
 It is possible, that the tray is not working, it is an upstream issue!
 
@@ -180,7 +180,6 @@ This only happens if you kill ```P3X OneNote Linux``` and then relogin many time
 
 **Exiting using ```quit``` from the ```p3x-onenote``` menu or the tray, will prevent the problem.**
 
--->
 
 #### Online OneNote Change language
 
@@ -198,6 +197,8 @@ https://github.com/patrikx3/onenote/issues/38
 
 https://github.com/patrikx3/onenote/issues/3#issuecomment-312711801
     
+-->
+
 # Development
 
 For file names do not use camelCase, but use kebab-case. Folder should be named as kebab-case as well. As you can see, all code filenames are using it like that, please do not change that.
