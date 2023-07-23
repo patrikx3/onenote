@@ -77,7 +77,7 @@ P3X OneNote Linux is, actually, an independent browser window for the online One
 # Downloadable installer
 
 ## Windows
-It was a request to build a Windows version. So it is done.
+It was a request to build a Windows version. [Issue 168](https://github.com/patrikx3/onenote/issues/169)
 
 ## Snap
 
