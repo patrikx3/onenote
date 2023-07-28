@@ -102,18 +102,19 @@ const handler = (options) => {
 
 
     ipcRenderer.on('p3x-onenote-new-window', (event, data) => {
-        if (data.url.trim().startsWith('about:blank')) {
+        const url = data.url
+        if (url.trim().startsWith('about:blank')) {
             //webview.src = event.url;
             return
         }
         if (global.p3x.onenote.conf.get('option-to-disable-internal-external-popup') === true) {
-            webview.src = event.url
+            webview.src = url
         } else {
-            global.p3x.onenote.prompt.redirect({url: data.url}).then((answer) => {
+            global.p3x.onenote.prompt.redirect({url: url}).then((answer) => {
                 if (answer === 'internal') {
-                    webview.src = data.url;
+                    webview.src = url;
                 } else {
-                    shell.openExternal(data.url)
+                    shell.openExternal(url)
                 }
             })
         }
@@ -121,4 +122,4 @@ const handler = (options) => {
 
 }
 
-module.exports = handler
+ module.exports = handler
