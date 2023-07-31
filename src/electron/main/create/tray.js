@@ -3,12 +3,14 @@ const {app, Menu, Tray } = require('electron')
 const menus = require('../menus');
 const action = require('../action');
 
+/*
 const destroyTray  = () => {
     if (global.p3x.onenote.tray !== undefined) {
         global.p3x.onenote.tray.destroy()
         global.p3x.onenote.tray = undefined
     }
 }
+*/
 
 function mainTray(opts) {
 
@@ -26,7 +28,7 @@ function mainTray(opts) {
             if (global.p3x.onenote.tray === undefined ) {
                 global.p3x.onenote.tray = new Tray(global.p3x.onenote.iconFile)
                 const click = () => {
-                    console.info('tray on click is executed - if not shown in console. this click is not executed.')
+                    //console.info('tray on click is executed - if not shown in console. this click is not executed.')
                     action.toggleVisible()
                 }
                 global.p3x.onenote.tray.on('click', click)

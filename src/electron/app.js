@@ -4,6 +4,7 @@ const conf = new Store();
 
 const {app} = require('electron');
 app.allowRendererProcessReuse = true
+app.disableHardwareAcceleration()
 
 let translationKey = conf.get('lang')
 if (translationKey === undefined) {
