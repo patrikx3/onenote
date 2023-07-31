@@ -33,7 +33,7 @@ A Linux compatible version of OneNote
 
 
 ## Code certificate for Windows  
-Right now, when I run the app in Windows, it says my app is not certifcate. To make it valid, I have to pay about $300-$400 to make it certified. Please donate, so, I can buy the free app to be certified and will give no prompts from Windows.
+Right now, when I run the app in Windows, it says my app is not certified. To make it valid, I have to pay about $300-$400 to make it certified for the first time for a year. Please donate, so, I can buy the free app to be certified and will give no prompts from Windows.
 
 # Main Features
 
