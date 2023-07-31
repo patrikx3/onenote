@@ -31,6 +31,10 @@ A Linux compatible version of OneNote
 
 ![Screenshot 1](https://cdn.corifeus.com/git/onenote/artifacts/screenshot/screenshot-2023.png)
 
+
+## Code certificate for Windows  
+Right now, when I run the app in Windows, it says my app is not certifcate. To make it valid, I have to pay about $300-$400 to make it certified. Please donate, so, I can buy the free app to be certified and will give no prompts from Windows.
+
 # Main Features
 
 P3X OneNote Linux is, actually, an independent browser window for the online OneNote. You can use this program without having to clutter your browser. The main functions are:
