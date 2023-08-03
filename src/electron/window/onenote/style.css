@@ -1,6 +1,9 @@
 :root {
-    --p3x-onenote-navbar-bg: #7719aa;
-    --p3x-onenote-navbar-color: white;
+/*
+    --p3x-onenote-navbar-color: #7719aa;
+*/    
+    --p3x-onenote-navbar-color: black;
+    --p3x-onenote-navbar-bg: white;
     --p3x-onenote-bottom-bar-height: 20px;
     --p3x-onenote-bottom-bar-font-size: 12px;
 }
