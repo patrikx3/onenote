@@ -23,7 +23,7 @@ const translation = {
             checkbox: 'Zminimalizuj do paska zadań',
             message: {
                 yes: 'Przycisk zamknij naprawdę zamyka aplikację.',
-                no: 'Przycisk zamknij, zamiast zamykania, minimalizuje aplikację do paska zadań.',
+                no: 'Przycisk zamknij, zamiast zamykać, minimalizuje aplikację do paska zadań.',
 
             }
         },
@@ -94,7 +94,7 @@ const translation = {
                 cut: 'Wytnij',
                 copy: 'Kopiuj',
                 paste: 'Wklej',
-                pasteandmatchstyle: 'Wklej i dostosuj do formatowaniaj',
+                pasteandmatchstyle: 'Wklej i dostosuj do formatowania',
                 delete: 'Usuń',
                 selectall: 'Zaznacz wszystko',
             },
