@@ -23,7 +23,7 @@ const translation = {
             checkbox: 'Zminimalizuj do paska zadań',
             message: {
                 yes: 'Przycisk zamknij naprawdę zamyka aplikację.',
-                no: 'Przycisk zamknij, zamiast zamykania, minimalizuje aplikację do paska zadań.',
+                no: 'Przycisk zamknij, zamiast zamykać, minimalizuje aplikację do paska zadań.',
 
             }
         },
@@ -94,7 +94,7 @@ const translation = {
                 cut: 'Wytnij',
                 copy: 'Kopiuj',
                 paste: 'Wklej',
-                pasteandmatchstyle: 'Wklej i dostosuj do formatowaniaj',
+                pasteandmatchstyle: 'Wklej i dostosuj do formatowania',
                 delete: 'Usuń',
                 selectall: 'Zaznacz wszystko',
             },
@@ -121,15 +121,15 @@ const translation = {
                 personal: 'Osobiste',
             },
             translations: {
-                'en-US': 'Angielski / English',
-                'de-DE': 'Niemiecki / German',
-                'pt-BR': 'Portugalski / Portuguese',
-                'es-ES': 'Hiszpański / Spanish',
+                'en-US': 'English',
+                'de-DE': 'Deutsch / German',
+                'pt-BR': 'Português / Portuguese',
+                'es-ES': 'Español / Spanish',
                 'fr-FR': 'Français / French',
-                'nl-NL': 'Francuski / Dutch',
-                'it-IT': 'Włoski / Italian',
-                'zh-CN': 'Chiński uproszczony / Simplified Chinese',
-                'ru-RU': 'Rosyjski / Russian',
+                'nl-NL': 'Nederlands / Dutch',
+                'it-IT': 'Italiano / Italian',
+                'zh-CN': '简体中文 / Simplified Chinese',
+                'ru-RU': 'Русский / Russian',
                 'pl-PL': 'Polski / Polish',
                 'tr-TR': 'Türkçe / Turkish',
             }
