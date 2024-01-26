@@ -113,7 +113,7 @@ const translation = {
             checkUpdates: '更新を確認する'
         },
         language: {
-            label: '言語',
+            label: '言語 / Language',
             alert: '言語を日本語に設定しました。',
             dialog: {
                 label: 'OneNote本体の言語も設定しますか？',
