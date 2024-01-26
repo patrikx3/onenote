@@ -7,7 +7,7 @@
 
 ## Change log
 
-### v2024.4.104
+### v2024.4.106
 Released on 01/26/2024
 * FEATURE: Added Japanese
 
