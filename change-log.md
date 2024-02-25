@@ -7,7 +7,7 @@
 
 ## Change log
 
-### v2024.4.116
+### v2024.4.118
 Released on 02/25/2024
 * FEATURE: Building the Windows versions is done via GitHub Actions.
 

@@ -19,7 +19,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm i -g grunt-cli
       - run: npm install
-      - run: npm run grunt
+      - run: grunt
 
   publish-windows:
     runs-on: windows-latest
