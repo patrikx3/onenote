@@ -24,10 +24,10 @@
                         
 [//]: #@corifeus-header:end
 
-A Linux compatible version of OneNote that not only on Linux, but on Windows and MacOS.
-
+A Linux compatible version of OneNote that not only on Linux works, but on Windows and MacOS.
+  
 ![Screenshot 1](https://cdn.corifeus.com/git/onenote/artifacts/screenshot/screenshot-2024.png)
-
+  
 
 # Main Features
 
