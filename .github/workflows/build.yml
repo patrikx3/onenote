@@ -1,32 +1,49 @@
-# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
-# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
-
-name: build
+name: Build and Publish on Tag
 
 on:
-    schedule:
-        - cron: '0 0 1 * *'
-    push:
-        branches: [ master ]
-    pull_request:
-        branches: [ master ]
+  push:
+    tags:
+      - 'v*'
 
 jobs:
-    build:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: ['lts/*']
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm i -g grunt-cli
+      - run: npm install
+      - run: npm run grunt
 
-        runs-on: ubuntu-latest
-
-        strategy:
-            matrix:
-                node-version: ['lts/*']
-                # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
-        steps:
-            - uses: actions/checkout@v2
-            - name: Use Node.js ${{ matrix.node-version }}
-              uses: actions/setup-node@v2
-              with:
-                  node-version: ${{ matrix.node-version }}
-            - run: npm i -g grunt-cli
-            - run: npm install
-            - run: grunt
+  publish-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 'lts/*'
+      - name: Install dependencies
+        run: npm install
+      - name: Publish Windows application
+        run: npm run publish-windows
+        env:
+            GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Upload Windows build to GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+            tag_name: ${{ github.ref_name }}
+            files: |
+                dist/*.exe
+                dist/*.msi
+                dist/*.blockmap
+                dist/latest.yml
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

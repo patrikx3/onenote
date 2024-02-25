@@ -7,6 +7,10 @@
 
 ## Change log
 
+### v2024.4.116
+Released on 02/25/2024
+* FEATURE: Building the Windows versions is done via GitHub Actions.
+
 ### v2024.4.106
 Released on 01/26/2024
 * FEATURE: Added Japanese
