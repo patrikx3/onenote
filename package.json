@@ -32,7 +32,8 @@
         "publish-electron-test": "rm -rf dist && electron-builder --p onTagOrDraft --linux --linux AppImage deb --x64",
         "publish-electron-snap": "rm -rf dist && electron-builder --linux snap -p never",
         "publish-windows": "rimraf dist && electron-builder -p always --windows",
-        "publish-electron-yml": "node ./node_modules/corifeus-builder/src/utils/appimage/post-build.js"
+        "publish-electron-yml": "node ./node_modules/corifeus-builder/src/utils/appimage/post-build.js",
+        "publish-macos": "electron-builder --mac --publish never"
     },
     "repository": {
         "type": "git",
@@ -93,6 +94,17 @@
         },
         "nsis": {
             "artifactName": "${name}-electron-setup-${os}-${version}.${ext}"
+        },
+        "mac": {
+            "target": [
+                {
+                    "target": "default",
+                    "arch": [
+                        "x64",
+                        "arm64"
+                    ]
+                }
+            ]
         },
         "snap": {
             "environment": {

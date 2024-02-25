@@ -7,6 +7,10 @@
 
 ## Change log
 
+### v2024.4.122
+Released on 02/25/2024
+* FEATURE: Enable a MacOs Intel and Apple silicon build.
+
 ### v2024.4.120
 Released on 02/25/2024
 * FEATURE: Building the Windows versions is done via GitHub Actions.
