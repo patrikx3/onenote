@@ -77,9 +77,11 @@ P3X OneNote Linux is, actually, an independent browser window for the online One
 ## Windows
 It was a request to build a Windows version. [Issue 168](https://github.com/patrikx3/onenote/issues/169)
 
-## Snap
-
-
+## MacOS  
+It is building on Intel and Apple silicon.  
+  
+## Snap  
+  
 [![LINK](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/p3x-onenote#cory-non-external)
 
 ## AppImage, deb, rpm
