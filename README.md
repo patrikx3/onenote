@@ -117,9 +117,6 @@ It was a request to build a Windows version. [Issue 168](https://github.com/patr
 It is building on Intel and Apple silicon.  
  
 
-# Change log
-[Read change log](change-log.md)
-
 
 <!--
 
@@ -150,6 +147,10 @@ Logout and relogin, and a menu will now appear.
 ## If you are a NodeJs Ninja
 
 [You want to install via NPM...](artifacts/npm.md)
+
+# Change log
+[Read change log](change-log.md)
+
 
 <!--
 
