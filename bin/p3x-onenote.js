@@ -24,7 +24,7 @@ Type=Application
 Name=P3X Onenote
 Icon=${path.resolve(__dirname + '/../src/electron/images/128x128.png')}
 Exec=${__filename}
-Comment=https://www.patrikx3.com
+Comment=https://www.corifeus.com/onenote
 Categories=Office;
 Terminal=false
 `)

@@ -207,13 +207,13 @@ https://github.com/patrikx3/onenote/issues/3#issuecomment-312711801
 For file names do not use camelCase, but use kebab-case. Folder should be named as kebab-case as well. As you can see, all code filenames are using it like that, please do not change that.
 Please apply the `.editorconfig` settings in your IDE.
 
-If you try to build the app with AppImage, you have to change from `electron` `dependencies` to `devDependencies`, this is because it is created to be able to run this app from `NPM` instead of an `AppImage`.
-
 For generating `rpm` on `Ubuntu` distro, you can use:
 ```bash
 sudo apt-get install rpm
 ```
-
+  
+If you try to build the app with NPM, you have to change from `electron` `devDependencies` to `dependencies`, this is because it is created to be able to run this app from `AppImage` instead of an `NPM`.
+  
 # URL links
 
 
