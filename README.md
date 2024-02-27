@@ -76,12 +76,7 @@ P3X OneNote Linux is, actually, an independent browser window for the online One
   
 https://github.com/patrikx3/onenote/releases  
   
-## Windows
-It was a request to build a Windows version. [Issue 168](https://github.com/patrikx3/onenote/issues/169)
-
-## MacOS  
-It is building on Intel and Apple silicon.  
-  
+ 
 ## Snap  
   
 [![LINK](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/p3x-onenote#cory-non-external)
@@ -115,6 +110,13 @@ It then actually integrates itself into the menus and it will auto update itself
   
 The app can be found on [ElectronJs Apps](https://electronjs.org/apps) and search for `P3X`, you will find it.
 
+## Windows
+It was a request to build a Windows version. [Issue 168](https://github.com/patrikx3/onenote/issues/169)
+
+## MacOS  
+It is building on Intel and Apple silicon.  
+ 
+ 
 [Change log](change-log.md)
 
 
