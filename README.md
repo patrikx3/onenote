@@ -116,8 +116,9 @@ It was a request to build a Windows version. [Issue 168](https://github.com/patr
 ## MacOS  
 It is building on Intel and Apple silicon.  
  
- 
-[Change log](change-log.md)
+
+# Change log
+[Read change log](change-log.md)
 
 
 <!--
