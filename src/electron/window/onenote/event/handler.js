@@ -74,7 +74,8 @@ const handler = (options) => {
             */
             console.log(`changed the url via ${eventName}`, webview.src)
         
-            global.p3x.onenote.data.url = webview.src;
+            //global.p3x.onenote.data.url = webview.src;
+            global.p3x.onenote.data.url = webview.getURL()
             ipc.send('p3x-onenote-save', global.p3x.onenote.data);
     
             p3x.onenote.wait.angular(() => {

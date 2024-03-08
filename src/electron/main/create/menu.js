@@ -59,8 +59,15 @@ function mainMenu() {
             label: global.p3x.onenote.lang.bookmarks.edit,
             type: 'checkbox',
             checked: global.p3x.onenote.bookmarksEditMode,
-            click: () => {
+            click: (menuItem, browserWindow, event) => {
                 global.p3x.onenote.bookmarksEditMode = !global.p3x.onenote.bookmarksEditMode
+                /*
+                Menu.getApplicationMenu().popup({
+                    window: browserWindow,
+                    x: event.x,
+                    y: event.y,
+                })
+                */
             }
         })
         bookmarksMenu.push({
