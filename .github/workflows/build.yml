@@ -31,11 +31,15 @@ jobs:
           node-version: 'lts/*'
       - name: Install dependencies
         run: npm install
+      - name: Fix dependencies before
+        run: node ./scripts/fix-packages-publish.js before
       - name: Publish Windows application
         run: npm run publish-windows
         env:
             GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Fix dependencies after
+        run: node ./scripts/fix-packages-publish.js after
       - name: Upload Windows build to GitHub Release
         uses: softprops/action-gh-release@v1
         with:
@@ -58,8 +62,12 @@ jobs:
           node-version: 'lts/*'
       - name: Install dependencies
         run: npm install
+      - name: Fix dependencies before
+        run: node ./scripts/fix-packages-publish.js before
       - name: Build and package macOS app
         run: npm run publish-macos
+      - name: Fix dependencies after
+        run: node ./scripts/fix-packages-publish.js after
       - name: Upload macOS build to GitHub Release
         uses: softprops/action-gh-release@v1
         with:
