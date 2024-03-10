@@ -144,7 +144,7 @@ global.p3x.onenote.ng.factory('p3xOnenotePrompt', ($mdDialog) => {
                                 </md-input-container>
                                 <md-input-container class="md-block">
                                     <label> ${p3x.onenote.lang.bookmarks.form.url}</label>
-                                    <input type="url" required ng-model="model.url" name="url"/>
+                                    <input type="url" required ng-model="model.url" name="url" maxlength="2048"/>
 
                                      <div ng-messages="urlForm.url.$error">
                                          <div ng-message="required">${p3x.onenote.lang.validation.required}</div>
