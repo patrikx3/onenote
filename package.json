@@ -1,6 +1,6 @@
 {
     "name": "p3x-onenote",
-    "version": "2024.4.137",
+    "version": "2024.4.141",
     "description": "📚 P3X OneNote Linux",
     "main": "src/electron/app.js",
     "corifeus": {
@@ -28,7 +28,10 @@
         "postinstall-save": "opencollective postinstall",
         "start": "node ./node_modules/.bin/electron ./src/electron/app.js",
         "publish-electron-test-flatpak-info": "flatpak install flathub org.freedesktop.Platform//20.08 && flatpak install flathub org.freedesktop.Sdk//20.08 && flatpak install flathub org.electronjs.Electron2.BaseApp//20.08",
-        "publish-electron": "rm -rf dist && electron-builder --p onTagOrDraft --linux --armv7l --arm64 --linux AppImage deb rpm flatpak --x64",
+        "publish-electron-test-flatpak-info-aarch64": "flatpak install flathub org.freedesktop.Platform/aarch64/20.08 && flatpak install flathub org.freedesktop.Sdk/aarch64/20.08 && flatpak install flathub org.electronjs.Electron2.BaseApp/aarch64/20.08",
+        "publish-electron-test-flatpak-info-arm": "flatpak install flathub org.freedesktop.Platform/arm/20.08 && flatpak install flathub org.freedesktop.Sdk/arm/20.08 && flatpak install flathub org.electronjs.Electron2.BaseApp/arm/20.08",
+        "publish-electron": "rm -rf dist && electron-builder --p onTagOrDraft --linux --armv7l --arm64 --linux AppImage deb rpm --x64",
+        "publish-electron-flatpak": "rm -rf dist && electron-builder --linux flatpak --x64",
         "publish-electron-test-flatpak": "rm -rf dist && electron-builder --p onTagOrDraft --linux flatpak --x64",
         "publish-electron-deb": "rm -rf dist && electron-builder --p onTagOrDraft --linux --armv7l --arm64 --linux deb --x64",
         "publish-electron-test": "rm -rf dist && electron-builder --p onTagOrDraft --linux --linux AppImage deb --x64",
@@ -111,7 +114,6 @@
             "environment": {
                 "DISABLE_WAYLAND": 1
             }
-        },
-        "flatpak": {}
+        }
     }
 }
