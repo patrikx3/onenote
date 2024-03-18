@@ -1,0 +1,50 @@
+id: org.p3x.onenote
+runtime: org.freedesktop.Platform
+runtime-version: '23.08'
+sdk: org.freedesktop.Sdk
+base: org.electronjs.Electron2.BaseApp
+base-version: '23.08'
+sdk-extensions:
+  - org.freedesktop.Sdk.Extension.node18
+
+build-options:
+  append-path: /usr/lib/sdk/node18/bin
+  env:
+    XDG_CACHE_HOME: /run/build/p3x-onenote/flatpak-node/cache
+    npm_config_cache: /run/build/p3x-onenote/flatpak-node/npm-cache
+    npm_config_nodedir: /usr/lib/sdk/node18
+    npm_config_offline: 'true'
+
+command: run.sh
+
+finish-args:
+  - --share=ipc
+  - --socket=x11
+  - --socket=pulseaudio
+  - --share=network
+
+name: p3x-onenote
+buildsystem: simple
+subdir: main
+sources:
+  - type: archive
+    url: https://codeload.github.com/patrikx3/onenote/tar.gz/refs/tags/v2024.4.143
+    sha256: b592050eb0d0a1bdb9547d4cdb021f64ee20e506b2fd2a5d6ea3c46a532ab6f4
+    dest: main
+  - type: script
+    dest-filename: run.sh
+    commands:
+      - zypak-wrapper.sh /app/main/p3x-onenote "$@"
+    
+build-commands:
+  # Install npm dependencies
+  - npm install --offline
+  # Build the app; in this example the `dist` script
+  # in package.json runs electron-builder
+  - |
+    . ../flatpak-node/electron-builder-arch-args.sh
+    npm run dist -- $ELECTRON_BUILDER_ARCH_ARGS  --linux --dir
+  # Bundle app and dependencies
+  - cp -a dist/linux*unpacked /app/main
+  # Install app wrapper
+  - install -Dm755 -t /app/bin/ ../run.sh

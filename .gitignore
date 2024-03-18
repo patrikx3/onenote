@@ -12,3 +12,6 @@
 node_modules/.yarn-integrity
 package-lock.json
 
+/.flatpak-builder
+/.build
+generated-sources.json
