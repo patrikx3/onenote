@@ -6,7 +6,7 @@
 
 
 
-# 📚 P3X OneNote Linux v2024.4.142
+# 📚 P3X OneNote Linux v2024.4.143
 
 
 
@@ -79,10 +79,12 @@ https://github.com/patrikx3/onenote/releases
   
 [![LINK](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/p3x-onenote#cory-non-external)
 
-## AppImage, deb, rpm
+## AppImage, deb, rpm, Flatpak
 
 AppImage, dep and rpm auto update itself.  
-    
+  
+Flatpak is not connected with Flathub, so it is manual right now.  
+     
 #### To integrate into the menu in AppImage
 Execute:
 ```bash
@@ -246,7 +248,7 @@ All my domains ([patrikx3.com](https://patrikx3.com) and [corifeus.com](https://
 
 ---
 
-[**P3X-ONENOTE**](https://corifeus.com/onenote) Build v2024.4.142
+[**P3X-ONENOTE**](https://corifeus.com/onenote) Build v2024.4.143
 
 [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software)
 
