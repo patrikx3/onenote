@@ -14,4 +14,3 @@ package-lock.json
 
 /.flatpak-builder
 /.build
-yarn.lock
