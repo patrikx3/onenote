@@ -13,39 +13,51 @@ finish-args:
   - --socket=x11
   - --socket=pulseaudio
   - --share=network
+  - --device=dri
 build-options:
   append-path: /usr/lib/sdk/node18/bin
   env:
     NPM_CONFIG_LOGLEVEL: info
 modules:
-  - name: p3x-onenote
+  - name: com.patrikx3
     buildsystem: simple
     build-options:
       env:
-        XDG_CACHE_HOME: /run/build/p3x-onenote/flatpak-node/cache
-        npm_config_cache: /run/build/p3x-onenote/flatpak-node/npm-cache
+        XDG_CACHE_HOME: /run/build/com.patrikx3/flatpak-node/cache
+        npm_config_cache: /run/build/com.patrikx3/flatpak-node/npm-cache
         npm_config_offline: 'true'
+        PUPPETEER_SKIP_DOWNLOAD: "true"
     build-commands:
+      - ls -all
+      - cat package.json || true
       # Install npm dependencies
-      - npm install --offline
-      # Build the app; in this example the `dist` script
+      #- npm install --offline
+      - yarn install --offline
+      # Build the app; in this example the dist script
       # in package.json runs electron-builder
       - |
-        . ../flatpak-node/electron-builder-arch-args.sh
+        . flatpak-node/electron-builder-arch-args.sh
         npm run dist -- $ELECTRON_BUILDER_ARCH_ARGS  --linux --dir
       # Bundle app and dependencies
       - cp -a dist/linux*unpacked /app/main
       # Install app wrapper
-      - install -Dm755 -t /app/bin/ ../run.sh
+      - install -Dm755 -t /app/bin/ ./run.sh
+      #- install -Dm444 logo.png ${FLATPAK_DEST}/share/icons/hicolor/512x512/apps/${FLATPAK_ID}.png
+      #- install -Dm444 flatpak/br.com.eduk.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
+      #- install -Dm444 flatpak/br.com.eduk.metainfo.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml
     subdir: main
     sources:
+      # Getting project
+      # - type: dir
+      #  path: ..
+      #  dest: main
       - type: archive
-        url: https://cdn.corifeus.com/assets/onenote-2024.4.143.tar.gz
-        sha256: 8a323d6b7aa9b82645061691edcac9db94992c4ed02d163751ab5dcf98beea2a
+        url: https://github.com/patrikx3/onenote/archive/refs/tags/v2024.4.144.tar.gz
+        sha256: b592050eb0d0a1bdb9547d4cdb021f64ee20e506b2fd2a5d6ea3c46a532ab6f4
         dest: main
       - generated-sources.json
       # Wrapper to launch the app
       - type: script
         dest-filename: run.sh
         commands:
-          - zypak-wrapper.sh /app/main/p3x-oenote "$@"
+          - zypak-wrapper.sh /app/main/br.com.eduk "$@"

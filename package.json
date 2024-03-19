@@ -1,6 +1,6 @@
 {
     "name": "p3x-onenote",
-    "version": "2024.4.143",
+    "version": "2024.4.144",
     "description": "📚 P3X OneNote Linux",
     "main": "src/electron/app.js",
     "corifeus": {
@@ -23,6 +23,7 @@
     "scripts": {
         "run": "electron --no-sandbox .",
         "test": "grunt",
+        "dist": "electron-builder",
         "build": "electron-builder --x64  build/dist",
         "build-test": "electron-builder build/dist -p always",
         "postinstall-save": "opencollective postinstall",
