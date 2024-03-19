@@ -15,3 +15,4 @@ package-lock.json
 /.flatpak-builder
 /.build
 generated-sources.json
+yarn.lock
