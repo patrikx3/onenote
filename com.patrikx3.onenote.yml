@@ -55,7 +55,7 @@ modules:
       #  dest: main
       - type: archive
         url: https://github.com/patrikx3/onenote/archive/refs/heads/master.tar.gz
-        sha256: 2ee233711e8c6504ed068a02c89e820dbe7c4664df8d47c10a675eae9f880a25
+        sha256: 515c4bda541283b8f639397d62870383214d00b4dbe95e2347cb2e1f78645d7a
         dest: main
       - generated-sources.json
       # Wrapper to launch the app
