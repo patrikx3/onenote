@@ -65,8 +65,8 @@ modules:
       #  tag: v2024.4.146
       #  dest: main
       - type: archive
-        url: https://github.com/patrikx3/onenote/archive/refs/tags/v2024.4.150.tar.gz
-        sha256: 59785c937aab53743a025abe4820d73f2a3e216eed9510347b31b63029f76859
+        url: https://github.com/patrikx3/onenote/archive/refs/tags/v2024.4.151.tar.gz
+        sha256: 4bb3f442915346112b56742a2e959eb550656eaa1181aa91f9c1e4450dd139fb
         dest: main
       - generated-sources.json
       # Wrapper to launch the app
