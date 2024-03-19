@@ -1,4 +1,5 @@
-app-id: org.flathub.p3x-onenote
+
+app-id: com.patrikx3.onenote
 runtime: org.freedesktop.Platform
 runtime-version: '23.08'
 sdk: org.freedesktop.Sdk
@@ -9,14 +10,12 @@ sdk-extensions:
 command: run.sh
 separate-locales: false
 finish-args:
-  - "--socket=wayland"
   - "--socket=x11"
   - "--share=ipc"
   - "--device=dri"
   - "--socket=pulseaudio"
   - "--filesystem=home"
   - "--share=network"
-  - "--talk-name=org.freedesktop.Notifications"
 build-options:
   append-path: /usr/lib/sdk/node18/bin
   env:
@@ -42,7 +41,7 @@ modules:
       #- npm install --offline
       #- echo $YARN_CACHE_FOLDER
       #- yarn cache list --offline
-      - echo "yarn-offline-mirror \"/run/build/p3x-onenote/flatpak-node/yarn-mirror\"" >> .yarnrc
+      - echo "yarn-offline-mirror "/run/build/p3x-onenote/flatpak-node/yarn-mirror"" >> .yarnrc
       - yarn cache dir --offline
       - yarn install --offline
       # Build the app; in this example the dist script
@@ -53,10 +52,11 @@ modules:
       # Bundle app and dependencies
       - cp -a dist/linux*unpacked /app/main
       # Install app wrapper
-      - install -Dm755 -t /app/bin/ ./run.sh
-      #- install -Dm444 logo.png ${FLATPAK_DEST}/share/icons/hicolor/512x512/apps/${FLATPAK_ID}.png
-      #- install -Dm444 flatpak/br.com.eduk.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
-      #- install -Dm444 flatpak/br.com.eduk.metainfo.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml
+      - mkdir -p /app/main
+      - install -Dm755 -t /app/bin/ ../run.sh
+      - install -Dm444 src/electron/images/256x256.png ${FLATPAK_DEST}/share/icons/hicolor/512x512/apps/${FLATPAK_ID}.png
+      - install -Dm444 src/flathub/p3x-onenote.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
+      - install -Dm444 src/flathub/metainfo.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml
     sources:
       # Getting project
       #- type: dir
@@ -67,8 +67,8 @@ modules:
       #  tag: v2024.4.146
       #  dest: main
       - type: archive
-        url: https://github.com/patrikx3/onenote/archive/refs/heads/master.tar.gz
-        sha256: b1822e3a325f33af7845be17bc8393eab23deadc1bf80ffc2c02da0114b16e64
+        url: https://github.com/patrikx3/onenote/archive/refs/tags/v2024.4.146.tar.gz
+        sha256: 3b97b93273f9b12ae430d6bb14c9c083701049a898fd1db715aff10cab48c0ba
         dest: main
       - generated-sources.json
       # Wrapper to launch the app

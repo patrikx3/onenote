@@ -1,0 +1,33 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <name>P3X Onenote</name>
+  <id>com.patrikx3.onenote</id>
+  <summary>A Linux compatible version of OneNote</summary>
+  <url type="homepage">https://corifeus.com/onenote</url>
+  
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+  
+  <description>
+    <p>
+      A Linux compatible version of OneNote
+    </p>
+  </description>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://cdn.corifeus.com/git/onenote/artifacts/screenshot/screenshot-2023.png</image>
+      <caption>Light theme</caption>
+    </screenshot>
+    <screenshot >
+      <image>https://cdn.corifeus.com/git/onenote/artifacts/screenshot/screenshot-2024.png</image>
+      <caption>Dark mode</caption>
+    </screenshot>
+  </screenshots>
+  <releases>
+    <release version="2024.4.146" date="2024-03-19"/>
+  </releases>
+  <content_rating type="oars-1.1"/>
+  <developer_name>patrikx3</developer_name>
+  <launchable type="desktop-id">com.patrikx3.onenote</launchable>
+</component>

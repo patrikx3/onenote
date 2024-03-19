@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=P3X Onenote
+Comment=A Linux compatible version of OneNote
+Icon=com.patrikx3.onenote
+Exec=run.sh
+Categories=Office

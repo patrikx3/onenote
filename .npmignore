@@ -16,3 +16,6 @@
 /secure
 /.github
 /.vscode
+/.flatpak-builder
+/.build
+/repo
