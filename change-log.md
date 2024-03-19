@@ -10,7 +10,7 @@
 ### Unreleased
 None.  
 
-### v2024.4.150
+### v2024.4.151
 Released on 03/19/2024
 * CHORE: Flathub release test.
 

@@ -13,8 +13,6 @@ finish-args:
   - "--socket=x11"
   - "--share=ipc"
   - "--device=dri"
-  - "--socket=pulseaudio"
-  - "--filesystem=home"
   - "--share=network"
 build-options:
   append-path: /usr/lib/sdk/node18/bin
@@ -67,8 +65,8 @@ modules:
       #  tag: v2024.4.146
       #  dest: main
       - type: archive
-        url: https://github.com/patrikx3/onenote/archive/refs/tags/v2024.4.146.tar.gz
-        sha256: 3b97b93273f9b12ae430d6bb14c9c083701049a898fd1db715aff10cab48c0ba
+        url: https://github.com/patrikx3/onenote/archive/refs/tags/v2024.4.150.tar.gz
+        sha256: 59785c937aab53743a025abe4820d73f2a3e216eed9510347b31b63029f76859
         dest: main
       - generated-sources.json
       # Wrapper to launch the app
