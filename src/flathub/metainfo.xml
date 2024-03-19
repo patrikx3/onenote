@@ -1,4 +1,3 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop-application">
   <name>P3X Onenote</name>
@@ -25,7 +24,7 @@
     </screenshot>
   </screenshots>
   <releases>
-    <release version="2024.4.154" date="2024-03-19"/>
+    <release version="2024.4.155" date="2024-03-19"/>
   </releases>
   <content_rating type="oars-1.1"/>
   <developer_name>patrikx3</developer_name>
