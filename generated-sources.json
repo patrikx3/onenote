@@ -542,7 +542,7 @@
     },
     {
         "type": "file",
-        "url": "https://npm.patrikx3.com/@types/plist/-/plist-3.0.5.tgz#9a0c49c0f9886c8c8696a7904dd703f6284036e0",
+        "url": "https://npm.patrikx3.com/@types/plist/-/plist-3.0.5.tgz",
         "sha512": "13a3826919807b858399636c2fff5132a7649330c26357adbad91f95693873e01c8c3534ecf733d5f4304d7d13433f8fc6a9fd8b82f54d4dd41698e7adc0e0c4",
         "dest-filename": "@types-plist-3.0.5.tgz",
         "dest": "flatpak-node/yarn-mirror"
@@ -556,7 +556,7 @@
     },
     {
         "type": "file",
-        "url": "https://npm.patrikx3.com/@types/verror/-/verror-1.10.10.tgz#d5a4b56abac169bfbc8b23d291363a682e6fa087",
+        "url": "https://npm.patrikx3.com/@types/verror/-/verror-1.10.10.tgz",
         "sha512": "97830cd09a699f5f216fdc6633ac300f5b937528697fd3e7f346974d2b672b50bde20b4fbc9715d85ac399b39050041f27570a64792d910503c04a9a00a5cc32",
         "dest-filename": "@types-verror-1.10.10.tgz",
         "dest": "flatpak-node/yarn-mirror"
@@ -843,14 +843,14 @@
     },
     {
         "type": "file",
-        "url": "https://npm.patrikx3.com/assert-plus/-/assert-plus-1.0.0.tgz#f12e0f3c5d77b0b1cdd9146942e4e96c1e4dd525",
+        "url": "https://npm.patrikx3.com/assert-plus/-/assert-plus-1.0.0.tgz",
         "sha512": "35f27853304271018b0e542aee71f11feb6fde4c99d211d0a85e413ba27bb4d25e3f9768d6594fafc759f331e89df840bb43c701d3244a8fbca34c3183d9595b",
         "dest-filename": "assert-plus-1.0.0.tgz",
         "dest": "flatpak-node/yarn-mirror"
     },
     {
         "type": "file",
-        "url": "https://npm.patrikx3.com/astral-regex/-/astral-regex-2.0.0.tgz#483143c567aeed4785759c0865786dc77d7d2e31",
+        "url": "https://npm.patrikx3.com/astral-regex/-/astral-regex-2.0.0.tgz",
         "sha512": "67bb4cc35cad4d7b798ea31c38ff8e42d794d55b8d2bd634daeb89b4a4354afebd8d740a2a0e5c89b2f0189a30f32cd93fe780735f0498b18f6a5d1ba77eabbd",
         "dest-filename": "astral-regex-2.0.0.tgz",
         "dest": "flatpak-node/yarn-mirror"
@@ -1277,7 +1277,7 @@
     },
     {
         "type": "file",
-        "url": "https://npm.patrikx3.com/cli-truncate/-/cli-truncate-2.1.0.tgz#c39e28bf05edcde5be3b98992a22deed5a2b93c7",
+        "url": "https://npm.patrikx3.com/cli-truncate/-/cli-truncate-2.1.0.tgz",
         "sha512": "9fc7ce8b1c030fa6ff39b8a7cd3ae9d59285cdb82f299beecff4ef7a39cb9f56907c2eabe765c4c7ce459ae0bedc723e24cedca0145752f36a114d8f1d5ac7a6",
         "dest-filename": "cli-truncate-2.1.0.tgz",
         "dest": "flatpak-node/yarn-mirror"
@@ -1487,7 +1487,7 @@
     },
     {
         "type": "file",
-        "url": "https://npm.patrikx3.com/crc/-/crc-3.8.0.tgz#ad60269c2c856f8c299e2c4cc0de4556914056c6",
+        "url": "https://npm.patrikx3.com/crc/-/crc-3.8.0.tgz",
         "sha512": "897de67e0713308ab764a2c8b151406efefe31cd7493169b00641bf07be3035a374f53c8629adb6a443ae5ddc8fb61c61edea748a90cf4f62382824ed8a70505",
         "dest-filename": "crc-3.8.0.tgz",
         "dest": "flatpak-node/yarn-mirror"
@@ -1718,7 +1718,7 @@
     },
     {
         "type": "file",
-        "url": "https://npm.patrikx3.com/dmg-license/-/dmg-license-1.0.11.tgz#7b3bc3745d1b52be7506b4ee80cb61df6e4cd79a",
+        "url": "https://npm.patrikx3.com/dmg-license/-/dmg-license-1.0.11.tgz",
         "sha512": "65dce6ab02a6102396269a9e7e5a02e4e272d7e599041b1ee7e311f3ccfd83d667e1563e598524032a239a1cc97241f961b6d919c608b86024639fd8b3938cd9",
         "dest-filename": "dmg-license-1.0.11.tgz",
         "dest": "flatpak-node/yarn-mirror"
@@ -1970,7 +1970,7 @@
     },
     {
         "type": "file",
-        "url": "https://npm.patrikx3.com/extsprintf/-/extsprintf-1.4.1.tgz#8d172c064867f235c0c84a596806d279bf4bcc07",
+        "url": "https://npm.patrikx3.com/extsprintf/-/extsprintf-1.4.1.tgz",
         "sha512": "5ab937e5ef327422838ff02b0a5a3556b3d598df33a61e55e00b47c08b8786f317b0a7fbdd44f704e0fe6b30485bedf0389e058441fbcf2689085bc286362f30",
         "dest-filename": "extsprintf-1.4.1.tgz",
         "dest": "flatpak-node/yarn-mirror"
@@ -2271,7 +2271,7 @@
     },
     {
         "type": "file",
-        "url": "https://npm.patrikx3.com/fsevents/-/fsevents-2.3.3.tgz#cac6407785d03675a2a5e1a5305c697b347d90d6",
+        "url": "https://npm.patrikx3.com/fsevents/-/fsevents-2.3.3.tgz",
         "sha512": "e71a037d7f9f2fb7da0139da82658fa5b16dc21fd1efb5a630caaa1c64bae42defbc1d181eb805f81d58999df8e35b4c8f99fade4d36d765cda09c339617df43",
         "dest-filename": "fsevents-2.3.3.tgz",
         "dest": "flatpak-node/yarn-mirror"
@@ -2782,7 +2782,7 @@
     },
     {
         "type": "file",
-        "url": "https://npm.patrikx3.com/iconv-corefoundation/-/iconv-corefoundation-1.1.7.tgz#31065e6ab2c9272154c8b0821151e2c88f1b002a",
+        "url": "https://npm.patrikx3.com/iconv-corefoundation/-/iconv-corefoundation-1.1.7.tgz",
         "sha512": "4f5d2abe4c34cf3e309e6e7ad253848343e8bd5a945ee3858611c0922c70f3fb32732ed326deeffd1ae410a1109c0c36be23d226eea202412bc67cd1d20f0fa5",
         "dest-filename": "iconv-corefoundation-1.1.7.tgz",
         "dest": "flatpak-node/yarn-mirror"
@@ -3139,7 +3139,7 @@
     },
     {
         "type": "file",
-        "url": "https://npm.patrikx3.com/isexe/-/isexe-3.1.1.tgz#4a407e2bd78ddfb14bea0c27c6f7072dde775f0d",
+        "url": "https://npm.patrikx3.com/isexe/-/isexe-3.1.1.tgz",
         "sha512": "2e907fe7807eff627986a43b8a66477dd537d4e96042ac7b6627159649bd93383dff0f0628b11c15f265fedec30840ee78ec81003eb3082c133ba173b3436811",
         "dest-filename": "isexe-3.1.1.tgz",
         "dest": "flatpak-node/yarn-mirror"
@@ -3881,7 +3881,7 @@
     },
     {
         "type": "file",
-        "url": "https://npm.patrikx3.com/node-addon-api/-/node-addon-api-1.7.2.tgz#3df30b95720b53c24e59948b49532b662444f54d",
+        "url": "https://npm.patrikx3.com/node-addon-api/-/node-addon-api-1.7.2.tgz",
         "sha512": "89b3cade203ebda6357848c44a442433405b0aa14e6993225d14ed741d2eedbe1d8ed63a267b23bcf7541d5320eb142ddc1f1fa534d61c8f40f800e333d7ebce",
         "dest-filename": "node-addon-api-1.7.2.tgz",
         "dest": "flatpak-node/yarn-mirror"
@@ -5092,7 +5092,7 @@
     },
     {
         "type": "file",
-        "url": "https://npm.patrikx3.com/slice-ansi/-/slice-ansi-3.0.0.tgz#31ddc10930a1b7e0b67b08c96c2f49b77a789787",
+        "url": "https://npm.patrikx3.com/slice-ansi/-/slice-ansi-3.0.0.tgz",
         "sha512": "a52cafedb4930bb8a0f437206f0f40b913546f993957aa03b9d8d9a0c052af5deaa4b046eed07ece00a40118eaef121481dcf93f541ef2efab486768b8e388c9",
         "dest-filename": "slice-ansi-3.0.0.tgz",
         "dest": "flatpak-node/yarn-mirror"
@@ -5757,7 +5757,7 @@
     },
     {
         "type": "file",
-        "url": "https://npm.patrikx3.com/verror/-/verror-1.10.1.tgz#4bf09eeccf4563b109ed4b3d458380c972b0cdeb",
+        "url": "https://npm.patrikx3.com/verror/-/verror-1.10.1.tgz",
         "sha512": "bdeb9f726c6b8b87b75d2ad3d31c1f511ee482e2246b105ea2c0e0d34c835a1938f7077091252bbefb26ee773be5ed4f532bc87998fa9d2f15411633dbf4b85e",
         "dest-filename": "verror-1.10.1.tgz",
         "dest": "flatpak-node/yarn-mirror"

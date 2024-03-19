@@ -30,7 +30,7 @@ modules:
     build-commands:
       # Install npm dependencies
       #- npm install --offline
-      - yarn install --offline
+      - yarn install --offline --ignore-optional --exact
       # Build the app; in this example the dist script
       # in package.json runs electron-builder
       - |
@@ -50,8 +50,8 @@ modules:
       #  path: ..
       #  dest: main
       - type: archive
-        url: https://github.com/patrikx3/onenote/archive/refs/tags/v2024.4.144.tar.gz
-        sha256: 87184380dbd2635bb113190ad51c269c445b33ffecf2b7db7c66b57cee7dc763
+        url: https://github.com/patrikx3/onenote/archive/refs/tags/v2024.4.146.tar.gz
+        sha256: a32a28af70e3c46322d17c4340d8c3d6ae4828aa090693d4b5cf48c90746f263
         dest: main
       - generated-sources.json
       # Wrapper to launch the app
