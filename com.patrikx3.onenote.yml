@@ -28,8 +28,6 @@ modules:
         npm_config_offline: 'true'
         PUPPETEER_SKIP_DOWNLOAD: "true"
     build-commands:
-      - ls -all
-      - cat package.json || true
       # Install npm dependencies
       #- npm install --offline
       - yarn install --offline
@@ -53,7 +51,7 @@ modules:
       #  dest: main
       - type: archive
         url: https://github.com/patrikx3/onenote/archive/refs/tags/v2024.4.144.tar.gz
-        sha256: b592050eb0d0a1bdb9547d4cdb021f64ee20e506b2fd2a5d6ea3c46a532ab6f4
+        sha256: 87184380dbd2635bb113190ad51c269c445b33ffecf2b7db7c66b57cee7dc763
         dest: main
       - generated-sources.json
       # Wrapper to launch the app
