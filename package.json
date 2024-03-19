@@ -86,7 +86,7 @@
                 "repo": "onenote"
             }
         ],
-        "appId": "org.p3x.onenote",
+        "appId": "com.patrikx3.onenote",
         "copyright": "MIT",
         "productName": "P3X-OneNote",
         "linux": {

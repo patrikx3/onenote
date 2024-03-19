@@ -9,6 +9,10 @@ const asyncStart = async () => {
     const pkg = JSON.parse((await fs.readFile(pkgFile)).toString())
 
     switch(mode) {
+        case 'flathub-before':
+            delete pkg.build.afterAllArtifactBuild
+            break;
+            
         case 'before':
             pkg.devDependencies.electron = pkg.dependencies.electron
             delete pkg.dependencies.electron
