@@ -13,24 +13,24 @@ finish-args:
   - --socket=x11
   - --socket=pulseaudio
   - --share=network
-  - --device=dri
+#  - --device=dri
 build-options:
   append-path: /usr/lib/sdk/node18/bin
   env:
     NPM_CONFIG_LOGLEVEL: info
 modules:
-  - name: com.patrikx3
+  - name: com.patrikx3.onenote
     buildsystem: simple
     build-options:
       env:
-        XDG_CACHE_HOME: /run/build/com.patrikx3/flatpak-node/cache
-        npm_config_cache: /run/build/com.patrikx3/flatpak-node/npm-cache
+        XDG_CACHE_HOME: /run/build/com.patrikx3.onenote/flatpak-node/cache
+        npm_config_cache: /run/build/com.patrikx3.onenote/flatpak-node/npm-cache
         npm_config_offline: 'true'
-        PUPPETEER_SKIP_DOWNLOAD: "true"
+        #PUPPETEER_SKIP_DOWNLOAD: "true"
     build-commands:
       # Install npm dependencies
       #- npm install --offline
-      - yarn install --offline --ignore-optional --exact
+      - yarn install --offline 
       # Build the app; in this example the dist script
       # in package.json runs electron-builder
       - |
@@ -51,11 +51,11 @@ modules:
       #  dest: main
       - type: archive
         url: https://github.com/patrikx3/onenote/archive/refs/tags/v2024.4.146.tar.gz
-        sha256: a32a28af70e3c46322d17c4340d8c3d6ae4828aa090693d4b5cf48c90746f263
+        sha256: 3b97b93273f9b12ae430d6bb14c9c083701049a898fd1db715aff10cab48c0ba
         dest: main
       - generated-sources.json
       # Wrapper to launch the app
       - type: script
         dest-filename: run.sh
         commands:
-          - zypak-wrapper.sh /app/main/br.com.eduk "$@"
+          - zypak-wrapper.sh /app/main/com.patrikx3.onenote "$@"
