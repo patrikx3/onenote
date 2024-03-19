@@ -19,12 +19,13 @@ build-options:
   env:
     NPM_CONFIG_LOGLEVEL: info
 modules:
-  - name: com.patrikx3.onenote
+  - name: onenote
     buildsystem: simple
+    subdir: main
     build-options:
       env:
-        XDG_CACHE_HOME: /run/build/com.patrikx3.onenote/flatpak-node/cache
-        npm_config_cache: /run/build/com.patrikx3.onenote/flatpak-node/npm-cache
+        XDG_CACHE_HOME: /run/build/onenote/flatpak-node/cache
+        npm_config_cache: /run/build/onenote/flatpak-node/npm-cache
         npm_config_offline: 'true'
         #PUPPETEER_SKIP_DOWNLOAD: "true"
     build-commands:
@@ -43,19 +44,22 @@ modules:
       #- install -Dm444 logo.png ${FLATPAK_DEST}/share/icons/hicolor/512x512/apps/${FLATPAK_ID}.png
       #- install -Dm444 flatpak/br.com.eduk.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
       #- install -Dm444 flatpak/br.com.eduk.metainfo.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml
-    subdir: main
     sources:
       # Getting project
       # - type: dir
       #  path: ..
       #  dest: main
+      #- type: git
+      #  url: https://github.com/patrikx3/onenote.git
+      #  tag: v2024.4.146
+      #  dest: main
       - type: archive
-        url: https://github.com/patrikx3/onenote/archive/refs/tags/v2024.4.146.tar.gz
-        sha256: 3b97b93273f9b12ae430d6bb14c9c083701049a898fd1db715aff10cab48c0ba
+        url: https://github.com/patrikx3/onenote/archive/refs/heads/master.tar.gz
+        sha256: 2ee233711e8c6504ed068a02c89e820dbe7c4664df8d47c10a675eae9f880a25
         dest: main
       - generated-sources.json
       # Wrapper to launch the app
       - type: script
         dest-filename: run.sh
         commands:
-          - zypak-wrapper.sh /app/main/com.patrikx3.onenote "$@"
+          - zypak-wrapper.sh /app/main/onenote "$@"
