@@ -23,8 +23,6 @@ modules:
     buildsystem: simple
     subdir: main
     build-options:
-      cflags: -O2 -g
-      cxxflags: -O2 -g
       env:
         XDG_CACHE_HOME: /run/build/p3x-onenote/flatpak-node/cache
         npm_config_cache: /run/build/p3x-onenote/flatpak-node/npm-cache
@@ -33,12 +31,6 @@ modules:
     build-commands:
       - node ./scripts/fix-packages-publish.js flathub-before      
       - node ./scripts/fix-packages-publish.js before      
-      # Install npm dependencies
-      #- echo $PWD
-      #- npm list --cache
-      #- npm install --offline
-      #- echo $YARN_CACHE_FOLDER
-      #- yarn cache list --offline
       - echo "yarn-offline-mirror "/run/build/p3x-onenote/flatpak-node/yarn-mirror"" >> .yarnrc
       - yarn cache dir --offline
       - yarn install --offline
@@ -52,21 +44,13 @@ modules:
       # Install app wrapper
       - mkdir -p /app/main
       - install -Dm755 -t /app/bin/ ../run.sh
-      - install -Dm444 src/electron/images/256x256.png ${FLATPAK_DEST}/share/icons/hicolor/512x512/apps/${FLATPAK_ID}.png
+      - install -Dm444 src/electron/images/512x512.png ${FLATPAK_DEST}/share/icons/hicolor/512x512/apps/${FLATPAK_ID}.png
       - install -Dm444 src/flathub/p3x-onenote.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
       - install -Dm444 src/flathub/metainfo.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml
     sources:
-      # Getting project
-      #- type: dir
-      #  path: .
-      #  dest: main
-      #- type: git
-      #  url: https://github.com/patrikx3/onenote.git
-      #  tag: v2024.4.146
-      #  dest: main
       - type: archive
-        url: https://github.com/patrikx3/onenote/archive/refs/tags/v2024.4.155.tar.gz
-        sha256: 9175aae2aa4fa1aa88b25cb863bea88d9f038731d30599a314fa767b2580d020
+        url: https://github.com/patrikx3/onenote/archive/refs/tags/v2024.4.157.tar.gz
+        sha256: 35ebf87e59c25b50151c54228c9100572ed74b418c9d4f6acb8db29ed7098d85
         dest: main
       - generated-sources.json
       # Wrapper to launch the app
