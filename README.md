@@ -88,6 +88,8 @@ flatpak install ./P3X-OneNote-2024.4.160-x86_64.flatpak
 flatpak run com.patrikx3.onenote
 ```
 
+Besides the menu is integrated.
+ 
 ## AppImage, deb, rpm
 
 AppImage, dep and rpm auto update itself.  
