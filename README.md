@@ -80,6 +80,9 @@ https://github.com/patrikx3/onenote/releases
 [![LINK](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/p3x-onenote#cory-non-external)
 
 ## Flathub
+  
+Flathub is more restricted, so do `OneNote` is a trade mark, so we cannot use this app. They would want to change the icon and the name of the app, so noone would find it.  
+    
 You download from the releases page and install as:
   
 ```sh
