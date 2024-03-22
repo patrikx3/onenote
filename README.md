@@ -85,6 +85,7 @@ You download from the releases page and install as:
 ```sh
 wget https://github.com/patrikx3/onenote/releases/download/v2024.4.160/P3X-OneNote-2024.4.160-x86_64.flatpak
 flatpak install ./P3X-OneNote-2024.4.160-x86_64.flatpak
+flatpak run com.patrikx3.onenote
 ```
 
 ## AppImage, deb, rpm
