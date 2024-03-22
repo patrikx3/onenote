@@ -81,7 +81,7 @@ https://github.com/patrikx3/onenote/releases
 
 ## Flathub
   
-Flathub is more restricted, so do `OneNote` is a trade mark, so we cannot use this app. They would want to change the icon and the name of the app, so noone would find it.  
+Flathub imposes stricter restrictions, and since `OneNote` is a trademarked name, we can't use this app with its current name and icon. It would be advisable to change both the name and the icon to ensure they are not recognizable as the trademarked product, but for now we keep `P3X-OneNote` and the icon.
     
 You download from the releases page and install as:
   
