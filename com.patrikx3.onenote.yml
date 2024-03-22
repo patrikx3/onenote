@@ -49,8 +49,8 @@ modules:
       - install -Dm444 src/flathub/metainfo.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml
     sources:
       - type: archive
-        url: https://github.com/patrikx3/onenote/archive/refs/tags/v2024.4.159.tar.gz
-        sha256: 4c8e2e421f816b8d89e7777166ce1b6dae5255d10f66220888db4582270103a6
+        url: https://github.com/patrikx3/onenote/archive/refs/tags/v2024.4.160.tar.gz
+        sha256: 9c419beeeac867a8482b446482d98595eb0c1293b19b6933e5a0d4544d5d616c
         dest: main
       - generated-sources.json
       # Wrapper to launch the app
