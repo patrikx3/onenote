@@ -70,7 +70,7 @@ P3X OneNote Linux is, actually, an independent browser window for the online One
 <!-- (`````~/.local/share/applications/p3x-onenote.desktop`````) -->
 
 
-# Downloadable installer
+# Releases / Downloadable installer
   
 https://github.com/patrikx3/onenote/releases  
   
@@ -86,8 +86,8 @@ https://github.com/patrikx3/onenote/releases
 You download from the releases page and install as:
   
 ```sh
-wget https://github.com/patrikx3/onenote/releases/download/v2024.4.160/P3X-OneNote-2024.4.160-x86_64.flatpak
-flatpak install ./P3X-OneNote-2024.4.160-x86_64.flatpak
+wget https://github.com/patrikx3/onenote/releases/download/v${VERSION}/P3X-OneNote-${VERSION}-x86_64.flatpak
+flatpak install ./P3X-OneNote-${VERSION}-x86_64.flatpak
 flatpak run com.patrikx3.onenote
 ```
 
