@@ -35,6 +35,8 @@ const asyncStart = async () => {
             throw new Error(`Unknown mode ${mode}`)
     }
 
+    console.log('pkg dependencies', JSON.stringify(pkg.dependencies, null, 4))
+    console.log('pkg devDependencies', JSON.stringify(pkg.devDependencies, null, 4))
     await fs.writeFile(pkgFile, JSON.stringify(pkg, null, 4))
 }
 

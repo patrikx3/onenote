@@ -67,7 +67,8 @@
         "corifeus-utils": "2024.4.118",
         "electron-store": "8.2.0",
         "electron-updater": "6.1.8",
-        "semver": "7.6.0"
+        "semver": "7.6.0",
+        "electron": "^29.1.6"
     },
     "devDependencies": {
         "corifeus-builder": "2024.4.131",
