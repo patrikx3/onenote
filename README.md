@@ -131,7 +131,7 @@ It is building on Intel and Apple silicon.
 
 
 ### Fix downloaded file from GitHub
-I am not an Apple guru, but I had to download the `zip` in `arm64` version an execute on the zip:  
+I am not an Apple guru, but I had to download the `zip` in `arm64` version an execute on the unzipped app:  
 ```bash
 sudo xattr -rd com.apple.quarantine P3X-OneNote.app
 ```
