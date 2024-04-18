@@ -75,6 +75,13 @@ P3X OneNote Linux is, actually, an independent browser window for the online One
 https://github.com/patrikx3/onenote/releases  
   
  
+### Mac OS
+I am not an Apple guru, but I had to download the `zip` in `arm64` version an execute on the zip:  
+```bash
+sudo xattr -rd com.apple.quarantine P3X-OneNote.app
+```
+   
+
 ## Snap  
   
 [![LINK](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/p3x-onenote#cory-non-external)
