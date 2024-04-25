@@ -57,8 +57,8 @@
     "homepage": "https://corifeus.com/onenote",
     "dependencies": {
         "@electron/remote": "2.1.2",
-        "@fontsource/roboto": "5.0.12",
-        "@fortawesome/fontawesome-free": "6.5.1",
+        "@fontsource/roboto": "5.0.13",
+        "@fortawesome/fontawesome-free": "6.5.2",
         "angular": "1.8.3",
         "angular-animate": "1.8.3",
         "angular-aria": "1.8.3",
@@ -68,7 +68,7 @@
         "electron-store": "8.2.0",
         "electron-updater": "6.1.8",
         "semver": "7.6.0",
-        "electron": "^29.1.6"
+        "electron": "^30.0.1"
     },
     "devDependencies": {
         "corifeus-builder": "2024.4.131",
