@@ -126,16 +126,17 @@ The app can be found on [ElectronJs Apps](https://electronjs.org/apps) and searc
 ## Windows
 It was a request to build a Windows version. [Issue 168](https://github.com/patrikx3/onenote/issues/169)
 
-## MacOS  
-It is building on Intel and Apple silicon.  
+## MacOS Compatibility
+Our application supports builds for both Intel and Apple Silicon architectures.
 
+### Handling Downloaded Files from GitHub
+Although I'm not an Apple expert, if you download the `zip` file for the `arm64` version, you'll need to execute the following command on the unzipped app to remove the quarantine attribute applied by macOS:
 
-### Fix downloaded file from GitHub
-I am not an Apple guru, but I had to download the `zip` in `arm64` version an execute on the unzipped app:  
 ```bash
-sudo xattr -rd com.apple.quarantine P3X-OneNote.app
+sudo xattr -rd com.apple.quarantine P3X-Redis-UI.app
 ```
-   
+
+This command ensures that your system trusts the application, allowing it to run smoothly without security interruptions from macOS.
 
 <!--
 
