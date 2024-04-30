@@ -2,6 +2,19 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "run electron",
+            "program": "${workspaceFolder}/src/electron/app.js",
+            "request": "launch",
+            "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "node",
+            "env": {
+                "NODE_ENV": "debug"
+            }
+        },
+        {
             "outputCapture": "std",
             "name": "publish-electron",
             "type": "node",
@@ -11,7 +24,7 @@
             "runtimeArgs": [
                 "run", "publish-electron"
             ]
-        }     
+        }        
       
     ]
 }
