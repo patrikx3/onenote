@@ -37,35 +37,34 @@ P3X OneNote Linux is, actually, an independent browser window for the online One
 * when there is a new update, it auto updates itself
 * the program allows to use other Microsoft online applications, but the dedicated purpose is to use OneNote
 
-## Verbose feature info
+## Detailed Feature Information
 
-* Dark mode is enabled (but it is a hack, not supported by Microsoft, so quirky)
-* To show the menu, click ALT
-* Desktop menu
-* You can use the `--minimized` argument to start the app with minimized window
-* You can zoom the window
-* Icon
-* There is a bottom bar
-    * It shows the current location
-    * When you click on this bar, the location URL is copied into the clipboard
-* There is a new button on the Edit menu
-    * Copy this location to the clipboard
-        * This is the same function that is on the bottom bar when you click on it
-* Restart button (empty your cache, you can login again if there is an error)
-* Remember last notebook (as much Online Onenote allows ...)
-* Menu > Settings
-    * Close to the tray
-        * If checked, will minimize to the tray instead of quit
-        * If un-checked, default quit close button behaviour (quit the app)
-* You are able to set a proxy in the settings menu.
-* There is now a menu called `Corporate home`
-    * Given, I do not have a `Corporate` login, I cannot debug it at all.
-        * If something is not working, the only way is to provide your login and I could probably fix it. Otherwise, I see nothing.
-* The OneNote language is controlled by Microsoft, and we try to work with Online OneNote, but we are getting a hard time, but the Electron UI is now able to use any language.
-    * You can translate any language @
-        * https://github.com/patrikx3/onenote/tree/master/src/translation
-* Allows using multiple instances (with some quirks, as the config will not be synchronized using multiple instances at once, so it can provide wrong results - to make it to work, configure with 1 instance, exit, then use multiple instances).
-    * Multiple instances is not recommended (it was requested and provided).
+* Dark mode is implemented through a non-official workaround, which may result in some inconsistencies since it's not directly supported by Microsoft.
+* Press ALT to access the menu.
+* The desktop has a menu system.
+* Use the `--minimized` argument to launch the application with the window minimized.
+* Window zoom functionality is available.
+* An application icon is present.
+* A bottom bar is included:
+    * It displays the current URL.
+    * Clicking on this bar copies the URL to the clipboard.
+* A new option is available in the Edit menu:
+    * "Copy this location to the clipboard," duplicating the function available in the bottom bar.
+* A restart button is provided to clear the cache, useful for resolving errors and logging in again.
+* The application remembers the last opened notebook to the extent permitted by Online OneNote.
+* Under Menu > Settings:
+    * "Close to the tray" option:
+        * When checked, minimizes the application to the tray rather than exiting.
+        * When unchecked, the application closes completely on pressing the quit button.
+* Proxy settings can be adjusted in the settings menu.
+* A new menu item, `Corporate home`, is added:
+    * Note: Without a `Corporate` login, it is impossible to debug this feature. If issues arise, providing your login details may allow for troubleshooting.
+* The language for OneNote is managed by Microsoft; efforts are made to support multiple languages through the Electron UI:
+    * Language translation resources are available at:
+        * [Patrikx3 OneNote Translation GitHub](https://github.com/patrikx3/onenote/tree/master/src/translation)
+* Support for multiple instances is available, though with limitations:
+    * Configuration synchronization issues may arise when running multiple instances simultaneously. To avoid discrepancies, configure using a single instance, exit, and then initiate multiple instances.
+    * Using multiple instances is possible but not recommended, though it was added based on user requests.
 
 <!-- (`````~/.local/share/applications/p3x-onenote.desktop`````) -->
 
