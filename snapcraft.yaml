@@ -20,8 +20,6 @@ apps:
 parts:
     p3x-onenote:
       plugin: npm
-      nodejs-version: '20.x'  # Specify the Node.js version
-      npm-include-node: true
       source: https://github.com/patrikx3/p3x-onenote.git
       #source-tag: v2024.4.176  
       override-build: |
