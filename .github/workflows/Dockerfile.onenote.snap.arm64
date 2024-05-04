@@ -1,4 +1,6 @@
-FROM arm64v8/ubuntu:22.04
+FROM arm64v8/ubuntu:jammy
+
+ENV DEBIAN_FRONTEND=noninteractive
 
 # Setup environment and install necessary packages
 RUN apt-get update && apt-get install -y \
