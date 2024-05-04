@@ -1,0 +1,55 @@
+name: Build and Publish Electron Snap
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Extract version from package.json
+        run: echo "PACKAGE_VERSION=$(jq -r '.version' package.json)" >> $GITHUB_ENV
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+        with:
+          platforms: linux/arm64
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: Dockerfile
+          load: true
+          platforms: linux/arm64
+          tags: yourusername/electronapp:latest
+
+      - name: Setup Node.js (LTS version)
+        uses: actions/setup-node@v3
+        with:
+          node-version: 'lts/*'  # This will automatically use the latest LTS version
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build and Publish the Snap
+        run: npm run publish-electron-arm64
+
+      - name: Login to Snapcraft
+        run: echo "${{ secrets.SNAPCRAFT_LOGIN_FILE }}" | base64 --decode --ignore-garbage > snapcraft.login
+
+      - name: Publish the snap
+        run: |
+          snapcraft login --with snapcraft.login
+          snapcraft upload dist/*.snap --release=stable
