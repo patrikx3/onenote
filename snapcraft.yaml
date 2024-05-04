@@ -1,0 +1,31 @@
+
+name: p3x-onenote
+base: core20  # Set the base
+version: '2024.4.176'  # Automatically updated from package.json
+summary: '📚 P3X OneNote Linux'  # Automatically updated from package.json description
+description: |
+  📚 P3X OneNote Linux
+
+architectures:
+  - build-on: amd64
+    run-on: arm64
+
+confinement: strict  # or 'classic' for full system access
+grade: stable  # can be 'stable' or 'devel'
+
+apps:
+  p3x-onenote:
+    command: desktop-launch $SNAP/p3x-onenote
+
+parts:
+    p3x-onenote:
+      plugin: nodejs
+      nodejs-version: '20.x'  # Specify the Node.js version
+      source: .
+      override-build: |
+        npm install
+        npm run publish-electron-snap-all
+      build-packages:
+        - build-essential
+        - libgtk2.0-0
+  

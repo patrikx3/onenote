@@ -37,7 +37,7 @@
         "publish-electron-deb": "rm -rf dist && electron-builder -p onTagOrDraft --linux --armv7l --arm64 --linux deb --x64",
         "publish-electron-test": "rm -rf dist && electron-builder -p onTagOrDraft --linux --linux AppImage deb --x64",
         "publish-electron-snap": "rm -rf dist && electron-builder --linux snap -p never --armv7l --x64",
-        "publish-electron-arm64": "rm -rf dist && electron-builder --linux snap -p never --arm64",
+        "publish-electron-snap-all": "rm -rf dist && electron-builder --linux snap -p never ",
         "publish-windows": "rimraf dist && electron-builder -p always --windows",
         "publish-electron-yml": "node ./node_modules/corifeus-builder/src/utils/appimage/post-build.js",
         "publish-macos": "electron-builder --mac --publish never"
