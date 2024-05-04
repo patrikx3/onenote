@@ -74,7 +74,7 @@ Released on 01/26/2024
 * FEATURE: Added Japanese
   
      
-## Older chage logs     
+## Older change logs     
 [Change log 2023](./change-log.2023.md)  
 [Change log 2022](./change-log.2022.md)  
 [Change log 2021](./change-log.2021.md)  
