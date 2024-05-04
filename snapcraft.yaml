@@ -1,6 +1,6 @@
 
 name: p3x-onenote
-base: core  # Set the base
+base: core22  # Set the base
 version: '2024.4.176'  # Automatically updated from package.json
 summary: '📚 P3X OneNote Linux'  # Automatically updated from package.json description
 description: |
@@ -19,8 +19,9 @@ apps:
 
 parts:
     p3x-onenote:
-      plugin: nodejs
+      plugin: npm
       nodejs-version: '20.x'  # Specify the Node.js version
+      npm-include-node: true
       source: https://github.com/patrikx3/p3x-onenote.git
       #source-tag: v2024.4.176  
       override-build: |
