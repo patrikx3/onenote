@@ -4,14 +4,15 @@ FROM node:lts as builder
 # Set the working directory
 WORKDIR /app
 
-# Copy project files into the Docker image
-COPY . /app
-
-# Install project dependencies
+COPY package*.json ./
 RUN npm install
 
-# Build your Electron app (modify this command according to your npm scripts)
-RUN npm run publish-electron-arm64
+COPY . .
+
+# Here, ensure all environment variables needed are set
+ENV NODE_ENV=production
+
+RUN npm run publish-electron-arm64 --verbose
 
 # Stage 2: Use an ARM64 Ubuntu image to install and use Snapcraft
 FROM ubuntu:latest
