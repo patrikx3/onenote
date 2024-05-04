@@ -1,21 +1,9 @@
-FROM arm64v8/ubuntu:latest
+FROM snapcore/snapcraft:latest
 
-# Setup environment and install necessary packages
-RUN apt-get update && apt-get install -y \
-    curl \
-    software-properties-common \
-    gnupg
-
-# Add the Universe repository which contains 'snapcraft'
-RUN add-apt-repository universe
-
-# Add the NodeSource repository for the latest Node.js LTS version
-RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash -
-
-# Install Node.js LTS and Snapcraft
-RUN apt-get update && apt-get install -y \
-    nodejs \
-    snapcraft
+# Install Node.js via NodeSource
+RUN apt-get update && apt-get install -y curl && \
+    curl -sL https://deb.nodesource.com/setup_lts.x | bash - && \
+    apt-get install -y nodejs
 
 # Set the working directory
 WORKDIR /app
@@ -26,13 +14,8 @@ COPY . /app
 # Install project dependencies
 RUN npm install --verbose
 
-# Build your Electron app (assuming npm script is correctly set)
+# Build your Electron app
 ENV NODE_ENV=production
-
 RUN node ./scripts/fix-packages-publish.js before
 RUN npm run publish-electron-arm64 --verbose
 RUN node ./scripts/fix-packages-publish.js after
-
-# Optional: specify where the snap file should be stored (if you want to copy it out)
-# VOLUME [ "/output" ]
-# RUN cp *.snap /output/
