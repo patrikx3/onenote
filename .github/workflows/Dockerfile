@@ -21,7 +21,7 @@ WORKDIR /app
 COPY . /app
 
 # Install project dependencies
-RUN yarn install
+RUN npm install --verbose
 
 # Build your Electron app (assuming npm script is correctly set)
 ENV NODE_ENV=production
