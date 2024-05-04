@@ -30,7 +30,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
-          file: Dockerfile
+          file: .github/workflows/Dockerfile
           load: true
           platforms: linux/arm64
           tags: yourusername/electronapp:latest
