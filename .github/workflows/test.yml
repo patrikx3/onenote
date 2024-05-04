@@ -35,17 +35,6 @@ jobs:
           platforms: linux/arm64
           tags: yourusername/electronapp:latest
 
-      - name: Setup Node.js (LTS version)
-        uses: actions/setup-node@v3
-        with:
-          node-version: 'lts/*'  # This will automatically use the latest LTS version
-
-      - name: Install Dependencies
-        run: npm install
-
-      - name: Build and Publish the Snap
-        run: npm run publish-electron-arm64
-
       - name: Login to Snapcraft
         run: echo "${{ secrets.SNAPCRAFT_LOGIN_FILE }}" | base64 --decode --ignore-garbage > snapcraft.login
 
