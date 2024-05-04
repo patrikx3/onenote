@@ -7,8 +7,8 @@ description: |
   📚 P3X OneNote Linux
 
 architectures:
-  - build-on: amd64
-    run-on: arm64
+  - build-on: [amd64]
+    build-for: [arm64]
 
 confinement: strict  # or 'classic' for full system access
 grade: stable  # can be 'stable' or 'devel'
