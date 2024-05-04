@@ -30,7 +30,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: .
-          file: .github/workflows/Dockerfile
+          file: .github/workflows/Dockerfile.onenote.snap.arm64
           load: true
           platforms: linux/arm64
           tags: yourusername/electronapp:latest
