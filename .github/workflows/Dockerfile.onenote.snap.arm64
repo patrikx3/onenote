@@ -6,6 +6,9 @@ RUN apt-get update && apt-get install -y \
     software-properties-common \
     gnupg
 
+# Add the Universe repository which contains 'snapcraft'
+RUN add-apt-repository universe
+
 # Add the NodeSource repository for the latest Node.js LTS version
 RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash -
 
