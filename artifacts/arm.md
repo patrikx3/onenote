@@ -6,7 +6,16 @@
 [//]: #@corifeus-header:end
 
 ```bash
-sudo apt-get install qemu-user qemu-user-static qemu-user-binfmt
+sudo apt-get install qemu-user qemu-user-static qemu-user-binfmtű
+
+
+docker buildx create --name builder-arm64 --use
+docker run --rm --privileged multiarch/qemu-user-static --reset -p yes
+
+docker buildx use builder-arm64
+docker buildx inspect --bootstrap
+
+
 sudo apt-get remove --purge qemu-user qemu-user-static qemu-user-binfmt
 ```
 
