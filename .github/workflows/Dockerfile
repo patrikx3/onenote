@@ -12,7 +12,9 @@ COPY . .
 # Here, ensure all environment variables needed are set
 ENV NODE_ENV=production
 
+RUN node ./scripts/fix-packages-publish.js before
 RUN npm run publish-electron-arm64 --verbose
+RUN node ./scripts/fix-packages-publish.js after
 
 # Stage 2: Use an ARM64 Ubuntu image to install and use Snapcraft
 FROM arm64v8/ubuntu:latest
