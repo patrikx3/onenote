@@ -1,38 +1,35 @@
-# Stage 1: Build the Electron app with Node.js on an ARM64 architecture
-FROM arm64v8/node:lts as builder
+FROM arm64v8/ubuntu:latest
+
+# Setup environment and install necessary packages
+RUN apt-get update && apt-get install -y \
+    curl \
+    software-properties-common \
+    gnupg
+
+# Add the NodeSource repository for the latest Node.js LTS version
+RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash -
+
+# Install Node.js LTS and Snapcraft
+RUN apt-get update && apt-get install -y \
+    nodejs \
+    snapcraft
 
 # Set the working directory
 WORKDIR /app
 
-COPY package*.json ./
-RUN npm install
+# Copy your project files into the Docker image
+COPY . /app
 
-COPY . .
+# Install project dependencies
+RUN yarn install
 
-# Here, ensure all environment variables needed are set
+# Build your Electron app (assuming npm script is correctly set)
 ENV NODE_ENV=production
 
 RUN node ./scripts/fix-packages-publish.js before
 RUN npm run publish-electron-arm64 --verbose
 RUN node ./scripts/fix-packages-publish.js after
 
-# Stage 2: Use an ARM64 Ubuntu image to install and use Snapcraft
-FROM arm64v8/ubuntu:latest
-
-RUN apt-get update && \
-    apt-get install -y software-properties-common && \
-    add-apt-repository universe && \
-    apt-get update && \
-    apt-get install -y snapcraft
-
-# Continue with your setup
-
-# Copy the built app from the first stage
-COPY --from=builder /app /app
-
-# Set the working directory
-WORKDIR /app
-
-# Build the snap (assuming snapcraft.yaml is configured)
-# Uncomment the next line if you need to build the snap as part of the Docker build
-# RUN snapcraft
+# Optional: specify where the snap file should be stored (if you want to copy it out)
+# VOLUME [ "/output" ]
+# RUN cp *.snap /output/

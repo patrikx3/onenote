@@ -9,7 +9,7 @@ on:
       - master
 
 jobs:
-  build:
+  snap-arm64:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
