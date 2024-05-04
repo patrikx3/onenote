@@ -1,6 +1,6 @@
 
 name: p3x-onenote
-base: core18  # Set the base
+base: core  # Set the base
 version: '2024.4.176'  # Automatically updated from package.json
 summary: '📚 P3X OneNote Linux'  # Automatically updated from package.json description
 description: |
