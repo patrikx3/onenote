@@ -72,8 +72,15 @@ Released on 02/25/2024
 ### v2024.4.106
 Released on 01/26/2024
 * FEATURE: Added Japanese
-
-
+  
+     
+## Older chage logs     
+[Change log 2023](./change-log.2023.md)  
+[Change log 2022](./change-log.2022.md)  
+[Change log 2021](./change-log.2021.md)  
+[Change log 2020](./change-log.2020.md)  
+[Change log 2019](./change-log.2019.md)  
+  
 
 [//]: #@corifeus-footer
 
