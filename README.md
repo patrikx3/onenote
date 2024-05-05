@@ -15,6 +15,16 @@
 
 
 
+### NodeJS LTS is supported
+
+### Built on NodeJs version
+
+```txt
+v22.1.0
+```
+
+
+
 
 
 # Description

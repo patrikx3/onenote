@@ -4,7 +4,7 @@ module.exports = (grunt) => {
     loader.js({
         replacer: {
             type: 'p3x',
-            nodejsinfo: false,
+            nodejsinfo: true,
         },
     });
     grunt.registerTask('default', builder.config.task.build.js);
