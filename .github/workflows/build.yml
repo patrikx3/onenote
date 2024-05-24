@@ -52,6 +52,7 @@ jobs:
         env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+
   package-and-release-macos:
     runs-on: macos-latest
     steps:
@@ -64,7 +65,24 @@ jobs:
         run: npm install
       - name: Fix dependencies before
         run: node ./scripts/fix-packages-publish.js before
+      - name: Decode and Install Certificates
+        env:
+          CERTIFICATE_P12_BASE64: ${{ secrets.CERTIFICATE_P12_BASE64 }}
+          CERTIFICATE_P12_PASSWORD: ${{ secrets.CERTIFICATE_P12_PASSWORD }}
+        run: |
+          echo $CERTIFICATE_P12_BASE64 | base64 --decode > certificate.p12
+          security create-keychain -p actions temp.keychain
+          security import certificate.p12 -k ~/Library/Keychains/temp.keychain -P "$CERTIFICATE_P12_PASSWORD" -T /usr/bin/codesign
+          security list-keychains -s temp.keychain
+          security default-keychain -s temp.keychain
+          security unlock-keychain -p actions temp.keychain
+          security set-key-partition-list -S apple-tool:,apple: -s -k actions temp.keychain
       - name: Build and package macOS app
+        env:
+          APPLE_ID: ${{ secrets.APPLE_ID }}
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+          APPLE_APP_SPECIFIC_PASSWORD: ${{ secrets.APPLE_APP_SPECIFIC_PASSWORD }}
+          DEBUG: "*"
         run: npm run publish-macos
       - name: Fix dependencies after
         run: node ./scripts/fix-packages-publish.js after

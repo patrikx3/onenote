@@ -1,6 +1,6 @@
 {
     "name": "p3x-onenote",
-    "version": "2024.4.177",
+    "version": "2024.4.185",
     "description": "📚 P3X OneNote Linux",
     "main": "src/electron/app.js",
     "corifeus": {
@@ -11,7 +11,7 @@
         "publish": true,
         "type": "p3x",
         "code": "Linux",
-        "nodejs": "v22.1.0",
+        "nodejs": "v22.2.0",
         "reponame": "onenote",
         "build": true,
         "opencollective": false,
@@ -68,8 +68,8 @@
         "corifeus-utils": "2024.4.123",
         "electron-store": "8.2.0",
         "electron-updater": "6.1.8",
-        "semver": "7.6.0",
-        "electron": "^30.0.2"
+        "semver": "7.6.2",
+        "electron": "^30.0.8"
     },
     "devDependencies": {
         "corifeus-builder": "2024.4.140",
@@ -104,10 +104,22 @@
             "artifactName": "${productName}-Setup-${version}.${ext}"
         },
         "mac": {
+            "icon": "artifacts/onenote-2024.icns",
+            "category": "public.app-category.productivity",
+            "hardenedRuntime": true,
+            "gatekeeperAssess": false,
+            "identity": "Patrik László (3GB3S9SH84)",
+            "extendInfo": {
+                "ElectronTeamID": "3GB3S9SH84"
+            },
+            "notarize": {
+                "teamId": "3GB3S9SH84"
+            },
             "target": [
                 {
                     "target": "default",
                     "arch": [
+                        "universal",
                         "x64",
                         "arm64"
                     ]
