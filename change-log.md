@@ -7,7 +7,7 @@
 
 ## Change log
 
-### v2024.10.107
+### v2024.10.108
 Released on 07/02/2024
 * CHORE: Updated all packages.
 
