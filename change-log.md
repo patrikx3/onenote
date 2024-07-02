@@ -7,6 +7,10 @@
 
 ## Change log
 
+### v2024.10.105
+Released on 07/02/2024
+* CHORE: Updated all packages.
+
 ### v2024.4.188
 Released on 05/24/2024
 * CHORE: Updated all packages and added developer certificate for MacOs.
@@ -111,7 +115,7 @@ All my domains, including [patrikx3.com](https://patrikx3.com) and [corifeus.com
 ---
 
 
-[**P3X-ONENOTE**](https://corifeus.com/onenote) Build v2024.4.188
+[**P3X-ONENOTE**](https://corifeus.com/onenote) Build v2024.10.105
 
  [![NPM](https://img.shields.io/npm/v/p3x-onenote.svg)](https://www.npmjs.com/package/p3x-onenote)  [![Donate for Corifeus / P3X](https://img.shields.io/badge/Donate-Corifeus-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software)
 
