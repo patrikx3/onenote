@@ -115,7 +115,7 @@ sudo apt-get update
 sudo apt-get install appimagelauncher
 ```
 
-#### After downloading the ```AppImage```, make it an executable.
+#### After downloading the AppImage, make it an executable.
 ```bash
 mkdir -p $HOME/opt
 mv ~/Downloads/p3x-onenote-a.b.c-x86_64.AppImage $HOME/opt/
