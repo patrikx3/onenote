@@ -1,15 +1,15 @@
 const translation = {
     title: 'P3X OneNote',
-    restart: 'Please hang on, the application is restarting.',
+    restart: '請稍等，程式正在重新啟動',
     label: {
         darkThemeInvert: {
-          title: 'Enable dark mode with quirks (using invert)'
+          title: '使用深色模式 (using invert)'
         },
-        hideMenu: 'Hide main menu (show with ALT)',
+        hideMenu: '隱藏主選單 (按ALT鍵顯示)',
         optionToHideMenuState: {
-            yes: 'After restart, it will hide the menu and show on ALT.',
+            yes: '重新啟動後，即隱藏主選單，須按ALT鍵顯示',
         },
-        donate: 'Donate',
+        donate: '捐助',
         allowMultiple: {
             checkbox: 'Allow multiple instances (with some quirks)',
             message: {
@@ -20,30 +20,30 @@ const translation = {
         disableHide: {
             //yes: 'Set the close button behaviour that will minimize to the tray instead of quitting',
             //no: 'Set the close button behaviour as to really quit the app',
-            checkbox: 'Close to the tray',
+            checkbox: '最小化',
             message: {
-                yes: 'The close button really closes the app.',
-                no: 'The close button, instead of quitting, it minimizes the app to the tray.',
+                yes: '按關閉扭，即關閉程式',
+                no: '按關閉扭，最小化',
 
             }
         },
         optionToDisableInternalExternalPopup: 'Disable Internal / External Popup (all link internal)',
-        settings: 'Settings',
-        setProxy: 'Set proxy',
-        openUrl: 'Open an URL',
+        settings: '設定',
+        setProxy: '設定代理伺服器',
+        openUrl: '開啟網址',
         promptRedirectUrlTitle: 'Redirect to url',
-        edit: 'Edit',
-        view: 'View',
-        download: 'Download',
+        edit: '編輯',
+        view: '顯示',
+        download: '下載',
         developer: 'Patrik Laszlo',
         personalHome: 'Personal home',
         corporateHome: 'Corporate home',
         clearCache: 'First sign off, then click this menu option to clear the cache',
-        quit: 'Quit',
-        show: 'Show',
-        hide: 'Hide',
-        copyLocation: 'Copy this location to the clipboard',
-        copyLocationCopied: 'The location is copied to the clipboard.',
+        quit: '退出',
+        show: '顯示',
+        hide: '隱藏',
+        copyLocation: '複製當前頁面路徑到剪貼簿',
+        copyLocationCopied: '已複製當前頁面路徑到剪貼簿',
         //disallowedContent: 'Disallowed content! If not working, hang on, it will reset to the default home. (Max 5 seconds).',
         //unknownLink: 'Hang on, it might change while loading to the destination. If this is not a OneNote page, free to click on the P3X OneNote menu home',
         back: 'Back',
@@ -52,19 +52,19 @@ const translation = {
     dialog: {
         info: 'Info',
         openUrl: {
-            info: 'You can go to any URL you wish',
-            placeholder: 'a valid URL',
+            info: '你可以開啟任意想要開啟的網址',
+            placeholder: '一個有效網址',
 
         },
         minimizationBehavior: {
-            title: 'Minimization behavior',
+            title: '最小化行為',
         },
         setProxy: {
-            placeholder: 'Proxy setting',
-            info: 'To clear the proxy, use an empty string.',
-            clear: 'The proxy is turned off.',
+            placeholder: '代理伺服器設定',
+            info: '要清除代理伺服器設定，請留白',
+            clear: '代理伺服器被關閉',
             set: (value) => {
-                return `The proxy is set as ${value}`
+                return `代理伺服器設定為 ${value}`
             }
         },
         redirect: {
@@ -76,47 +76,47 @@ const translation = {
         }
     },
     button: {
-        yes: 'Yes',
-        no: 'No',
-        ok: 'OK',
-        cancel: 'Cancel',
-        save: 'Save',
-        clear: 'Clear',
+        yes: '是',
+        no: '否',
+        ok: '好',
+        cancel: '取消',
+        save: '儲存',
+        clear: '清除',
         go: 'Go',
-        delete: 'Delete',
+        delete: '刪除',
     },
     menu: {
         action: 'Action',
         role: {
             edit: {
-                undo: 'Undo',
-                redo: 'Redo',
-                cut: 'Cut',
-                copy: 'Copy',
-                paste: 'Paste',
-                pasteandmatchstyle: 'Paste and match style',
-                delete: 'Delete',
-                selectall: 'Select all',
+                undo: '復原',
+                redo: '取消復原',
+                cut: '剪下',
+                copy: '複製',
+                paste: '貼上',
+                pasteandmatchstyle: '貼上並保留格式',
+                delete: '刪除',
+                selectall: '全選',
             },
             view: {
-                reload: 'Reload',
-                forcereload: 'Force reload',
-                toggledevtools: 'Toggle development tools',
-                resetzoom: 'Reset Zoom',
-                zoomin: 'Zoom In',
-                zoomout: 'Zoom out',
-                togglefullscreen: 'Toggle full screen',
+                reload: '重新載入',
+                forcereload: '強制重新載入',
+                toggledevtools: '切換開發者模式',
+                resetzoom: '重置縮放',
+                zoomin: '放大',
+                zoomout: '縮小',
+                togglefullscreen: '使用全螢幕模式',
             }
         },
         help: {
             title: 'Help',
-            checkUpdates: 'Check updates'
+            checkUpdates: '檢查更新'
         },
         language: {
-            label: 'Language',
-            alert: 'Language set to english.',
+            label: '語言 / Language',
+            alert: '語言修改成繁體中文.',
             dialog: {
-                label: 'Try to configure Online OneNote language?',
+                label: '要嘗試修改線上的OneNote語言嗎?',
                 corporate: 'Corporate',
                 personal: 'Personal',
             },
@@ -133,37 +133,37 @@ const translation = {
                 'pl-PL': 'Polski / Polish',
                 'tr-TR': 'Türkçe / Turkish',
                 'ja-JP': '日本語 / Japanese',
-                'zh-TW': '繁體中文 / Traditional Chinese',
+                'zh-TW': '繁體中文 / Traditional Chinese'
 
             }
         },
     },
-    redirecting: 'Hang on, redirecting to a new notebook. It takes some time...',
-    slow: 'Hang on, loading OneNote takes some time...',
+    redirecting: '請稍等，正在導至新的筆記本需要再一些時間...',
+    slow: '請稍等，讀取OneNote需要再一些時間...',
     updater: {
-        'checking-for-update': 'Checking for update ...',
-        'update-available': 'Downloading latest release ...',
-        'update-not-available': 'No new update.',
+        'checking-for-update': '正在檢查更新 ...',
+        'update-available': '下載最新板中 ...',
+        'update-not-available': '沒有新版本',
         error: (opts) => {
-            return `Error in auto-updater: ${opts.errorMessage}`
+            return `自動更新錯誤: ${opts.errorMessage}`
         },
         'download-progress': (opts) => {
-            return 'Downloaded ' + opts.progressObj.percent + '%'
+            return '下載 ' + opts.progressObj.percent + '%'
         },
-        'update-downloaded': 'Update downloaded. You may restart the app to update.'
+        'update-downloaded': '更信下載完畢，請重新啟動套用'
     },
     bookmarks: {
-        title: 'Bookmarks',
-        add: 'Add bookmark',
-        edit: 'Edit bookmarks',
+        title: '書籤',
+        add: '新增書籤',
+        edit: '修改書籤',
         form: {
-            title: 'Title',
+            title: '標題',
             url: 'URL'
         }
     },
     validation: {
         required: 'Required',
-        url: 'Invalid url',
+        url: '無效網址',
     },
 };
 

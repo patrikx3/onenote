@@ -133,6 +133,7 @@ const translation = {
                 'pl-PL': 'Polski / Polish',
                 'tr-TR': 'Türkçe / Turkish',
                 'ja-JP': '日本語 / Japanese',
+                'zh-TW': '繁體中文 / Traditional Chinese',
 
             }
         },
