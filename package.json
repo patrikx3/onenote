@@ -67,7 +67,7 @@
         "angular-messages": "1.8.3",
         "corifeus-utils": "2024.10.126",
         "electron-store": "8.2.0",
-        "electron-updater": "6.2.1",
+        "electron-updater": "6.3.0",
         "semver": "7.6.2",
         "electron": "^31.1.0"
     },
