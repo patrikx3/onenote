@@ -16,6 +16,7 @@ const langTranslations = {
     'pl-PL': require('../../../translation/pl-PL'),
     'tr-TR': require('../../../translation/tr-TR'),
     'ja-JP': require('../../../translation/ja-JP'),
+    'zh-TW': require('../../../translation/zh-TW'),
 }
 if (!translationKey) {
     translationKey = 'en-US'
@@ -113,4 +114,3 @@ window.p3xOneNoteOnLoad = function () {
 
     ipcRenderer.send('did-finish-load');
 }
-

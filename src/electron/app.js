@@ -31,6 +31,7 @@ const langTranslations = {
     'pl-PL': require('../translation/pl-PL'),
     'tr-TR': require('../translation/tr-TR'),
     'ja-JP': require('../translation/ja-JP'),
+    'zh-TW': require('../translation/zh-TW'),
 
 }
 
@@ -139,5 +140,3 @@ if (global.p3x.onenote.allowMultiple === false) {
 // app and ipc main events and configuration
 require('./main/ipc-main')
 require('./main/app-events')
-
-
