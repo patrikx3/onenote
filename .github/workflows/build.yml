@@ -64,7 +64,6 @@ jobs:
       - name: Install dependencies
         run: |
           npm install
-          npm install dmg-license
       - name: Fix dependencies before
         run: node ./scripts/fix-packages-publish.js before
 #      - name: Decode and Install Certificates
