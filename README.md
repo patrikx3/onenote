@@ -138,8 +138,6 @@ It was a request to build a Windows version. [Issue 168](https://github.com/patr
 ## MacOS Compatibility
 Our application supports builds for both Intel and Apple Silicon architectures.
 
-<!--
-
 ### Handling Downloaded Files from GitHub
 Although I'm not an Apple expert, if you download the `zip` file for the `arm64` version, you'll need to execute the following command on the unzipped app to remove the quarantine attribute applied by macOS:
 
@@ -148,7 +146,6 @@ sudo xattr -rd com.apple.quarantine P3X-OneNote.app
 ```
 
 This command ensures that your system trusts the application, allowing it to run smoothly without security interruptions from macOS.
--->
 
 <!--
 
