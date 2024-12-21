@@ -13,7 +13,7 @@ Released on 12/21/2024
 
 ### v2024.10.119
 Released on 12/21/2024
-* BUGFIX: Available in Flatpack again.
+* BUGFIX: Available in Flatpak again.
 
 
 ### v2024.10.118
