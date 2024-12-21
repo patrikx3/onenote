@@ -78,13 +78,13 @@ jobs:
 #          security default-keychain -s temp.keychain
 #          security unlock-keychain -p actions temp.keychain
 #          security set-key-partition-list -S apple-tool:,apple: -s -k actions temp.keychain
-#      - name: Build and package macOS app
+      - name: Build and package macOS app
 #        env:
 #          APPLE_ID: ${{ secrets.APPLE_ID }}
 #          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
 #          APPLE_APP_SPECIFIC_PASSWORD: ${{ secrets.APPLE_APP_SPECIFIC_PASSWORD }}
 #          DEBUG: "*"
-#        run: npm run publish-macos
+        run: npm run publish-macos
       - name: Fix dependencies after
         run: node ./scripts/fix-packages-publish.js after
       - name: Upload macOS build to GitHub Release
