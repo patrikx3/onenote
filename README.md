@@ -32,6 +32,19 @@ v22.12.0
                         
 [//]: #@corifeus-header:end
 
+
+  
+## Powerful Online Networking Tool
+  
+Discover the powerful and free online networking tool at [network.corifeus.com](https://network.corifeus.com)  
+    
+**Free**   
+Designed for professionals and enthusiasts, this tool provides essential features for network analysis, troubleshooting, and management. You can also purchase this tool for integration or as a service.
+  
+  
+## About
+
+
 A Linux compatible version of OneNote.
   
 ![Screenshot 1](https://cdn.corifeus.com/git/onenote/artifacts/screenshot/screenshot-2024.png)
@@ -87,7 +100,7 @@ https://github.com/patrikx3/onenote/releases
 
 ## Snap  
   
-[![LINK](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/p3x-onenote#cory-non-external)
+[![LINK](https://cdn.corifeus.com/assets/svg/snap-store-black.svg)](https://snapcraft.io/p3x-onenote#cory-non-external)
 
 ## Flathub
   

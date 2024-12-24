@@ -7,103 +7,14 @@
 
 ## Change log
 
-### v2024.10.121
-Released on 12/21/2024
-* BUGFIX: Enable Mac OS build.
-
-### v2024.10.119
-Released on 12/21/2024
-* BUGFIX: Available in Flatpak again.
-
-
-### v2024.10.118
-Released on 12/21/2024
-* CHORE: Updated all packages
-
-### v2024.10.117
-Released on 10/03/2024
-* FEATURE: Added Traditional Chinese translation.
-
-### v2024.10.110
-Released on 07/03/2024
-* CHORE: Build error fix.
-
-### v2024.10.109
-Released on 07/02/2024
-* CHORE: Updated all packages.
-
-### v2024.4.188
-Released on 05/24/2024
-* CHORE: Updated all packages and added developer certificate for MacOs.
-
-### v2024.4.177
-Released on 05/04/2024
-* CHORE: Updated all packages and NodeJs using v22.
-
-### v2024.4.168
-Released on 03/27/2024
-* CHORE: Fixed missing Electron dependency.
-
-### v2024.4.167
-Released on 03/27/2024
-* CHORE: Corifeus release.
-
-### v2024.4.161
-Released on 03/26/2024
-* BUILD: Released ARM 32bit on SNAP.
-
-### v2024.4.160
-Released on 03/21/2024
-* CHORE: Flathub release test 3.
-
-### v2024.4.157
-Released on 03/19/2024
-* CHORE: Flathub release test 2.
-
-### v2024.4.155
-Released on 03/19/2024
-* CHORE: Flathub release test.
-
-### v2024.4.146
-Released on 03/19/2024
-* CHORE: Flathub test.
-
-### v2024.4.143
-Released on 03/18/2024
-* CHORE: Updated Electron.
-* CHORE: Build task. Changed the Windows Setup filename to be using Microsoft standard.
-
-### v2024.4.142
-Released on 03/10/2024
-* CHORE: Build update.
-
-### v2024.4.141
-Released on 03/10/2024
-* FEATURE: Added Flatpak.
-
-### v2024.4.135
-Released on 03/09/2024
+### v2025.4.100
+Unreleased
+Released on 01/01/2025
 * CHORE: Update all packages.
-  
-### v2024.4.125
-Released on 03/08/2024
-* BUGFIX: Was not saving the proper url when re-start the app (used the previus url).
-* BUGFIX: The NPM and Electron app was using different version. Now, it is the same everywhere.
 
-### v2024.4.124
-Released on 02/25/2024
-* FEATURE: Enable a MacOs Intel and Apple silicon build.
-
-### v2024.4.120
-Released on 02/25/2024
-* FEATURE: Building the Windows versions is done via GitHub Actions.
-
-### v2024.4.106
-Released on 01/26/2024
-* FEATURE: Added Japanese
-  
      
 ## Older change logs     
+[Change log 2024](change-log.2024.md)  
 [Change log 2023](change-log.2023.md)  
 [Change log 2022](change-log.2022.md)  
 [Change log 2021](change-log.2021.md)  
