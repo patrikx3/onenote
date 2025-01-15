@@ -1362,12 +1362,12 @@ core-util-is@~1.0.0:
   resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.3.tgz#a6042d3634c2b27e9328f837b965fac83808db85"
   integrity sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==
 
-corifeus-builder@2025.4.109:
-  version "2025.4.109"
-  resolved "https://registry.yarnpkg.com/corifeus-builder/-/corifeus-builder-2025.4.109.tgz#d68bf61f29de9599f60e8ea387bca640b1aa435a"
-  integrity sha512-GdCHTZ7DRIvbkrTGy5QsEePraIhIW89xknw9IWYbCGE7zdOS+kglgD8A+iW+yIDK8WoWM/xTYO1YRc6GWl1m5w==
+corifeus-builder@2025.4.119:
+  version "2025.4.119"
+  resolved "https://registry.yarnpkg.com/corifeus-builder/-/corifeus-builder-2025.4.119.tgz#6464bada7474d1ca2e6aa5154d4bd1ee639bd26a"
+  integrity sha512-j+6/MPt/8qCHFzs6888foPpyqbuf7SiaMveCWbT1SVpQGuV+LYf+Lkd0xfKACNsuzBAj94dsYPjcv8HwCqUlXw==
   dependencies:
-    corifeus-utils "^2025.4.104"
+    corifeus-utils "^2025.4.113"
     download "^8.0.0"
     extract-zip "^2.0.1"
     fs-extra "^11.2.0"
@@ -1390,10 +1390,10 @@ corifeus-builder@2025.4.109:
     time-grunt "^2.0.0"
     yaml "^2.7.0"
 
-corifeus-utils@2025.4.107, corifeus-utils@^2025.4.104:
-  version "2025.4.107"
-  resolved "https://registry.yarnpkg.com/corifeus-utils/-/corifeus-utils-2025.4.107.tgz#b4a82b5851db7eec4f0de2545e35d81736baa975"
-  integrity sha512-Sk3oDOB2PrlslTqH1Iqel3HFTp7IKlDj295EkGEI2vQ/EW93QDCiD4Y7QvSPhqOuUADXrptAedMA9WosqnLCaQ==
+corifeus-utils@2025.4.113, corifeus-utils@^2025.4.113:
+  version "2025.4.113"
+  resolved "https://registry.yarnpkg.com/corifeus-utils/-/corifeus-utils-2025.4.113.tgz#cf61e8552fa07e46a6db033eedfac3b805013f5a"
+  integrity sha512-lgaSJOuVl/YxN+jnmFbz15iVjEKsfoJxzhRspeojRF0tVV7KnBwJvXcmoNkzzoRwNXUohWrXDn/cnbkskzcSnQ==
   dependencies:
     fs-extra "^11.2.0"
     ms "^2.1.3"
