@@ -7,6 +7,12 @@
 
 ## Change log
 
+### v2025.4.129
+Released on 07/23/2025
+* CHORE: Update all packages.
+* ISSUE: https://github.com/patrikx3/onenote/pull/229
+
+
 ### v2025.4.124
 Released on 01/21/2025
 * FEATURE/BUGFIX: Saving the position of the window as it was years ago
@@ -71,7 +77,7 @@ All my domains, including [patrikx3.com](https://patrikx3.com), [corifeus.eu](ht
 ---
 
 
-[**P3X-ONENOTE**](https://corifeus.com/onenote) Build v2025.4.127
+[**P3X-ONENOTE**](https://corifeus.com/onenote) Build v2025.10.100
 
  [![NPM](https://img.shields.io/npm/v/p3x-onenote.svg)](https://www.npmjs.com/package/p3x-onenote)  [![Donate for PatrikX3 / P3X](https://img.shields.io/badge/Donate-PatrikX3-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software)
 
