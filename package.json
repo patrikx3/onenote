@@ -1,6 +1,6 @@
 {
     "name": "p3x-onenote",
-    "version": "2025.10.100",
+    "version": "2025.10.101",
     "description": "📚 P3X OneNote Linux",
     "main": "src/electron/app.js",
     "corifeus": {
@@ -79,6 +79,13 @@
     "engines": {
         "node": ">=12.13.0"
     },
+    "build-save": {
+        "mac": {
+            "notarize": {
+                "teamId": "3GB3S9SH84"
+            }
+        }
+    },
     "build": {
         "afterAllArtifactBuild": "./node_modules/corifeus-builder/src/utils/appimage/after-all-artifact-build.js",
         "publish": [
@@ -112,9 +119,7 @@
             "extendInfo": {
                 "ElectronTeamID": "3GB3S9SH84"
             },
-            "notarize": {
-                "teamId": "3GB3S9SH84"
-            },
+            "notarize": false,
             "target": [
                 {
                     "target": "default",
