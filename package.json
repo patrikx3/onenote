@@ -1,6 +1,6 @@
 {
     "name": "p3x-onenote",
-    "version": "2025.10.102",
+    "version": "2025.10.103",
     "description": "📚 P3X OneNote Linux",
     "main": "src/electron/app.js",
     "corifeus": {
@@ -102,6 +102,13 @@
             "category": "Office",
             "icon": "./src/electron/images/",
             "target": "deb"
+        },
+        "flatpak": {
+            "runtime": "org.freedesktop.Platform",
+            "runtimeVersion": "24.08",
+            "sdk": "org.freedesktop.Sdk",
+            "base": "org.electronjs.Electron2.BaseApp",
+            "baseVersion": "24.08"
         },
         "win": {
             "icon": "src/electron/images/",
