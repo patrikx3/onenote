@@ -3,25 +3,7 @@ const Store = require('electron-store');
 const conf = new Store();
 
 const {app} = require('electron');
-// Ensure Electron selects a working display platform on Linux
-// - If Wayland is unavailable or explicitly disabled, force X11
-// - Otherwise, allow auto to prefer Wayland when available and fallback to X11
-try {
-    const disableWayland = ['1', 'true', 'yes'].includes(String(process.env.DISABLE_WAYLAND || '').toLowerCase());
-    const isWaylandSession = (
-        (process.env.XDG_SESSION_TYPE || '').toLowerCase() === 'wayland' ||
-        Boolean(process.env.WAYLAND_DISPLAY)
-    );
 
-    if (disableWayland || !isWaylandSession) {
-        app.commandLine.appendSwitch('ozone-platform-hint', 'x11');
-    } else {
-        app.commandLine.appendSwitch('ozone-platform-hint', 'auto');
-    }
-} catch (e) {
-    // best-effort; do not crash if something goes wrong here
-    console.error(e);   
-}
 //app.allowRendererProcessReuse = true
 //app.disableHardwareAcceleration()
 
