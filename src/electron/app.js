@@ -4,6 +4,21 @@ const conf = new Store();
 
 const {app} = require('electron');
 
+// On Snap, or when DISABLE_WAYLAND=1, force X11 per Electron 38+ breaking changes.
+// Only apply if user didn't already specify --ozone-platform.
+try {
+    const userSpecifiedOzone = app.commandLine.hasSwitch('ozone-platform');
+    const isSnap = Boolean(process.env.SNAP || process.env.SNAP_NAME);
+    const disableWayland = ['1', 'true', 'yes'].includes(String(process.env.DISABLE_WAYLAND || '').toLowerCase());
+    if (!userSpecifiedOzone && (isSnap || disableWayland)) {
+        app.commandLine.appendSwitch('ozone-platform', 'x11');
+        // Optional debug log to help with support
+        console.log('[P3X-OneNote] Forcing --ozone-platform=x11 (Snap or DISABLE_WAYLAND)');
+    }
+} catch (err) {
+    console.error('[P3X-OneNote] ozone-platform init error:', err);
+}
+
 //app.allowRendererProcessReuse = true
 //app.disableHardwareAcceleration()
 
