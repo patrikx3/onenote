@@ -7,8 +7,12 @@
 
 ## Change log
 
+### v2025.10.111
+Released on 10/29/2025
+* FEATURE: Update icon to 2025 OneNote.
+
 ### v2025.10.110
-Released on 10/27/2025
+Released on 10/28/2025
 * BUGFIX: Fix startup failure on Ubuntu 24.04 when Wayland is unavailable by defaulting to X11/auto fallback (https://github.com/patrikx3/onenote/issues/233).
 
 
@@ -92,7 +96,7 @@ All my domains, including [patrikx3.com](https://patrikx3.com), [corifeus.eu](ht
 ---
 
 
-[**P3X-ONENOTE**](https://corifeus.com/onenote) Build v2025.10.110
+[**P3X-ONENOTE**](https://corifeus.com/onenote) Build v2025.10.111
 
  [![NPM](https://img.shields.io/npm/v/p3x-onenote.svg)](https://www.npmjs.com/package/p3x-onenote)  [![Donate for PatrikX3 / P3X](https://img.shields.io/badge/Donate-PatrikX3-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software)
 
