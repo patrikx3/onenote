@@ -9,7 +9,7 @@
 
 ### v2026.4.101
 Released on 03/07/2026
-* FEATURE: Update icon to 2025 OneNote.
+* BUGFIX: https://github.com/patrikx3/onenote/issues/239
 
 
 
