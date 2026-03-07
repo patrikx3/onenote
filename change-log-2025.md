@@ -7,10 +7,39 @@
 
 ## Change log
 
-### v2026.4.101
-Released on 03/07/2026
+### v2025.10.111
+Released on 10/29/2025
 * FEATURE: Update icon to 2025 OneNote.
 
+### v2025.10.110
+Released on 10/28/2025
+* BUGFIX: Fix startup failure on Ubuntu 24.04 when Wayland is unavailable by defaulting to X11/auto fallback (https://github.com/patrikx3/onenote/issues/233).
+
+
+### v2025.10.105
+Released on 10/27/2025
+* BUGFIX: Fix startup failure on Ubuntu 24.04 when Wayland is unavailable by defaulting to X11/auto fallback (https://github.com/patrikx3/onenote/issues/233).
+
+
+### v2025.10.103
+Released on 10/25/2025
+* CHORE: Update all packages.
+
+  
+### v2025.10.101
+Released on 07/23/2025
+* CHORE: Update all packages.
+* ISSUE: https://github.com/patrikx3/onenote/pull/229
+
+
+### v2025.4.124
+Released on 01/21/2025
+* FEATURE/BUGFIX: Saving the position of the window as it was years ago
+
+     
+### v2025.4.101
+Released on 01/05/2025
+* CHORE: Update all packages.
 
 
 [//]: #@corifeus-footer

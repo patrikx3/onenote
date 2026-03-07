@@ -1,5 +1,31 @@
 const remote = require('@electron/remote')
 
+const p3xDarkInvertCss = 'img, video, image, svg image, picture, canvas, [style*="background-image"], [role="img"] { filter: invert(1) hue-rotate(180deg) !important; }';
+
+const p3xDarkInvertJs = `
+(function(enabled) {
+    var existing = document.getElementById('p3x-dark-invert-css');
+    if (existing) existing.remove();
+    if (enabled) {
+        var style = document.createElement('style');
+        style.id = 'p3x-dark-invert-css';
+        style.textContent = ${JSON.stringify(p3xDarkInvertCss)};
+        (document.head || document.documentElement).appendChild(style);
+    }
+})`;
+
+function p3xInjectDarkInvertAllFrames(webview, enabled) {
+    try {
+        const wc = remote.webContents.fromId(webview.getWebContentsId());
+        const frames = wc.mainFrame.framesInSubtree;
+        for (const frame of frames) {
+            try {
+                frame.executeJavaScript(`(${p3xDarkInvertJs})(${enabled})`);
+            } catch(e) {}
+        }
+    } catch(e) {}
+}
+
 const multiActions = (data) => {
     const webview = global.p3x.onenote.webview;
 
@@ -55,8 +81,9 @@ const multiActions = (data) => {
             if (data.darkThemeInvert === true) {
                 document.body.classList.add('p3x-dark-mode-invert-quirks')
             }
-
-//            alert(`darkThemeInvert: ${data.darkThemeInvert}`)
+            if (webview !== undefined) {
+                p3xInjectDarkInvertAllFrames(webview, data.darkThemeInvert === true);
+            }
             break;
     }
 }
