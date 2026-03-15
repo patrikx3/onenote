@@ -12,9 +12,9 @@ jobs:
       matrix:
         node-version: ['lts/*']
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm i -g grunt-cli
@@ -24,9 +24,9 @@ jobs:
   publish-windows:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
           node-version: 'lts/*'
       - name: Install dependencies
@@ -41,7 +41,7 @@ jobs:
       - name: Fix dependencies after
         run: node ./scripts/fix-packages-publish.js after
       - name: Upload Windows build to GitHub Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
             tag_name: ${{ github.ref_name }}
             files: |
@@ -56,9 +56,9 @@ jobs:
   package-and-release-macos:
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
           node-version: 'lts/*'
       - name: Install dependencies
@@ -88,7 +88,7 @@ jobs:
       - name: Fix dependencies after
         run: node ./scripts/fix-packages-publish.js after
       - name: Upload macOS build to GitHub Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ github.ref_name }}
           files: |

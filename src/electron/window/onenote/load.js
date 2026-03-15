@@ -1,6 +1,6 @@
 const {ipcRenderer} = require('electron');
 
-const Store = require('electron-store');
+const Store = require('electron-store').default;
 const conf = new Store();
 let translationKey = conf.get('lang')
 const langTranslations = {

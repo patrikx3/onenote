@@ -1,5 +1,5 @@
 const pkg = require('../../package.json');
-const Store = require('electron-store');
+const Store = require('electron-store').default;
 const conf = new Store();
 
 const {app} = require('electron');
