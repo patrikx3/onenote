@@ -27,6 +27,11 @@ if (translationKey === undefined) {
     translationKey = 'en-US'
     conf.set('lang', translationKey)
 }
+
+// Set Chromium locale to match the selected language.
+// This affects navigator.language, navigator.languages, and the default Accept-Language header,
+// which helps Microsoft services detect the preferred language.
+app.commandLine.appendSwitch('lang', translationKey)
 let darkThemeInvert = conf.get('darkThemeInvert')
 if (darkThemeInvert === undefined) {
     darkThemeInvert = false
@@ -36,19 +41,35 @@ const path = require('path')
 
 const langTranslations = {
     'en-US': require('../translation/en-US'),
+    'af-ZA': require('../translation/af-ZA'),
+    'ar-SA': require('../translation/ar-SA'),
+    'bn-BD': require('../translation/bn-BD'),
+    'ca-ES': require('../translation/ca-ES'),
+    'cs-CZ': require('../translation/cs-CZ'),
+    'da-DK': require('../translation/da-DK'),
     'de-DE': require('../translation/de-DE'),
-    'pt-BR': require('../translation/pt-BR'),
+    'el-GR': require('../translation/el-GR'),
     'es-ES': require('../translation/es-ES'),
+    'fi-FI': require('../translation/fi-FI'),
     'fr-FR': require('../translation/fr-FR'),
-    'nl-NL': require('../translation/nl-NL'),
+    'he-IL': require('../translation/he-IL'),
+    'hu-HU': require('../translation/hu-HU'),
     'it-IT': require('../translation/it-IT'),
-    'zh-CN': require('../translation/zh-CN'),
-    'ru-RU': require('../translation/ru-RU'),
-    'pl-PL': require('../translation/pl-PL'),
-    'tr-TR': require('../translation/tr-TR'),
     'ja-JP': require('../translation/ja-JP'),
+    'ko-KR': require('../translation/ko-KR'),
+    'nb-NO': require('../translation/nb-NO'),
+    'nl-NL': require('../translation/nl-NL'),
+    'pl-PL': require('../translation/pl-PL'),
+    'pt-BR': require('../translation/pt-BR'),
+    'ro-RO': require('../translation/ro-RO'),
+    'ru-RU': require('../translation/ru-RU'),
+    'sr-RS': require('../translation/sr-RS'),
+    'sv-SE': require('../translation/sv-SE'),
+    'tr-TR': require('../translation/tr-TR'),
+    'uk-UA': require('../translation/uk-UA'),
+    'vi-VN': require('../translation/vi-VN'),
+    'zh-CN': require('../translation/zh-CN'),
     'zh-TW': require('../translation/zh-TW'),
-
 }
 
 const translation = langTranslations[translationKey]

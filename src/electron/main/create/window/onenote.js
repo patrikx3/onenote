@@ -32,6 +32,20 @@ function createWindow() {
             global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-new-window', details);
             return { action: 'deny' }
         })
+
+        // Override Accept-Language header on all requests to Microsoft domains.
+        // This signals the preferred language to OneNote Online / Office 365,
+        // which otherwise defaults to the Microsoft account's language setting.
+        // Reads translationKey dynamically so mid-session language switches take effect.
+        contents.session.webRequest.onBeforeSendHeaders(
+            { urls: ['*://*.onenote.com/*', '*://*.live.com/*', '*://*.microsoft.com/*', '*://*.office.com/*', '*://*.sharepoint.com/*', '*://*.office365.com/*', '*://*.microsoftonline.com/*', '*://onenote.cloud.microsoft/*', '*://*.cloud.microsoft/*'] },
+            (details, callback) => {
+                const langCode = global.p3x.onenote.translationKey;
+                const shortLang = langCode.split('-')[0];
+                details.requestHeaders['Accept-Language'] = `${langCode},${shortLang};q=0.9,en-US;q=0.8,en;q=0.7`;
+                callback({ requestHeaders: details.requestHeaders });
+            }
+        );
       })
 
     remoteMain.enable(global.p3x.onenote.window.onenote.webContents)

@@ -29,6 +29,7 @@ function mainMenu() {
                 checked: global.p3x.onenote.conf.get('lang') === trans,
                 click: () => {
                     global.p3x.onenote.conf.set('lang', trans)
+                    global.p3x.onenote.translationKey = trans
                     global.p3x.onenote.lang = global.p3x.onenote.translations[trans]
                     mainMenu()
                     mainTray()

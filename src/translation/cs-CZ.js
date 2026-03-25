@@ -1,0 +1,180 @@
+const translation = {
+    title: 'P3X OneNote',
+    restart: 'Prosím čekejte, aplikace se restartuje.',
+    label: {
+        darkThemeInvert: {
+          title: 'Povolit tmavý režim s chybami (pomocí inverze)'
+        },
+        hideMenu: 'Skrýt hlavní nabídku (zobrazit pomocí ALT)',
+        optionToHideMenuState: {
+            yes: 'Po restartu se nabídka skryje a zobrazí se klávesou ALT.',
+        },
+        donate: 'Přispět',
+        allowMultiple: {
+            checkbox: 'Povolit více instancí (s určitými chybami)',
+            message: {
+                yes: 'Nyní můžete používat více instancí s určitými chybami.',
+                no: 'Nyní je povolena pouze jedna instance, žádné chyby.'
+            }
+        },
+        disableHide: {
+            checkbox: 'Zavřít do systémové lišty',
+            message: {
+                yes: 'Tlačítko zavřít skutečně zavře aplikaci.',
+                no: 'Tlačítko zavřít místo ukončení minimalizuje aplikaci do systémové lišty.',
+            }
+        },
+        optionToDisableInternalExternalPopup: 'Zakázat vyskakovací okno Interní / Externí (všechny odkazy interní)',
+        settings: 'Nastavení',
+        setProxy: 'Nastavit proxy',
+        openUrl: 'Otevřít URL',
+        promptRedirectUrlTitle: 'Přesměrovat na url',
+        edit: 'Upravit',
+        view: 'Zobrazit',
+        download: 'Stáhnout',
+        developer: 'Patrik Laszlo',
+        personalHome: 'Osobní domovská stránka',
+        corporateHome: 'Firemní domovská stránka',
+        clearCache: 'Nejprve se odhlaste, poté klikněte na tuto možnost nabídky pro vymazání mezipaměti',
+        quit: 'Ukončit',
+        show: 'Zobrazit',
+        hide: 'Skrýt',
+        copyLocation: 'Zkopírovat toto umístění do schránky',
+        copyLocationCopied: 'Umístění bylo zkopírováno do schránky.',
+        back: 'Zpět',
+        forward: 'Vpřed',
+    },
+    dialog: {
+        info: 'Info',
+        openUrl: {
+            info: 'Můžete přejít na libovolnou URL adresu',
+            placeholder: 'platná URL adresa',
+        },
+        minimizationBehavior: {
+            title: 'Chování při minimalizaci',
+        },
+        setProxy: {
+            placeholder: 'Nastavení proxy',
+            info: 'Pro vymazání proxy použijte prázdný řetězec.',
+            clear: 'Proxy je vypnuto.',
+            set: (value) => {
+                return `Proxy je nastaveno na ${value}`
+            }
+        },
+        redirect: {
+            url: (opts) => {
+                return `${opts.url}`
+            },
+            urlExternal: 'Externí',
+            urlInternal: 'Interní',
+        }
+    },
+    button: {
+        yes: 'Ano',
+        no: 'Ne',
+        ok: 'OK',
+        cancel: 'Zrušit',
+        save: 'Uložit',
+        clear: 'Vymazat',
+        go: 'Přejít',
+        delete: 'Smazat',
+    },
+    menu: {
+        action: 'Akce',
+        role: {
+            edit: {
+                undo: 'Zpět',
+                redo: 'Znovu',
+                cut: 'Vyjmout',
+                copy: 'Kopírovat',
+                paste: 'Vložit',
+                pasteandmatchstyle: 'Vložit a přizpůsobit styl',
+                delete: 'Smazat',
+                selectall: 'Vybrat vše',
+            },
+            view: {
+                reload: 'Znovu načíst',
+                forcereload: 'Vynutit opětovné načtení',
+                toggledevtools: 'Přepnout vývojářské nástroje',
+                resetzoom: 'Obnovit přiblížení',
+                zoomin: 'Přiblížit',
+                zoomout: 'Oddálit',
+                togglefullscreen: 'Přepnout celou obrazovku',
+            }
+        },
+        help: {
+            title: 'Nápověda',
+            checkUpdates: 'Zkontrolovat aktualizace'
+        },
+        language: {
+            label: 'Čeština / Language',
+            alert: 'Jazyk nastaven na čeština.',
+            dialog: {
+                label: 'Zkusit nastavit jazyk Online OneNote?',
+                corporate: 'Firemní',
+                personal: 'Osobní',
+            },
+            translations: {
+                'en-US': 'English',
+                'af-ZA': 'Afrikaans',
+                'ar-SA': 'العربية / Arabic',
+                'bn-BD': 'বাংলা / Bengali',
+                'ca-ES': 'Català / Catalan',
+                'cs-CZ': 'Čeština / Czech',
+                'da-DK': 'Dansk / Danish',
+                'de-DE': 'Deutsch / German',
+                'el-GR': 'Ελληνικά / Greek',
+                'es-ES': 'Español / Spanish',
+                'fi-FI': 'Suomi / Finnish',
+                'fr-FR': 'Français / French',
+                'he-IL': 'עברית / Hebrew',
+                'hu-HU': 'Magyar / Hungarian',
+                'it-IT': 'Italiano / Italian',
+                'ja-JP': '日本語 / Japanese',
+                'ko-KR': '한국어 / Korean',
+                'nb-NO': 'Norsk / Norwegian',
+                'nl-NL': 'Nederlands / Dutch',
+                'pl-PL': 'Polski / Polish',
+                'pt-BR': 'Português / Portuguese',
+                'ro-RO': 'Română / Romanian',
+                'ru-RU': 'Русский / Russian',
+                'sr-RS': 'Српски / Serbian',
+                'sv-SE': 'Svenska / Swedish',
+                'tr-TR': 'Türkçe / Turkish',
+                'uk-UA': 'Українська / Ukrainian',
+                'vi-VN': 'Tiếng Việt / Vietnamese',
+                'zh-CN': '简体中文 / Simplified Chinese',
+                'zh-TW': '繁體中文 / Traditional Chinese',
+            }
+        },
+    },
+    redirecting: 'Počkejte prosím, přesměrování na nový poznámkový blok. Chvíli to trvá...',
+    slow: 'Počkejte prosím, načítání OneNote chvíli trvá...',
+    updater: {
+        'checking-for-update': 'Kontrola aktualizací ...',
+        'update-available': 'Stahování nejnovější verze ...',
+        'update-not-available': 'Žádná nová aktualizace.',
+        error: (opts) => {
+            return `Chyba v automatické aktualizaci: ${opts.errorMessage}`
+        },
+        'download-progress': (opts) => {
+            return 'Staženo ' + opts.progressObj.percent + '%'
+        },
+        'update-downloaded': 'Aktualizace stažena. Můžete restartovat aplikaci pro aktualizaci.'
+    },
+    bookmarks: {
+        title: 'Záložky',
+        add: 'Přidat záložku',
+        edit: 'Upravit záložky',
+        form: {
+            title: 'Název',
+            url: 'URL'
+        }
+    },
+    validation: {
+        required: 'Povinné',
+        url: 'Neplatná url',
+    },
+};
+
+module.exports = translation;

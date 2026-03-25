@@ -6,7 +6,7 @@
 
 
 
-# 📚 P3X OneNote Linux v2026.4.103
+# 📚 P3X OneNote Linux v2026.4.104
 
 
   
@@ -81,8 +81,10 @@ P3X OneNote Linux is an independent browser window for the online OneNote, so yo
 
 * Restart button to clear cache (useful for resolving errors and re-logging in)
 * `Corporate home` menu item — note: without a corporate login, debugging this feature is not possible. If issues arise, providing login details may help with troubleshooting.
-* Language is managed by Microsoft; Electron UI translations are community-driven:
+* **Language:** The language selector in P3X OneNote only controls the Electron app UI (menus, dialogs, buttons). To change the OneNote web content language, you must update your language in your [Microsoft account profile](https://account.microsoft.com/languages). Translations are community-driven:
     * [Translation resources on GitHub](https://github.com/patrikx3/onenote/tree/master/src/translation)
+    * Available languages:
+      Afrikaans, العربية (Arabic), বাংলা (Bengali), Català (Catalan), Čeština (Czech), Dansk (Danish), Deutsch (German), Ελληνικά (Greek), English, Español (Spanish), Suomi (Finnish), Français (French), עברית (Hebrew), Magyar (Hungarian), Italiano (Italian), 日本語 (Japanese), 한국어 (Korean), Norsk (Norwegian), Nederlands (Dutch), Polski (Polish), Português (Portuguese), Română (Romanian), Русский (Russian), Српски (Serbian), Svenska (Swedish), Türkçe (Turkish), Українська (Ukrainian), Tiếng Việt (Vietnamese), 简体中文 (Simplified Chinese), 繁體中文 (Traditional Chinese)
 * Multiple instances are supported with limitations:
     * Configure using a single instance first, exit, then launch multiple instances to avoid synchronization issues
     * Running multiple instances is possible but not recommended
@@ -319,7 +321,7 @@ All my domains, including [patrikx3.com](https://patrikx3.com), [corifeus.eu](ht
 ---
 
 
-[**P3X-ONENOTE**](https://corifeus.com/onenote) Build v2026.4.103
+[**P3X-ONENOTE**](https://corifeus.com/onenote) Build v2026.4.104
 
  [![NPM](https://img.shields.io/npm/v/p3x-onenote.svg)](https://www.npmjs.com/package/p3x-onenote)  [![Donate for PatrikX3 / P3X](https://img.shields.io/badge/Donate-PatrikX3-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software)
 
