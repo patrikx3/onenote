@@ -38,81 +38,84 @@ v24.14.0
 
 
 A Linux compatible version of OneNote.
-  
-![Screenshot 1](https://cdn.corifeus.com/git/onenote/artifacts/screenshot/screenshot-2024.png)
-  
 
-# Main Features
+![Screenshot](https://cdn.corifeus.com/git/onenote/artifacts/screenshot/screenshot-2024.png)
 
-P3X OneNote Linux is, actually, an independent browser window for the online OneNote. You can use this program without having to clutter your browser. The main functions are:
-* that is independent from any browser, as it works in it's own process
-* it provides a tray, that allows you to close your browser while it keeps running in the tray
-* the data is cached and is faster than always opening a new window
-* it allows you to sign in with the corporate or the personal login
-* when there is a new update, it auto updates itself
-* the program allows to use other Microsoft online applications, but the dedicated purpose is to use OneNote
+---
 
-## Detailed Feature Information
+# Features
 
-* Dark mode is implemented through a non-official workaround, which may result in some inconsistencies since it's not directly supported by Microsoft.
-* Press ALT to access the menu.
-* The desktop has a menu system.
-* Use the `--minimized` argument to launch the application with the window minimized.
-* Window zoom functionality is available.
-* An application icon is present.
-* A bottom bar is included:
-    * It displays the current URL.
-    * Clicking on this bar copies the URL to the clipboard.
-* A new option is available in the Edit menu:
-    * "Copy this location to the clipboard," duplicating the function available in the bottom bar.
-* A restart button is provided to clear the cache, useful for resolving errors and logging in again.
-* The application remembers the last opened notebook to the extent permitted by Online OneNote.
-* Under Menu > Settings:
-    * "Close to the tray" option:
-        * When checked, minimizes the application to the tray rather than exiting.
-        * When unchecked, the application closes completely on pressing the quit button.
-* Proxy settings can be adjusted in the settings menu.
-* A new menu item, `Corporate home`, is added:
-    * Note: Without a `Corporate` login, it is impossible to debug this feature. If issues arise, providing your login details may allow for troubleshooting.
-* The language for OneNote is managed by Microsoft; efforts are made to support multiple languages through the Electron UI:
-    * Language translation resources are available at:
-        * [Patrikx3 OneNote Translation GitHub](https://github.com/patrikx3/onenote/tree/master/src/translation)
-* Support for multiple instances is available, though with limitations:
-    * Configuration synchronization issues may arise when running multiple instances simultaneously. To avoid discrepancies, configure using a single instance, exit, and then initiate multiple instances.
-    * Using multiple instances is possible but not recommended, though it was added based on user requests.
+P3X OneNote Linux is an independent browser window for the online OneNote, so you can use it without cluttering your browser.
+
+**Core highlights:**
+
+* Runs in its own process, independent from any browser
+* System tray support — close the window and keep it running in the background
+* Cached data for faster startup compared to opening a new browser tab each time
+* Supports both corporate and personal Microsoft accounts
+* Auto-updates when a new version is available
+* Access other Microsoft online applications as well (dedicated purpose is OneNote)
+
+## Detailed Features
+
+**User interface:**
+
+* Press `ALT` to access the menu
+* Desktop menu system integration
+* Window zoom functionality
+* Dark mode (non-official workaround — may have minor inconsistencies since it is not directly supported by Microsoft)
+* Launch minimized with the `--minimized` argument
+
+**Navigation and clipboard:**
+
+* Bottom bar displays the current URL — click it to copy to clipboard
+* Edit menu includes "Copy this location to the clipboard" option
+* Remembers the last opened notebook (to the extent permitted by Online OneNote)
+
+**Settings (Menu > Settings):**
+
+* **Close to the tray** — when checked, minimizes to tray instead of exiting; when unchecked, closes completely on quit
+* **Proxy settings** — configurable through the settings menu
+
+**Other:**
+
+* Restart button to clear cache (useful for resolving errors and re-logging in)
+* `Corporate home` menu item — note: without a corporate login, debugging this feature is not possible. If issues arise, providing login details may help with troubleshooting.
+* Language is managed by Microsoft; Electron UI translations are community-driven:
+    * [Translation resources on GitHub](https://github.com/patrikx3/onenote/tree/master/src/translation)
+* Multiple instances are supported with limitations:
+    * Configure using a single instance first, exit, then launch multiple instances to avoid synchronization issues
+    * Running multiple instances is possible but not recommended
 
 <!-- (`````~/.local/share/applications/p3x-onenote.desktop`````) -->
 
+---
 
-# Releases / Downloadable installer
-  
-https://github.com/patrikx3/onenote/releases  
-  
+# Installation
 
+All releases are available on the [GitHub Releases](https://github.com/patrikx3/onenote/releases) page.
 
-## Snap  
-  
-[![LINK](https://cdn.corifeus.com/assets/svg/snap-store-black.svg)](https://snapcraft.io/p3x-onenote#cory-non-external)
+## Snap
 
-## Flathub
-  
+[![Snap Store](https://cdn.corifeus.com/assets/svg/snap-store-black.svg)](https://snapcraft.io/p3x-onenote#cory-non-external)
 
-    
-You download from the releases page and install as:
-  
+## Flatpak
+
+Download from the releases page and install:
+
 ```sh
 wget https://github.com/patrikx3/onenote/releases/download/v${VERSION}/P3X-OneNote-${VERSION}-x86_64.flatpak
 flatpak install ./P3X-OneNote-${VERSION}-x86_64.flatpak
 flatpak run com.patrikx3.onenote
 ```
 
-Besides the menu is integrated.
- 
+The menu entry is integrated automatically.
+
 ## AppImage, deb, rpm
 
-AppImage, dep and rpm auto update itself.  
-     
-<!-- 
+AppImage, deb, and rpm packages auto-update themselves.
+
+<!--
 #### To integrate into the menu in AppImage
 Execute:
 ```bash
@@ -120,10 +123,10 @@ sudo add-apt-repository ppa:appimagelauncher-team/stable
 sudo apt-get update
 sudo apt-get install appimagelauncher
 ```
--->     
+-->
 
+**Setting up AppImage:**
 
-#### After downloading the AppImage, make it an executable.
 ```bash
 mkdir -p $HOME/opt
 mv ~/Downloads/p3x-onenote-a.b.c-x86_64.AppImage $HOME/opt/
@@ -135,25 +138,28 @@ $HOME/opt/p3x-onenote-a.b.c-x86_64.AppImage &
 <!--
 It then actually integrates itself into the menus and it will auto update itself.
 
-(The GitHub versions are always instant, while the ElectronJs Apps releases are delayed.)    
+(The GitHub versions are always instant, while the ElectronJs Apps releases are delayed.)
 -->
-  
-The app can be found on [ElectronJs Apps](https://electronjs.org/apps) and search for `P3X`, you will find it.
+
+The app can also be found on [ElectronJs Apps](https://electronjs.org/apps) — search for `P3X`.
 
 ## Windows
-It was a request to build a Windows version. [Issue 168](https://github.com/patrikx3/onenote/issues/169)
 
-## MacOS Compatibility
-Our application supports builds for both Intel and Apple Silicon architectures.
+Windows builds are available. See [Issue #168](https://github.com/patrikx3/onenote/issues/169) for background.
 
-### Handling Downloaded Files from GitHub
-Although I'm not an Apple expert, if you download the `zip` file for the `arm64` version, you'll need to execute the following command on the unzipped app to remove the quarantine attribute applied by macOS:
+## macOS
+
+Builds are available for both Intel and Apple Silicon architectures.
+
+**Removing quarantine on downloaded files:**
+
+If you download the `zip` file for the `arm64` version, run the following command on the unzipped app to remove the macOS quarantine attribute:
 
 ```bash
 sudo xattr -rd com.apple.quarantine P3X-OneNote.app
 ```
 
-This command ensures that your system trusts the application, allowing it to run smoothly without security interruptions from macOS.
+This allows the application to run without security interruptions from macOS.
 
 <!--
 
@@ -181,13 +187,15 @@ p3x-onenote
 Logout and relogin, and a menu will now appear.
 -->
 
-## If you are a NodeJs Ninja
+## NPM (for Node.js users)
 
-[You want to install via NPM...](artifacts/npm.md)
+[Install via NPM](artifacts/npm.md)
 
-# Change log
-[Read change log](change-log.md)
+---
 
+# Change Log
+
+[Read the change log](change-log.md)
 
 <!--
 
@@ -203,7 +211,7 @@ I recognized, that after suspend/sleep and then wake up, the app is not saving t
 Usually, on stable distros are working with SNAP, but usually non stable Linux distros could not work. Please, try using the `AppImage`, that is usually better than SNAP.
 
 #### Error in auto-updater: Redirect was cancelled
-Sometimes, you get an `AppImage` error for update, just download the latest release and replace the `AppImage` from here:  
+Sometimes, you get an `AppImage` error for update, just download the latest release and replace the `AppImage` from here:
 https://github.com/patrikx3/onenote/releases
 
 #### Rasberry and ARM is experimental
@@ -213,7 +221,7 @@ I have no ARM computer to test it out, I could build `AppImage` on ARM, but I ha
 It is possible, that the tray is not working, it is an upstream issue!
 
 #### Not loading the pages / freezes
-Sometimes, it is possible, that OneNote Online does not load properly or freezes, the solutions is to quit and start the program again. (I know, you won't like it at all! 😡) 
+Sometimes, it is possible, that OneNote Online does not load properly or freezes, the solutions is to quit and start the program again. (I know, you won't like it at all! 😡)
 
 
 ## Unable to log in
@@ -233,46 +241,37 @@ This is being investigated.
 https://github.com/patrikx3/onenote/issues/14
 
 #### Electron problem
-🐞 Since Electron v3, the tray left click is executing as the right click, Electron bug.    
-  
-https://github.com/patrikx3/onenote/issues/38  
+🐞 Since Electron v3, the tray left click is executing as the right click, Electron bug.
+
+https://github.com/patrikx3/onenote/issues/38
 
 #### Fedora
 
 https://github.com/patrikx3/onenote/issues/3#issuecomment-312711801
-    
+
 -->
+
+---
 
 # Development
 
-For file names do not use camelCase, but use kebab-case. Folder should be named as kebab-case as well. As you can see, all code filenames are using it like that, please do not change that.
-Please apply the `.editorconfig` settings in your IDE.
+* Use **kebab-case** for all file and folder names (not camelCase)
+* Apply the `.editorconfig` settings in your IDE
+* To generate `rpm` on Ubuntu: `sudo apt-get install rpm`
+* To build with NPM, move `electron` from `devDependencies` to `dependencies` (the default setup is designed for AppImage distribution, not NPM)
 
-For generating `rpm` on `Ubuntu` distro, you can use:
-```bash
-sudo apt-get install rpm
-```
-  
-If you try to build the app with NPM, you have to change from `electron` `devDependencies` to `dependencies`, this is because it is created to be able to run this app from `AppImage` instead of an `NPM`.
-  
-# URL links
+---
 
+# Links
 
-[P3X OneNote Linux playground](https://www.patrikx3.com/en/front/playground/13/p3x-linux-onenote#PG13)  
-  
-[Corifeus P3X OneNote Linux](https://corifeus.com/onenote/)  
-
-[AlternativeTo OneNote Linux](https://alternativeto.net/software/p3x-onenote/)  
-
-[NPM P3X OneNote](https://www.npmjs.com/package/p3x-onenote)
-
-[Snap Store](https://snapcraft.io/p3x-onenote)
-
-[Github.IO Page](https://patrikx3.github.io/onenote/)  
-    
-[Web development coding](https://corifeus.eu/)   
-   
-[Webfejlesztés](https://corifeus.hu/)  
+* [P3X OneNote Linux Playground](https://www.patrikx3.com/en/front/playground/13/p3x-linux-onenote#PG13)
+* [Corifeus P3X OneNote Linux](https://corifeus.com/onenote/)
+* [AlternativeTo](https://alternativeto.net/software/p3x-onenote/)
+* [NPM Package](https://www.npmjs.com/package/p3x-onenote)
+* [Snap Store](https://snapcraft.io/p3x-onenote)
+* [GitHub.IO Page](https://patrikx3.github.io/onenote/)
+* [Web Development (EN)](https://corifeus.eu/)
+* [Webfejlesztés (HU)](https://corifeus.hu/)
   
 
 [//]: #@corifeus-footer
