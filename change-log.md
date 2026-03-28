@@ -9,7 +9,11 @@
 
 ### v2026.4.105
 Released on 03/28/2026
-* FEATURE: Refactored the Electron main process and translation files to use ESM (.mjs) with import/export syntax.
+* FEATURE: Refactored the Electron main process to ESM (.mjs) with import/export syntax.
+* FEATURE: Replaced AngularJS and Angular Material with vanilla JS — native `<dialog>` for prompts, custom CSS toast, zero framework dependencies.
+* FEATURE: Renderer files converted to ESM (.mjs) using a CJS shim pattern for Electron API access.
+* FEATURE: OneNote-branded purple (#7719AA) bottom toolbar with system font stack (Segoe UI / Noto Sans / Liberation Sans).
+* FEATURE: Removed 6 dependencies: angular, angular-animate, angular-aria, angular-material, angular-messages, @fontsource/roboto.
 
 ### v2026.4.104
 Released on 03/25/2026
@@ -78,7 +82,7 @@ All my domains, including [patrikx3.com](https://patrikx3.com), [corifeus.eu](ht
 ---
 
 
-[**P3X-ONENOTE**](https://corifeus.com/onenote) Build v2026.4.105
+[**P3X-ONENOTE**](https://corifeus.com/onenote) Build v2026.4.106
 
  [![NPM](https://img.shields.io/npm/v/p3x-onenote.svg)](https://www.npmjs.com/package/p3x-onenote)  [![Donate for PatrikX3 / P3X](https://img.shields.io/badge/Donate-PatrikX3-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software)
 

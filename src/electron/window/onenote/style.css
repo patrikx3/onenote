@@ -1,67 +1,297 @@
 :root {
-/*
-    --p3x-onenote-navbar-color: #7719aa;
-*/    
-    --p3x-onenote-navbar-color: black;
-    --p3x-onenote-navbar-bg: white;
-    --p3x-onenote-bottom-bar-height: 20px;
-    --p3x-onenote-bottom-bar-font-size: 12px;
+    --p3x-onenote-purple: #7719AA;
+    --p3x-onenote-purple-light: #9B51C6;
+    --p3x-onenote-purple-dark: #5B0E85;
+    --p3x-onenote-accent: #D83B01;
+    --p3x-onenote-bottom-bar-height: 26px;
+    --p3x-onenote-font: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
 }
+
+/* ── Dark mode invert ──────────────────────────────────────────── */
 
 body.p3x-dark-mode-invert-quirks {
     filter: invert(1) hue-rotate(180deg);
 }
 
+/* ── Base ──────────────────────────────────────────────────────── */
+
 body {
-    background-color: white;
+    background-color: #f3f2f1;
     padding: 0;
     margin: 0;
     overflow: hidden;
+    font-family: var(--p3x-onenote-font);
+    -webkit-font-smoothing: antialiased;
 }
 
-/*
-md-dialog md-dialog-actions {
-    display: block !important;
-}
-
-md-dialog md-dialog-actions button {
-    float: right !important;
-}
- */
-
-body * {
-    transition: none !important;
-}
+/* ── Bottom bar ────────────────────────────────────────────────── */
 
 #p3x-onenote-bottom-bar {
-    cursor: pointer;
     position: fixed;
-    bottom: 0px;
-    left: 0px;
+    bottom: 0;
+    left: 0;
     width: 100%;
+    height: var(--p3x-onenote-bottom-bar-height);
+    background: var(--p3x-onenote-purple);
+    color: rgba(255, 255, 255, 0.95);
+    font-family: var(--p3x-onenote-font);
+    font-size: 12px;
+    line-height: var(--p3x-onenote-bottom-bar-height);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    height: var(--p3x-onenote-bottom-bar-height);
-    font-size: var(--p3x-onenote-bottom-bar-font-size);
-    font-family: Roboto;
-    line-height: var(--p3x-onenote-bottom-bar-height);
-    background-color: var(--p3x-onenote-navbar-bg);
-    color: var(--p3x-onenote-navbar-color);
+    display: flex;
+    align-items: center;
+    user-select: none;
+    z-index: 100;
 }
+
+.p3x-bar-group {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.p3x-bar-group.p3x-bar-right {
+    margin-left: auto;
+}
+
+.p3x-bar-separator {
+    width: 1px;
+    height: 14px;
+    background: rgba(255, 255, 255, 0.25);
+    margin: 0 2px;
+}
+
+.p3x-bar-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0 8px;
+    margin: 0;
+    height: var(--p3x-onenote-bottom-bar-height);
+    line-height: var(--p3x-onenote-bottom-bar-height);
+    min-width: 26px;
+    font-size: 12px;
+    font-family: var(--p3x-onenote-font);
+    color: rgba(255, 255, 255, 0.95);
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: background 0.1s;
+}
+
+.p3x-bar-btn:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.p3x-bar-btn:active {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.p3x-bar-btn:disabled {
+    opacity: 0.35;
+    cursor: default;
+    background: none !important;
+}
+
+#p3x-zoom-factor {
+    font-size: 11px;
+    min-width: 32px;
+    text-align: center;
+    opacity: 0.85;
+}
+
+#p3x-location-bar {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    padding: 0 8px;
+    opacity: 0.85;
+    font-size: 11px;
+}
+
+#p3x-location-bar:hover {
+    opacity: 1;
+}
+
+/* ── Webview ───────────────────────────────────────────────────── */
 
 #p3x-onenote-webview {
     position: fixed;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     overflow: hidden;
     width: 100%;
     height: calc(100% - var(--p3x-onenote-bottom-bar-height));
 }
 
-.md-toast-content {
-    z-index: 110;
+/* ── Toast ──────────────────────────────────────────────────────── */
+
+#p3x-toast-container {
+    position: fixed;
+    bottom: 36px;
+    right: 16px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 8px;
+    pointer-events: none;
 }
 
-.p3x-onenote-toast-default .md-toast-content {
+.p3x-toast {
+    background: var(--p3x-onenote-purple-dark);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-family: var(--p3x-onenote-font);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    pointer-events: auto;
+    opacity: 0;
+    transform: translateY(16px);
+    animation: p3x-toast-in 0.25s forwards;
+    max-width: 400px;
+    word-break: break-word;
+}
+
+.p3x-toast.p3x-toast-out {
+    animation: p3x-toast-out 0.2s forwards;
+}
+
+@keyframes p3x-toast-in {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes p3x-toast-out {
+    to { opacity: 0; transform: translateY(16px); }
+}
+
+/* ── Dialog ─────────────────────────────────────────────────────── */
+
+#p3x-dialog {
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.24);
+    padding: 0;
+    min-width: 340px;
+    max-width: 520px;
+    font-family: var(--p3x-onenote-font);
+    color: #323130;
+}
+
+#p3x-dialog::backdrop {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.p3x-dialog-title {
+    font-size: 20px;
+    font-weight: 600;
+    padding: 24px 24px 4px;
+    margin: 0;
+    color: var(--p3x-onenote-purple);
+}
+
+.p3x-dialog-body {
+    padding: 12px 24px 16px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.p3x-dialog-body p {
+    margin: 0 0 12px;
+    color: #605e5c;
+}
+
+.p3x-dialog-input {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #8a8886;
+    border-radius: 4px;
+    outline: none;
+    padding: 8px 10px;
+    font-size: 14px;
+    font-family: var(--p3x-onenote-font);
+    background: #fff;
+    color: #323130;
+    transition: border-color 0.15s;
+}
+
+.p3x-dialog-input:focus {
+    border-color: var(--p3x-onenote-purple);
+    box-shadow: 0 0 0 1px var(--p3x-onenote-purple);
+}
+
+.p3x-dialog-field {
+    margin-bottom: 16px;
+}
+
+.p3x-dialog-field label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: #323130;
+    margin-bottom: 6px;
+}
+
+.p3x-dialog-field .p3x-field-error {
+    font-size: 12px;
+    color: #a4262c;
+    margin-top: 4px;
+    display: none;
+}
+
+.p3x-dialog-field.p3x-invalid .p3x-field-error {
+    display: block;
+}
+
+.p3x-dialog-field.p3x-invalid .p3x-dialog-input {
+    border-color: #a4262c;
+}
+
+.p3x-dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding: 12px 24px 16px;
+    gap: 8px;
+}
+
+.p3x-btn {
+    background: #fff;
+    border: 1px solid #8a8886;
+    cursor: pointer;
+    padding: 6px 20px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: var(--p3x-onenote-font);
+    color: #323130;
+    transition: background 0.1s, border-color 0.1s;
+}
+
+.p3x-btn:hover {
+    background: #f3f2f1;
+}
+
+.p3x-btn.p3x-btn-primary {
+    background: var(--p3x-onenote-purple);
+    border-color: var(--p3x-onenote-purple);
+    color: #fff;
+}
+
+.p3x-btn.p3x-btn-primary:hover {
+    background: var(--p3x-onenote-purple-light);
+    border-color: var(--p3x-onenote-purple-light);
+}
+
+.p3x-btn.p3x-btn-warn {
+    color: #a4262c;
+    border-color: #a4262c;
+}
+
+.p3x-btn.p3x-btn-warn:hover {
+    background: #fde7e9;
 }

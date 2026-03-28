@@ -1,7 +1,6 @@
-const {ipcRenderer} = require('electron');
+const { ipcRenderer } = window.electronShim;
 
-module.exports = async (data) => {
-
+export default async (data) => {
     let valueProxy = '';
     let cancelled = false;
     try {
@@ -18,15 +17,14 @@ module.exports = async (data) => {
             global.p3x.onenote.data.proxy = valueProxy;
 
             if (valueProxy === '') {
-                global.p3x.onenote.toast.setProxy.clear()
+                global.p3x.onenote.toast.setProxy.clear();
             } else {
-                global.p3x.onenote.toast.setProxy.set(valueProxy)
+                global.p3x.onenote.toast.setProxy.set(valueProxy);
             }
 
-            //console.log('set-proxy', global.p3x.onenote.data.proxy)
             ipcRenderer.send('p3x-onenote-save', global.p3x.onenote.data);
-            require('./load-proxy')()
+            const { default: loadProxy } = await import('./load-proxy.mjs');
+            loadProxy();
         }
     }
-
-}
+};
