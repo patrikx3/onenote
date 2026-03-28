@@ -2,23 +2,42 @@
 
 const toastContainer = document.getElementById('p3x-toast-container');
 
+let currentToast = null;
+
+function dismissCurrentToast() {
+    if (currentToast) {
+        const el = currentToast;
+        currentToast = null;
+        el.classList.add('p3x-toast-out');
+        el.addEventListener('animationend', () => el.remove(), { once: true });
+    }
+}
+
 function showToast(options) {
     if (typeof options === 'string') {
         options = { message: options };
     }
+
+    // Dismiss any existing toast
+    dismissCurrentToast();
+
     const el = document.createElement('div');
     el.className = 'p3x-toast';
     el.textContent = options.message;
+    currentToast = el;
 
-    const dismiss = () => {
-        el.classList.add('p3x-toast-out');
-        el.addEventListener('animationend', () => el.remove(), { once: true });
-    };
+    el.addEventListener('click', () => {
+        if (currentToast === el) dismissCurrentToast();
+    });
 
-    el.addEventListener('click', dismiss);
     toastContainer.appendChild(el);
 
-    setTimeout(dismiss, 5000);
+    if (!options.sticky) {
+        const duration = options.duration || 5000;
+        setTimeout(() => {
+            if (currentToast === el) dismissCurrentToast();
+        }, duration);
+    }
 }
 
 export const p3xToast = {

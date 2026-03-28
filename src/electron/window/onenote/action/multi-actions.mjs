@@ -59,6 +59,14 @@ const multiActions = (data) => {
             import('./multi-action/toast.mjs').then(m => m.default(data));
             break;
 
+        case 'reload-webview':
+            if (webview !== undefined) {
+                console.log('[P3X-OneNote] Reloading webview after resume');
+                global.p3x.onenote.toast.action({ message: global.p3x.onenote.lang.restart, sticky: true });
+                webview.reload();
+            }
+            break;
+
         case 'dark-theme-invert':
             document.body.classList.remove('p3x-dark-mode-invert-quirks');
             if (data.darkThemeInvert === true) {

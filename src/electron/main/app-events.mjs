@@ -1,4 +1,4 @@
-import { app, net } from 'electron';
+import { app, powerMonitor, net } from 'electron';
 
 let isInSuspended = false;
 
@@ -6,7 +6,7 @@ function waitForNetworkConnectivity(callback, retries = 60, interval = 1000) {
     let attempts = 0;
 
     function checkNetwork() {
-        const request = net.request('https://www.bing.com'); // Use any lightweight URL
+        const request = net.request('https://www.bing.com');
         request.on('response', () => {
             console.log('Network is available');
             callback();
@@ -33,37 +33,33 @@ app.on('ready', () => {
     // Create the main window
     global.p3x.onenote.createWindow.onenote();
 
-
-    /*
-    // Handle power events
+    // Handle power events — fix sync loss after standby (#204)
     powerMonitor.on('suspend', () => {
         if (isInSuspended) {
-            return
+            return;
         }
         isInSuspended = true;
-        console.log('System is suspending...');
-        // Close the window when the system goes to sleep
-        //if (global.p3x.onenote.window.onenote) {
-        //    global.p3x.onenote.window.onenote.loadURL('about:blank');
-        //    global.p3x.onenote.window.onenote.hide();
-        //}
+        console.log('[P3X-OneNote] System is suspending...');
     });
 
     powerMonitor.on('resume', () => {
         if (!isInSuspended) {
-            return
+            return;
         }
         isInSuspended = false;
-        console.log('System has resumed...');
+        console.log('[P3X-OneNote] System has resumed, waiting for network...');
 
-        global.p3x.onenote.window.onenote.loadURL(`about:blank`);
+        const win = global.p3x.onenote.window.onenote;
+        if (!win) return;
+
         waitForNetworkConnectivity(() => {
-            const url = path.join(app.getAppPath(), 'src/electron/window/onenote/index.html');
-            console.log('resume url', url)
-            global.p3x.onenote.window.onenote.loadURL(`file://${url}`);
+            console.log('[P3X-OneNote] Network restored, reloading webview...');
+            // Reload webview and show a toast so the user sees it happened
+            win.webContents.send('p3x-onenote-action', {
+                action: 'reload-webview',
+            });
         });
     });
-    */
 });
 
 app.on('window-all-closed', function () {
