@@ -1,8 +1,49 @@
-const pkg = require('../../package.json');
-const Store = require('electron-store').default;
-const conf = new Store();
+import { createRequire } from 'module'
+import { fileURLToPath } from 'url'
+import { dirname } from 'path'
+import path from 'path'
+import Store from 'electron-store'
+import { app } from 'electron'
+import semver from 'semver'
 
-const {app} = require('electron');
+import enUS from '../translation/en-US.js'
+import afZA from '../translation/af-ZA.js'
+import arSA from '../translation/ar-SA.js'
+import bnBD from '../translation/bn-BD.js'
+import caES from '../translation/ca-ES.js'
+import csCZ from '../translation/cs-CZ.js'
+import daDK from '../translation/da-DK.js'
+import deDE from '../translation/de-DE.js'
+import elGR from '../translation/el-GR.js'
+import esES from '../translation/es-ES.js'
+import fiFI from '../translation/fi-FI.js'
+import frFR from '../translation/fr-FR.js'
+import heIL from '../translation/he-IL.js'
+import huHU from '../translation/hu-HU.js'
+import itIT from '../translation/it-IT.js'
+import jaJP from '../translation/ja-JP.js'
+import koKR from '../translation/ko-KR.js'
+import nbNO from '../translation/nb-NO.js'
+import nlNL from '../translation/nl-NL.js'
+import plPL from '../translation/pl-PL.js'
+import ptBR from '../translation/pt-BR.js'
+import roRO from '../translation/ro-RO.js'
+import ruRU from '../translation/ru-RU.js'
+import srRS from '../translation/sr-RS.js'
+import svSE from '../translation/sv-SE.js'
+import trTR from '../translation/tr-TR.js'
+import ukUA from '../translation/uk-UA.js'
+import viVN from '../translation/vi-VN.js'
+import zhCN from '../translation/zh-CN.js'
+import zhTW from '../translation/zh-TW.js'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
+
+const require = createRequire(import.meta.url)
+const pkg = require('../../package.json')
+
+const conf = new Store();
 
 // On Snap, or when DISABLE_WAYLAND=1, force X11 per Electron 38+ breaking changes.
 // Only apply if user didn't already specify --ozone-platform.
@@ -37,39 +78,38 @@ if (darkThemeInvert === undefined) {
     darkThemeInvert = false
     conf.set('darkThemeInvert', darkThemeInvert)
 }
-const path = require('path')
 
 const langTranslations = {
-    'en-US': require('../translation/en-US'),
-    'af-ZA': require('../translation/af-ZA'),
-    'ar-SA': require('../translation/ar-SA'),
-    'bn-BD': require('../translation/bn-BD'),
-    'ca-ES': require('../translation/ca-ES'),
-    'cs-CZ': require('../translation/cs-CZ'),
-    'da-DK': require('../translation/da-DK'),
-    'de-DE': require('../translation/de-DE'),
-    'el-GR': require('../translation/el-GR'),
-    'es-ES': require('../translation/es-ES'),
-    'fi-FI': require('../translation/fi-FI'),
-    'fr-FR': require('../translation/fr-FR'),
-    'he-IL': require('../translation/he-IL'),
-    'hu-HU': require('../translation/hu-HU'),
-    'it-IT': require('../translation/it-IT'),
-    'ja-JP': require('../translation/ja-JP'),
-    'ko-KR': require('../translation/ko-KR'),
-    'nb-NO': require('../translation/nb-NO'),
-    'nl-NL': require('../translation/nl-NL'),
-    'pl-PL': require('../translation/pl-PL'),
-    'pt-BR': require('../translation/pt-BR'),
-    'ro-RO': require('../translation/ro-RO'),
-    'ru-RU': require('../translation/ru-RU'),
-    'sr-RS': require('../translation/sr-RS'),
-    'sv-SE': require('../translation/sv-SE'),
-    'tr-TR': require('../translation/tr-TR'),
-    'uk-UA': require('../translation/uk-UA'),
-    'vi-VN': require('../translation/vi-VN'),
-    'zh-CN': require('../translation/zh-CN'),
-    'zh-TW': require('../translation/zh-TW'),
+    'en-US': enUS,
+    'af-ZA': afZA,
+    'ar-SA': arSA,
+    'bn-BD': bnBD,
+    'ca-ES': caES,
+    'cs-CZ': csCZ,
+    'da-DK': daDK,
+    'de-DE': deDE,
+    'el-GR': elGR,
+    'es-ES': esES,
+    'fi-FI': fiFI,
+    'fr-FR': frFR,
+    'he-IL': heIL,
+    'hu-HU': huHU,
+    'it-IT': itIT,
+    'ja-JP': jaJP,
+    'ko-KR': koKR,
+    'nb-NO': nbNO,
+    'nl-NL': nlNL,
+    'pl-PL': plPL,
+    'pt-BR': ptBR,
+    'ro-RO': roRO,
+    'ru-RU': ruRU,
+    'sr-RS': srRS,
+    'sv-SE': svSE,
+    'tr-TR': trTR,
+    'uk-UA': ukUA,
+    'vi-VN': viVN,
+    'zh-CN': zhCN,
+    'zh-TW': zhTW,
 }
 
 const translation = langTranslations[translationKey]
@@ -137,16 +177,15 @@ if (global.p3x.onenote.allowMultiple === undefined) {
 }
 
 // loading
-global.p3x.onenote.action = require('./main/action');
-global.p3x.onenote.menus = require('./main/menus');
-global.p3x.onenote.mainMenu = require('./main/create/menu')
-global.p3x.onenote.mainTray = require('./main/create/tray')
-global.p3x.onenote.setVisible = require('./main/set-visible')
-global.p3x.onenote.createWindow.onenote = require('./main/create/window/onenote')
+global.p3x.onenote.action = (await import('./main/action.mjs')).default
+global.p3x.onenote.menus = (await import('./main/menus.mjs')).default
+global.p3x.onenote.mainMenu = (await import('./main/create/menu.mjs')).default
+global.p3x.onenote.mainTray = (await import('./main/create/tray.mjs')).default
+global.p3x.onenote.setVisible = (await import('./main/set-visible.mjs')).default
+global.p3x.onenote.createWindow.onenote = (await import('./main/create/window/onenote.mjs')).default
 
 
 if (global.p3x.onenote.allowMultiple === false) {
-    const semver = require('semver')
     if (semver.gt(process.versions.electron === undefined ? '4.0.0' : process.versions.electron, '3.0.0')) {
         const gotTheLock = app.requestSingleInstanceLock()
 
@@ -158,7 +197,7 @@ if (global.p3x.onenote.allowMultiple === false) {
 
         if (!gotTheLock) {
             app.quit()
-            return
+            process.exit(0)
         }
 
     } else {
@@ -168,12 +207,13 @@ if (global.p3x.onenote.allowMultiple === false) {
         })
 
         if (isSecondInstance) {
-            return app.quit()
+            app.quit()
+            process.exit(0)
         }
     }
 }
 
 
 // app and ipc main events and configuration
-require('./main/ipc-main')
-require('./main/app-events')
+await import('./main/ipc-main.mjs')
+await import('./main/app-events.mjs')

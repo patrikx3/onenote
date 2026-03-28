@@ -1,4 +1,4 @@
-module.exports = ({ byProperty }) => {
+export default ({ byProperty }) => {
     return (a, b) => {
         if (byProperty !== undefined) {
             a = a[byProperty]

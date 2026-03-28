@@ -1,7 +1,8 @@
-const {shell, app} = require('electron')
+import { shell, app } from 'electron'
+import setProxy from './actions/set-proxy.mjs'
 
 const action = {
-    setProxy: require('./actions/set-proxy'),
+    setProxy: setProxy,
 
     restart: () => {
         global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-action', {
@@ -50,4 +51,4 @@ const action = {
     },
 }
 
-module.exports = action;
+export default action;

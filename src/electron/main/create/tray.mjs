@@ -1,7 +1,7 @@
-const {app, Menu, Tray } = require('electron')
-
-const menus = require('../menus');
-const action = require('../action');
+import { app, Menu, Tray } from 'electron'
+import menus from '../menus.mjs'
+import action from '../action.mjs'
+import relaunch from '../actions/relaunch.mjs'
 
 /*
 const destroyTray  = () => {
@@ -42,10 +42,10 @@ function mainTray(opts) {
             global.p3x.onenote.tray.setContextMenu(contextMenu)
 
         } else if (global.p3x.onenote.tray !== undefined && opts.allowQuit === true) {
-            require('../actions/relaunch')()
+            relaunch()
         }
 //    })
 
 }
 
-module.exports = mainTray;
+export default mainTray;

@@ -22,10 +22,10 @@ const execAsync = async () => {
         if (zoom === undefined) {
             zoom = 1.0
         }
-    
+
         if (zoom !== 1.0) {
             global.p3x.onenote.webview.setZoomFactor(zoom);
-        }    
+        }
     })
 
     /*

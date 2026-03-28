@@ -1,9 +1,7 @@
-const { app, powerMonitor } = require('electron');
-const path = require('path')
+import { app, net } from 'electron';
 
 let isInSuspended = false;
 
-const { net } = require('electron');
 function waitForNetworkConnectivity(callback, retries = 60, interval = 1000) {
     let attempts = 0;
 
@@ -35,7 +33,7 @@ app.on('ready', () => {
     // Create the main window
     global.p3x.onenote.createWindow.onenote();
 
-    
+
     /*
     // Handle power events
     powerMonitor.on('suspend', () => {

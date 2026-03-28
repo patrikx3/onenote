@@ -1,4 +1,4 @@
-const action = require('./action')
+import action from './action.mjs'
 
 const menus = {
     default: () => {
@@ -41,4 +41,4 @@ const menus = {
     }
 }
 
-module.exports = menus;
+export default menus;

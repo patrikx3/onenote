@@ -1,4 +1,5 @@
-const {ipcMain} = require('electron')
+import { ipcMain } from 'electron'
+import naturalCompareDocument from '../lib/natural-compare-document.mjs'
 
 ipcMain.on('did-finish-load', function () {
     const toWebview = global.p3x.onenote.conf.get('webview-onenote');
@@ -14,7 +15,6 @@ ipcMain.on('p3x-onenote-action-bookmark-result', function (event, data) {
     //console.log('p3x-onenote-action-bookmark-result', data)
     const bookmarksOriginal = global.p3x.onenote.conf.get('bookmarks') || []
 
-    const naturalCompareDocument = require('../lib/natural-compare-document')
     const sort = naturalCompareDocument({
         byProperty: 'title'
     })

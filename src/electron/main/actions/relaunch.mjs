@@ -1,5 +1,7 @@
-module.exports = () => {
-    let { args, app } = require('electron')
+import { app } from 'electron'
+
+export default () => {
+    let args = process.argv.slice(1)
     console.log('args', args, 'process.env.APPIMAGE', process.env.APPIMAGE)
 
     console.trace()
@@ -21,6 +23,4 @@ module.exports = () => {
         app.exit(0);
     }
     */
-
-
 }

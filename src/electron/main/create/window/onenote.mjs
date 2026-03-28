@@ -1,6 +1,9 @@
-const {BrowserWindow, app} = require('electron');
+import { BrowserWindow, app } from 'electron'
+import remoteMain from '@electron/remote/main/index.js'
+import path from 'path'
+import electronUpdater from 'electron-updater'
+const { autoUpdater } = electronUpdater
 
-const remoteMain = require("@electron/remote/main")
 remoteMain.initialize()
 
 function createWindow() {
@@ -22,9 +25,8 @@ function createWindow() {
             enableRemoteModule: true,
         }
     });
-    const path = require('path')
     const loadUrl = path.join(app.getAppPath(), 'src/electron/window/onenote/index.html');
-    console.log('loadUrl', loadUrl) 
+    console.log('loadUrl', loadUrl)
     global.p3x.onenote.window.onenote.loadURL(`file://${loadUrl}`);
 
     global.p3x.onenote.window.onenote.webContents.on("did-attach-webview", (_, contents) => {
@@ -50,7 +52,7 @@ function createWindow() {
 
     remoteMain.enable(global.p3x.onenote.window.onenote.webContents)
 
-      
+
     if (process.env.NODE_ENV === 'debug') {
         global.p3x.onenote.window.onenote.openDevTools()
     }
@@ -103,7 +105,7 @@ function createWindow() {
         })
     });
 
-    
+
     if (!process.argv.includes('--minimized')) {
         const windowBounds = global.p3x.onenote.conf.get('window-bounds');
         const maximized = global.p3x.onenote.conf.get('maximized');
@@ -114,7 +116,7 @@ function createWindow() {
         else if (windowBounds !== null && windowBounds !== undefined) {
             global.p3x.onenote.window.onenote.setBounds(windowBounds);
         }
-    
+
     }
 
 
@@ -140,8 +142,6 @@ function createWindow() {
         */
     })
 
-
-    const {autoUpdater} = require("electron-updater");
 
     autoUpdater.on('checking-for-update', (info) => {
         console.log('checking-for-update', info)
@@ -183,7 +183,7 @@ function createWindow() {
                 message: global.p3x.onenote.lang.updater["error"]({
                     errorMessage: error.message.split('\n')[0]
                 })
-            })    
+            })
         }*/
     })
 
@@ -215,4 +215,4 @@ function createWindow() {
 
 }
 
-module.exports = createWindow;
+export default createWindow;

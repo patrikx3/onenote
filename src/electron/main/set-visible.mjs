@@ -38,4 +38,4 @@ function setVisible(visible = true, force = false) {
     }
 }
 
-module.exports = setVisible;
+export default setVisible;

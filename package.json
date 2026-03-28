@@ -1,8 +1,8 @@
 {
     "name": "p3x-onenote",
-    "version": "2026.4.104",
+    "version": "2026.4.105",
     "description": "📚 P3X OneNote Linux",
-    "main": "src/electron/app.js",
+    "main": "src/electron/app.mjs",
     "corifeus": {
         "description-snap": "P3X OneNote Linux",
         "description-npm": "📚 P3X OneNote Linux",
@@ -11,7 +11,7 @@
         "publish": true,
         "type": "p3x",
         "code": "Linux",
-        "nodejs": "v24.14.0",
+        "nodejs": "v24.14.1",
         "reponame": "onenote",
         "build": true,
         "opencollective": false,
@@ -27,7 +27,7 @@
         "build": "electron-builder --x64  build/dist",
         "build-test": "electron-builder build/dist -p always",
         "postinstall-save": "opencollective postinstall",
-        "start": "node ./node_modules/.bin/electron ./src/electron/app.js",
+        "start": "node ./node_modules/.bin/electron ./src/electron/app.mjs",
         "publish-electron-test-flatpak-info": "flatpak install flathub org.freedesktop.Platform//20.08 && flatpak install flathub org.freedesktop.Sdk//20.08 && flatpak install flathub org.electronjs.Electron2.BaseApp//20.08",
         "publish-electron-test-flatpak-info-aarch64": "flatpak install flathub org.freedesktop.Platform/aarch64/20.08 && flatpak install flathub org.freedesktop.Sdk/aarch64/20.08 && flatpak install flathub org.electronjs.Electron2.BaseApp/aarch64/20.08",
         "publish-electron-test-flatpak-info-arm": "flatpak install flathub org.freedesktop.Platform/arm/18.08 && flatpak install flathub org.freedesktop.Sdk/arm/18.08 && flatpak install flathub org.electronjs.Electron2.BaseApp/arm/18.08",
@@ -69,7 +69,7 @@
         "electron-store": "11.0.2",
         "electron-updater": "6.8.3",
         "semver": "7.7.4",
-        "electron": "^41.0.4"
+        "electron": "^41.1.0"
     },
     "devDependencies": {
         "corifeus-builder": "2025.4.135",

@@ -5,9 +5,9 @@ const remote = require('@electron/remote');
 
 const handler = (options) => {
     const {webview} = options;
-    
+
     require('../angular')
-    
+
     /*
      webview.addEventListener('did-stop-loading', function(event) {
  //		webview.insertCSS(window.cssData);
@@ -21,7 +21,7 @@ const handler = (options) => {
     /*
     let windowInterval
     const generateInterval = () => {
-        windowInterval = setInterval(() => {       
+        windowInterval = setInterval(() => {
             if (global.p3x.onenote.root && global.p3x.onenote.root.p3x.onenote.location !== webview.src) {
                 console.log('changed the url via interval', webview.src)
                 p3x.onenote.wait.angular(() => {
@@ -74,22 +74,21 @@ const handler = (options) => {
             });
             */
             console.log(`changed the url via ${eventName}`, webview.src)
-        
+
             //global.p3x.onenote.data.url = webview.src;
             global.p3x.onenote.data.url = webview.getURL()
             ipc.send('p3x-onenote-save', global.p3x.onenote.data);
-    
+
             p3x.onenote.wait.angular(() => {
                 global.p3x.onenote.root.p3x.onenote.location = webview.src
                 global.p3x.onenote.root.$digest()
             })
-    
+
         });
-    
-    
+
+
     }
 
-    
 
 
 
@@ -172,12 +171,12 @@ const handler = (options) => {
     /*
     for(let event of [
         'did-finish-load',
-        'did-frame-finish-load', 
-        'did-start-loading', 
-        'page-title-updated', 
-        'will-navigate', 
-        'did-start-navigation', 
-        'did-redirect-navigation', 
+        'did-frame-finish-load',
+        'did-start-loading',
+        'page-title-updated',
+        'will-navigate',
+        'did-start-navigation',
+        'did-redirect-navigation',
         'did-navigate',
         'did-frame-navigate',
         'did-navigate-in-page',

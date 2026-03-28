@@ -1,8 +1,9 @@
-const {dialog, Menu, shell} = require('electron')
-const menus = require('../menus');
-const action = require('../action');
-
-const mainTray = require('./tray')
+import { dialog, Menu, shell } from 'electron'
+import menus from '../menus.mjs'
+import action from '../action.mjs'
+import mainTray from './tray.mjs'
+import naturalCompareDocument from '../../lib/natural-compare-document.mjs'
+import relaunch from '../actions/relaunch.mjs'
 
 function mainMenu() {
 
@@ -76,7 +77,6 @@ function mainMenu() {
         })
     }
 
-    const naturalCompareDocument = require('../../lib/natural-compare-document')
     let bookmarksSort = bookmarks.sort(naturalCompareDocument({
         byProperty: 'title'
     }))
@@ -151,7 +151,7 @@ ${global.p3x.onenote.lang.slow}
                                     message: message,
                                     buttons: [global.p3x.onenote.lang.button.ok]
                                 }).then(() => {
-                                    require('../actions/relaunch')()
+                                    relaunch()
                                 }).catch(e => console.error(e))
 
                             }
@@ -371,8 +371,9 @@ ${global.p3x.onenote.lang.slow}
         template[7].submenu.push({type: 'separator'})
         template[7].submenu.push({
                 label: global.p3x.onenote.lang.menu.help.checkUpdates,
-                click: () => {
-                    const {autoUpdater} = require("electron-updater");
+                click: async () => {
+                    const electronUpdater = await import("electron-updater");
+                    const { autoUpdater } = electronUpdater.default ?? electronUpdater;
                     autoUpdater.checkForUpdatesAndNotify();
                 }
             },
@@ -384,4 +385,4 @@ ${global.p3x.onenote.lang.slow}
     Menu.setApplicationMenu(menu)
 }
 
-module.exports = mainMenu;
+export default mainMenu;
