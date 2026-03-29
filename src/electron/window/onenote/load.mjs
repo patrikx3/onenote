@@ -1,4 +1,4 @@
-const { ipcRenderer, shell, remote, Store, pkg, translations } = window.electronShim;
+const { ipcRenderer, shell, Store, pkg, translations } = window.electronShim;
 
 const conf = new Store();
 let translationKey = conf.get('lang');
@@ -62,77 +62,6 @@ global.p3x = {
 
 document.title = `${global.p3x.onenote.lang.title} v${global.p3x.onenote.pkg.version}`;
 
-// ── Iframe proxy (webview-compatible API) ───────────────────────
-
-function getIframeFrame() {
-    try {
-        const wc = remote.getCurrentWebContents();
-        return wc.mainFrame.frames[0] || null;
-    } catch (e) {
-        return null;
-    }
-}
-
-class WebviewProxy {
-    constructor(iframe) {
-        this.iframe = iframe;
-        this._zoomFactor = 1.0;
-        this._navCount = 0;
-        this._wentBack = false;
-    }
-
-    get src() { return this.iframe.src; }
-    set src(url) { this._wentBack = false; this.iframe.src = url; }
-
-    focus() { this.iframe.focus(); }
-    blur() { this.iframe.blur(); }
-
-    reload() {
-        const frame = getIframeFrame();
-        if (frame) frame.reload();
-    }
-
-    goBack() {
-        const frame = getIframeFrame();
-        if (frame) {
-            this._wentBack = true;
-            frame.executeJavaScript('history.back()');
-        }
-    }
-
-    goForward() {
-        const frame = getIframeFrame();
-        if (frame) frame.executeJavaScript('history.forward()');
-    }
-
-    canGoBack() { return this._navCount > 0; }
-    canGoForward() { return this._wentBack; }
-
-    getURL() {
-        const frame = getIframeFrame();
-        return frame ? frame.url : this.iframe.src;
-    }
-
-    setZoomFactor(f) {
-        this._zoomFactor = f;
-        const frame = getIframeFrame();
-        if (frame) {
-            try {
-                frame.executeJavaScript(`document.documentElement.style.zoom = '${f}'`);
-            } catch (e) {}
-        }
-    }
-
-    getZoomFactor() { return this._zoomFactor; }
-
-    onNavigate() {
-        this._navCount++;
-        this._wentBack = false;
-    }
-}
-
-global.p3x.onenote.getIframeFrame = getIframeFrame;
-
 // ── Bar helpers ──────────────────────────────────────────────────
 
 function updateBarLabels() {
@@ -174,10 +103,9 @@ window.addEventListener('load', async () => {
         document.body.classList.add('p3x-dark-mode-invert-quirks');
     }
 
-    const iframe = document.getElementById('p3x-onenote-webview');
-    const webview = new WebviewProxy(iframe);
+    const webview = document.getElementById('p3x-onenote-webview');
     global.p3x.onenote.webview = webview;
-    iframe.focus();
+    webview.focus();
 
     // Import UI (toast + dialog)
     const { p3xToast, p3xPrompt } = await import('./ui.mjs');

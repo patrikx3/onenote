@@ -17,52 +17,38 @@ function createWindow() {
             nativeWindowOpen: true,
             worldSafeExecuteJavaScript: true,
             nodeIntegration: true,
-            nodeIntegrationInSubFrames: false,
+            nodeIntegrationInSubFrames: true,
             contextIsolation: false,
+            webviewTag: true,
             enableRemoteModule: true,
         }
     });
 
     global.p3x.onenote.window.onenote = win;
 
-    // Strip X-Frame-Options and CSP frame-ancestors so OneNote loads in iframe
-    win.webContents.session.webRequest.onHeadersReceived((details, callback) => {
-        const headers = { ...details.responseHeaders };
-        delete headers['X-Frame-Options'];
-        delete headers['x-frame-options'];
-        for (const key of Object.keys(headers)) {
-            if (key.toLowerCase() === 'content-security-policy') {
-                headers[key] = headers[key].map(
-                    csp => csp.replace(/frame-ancestors\s+[^;]*(;|$)/gi, '$1')
-                );
+    win.webContents.on("did-attach-webview", (_, contents) => {
+        contents.setWindowOpenHandler((details) => {
+            win.webContents.send('p3x-onenote-new-window', details);
+            return { action: 'deny' }
+        })
+
+        // Override Accept-Language header on all requests to Microsoft domains
+        contents.session.webRequest.onBeforeSendHeaders(
+            { urls: ['*://*.onenote.com/*', '*://*.live.com/*', '*://*.microsoft.com/*', '*://*.office.com/*', '*://*.sharepoint.com/*', '*://*.office365.com/*', '*://*.microsoftonline.com/*', '*://onenote.cloud.microsoft/*', '*://*.cloud.microsoft/*'] },
+            (details, callback) => {
+                const langCode = global.p3x.onenote.translationKey;
+                const shortLang = langCode.split('-')[0];
+                details.requestHeaders['Accept-Language'] = `${langCode},${shortLang};q=0.9,en-US;q=0.8,en;q=0.7`;
+                callback({ requestHeaders: details.requestHeaders });
             }
-        }
-        callback({ responseHeaders: headers });
-    });
-
-    // Override Accept-Language header on all requests to Microsoft domains
-    win.webContents.session.webRequest.onBeforeSendHeaders(
-        { urls: ['*://*.onenote.com/*', '*://*.live.com/*', '*://*.microsoft.com/*', '*://*.office.com/*', '*://*.sharepoint.com/*', '*://*.office365.com/*', '*://*.microsoftonline.com/*', '*://onenote.cloud.microsoft/*', '*://*.cloud.microsoft/*'] },
-        (details, callback) => {
-            const langCode = global.p3x.onenote.translationKey;
-            const shortLang = langCode.split('-')[0];
-            details.requestHeaders['Accept-Language'] = `${langCode},${shortLang};q=0.9,en-US;q=0.8,en;q=0.7`;
-            callback({ requestHeaders: details.requestHeaders });
-        }
-    );
-
-    // Handle popups from iframe content
-    win.webContents.setWindowOpenHandler((details) => {
-        win.webContents.send('p3x-onenote-new-window', details);
-        return { action: 'deny' };
-    });
+        );
+    })
 
     const loadUrl = path.join(app.getAppPath(), 'src/electron/window/onenote/index.html');
     console.log('loadUrl', loadUrl)
     win.loadURL(`file://${loadUrl}`);
 
     remoteMain.enable(win.webContents)
-
 
     if (process.env.NODE_ENV === 'debug') {
         win.openDevTools()
@@ -91,7 +77,6 @@ function createWindow() {
         })
     })
 
-
     win.on('focus', function () {
         win.webContents.send('p3x-onenote-window-state', {
             action: 'focus'
@@ -99,7 +84,6 @@ function createWindow() {
         global.p3x.onenote.mainMenu();
         global.p3x.onenote.mainTray()
     });
-
 
     win.on('blur', function () {
         win.webContents.send('p3x-onenote-window-state', {
@@ -109,13 +93,11 @@ function createWindow() {
         global.p3x.onenote.mainTray()
     });
 
-
     win.on('hide', function () {
         win.webContents.send('p3x-onenote-window-state', {
             action: 'blur'
         })
     });
-
 
     if (!process.argv.includes('--minimized')) {
         const windowBounds = global.p3x.onenote.conf.get('window-bounds');
@@ -127,9 +109,7 @@ function createWindow() {
         else if (windowBounds !== null && windowBounds !== undefined) {
             win.setBounds(windowBounds);
         }
-
     }
-
 
     win.on('close', () => {
         if (global.p3x.onenote.conf.get('maximized') !== true) {
@@ -141,11 +121,9 @@ function createWindow() {
         global.p3x.onenote.conf.set('maximized', true)
     })
 
-
     win.on('unmaximize', () => {
         global.p3x.onenote.conf.set('maximized', false)
     })
-
 
     autoUpdater.on('checking-for-update', (info) => {
         console.log('checking-for-update', info)

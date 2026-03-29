@@ -16,9 +16,9 @@ const p3xDarkInvertJs = `
 
 function p3xInjectDarkInvertAllFrames(enabled) {
     try {
-        const iframeFrame = global.p3x.onenote.getIframeFrame();
-        if (!iframeFrame) return;
-        const frames = iframeFrame.framesInSubtree;
+        const webview = global.p3x.onenote.webview;
+        const wc = remote.webContents.fromId(webview.getWebContentsId());
+        const frames = wc.mainFrame.framesInSubtree;
         for (const frame of frames) {
             try {
                 frame.executeJavaScript(`(${p3xDarkInvertJs})(${enabled})`);
