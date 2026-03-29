@@ -7,6 +7,23 @@
 
 ## Change log
 
+### v2026.4.110
+Released on 03/29/2026
+* FEATURE: Added 18 new languages and improved language detection.
+* BUGFIX: Reload webview after suspend/resume to restore sync (#204).
+* REFACTOR: Replaced webview with iframe for OneNote rendering.
+* REFACTOR: Replaced AngularJS with vanilla JS and converted renderer to ESM.
+* REFACTOR: Migrated Electron main process files from CJS to ESM.
+* DOCS: Reorganized and improved README structure and readability.
+* CHORE: Updated GitHub Actions to use latest versions of checkout, setup-node, and action-gh-release.
+
+### v2026.4.109
+Released on 03/29/2026
+* REFACTOR: Replaced deprecated `<webview>` with `<iframe>` and WebviewProxy for Electron best practices.
+* FEATURE: Publish script now auto-generates changelog via Claude AI and promotes GitHub draft releases to published.
+* CHORE: Strip X-Frame-Options and CSP frame-ancestors in main process for iframe compatibility.
+* CHORE: Removed `webviewTag` and `nodeIntegrationInSubFrames` from webPreferences.
+
 ### v2026.4.107
 Released on 03/29/2026
 * BUGFIX: Fix sync loss after suspend/resume by reloading the webview once network is restored (https://github.com/patrikx3/onenote/issues/204).
@@ -88,7 +105,7 @@ All my domains, including [patrikx3.com](https://patrikx3.com), [corifeus.eu](ht
 ---
 
 
-[**P3X-ONENOTE**](https://corifeus.com/onenote) Build v2026.4.107
+[**P3X-ONENOTE**](https://corifeus.com/onenote) Build v2026.4.110
 
  [![NPM](https://img.shields.io/npm/v/p3x-onenote.svg)](https://www.npmjs.com/package/p3x-onenote)  [![Donate for PatrikX3 / P3X](https://img.shields.io/badge/Donate-PatrikX3-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software)
 

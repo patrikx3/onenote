@@ -14,10 +14,11 @@ const p3xDarkInvertJs = `
     }
 })`;
 
-function p3xInjectDarkInvertAllFrames(webview, enabled) {
+function p3xInjectDarkInvertAllFrames(enabled) {
     try {
-        const wc = remote.webContents.fromId(webview.getWebContentsId());
-        const frames = wc.mainFrame.framesInSubtree;
+        const iframeFrame = global.p3x.onenote.getIframeFrame();
+        if (!iframeFrame) return;
+        const frames = iframeFrame.framesInSubtree;
         for (const frame of frames) {
             try {
                 frame.executeJavaScript(`(${p3xDarkInvertJs})(${enabled})`);
@@ -37,8 +38,8 @@ const multiActions = (data) => {
             break;
 
         case 'restart':
-            const session = remote.webContents.fromId(webview.getWebContentsId()).session;
-            session.clearStorageData().then(() => {
+            const wc = remote.getCurrentWebContents();
+            wc.session.clearStorageData().then(() => {
                 webview.reload();
             });
             break;
@@ -73,7 +74,7 @@ const multiActions = (data) => {
                 document.body.classList.add('p3x-dark-mode-invert-quirks');
             }
             if (webview !== undefined) {
-                p3xInjectDarkInvertAllFrames(webview, data.darkThemeInvert === true);
+                p3xInjectDarkInvertAllFrames(data.darkThemeInvert === true);
             }
             break;
     }

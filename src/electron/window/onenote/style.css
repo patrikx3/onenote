@@ -125,6 +125,7 @@ body {
     overflow: hidden;
     width: 100%;
     height: calc(100% - var(--p3x-onenote-bottom-bar-height));
+    border: none;
 }
 
 /* ── Toast ──────────────────────────────────────────────────────── */
