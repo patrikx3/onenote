@@ -7,18 +7,16 @@
 
 ## Change log
 
+Now here's the changelog entry for v2026.4.112, covering changes since v2026.4.110:
+
+### v2026.4.112
+Released on 03/29/2026
+* BUGFIX: Restored electron to dependencies after failed publish.
+* BUGFIX: Improved GitHub draft release promotion with fallback search.
+* CHORE: Removed armv7l (32-bit ARM) build targets.
+
 The changelog for v2026.4.110 already exists and looks good. The only commit not reflected is `c0c8250 chore: remove electron from devDependencies`. Here's the updated entry with that addition:
 
-### v2026.4.110
-Released on 03/29/2026
-* FEATURE: Added 18 new languages and improved language detection.
-* BUGFIX: Reload webview after suspend/resume to restore sync (#204).
-* REFACTOR: Replaced webview with iframe for OneNote rendering.
-* REFACTOR: Replaced AngularJS with vanilla JS and converted renderer to ESM.
-* REFACTOR: Migrated Electron main process files from CJS to ESM.
-* CHORE: Removed electron from devDependencies.
-* DOCS: Reorganized and improved README structure and readability.
-* CHORE: Updated GitHub Actions to use latest versions of checkout, setup-node, and action-gh-release.
 
 ### v2026.4.110
 Released on 03/29/2026
@@ -118,7 +116,7 @@ All my domains, including [patrikx3.com](https://patrikx3.com), [corifeus.eu](ht
 ---
 
 
-[**P3X-ONENOTE**](https://corifeus.com/onenote) Build v2026.4.110
+[**P3X-ONENOTE**](https://corifeus.com/onenote) Build v2026.4.112
 
  [![NPM](https://img.shields.io/npm/v/p3x-onenote.svg)](https://www.npmjs.com/package/p3x-onenote)  [![Donate for PatrikX3 / P3X](https://img.shields.io/badge/Donate-PatrikX3-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software)
 
