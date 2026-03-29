@@ -7,16 +7,12 @@
 
 ## Change log
 
-Now here's the changelog entry for v2026.4.112, covering changes since v2026.4.110:
-
 ### v2026.4.112
 Released on 03/29/2026
 * BUGFIX: Restored electron to dependencies after failed publish.
 * BUGFIX: Improved GitHub draft release promotion with fallback search.
 * CHORE: Removed armv7l (32-bit ARM) build targets.
-
-The changelog for v2026.4.110 already exists and looks good. The only commit not reflected is `c0c8250 chore: remove electron from devDependencies`. Here's the updated entry with that addition:
-
+* CHORE: Removed electron from devDependencies cleanup.
 
 ### v2026.4.110
 Released on 03/29/2026
