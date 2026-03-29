@@ -7,6 +7,19 @@
 
 ## Change log
 
+The changelog for v2026.4.110 already exists and looks good. The only commit not reflected is `c0c8250 chore: remove electron from devDependencies`. Here's the updated entry with that addition:
+
+### v2026.4.110
+Released on 03/29/2026
+* FEATURE: Added 18 new languages and improved language detection.
+* BUGFIX: Reload webview after suspend/resume to restore sync (#204).
+* REFACTOR: Replaced webview with iframe for OneNote rendering.
+* REFACTOR: Replaced AngularJS with vanilla JS and converted renderer to ESM.
+* REFACTOR: Migrated Electron main process files from CJS to ESM.
+* CHORE: Removed electron from devDependencies.
+* DOCS: Reorganized and improved README structure and readability.
+* CHORE: Updated GitHub Actions to use latest versions of checkout, setup-node, and action-gh-release.
+
 ### v2026.4.110
 Released on 03/29/2026
 * FEATURE: Added 18 new languages and improved language detection.
