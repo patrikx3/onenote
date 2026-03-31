@@ -9,15 +9,18 @@
 
 ### v2026.4.115
 Released on 03/31/2026
-* CHORE: Release v2026.4.115.
+* BUGFIX: Dark mode invert now only applies to the webview, keeping the bottom bar in original colors.
 
 ### v2026.4.114
 Released on 03/29/2026
-* CHORE: Release v2026.4.114.
+* BUGFIX: Reverted iframe back to webview to fix blank page after OAuth login.
+* CHORE: Added WebContentsView migration plan to AGENTS.md.
 
 ### v2026.4.113
 Released on 03/29/2026
-* CHORE: Release v2026.4.113.
+* REFACTOR: Reverted from iframe to webview tag for OneNote embedding due to Microsoft MSAL OAuth incompatibility.
+* FEATURE: GitHub releases now include changelog content, version title, changelog link, and Snapcraft badge.
+* FEATURE: Publish script auto-populates GitHub release body from change-log.md.
 
 ### v2026.4.112
 Released on 03/29/2026
