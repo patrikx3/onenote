@@ -172,12 +172,12 @@ const translation = {
         }
     },
     tabs: {
-        addTab: 'Add tab',
-        personal: 'Personal',
-        corporate: 'Corporate',
-        closeTab: 'Close tab',
-        cannotCloseLastTab: 'Cannot close the last tab.',
-        confirmClose: (tabLabel) => `Are you sure you want to close \"${tabLabel}\"? You will be signed out of this account.`,
+        addTab: 'Tilføj fane',
+        personal: 'Personlig',
+        corporate: 'Virksomhed',
+        closeTab: 'Luk fane',
+        cannotCloseLastTab: 'Kan ikke lukke den sidste fane.',
+        confirmClose: (tabLabel) => `Er du sikker på, at du vil lukke "${tabLabel}"? Du vil blive logget ud af denne konto.`,
     },
     validation: {
         required: 'Påkrævet',

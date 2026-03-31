@@ -172,12 +172,12 @@ const translation = {
         }
     },
     tabs: {
-        addTab: 'Add tab',
+        addTab: 'Afegeix pestanya',
         personal: 'Personal',
-        corporate: 'Corporate',
-        closeTab: 'Close tab',
-        cannotCloseLastTab: 'Cannot close the last tab.',
-        confirmClose: (tabLabel) => `Are you sure you want to close \"${tabLabel}\"? You will be signed out of this account.`,
+        corporate: 'Corporatiu',
+        closeTab: 'Tanca la pestanya',
+        cannotCloseLastTab: 'No es pot tancar l\'última pestanya.',
+        confirmClose: (tabLabel) => `Esteu segur que voleu tancar "${tabLabel}"? Es tancarà la sessió d'aquest compte.`,
     },
     validation: {
         required: 'Obligatori',

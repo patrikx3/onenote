@@ -178,12 +178,12 @@ const translation = {
         }
     },
     tabs: {
-        addTab: 'Add tab',
-        personal: 'Personal',
-        corporate: 'Corporate',
-        closeTab: 'Close tab',
-        cannotCloseLastTab: 'Cannot close the last tab.',
-        confirmClose: (tabLabel) => `Are you sure you want to close \"${tabLabel}\"? You will be signed out of this account.`,
+        addTab: '添加标签页',
+        personal: '个人',
+        corporate: '公司',
+        closeTab: '关闭标签页',
+        cannotCloseLastTab: '无法关闭最后一个标签页。',
+        confirmClose: (tabLabel) => `确定要关闭"${tabLabel}"吗？您将从此账户退出登录。`,
     },
     validation: {
         required: 'Required',

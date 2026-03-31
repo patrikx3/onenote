@@ -172,12 +172,12 @@ const translation = {
         }
     },
     tabs: {
-        addTab: 'Add tab',
-        personal: 'Personal',
-        corporate: 'Corporate',
-        closeTab: 'Close tab',
-        cannotCloseLastTab: 'Cannot close the last tab.',
-        confirmClose: (tabLabel) => `Are you sure you want to close \"${tabLabel}\"? You will be signed out of this account.`,
+        addTab: 'Thêm thẻ',
+        personal: 'Cá nhân',
+        corporate: 'Doanh nghiệp',
+        closeTab: 'Đóng thẻ',
+        cannotCloseLastTab: 'Không thể đóng thẻ cuối cùng.',
+        confirmClose: (tabLabel) => `Bạn có chắc chắn muốn đóng "${tabLabel}" không? Bạn sẽ bị đăng xuất khỏi tài khoản này.`,
     },
     validation: {
         required: 'Bắt buộc',

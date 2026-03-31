@@ -172,12 +172,12 @@ const translation = {
         }
     },
     tabs: {
-        addTab: 'Add tab',
-        personal: 'Personal',
-        corporate: 'Corporate',
-        closeTab: 'Close tab',
-        cannotCloseLastTab: 'Cannot close the last tab.',
-        confirmClose: (tabLabel) => `Are you sure you want to close \"${tabLabel}\"? You will be signed out of this account.`,
+        addTab: 'Lap hozzáadása',
+        personal: 'Személyes',
+        corporate: 'Vállalati',
+        closeTab: 'Lap bezárása',
+        cannotCloseLastTab: 'Az utolsó lapot nem lehet bezárni.',
+        confirmClose: (tabLabel) => `Biztosan bezárja a(z) "${tabLabel}" lapot? Ki lesz jelentkezve ebből a fiókból.`,
     },
     validation: {
         required: 'Kötelező',

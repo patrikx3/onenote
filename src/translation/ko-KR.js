@@ -172,12 +172,12 @@ const translation = {
         }
     },
     tabs: {
-        addTab: 'Add tab',
-        personal: 'Personal',
-        corporate: 'Corporate',
-        closeTab: 'Close tab',
-        cannotCloseLastTab: 'Cannot close the last tab.',
-        confirmClose: (tabLabel) => `Are you sure you want to close \"${tabLabel}\"? You will be signed out of this account.`,
+        addTab: '탭 추가',
+        personal: '개인',
+        corporate: '회사',
+        closeTab: '탭 닫기',
+        cannotCloseLastTab: '마지막 탭은 닫을 수 없습니다.',
+        confirmClose: (tabLabel) => `"${tabLabel}"을(를) 닫으시겠습니까? 이 계정에서 로그아웃됩니다.`,
     },
     validation: {
         required: '필수',

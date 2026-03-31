@@ -172,12 +172,12 @@ const translation = {
         }
     },
     tabs: {
-        addTab: 'Add tab',
-        personal: 'Personal',
-        corporate: 'Corporate',
-        closeTab: 'Close tab',
-        cannotCloseLastTab: 'Cannot close the last tab.',
-        confirmClose: (tabLabel) => `Are you sure you want to close \"${tabLabel}\"? You will be signed out of this account.`,
+        addTab: 'Προσθήκη καρτέλας',
+        personal: 'Προσωπικό',
+        corporate: 'Εταιρικό',
+        closeTab: 'Κλείσιμο καρτέλας',
+        cannotCloseLastTab: 'Δεν είναι δυνατό το κλείσιμο της τελευταίας καρτέλας.',
+        confirmClose: (tabLabel) => `Είστε σίγουροι ότι θέλετε να κλείσετε το "${tabLabel}"; Θα αποσυνδεθείτε από αυτόν τον λογαριασμό.`,
     },
     validation: {
         required: 'Απαιτείται',

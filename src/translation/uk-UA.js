@@ -172,12 +172,12 @@ const translation = {
         }
     },
     tabs: {
-        addTab: 'Add tab',
-        personal: 'Personal',
-        corporate: 'Corporate',
-        closeTab: 'Close tab',
-        cannotCloseLastTab: 'Cannot close the last tab.',
-        confirmClose: (tabLabel) => `Are you sure you want to close \"${tabLabel}\"? You will be signed out of this account.`,
+        addTab: 'Додати вкладку',
+        personal: 'Особистий',
+        corporate: 'Корпоративний',
+        closeTab: 'Закрити вкладку',
+        cannotCloseLastTab: 'Неможливо закрити останню вкладку.',
+        confirmClose: (tabLabel) => `Ви впевнені, що хочете закрити «${tabLabel}»? Вас буде виходжено з цього облікового запису.`,
     },
     validation: {
         required: 'Обов\'язково',

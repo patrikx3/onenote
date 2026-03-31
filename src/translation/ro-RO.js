@@ -172,12 +172,12 @@ const translation = {
         }
     },
     tabs: {
-        addTab: 'Add tab',
+        addTab: 'Adaugă filă',
         personal: 'Personal',
-        corporate: 'Corporate',
-        closeTab: 'Close tab',
-        cannotCloseLastTab: 'Cannot close the last tab.',
-        confirmClose: (tabLabel) => `Are you sure you want to close \"${tabLabel}\"? You will be signed out of this account.`,
+        corporate: 'Corporativ',
+        closeTab: 'Închide fila',
+        cannotCloseLastTab: 'Nu se poate închide ultima filă.',
+        confirmClose: (tabLabel) => `Sunteți sigur că doriți să închideți „${tabLabel}"? Veți fi deconectat din acest cont.`,
     },
     validation: {
         required: 'Obligatoriu',

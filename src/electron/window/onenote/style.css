@@ -389,3 +389,52 @@ body {
 .p3x-btn.p3x-btn-warn:hover {
     background: #fde7e9;
 }
+
+/* ── Dark mode dialog & toast ────────────────────────────────────── */
+
+body.p3x-dark-mode-invert-quirks #p3x-dialog {
+    background: #1e1e1e;
+    color: #e0e0e0;
+}
+
+body.p3x-dark-mode-invert-quirks .p3x-dialog-title {
+    color: var(--p3x-onenote-purple-light);
+}
+
+body.p3x-dark-mode-invert-quirks .p3x-dialog-body p {
+    color: #a0a0a0;
+}
+
+body.p3x-dark-mode-invert-quirks .p3x-dialog-input {
+    background: #2d2d2d;
+    color: #e0e0e0;
+    border-color: #555;
+}
+
+body.p3x-dark-mode-invert-quirks .p3x-dialog-input:focus {
+    border-color: var(--p3x-onenote-purple-light);
+    box-shadow: 0 0 0 1px var(--p3x-onenote-purple-light);
+}
+
+body.p3x-dark-mode-invert-quirks .p3x-dialog-field label {
+    color: #e0e0e0;
+}
+
+body.p3x-dark-mode-invert-quirks .p3x-btn {
+    background: #2d2d2d;
+    border-color: #555;
+    color: #e0e0e0;
+}
+
+body.p3x-dark-mode-invert-quirks .p3x-btn:hover {
+    background: #3a3a3a;
+}
+
+body.p3x-dark-mode-invert-quirks .p3x-btn.p3x-btn-warn {
+    color: #f48fb1;
+    border-color: #f48fb1;
+}
+
+body.p3x-dark-mode-invert-quirks .p3x-btn.p3x-btn-warn:hover {
+    background: #3d2020;
+}

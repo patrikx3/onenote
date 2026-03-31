@@ -172,12 +172,12 @@ const translation = {
         }
     },
     tabs: {
-        addTab: 'Add tab',
-        personal: 'Personal',
-        corporate: 'Corporate',
-        closeTab: 'Close tab',
-        cannotCloseLastTab: 'Cannot close the last tab.',
-        confirmClose: (tabLabel) => `Are you sure you want to close \"${tabLabel}\"? You will be signed out of this account.`,
+        addTab: 'Додај картицу',
+        personal: 'Лични',
+        corporate: 'Корпоративни',
+        closeTab: 'Затвори картицу',
+        cannotCloseLastTab: 'Не може се затворити последња картица.',
+        confirmClose: (tabLabel) => `Да ли сте сигурни да желите да затворите „${tabLabel}"? Бићете одјављени са овог налога.`,
     },
     validation: {
         required: 'Обавезно',

@@ -178,12 +178,12 @@ const translation = {
         }
     },
     tabs: {
-        addTab: 'Add tab',
-        personal: 'Personal',
-        corporate: 'Corporate',
-        closeTab: 'Close tab',
-        cannotCloseLastTab: 'Cannot close the last tab.',
-        confirmClose: (tabLabel) => `Are you sure you want to close \"${tabLabel}\"? You will be signed out of this account.`,
+        addTab: 'Sekme ekle',
+        personal: 'Kişisel',
+        corporate: 'Kurumsal',
+        closeTab: 'Sekmeyi kapat',
+        cannotCloseLastTab: 'Son sekme kapatılamaz.',
+        confirmClose: (tabLabel) => `"${tabLabel}" sekmesini kapatmak istediğinizden emin misiniz? Bu hesaptan çıkış yapılacaktır.`,
     },
     validation: {
         required: 'Gerekli',

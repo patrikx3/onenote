@@ -172,12 +172,12 @@ const translation = {
         }
     },
     tabs: {
-        addTab: 'Add tab',
-        personal: 'Personal',
-        corporate: 'Corporate',
-        closeTab: 'Close tab',
-        cannotCloseLastTab: 'Cannot close the last tab.',
-        confirmClose: (tabLabel) => `Are you sure you want to close \"${tabLabel}\"? You will be signed out of this account.`,
+        addTab: 'ট্যাব যোগ করুন',
+        personal: 'ব্যক্তিগত',
+        corporate: 'কর্পোরেট',
+        closeTab: 'ট্যাব বন্ধ করুন',
+        cannotCloseLastTab: 'শেষ ট্যাবটি বন্ধ করা যাবে না।',
+        confirmClose: (tabLabel) => `আপনি কি নিশ্চিত যে আপনি "${tabLabel}" বন্ধ করতে চান? আপনি এই অ্যাকাউন্ট থেকে সাইন আউট হয়ে যাবেন।`,
     },
     validation: {
         required: 'আবশ্যক',

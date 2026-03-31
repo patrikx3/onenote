@@ -172,12 +172,12 @@ const translation = {
         }
     },
     tabs: {
-        addTab: 'Add tab',
-        personal: 'Personal',
-        corporate: 'Corporate',
-        closeTab: 'Close tab',
-        cannotCloseLastTab: 'Cannot close the last tab.',
-        confirmClose: (tabLabel) => `Are you sure you want to close \"${tabLabel}\"? You will be signed out of this account.`,
+        addTab: 'إضافة علامة تبويب',
+        personal: 'شخصي',
+        corporate: 'شركة',
+        closeTab: 'إغلاق علامة التبويب',
+        cannotCloseLastTab: 'لا يمكن إغلاق علامة التبويب الأخيرة.',
+        confirmClose: (tabLabel) => `هل أنت متأكد أنك تريد إغلاق "${tabLabel}"؟ سيتم تسجيل خروجك من هذا الحساب.`,
     },
     validation: {
         required: 'مطلوب',

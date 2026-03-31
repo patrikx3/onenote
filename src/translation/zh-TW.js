@@ -178,12 +178,12 @@ const translation = {
         }
     },
     tabs: {
-        addTab: 'Add tab',
-        personal: 'Personal',
-        corporate: 'Corporate',
-        closeTab: 'Close tab',
-        cannotCloseLastTab: 'Cannot close the last tab.',
-        confirmClose: (tabLabel) => `Are you sure you want to close \"${tabLabel}\"? You will be signed out of this account.`,
+        addTab: '新增分頁',
+        personal: '個人',
+        corporate: '公司',
+        closeTab: '關閉分頁',
+        cannotCloseLastTab: '無法關閉最後一個分頁。',
+        confirmClose: (tabLabel) => `確定要關閉「${tabLabel}」嗎？您將從此帳戶登出。`,
     },
     validation: {
         required: 'Required',

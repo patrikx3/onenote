@@ -178,12 +178,12 @@ const translation = {
         }
     },
     tabs: {
-        addTab: 'Add tab',
-        personal: 'Personal',
-        corporate: 'Corporate',
-        closeTab: 'Close tab',
-        cannotCloseLastTab: 'Cannot close the last tab.',
-        confirmClose: (tabLabel) => `Are you sure you want to close \"${tabLabel}\"? You will be signed out of this account.`,
+        addTab: 'Adicionar aba',
+        personal: 'Pessoal',
+        corporate: 'Corporativo',
+        closeTab: 'Fechar aba',
+        cannotCloseLastTab: 'Não é possível fechar a última aba.',
+        confirmClose: (tabLabel) => `Tem certeza de que deseja fechar "${tabLabel}"? Você será desconectado desta conta.`,
     },
     validation: {
         required: 'Requeridas',
