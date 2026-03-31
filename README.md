@@ -53,6 +53,7 @@ P3X OneNote Linux is an independent browser window for the online OneNote, so yo
 * System tray support — close the window and keep it running in the background
 * Cached data for faster startup compared to opening a new browser tab each time
 * Supports both corporate and personal Microsoft accounts
+* **Multiple account tabs** — sign into multiple accounts simultaneously, each in its own isolated session. Tab labels automatically show the account email after login.
 * Auto-updates when a new version is available
 * Access other Microsoft online applications as well (dedicated purpose is OneNote)
 
@@ -63,6 +64,7 @@ P3X OneNote Linux is an independent browser window for the online OneNote, so yo
 * Press `ALT` to access the menu
 * Desktop menu system integration
 * Window zoom functionality
+* **Tab bar** — add, switch, and close account tabs. Click `+` to add a Personal or Corporate tab. Each tab shows the logged-in account email.
 * Dark mode (non-official workaround — may have minor inconsistencies since it is not directly supported by Microsoft)
 * Launch minimized with the `--minimized` argument
 
