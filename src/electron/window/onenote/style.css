@@ -9,7 +9,7 @@
 
 /* ── Dark mode invert ──────────────────────────────────────────── */
 
-body.p3x-dark-mode-invert-quirks {
+body.p3x-dark-mode-invert-quirks #p3x-onenote-webview {
     filter: invert(1) hue-rotate(180deg);
 }
 
