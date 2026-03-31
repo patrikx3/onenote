@@ -8,12 +8,9 @@ const handler = (options) => {
             global.p3x.onenote.data = data;
         }
 
-        if (typeof (global.p3x.onenote.data) === 'object' && global.p3x.onenote.data.hasOwnProperty('url') && !global.p3x.onenote.data.url.startsWith('about:blank')) {
-            webview.src = global.p3x.onenote.data.url;
-        } else {
-            webview.src = 'https://www.onenote.com/notebooks';
-        }
-        if (global.p3x.onenote.data.proxy.trim() !== '') {
+        // Tab manager handles initial URL loading from persisted tab state.
+        // Only load proxy if set.
+        if (global.p3x.onenote.data.proxy && global.p3x.onenote.data.proxy.trim() !== '') {
             import('../action/load-proxy.mjs').then(m => m.default());
         }
     });
@@ -30,6 +27,9 @@ const handler = (options) => {
         global.p3x.onenote.lang = global.p3x.onenote.translations[data.translation];
         global.p3x.onenote.toast.action(global.p3x.onenote.lang.menu.language.alert);
         global.p3x.onenote.updateBarLabels();
+        if (global.p3x.onenote.tabManager) {
+            global.p3x.onenote.tabManager.renderTabBar();
+        }
 
         let type = '';
         let cancelled = false;

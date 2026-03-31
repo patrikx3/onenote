@@ -4,12 +4,13 @@
     --p3x-onenote-purple-dark: #5B0E85;
     --p3x-onenote-accent: #D83B01;
     --p3x-onenote-bottom-bar-height: 26px;
+    --p3x-onenote-tab-bar-height: 32px;
     --p3x-onenote-font: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
 }
 
 /* ── Dark mode invert ──────────────────────────────────────────── */
 
-body.p3x-dark-mode-invert-quirks #p3x-onenote-webview {
+body.p3x-dark-mode-invert-quirks .p3x-onenote-webview {
     filter: invert(1) hue-rotate(180deg);
 }
 
@@ -116,16 +117,108 @@ body {
     opacity: 1;
 }
 
-/* ── Webview ───────────────────────────────────────────────────── */
+/* ── Tab bar ──────────────────────────────────────────────────── */
 
-#p3x-onenote-webview {
+#p3x-onenote-tab-bar {
     position: fixed;
     top: 0;
     left: 0;
-    overflow: hidden;
     width: 100%;
-    height: calc(100% - var(--p3x-onenote-bottom-bar-height));
+    height: var(--p3x-onenote-tab-bar-height);
+    background: var(--p3x-onenote-purple-dark);
+    display: flex;
+    align-items: center;
+    padding: 0 4px;
+    gap: 2px;
+    z-index: 100;
+    user-select: none;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.p3x-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    height: 24px;
+    padding: 0 8px;
+    border-radius: 4px 4px 0 0;
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
+    font-family: var(--p3x-onenote-font);
+    cursor: pointer;
+    white-space: nowrap;
+    max-width: 160px;
+    overflow: hidden;
+    text-overflow: ellipsis;
     border: none;
+    flex-shrink: 0;
+}
+
+.p3x-tab:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.p3x-tab.p3x-tab-active {
+    background: rgba(255, 255, 255, 0.25);
+    color: #fff;
+}
+
+.p3x-tab-close {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    font-size: 10px;
+    padding: 0 2px;
+    line-height: 1;
+    border-radius: 2px;
+}
+
+.p3x-tab-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+#p3x-tab-add {
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    font-size: 14px;
+    width: 22px;
+    height: 22px;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+#p3x-tab-add:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+}
+
+/* ── Webview container ────────────────────────────────────────── */
+
+#p3x-onenote-webview-container {
+    position: fixed;
+    top: var(--p3x-onenote-tab-bar-height);
+    left: 0;
+    width: 100%;
+    height: calc(100% - var(--p3x-onenote-tab-bar-height) - var(--p3x-onenote-bottom-bar-height));
+}
+
+.p3x-onenote-webview {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.p3x-onenote-webview.p3x-hidden {
+    display: none;
 }
 
 /* ── Toast ──────────────────────────────────────────────────────── */

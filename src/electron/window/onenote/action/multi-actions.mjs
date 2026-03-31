@@ -15,16 +15,19 @@ const p3xDarkInvertJs = `
 })`;
 
 function p3xInjectDarkInvertAllFrames(enabled) {
-    try {
-        const webview = global.p3x.onenote.webview;
-        const wc = remote.webContents.fromId(webview.getWebContentsId());
-        const frames = wc.mainFrame.framesInSubtree;
-        for (const frame of frames) {
-            try {
-                frame.executeJavaScript(`(${p3xDarkInvertJs})(${enabled})`);
-            } catch (e) {}
-        }
-    } catch (e) {}
+    // Inject into ALL tab webviews, not just the active one
+    const allWebviews = global.p3x.onenote.tabManager?.getAllWebviews() || [];
+    for (const webview of allWebviews) {
+        try {
+            const wc = remote.webContents.fromId(webview.getWebContentsId());
+            const frames = wc.mainFrame.framesInSubtree;
+            for (const frame of frames) {
+                try {
+                    frame.executeJavaScript(`(${p3xDarkInvertJs})(${enabled})`);
+                } catch (e) {}
+            }
+        } catch (e) {}
+    }
 }
 
 const multiActions = (data) => {
@@ -38,18 +41,24 @@ const multiActions = (data) => {
             break;
 
         case 'restart':
-            const wc = remote.getCurrentWebContents();
-            wc.session.clearStorageData().then(() => {
-                webview.reload();
-            });
+            if (webview) {
+                try {
+                    const wc = remote.webContents.fromId(webview.getWebContentsId());
+                    wc.session.clearStorageData().then(() => {
+                        webview.reload();
+                    });
+                } catch (e) {
+                    console.error(e);
+                }
+            }
             break;
 
         case 'home':
-            webview.src = global.p3x.onenote.url.notebooks;
+            if (webview) webview.src = global.p3x.onenote.url.notebooks;
             break;
 
         case 'corporate':
-            webview.src = 'https://www.onenote.com/notebooks?auth=2';
+            if (webview) webview.src = 'https://www.onenote.com/notebooks?auth=2';
             break;
 
         case 'get-location':
@@ -73,9 +82,7 @@ const multiActions = (data) => {
             if (data.darkThemeInvert === true) {
                 document.body.classList.add('p3x-dark-mode-invert-quirks');
             }
-            if (webview !== undefined) {
-                p3xInjectDarkInvertAllFrames(data.darkThemeInvert === true);
-            }
+            p3xInjectDarkInvertAllFrames(data.darkThemeInvert === true);
             break;
     }
 };

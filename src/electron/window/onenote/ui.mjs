@@ -251,4 +251,28 @@ export const p3xPrompt = {
     bookmarks(opts) {
         return showBookmarkForm(opts);
     },
+
+    addTab() {
+        const lang = p3x.onenote.lang;
+        return showChoice({
+            title: lang.tabs?.addTab || 'Add tab',
+            buttons: [
+                { label: lang.menu?.language?.dialog?.personal || lang.tabs?.personal || 'Personal', value: 'personal' },
+                { label: lang.menu?.language?.dialog?.corporate || lang.tabs?.corporate || 'Corporate', value: 'corporate' },
+            ],
+            cancelText: lang.button.cancel,
+        });
+    },
+
+    confirmCloseTab(message) {
+        const lang = p3x.onenote.lang;
+        return showChoice({
+            title: lang.tabs?.closeTab || 'Close tab',
+            body: `<p>${message}</p>`,
+            buttons: [
+                { label: lang.button.yes || 'Yes', value: 'yes' },
+            ],
+            cancelText: lang.button.cancel,
+        });
+    },
 };

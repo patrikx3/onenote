@@ -171,6 +171,14 @@ const translation = {
             url: 'URL'
         }
     },
+    tabs: {
+        addTab: 'Add tab',
+        personal: 'Personal',
+        corporate: 'Corporate',
+        closeTab: 'Close tab',
+        cannotCloseLastTab: 'Cannot close the last tab.',
+        confirmClose: (tabLabel) => `Are you sure you want to close \"${tabLabel}\"? You will be signed out of this account.`,
+    },
     validation: {
         required: 'Vereis',
         url: 'Ongeldige url',
