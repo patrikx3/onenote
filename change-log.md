@@ -9,11 +9,6 @@
 
 ### v2026.4.118
 Released on 04/01/2026
-* CHORE: Removed reading mode (F11 fullscreen is sufficient).
-* CHORE: Removed auto-launch on login (not supported on Linux).
-
-### v2026.4.118
-Released on 04/01/2026
 * FEATURE: Tab drag-and-drop reordering.
 * FEATURE: Tab renaming via right-click context menu (custom labels).
 * FEATURE: Tab pinning to prevent accidental closure.
@@ -28,6 +23,7 @@ Released on 04/01/2026
 * FEATURE: Lighter dark mode using Microsoft Fluent Design palette.
 * BUGFIX: Prevent blank page after reload by validating saved URLs.
 * CHORE: Removed multiple instances feature (always single instance).
+* CHORE: Removed reading mode and auto-launch on login (not needed on Linux).
 * CHORE: Removed "quirks" wording from dark theme labels.
 
 ### v2026.4.117
