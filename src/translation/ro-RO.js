@@ -3,20 +3,16 @@ const translation = {
     restart: 'Vă rugăm așteptați, aplicația repornește.',
     label: {
         darkThemeInvert: {
-          title: 'Activează modul întunecat cu probleme (folosind inversare)'
+          title: 'Activează modul întunecat (folosind inversare)',
+          off: 'Dezactivat',
+          on: 'Activat',
+          system: 'Urmează sistemul',
         },
         hideMenu: 'Ascunde meniul principal (afișează cu ALT)',
         optionToHideMenuState: {
             yes: 'După repornire, va ascunde meniul și îl va afișa la ALT.',
         },
         donate: 'Donează',
-        allowMultiple: {
-            checkbox: 'Permite instanțe multiple (cu unele probleme)',
-            message: {
-                yes: 'Acum puteți folosi instanțe multiple cu unele probleme.',
-                no: 'Acum, permite doar o singură instanță, fără probleme'
-            }
-        },
         disableHide: {
             checkbox: 'Închide în zona de notificare',
             message: {
@@ -35,7 +31,18 @@ const translation = {
         developer: 'Patrik Laszlo',
         personalHome: 'Pagina personală',
         corporateHome: 'Pagina corporativă',
-        clearCache: 'Mai întâi deconectați-vă, apoi faceți clic pe această opțiune de meniu pentru a șterge cache-ul',
+        clearCache: {
+            title: 'Șterge datele și repornește',
+            allTabs: 'Toate filele - tot',
+            currentTab: 'Fila curentă - tot',
+            allCookies: 'Toate filele - doar cookie-uri',
+            currentCookies: 'Fila curentă - doar cookie-uri',
+            allCache: 'Toate filele - doar cache',
+            currentCache: 'Fila curentă - doar cache',
+            allLabel: 'toate filele',
+            currentLabel: 'fila curentă',
+            done: (scope, type) => `Șters: ${scope} - ${type}`,
+        },
         quit: 'Ieșire',
         show: 'Afișează',
         hide: 'Ascunde',
@@ -166,9 +173,21 @@ const translation = {
         title: 'Marcaje',
         add: 'Adaugă marcaj',
         edit: 'Editează marcaje',
+        manager: 'Gestionează marcaje',
+        managerSearch: 'Caută marcaje...',
+        managerEmpty: 'Nu s-au găsit marcaje.',
+        confirmDelete: 'Ștergi?',
+        exportBookmarks: 'Exportă marcaje',
+        importBookmarks: 'Importă marcaje',
+        exported: 'Marcaje exportate.',
+        imported: (count) => `${count} marcaj(e) importate.`,
+        exportTitle: 'Exportă marcaje',
+        importTitle: 'Importă marcaje',
         form: {
             title: 'Titlu',
-            url: 'URL'
+            url: 'URL',
+            category: 'Dosar',
+            categoryPlaceholder: 'ex. Muncă/Proiecte (folosește / pentru subdosare)',
         }
     },
     tabs: {
@@ -177,6 +196,15 @@ const translation = {
         corporate: 'Corporativ',
         closeTab: 'Închide fila',
         cannotCloseLastTab: 'Nu se poate închide ultima filă.',
+        restoreClosedTab: 'Restaurează ultima filă închisă',
+        noClosedTabs: 'Nu există file închise de restaurat.',
+        renameTab: 'Redenumește fila',
+        clearName: 'Șterge numele personalizat',
+        renamePrompt: 'Introduceți un nume personalizat pentru această filă (lăsați gol pentru implicit)',
+        renamePlaceholder: 'Nume personalizat al filei',
+        pinTab: 'Fixează fila',
+        unpinTab: 'Anulează fixarea filei',
+        cannotClosePinned: 'O filă fixată nu poate fi închisă.',
         confirmClose: (tabLabel) => `Sunteți sigur că doriți să închideți „${tabLabel}"? Veți fi deconectat din acest cont.`,
     },
     validation: {

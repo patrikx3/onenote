@@ -6,7 +6,7 @@
 
 
 
-# 📚 P3X OneNote Linux v2026.4.117
+# 📚 P3X OneNote Linux v2026.4.118
 
 
   
@@ -65,7 +65,13 @@ P3X OneNote Linux is an independent browser window for the online OneNote, so yo
 * Desktop menu system integration
 * Window zoom functionality
 * **Tab bar** — add, switch, and close account tabs. Click `+` to add a Personal or Corporate tab. Each tab shows the logged-in account email.
+* **Tab drag-and-drop reordering** — drag tabs left/right to rearrange them, order persists across restarts
+* **Tab renaming** — right-click a tab to set a custom label (e.g. "Work", "Personal")
+* **Tab pinning** — right-click a tab to pin it, preventing accidental closure
+* **Restore closed tabs** — accidentally closed a tab? Use Action > Restore last closed tab to bring it back with the same login session (keeps up to 10 in history)
+* **Per-tab zoom** — each tab remembers its own zoom level independently
 * Dark mode (non-official workaround — may have minor inconsistencies since it is not directly supported by Microsoft)
+* **Dark mode follow system** — automatically switches dark mode on/off when your OS theme changes (Settings > Dark mode > Follow system)
 * Launch minimized with the `--minimized` argument
 
 **Navigation and clipboard:**
@@ -81,15 +87,17 @@ P3X OneNote Linux is an independent browser window for the online OneNote, so yo
 
 **Other:**
 
-* Restart button to clear cache (useful for resolving errors and re-logging in)
+* **Granular session cleaner** — clear cookies, cache, or everything for all tabs or just the current tab (P3X OneNote menu > Clear data and restart)
+* **Multi-monitor safety** — if you disconnect a monitor and the window would appear off-screen, it automatically centers on the primary display
+* **Bookmark folders** — organize bookmarks into nested folders using `/` separator (e.g. `Work/Projects`). Folders appear as submenus with 📁 icons in the Bookmarks menu.
+* **Bookmark manager** — full dialog to search, inline-edit, and delete bookmarks (Bookmarks > Manage bookmarks)
+* **Bookmark import/export** — export bookmarks to JSON and import from JSON file (Bookmarks menu)
 * `Corporate home` menu item — note: without a corporate login, debugging this feature is not possible. If issues arise, providing login details may help with troubleshooting.
 * **Language:** The language selector in P3X OneNote only controls the Electron app UI (menus, dialogs, buttons). To change the OneNote web content language, you must update your language in your [Microsoft account profile](https://account.microsoft.com/languages). Translations are community-driven:
     * [Translation resources on GitHub](https://github.com/patrikx3/onenote/tree/master/src/translation)
     * Available languages:
       Afrikaans, العربية (Arabic), বাংলা (Bengali), Català (Catalan), Čeština (Czech), Dansk (Danish), Deutsch (German), Ελληνικά (Greek), English, Español (Spanish), Suomi (Finnish), Français (French), עברית (Hebrew), Magyar (Hungarian), Italiano (Italian), 日本語 (Japanese), 한국어 (Korean), Norsk (Norwegian), Nederlands (Dutch), Polski (Polish), Português (Portuguese), Română (Romanian), Русский (Russian), Српски (Serbian), Svenska (Swedish), Türkçe (Turkish), Українська (Ukrainian), Tiếng Việt (Vietnamese), 简体中文 (Simplified Chinese), 繁體中文 (Traditional Chinese)
-* Multiple instances are supported with limitations:
-    * Configure using a single instance first, exit, then launch multiple instances to avoid synchronization issues
-    * Running multiple instances is possible but not recommended
+* Single instance enforced — launching the app again brings the existing window to the foreground
 
 <!-- (`````~/.local/share/applications/p3x-onenote.desktop`````) -->
 
@@ -323,7 +331,7 @@ All my domains, including [patrikx3.com](https://patrikx3.com), [corifeus.eu](ht
 ---
 
 
-[**P3X-ONENOTE**](https://corifeus.com/onenote) Build v2026.4.117
+[**P3X-ONENOTE**](https://corifeus.com/onenote) Build v2026.4.118
 
  [![NPM](https://img.shields.io/npm/v/p3x-onenote.svg)](https://www.npmjs.com/package/p3x-onenote)  [![Donate for PatrikX3 / P3X](https://img.shields.io/badge/Donate-PatrikX3-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software)
 

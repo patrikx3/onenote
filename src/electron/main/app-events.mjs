@@ -1,4 +1,4 @@
-import { app, powerMonitor, net } from 'electron';
+import { app, powerMonitor, net, nativeTheme } from 'electron';
 
 let isInSuspended = false;
 
@@ -32,6 +32,24 @@ app.on('ready', () => {
 
     // Create the main window
     global.p3x.onenote.createWindow.onenote();
+
+    // Follow system dark/light theme when mode is 'system'
+    nativeTheme.on('updated', () => {
+        if (global.p3x.onenote.darkThemeMode !== 'system') return;
+        const shouldDark = nativeTheme.shouldUseDarkColors;
+        if (global.p3x.onenote.darkThemeInvert === shouldDark) return;
+        global.p3x.onenote.darkThemeInvert = shouldDark;
+        global.p3x.onenote.conf.set('darkThemeInvert', shouldDark);
+        const win = global.p3x.onenote.window.onenote;
+        if (win) {
+            win.webContents.send('p3x-onenote-action', {
+                action: 'dark-theme-invert',
+                darkThemeInvert: shouldDark,
+            });
+        }
+        global.p3x.onenote.mainMenu();
+        global.p3x.onenote.mainTray();
+    });
 
     // Handle power events — fix sync loss after standby (#204)
     powerMonitor.on('suspend', () => {

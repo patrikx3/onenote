@@ -9,6 +9,12 @@ const action = {
             action: 'restart'
         })
     },
+    sessionClear: (mode) => {
+        global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-action', {
+            action: 'session-clear',
+            mode: mode,
+        })
+    },
     home: () => {
         global.p3x.onenote.window.onenote.show();
         global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-action', {

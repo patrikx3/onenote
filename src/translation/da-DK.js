@@ -3,20 +3,16 @@ const translation = {
     restart: 'Vent venligst, applikationen genstarter.',
     label: {
         darkThemeInvert: {
-          title: 'Aktiver mørk tilstand med fejl (ved brug af invertering)'
+          title: 'Aktiver mørk tilstand (ved brug af invertering)',
+          off: 'Fra',
+          on: 'Til',
+          system: 'Følg system',
         },
         hideMenu: 'Skjul hovedmenu (vis med ALT)',
         optionToHideMenuState: {
             yes: 'Efter genstart vil menuen være skjult og vises med ALT.',
         },
         donate: 'Doner',
-        allowMultiple: {
-            checkbox: 'Tillad flere instanser (med nogle fejl)',
-            message: {
-                yes: 'Nu kan du bruge flere instanser med nogle fejl.',
-                no: 'Nu tillades kun én instans, ingen fejl.'
-            }
-        },
         disableHide: {
             checkbox: 'Luk til systembakken',
             message: {
@@ -35,7 +31,18 @@ const translation = {
         developer: 'Patrik Laszlo',
         personalHome: 'Personlig startside',
         corporateHome: 'Virksomhedens startside',
-        clearCache: 'Log først af, klik derefter på denne menuindstilling for at rydde cachen',
+        clearCache: {
+            title: 'Ryd data og genstart',
+            allTabs: 'Alle faner - alt',
+            currentTab: 'Aktuel fane - alt',
+            allCookies: 'Alle faner - kun cookies',
+            currentCookies: 'Aktuel fane - kun cookies',
+            allCache: 'Alle faner - kun cache',
+            currentCache: 'Aktuel fane - kun cache',
+            allLabel: 'alle faner',
+            currentLabel: 'aktuel fane',
+            done: (scope, type) => `Ryddet: ${scope} - ${type}`,
+        },
         quit: 'Afslut',
         show: 'Vis',
         hide: 'Skjul',
@@ -166,9 +173,21 @@ const translation = {
         title: 'Bogmærker',
         add: 'Tilføj bogmærke',
         edit: 'Rediger bogmærker',
+        manager: 'Administrer bogmærker',
+        managerSearch: 'Søg bogmærker...',
+        managerEmpty: 'Ingen bogmærker fundet.',
+        confirmDelete: 'Slet?',
+        exportBookmarks: 'Eksportér bogmærker',
+        importBookmarks: 'Importér bogmærker',
+        exported: 'Bogmærker eksporteret.',
+        imported: (count) => `${count} bogmærke(r) importeret.`,
+        exportTitle: 'Eksportér bogmærker',
+        importTitle: 'Importér bogmærker',
         form: {
             title: 'Titel',
-            url: 'URL'
+            url: 'URL',
+            category: 'Mappe',
+            categoryPlaceholder: 'f.eks. Arbejde/Projekter (brug / til undermapper)',
         }
     },
     tabs: {
@@ -177,6 +196,15 @@ const translation = {
         corporate: 'Virksomhed',
         closeTab: 'Luk fane',
         cannotCloseLastTab: 'Kan ikke lukke den sidste fane.',
+        restoreClosedTab: 'Gendan sidst lukkede fane',
+        noClosedTabs: 'Ingen lukkede faner at gendanne.',
+        renameTab: 'Omdøb fane',
+        clearName: 'Ryd brugerdefineret navn',
+        renamePrompt: 'Indtast et brugerdefineret navn til denne fane (lad stå tomt for standard)',
+        renamePlaceholder: 'Brugerdefineret fanenavn',
+        pinTab: 'Fastgør fane',
+        unpinTab: 'Frigør fane',
+        cannotClosePinned: 'En fastgjort fane kan ikke lukkes.',
         confirmClose: (tabLabel) => `Er du sikker på, at du vil lukke "${tabLabel}"? Du vil blive logget ud af denne konto.`,
     },
     validation: {

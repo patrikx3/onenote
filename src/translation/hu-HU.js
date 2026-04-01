@@ -3,20 +3,16 @@ const translation = {
     restart: 'Kérjük, várjon, az alkalmazás újraindul.',
     label: {
         darkThemeInvert: {
-          title: 'Sötét mód engedélyezése hibákkal (invertálással)'
+          title: 'Sötét mód engedélyezése (invertálással)',
+          off: 'Ki',
+          on: 'Be',
+          system: 'Rendszer követése',
         },
         hideMenu: 'Főmenü elrejtése (megjelenítés ALT-tal)',
         optionToHideMenuState: {
             yes: 'Újraindítás után a menü rejtve lesz, és ALT-tal jeleníthető meg.',
         },
         donate: 'Adományozás',
-        allowMultiple: {
-            checkbox: 'Több példány engedélyezése (néhány hibával)',
-            message: {
-                yes: 'Most már több példányt is használhat néhány hibával.',
-                no: 'Most csak egy példány engedélyezett, hibák nélkül'
-            }
-        },
         disableHide: {
             checkbox: 'Bezárás a tálcára',
             message: {
@@ -35,7 +31,18 @@ const translation = {
         developer: 'Patrik Laszlo',
         personalHome: 'Személyes kezdőlap',
         corporateHome: 'Vállalati kezdőlap',
-        clearCache: 'Először jelentkezzen ki, majd kattintson erre a menüpontra a gyorsítótár törléséhez',
+        clearCache: {
+            title: 'Adatok törlése és újraindítás',
+            allTabs: 'Összes fül - minden',
+            currentTab: 'Aktuális fül - minden',
+            allCookies: 'Összes fül - csak sütik',
+            currentCookies: 'Aktuális fül - csak sütik',
+            allCache: 'Összes fül - csak gyorsítótár',
+            currentCache: 'Aktuális fül - csak gyorsítótár',
+            allLabel: 'összes fül',
+            currentLabel: 'aktuális fül',
+            done: (scope, type) => `Törölve: ${scope} - ${type}`,
+        },
         quit: 'Kilépés',
         show: 'Megjelenítés',
         hide: 'Elrejtés',
@@ -166,9 +173,21 @@ const translation = {
         title: 'Könyvjelzők',
         add: 'Könyvjelző hozzáadása',
         edit: 'Könyvjelzők szerkesztése',
+        manager: 'Könyvjelzők kezelése',
+        managerSearch: 'Könyvjelzők keresése...',
+        managerEmpty: 'Nem található könyvjelző.',
+        confirmDelete: 'Törlés?',
+        exportBookmarks: 'Könyvjelzők exportálása',
+        importBookmarks: 'Könyvjelzők importálása',
+        exported: 'Könyvjelzők exportálva.',
+        imported: (count) => `Importálva ${count} könyvjelző.`,
+        exportTitle: 'Könyvjelzők exportálása',
+        importTitle: 'Könyvjelzők importálása',
         form: {
             title: 'Cím',
-            url: 'URL'
+            url: 'URL',
+            category: 'Mappa',
+            categoryPlaceholder: 'pl. Munka/Projektek (használj / almappákhoz)',
         }
     },
     tabs: {
@@ -177,6 +196,15 @@ const translation = {
         corporate: 'Vállalati',
         closeTab: 'Lap bezárása',
         cannotCloseLastTab: 'Az utolsó lapot nem lehet bezárni.',
+        restoreClosedTab: 'Utolsó bezárt fül visszaállítása',
+        noClosedTabs: 'Nincs visszaállítható bezárt fül.',
+        renameTab: 'Fül átnevezése',
+        clearName: 'Egyéni név törlése',
+        renamePrompt: 'Adjon meg egy egyéni nevet ehhez a fülhöz (hagyja üresen az alapértelmezetthez)',
+        renamePlaceholder: 'Egyéni fülnév',
+        pinTab: 'Fül rögzítése',
+        unpinTab: 'Fül rögzítésének feloldása',
+        cannotClosePinned: 'Rögzített fül nem zárható be.',
         confirmClose: (tabLabel) => `Biztosan bezárja a(z) "${tabLabel}" lapot? Ki lesz jelentkezve ebből a fiókból.`,
     },
     validation: {

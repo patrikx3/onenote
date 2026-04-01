@@ -3,20 +3,16 @@ const translation = {
     restart: 'Even wachten, de applicatie start opnieuw op.',
     label: {
         darkThemeInvert: {
-            title: 'Schakel de donkere modus in met eigenaardigheden (met behulp van omkeren)'
+            title: 'Schakel de donkere modus in (met behulp van omkeren)',
+          off: 'Uit',
+          on: 'Aan',
+          system: 'Systeem volgen',
         },
         hideMenu: 'Verberg hoofd menu (maak zichtbaar met ALT)',
         optionToHideMenuState: {
             yes: 'Het hoofdmenu is verborgen na een herstart en wordt weer zichtbaar bij het indrukken van ALT.',
         },
         donate: 'Donatie',
-        allowMultiple: {
-            checkbox: 'Sta meerdere vensters toe (met een aantal eigenaardigheden)',
-            message: {
-                yes: 'Nu kunt u meerdere vensters gebruiken (met eigenaardigheden).',
-                no: 'Nu is alleen maar een venster mogelijk (zonder eigenaardigheden)'
-            }
-        },
         disableHide: {
             //yes: 'Set the close button behaviour that will minimize to the tray instead of quitting',
             //no: 'Set the close button behaviour as to really quit the app',
@@ -38,7 +34,18 @@ const translation = {
         developer: 'Patrik Laszlo',
         personalHome: 'Persoonlijke begin pagina',
         corporateHome: 'Zakelijke begin pagina',
-        clearCache: 'Meld u eerst af en klik vervolgens op deze menuoptie om de cache te wissen',
+        clearCache: {
+            title: 'Gegevens wissen en herstarten',
+            allTabs: 'Alle tabbladen - alles',
+            currentTab: 'Huidig tabblad - alles',
+            allCookies: 'Alle tabbladen - alleen cookies',
+            currentCookies: 'Huidig tabblad - alleen cookies',
+            allCache: 'Alle tabbladen - alleen cache',
+            currentCache: 'Huidig tabblad - alleen cache',
+            allLabel: 'alle tabbladen',
+            currentLabel: 'huidig tabblad',
+            done: (scope, type) => `Gewist: ${scope} - ${type}`,
+        },
         quit: 'Afsluiten',
         show: 'Verschijnen',
         hide: 'Verbergen',
@@ -172,9 +179,21 @@ const translation = {
         title: 'Bookmarks',
         add: 'Bookmark toevoegen',
         edit: 'Bookmarks bewerken',
+        manager: 'Bladwijzers beheren',
+        managerSearch: 'Bladwijzers zoeken...',
+        managerEmpty: 'Geen bladwijzers gevonden.',
+        confirmDelete: 'Verwijderen?',
+        exportBookmarks: 'Bladwijzers exporteren',
+        importBookmarks: 'Bladwijzers importeren',
+        exported: 'Bladwijzers geëxporteerd.',
+        imported: (count) => `${count} bladwijzer(s) geïmporteerd.`,
+        exportTitle: 'Bladwijzers exporteren',
+        importTitle: 'Bladwijzers importeren',
         form: {
             title: 'Titel',
-            url: 'URL'
+            url: 'URL',
+            category: 'Map',
+            categoryPlaceholder: 'bijv. Werk/Projecten (gebruik / voor submappen)',
         }
     },
     tabs: {
@@ -183,6 +202,15 @@ const translation = {
         corporate: 'Zakelijk',
         closeTab: 'Tabblad sluiten',
         cannotCloseLastTab: 'Het laatste tabblad kan niet worden gesloten.',
+        restoreClosedTab: 'Laatst gesloten tabblad herstellen',
+        noClosedTabs: 'Geen gesloten tabbladen om te herstellen.',
+        renameTab: 'Tabblad hernoemen',
+        clearName: 'Aangepaste naam wissen',
+        renamePrompt: 'Voer een aangepaste naam in voor dit tabblad (laat leeg voor standaard)',
+        renamePlaceholder: 'Aangepaste tabbladnaam',
+        pinTab: 'Tabblad vastzetten',
+        unpinTab: 'Tabblad losmaken',
+        cannotClosePinned: 'Een vastgezet tabblad kan niet worden gesloten.',
         confirmClose: (tabLabel) => `Weet u zeker dat u "${tabLabel}" wilt sluiten? U wordt afgemeld bij dit account.`,
     },
     validation: {

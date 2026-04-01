@@ -3,20 +3,16 @@ const translation = {
     restart: 'Wag asseblief, die toepassing herbegin.',
     label: {
         darkThemeInvert: {
-          title: 'Aktiveer donker modus met eienaardighede (gebruik omkeer)'
+          title: 'Aktiveer donker modus (gebruik omkeer)',
+          off: 'Af',
+          on: 'Aan',
+          system: 'Volg stelsel',
         },
         hideMenu: 'Versteek hoofkieslys (wys met ALT)',
         optionToHideMenuState: {
             yes: 'Na herbegin sal dit die kieslys versteek en op ALT wys.',
         },
         donate: 'Skenk',
-        allowMultiple: {
-            checkbox: 'Laat veelvuldige gevalle toe (met sekere eienaardighede)',
-            message: {
-                yes: 'Nou kan jy veelvuldige gevalle gebruik met sekere eienaardighede.',
-                no: 'Nou laat dit slegs een geval toe, geen eienaardighede nie'
-            }
-        },
         disableHide: {
             checkbox: 'Sluit na die stelselbalk',
             message: {
@@ -35,7 +31,18 @@ const translation = {
         developer: 'Patrik Laszlo',
         personalHome: 'Persoonlike tuisblad',
         corporateHome: 'Korporatiewe tuisblad',
-        clearCache: 'Teken eers af, klik dan hierdie kieslysopsie om die kasgeheue skoon te maak',
+        clearCache: {
+            title: 'Vee data uit en herbegin',
+            allTabs: 'Alle oortjies - alles',
+            currentTab: 'Huidige oortjie - alles',
+            allCookies: 'Alle oortjies - slegs koekies',
+            currentCookies: 'Huidige oortjie - slegs koekies',
+            allCache: 'Alle oortjies - slegs kas',
+            currentCache: 'Huidige oortjie - slegs kas',
+            allLabel: 'alle oortjies',
+            currentLabel: 'huidige oortjie',
+            done: (scope, type) => `Uitgevee: ${scope} - ${type}`,
+        },
         quit: 'Verlaat',
         show: 'Wys',
         hide: 'Versteek',
@@ -166,9 +173,21 @@ const translation = {
         title: 'Boekmerke',
         add: 'Voeg boekmerk by',
         edit: 'Wysig boekmerke',
+        manager: 'Bestuur boekmerke',
+        managerSearch: 'Soek boekmerke...',
+        managerEmpty: 'Geen boekmerke gevind nie.',
+        confirmDelete: 'Verwyder?',
+        exportBookmarks: 'Voer boekmerke uit',
+        importBookmarks: 'Voer boekmerke in',
+        exported: 'Boekmerke uitgevoer.',
+        imported: (count) => `${count} boekmerk(e) ingevoer.`,
+        exportTitle: 'Voer boekmerke uit',
+        importTitle: 'Voer boekmerke in',
         form: {
             title: 'Titel',
-            url: 'URL'
+            url: 'URL',
+            category: 'Vouer',
+            categoryPlaceholder: 'bv. Werk/Projekte (gebruik / vir subvouers)',
         }
     },
     tabs: {
@@ -177,6 +196,15 @@ const translation = {
         corporate: 'Korporatief',
         closeTab: 'Sluit oortjie',
         cannotCloseLastTab: 'Kan nie die laaste oortjie sluit nie.',
+        restoreClosedTab: 'Herstel laaste geslote oortjie',
+        noClosedTabs: 'Geen geslote oortjies om te herstel nie.',
+        renameTab: 'Hernoem oortjie',
+        clearName: 'Verwyder pasgemaakte naam',
+        renamePrompt: 'Voer n pasgemaakte naam in vir hierdie oortjie (laat leeg vir verstek)',
+        renamePlaceholder: 'Pasgemaakte oortjienaam',
+        pinTab: 'Speld oortjie vas',
+        unpinTab: 'Maak oortjie los',
+        cannotClosePinned: 'Kan nie n vasgespelde oortjie sluit nie.',
         confirmClose: (tabLabel) => `Is jy seker jy wil "${tabLabel}" sluit? Jy sal van hierdie rekening afgeteken word.`,
     },
     validation: {

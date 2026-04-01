@@ -3,20 +3,16 @@ const translation = {
     restart: 'Odota hetki, sovellus käynnistyy uudelleen.',
     label: {
         darkThemeInvert: {
-          title: 'Ota tumma tila käyttöön virheineen (käyttäen kääntöä)'
+          title: 'Ota tumma tila käyttöön (käyttäen kääntöä)',
+          off: 'Pois',
+          on: 'Päällä',
+          system: 'Seuraa järjestelmää',
         },
         hideMenu: 'Piilota päävalikko (näytä ALT-näppäimellä)',
         optionToHideMenuState: {
             yes: 'Uudelleenkäynnistyksen jälkeen valikko piilotetaan ja näytetään ALT-näppäimellä.',
         },
         donate: 'Lahjoita',
-        allowMultiple: {
-            checkbox: 'Salli useita ilmentymiä (joillakin virheillä)',
-            message: {
-                yes: 'Nyt voit käyttää useita ilmentymiä joillakin virheillä.',
-                no: 'Nyt sallitaan vain yksi ilmentymä, ei virheitä.'
-            }
-        },
         disableHide: {
             checkbox: 'Sulje ilmaisinalueelle',
             message: {
@@ -35,7 +31,18 @@ const translation = {
         developer: 'Patrik Laszlo',
         personalHome: 'Henkilökohtainen kotisivu',
         corporateHome: 'Yrityksen kotisivu',
-        clearCache: 'Kirjaudu ensin ulos, napsauta sitten tätä valikon vaihtoehtoa tyhjentääksesi välimuistin',
+        clearCache: {
+            title: 'Tyhjennä tiedot ja käynnistä uudelleen',
+            allTabs: 'Kaikki välilehdet - kaikki',
+            currentTab: 'Nykyinen välilehti - kaikki',
+            allCookies: 'Kaikki välilehdet - vain evästeet',
+            currentCookies: 'Nykyinen välilehti - vain evästeet',
+            allCache: 'Kaikki välilehdet - vain välimuisti',
+            currentCache: 'Nykyinen välilehti - vain välimuisti',
+            allLabel: 'kaikki välilehdet',
+            currentLabel: 'nykyinen välilehti',
+            done: (scope, type) => `Tyhjennetty: ${scope} - ${type}`,
+        },
         quit: 'Lopeta',
         show: 'Näytä',
         hide: 'Piilota',
@@ -166,9 +173,21 @@ const translation = {
         title: 'Kirjanmerkit',
         add: 'Lisää kirjanmerkki',
         edit: 'Muokkaa kirjanmerkkejä',
+        manager: 'Hallitse kirjanmerkkejä',
+        managerSearch: 'Etsi kirjanmerkkejä...',
+        managerEmpty: 'Kirjanmerkkejä ei löytynyt.',
+        confirmDelete: 'Poista?',
+        exportBookmarks: 'Vie kirjanmerkit',
+        importBookmarks: 'Tuo kirjanmerkit',
+        exported: 'Kirjanmerkit viety.',
+        imported: (count) => `${count} kirjanmerkkiä tuotu.`,
+        exportTitle: 'Vie kirjanmerkit',
+        importTitle: 'Tuo kirjanmerkit',
         form: {
             title: 'Otsikko',
-            url: 'URL'
+            url: 'URL',
+            category: 'Kansio',
+            categoryPlaceholder: 'esim. Työ/Projektit (käytä / alikansioihin)',
         }
     },
     tabs: {
@@ -177,6 +196,15 @@ const translation = {
         corporate: 'Yritys',
         closeTab: 'Sulje välilehti',
         cannotCloseLastTab: 'Viimeistä välilehteä ei voi sulkea.',
+        restoreClosedTab: 'Palauta viimeksi suljettu välilehti',
+        noClosedTabs: 'Ei suljettuja välilehtiä palautettavaksi.',
+        renameTab: 'Nimeä välilehti uudelleen',
+        clearName: 'Tyhjennä mukautettu nimi',
+        renamePrompt: 'Anna mukautettu nimi tälle välilehdelle (jätä tyhjäksi oletukselle)',
+        renamePlaceholder: 'Mukautettu välilehden nimi',
+        pinTab: 'Kiinnitä välilehti',
+        unpinTab: 'Irrota välilehti',
+        cannotClosePinned: 'Kiinnitettyä välilehteä ei voi sulkea.',
         confirmClose: (tabLabel) => `Haluatko varmasti sulkea "${tabLabel}"? Sinut kirjataan ulos tältä tililtä.`,
     },
     validation: {

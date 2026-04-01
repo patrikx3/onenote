@@ -3,20 +3,16 @@ const translation = {
     restart: 'Bitte warten Sie, die Anwendung wird neu gestartet.',
     label: {
         darkThemeInvert: {
-            title: 'Aktivieren Sie den Dunkelmodus mit Macken (mit invertieren)'
+            title: 'Aktivieren Sie den Dunkelmodus (mit invertieren)',
+          off: 'Aus',
+          on: 'Ein',
+          system: 'System folgen',
         },
         hideMenu: 'Hauptmenü ausblenden (mit ALT anzeigen)',
         optionToHideMenuState: {
             yes: 'Nach dem Neustart wird das Menü ausgeblendet und auf ALT angezeigt.',
         },
         donate: 'Spenden',
-        allowMultiple: {
-            checkbox: 'Mehrere App-Instanzen erlauben (mit ein paar Tricks)',
-            message: {
-                yes: 'Nutzung mehrerer Instanzen aktiv (mit ein paar Tricks).',
-                no: 'Nutzung mehrerer Instanzen deaktiviert (ohne Tricks).'
-            }
-        },
         disableHide: {
             //yes: 'Set the close button behaviour that will minimize to the tray instead of quitting',
             //no: 'Set the close button behaviour as to really quit the app',
@@ -38,7 +34,18 @@ const translation = {
         developer: 'Patrik Laszlo',
         personalHome: 'Persönlich',
         corporateHome: 'Business',
-        clearCache: 'Abmelden und Cache leeren',
+        clearCache: {
+            title: 'Daten löschen und neu starten',
+            allTabs: 'Alle Tabs - alles',
+            currentTab: 'Aktueller Tab - alles',
+            allCookies: 'Alle Tabs - nur Cookies',
+            currentCookies: 'Aktueller Tab - nur Cookies',
+            allCache: 'Alle Tabs - nur Cache',
+            currentCache: 'Aktueller Tab - nur Cache',
+            allLabel: 'alle Tabs',
+            currentLabel: 'aktueller Tab',
+            done: (scope, type) => `Gelöscht: ${scope} - ${type}`,
+        },
         quit: 'Beenden',
         show: 'Maximieren',
         hide: 'Minimieren',
@@ -172,9 +179,21 @@ const translation = {
         title: 'Lesezeichen',
         add: 'Lesezeichen hinzufügen',
         edit: 'Lesezeichen bearbeiten',
+        manager: 'Lesezeichen verwalten',
+        managerSearch: 'Lesezeichen suchen...',
+        managerEmpty: 'Keine Lesezeichen gefunden.',
+        confirmDelete: 'Löschen?',
+        exportBookmarks: 'Lesezeichen exportieren',
+        importBookmarks: 'Lesezeichen importieren',
+        exported: 'Lesezeichen exportiert.',
+        imported: (count) => `${count} Lesezeichen importiert.`,
+        exportTitle: 'Lesezeichen exportieren',
+        importTitle: 'Lesezeichen importieren',
         form: {
             title: 'Titel',
-            url: 'URL'
+            url: 'URL',
+            category: 'Ordner',
+            categoryPlaceholder: 'z.B. Arbeit/Projekte (/ für Unterordner)',
         }
     },
     tabs: {
@@ -183,6 +202,15 @@ const translation = {
         corporate: 'Geschäftlich',
         closeTab: 'Tab schließen',
         cannotCloseLastTab: 'Der letzte Tab kann nicht geschlossen werden.',
+        restoreClosedTab: 'Letzten geschlossenen Tab wiederherstellen',
+        noClosedTabs: 'Keine geschlossenen Tabs zum Wiederherstellen.',
+        renameTab: 'Tab umbenennen',
+        clearName: 'Benutzerdefinierten Namen löschen',
+        renamePrompt: 'Geben Sie einen benutzerdefinierten Namen für diesen Tab ein (leer lassen für Standard)',
+        renamePlaceholder: 'Benutzerdefinierter Tabname',
+        pinTab: 'Tab anheften',
+        unpinTab: 'Tab lösen',
+        cannotClosePinned: 'Ein angehefteter Tab kann nicht geschlossen werden.',
         confirmClose: (tabLabel) => `Möchten Sie „${tabLabel}" wirklich schließen? Sie werden von diesem Konto abgemeldet.`,
     },
     validation: {

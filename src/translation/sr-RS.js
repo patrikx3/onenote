@@ -3,20 +3,16 @@ const translation = {
     restart: 'Молимо сачекајте, апликација се поново покреће.',
     label: {
         darkThemeInvert: {
-          title: 'Укључи тамни режим са недостацима (користећи инверзију)'
+          title: 'Укључи тамни режим (користећи инверзију)',
+          off: 'Искључено',
+          on: 'Укључено',
+          system: 'Прати систем',
         },
         hideMenu: 'Сакриј главни мени (прикажи са ALT)',
         optionToHideMenuState: {
             yes: 'После поновног покретања, сакриће мени и приказати га на ALT.',
         },
         donate: 'Донирај',
-        allowMultiple: {
-            checkbox: 'Дозволи више инстанци (са неким недостацима)',
-            message: {
-                yes: 'Сада можете користити више инстанци са неким недостацима.',
-                no: 'Сада дозвољава само једну инстанцу, без недостатака'
-            }
-        },
         disableHide: {
             checkbox: 'Затвори у системску траку',
             message: {
@@ -35,7 +31,18 @@ const translation = {
         developer: 'Patrik Laszlo',
         personalHome: 'Лична почетна',
         corporateHome: 'Корпоративна почетна',
-        clearCache: 'Прво се одјавите, а затим кликните на ову опцију менија да обришете кеш',
+        clearCache: {
+            title: 'Обриши податке и поново покрени',
+            allTabs: 'Све картице - све',
+            currentTab: 'Тренутна картица - све',
+            allCookies: 'Све картице - само колачићи',
+            currentCookies: 'Тренутна картица - само колачићи',
+            allCache: 'Све картице - само кеш',
+            currentCache: 'Тренутна картица - само кеш',
+            allLabel: 'све картице',
+            currentLabel: 'тренутна картица',
+            done: (scope, type) => `Обрисано: ${scope} - ${type}`,
+        },
         quit: 'Изађи',
         show: 'Прикажи',
         hide: 'Сакриј',
@@ -166,9 +173,21 @@ const translation = {
         title: 'Обележивачи',
         add: 'Додај обележивач',
         edit: 'Уреди обележиваче',
+        manager: 'Управљај обележивачима',
+        managerSearch: 'Претражи обележиваче...',
+        managerEmpty: 'Обележивачи нису пронађени.',
+        confirmDelete: 'Обрисати?',
+        exportBookmarks: 'Извези обележиваче',
+        importBookmarks: 'Увези обележиваче',
+        exported: 'Обележивачи извезени.',
+        imported: (count) => `Увезено ${count} обележивача.`,
+        exportTitle: 'Извези обележиваче',
+        importTitle: 'Увези обележиваче',
         form: {
             title: 'Наслов',
-            url: 'URL'
+            url: 'URL',
+            category: 'Фасцикла',
+            categoryPlaceholder: 'нпр. Посао/Пројекти (/ за потфасцикле)',
         }
     },
     tabs: {
@@ -177,6 +196,15 @@ const translation = {
         corporate: 'Корпоративни',
         closeTab: 'Затвори картицу',
         cannotCloseLastTab: 'Не може се затворити последња картица.',
+        restoreClosedTab: 'Врати последњу затворену картицу',
+        noClosedTabs: 'Нема затворених картица за враћање.',
+        renameTab: 'Преименуј картицу',
+        clearName: 'Обриши прилагођено име',
+        renamePrompt: 'Унесите прилагођено име за ову картицу (оставите празно за подразумевано)',
+        renamePlaceholder: 'Прилагођено име картице',
+        pinTab: 'Закачи картицу',
+        unpinTab: 'Откачи картицу',
+        cannotClosePinned: 'Закачена картица не може да се затвори.',
         confirmClose: (tabLabel) => `Да ли сте сигурни да желите да затворите „${tabLabel}"? Бићете одјављени са овог налога.`,
     },
     validation: {

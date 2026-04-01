@@ -9,6 +9,7 @@ const conf = () => global.p3x.onenote.conf;
 
 // Always compute label from type + account + current language
 function getTabLabel(tab) {
+    if (tab.customName) return tab.customName;
     const lang = global.p3x.onenote.lang;
     const typeLabel = tab.type === 'corporate'
         ? (lang.menu?.language?.dialog?.corporate || lang.tabs?.corporate || 'Corporate')
@@ -47,7 +48,12 @@ function setupWebviewHandlers(tab) {
             // Check both getURL() and src - hash fragment may only be in one
             const url1 = webview.getURL();
             const url2 = webview.src;
-            tab.url = url1;
+
+            // Only save valid OneNote URLs — skip blank, auth, and login pages
+            const isValid = url1 && !url1.startsWith('about:') && !url1.includes('login.microsoftonline.com') && !url1.includes('login.live.com');
+            if (isValid) {
+                tab.url = url1;
+            }
 
             // Try to extract account email from OAuth callback
             const account = extractAccountInfo(url1) || extractAccountInfo(url2);
@@ -84,13 +90,17 @@ function setupWebviewHandlers(tab) {
     webview.addEventListener('dom-ready', () => {
         tab.domReady = true;
 
+        // Apply per-tab zoom for all tabs on dom-ready
+        const zoom = tab.zoom !== undefined ? tab.zoom : 1.0;
+        if (zoom !== 1.0) webview.setZoomFactor(zoom);
+
         if (tab.id === activeTabId) {
             webview.blur();
             webview.focus();
 
-            let zoom = conf().get('zoom');
-            if (zoom === undefined) zoom = 1.0;
-            if (zoom !== 1.0) webview.setZoomFactor(zoom);
+            if (global.p3x.onenote.updateZoomDisplay) {
+                global.p3x.onenote.updateZoomDisplay();
+            }
 
             if (process.env.NODE_ENV === 'debug') {
                 webview.openDevTools();
@@ -139,7 +149,10 @@ function createTab(opts = {}) {
     const url = opts.url || 'https://www.onenote.com/notebooks';
 
     const webview = createWebview(partition);
-    const tab = { id, type, account, partition, url, webview, domReady: false };
+    const zoom = opts.zoom !== undefined ? opts.zoom : 1.0;
+    const customName = opts.customName || '';
+    const pinned = opts.pinned || false;
+    const tab = { id, type, account, partition, url, webview, domReady: false, zoom, customName, pinned };
     tabs.push(tab);
 
     setupWebviewHandlers(tab);
@@ -164,6 +177,27 @@ function removeTab(id) {
     if (idx === -1) return;
 
     const tab = tabs[idx];
+
+    if (tab.pinned) {
+        global.p3x.onenote.toast.action(
+            global.p3x.onenote.lang.tabs?.cannotClosePinned || 'Cannot close a pinned tab.'
+        );
+        return;
+    }
+
+    // Save to closed tabs history before removing
+    const closedTabs = conf().get('closedTabsHistory') || [];
+    closedTabs.unshift({
+        type: tab.type,
+        account: tab.account,
+        partition: tab.partition,
+        url: tab.url,
+        zoom: tab.zoom,
+        customName: tab.customName,
+    });
+    if (closedTabs.length > 10) closedTabs.length = 10;
+    conf().set('closedTabsHistory', closedTabs);
+
     tab.webview.remove();
     tabs.splice(idx, 1);
 
@@ -183,10 +217,15 @@ function switchTab(id) {
             tab.webview.classList.remove('p3x-hidden');
             if (tab.domReady) {
                 tab.webview.focus();
+                const zoom = tab.zoom !== undefined ? tab.zoom : 1.0;
+                tab.webview.setZoomFactor(zoom);
             }
             global.p3x.onenote.data.url = tab.url;
             p3x.onenote.wait.angular(() => {
                 global.p3x.onenote.updateLocation(tab.url);
+                if (global.p3x.onenote.updateZoomDisplay) {
+                    global.p3x.onenote.updateZoomDisplay();
+                }
             });
         } else {
             tab.webview.classList.add('p3x-hidden');
@@ -209,6 +248,8 @@ function getAllWebviews() {
     return tabs.map(t => t.webview);
 }
 
+let dragSourceTabId = null;
+
 function renderTabBar() {
     const bar = tabBar();
     bar.innerHTML = '';
@@ -216,6 +257,16 @@ function renderTabBar() {
     for (const tab of tabs) {
         const el = document.createElement('div');
         el.className = 'p3x-tab' + (tab.id === activeTabId ? ' p3x-tab-active' : '');
+        el.draggable = true;
+        el.dataset.tabId = tab.id;
+
+        if (tab.pinned) {
+            const pinIcon = document.createElement('i');
+            pinIcon.className = 'fas fa-thumbtack';
+            pinIcon.style.fontSize = '9px';
+            pinIcon.style.opacity = '0.7';
+            el.appendChild(pinIcon);
+        }
 
         const label = document.createElement('span');
         label.textContent = getTabLabel(tab);
@@ -223,12 +274,99 @@ function renderTabBar() {
         label.style.textOverflow = 'ellipsis';
         el.appendChild(label);
 
+        // Drag-and-drop reordering
+        el.addEventListener('dragstart', (e) => {
+            dragSourceTabId = tab.id;
+            el.classList.add('p3x-tab-dragging');
+            e.dataTransfer.effectAllowed = 'move';
+        });
+
+        el.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            e.dataTransfer.dropEffect = 'move';
+            if (dragSourceTabId !== null && dragSourceTabId !== tab.id) {
+                el.classList.add('p3x-tab-drag-over');
+            }
+        });
+
+        el.addEventListener('dragleave', () => {
+            el.classList.remove('p3x-tab-drag-over');
+        });
+
+        el.addEventListener('drop', (e) => {
+            e.preventDefault();
+            el.classList.remove('p3x-tab-drag-over');
+            if (dragSourceTabId === null || dragSourceTabId === tab.id) return;
+
+            const fromIdx = tabs.findIndex(t => t.id === dragSourceTabId);
+            const toIdx = tabs.findIndex(t => t.id === tab.id);
+            if (fromIdx === -1 || toIdx === -1) return;
+
+            const [moved] = tabs.splice(fromIdx, 1);
+            tabs.splice(toIdx, 0, moved);
+            persistState();
+            renderTabBar();
+        });
+
+        el.addEventListener('dragend', () => {
+            dragSourceTabId = null;
+            // Clean up all drag classes
+            bar.querySelectorAll('.p3x-tab-dragging, .p3x-tab-drag-over').forEach(el => {
+                el.classList.remove('p3x-tab-dragging', 'p3x-tab-drag-over');
+            });
+        });
+
+        // Right-click context menu
+        el.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            const { remote } = window.electronShim;
+            const { Menu, MenuItem } = remote;
+            const menu = new Menu();
+            const lang = global.p3x.onenote.lang;
+            menu.append(new MenuItem({
+                label: lang.tabs?.renameTab || 'Rename tab',
+                click: async () => {
+                    try {
+                        const name = await global.p3x.onenote.prompt.renameTab(tab.customName || '');
+                        tab.customName = name || '';
+                        persistState();
+                        renderTabBar();
+                    } catch (e) {
+                        // cancelled
+                    }
+                }
+            }));
+            if (tab.customName) {
+                menu.append(new MenuItem({
+                    label: lang.tabs?.clearName || 'Clear custom name',
+                    click: () => {
+                        tab.customName = '';
+                        persistState();
+                        renderTabBar();
+                    }
+                }));
+            }
+            menu.append(new MenuItem({ type: 'separator' }));
+            menu.append(new MenuItem({
+                label: tab.pinned
+                    ? (lang.tabs?.unpinTab || 'Unpin tab')
+                    : (lang.tabs?.pinTab || 'Pin tab'),
+                click: () => {
+                    tab.pinned = !tab.pinned;
+                    persistState();
+                    renderTabBar();
+                }
+            }));
+            menu.popup();
+        });
+
         el.addEventListener('click', (e) => {
             if (e.target.classList.contains('p3x-tab-close')) return;
             switchTab(tab.id);
         });
 
-        if (tabs.length > 1) {
+        if (tabs.length > 1 && !tab.pinned) {
             const close = document.createElement('button');
             close.className = 'p3x-tab-close';
             close.innerHTML = '<i class="fas fa-times"></i>';
@@ -270,13 +408,44 @@ function renderTabBar() {
     bar.appendChild(addBtn);
 }
 
+function restoreClosedTab() {
+    const closedTabs = conf().get('closedTabsHistory') || [];
+    if (closedTabs.length === 0) {
+        global.p3x.onenote.toast.action(
+            global.p3x.onenote.lang.tabs?.noClosedTabs || 'No closed tabs to restore.'
+        );
+        return;
+    }
+
+    const data = closedTabs.shift();
+    conf().set('closedTabsHistory', closedTabs);
+    createTab({
+        type: data.type,
+        account: data.account,
+        partition: data.partition,
+        url: data.url,
+        zoom: data.zoom,
+    });
+}
+
+function setActiveTabZoom(zoom) {
+    const tab = tabs.find(t => t.id === activeTabId);
+    if (tab) {
+        tab.zoom = zoom;
+        persistState();
+    }
+}
+
 function persistState() {
     const data = tabs.map(t => ({
         id: t.id,
         type: t.type || 'personal',
         account: t.account || '',
         partition: t.partition,
-        url: t.url,
+        url: (t.url && !t.url.startsWith('about:')) ? t.url : 'https://www.onenote.com/notebooks',
+        zoom: t.zoom !== undefined ? t.zoom : 1.0,
+        customName: t.customName || '',
+        pinned: t.pinned || false,
     }));
     conf().set('tabs', data);
     conf().set('activeTabId', activeTabId);
@@ -306,6 +475,9 @@ function init() {
             account: data.account || '',
             partition: data.partition,
             url: data.url,
+            zoom: data.zoom !== undefined ? data.zoom : 1.0,
+            customName: data.customName || '',
+            pinned: data.pinned || false,
             webview,
             domReady: false,
         };
@@ -324,4 +496,4 @@ function init() {
     renderTabBar();
 }
 
-export default { init, createTab, removeTab, switchTab, getActiveWebview, getActiveTab, getAllWebviews, renderTabBar, tabs };
+export default { init, createTab, removeTab, switchTab, getActiveWebview, getActiveTab, getAllWebviews, renderTabBar, setActiveTabZoom, restoreClosedTab, tabs };

@@ -3,20 +3,16 @@ const translation = {
     restart: 'অনুগ্রহ করে অপেক্ষা করুন, অ্যাপ্লিকেশনটি পুনরায় চালু হচ্ছে।',
     label: {
         darkThemeInvert: {
-          title: 'সমস্যাসহ ডার্ক মোড সক্রিয় করুন (ইনভার্ট ব্যবহার করে)'
+          title: 'ডার্ক মোড সক্রিয় করুন (ইনভার্ট ব্যবহার করে)',
+          off: 'বন্ধ',
+          on: 'চালু',
+          system: 'সিস্টেম অনুসরণ',
         },
         hideMenu: 'প্রধান মেনু লুকান (ALT দিয়ে দেখান)',
         optionToHideMenuState: {
             yes: 'পুনরায় চালু করার পর, এটি মেনু লুকাবে এবং ALT চাপলে দেখাবে।',
         },
         donate: 'দান করুন',
-        allowMultiple: {
-            checkbox: 'একাধিক ইনস্ট্যান্স অনুমতি দিন (কিছু সমস্যাসহ)',
-            message: {
-                yes: 'এখন আপনি কিছু সমস্যাসহ একাধিক ইনস্ট্যান্স ব্যবহার করতে পারেন।',
-                no: 'এখন, এটি শুধুমাত্র একটি ইনস্ট্যান্স অনুমতি দেয়, কোনো সমস্যা নেই'
-            }
-        },
         disableHide: {
             checkbox: 'ট্রেতে বন্ধ করুন',
             message: {
@@ -35,7 +31,18 @@ const translation = {
         developer: 'Patrik Laszlo',
         personalHome: 'ব্যক্তিগত হোম',
         corporateHome: 'কর্পোরেট হোম',
-        clearCache: 'প্রথমে সাইন আউট করুন, তারপর ক্যাশ পরিষ্কার করতে এই মেনু অপশনে ক্লিক করুন',
+        clearCache: {
+            title: 'ডেটা মুছুন এবং পুনরায় চালু করুন',
+            allTabs: 'সমস্ত ট্যাব - সব',
+            currentTab: 'বর্তমান ট্যাব - সব',
+            allCookies: 'সমস্ত ট্যাব - শুধু কুকি',
+            currentCookies: 'বর্তমান ট্যাব - শুধু কুকি',
+            allCache: 'সমস্ত ট্যাব - শুধু ক্যাশে',
+            currentCache: 'বর্তমান ট্যাব - শুধু ক্যাশে',
+            allLabel: 'সমস্ত ট্যাব',
+            currentLabel: 'বর্তমান ট্যাব',
+            done: (scope, type) => `মুছে ফেলা হয়েছে: ${scope} - ${type}`,
+        },
         quit: 'প্রস্থান',
         show: 'দেখান',
         hide: 'লুকান',
@@ -166,9 +173,21 @@ const translation = {
         title: 'বুকমার্ক',
         add: 'বুকমার্ক যোগ করুন',
         edit: 'বুকমার্ক সম্পাদনা করুন',
+        manager: 'বুকমার্ক পরিচালনা',
+        managerSearch: 'বুকমার্ক খুঁজুন...',
+        managerEmpty: 'কোনো বুকমার্ক পাওয়া যায়নি।',
+        confirmDelete: 'মুছবেন?',
+        exportBookmarks: 'বুকমার্ক রপ্তানি করুন',
+        importBookmarks: 'বুকমার্ক আমদানি করুন',
+        exported: 'বুকমার্ক রপ্তানি হয়েছে।',
+        imported: (count) => `${count}টি বুকমার্ক আমদানি হয়েছে।`,
+        exportTitle: 'বুকমার্ক রপ্তানি করুন',
+        importTitle: 'বুকমার্ক আমদানি করুন',
         form: {
             title: 'শিরোনাম',
-            url: 'URL'
+            url: 'URL',
+            category: 'ফোল্ডার',
+            categoryPlaceholder: 'যেমন: কাজ/প্রকল্প (সাবফোল্ডারের জন্য / ব্যবহার করুন)',
         }
     },
     tabs: {
@@ -177,6 +196,15 @@ const translation = {
         corporate: 'কর্পোরেট',
         closeTab: 'ট্যাব বন্ধ করুন',
         cannotCloseLastTab: 'শেষ ট্যাবটি বন্ধ করা যাবে না।',
+        restoreClosedTab: 'শেষ বন্ধ করা ট্যাব পুনরুদ্ধার করুন',
+        noClosedTabs: 'পুনরুদ্ধার করার জন্য কোনো বন্ধ ট্যাব নেই।',
+        renameTab: 'ট্যাবের নাম পরিবর্তন করুন',
+        clearName: 'কাস্টম নাম মুছুন',
+        renamePrompt: 'এই ট্যাবের জন্য একটি কাস্টম নাম লিখুন (ডিফল্ট ব্যবহার করতে খালি রাখুন)',
+        renamePlaceholder: 'কাস্টম ট্যাব নাম',
+        pinTab: 'ট্যাব পিন করুন',
+        unpinTab: 'ট্যাব আনপিন করুন',
+        cannotClosePinned: 'পিন করা ট্যাব বন্ধ করা যাবে না।',
         confirmClose: (tabLabel) => `আপনি কি নিশ্চিত যে আপনি "${tabLabel}" বন্ধ করতে চান? আপনি এই অ্যাকাউন্ট থেকে সাইন আউট হয়ে যাবেন।`,
     },
     validation: {

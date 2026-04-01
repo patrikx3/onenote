@@ -3,20 +3,16 @@ const translation = {
     restart: 'Vui lòng chờ, ứng dụng đang khởi động lại.',
     label: {
         darkThemeInvert: {
-          title: 'Bật chế độ tối với một số lỗi (sử dụng đảo ngược)'
+          title: 'Bật chế độ tối (sử dụng đảo ngược)',
+          off: 'Tắt',
+          on: 'Bật',
+          system: 'Theo hệ thống',
         },
         hideMenu: 'Ẩn menu chính (hiển thị bằng ALT)',
         optionToHideMenuState: {
             yes: 'Sau khi khởi động lại, menu sẽ bị ẩn và hiển thị khi nhấn ALT.',
         },
         donate: 'Quyên góp',
-        allowMultiple: {
-            checkbox: 'Cho phép nhiều phiên bản (với một số lỗi)',
-            message: {
-                yes: 'Bây giờ bạn có thể sử dụng nhiều phiên bản với một số lỗi.',
-                no: 'Bây giờ, chỉ cho phép một phiên bản, không có lỗi'
-            }
-        },
         disableHide: {
             checkbox: 'Đóng vào khay hệ thống',
             message: {
@@ -35,7 +31,18 @@ const translation = {
         developer: 'Patrik Laszlo',
         personalHome: 'Trang chủ cá nhân',
         corporateHome: 'Trang chủ doanh nghiệp',
-        clearCache: 'Đăng xuất trước, sau đó nhấp vào tùy chọn menu này để xóa bộ nhớ đệm',
+        clearCache: {
+            title: 'Xóa dữ liệu và khởi động lại',
+            allTabs: 'Tất cả tab - tất cả',
+            currentTab: 'Tab hiện tại - tất cả',
+            allCookies: 'Tất cả tab - chỉ cookie',
+            currentCookies: 'Tab hiện tại - chỉ cookie',
+            allCache: 'Tất cả tab - chỉ bộ nhớ đệm',
+            currentCache: 'Tab hiện tại - chỉ bộ nhớ đệm',
+            allLabel: 'tất cả tab',
+            currentLabel: 'tab hiện tại',
+            done: (scope, type) => `Đã xóa: ${scope} - ${type}`,
+        },
         quit: 'Thoát',
         show: 'Hiển thị',
         hide: 'Ẩn',
@@ -166,9 +173,21 @@ const translation = {
         title: 'Dấu trang',
         add: 'Thêm dấu trang',
         edit: 'Chỉnh sửa dấu trang',
+        manager: 'Quản lý dấu trang',
+        managerSearch: 'Tìm dấu trang...',
+        managerEmpty: 'Không tìm thấy dấu trang.',
+        confirmDelete: 'Xóa?',
+        exportBookmarks: 'Xuất dấu trang',
+        importBookmarks: 'Nhập dấu trang',
+        exported: 'Đã xuất dấu trang.',
+        imported: (count) => `Đã nhập ${count} dấu trang.`,
+        exportTitle: 'Xuất dấu trang',
+        importTitle: 'Nhập dấu trang',
         form: {
             title: 'Tiêu đề',
-            url: 'URL'
+            url: 'URL',
+            category: 'Thư mục',
+            categoryPlaceholder: 'vd: Công việc/Dự án (dùng / cho thư mục con)',
         }
     },
     tabs: {
@@ -177,6 +196,15 @@ const translation = {
         corporate: 'Doanh nghiệp',
         closeTab: 'Đóng thẻ',
         cannotCloseLastTab: 'Không thể đóng thẻ cuối cùng.',
+        restoreClosedTab: 'Khôi phục tab vừa đóng',
+        noClosedTabs: 'Không có tab đã đóng để khôi phục.',
+        renameTab: 'Đổi tên tab',
+        clearName: 'Xóa tên tùy chỉnh',
+        renamePrompt: 'Nhập tên tùy chỉnh cho tab này (để trống để dùng mặc định)',
+        renamePlaceholder: 'Tên tab tùy chỉnh',
+        pinTab: 'Ghim tab',
+        unpinTab: 'Bỏ ghim tab',
+        cannotClosePinned: 'Không thể đóng tab đã ghim.',
         confirmClose: (tabLabel) => `Bạn có chắc chắn muốn đóng "${tabLabel}" không? Bạn sẽ bị đăng xuất khỏi tài khoản này.`,
     },
     validation: {

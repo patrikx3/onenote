@@ -3,20 +3,16 @@ const translation = {
     restart: 'Veuillez patienter, l\'application redémarre.',
     label: {
         darkThemeInvert: {
-            title: 'Activer le mode sombre avec des bizarreries (en utilisant l\'inversion)'
+            title: 'Activer le mode sombre (en utilisant l\'inversion)',
+          off: 'Désactivé',
+          on: 'Activé',
+          system: 'Suivre le système',
         },
         hideMenu: 'Masquer le menu principal (afficher avec ALT)',
         optionToHideMenuState: {
             yes: 'Après le redémarrage, il masquera le menu et s\'affichera sur ALT.',
         },
         donate: 'Faire un don',
-        allowMultiple: {
-            checkbox: 'Autoriser plusieurs instances (avec quelques bizarreries)',
-            message: {
-                yes: 'Vous pouvez maintenant utiliser plusieurs instances avec quelques bizarreries.',
-                no: 'Une seule instance est possible, pas de bizarreries.'
-            }
-        },
         disableHide: {
             //yes: 'Set the close button behaviour that will minimize to the tray instead of quitting',
             //no: 'Set the close button behaviour as to really quit the app',
@@ -38,7 +34,18 @@ const translation = {
         developer: 'Patrik Laszlo',
         personalHome: 'Compte personnel',
         corporateHome: 'Compte professionnel',
-        clearCache: 'Premièrement déconnectez-vous, puis sélectionnez cette option pour nettoyer le cache',
+        clearCache: {
+            title: 'Effacer les données et redémarrer',
+            allTabs: 'Tous les onglets - tout',
+            currentTab: 'Onglet actuel - tout',
+            allCookies: 'Tous les onglets - cookies uniquement',
+            currentCookies: 'Onglet actuel - cookies uniquement',
+            allCache: 'Tous les onglets - cache uniquement',
+            currentCache: 'Onglet actuel - cache uniquement',
+            allLabel: 'tous les onglets',
+            currentLabel: 'onglet actuel',
+            done: (scope, type) => `Effacé: ${scope} - ${type}`,
+        },
         quit: 'Quitter',
         show: 'Afficher',
         hide: 'Cacher',
@@ -172,9 +179,21 @@ const translation = {
         title: 'Favoris',
         add: 'Ajouter un marque-page',
         edit: 'Modifier les favoris',
+        manager: 'Gérer les signets',
+        managerSearch: 'Rechercher des signets...',
+        managerEmpty: 'Aucun signet trouvé.',
+        confirmDelete: 'Supprimer ?',
+        exportBookmarks: 'Exporter les signets',
+        importBookmarks: 'Importer les signets',
+        exported: 'Signets exportés.',
+        imported: (count) => `${count} signet(s) importé(s).`,
+        exportTitle: 'Exporter les signets',
+        importTitle: 'Importer les signets',
         form: {
             title: 'Titre',
-            url: 'URL'
+            url: 'URL',
+            category: 'Dossier',
+            categoryPlaceholder: 'ex. Travail/Projets (/ pour sous-dossiers)',
         }
     },
     tabs: {
@@ -183,6 +202,15 @@ const translation = {
         corporate: 'Entreprise',
         closeTab: 'Fermer l\'onglet',
         cannotCloseLastTab: 'Impossible de fermer le dernier onglet.',
+        restoreClosedTab: 'Restaurer le dernier onglet fermé',
+        noClosedTabs: 'Aucun onglet fermé à restaurer.',
+        renameTab: "Renommer l'onglet",
+        clearName: 'Effacer le nom personnalisé',
+        renamePrompt: 'Entrez un nom personnalisé pour cet onglet (laissez vide pour utiliser le défaut)',
+        renamePlaceholder: "Nom d'onglet personnalisé",
+        pinTab: "Épingler l'onglet",
+        unpinTab: "Désépingler l'onglet",
+        cannotClosePinned: 'Impossible de fermer un onglet épinglé.',
         confirmClose: (tabLabel) => `Êtes-vous sûr de vouloir fermer « ${tabLabel} » ? Vous serez déconnecté de ce compte.`,
     },
     validation: {

@@ -1,4 +1,4 @@
-import { BrowserWindow, app } from 'electron'
+import { BrowserWindow, app, screen } from 'electron'
 import remoteMain from '@electron/remote/main/index.js'
 import path from 'path'
 import electronUpdater from 'electron-updater'
@@ -107,7 +107,20 @@ function createWindow() {
             win.maximize()
         }
         else if (windowBounds !== null && windowBounds !== undefined) {
-            win.setBounds(windowBounds);
+            // Validate bounds are within any available display
+            const displays = screen.getAllDisplays();
+            const isVisible = displays.some(display => {
+                const db = display.bounds;
+                return windowBounds.x < db.x + db.width &&
+                       windowBounds.x + windowBounds.width > db.x &&
+                       windowBounds.y < db.y + db.height &&
+                       windowBounds.y + windowBounds.height > db.y;
+            });
+            if (isVisible) {
+                win.setBounds(windowBounds);
+            } else {
+                win.center();
+            }
         }
     }
 

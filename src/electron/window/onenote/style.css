@@ -181,6 +181,14 @@ body {
     color: #fff;
 }
 
+.p3x-tab.p3x-tab-dragging {
+    opacity: 0.4;
+}
+
+.p3x-tab.p3x-tab-drag-over {
+    border-left: 2px solid rgba(255, 255, 255, 0.8);
+}
+
 #p3x-tab-add {
     background: none;
     border: 1px solid rgba(255, 255, 255, 0.25);
@@ -390,11 +398,191 @@ body {
     background: #fde7e9;
 }
 
-/* ── Dark mode dialog & toast ────────────────────────────────────── */
+/* ── Bookmark Manager ──────────────────────────────────────────────── */
+
+#p3x-dialog.p3x-bookmark-manager {
+    min-width: 700px;
+    max-width: 900px;
+    max-height: 80vh;
+}
+
+.p3x-bm-toolbar {
+    display: flex;
+    gap: 8px;
+    padding: 0 24px 12px;
+    align-items: center;
+}
+
+.p3x-bm-search {
+    flex: 1;
+}
+
+.p3x-bm-list {
+    max-height: 50vh;
+    overflow-y: auto;
+    padding: 0 24px 16px;
+}
+
+.p3x-bm-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.p3x-bm-table th {
+    text-align: left;
+    padding: 6px 8px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #605e5c;
+    border-bottom: 2px solid #e1dfdd;
+    user-select: none;
+    white-space: nowrap;
+}
+
+.p3x-bm-table td {
+    padding: 5px 8px;
+    border-bottom: 1px solid #e1dfdd;
+    vertical-align: middle;
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.p3x-bm-table tr:hover {
+    background: rgba(0, 0, 0, 0.04);
+}
+
+.p3x-bm-table .p3x-bm-cell-edit {
+    cursor: pointer;
+}
+
+.p3x-bm-table .p3x-bm-cell-edit:hover {
+    color: var(--p3x-onenote-purple);
+    text-decoration: underline;
+}
+
+.p3x-bm-table .p3x-bm-actions {
+    white-space: nowrap;
+    width: 1%;
+}
+
+.p3x-bm-table .p3x-bm-actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 12px;
+    color: #605e5c;
+}
+
+.p3x-bm-table .p3x-bm-actions button:hover {
+    background: rgba(0, 0, 0, 0.08);
+    color: #323130;
+}
+
+.p3x-bm-table .p3x-bm-actions button.p3x-bm-delete:hover {
+    color: #a4262c;
+    background: #fde7e9;
+}
+
+.p3x-bm-inline-input {
+    border: 1px solid var(--p3x-onenote-purple);
+    border-radius: 3px;
+    padding: 2px 4px;
+    font-size: 13px;
+    font-family: var(--p3x-onenote-font);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.p3x-bm-empty {
+    text-align: center;
+    padding: 24px;
+    color: #605e5c;
+    font-style: italic;
+}
+
+.p3x-bm-folder-tag {
+    display: inline-block;
+    background: rgba(119, 25, 170, 0.1);
+    color: var(--p3x-onenote-purple);
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-size: 11px;
+}
+
+/* ── Dark mode bookmark manager ─────────────────────────────────── */
+
+body.p3x-dark-mode-invert-quirks .p3x-bm-table {
+    color: #e0e0e0;
+}
+
+body.p3x-dark-mode-invert-quirks .p3x-bm-table th {
+    color: #b0b0b0;
+    border-bottom-color: #555;
+}
+
+body.p3x-dark-mode-invert-quirks .p3x-bm-table td {
+    color: #e0e0e0;
+    border-bottom-color: #4a4a4a;
+}
+
+body.p3x-dark-mode-invert-quirks .p3x-bm-table .p3x-bm-cell-edit:hover {
+    color: var(--p3x-onenote-purple-light);
+}
+
+body.p3x-dark-mode-invert-quirks .p3x-bm-table tr:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+body.p3x-dark-mode-invert-quirks .p3x-bm-table .p3x-bm-actions button {
+    color: #b0b0b0;
+}
+
+body.p3x-dark-mode-invert-quirks .p3x-bm-table .p3x-bm-actions button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #e0e0e0;
+}
+
+body.p3x-dark-mode-invert-quirks .p3x-bm-table .p3x-bm-actions button.p3x-bm-delete:hover {
+    color: #f48fb1;
+    background: #3d2020;
+}
+
+body.p3x-dark-mode-invert-quirks .p3x-bm-inline-input {
+    background: #3c3c3c;
+    color: #e0e0e0;
+    border-color: var(--p3x-onenote-purple-light);
+}
+
+body.p3x-dark-mode-invert-quirks .p3x-bm-folder-tag {
+    background: rgba(155, 81, 198, 0.3);
+    color: var(--p3x-onenote-purple-light);
+}
+
+body.p3x-dark-mode-invert-quirks .p3x-bm-empty {
+    color: #b0b0b0;
+}
+
+body.p3x-dark-mode-invert-quirks .p3x-bm-search {
+    background: #3c3c3c;
+    color: #e0e0e0;
+    border-color: #6b6b6b;
+}
+
+/* ── Dark mode dialog & toast (Fluent Design dark palette) ──────── */
 
 body.p3x-dark-mode-invert-quirks #p3x-dialog {
-    background: #1e1e1e;
+    background: #2d2d2d;
     color: #e0e0e0;
+}
+
+body.p3x-dark-mode-invert-quirks #p3x-dialog::backdrop {
+    background: rgba(0, 0, 0, 0.5);
 }
 
 body.p3x-dark-mode-invert-quirks .p3x-dialog-title {
@@ -402,13 +590,13 @@ body.p3x-dark-mode-invert-quirks .p3x-dialog-title {
 }
 
 body.p3x-dark-mode-invert-quirks .p3x-dialog-body p {
-    color: #a0a0a0;
+    color: #c8c8c8;
 }
 
 body.p3x-dark-mode-invert-quirks .p3x-dialog-input {
-    background: #2d2d2d;
+    background: #3c3c3c;
     color: #e0e0e0;
-    border-color: #555;
+    border-color: #6b6b6b;
 }
 
 body.p3x-dark-mode-invert-quirks .p3x-dialog-input:focus {
@@ -421,13 +609,13 @@ body.p3x-dark-mode-invert-quirks .p3x-dialog-field label {
 }
 
 body.p3x-dark-mode-invert-quirks .p3x-btn {
-    background: #2d2d2d;
-    border-color: #555;
+    background: #3c3c3c;
+    border-color: #6b6b6b;
     color: #e0e0e0;
 }
 
 body.p3x-dark-mode-invert-quirks .p3x-btn:hover {
-    background: #3a3a3a;
+    background: #4a4a4a;
 }
 
 body.p3x-dark-mode-invert-quirks .p3x-btn.p3x-btn-warn {
@@ -436,5 +624,5 @@ body.p3x-dark-mode-invert-quirks .p3x-btn.p3x-btn-warn {
 }
 
 body.p3x-dark-mode-invert-quirks .p3x-btn.p3x-btn-warn:hover {
-    background: #3d2020;
+    background: #4a2020;
 }

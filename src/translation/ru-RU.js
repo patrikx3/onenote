@@ -3,20 +3,16 @@ const translation = {
     restart: 'Пожалуйста подождите, приложение перезапускается.',
     label: {
         darkThemeInvert: {
-          title: 'Включить "хитрую" тёмную тему (применяя инверсию)'
+          title: 'Включить тёмную тему (применяя инверсию)',
+          off: 'Выкл',
+          on: 'Вкл',
+          system: 'Как в системе',
         },
         hideMenu: 'Переключать строку меню через ALT',
         optionToHideMenuState: {
             yes: 'После перезапуска строка меню будет скрыта. Откройте её через ALT.',
         },
         donate: 'Пожертвовать',
-        allowMultiple: {
-            checkbox: 'Разрешить несколько окон (могут быть ошибки)',
-            message: {
-                yes: 'Теперь вы можете использовать несколько окон, но могут быть ошибки.',
-                no: 'Теперь можно использовать только одно окно, без ошибок.'
-             }
-        },
         disableHide: {
             //yes: 'Set the close button behaviour that will minimize to the tray instead of quitting',
             //no: 'Set the close button behaviour as to really quit the app',
@@ -38,7 +34,18 @@ const translation = {
         developer: 'Patrik Laszlo',
         personalHome: 'Личная домашняя страница',
         corporateHome: 'Корпоративная домашняя страница',
-        clearCache: 'Сначала выйдите из аккаунта, затем нажмите этот пункт меню, чтобы очистить кэш',
+        clearCache: {
+            title: 'Очистить данные и перезапустить',
+            allTabs: 'Все вкладки - всё',
+            currentTab: 'Текущая вкладка - всё',
+            allCookies: 'Все вкладки - только куки',
+            currentCookies: 'Текущая вкладка - только куки',
+            allCache: 'Все вкладки - только кеш',
+            currentCache: 'Текущая вкладка - только кеш',
+            allLabel: 'все вкладки',
+            currentLabel: 'текущая вкладка',
+            done: (scope, type) => `Очищено: ${scope} - ${type}`,
+        },
         quit: 'Выйти',
         show: 'Показать',
         hide: 'Скрыть',
@@ -173,9 +180,21 @@ const translation = {
         title: 'Закладки',
         add: 'Добавить закладку',
         edit: 'Изменить закладки',
+        manager: 'Управление закладками',
+        managerSearch: 'Поиск закладок...',
+        managerEmpty: 'Закладки не найдены.',
+        confirmDelete: 'Удалить?',
+        exportBookmarks: 'Экспорт закладок',
+        importBookmarks: 'Импорт закладок',
+        exported: 'Закладки экспортированы.',
+        imported: (count) => `Импортировано закладок: ${count}.`,
+        exportTitle: 'Экспорт закладок',
+        importTitle: 'Импорт закладок',
         form: {
             title: 'Название',
-            url: 'ссылка'
+            url: 'ссылка',
+            category: 'Папка',
+            categoryPlaceholder: 'напр. Работа/Проекты (/ для подпапок)',
         }
     },
     tabs: {
@@ -184,6 +203,15 @@ const translation = {
         corporate: 'Корпоративный',
         closeTab: 'Закрыть вкладку',
         cannotCloseLastTab: 'Невозможно закрыть последнюю вкладку.',
+        restoreClosedTab: 'Восстановить последнюю закрытую вкладку',
+        noClosedTabs: 'Нет закрытых вкладок для восстановления.',
+        renameTab: 'Переименовать вкладку',
+        clearName: 'Удалить пользовательское имя',
+        renamePrompt: 'Введите пользовательское имя для этой вкладки (оставьте пустым для имени по умолчанию)',
+        renamePlaceholder: 'Пользовательское имя вкладки',
+        pinTab: 'Закрепить вкладку',
+        unpinTab: 'Открепить вкладку',
+        cannotClosePinned: 'Невозможно закрыть закреплённую вкладку.',
         confirmClose: (tabLabel) => `Вы уверены, что хотите закрыть «${tabLabel}»? Вы будете выходить из этого аккаунта.`,
     },
     validation: {

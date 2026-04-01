@@ -3,20 +3,16 @@ const translation = {
     restart: 'Vänligen vänta, applikationen startar om.',
     label: {
         darkThemeInvert: {
-          title: 'Aktivera mörkt läge med brister (med invertering)'
+          title: 'Aktivera mörkt läge (med invertering)',
+          off: 'Av',
+          on: 'På',
+          system: 'Följ system',
         },
         hideMenu: 'Dölj huvudmenyn (visa med ALT)',
         optionToHideMenuState: {
             yes: 'Efter omstart kommer menyn att döljas och visas med ALT.',
         },
         donate: 'Donera',
-        allowMultiple: {
-            checkbox: 'Tillåt flera instanser (med vissa brister)',
-            message: {
-                yes: 'Nu kan du använda flera instanser med vissa brister.',
-                no: 'Nu tillåts bara en instans, inga brister'
-            }
-        },
         disableHide: {
             checkbox: 'Stäng till systemfältet',
             message: {
@@ -35,7 +31,18 @@ const translation = {
         developer: 'Patrik Laszlo',
         personalHome: 'Personlig startsida',
         corporateHome: 'Företagets startsida',
-        clearCache: 'Logga ut först, klicka sedan på detta menyalternativ för att rensa cachen',
+        clearCache: {
+            title: 'Rensa data och starta om',
+            allTabs: 'Alla flikar - allt',
+            currentTab: 'Aktuell flik - allt',
+            allCookies: 'Alla flikar - bara cookies',
+            currentCookies: 'Aktuell flik - bara cookies',
+            allCache: 'Alla flikar - bara cache',
+            currentCache: 'Aktuell flik - bara cache',
+            allLabel: 'alla flikar',
+            currentLabel: 'aktuell flik',
+            done: (scope, type) => `Rensat: ${scope} - ${type}`,
+        },
         quit: 'Avsluta',
         show: 'Visa',
         hide: 'Dölj',
@@ -166,9 +173,21 @@ const translation = {
         title: 'Bokmärken',
         add: 'Lägg till bokmärke',
         edit: 'Redigera bokmärken',
+        manager: 'Hantera bokmärken',
+        managerSearch: 'Sök bokmärken...',
+        managerEmpty: 'Inga bokmärken hittades.',
+        confirmDelete: 'Radera?',
+        exportBookmarks: 'Exportera bokmärken',
+        importBookmarks: 'Importera bokmärken',
+        exported: 'Bokmärken exporterade.',
+        imported: (count) => `${count} bokmärke(n) importerade.`,
+        exportTitle: 'Exportera bokmärken',
+        importTitle: 'Importera bokmärken',
         form: {
             title: 'Titel',
-            url: 'URL'
+            url: 'URL',
+            category: 'Mapp',
+            categoryPlaceholder: 't.ex. Arbete/Projekt (använd / för undermappar)',
         }
     },
     tabs: {
@@ -177,6 +196,15 @@ const translation = {
         corporate: 'Företag',
         closeTab: 'Stäng flik',
         cannotCloseLastTab: 'Kan inte stänga den sista fliken.',
+        restoreClosedTab: 'Återställ senast stängda flik',
+        noClosedTabs: 'Inga stängda flikar att återställa.',
+        renameTab: 'Byt namn på flik',
+        clearName: 'Rensa anpassat namn',
+        renamePrompt: 'Ange ett anpassat namn för denna flik (lämna tomt för standard)',
+        renamePlaceholder: 'Anpassat fliknamn',
+        pinTab: 'Fäst flik',
+        unpinTab: 'Lossa flik',
+        cannotClosePinned: 'En fäst flik kan inte stängas.',
         confirmClose: (tabLabel) => `Är du säker på att du vill stänga "${tabLabel}"? Du kommer att loggas ut från detta konto.`,
     },
     validation: {

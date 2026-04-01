@@ -3,20 +3,16 @@ const translation = {
     restart: '请稍等，应用程序正在重启',
     label: {
         darkThemeInvert: {
-          title: '开启实验性暗黑模式 (使用反色)'
+          title: '开启暗黑模式 (使用反色)',
+          off: '关闭',
+          on: '开启',
+          system: '跟随系统',
         },
         hideMenu: '隐藏菜单栏（按下Alt键显示）',
         optionToHideMenuState: {
             yes: '重启后，菜单栏将被隐藏并可以通过Alt键显示',
         },
         donate: '捐赠',
-        allowMultiple: {
-            checkbox: '允许多个应用实例（实验性）',
-            message: {
-                yes: '现在，您可以同时打开多个应用实例',
-                no: '现在，只允许打开一个应用实例'
-            }
-        },
         disableHide: {
             //yes: 'Set the close button behaviour that will minimize to the tray instead of quitting',
             //no: 'Set the close button behaviour as to really quit the app',
@@ -38,7 +34,18 @@ const translation = {
         developer: 'Patrik Laszlo',
         personalHome: '个人主页',
         corporateHome: '公司主页',
-        clearCache: '请先退出登陆，再按下此按钮来清除缓存',
+        clearCache: {
+            title: '清除数据并重启',
+            allTabs: '所有标签页 - 全部',
+            currentTab: '当前标签页 - 全部',
+            allCookies: '所有标签页 - 仅Cookie',
+            currentCookies: '当前标签页 - 仅Cookie',
+            allCache: '所有标签页 - 仅缓存',
+            currentCache: '当前标签页 - 仅缓存',
+            allLabel: '所有标签页',
+            currentLabel: '当前标签页',
+            done: (scope, type) => `已清除: ${scope} - ${type}`,
+        },
         quit: '退出',
         show: '显示',
         hide: '隐藏',
@@ -172,9 +179,21 @@ const translation = {
         title: '书签',
         add: '添加书签',
         edit: '编辑书签',
+        manager: '管理书签',
+        managerSearch: '搜索书签...',
+        managerEmpty: '未找到书签。',
+        confirmDelete: '删除？',
+        exportBookmarks: '导出书签',
+        importBookmarks: '导入书签',
+        exported: '书签已导出。',
+        imported: (count) => `已导入 ${count} 个书签。`,
+        exportTitle: '导出书签',
+        importTitle: '导入书签',
         form: {
             title: '标题',
-            url: 'URL'
+            url: 'URL',
+            category: '文件夹',
+            categoryPlaceholder: '例如：工作/项目（使用 / 表示子文件夹）',
         }
     },
     tabs: {
@@ -183,6 +202,15 @@ const translation = {
         corporate: '公司',
         closeTab: '关闭标签页',
         cannotCloseLastTab: '无法关闭最后一个标签页。',
+        restoreClosedTab: '恢复最近关闭的标签页',
+        noClosedTabs: '没有可恢复的已关闭标签页。',
+        renameTab: '重命名标签页',
+        clearName: '清除自定义名称',
+        renamePrompt: '输入此标签页的自定义名称（留空使用默认值）',
+        renamePlaceholder: '自定义标签页名称',
+        pinTab: '固定标签页',
+        unpinTab: '取消固定标签页',
+        cannotClosePinned: '无法关闭固定的标签页。',
         confirmClose: (tabLabel) => `确定要关闭"${tabLabel}"吗？您将从此账户退出登录。`,
     },
     validation: {

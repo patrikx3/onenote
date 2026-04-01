@@ -3,20 +3,16 @@ const translation = {
     restart: 'Prosím čekejte, aplikace se restartuje.',
     label: {
         darkThemeInvert: {
-          title: 'Povolit tmavý režim s chybami (pomocí inverze)'
+          title: 'Povolit tmavý režim (pomocí inverze)',
+          off: 'Vypnuto',
+          on: 'Zapnuto',
+          system: 'Podle systému',
         },
         hideMenu: 'Skrýt hlavní nabídku (zobrazit pomocí ALT)',
         optionToHideMenuState: {
             yes: 'Po restartu se nabídka skryje a zobrazí se klávesou ALT.',
         },
         donate: 'Přispět',
-        allowMultiple: {
-            checkbox: 'Povolit více instancí (s určitými chybami)',
-            message: {
-                yes: 'Nyní můžete používat více instancí s určitými chybami.',
-                no: 'Nyní je povolena pouze jedna instance, žádné chyby.'
-            }
-        },
         disableHide: {
             checkbox: 'Zavřít do systémové lišty',
             message: {
@@ -35,7 +31,18 @@ const translation = {
         developer: 'Patrik Laszlo',
         personalHome: 'Osobní domovská stránka',
         corporateHome: 'Firemní domovská stránka',
-        clearCache: 'Nejprve se odhlaste, poté klikněte na tuto možnost nabídky pro vymazání mezipaměti',
+        clearCache: {
+            title: 'Vymazat data a restartovat',
+            allTabs: 'Všechny karty - vše',
+            currentTab: 'Aktuální karta - vše',
+            allCookies: 'Všechny karty - pouze cookies',
+            currentCookies: 'Aktuální karta - pouze cookies',
+            allCache: 'Všechny karty - pouze mezipaměť',
+            currentCache: 'Aktuální karta - pouze mezipaměť',
+            allLabel: 'všechny karty',
+            currentLabel: 'aktuální karta',
+            done: (scope, type) => `Vymazáno: ${scope} - ${type}`,
+        },
         quit: 'Ukončit',
         show: 'Zobrazit',
         hide: 'Skrýt',
@@ -166,9 +173,21 @@ const translation = {
         title: 'Záložky',
         add: 'Přidat záložku',
         edit: 'Upravit záložky',
+        manager: 'Spravovat záložky',
+        managerSearch: 'Hledat záložky...',
+        managerEmpty: 'Žádné záložky nenalezeny.',
+        confirmDelete: 'Smazat?',
+        exportBookmarks: 'Exportovat záložky',
+        importBookmarks: 'Importovat záložky',
+        exported: 'Záložky exportovány.',
+        imported: (count) => `Importováno ${count} záložek.`,
+        exportTitle: 'Exportovat záložky',
+        importTitle: 'Importovat záložky',
         form: {
             title: 'Název',
-            url: 'URL'
+            url: 'URL',
+            category: 'Složka',
+            categoryPlaceholder: 'např. Práce/Projekty (/ pro podsložky)',
         }
     },
     tabs: {
@@ -177,6 +196,15 @@ const translation = {
         corporate: 'Firemní',
         closeTab: 'Zavřít kartu',
         cannotCloseLastTab: 'Nelze zavřít poslední kartu.',
+        restoreClosedTab: 'Obnovit poslední zavřenou kartu',
+        noClosedTabs: 'Žádné zavřené karty k obnovení.',
+        renameTab: 'Přejmenovat kartu',
+        clearName: 'Vymazat vlastní název',
+        renamePrompt: 'Zadejte vlastní název pro tuto kartu (ponechte prázdné pro výchozí)',
+        renamePlaceholder: 'Vlastní název karty',
+        pinTab: 'Připnout kartu',
+        unpinTab: 'Odepnout kartu',
+        cannotClosePinned: 'Připnutou kartu nelze zavřít.',
         confirmClose: (tabLabel) => `Opravdu chcete zavřít „${tabLabel}"? Budete odhlášeni z tohoto účtu.`,
     },
     validation: {

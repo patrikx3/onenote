@@ -3,20 +3,16 @@ const translation = {
     restart: 'Proszę czekać, aplikacja jest restartowana.',
     label: {
         darkThemeInvert: {
-          title: 'Włącz tryb ciemny z dziwactwami (używając invert)'
+          title: 'Włącz tryb ciemny (używając invert)',
+          off: 'Wyłączone',
+          on: 'Włączone',
+          system: 'Zgodnie z systemem',
         },
         hideMenu: 'Ukryj główne menu (pokaż z ALT)',
         optionToHideMenuState: {
             yes: 'Po restarcie ukryje menu i pokaże po naciśnięciu ALT.',
         },
         donate: 'Darowizna',
-        allowMultiple: {
-            checkbox: 'Zezwól na wiele instancji (z pewnymi dziwactwami)',
-            message: {
-                yes: 'Teraz można używać wielu instancji z pewnymi dziwactwami.',
-                no: 'Teraz można używać wyłącznie pojedynczej instancji, bez dziwactw.'
-            }
-        },
         disableHide: {
             //yes: 'Set the close button behaviour that will minimize to the tray instead of quitting',
             //no: 'Set the close button behaviour as to really quit the app',
@@ -38,7 +34,18 @@ const translation = {
         developer: 'Patrik Laszlo',
         personalHome: 'Osobiste',
         corporateHome: 'Służbowe',
-        clearCache: 'Najpierw wyloguj się, a następnie kliknij tę opcję menu, aby wyczyścić pamięć podręczną',
+        clearCache: {
+            title: 'Wyczyść dane i uruchom ponownie',
+            allTabs: 'Wszystkie karty - wszystko',
+            currentTab: 'Bieżąca karta - wszystko',
+            allCookies: 'Wszystkie karty - tylko ciasteczka',
+            currentCookies: 'Bieżąca karta - tylko ciasteczka',
+            allCache: 'Wszystkie karty - tylko pamięć podręczna',
+            currentCache: 'Bieżąca karta - tylko pamięć podręczna',
+            allLabel: 'wszystkie karty',
+            currentLabel: 'bieżąca karta',
+            done: (scope, type) => `Wyczyszczono: ${scope} - ${type}`,
+        },
         quit: 'Zakończ',
         show: 'Pokaż',
         hide: 'Ukryj',
@@ -172,9 +179,21 @@ const translation = {
         title: 'Zakładki',
         add: 'Dodaj zakładkę',
         edit: 'Edytuj zakładki',
+        manager: 'Zarządzaj zakładkami',
+        managerSearch: 'Szukaj zakładek...',
+        managerEmpty: 'Nie znaleziono zakładek.',
+        confirmDelete: 'Usunąć?',
+        exportBookmarks: 'Eksportuj zakładki',
+        importBookmarks: 'Importuj zakładki',
+        exported: 'Zakładki wyeksportowane.',
+        imported: (count) => `Zaimportowano ${count} zakładek.`,
+        exportTitle: 'Eksportuj zakładki',
+        importTitle: 'Importuj zakładki',
         form: {
             title: 'Tytuł',
-            url: 'URL'
+            url: 'URL',
+            category: 'Folder',
+            categoryPlaceholder: 'np. Praca/Projekty (użyj / dla podfolderów)',
         }
     },
     tabs: {
@@ -183,6 +202,15 @@ const translation = {
         corporate: 'Służbowe',
         closeTab: 'Zamknij kartę',
         cannotCloseLastTab: 'Nie można zamknąć ostatniej karty.',
+        restoreClosedTab: 'Przywróć ostatnio zamkniętą kartę',
+        noClosedTabs: 'Brak zamkniętych kart do przywrócenia.',
+        renameTab: 'Zmień nazwę karty',
+        clearName: 'Wyczyść niestandardową nazwę',
+        renamePrompt: 'Wprowadź niestandardową nazwę dla tej karty (pozostaw puste dla domyślnej)',
+        renamePlaceholder: 'Niestandardowa nazwa karty',
+        pinTab: 'Przypnij kartę',
+        unpinTab: 'Odepnij kartę',
+        cannotClosePinned: 'Nie można zamknąć przypiętej karty.',
         confirmClose: (tabLabel) => `Czy na pewno chcesz zamknąć „${tabLabel}"? Zostaniesz wylogowany z tego konta.`,
     },
     validation: {

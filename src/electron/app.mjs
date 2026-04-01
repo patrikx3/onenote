@@ -4,7 +4,7 @@ import { dirname } from 'path'
 import path from 'path'
 import Store from 'electron-store'
 import { app } from 'electron'
-import semver from 'semver'
+
 
 import enUS from '../translation/en-US.js'
 import afZA from '../translation/af-ZA.js'
@@ -73,11 +73,16 @@ if (translationKey === undefined) {
 // This affects navigator.language, navigator.languages, and the default Accept-Language header,
 // which helps Microsoft services detect the preferred language.
 app.commandLine.appendSwitch('lang', translationKey)
-let darkThemeInvert = conf.get('darkThemeInvert')
-if (darkThemeInvert === undefined) {
-    darkThemeInvert = false
-    conf.set('darkThemeInvert', darkThemeInvert)
+// Dark theme mode: 'off', 'on', 'system'
+let darkThemeMode = conf.get('darkThemeMode')
+if (darkThemeMode === undefined) {
+    // Migrate from old boolean config
+    const oldVal = conf.get('darkThemeInvert')
+    darkThemeMode = oldVal === true ? 'on' : 'off'
+    conf.set('darkThemeMode', darkThemeMode)
 }
+let darkThemeInvert = darkThemeMode === 'on' || (darkThemeMode === 'system' && require('electron').nativeTheme.shouldUseDarkColors)
+conf.set('darkThemeInvert', darkThemeInvert)
 
 const langTranslations = {
     'en-US': enUS,
@@ -118,13 +123,14 @@ global.p3x = {
     onenote: {
         pkg: pkg,
         darkThemeInvert: darkThemeInvert,
+        darkThemeMode: darkThemeMode,
         lang: translation,
         translationKey: translationKey,
         translations: undefined,
         title: translation.title,
         conf: conf,
         disableHide: true,
-        allowMultiple: false,
+
         optionToDisableInternalExternalPopup: false,
         optionToHideMenu: false,
         iconFile: path.resolve(`${__dirname}/images/128x128.png`),
@@ -136,7 +142,6 @@ global.p3x = {
         menus: undefined,
         mainMenu: undefined,
         setVisible: undefined,
-        bookmarksEditMode: false,
         createWindow: {
             onenote: undefined,
         },
@@ -169,12 +174,7 @@ if (global.p3x.onenote.optionToDisableInternalExternalPopup === undefined) {
     global.p3x.onenote.optionToDisableInternalExternalPopup = false;
 }
 
-// configuration
-global.p3x.onenote.allowMultiple = conf.get('allow-multiple')
-if (global.p3x.onenote.allowMultiple === undefined) {
-    conf.set('allow-multiple', false)
-    global.p3x.onenote.allowMultiple = false;
-}
+
 
 // loading
 global.p3x.onenote.action = (await import('./main/action.mjs')).default
@@ -185,32 +185,15 @@ global.p3x.onenote.setVisible = (await import('./main/set-visible.mjs')).default
 global.p3x.onenote.createWindow.onenote = (await import('./main/create/window/onenote.mjs')).default
 
 
-if (global.p3x.onenote.allowMultiple === false) {
-    if (semver.gt(process.versions.electron === undefined ? '4.0.0' : process.versions.electron, '3.0.0')) {
-        const gotTheLock = app.requestSingleInstanceLock()
+const gotTheLock = app.requestSingleInstanceLock()
 
-        app.on('second-instance', (event, commandLine, workingDirectory) => {
-            // Someone tried to run a second instance, we should focus our window.
-            global.p3x.onenote.setVisible(true);
-            //global.p3x.onenote.window.onenote.webContents.reload();
-        })
+app.on('second-instance', (event, commandLine, workingDirectory) => {
+    global.p3x.onenote.setVisible(true);
+})
 
-        if (!gotTheLock) {
-            app.quit()
-            process.exit(0)
-        }
-
-    } else {
-        const isSecondInstance = app.makeSingleInstance((commandLine, workingDirectory) => {
-            global.p3x.onenote.setVisible(true);
-            //global.p3x.onenote.window.onenote.webContents.reload();
-        })
-
-        if (isSecondInstance) {
-            app.quit()
-            process.exit(0)
-        }
-    }
+if (!gotTheLock) {
+    app.quit()
+    process.exit(0)
 }
 
 

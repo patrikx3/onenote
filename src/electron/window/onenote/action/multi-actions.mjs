@@ -41,14 +41,72 @@ const multiActions = (data) => {
             break;
 
         case 'restart':
+            // Legacy: clear current tab everything
             if (webview) {
                 try {
                     const wc = remote.webContents.fromId(webview.getWebContentsId());
                     wc.session.clearStorageData().then(() => {
-                        webview.reload();
+                        const tab = global.p3x.onenote.tabManager?.getActiveTab();
+                        const url = (tab && tab.url && !tab.url.startsWith('about:'))
+                            ? tab.url
+                            : 'https://www.onenote.com/notebooks';
+                        webview.src = url;
                     });
                 } catch (e) {
                     console.error(e);
+                }
+            }
+            break;
+
+        case 'session-clear':
+            {
+                const tabManager = global.p3x.onenote.tabManager;
+                if (!tabManager) break;
+
+                const mode = data.mode || 'current-everything';
+                const [scope, type] = mode.split('-');
+                const webviews = scope === 'all' ? tabManager.getAllWebviews() : (webview ? [webview] : []);
+
+                const storagesMap = {
+                    everything: undefined, // undefined = clear all
+                    cookies: ['cookies'],
+                    cache: ['cacheStorage'],
+                };
+                const storages = storagesMap[type];
+                const clearOpts = storages ? { storages } : {};
+
+                let cleared = 0;
+                const total = webviews.length;
+
+                const onDone = () => {
+                    cleared++;
+                    if (cleared === total) {
+                        // Navigate affected webviews to their saved URL
+                        const allTabs = global.p3x.onenote.tabManager?.tabs || [];
+                        for (const wv of webviews) {
+                            try {
+                                const tab = allTabs.find(t => t.webview === wv);
+                                const url = (tab && tab.url && !tab.url.startsWith('about:'))
+                                    ? tab.url
+                                    : 'https://www.onenote.com/notebooks';
+                                wv.src = url;
+                            } catch (e) {}
+                        }
+                        const lang = global.p3x.onenote.lang;
+                        const msg = lang.label.clearCache?.done
+                            ? lang.label.clearCache.done(scope === 'all' ? (lang.label.clearCache?.allLabel || 'all tabs') : (lang.label.clearCache?.currentLabel || 'current tab'), type)
+                            : `Cleared ${type} for ${scope === 'all' ? 'all tabs' : 'current tab'}.`;
+                        global.p3x.onenote.toast.action(msg);
+                    }
+                };
+
+                for (const wv of webviews) {
+                    try {
+                        const wc = remote.webContents.fromId(wv.getWebContentsId());
+                        wc.session.clearStorageData(clearOpts).then(onDone).catch(() => onDone());
+                    } catch (e) {
+                        onDone();
+                    }
                 }
             }
             break;
@@ -74,6 +132,18 @@ const multiActions = (data) => {
                 console.log('[P3X-OneNote] Reloading webview after resume');
                 global.p3x.onenote.toast.action({ message: global.p3x.onenote.lang.restart, sticky: true });
                 webview.reload();
+            }
+            break;
+
+        case 'bookmark-manager':
+            if (global.p3x.onenote.prompt) {
+                global.p3x.onenote.prompt.bookmarkManager();
+            }
+            break;
+
+        case 'restore-closed-tab':
+            if (global.p3x.onenote.tabManager) {
+                global.p3x.onenote.tabManager.restoreClosedTab();
             }
             break;
 

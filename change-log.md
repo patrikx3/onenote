@@ -7,6 +7,29 @@
 
 ## Change log
 
+### v2026.4.118
+Released on 04/01/2026
+* CHORE: Removed reading mode (F11 fullscreen is sufficient).
+* CHORE: Removed auto-launch on login (not supported on Linux).
+
+### v2026.4.118
+Released on 04/01/2026
+* FEATURE: Tab drag-and-drop reordering.
+* FEATURE: Tab renaming via right-click context menu (custom labels).
+* FEATURE: Tab pinning to prevent accidental closure.
+* FEATURE: Restore last closed tab (keeps up to 10 in history).
+* FEATURE: Per-tab zoom level with independent persistence.
+* FEATURE: Bookmark folders with nested submenus and 📁 icons (use / for subfolders).
+* FEATURE: Bookmark manager dialog with search, inline editing, and delete confirmation.
+* FEATURE: Bookmark import/export as JSON.
+* FEATURE: Dark mode follow system theme (Off/On/Follow system).
+* FEATURE: Granular session cleaner — clear cookies, cache, or everything per tab or all tabs.
+* FEATURE: Multi-monitor window position safety.
+* FEATURE: Lighter dark mode using Microsoft Fluent Design palette.
+* BUGFIX: Prevent blank page after reload by validating saved URLs.
+* CHORE: Removed multiple instances feature (always single instance).
+* CHORE: Removed "quirks" wording from dark theme labels.
+
 ### v2026.4.117
 Released on 04/01/2026
 * FEATURE: Translated tab labels to all 30 supported languages.
@@ -137,7 +160,7 @@ All my domains, including [patrikx3.com](https://patrikx3.com), [corifeus.eu](ht
 ---
 
 
-[**P3X-ONENOTE**](https://corifeus.com/onenote) Build v2026.4.117
+[**P3X-ONENOTE**](https://corifeus.com/onenote) Build v2026.4.118
 
  [![NPM](https://img.shields.io/npm/v/p3x-onenote.svg)](https://www.npmjs.com/package/p3x-onenote)  [![Donate for PatrikX3 / P3X](https://img.shields.io/badge/Donate-PatrikX3-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software)
 

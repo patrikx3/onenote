@@ -18,8 +18,35 @@ const menus = {
                 click: action.corporate
             },
             {
-                label: global.p3x.onenote.lang.label.clearCache,
-                click: action.restart
+                label: global.p3x.onenote.lang.label.clearCache?.title || global.p3x.onenote.lang.label.clearCache || 'Clear data and restart',
+                submenu: [
+                    {
+                        label: global.p3x.onenote.lang.label.clearCache?.allTabs || 'All tabs - everything',
+                        click: () => action.sessionClear('all-everything')
+                    },
+                    {
+                        label: global.p3x.onenote.lang.label.clearCache?.currentTab || 'Current tab - everything',
+                        click: () => action.sessionClear('current-everything')
+                    },
+                    { type: 'separator' },
+                    {
+                        label: global.p3x.onenote.lang.label.clearCache?.allCookies || 'All tabs - cookies only',
+                        click: () => action.sessionClear('all-cookies')
+                    },
+                    {
+                        label: global.p3x.onenote.lang.label.clearCache?.currentCookies || 'Current tab - cookies only',
+                        click: () => action.sessionClear('current-cookies')
+                    },
+                    { type: 'separator' },
+                    {
+                        label: global.p3x.onenote.lang.label.clearCache?.allCache || 'All tabs - cache only',
+                        click: () => action.sessionClear('all-cache')
+                    },
+                    {
+                        label: global.p3x.onenote.lang.label.clearCache?.currentCache || 'Current tab - cache only',
+                        click: () => action.sessionClear('current-cache')
+                    },
+                ]
             },
             { type: 'separator' },
             {

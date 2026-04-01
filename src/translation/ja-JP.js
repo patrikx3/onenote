@@ -3,20 +3,16 @@ const translation = {
     restart: 'アプリケーションを再起動しています。しばらくお待ちください。',
     label: {
         darkThemeInvert: {
-            title: 'ダークモードを有効にする（色の反転）'
+            title: 'ダークモードを有効にする（色の反転）',
+          off: 'オフ',
+          on: 'オン',
+          system: 'システムに従う',
         },
         hideMenu: 'メインメニューを隠す（Altキーで表示）',
         optionToHideMenuState: {
             yes: '再起動後メニューが非表示になります。Altキーで再表示できます。',
         },
         donate: '寄付',
-        allowMultiple: {
-            checkbox: '複数のウィンドウを許可する（試験的）',
-            message: {
-                yes: '複数ウィンドウを許可しました。予期せぬ動作を起こす可能性があります。',
-                no: '最大ウィンドウ数を１つに戻しました。複数ウィンドウによる副作用がなくなりました。'
-            }
-        },
         disableHide: {
             //yes: '閉じるボタンの動作を設定し、終了する代わりにトレイに最小化します',
             //no: '閉じるボタンの動作を設定し、アプリを終了します',
@@ -38,7 +34,18 @@ const translation = {
         developer: 'Patrik Laszlo',
         personalHome: '個人のホーム',
         corporateHome: '法人のホーム',
-        clearCache: 'サインアウトしてキャッシュをクリア',
+        clearCache: {
+            title: 'データを消去して再起動',
+            allTabs: 'すべてのタブ - すべて',
+            currentTab: '現在のタブ - すべて',
+            allCookies: 'すべてのタブ - Cookieのみ',
+            currentCookies: '現在のタブ - Cookieのみ',
+            allCache: 'すべてのタブ - キャッシュのみ',
+            currentCache: '現在のタブ - キャッシュのみ',
+            allLabel: 'すべてのタブ',
+            currentLabel: '現在のタブ',
+            done: (scope, type) => `消去完了: ${scope} - ${type}`,
+        },
         quit: '終了',
         show: '表示',
         hide: '隠す',
@@ -172,9 +179,21 @@ const translation = {
         title: 'ブックマーク',
         add: 'ブックマークを追加',
         edit: 'ブックマークを編集',
+        manager: 'ブックマーク管理',
+        managerSearch: 'ブックマークを検索...',
+        managerEmpty: 'ブックマークが見つかりません。',
+        confirmDelete: '削除しますか？',
+        exportBookmarks: 'ブックマークをエクスポート',
+        importBookmarks: 'ブックマークをインポート',
+        exported: 'ブックマークをエクスポートしました。',
+        imported: (count) => `${count}件のブックマークをインポートしました。`,
+        exportTitle: 'ブックマークをエクスポート',
+        importTitle: 'ブックマークをインポート',
         form: {
             title: 'タイトル',
-            url: 'URL'
+            url: 'URL',
+            category: 'フォルダ',
+            categoryPlaceholder: '例: 仕事/プロジェクト（サブフォルダには/を使用）',
         }
     },
     tabs: {
@@ -183,6 +202,15 @@ const translation = {
         corporate: '法人',
         closeTab: 'タブを閉じる',
         cannotCloseLastTab: '最後のタブは閉じることができません。',
+        restoreClosedTab: '最後に閉じたタブを復元',
+        noClosedTabs: '復元できる閉じたタブはありません。',
+        renameTab: 'タブの名前を変更',
+        clearName: 'カスタム名をクリア',
+        renamePrompt: 'このタブのカスタム名を入力してください（空欄でデフォルト）',
+        renamePlaceholder: 'カスタムタブ名',
+        pinTab: 'タブを固定',
+        unpinTab: 'タブの固定を解除',
+        cannotClosePinned: '固定されたタブは閉じられません。',
         confirmClose: (tabLabel) => `「${tabLabel}」を閉じてもよろしいですか？このアカウントからサインアウトされます。`,
     },
     validation: {

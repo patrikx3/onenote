@@ -3,20 +3,16 @@ const translation = {
     restart: 'Lütfen bekleyin, uygulama yeniden başlatılıyor.',
     label: {
         darkThemeInvert: {
-          title: 'Enable dark mode with quirks (using invert)'
+          title: 'Enable dark mode (using invert)',
+          off: 'Kapalı',
+          on: 'Açık',
+          system: 'Sistemi takip et',
         },
         hideMenu: 'Ana menüyü gizle (ALT tuşu ile göster)',
         optionToHideMenuState: {
             yes: 'Yeniden başlattıktan sonra menüyü gizleyecek ve ALT tuşu ile tekrar görünür yapabilirsiniz.',
         },
         donate: 'Bağış',
-        allowMultiple: {
-            checkbox: 'Birden çok örneğe izin ver (bazı tuhaflıklar dışında)',
-            message: {
-                yes: 'Artık bazı tuhaflıklar ile birden çok örneği kullanabilirsiniz.',
-                no: 'Şimdi, yalnızca bir örneğe izin veriyor, hiçbir tuhaflık yok'
-            }
-        },
         disableHide: {
             //yes: 'Çıkmak yerine tepsiye simge durumuna küçültecek kapatma düğmesi davranışını ayarlayın',
             //no: 'Uygulamadan gerçekten çıkmak için kapatma düğmesi davranışını ayarlayın',
@@ -38,7 +34,18 @@ const translation = {
         developer: 'Patrik Laszlo',
         personalHome: 'Personal home',
         corporateHome: 'Corporate home',
-        clearCache: 'Önce oturumu kapatın, ardından önbelleği temizlemek için bu menü seçeneğine tıklayın',
+        clearCache: {
+            title: 'Verileri temizle ve yeniden başlat',
+            allTabs: 'Tüm sekmeler - her şey',
+            currentTab: 'Mevcut sekme - her şey',
+            allCookies: 'Tüm sekmeler - yalnızca çerezler',
+            currentCookies: 'Mevcut sekme - yalnızca çerezler',
+            allCache: 'Tüm sekmeler - yalnızca önbellek',
+            currentCache: 'Mevcut sekme - yalnızca önbellek',
+            allLabel: 'tüm sekmeler',
+            currentLabel: 'mevcut sekme',
+            done: (scope, type) => `Temizlendi: ${scope} - ${type}`,
+        },
         quit: 'Çıkış',
         show: 'Göster',
         hide: 'Gizle',
@@ -172,9 +179,21 @@ const translation = {
         title: 'Yer imleri',
         add: 'Yer imi ekle',
         edit: 'Yer imi düzenle',
+        manager: 'Yer imlerini yönet',
+        managerSearch: 'Yer imlerini ara...',
+        managerEmpty: 'Yer imi bulunamadı.',
+        confirmDelete: 'Silinsin mi?',
+        exportBookmarks: 'Yer imlerini dışa aktar',
+        importBookmarks: 'Yer imlerini içe aktar',
+        exported: 'Yer imleri dışa aktarıldı.',
+        imported: (count) => `${count} yer imi içe aktarıldı.`,
+        exportTitle: 'Yer imlerini dışa aktar',
+        importTitle: 'Yer imlerini içe aktar',
         form: {
             title: 'Başlık',
-            url: 'URL'
+            url: 'URL',
+            category: 'Klasör',
+            categoryPlaceholder: 'örn. İş/Projeler (alt klasörler için / kullanın)',
         }
     },
     tabs: {
@@ -183,6 +202,15 @@ const translation = {
         corporate: 'Kurumsal',
         closeTab: 'Sekmeyi kapat',
         cannotCloseLastTab: 'Son sekme kapatılamaz.',
+        restoreClosedTab: 'Son kapatılan sekmeyi geri yükle',
+        noClosedTabs: 'Geri yüklenecek kapatılmış sekme yok.',
+        renameTab: 'Sekmeyi yeniden adlandır',
+        clearName: 'Özel adı temizle',
+        renamePrompt: 'Bu sekme için özel bir ad girin (varsayılan için boş bırakın)',
+        renamePlaceholder: 'Özel sekme adı',
+        pinTab: 'Sekmeyi sabitle',
+        unpinTab: 'Sekmeyi çöz',
+        cannotClosePinned: 'Sabitlenmiş bir sekme kapatılamaz.',
         confirmClose: (tabLabel) => `"${tabLabel}" sekmesini kapatmak istediğinizden emin misiniz? Bu hesaptan çıkış yapılacaktır.`,
     },
     validation: {

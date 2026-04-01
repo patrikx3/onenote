@@ -3,20 +3,16 @@ const translation = {
     restart: 'Aguarde, o aplicativo está reiniciando.',
     label: {
         darkThemeInvert: {
-            title: 'Ative o modo escuro com peculiaridades (usando inverter)'
+            title: 'Ative o modo escuro (usando inverter)',
+          off: 'Desligado',
+          on: 'Ligado',
+          system: 'Seguir sistema',
         },
         hideMenu: 'Esconder o menu principal (mostrar com ALT)',
         optionToHideMenuState: {
             yes: 'Após reiniciar, ele irá ocultar o menu e mostrar no ALT.',
         },
         donate: 'Doar',
-        allowMultiple: {
-            checkbox: 'Permitir múltiplas instâncias (com algumas pecularidades)',
-            message: {
-                yes: 'Agora você pode utilizar múltiplas instâncias com algumas peculiaridades.',
-                no: 'Agora, é permitido somente uma instância, sem peculiaridades'
-            }
-        },
         disableHide: {
             yes: 'Defina o comportamento do botão Fechar que irá minimizar para a bandeja em vez de sair',
             no: 'Defina o comportamento do botão Fechar para realmente sair da aplicação',
@@ -38,7 +34,18 @@ const translation = {
         developer: 'Patrik Laszlo',
         personalHome: 'Página pessoal',
         corporateHome: 'Negócios',
-        clearCache: 'Primeiro saia, depois clique nessa opção para limpar o cache',
+        clearCache: {
+            title: 'Limpar dados e reiniciar',
+            allTabs: 'Todas as abas - tudo',
+            currentTab: 'Aba atual - tudo',
+            allCookies: 'Todas as abas - apenas cookies',
+            currentCookies: 'Aba atual - apenas cookies',
+            allCache: 'Todas as abas - apenas cache',
+            currentCache: 'Aba atual - apenas cache',
+            allLabel: 'todas as abas',
+            currentLabel: 'aba atual',
+            done: (scope, type) => `Limpo: ${scope} - ${type}`,
+        },
         quit: 'Sair',
         show: 'Mostrar',
         hide: 'Esconder',
@@ -172,9 +179,21 @@ const translation = {
         title: 'Favoritas',
         add: 'Adicionar favorito',
         edit: 'Editar favoritos',
+        manager: 'Gerenciar favoritos',
+        managerSearch: 'Pesquisar favoritos...',
+        managerEmpty: 'Nenhum favorito encontrado.',
+        confirmDelete: 'Excluir?',
+        exportBookmarks: 'Exportar favoritos',
+        importBookmarks: 'Importar favoritos',
+        exported: 'Favoritos exportados.',
+        imported: (count) => `${count} favorito(s) importado(s).`,
+        exportTitle: 'Exportar favoritos',
+        importTitle: 'Importar favoritos',
         form: {
             title: 'Título',
-            url: 'URL'
+            url: 'URL',
+            category: 'Pasta',
+            categoryPlaceholder: 'ex. Trabalho/Projetos (use / para subpastas)',
         }
     },
     tabs: {
@@ -183,6 +202,15 @@ const translation = {
         corporate: 'Corporativo',
         closeTab: 'Fechar aba',
         cannotCloseLastTab: 'Não é possível fechar a última aba.',
+        restoreClosedTab: 'Restaurar última aba fechada',
+        noClosedTabs: 'Nenhuma aba fechada para restaurar.',
+        renameTab: 'Renomear aba',
+        clearName: 'Limpar nome personalizado',
+        renamePrompt: 'Digite um nome personalizado para esta aba (deixe vazio para usar o padrão)',
+        renamePlaceholder: 'Nome personalizado da aba',
+        pinTab: 'Fixar aba',
+        unpinTab: 'Desfixar aba',
+        cannotClosePinned: 'Não é possível fechar uma aba fixada.',
         confirmClose: (tabLabel) => `Tem certeza de que deseja fechar "${tabLabel}"? Você será desconectado desta conta.`,
     },
     validation: {

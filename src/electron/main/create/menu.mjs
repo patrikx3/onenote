@@ -1,4 +1,4 @@
-import { dialog, Menu, shell } from 'electron'
+import { dialog, Menu, shell, nativeTheme } from 'electron'
 import menus from '../menus.mjs'
 import action from '../action.mjs'
 import mainTray from './tray.mjs'
@@ -52,24 +52,56 @@ function mainMenu() {
                 })
             }
         },
+        {
+            label: global.p3x.onenote.lang.bookmarks.importBookmarks || 'Import bookmarks',
+            click: async () => {
+                try {
+                    const result = await global.p3x.onenote.window.onenote.webContents.executeJavaScript(
+                        `window.electronShim.ipcRenderer.invoke('p3x-onenote-bookmarks-import')`
+                    )
+                    if (result && result.success) {
+                        const msg = global.p3x.onenote.lang.bookmarks.imported
+                            ? global.p3x.onenote.lang.bookmarks.imported(result.added)
+                            : `Imported ${result.added} bookmark(s).`
+                        global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-action', {
+                            action: 'toast',
+                            message: msg,
+                        })
+                    }
+                } catch (e) {
+                    console.error(e)
+                }
+            }
+        },
     ]
 
     const bookmarks = global.p3x.onenote.conf.get('bookmarks') || []
 
     if (bookmarks.length > 0) {
         bookmarksMenu.push({
-            label: global.p3x.onenote.lang.bookmarks.edit,
-            type: 'checkbox',
-            checked: global.p3x.onenote.bookmarksEditMode,
-            click: (menuItem, browserWindow, event) => {
-                global.p3x.onenote.bookmarksEditMode = !global.p3x.onenote.bookmarksEditMode
-                /*
-                Menu.getApplicationMenu().popup({
-                    window: browserWindow,
-                    x: event.x,
-                    y: event.y,
+            label: global.p3x.onenote.lang.bookmarks.exportBookmarks || 'Export bookmarks',
+            click: async () => {
+                try {
+                    const result = await global.p3x.onenote.window.onenote.webContents.executeJavaScript(
+                        `window.electronShim.ipcRenderer.invoke('p3x-onenote-bookmarks-export')`
+                    )
+                    if (result && result.success) {
+                        global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-action', {
+                            action: 'toast',
+                            message: global.p3x.onenote.lang.bookmarks.exported || 'Bookmarks exported.',
+                        })
+                    }
+                } catch (e) {
+                    console.error(e)
+                }
+            }
+        })
+        bookmarksMenu.push({
+            label: global.p3x.onenote.lang.bookmarks?.manager || 'Manage bookmarks',
+            click: () => {
+                global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-action', {
+                    action: 'bookmark-manager',
                 })
-                */
             }
         })
         bookmarksMenu.push({
@@ -80,23 +112,56 @@ function mainMenu() {
     let bookmarksSort = bookmarks.sort(naturalCompareDocument({
         byProperty: 'title'
     }))
-    for(let bookmarkIndex in bookmarksSort) {
+
+    // Build bookmark tree from folder paths (using / as separator)
+    const tree = { items: [], children: {} };
+
+    for (let bookmarkIndex in bookmarksSort) {
         const bookmark = bookmarksSort[bookmarkIndex]
         const thisBookmarkIndex = bookmarkIndex
-        bookmarksMenu.push({
+        const menuItem = {
             label: bookmark.title,
             click: () => {
-                if (global.p3x.onenote.bookmarksEditMode !== true) {
-                    global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-action-bookmark-open', bookmark)
-                } else {
-                    global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-action-bookmark-add', {
-                        edit: true,
-                        index: thisBookmarkIndex,
-                        model: bookmark,
-                    })
-                }
+                global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-action-bookmark-open', bookmark)
             }
-        })
+        }
+
+        if (bookmark.category) {
+            const parts = bookmark.category.split('/').map(p => p.trim()).filter(p => p);
+            let node = tree;
+            for (const part of parts) {
+                if (!node.children[part]) {
+                    node.children[part] = { items: [], children: {} };
+                }
+                node = node.children[part];
+            }
+            node.items.push(menuItem);
+        } else {
+            tree.items.push(menuItem);
+        }
+    }
+
+    // Recursively build menu from tree
+    function buildTreeMenu(node) {
+        const result = [];
+        // Add items at this level
+        for (const item of node.items) {
+            result.push(item);
+        }
+        // Add child folders sorted alphabetically
+        const childKeys = Object.keys(node.children).sort((a, b) => a.localeCompare(b));
+        for (const key of childKeys) {
+            result.push({
+                label: '📁 ' + key,
+                submenu: buildTreeMenu(node.children[key]),
+            });
+        }
+        return result;
+    }
+
+    const treeMenu = buildTreeMenu(tree);
+    for (const item of treeMenu) {
+        bookmarksMenu.push(item);
     }
 
     const template = [
@@ -116,6 +181,15 @@ function mainMenu() {
                     label: global.p3x.onenote.lang.label.openUrl,
                     click: () => {
                         global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-action-open-url')
+                    }
+                },
+                {type: 'separator'},
+                {
+                    label: global.p3x.onenote.lang.tabs?.restoreClosedTab || 'Restore last closed tab',
+                    click: () => {
+                        global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-action', {
+                            action: 'restore-closed-tab',
+                        })
                     }
                 }
             ]
@@ -199,26 +273,6 @@ ${global.p3x.onenote.lang.slow}
                     }
                 },
                 {
-                    label: global.p3x.onenote.lang.label.allowMultiple.checkbox,
-                    type: 'checkbox',
-                    checked: global.p3x.onenote.allowMultiple,
-                    click: () => {
-                        global.p3x.onenote.allowMultiple = !global.p3x.onenote.allowMultiple;
-                        global.p3x.onenote.conf.set('allow-multiple', global.p3x.onenote.allowMultiple);
-
-                        const message = global.p3x.onenote.allowMultiple ? global.p3x.onenote.lang.label.allowMultiple.message.yes : global.p3x.onenote.lang.label.allowMultiple.message.no
-
-                        dialog.showMessageBox(global.p3x.onenote.window.onenote, {
-                            type: 'info',
-                            title: global.p3x.onenote.lang.dialog.info,
-                            message: message,
-                            buttons: [global.p3x.onenote.lang.button.ok]
-                        })
-                        mainMenu()
-                        mainTray()
-                    }
-                },
-                {
                     label: global.p3x.onenote.lang.label.optionToDisableInternalExternalPopup,
                     type: 'checkbox',
                     checked: global.p3x.onenote.optionToDisableInternalExternalPopup,
@@ -235,18 +289,57 @@ ${global.p3x.onenote.lang.slow}
                     click: action.setProxy,
                 },
                 {
-                    label: global.p3x.onenote.lang.label.darkThemeInvert.title,
-                    type: 'checkbox',
-                    checked: global.p3x.onenote.darkThemeInvert,
-                    click: () => {
-                        global.p3x.onenote.darkThemeInvert = !global.p3x.onenote.darkThemeInvert
-                        global.p3x.onenote.conf.set('darkThemeInvert', global.p3x.onenote.darkThemeInvert)
-                        global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-action', {
-                            action: 'dark-theme-invert',
-                            darkThemeInvert: global.p3x.onenote.darkThemeInvert,
-                        })
-                    },
-                }
+                    label: global.p3x.onenote.lang.label.darkThemeInvert?.title || 'Dark mode (using invert)',
+                    submenu: [
+                        {
+                            label: global.p3x.onenote.lang.label.darkThemeInvert?.off || 'Off',
+                            type: 'radio',
+                            checked: global.p3x.onenote.darkThemeMode === 'off',
+                            click: () => {
+                                global.p3x.onenote.darkThemeMode = 'off'
+                                global.p3x.onenote.conf.set('darkThemeMode', 'off')
+                                global.p3x.onenote.darkThemeInvert = false
+                                global.p3x.onenote.conf.set('darkThemeInvert', false)
+                                global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-action', {
+                                    action: 'dark-theme-invert',
+                                    darkThemeInvert: false,
+                                })
+                            },
+                        },
+                        {
+                            label: global.p3x.onenote.lang.label.darkThemeInvert?.on || 'On',
+                            type: 'radio',
+                            checked: global.p3x.onenote.darkThemeMode === 'on',
+                            click: () => {
+                                global.p3x.onenote.darkThemeMode = 'on'
+                                global.p3x.onenote.conf.set('darkThemeMode', 'on')
+                                global.p3x.onenote.darkThemeInvert = true
+                                global.p3x.onenote.conf.set('darkThemeInvert', true)
+                                global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-action', {
+                                    action: 'dark-theme-invert',
+                                    darkThemeInvert: true,
+                                })
+                            },
+                        },
+                        {
+                            label: global.p3x.onenote.lang.label.darkThemeInvert?.system || 'Follow system',
+                            type: 'radio',
+                            checked: global.p3x.onenote.darkThemeMode === 'system',
+                            click: () => {
+                                
+                                global.p3x.onenote.darkThemeMode = 'system'
+                                global.p3x.onenote.conf.set('darkThemeMode', 'system')
+                                const shouldDark = nativeTheme.shouldUseDarkColors
+                                global.p3x.onenote.darkThemeInvert = shouldDark
+                                global.p3x.onenote.conf.set('darkThemeInvert', shouldDark)
+                                global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-action', {
+                                    action: 'dark-theme-invert',
+                                    darkThemeInvert: shouldDark,
+                                })
+                            },
+                        },
+                    ],
+                },
 
             ],
         },

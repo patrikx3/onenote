@@ -3,20 +3,16 @@ const translation = {
     restart: 'Vennligst vent, applikasjonen starter på nytt.',
     label: {
         darkThemeInvert: {
-          title: 'Aktiver mørk modus med feil (ved bruk av invertering)'
+          title: 'Aktiver mørk modus (ved bruk av invertering)',
+          off: 'Av',
+          on: 'På',
+          system: 'Følg system',
         },
         hideMenu: 'Skjul hovedmeny (vis med ALT)',
         optionToHideMenuState: {
             yes: 'Etter omstart vil menyen være skjult og vises med ALT.',
         },
         donate: 'Doner',
-        allowMultiple: {
-            checkbox: 'Tillat flere instanser (med noen feil)',
-            message: {
-                yes: 'Nå kan du bruke flere instanser med noen feil.',
-                no: 'Nå tillates bare én instans, ingen feil'
-            }
-        },
         disableHide: {
             checkbox: 'Lukk til systemstatusfeltet',
             message: {
@@ -35,7 +31,18 @@ const translation = {
         developer: 'Patrik Laszlo',
         personalHome: 'Personlig hjem',
         corporateHome: 'Bedriftshjem',
-        clearCache: 'Logg ut først, og klikk deretter på dette menyvalget for å tømme hurtigbufferen',
+        clearCache: {
+            title: 'Tøm data og start på nytt',
+            allTabs: 'Alle faner - alt',
+            currentTab: 'Gjeldende fane - alt',
+            allCookies: 'Alle faner - kun informasjonskapsler',
+            currentCookies: 'Gjeldende fane - kun informasjonskapsler',
+            allCache: 'Alle faner - kun hurtigbuffer',
+            currentCache: 'Gjeldende fane - kun hurtigbuffer',
+            allLabel: 'alle faner',
+            currentLabel: 'gjeldende fane',
+            done: (scope, type) => `Tømt: ${scope} - ${type}`,
+        },
         quit: 'Avslutt',
         show: 'Vis',
         hide: 'Skjul',
@@ -166,9 +173,21 @@ const translation = {
         title: 'Bokmerker',
         add: 'Legg til bokmerke',
         edit: 'Rediger bokmerker',
+        manager: 'Administrer bokmerker',
+        managerSearch: 'Søk bokmerker...',
+        managerEmpty: 'Ingen bokmerker funnet.',
+        confirmDelete: 'Slette?',
+        exportBookmarks: 'Eksporter bokmerker',
+        importBookmarks: 'Importer bokmerker',
+        exported: 'Bokmerker eksportert.',
+        imported: (count) => `${count} bokmerke(r) importert.`,
+        exportTitle: 'Eksporter bokmerker',
+        importTitle: 'Importer bokmerker',
         form: {
             title: 'Tittel',
-            url: 'URL'
+            url: 'URL',
+            category: 'Mappe',
+            categoryPlaceholder: 'f.eks. Arbeid/Prosjekter (bruk / for undermapper)',
         }
     },
     tabs: {
@@ -177,6 +196,15 @@ const translation = {
         corporate: 'Bedrift',
         closeTab: 'Lukk fane',
         cannotCloseLastTab: 'Kan ikke lukke den siste fanen.',
+        restoreClosedTab: 'Gjenopprett sist lukket fane',
+        noClosedTabs: 'Ingen lukkede faner å gjenopprette.',
+        renameTab: 'Gi nytt navn til fane',
+        clearName: 'Fjern egendefinert navn',
+        renamePrompt: 'Skriv inn et egendefinert navn for denne fanen (la stå tomt for standard)',
+        renamePlaceholder: 'Egendefinert fanenavn',
+        pinTab: 'Fest fane',
+        unpinTab: 'Løsne fane',
+        cannotClosePinned: 'En festet fane kan ikke lukkes.',
         confirmClose: (tabLabel) => `Er du sikker på at du vil lukke "${tabLabel}"? Du vil bli logget ut av denne kontoen.`,
     },
     validation: {

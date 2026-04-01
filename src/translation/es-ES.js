@@ -3,20 +3,16 @@ const translation = {
     restart: 'Espere, la aplicación se está reiniciando.',
     label: {
         darkThemeInvert: {
-            title: 'Habilite el modo oscuro con peculiaridades (usando invertir)'
+            title: 'Habilite el modo oscuro (usando invertir)',
+          off: 'Desactivado',
+          on: 'Activado',
+          system: 'Seguir sistema',
         },
         hideMenu: 'Ocultar el menú principal (mostrar con ALT)',
         optionToHideMenuState: {
             yes: 'Después de reiniciar, ocultará el menú y se mostrará en ALT.',
         },
         donate: 'Donar',
-        allowMultiple: {
-            checkbox: 'Permitir múltiples instancias (podría haber algún comportamiento extraño)',
-            message: {
-                yes: 'Puedes usar múltiples instancias, con algún comportamiento extraño.',
-                no: 'Una sola instancia permitida, sin comportamientos extraños.',
-            }
-        },
         disableHide: {
             //yes: 'Configurar el cierre de manera que la aplicación se minimice a la barra de tareas',
             //no: 'Configurar el botónn de cierre de manera que se quite la aplicación',
@@ -38,7 +34,18 @@ const translation = {
         developer: 'Patrik Laszlo',
         personalHome: 'Home Personal',
         corporateHome: 'Home Corporativo',
-        clearCache: 'Salga primero y después haga click en esta opción del menú para borrar la caché.',
+        clearCache: {
+            title: 'Borrar datos y reiniciar',
+            allTabs: 'Todas las pestañas - todo',
+            currentTab: 'Pestaña actual - todo',
+            allCookies: 'Todas las pestañas - solo cookies',
+            currentCookies: 'Pestaña actual - solo cookies',
+            allCache: 'Todas las pestañas - solo caché',
+            currentCache: 'Pestaña actual - solo caché',
+            allLabel: 'todas las pestañas',
+            currentLabel: 'pestaña actual',
+            done: (scope, type) => `Borrado: ${scope} - ${type}`,
+        },
         quit: 'Quitar',
         show: 'Mostrar',
         hide: 'Esconder',
@@ -173,9 +180,21 @@ const translation = {
         title: 'Marcadores',
         add: 'Añadir marcador',
         edit: 'Editar marcadores',
+        manager: 'Gestionar marcadores',
+        managerSearch: 'Buscar marcadores...',
+        managerEmpty: 'No se encontraron marcadores.',
+        confirmDelete: '¿Eliminar?',
+        exportBookmarks: 'Exportar marcadores',
+        importBookmarks: 'Importar marcadores',
+        exported: 'Marcadores exportados.',
+        imported: (count) => `${count} marcador(es) importado(s).`,
+        exportTitle: 'Exportar marcadores',
+        importTitle: 'Importar marcadores',
         form: {
             title: 'Título',
-            url: 'URL'
+            url: 'URL',
+            category: 'Carpeta',
+            categoryPlaceholder: 'ej. Trabajo/Proyectos (usa / para subcarpetas)',
         }
     },
     tabs: {
@@ -184,6 +203,15 @@ const translation = {
         corporate: 'Corporativo',
         closeTab: 'Cerrar pestaña',
         cannotCloseLastTab: 'No se puede cerrar la última pestaña.',
+        restoreClosedTab: 'Restaurar última pestaña cerrada',
+        noClosedTabs: 'No hay pestañas cerradas para restaurar.',
+        renameTab: 'Renombrar pestaña',
+        clearName: 'Borrar nombre personalizado',
+        renamePrompt: 'Introduzca un nombre personalizado para esta pestaña (deje vacío para usar el predeterminado)',
+        renamePlaceholder: 'Nombre personalizado',
+        pinTab: 'Fijar pestaña',
+        unpinTab: 'Desfijar pestaña',
+        cannotClosePinned: 'No se puede cerrar una pestaña fijada.',
         confirmClose: (tabLabel) => `¿Estás seguro de que quieres cerrar "${tabLabel}"? Se cerrará la sesión de esta cuenta.`,
     },
     validation: {

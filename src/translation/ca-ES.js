@@ -3,20 +3,16 @@ const translation = {
     restart: 'Si us plau, espereu, l\'aplicació s\'està reiniciant.',
     label: {
         darkThemeInvert: {
-          title: 'Activa el mode fosc amb peculiaritats (usant inversió)'
+          title: 'Activa el mode fosc (usant inversió)',
+          off: 'Desactivat',
+          on: 'Activat',
+          system: 'Seguir el sistema',
         },
         hideMenu: 'Amaga el menú principal (mostra amb ALT)',
         optionToHideMenuState: {
             yes: 'Després de reiniciar, amagarà el menú i el mostrarà amb ALT.',
         },
         donate: 'Dona',
-        allowMultiple: {
-            checkbox: 'Permet múltiples instàncies (amb algunes peculiaritats)',
-            message: {
-                yes: 'Ara pots utilitzar múltiples instàncies amb algunes peculiaritats.',
-                no: 'Ara, només permet una instància, sense peculiaritats'
-            }
-        },
         disableHide: {
             checkbox: 'Tanca a la safata del sistema',
             message: {
@@ -35,7 +31,18 @@ const translation = {
         developer: 'Patrik Laszlo',
         personalHome: 'Inici personal',
         corporateHome: 'Inici corporatiu',
-        clearCache: 'Primer tanca la sessió, després fes clic en aquesta opció del menú per netejar la memòria cau',
+        clearCache: {
+            title: 'Esborra les dades i reinicia',
+            allTabs: 'Totes les pestanyes - tot',
+            currentTab: 'Pestanya actual - tot',
+            allCookies: 'Totes les pestanyes - només galetes',
+            currentCookies: 'Pestanya actual - només galetes',
+            allCache: 'Totes les pestanyes - només memòria cau',
+            currentCache: 'Pestanya actual - només memòria cau',
+            allLabel: 'totes les pestanyes',
+            currentLabel: 'pestanya actual',
+            done: (scope, type) => `Esborrat: ${scope} - ${type}`,
+        },
         quit: 'Surt',
         show: 'Mostra',
         hide: 'Amaga',
@@ -166,9 +173,21 @@ const translation = {
         title: 'Marcadors',
         add: 'Afegeix un marcador',
         edit: 'Edita els marcadors',
+        manager: "Gestiona les adreces d'interès",
+        managerSearch: "Cerca adreces d'interès...",
+        managerEmpty: "No s'han trobat adreces d'interès.",
+        confirmDelete: 'Eliminar?',
+        exportBookmarks: "Exporta les adreces d'interès",
+        importBookmarks: "Importa les adreces d'interès",
+        exported: "Adreces d'interès exportades.",
+        imported: (count) => `S'han importat ${count} adreces d'interès.`,
+        exportTitle: "Exporta les adreces d'interès",
+        importTitle: "Importa les adreces d'interès",
         form: {
             title: 'Títol',
-            url: 'URL'
+            url: 'URL',
+            category: 'Carpeta',
+            categoryPlaceholder: 'p.ex. Feina/Projectes (usa / per subcarpetes)',
         }
     },
     tabs: {
@@ -177,6 +196,15 @@ const translation = {
         corporate: 'Corporatiu',
         closeTab: 'Tanca la pestanya',
         cannotCloseLastTab: 'No es pot tancar l\'última pestanya.',
+        restoreClosedTab: 'Restaura la darrera pestanya tancada',
+        noClosedTabs: 'No hi ha pestanyes tancades per restaurar.',
+        renameTab: 'Reanomena la pestanya',
+        clearName: 'Esborra el nom personalitzat',
+        renamePrompt: 'Introduïu un nom personalitzat per a aquesta pestanya (deixeu en blanc per al predeterminat)',
+        renamePlaceholder: 'Nom personalitzat de la pestanya',
+        pinTab: 'Fixa la pestanya',
+        unpinTab: 'Desfixa la pestanya',
+        cannotClosePinned: 'No es pot tancar una pestanya fixada.',
         confirmClose: (tabLabel) => `Esteu segur que voleu tancar "${tabLabel}"? Es tancarà la sessió d'aquest compte.`,
     },
     validation: {

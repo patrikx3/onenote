@@ -3,20 +3,16 @@ const translation = {
     restart: '잠시만 기다려 주세요, 애플리케이션이 다시 시작됩니다.',
     label: {
         darkThemeInvert: {
-          title: '다크 모드 활성화 (반전 사용, 약간의 문제 있음)'
+          title: '다크 모드 활성화 (반전 사용)',
+          off: '끄기',
+          on: '켜기',
+          system: '시스템 설정 따르기',
         },
         hideMenu: '메인 메뉴 숨기기 (ALT로 표시)',
         optionToHideMenuState: {
             yes: '다시 시작한 후 메뉴가 숨겨지며 ALT로 표시됩니다.',
         },
         donate: '기부',
-        allowMultiple: {
-            checkbox: '다중 인스턴스 허용 (약간의 문제 있음)',
-            message: {
-                yes: '이제 약간의 문제와 함께 여러 인스턴스를 사용할 수 있습니다.',
-                no: '이제 하나의 인스턴스만 허용되며, 문제가 없습니다'
-            }
-        },
         disableHide: {
             checkbox: '트레이로 닫기',
             message: {
@@ -35,7 +31,18 @@ const translation = {
         developer: 'Patrik Laszlo',
         personalHome: '개인 홈',
         corporateHome: '회사 홈',
-        clearCache: '먼저 로그아웃한 다음 이 메뉴 옵션을 클릭하여 캐시를 지우세요',
+        clearCache: {
+            title: '데이터 지우기 및 다시 시작',
+            allTabs: '모든 탭 - 전체',
+            currentTab: '현재 탭 - 전체',
+            allCookies: '모든 탭 - 쿠키만',
+            currentCookies: '현재 탭 - 쿠키만',
+            allCache: '모든 탭 - 캐시만',
+            currentCache: '현재 탭 - 캐시만',
+            allLabel: '모든 탭',
+            currentLabel: '현재 탭',
+            done: (scope, type) => `삭제 완료: ${scope} - ${type}`,
+        },
         quit: '종료',
         show: '표시',
         hide: '숨기기',
@@ -166,9 +173,21 @@ const translation = {
         title: '북마크',
         add: '북마크 추가',
         edit: '북마크 편집',
+        manager: '북마크 관리',
+        managerSearch: '북마크 검색...',
+        managerEmpty: '북마크를 찾을 수 없습니다.',
+        confirmDelete: '삭제할까요?',
+        exportBookmarks: '북마크 내보내기',
+        importBookmarks: '북마크 가져오기',
+        exported: '북마크를 내보냈습니다.',
+        imported: (count) => `${count}개의 북마크를 가져왔습니다.`,
+        exportTitle: '북마크 내보내기',
+        importTitle: '북마크 가져오기',
         form: {
             title: '제목',
-            url: 'URL'
+            url: 'URL',
+            category: '폴더',
+            categoryPlaceholder: '예: 업무/프로젝트 (하위 폴더는 / 사용)',
         }
     },
     tabs: {
@@ -177,6 +196,15 @@ const translation = {
         corporate: '회사',
         closeTab: '탭 닫기',
         cannotCloseLastTab: '마지막 탭은 닫을 수 없습니다.',
+        restoreClosedTab: '마지막으로 닫은 탭 복원',
+        noClosedTabs: '복원할 닫은 탭이 없습니다.',
+        renameTab: '탭 이름 변경',
+        clearName: '사용자 지정 이름 지우기',
+        renamePrompt: '이 탭의 사용자 지정 이름을 입력하세요 (비워두면 기본값 사용)',
+        renamePlaceholder: '사용자 지정 탭 이름',
+        pinTab: '탭 고정',
+        unpinTab: '탭 고정 해제',
+        cannotClosePinned: '고정된 탭은 닫을 수 없습니다.',
         confirmClose: (tabLabel) => `"${tabLabel}"을(를) 닫으시겠습니까? 이 계정에서 로그아웃됩니다.`,
     },
     validation: {

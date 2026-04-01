@@ -109,6 +109,7 @@ global.p3x.onenote.updateLocation = (url) => {
     updateBarNavState();
 };
 
+global.p3x.onenote.updateZoomDisplay = updateZoomDisplay;
 global.p3x.onenote.updateBarLabels = updateBarLabels;
 
 // ── Init on window load ─────────────────────────────────────────
@@ -151,7 +152,7 @@ window.addEventListener('load', async () => {
         const val = cur + 0.1;
         if (val <= 5.0) {
             wv.setZoomFactor(val);
-            conf.set('zoom', val);
+            global.p3x.onenote.tabManager.setActiveTabZoom(val);
             updateZoomDisplay();
         }
     };
@@ -162,7 +163,7 @@ window.addEventListener('load', async () => {
         const val = cur - 0.1;
         if (val >= 0.75) {
             wv.setZoomFactor(val);
-            conf.set('zoom', val);
+            global.p3x.onenote.tabManager.setActiveTabZoom(val);
             updateZoomDisplay();
         }
     };

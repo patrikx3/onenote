@@ -3,20 +3,16 @@ const translation = {
     restart: '請稍等，程式正在重新啟動',
     label: {
         darkThemeInvert: {
-          title: '使用深色模式 (using invert)'
+          title: '使用深色模式 (using invert)',
+          off: '關閉',
+          on: '開啟',
+          system: '跟隨系統',
         },
         hideMenu: '隱藏主選單 (按ALT鍵顯示)',
         optionToHideMenuState: {
             yes: '重新啟動後，即隱藏主選單，須按ALT鍵顯示',
         },
         donate: '捐助',
-        allowMultiple: {
-            checkbox: 'Allow multiple instances (with some quirks)',
-            message: {
-                yes: 'Now you can use multiple instance with some quirks.',
-                no: 'Now, it allows only one instance, no quirks'
-            }
-        },
         disableHide: {
             //yes: 'Set the close button behaviour that will minimize to the tray instead of quitting',
             //no: 'Set the close button behaviour as to really quit the app',
@@ -38,7 +34,18 @@ const translation = {
         developer: 'Patrik Laszlo',
         personalHome: 'Personal home',
         corporateHome: 'Corporate home',
-        clearCache: 'First sign off, then click this menu option to clear the cache',
+        clearCache: {
+            title: '清除資料並重新啟動',
+            allTabs: '所有分頁 - 全部',
+            currentTab: '目前分頁 - 全部',
+            allCookies: '所有分頁 - 僅Cookie',
+            currentCookies: '目前分頁 - 僅Cookie',
+            allCache: '所有分頁 - 僅快取',
+            currentCache: '目前分頁 - 僅快取',
+            allLabel: '所有分頁',
+            currentLabel: '目前分頁',
+            done: (scope, type) => `已清除: ${scope} - ${type}`,
+        },
         quit: '退出',
         show: '顯示',
         hide: '隱藏',
@@ -172,9 +179,21 @@ const translation = {
         title: '書籤',
         add: '新增書籤',
         edit: '修改書籤',
+        manager: '管理書籤',
+        managerSearch: '搜尋書籤...',
+        managerEmpty: '找不到書籤。',
+        confirmDelete: '刪除？',
+        exportBookmarks: '匯出書籤',
+        importBookmarks: '匯入書籤',
+        exported: '書籤已匯出。',
+        imported: (count) => `已匯入 ${count} 個書籤。`,
+        exportTitle: '匯出書籤',
+        importTitle: '匯入書籤',
         form: {
             title: '標題',
-            url: 'URL'
+            url: 'URL',
+            category: '資料夾',
+            categoryPlaceholder: '例如：工作/專案（使用 / 表示子資料夾）',
         }
     },
     tabs: {
@@ -183,6 +202,15 @@ const translation = {
         corporate: '公司',
         closeTab: '關閉分頁',
         cannotCloseLastTab: '無法關閉最後一個分頁。',
+        restoreClosedTab: '還原最近關閉的分頁',
+        noClosedTabs: '沒有可還原的已關閉分頁。',
+        renameTab: '重新命名分頁',
+        clearName: '清除自訂名稱',
+        renamePrompt: '輸入此分頁的自訂名稱（留空使用預設值）',
+        renamePlaceholder: '自訂分頁名稱',
+        pinTab: '釘選分頁',
+        unpinTab: '取消釘選分頁',
+        cannotClosePinned: '無法關閉釘選的分頁。',
         confirmClose: (tabLabel) => `確定要關閉「${tabLabel}」嗎？您將從此帳戶登出。`,
     },
     validation: {

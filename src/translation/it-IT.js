@@ -3,20 +3,16 @@ const translation = {
     restart: 'Attendi, l\'applicazione si sta riavviando.',
     label: {
         darkThemeInvert: {
-            title: 'Abilita la modalità oscura con stranezze (usando invert)'
+            title: 'Abilita la modalità oscura (usando invert)',
+          off: 'Disattivato',
+          on: 'Attivato',
+          system: 'Segui il sistema',
         },
         hideMenu: 'Nascondi menu principale (mostra con ALT)',
         optionToHideMenuState: {
             yes: 'Dopo il riavvio, nasconderà il menu principale e verrà mostrato con il tasto ALT.',
         },
         donate: 'Dona',
-        allowMultiple: {
-            checkbox: 'Consenti più istanze (con alcune stranezze)',
-            message: {
-                yes: 'Ora puoi utilizzare più istanze con alcune stranezze.',
-                no: 'Ora, consente solo un\'istanza, senza stranezze'
-            }
-        },
         disableHide: {
             //yes: 'Set the close button behaviour that will minimize to the tray instead of quitting',
             //no: 'Set the close button behaviour as to really quit the app',
@@ -38,7 +34,18 @@ const translation = {
         developer: 'Patrik Laszlo',
         personalHome: 'Home Personale',
         corporateHome: 'Home Aziendale',
-        clearCache: 'Per prima cosa esci, e quindi fai clic su questa opzione del menu per pulire la cache',
+        clearCache: {
+            title: 'Cancella dati e riavvia',
+            allTabs: 'Tutte le schede - tutto',
+            currentTab: 'Scheda corrente - tutto',
+            allCookies: 'Tutte le schede - solo cookie',
+            currentCookies: 'Scheda corrente - solo cookie',
+            allCache: 'Tutte le schede - solo cache',
+            currentCache: 'Scheda corrente - solo cache',
+            allLabel: 'tutte le schede',
+            currentLabel: 'scheda corrente',
+            done: (scope, type) => `Cancellato: ${scope} - ${type}`,
+        },
         quit: 'Esci',
         show: 'Mostra',
         hide: 'Nascondi',
@@ -172,9 +179,21 @@ const translation = {
         title: 'Segnalibri',
         add: 'Aggiungi segnalibro',
         edit: 'Modifica segnalibro',
+        manager: 'Gestisci segnalibri',
+        managerSearch: 'Cerca segnalibri...',
+        managerEmpty: 'Nessun segnalibro trovato.',
+        confirmDelete: 'Eliminare?',
+        exportBookmarks: 'Esporta segnalibri',
+        importBookmarks: 'Importa segnalibri',
+        exported: 'Segnalibri esportati.',
+        imported: (count) => `${count} segnalibro/i importato/i.`,
+        exportTitle: 'Esporta segnalibri',
+        importTitle: 'Importa segnalibri',
         form: {
             title: 'Titolo',
-            url: 'URL'
+            url: 'URL',
+            category: 'Cartella',
+            categoryPlaceholder: 'es. Lavoro/Progetti (usa / per sottocartelle)',
         }
     },
     tabs: {
@@ -183,6 +202,15 @@ const translation = {
         corporate: 'Aziendale',
         closeTab: 'Chiudi scheda',
         cannotCloseLastTab: 'Impossibile chiudere l\'ultima scheda.',
+        restoreClosedTab: 'Ripristina ultima scheda chiusa',
+        noClosedTabs: 'Nessuna scheda chiusa da ripristinare.',
+        renameTab: 'Rinomina scheda',
+        clearName: 'Cancella nome personalizzato',
+        renamePrompt: 'Inserisci un nome personalizzato per questa scheda (lascia vuoto per usare il predefinito)',
+        renamePlaceholder: 'Nome scheda personalizzato',
+        pinTab: 'Fissa scheda',
+        unpinTab: 'Sblocca scheda',
+        cannotClosePinned: 'Impossibile chiudere una scheda fissata.',
         confirmClose: (tabLabel) => `Sei sicuro di voler chiudere "${tabLabel}"? Verrai disconnesso da questo account.`,
     },
     validation: {

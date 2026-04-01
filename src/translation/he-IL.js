@@ -3,20 +3,16 @@ const translation = {
     restart: 'אנא המתן, האפליקציה מופעלת מחדש.',
     label: {
         darkThemeInvert: {
-          title: 'הפעל מצב כהה עם בעיות (באמצעות היפוך)'
+          title: 'הפעל מצב כהה (באמצעות היפוך)',
+          off: 'כבוי',
+          on: 'פעיל',
+          system: 'עקוב אחרי המערכת',
         },
         hideMenu: 'הסתר תפריט ראשי (הצג עם ALT)',
         optionToHideMenuState: {
             yes: 'לאחר הפעלה מחדש, התפריט יוסתר ויוצג עם ALT.',
         },
         donate: 'תרומה',
-        allowMultiple: {
-            checkbox: 'אפשר מופעים מרובים (עם כמה בעיות)',
-            message: {
-                yes: 'כעת ניתן להשתמש במופעים מרובים עם כמה בעיות.',
-                no: 'כעת, מותר רק מופע אחד, ללא בעיות'
-            }
-        },
         disableHide: {
             checkbox: 'סגור למגש המערכת',
             message: {
@@ -35,7 +31,18 @@ const translation = {
         developer: 'Patrik Laszlo',
         personalHome: 'דף בית אישי',
         corporateHome: 'דף בית ארגוני',
-        clearCache: 'ראשית התנתק, ואז לחץ על אפשרות תפריט זו כדי לנקות את המטמון',
+        clearCache: {
+            title: 'נקה נתונים והפעל מחדש',
+            allTabs: 'כל הכרטיסיות - הכל',
+            currentTab: 'כרטיסייה נוכחית - הכל',
+            allCookies: 'כל הכרטיסיות - עוגיות בלבד',
+            currentCookies: 'כרטיסייה נוכחית - עוגיות בלבד',
+            allCache: 'כל הכרטיסיות - מטמון בלבד',
+            currentCache: 'כרטיסייה נוכחית - מטמון בלבד',
+            allLabel: 'כל הכרטיסיות',
+            currentLabel: 'כרטיסייה נוכחית',
+            done: (scope, type) => `נוקה: ${scope} - ${type}`,
+        },
         quit: 'יציאה',
         show: 'הצג',
         hide: 'הסתר',
@@ -166,9 +173,21 @@ const translation = {
         title: 'סימניות',
         add: 'הוסף סימניה',
         edit: 'ערוך סימניות',
+        manager: 'ניהול סימניות',
+        managerSearch: 'חיפוש סימניות...',
+        managerEmpty: 'לא נמצאו סימניות.',
+        confirmDelete: 'למחוק?',
+        exportBookmarks: 'ייצוא סימניות',
+        importBookmarks: 'ייבוא סימניות',
+        exported: 'סימניות יוצאו.',
+        imported: (count) => `יובאו ${count} סימניות.`,
+        exportTitle: 'ייצוא סימניות',
+        importTitle: 'ייבוא סימניות',
         form: {
             title: 'כותרת',
-            url: 'URL'
+            url: 'URL',
+            category: 'תיקייה',
+            categoryPlaceholder: 'לדוגמה: עבודה/פרויקטים (/ לתיקיות משנה)',
         }
     },
     tabs: {
@@ -177,6 +196,15 @@ const translation = {
         corporate: 'ארגוני',
         closeTab: 'סגור כרטיסייה',
         cannotCloseLastTab: 'לא ניתן לסגור את הכרטיסייה האחרונה.',
+        restoreClosedTab: 'שחזר כרטיסייה אחרונה שנסגרה',
+        noClosedTabs: 'אין כרטיסיות סגורות לשחזור.',
+        renameTab: 'שנה שם כרטיסייה',
+        clearName: 'נקה שם מותאם אישית',
+        renamePrompt: 'הזן שם מותאם אישית לכרטיסייה זו (השאר ריק לברירת מחדל)',
+        renamePlaceholder: 'שם כרטיסייה מותאם אישית',
+        pinTab: 'הצמד כרטיסייה',
+        unpinTab: 'בטל הצמדת כרטיסייה',
+        cannotClosePinned: 'לא ניתן לסגור כרטיסייה מוצמדת.',
         confirmClose: (tabLabel) => `האם אתה בטוח שברצונך לסגור את "${tabLabel}"? תנותק מחשבון זה.`,
     },
     validation: {
