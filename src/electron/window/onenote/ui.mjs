@@ -1,3 +1,5 @@
+import registry from './registry.mjs'
+
 // ── Toast ──────────────────────────────────────────────────────────
 
 const toastContainer = document.getElementById('p3x-toast-container');
@@ -43,8 +45,8 @@ function showToast(options) {
 export const p3xToast = {
     action: showToast,
     setProxy: {
-        clear: () => showToast(p3x.onenote.lang.dialog.setProxy.clear),
-        set: (value) => showToast(p3x.onenote.lang.dialog.setProxy.set(value)),
+        clear: () => showToast(registry.lang.dialog.setProxy.clear),
+        set: (value) => showToast(registry.lang.dialog.setProxy.set(value)),
     },
 };
 
@@ -124,7 +126,7 @@ function showChoice({ title, body, buttons, cancelText }) {
 // ── Bookmark form dialog ────────────────────────────────────────
 
 function showBookmarkForm(opts) {
-    const lang = p3x.onenote.lang;
+    const lang = registry.lang;
     const isEdit = opts.edit === true;
     const title = isEdit ? lang.bookmarks.edit : lang.bookmarks.add;
     const model = opts.model || { title: '', url: '', category: '' };
@@ -170,7 +172,7 @@ function showBookmarkForm(opts) {
 
         // Populate datalist with existing folder paths
         const datalist = dialogEl.querySelector('#p3x-category-list');
-        const bookmarks = global.p3x.onenote.conf.get('bookmarks') || [];
+        const bookmarks = registry.conf.get('bookmarks') || [];
         const folderSet = new Set();
         for (const bm of bookmarks) {
             if (bm.category) {
@@ -230,8 +232,8 @@ function showBookmarkForm(opts) {
 // ── Bookmark Manager ───────────────────────────────────────────
 
 function showBookmarkManager() {
-    const lang = p3x.onenote.lang;
-    const conf = global.p3x.onenote.conf;
+    const lang = registry.lang;
+    const conf = registry.conf;
     let bookmarks = conf.get('bookmarks') || [];
     let filter = '';
 
@@ -410,19 +412,19 @@ function showBookmarkManager() {
 
 export const p3xPrompt = {
     setProxy() {
-        const lang = p3x.onenote.lang;
+        const lang = registry.lang;
         return showPrompt({
             title: lang.label.setProxy,
             text: lang.dialog.setProxy.info,
             placeholder: lang.dialog.setProxy.placeholder,
-            initialValue: global.p3x.onenote.data.proxy,
+            initialValue: registry.data.proxy,
             cancelText: lang.button.cancel,
             okText: lang.button.save,
         });
     },
 
     goToUrl() {
-        const lang = p3x.onenote.lang;
+        const lang = registry.lang;
         return showPrompt({
             title: lang.label.openUrl,
             text: lang.dialog.openUrl.info,
@@ -434,7 +436,7 @@ export const p3xPrompt = {
     },
 
     configureLanguge(opts) {
-        const lang = p3x.onenote.lang;
+        const lang = registry.lang;
         return showChoice({
             title: lang.menu.language.dialog.label,
             buttons: [
@@ -446,7 +448,7 @@ export const p3xPrompt = {
     },
 
     redirect(opts) {
-        const lang = p3x.onenote.lang;
+        const lang = registry.lang;
         return showChoice({
             title: lang.label.promptRedirectUrlTitle,
             body: `<div>${lang.dialog.redirect.url({ url: opts.url })}</div>`,
@@ -467,7 +469,7 @@ export const p3xPrompt = {
     },
 
     addTab() {
-        const lang = p3x.onenote.lang;
+        const lang = registry.lang;
         return showChoice({
             title: lang.tabs?.addTab || 'Add tab',
             buttons: [
@@ -479,7 +481,7 @@ export const p3xPrompt = {
     },
 
     renameTab(currentName) {
-        const lang = p3x.onenote.lang;
+        const lang = registry.lang;
         return showPrompt({
             title: lang.tabs?.renameTab || 'Rename tab',
             text: lang.tabs?.renamePrompt || 'Enter a custom name for this tab (leave empty to use default)',
@@ -491,7 +493,7 @@ export const p3xPrompt = {
     },
 
     confirmCloseTab(message) {
-        const lang = p3x.onenote.lang;
+        const lang = registry.lang;
         return showChoice({
             title: lang.tabs?.closeTab || 'Close tab',
             body: `<p>${message}</p>`,

@@ -2,6 +2,7 @@ import { BrowserWindow, app, screen } from 'electron'
 import remoteMain from '@electron/remote/main/index.js'
 import path from 'path'
 import electronUpdater from 'electron-updater'
+import registry from '../../../registry.mjs'
 const { autoUpdater } = electronUpdater
 
 remoteMain.initialize()
@@ -9,10 +10,10 @@ remoteMain.initialize()
 function createWindow() {
 
     const win = new BrowserWindow({
-        icon: global.p3x.onenote.iconFile,
-        title: `${global.p3x.onenote.title} v${global.p3x.onenote.pkg.version}`,
+        icon: registry.iconFile,
+        title: `${registry.title} v${registry.pkg.version}`,
         backgroundColor: 'black',
-        autoHideMenuBar: global.p3x.onenote.optionToHideMenu,
+        autoHideMenuBar: registry.optionToHideMenu,
         webPreferences: {
             nativeWindowOpen: true,
             worldSafeExecuteJavaScript: true,
@@ -24,7 +25,7 @@ function createWindow() {
         }
     });
 
-    global.p3x.onenote.window.onenote = win;
+    registry.window.onenote = win;
 
     win.webContents.on("did-attach-webview", (_, contents) => {
         contents.setWindowOpenHandler((details) => {
@@ -36,7 +37,7 @@ function createWindow() {
         contents.session.webRequest.onBeforeSendHeaders(
             { urls: ['*://*.onenote.com/*', '*://*.live.com/*', '*://*.microsoft.com/*', '*://*.office.com/*', '*://*.sharepoint.com/*', '*://*.office365.com/*', '*://*.microsoftonline.com/*', '*://onenote.cloud.microsoft/*', '*://*.cloud.microsoft/*'] },
             (details, callback) => {
-                const langCode = global.p3x.onenote.translationKey;
+                const langCode = registry.translationKey;
                 const shortLang = langCode.split('-')[0];
                 details.requestHeaders['Accept-Language'] = `${langCode},${shortLang};q=0.9,en-US;q=0.8,en;q=0.7`;
                 callback({ requestHeaders: details.requestHeaders });
@@ -54,18 +55,18 @@ function createWindow() {
         win.openDevTools()
     }
 
-    global.p3x.onenote.setVisible(process.argv.includes('--minimized') ? false : true);
+    registry.setVisible(process.argv.includes('--minimized') ? false : true);
 
     win.on('minimize', function (event) {
         //event.preventDefault()
-        //global.p3x.onenote.setVisible(false, true);
+        //registry.setVisible(false, true);
     });
 
     win.on('close', function (event) {
         if (!app.isQuiting) {
-            if (!global.p3x.onenote.disableHide) {
+            if (!registry.disableHide) {
                 event.preventDefault()
-                global.p3x.onenote.setVisible(false);
+                registry.setVisible(false);
             }
         }
         return false;
@@ -81,16 +82,16 @@ function createWindow() {
         win.webContents.send('p3x-onenote-window-state', {
             action: 'focus'
         })
-        global.p3x.onenote.mainMenu();
-        global.p3x.onenote.mainTray()
+        registry.mainMenu();
+        registry.mainTray()
     });
 
     win.on('blur', function () {
         win.webContents.send('p3x-onenote-window-state', {
             action: 'blur'
         })
-        global.p3x.onenote.mainMenu();
-        global.p3x.onenote.mainTray()
+        registry.mainMenu();
+        registry.mainTray()
     });
 
     win.on('hide', function () {
@@ -100,8 +101,8 @@ function createWindow() {
     });
 
     if (!process.argv.includes('--minimized')) {
-        const windowBounds = global.p3x.onenote.conf.get('window-bounds');
-        const maximized = global.p3x.onenote.conf.get('maximized');
+        const windowBounds = registry.conf.get('window-bounds');
+        const maximized = registry.conf.get('maximized');
 
         if (maximized === true) {
             win.maximize()
@@ -125,31 +126,31 @@ function createWindow() {
     }
 
     win.on('close', () => {
-        if (global.p3x.onenote.conf.get('maximized') !== true) {
-            global.p3x.onenote.conf.set('window-bounds', win.getBounds())
+        if (registry.conf.get('maximized') !== true) {
+            registry.conf.set('window-bounds', win.getBounds())
         }
     })
 
     win.on('maximize', () => {
-        global.p3x.onenote.conf.set('maximized', true)
+        registry.conf.set('maximized', true)
     })
 
     win.on('unmaximize', () => {
-        global.p3x.onenote.conf.set('maximized', false)
+        registry.conf.set('maximized', false)
     })
 
     autoUpdater.on('checking-for-update', (info) => {
         console.log('checking-for-update', info)
         win.webContents.send('p3x-onenote-action', {
             action: 'toast',
-            message: global.p3x.onenote.lang.updater["checking-for-update"]
+            message: registry.lang.updater["checking-for-update"]
         })
     })
     autoUpdater.on('update-available', (info) => {
         console.log('update-available', info)
         win.webContents.send('p3x-onenote-action', {
             action: 'toast',
-            message: global.p3x.onenote.lang.updater["update-available"]
+            message: registry.lang.updater["update-available"]
         })
     })
 
@@ -164,7 +165,7 @@ function createWindow() {
 
         win.webContents.send('p3x-onenote-action', {
             action: 'toast',
-            message: global.p3x.onenote.lang.updater["update-not-available"]
+            message: registry.lang.updater["update-not-available"]
         })
     })
     autoUpdater.on('error', (error) => {
@@ -174,7 +175,7 @@ function createWindow() {
     autoUpdater.on('update-downloaded', (info) => {
         win.webContents.send('p3x-onenote-action', {
             action: 'toast',
-            message: p3x.onenote.lang.updater["update-downloaded"],
+            message: registry.lang.updater["update-downloaded"],
         })
 
     });

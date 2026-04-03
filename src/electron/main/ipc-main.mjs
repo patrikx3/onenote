@@ -1,20 +1,21 @@
 import { ipcMain, dialog } from 'electron'
 import { writeFile, readFile } from 'fs/promises'
 import naturalCompareDocument from '../lib/natural-compare-document.mjs'
+import registry from '../registry.mjs'
 
 ipcMain.on('did-finish-load', function () {
-    const toWebview = global.p3x.onenote.conf.get('webview-onenote');
-    global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-onload-user', toWebview);
+    const toWebview = registry.conf.get('webview-onenote');
+    registry.window.onenote.webContents.send('p3x-onenote-onload-user', toWebview);
 });
 
 ipcMain.on('p3x-onenote-save', function (event, data) {
-    global.p3x.onenote.conf.set('webview-onenote', data);
-    //global.p3x.onenote.conf.set('window-bounds', global.p3x.onenote.window.onenote.getBounds());
+    registry.conf.set('webview-onenote', data);
+    //registry.conf.set('window-bounds', registry.window.onenote.getBounds());
 })
 
 ipcMain.on('p3x-onenote-action-bookmark-result', function (event, data) {
     //console.log('p3x-onenote-action-bookmark-result', data)
-    const bookmarksOriginal = global.p3x.onenote.conf.get('bookmarks') || []
+    const bookmarksOriginal = registry.conf.get('bookmarks') || []
 
     const sort = naturalCompareDocument({
         byProperty: 'title'
@@ -31,16 +32,16 @@ ipcMain.on('p3x-onenote-action-bookmark-result', function (event, data) {
         }
     }
 
-    global.p3x.onenote.conf.set('bookmarks', bookmarks.sort(sort))
+    registry.conf.set('bookmarks', bookmarks.sort(sort))
 
-    global.p3x.onenote.mainMenu();
-    global.p3x.onenote.mainTray()
+    registry.mainMenu();
+    registry.mainTray()
 })
 
 
 ipcMain.on('p3x-onenote-bookmarks-manager-saved', function () {
-    global.p3x.onenote.mainMenu();
-    global.p3x.onenote.mainTray();
+    registry.mainMenu();
+    registry.mainTray();
 })
 
 ipcMain.on('p3x-debug', (event, data) => {
@@ -49,9 +50,9 @@ ipcMain.on('p3x-debug', (event, data) => {
 
 
 ipcMain.handle('p3x-onenote-bookmarks-export', async () => {
-    const bookmarks = global.p3x.onenote.conf.get('bookmarks') || []
-    const result = await dialog.showSaveDialog(global.p3x.onenote.window.onenote, {
-        title: global.p3x.onenote.lang.bookmarks?.exportTitle || 'Export bookmarks',
+    const bookmarks = registry.conf.get('bookmarks') || []
+    const result = await dialog.showSaveDialog(registry.window.onenote, {
+        title: registry.lang.bookmarks?.exportTitle || 'Export bookmarks',
         defaultPath: 'p3x-onenote-bookmarks.json',
         filters: [{ name: 'JSON', extensions: ['json'] }],
     })
@@ -61,8 +62,8 @@ ipcMain.handle('p3x-onenote-bookmarks-export', async () => {
 })
 
 ipcMain.handle('p3x-onenote-bookmarks-import', async () => {
-    const result = await dialog.showOpenDialog(global.p3x.onenote.window.onenote, {
-        title: global.p3x.onenote.lang.bookmarks?.importTitle || 'Import bookmarks',
+    const result = await dialog.showOpenDialog(registry.window.onenote, {
+        title: registry.lang.bookmarks?.importTitle || 'Import bookmarks',
         filters: [{ name: 'JSON', extensions: ['json'] }],
         properties: ['openFile'],
     })
@@ -71,7 +72,7 @@ ipcMain.handle('p3x-onenote-bookmarks-import', async () => {
     const imported = JSON.parse(content)
     if (!Array.isArray(imported)) return { success: false, error: 'invalid' }
 
-    const existing = global.p3x.onenote.conf.get('bookmarks') || []
+    const existing = registry.conf.get('bookmarks') || []
     const existingUrls = new Set(existing.map(b => b.url))
     let added = 0
     for (const bookmark of imported) {
@@ -83,8 +84,8 @@ ipcMain.handle('p3x-onenote-bookmarks-import', async () => {
     }
 
     const sort = naturalCompareDocument({ byProperty: 'title' })
-    global.p3x.onenote.conf.set('bookmarks', existing.sort(sort))
-    global.p3x.onenote.mainMenu()
-    global.p3x.onenote.mainTray()
+    registry.conf.set('bookmarks', existing.sort(sort))
+    registry.mainMenu()
+    registry.mainTray()
     return { success: true, added }
 })

@@ -5,6 +5,7 @@ import path from 'path'
 import Store from 'electron-store'
 import { app } from 'electron'
 
+import registry from './registry.mjs'
 
 import enUS from '../translation/en-US.js'
 import afZA from '../translation/af-ZA.js'
@@ -119,76 +120,74 @@ const langTranslations = {
 
 const translation = langTranslations[translationKey]
 
-global.p3x = {
-    onenote: {
-        pkg: pkg,
-        darkThemeInvert: darkThemeInvert,
-        darkThemeMode: darkThemeMode,
-        lang: translation,
-        translationKey: translationKey,
-        translations: undefined,
-        title: translation.title,
-        conf: conf,
-        disableHide: true,
+Object.assign(registry, {
+    pkg: pkg,
+    darkThemeInvert: darkThemeInvert,
+    darkThemeMode: darkThemeMode,
+    lang: translation,
+    translationKey: translationKey,
+    translations: undefined,
+    title: translation.title,
+    conf: conf,
+    disableHide: true,
 
-        optionToDisableInternalExternalPopup: false,
-        optionToHideMenu: false,
-        iconFile: path.resolve(`${__dirname}/images/128x128.png`),
-        tray: undefined,
-        window: {
-            onenote: undefined,
-        },
-        action: undefined,
-        menus: undefined,
-        mainMenu: undefined,
-        setVisible: undefined,
-        createWindow: {
-            onenote: undefined,
-        },
-        isVisible: () => {
-            return global.p3x.onenote.window.onenote.isVisible() && global.p3x.onenote.window.onenote.isFocused()
-        }
+    optionToDisableInternalExternalPopup: false,
+    optionToHideMenu: false,
+    iconFile: path.resolve(`${__dirname}/images/128x128.png`),
+    tray: undefined,
+    window: {
+        onenote: undefined,
+    },
+    action: undefined,
+    menus: undefined,
+    mainMenu: undefined,
+    setVisible: undefined,
+    createWindow: {
+        onenote: undefined,
+    },
+    isVisible: () => {
+        return registry.window.onenote.isVisible() && registry.window.onenote.isFocused()
     }
-}
+})
 
-global.p3x.onenote.translations = langTranslations
+registry.translations = langTranslations
 
 // configuration
-global.p3x.onenote.disableHide = conf.get('disable-hide')
-if (global.p3x.onenote.disableHide === undefined) {
+registry.disableHide = conf.get('disable-hide')
+if (registry.disableHide === undefined) {
     conf.set('disable-hide', true)
-    global.p3x.onenote.disableHide = true;
+    registry.disableHide = true;
 }
 
 // optionToHideMenu
-global.p3x.onenote.optionToHideMenu = conf.get('option-to-hide-menu')
-if (global.p3x.onenote.optionToHideMenu === undefined) {
+registry.optionToHideMenu = conf.get('option-to-hide-menu')
+if (registry.optionToHideMenu === undefined) {
     conf.set('option-to-hide-menu', false)
-    global.p3x.onenote.optionToHideMenu = false;
+    registry.optionToHideMenu = false;
 }
 
 // configuration
-global.p3x.onenote.optionToDisableInternalExternalPopup = conf.get('option-to-disable-internal-external-popup')
-if (global.p3x.onenote.optionToDisableInternalExternalPopup === undefined) {
+registry.optionToDisableInternalExternalPopup = conf.get('option-to-disable-internal-external-popup')
+if (registry.optionToDisableInternalExternalPopup === undefined) {
     conf.set('option-to-disable-internal-external-popup', false)
-    global.p3x.onenote.optionToDisableInternalExternalPopup = false;
+    registry.optionToDisableInternalExternalPopup = false;
 }
 
 
 
 // loading
-global.p3x.onenote.action = (await import('./main/action.mjs')).default
-global.p3x.onenote.menus = (await import('./main/menus.mjs')).default
-global.p3x.onenote.mainMenu = (await import('./main/create/menu.mjs')).default
-global.p3x.onenote.mainTray = (await import('./main/create/tray.mjs')).default
-global.p3x.onenote.setVisible = (await import('./main/set-visible.mjs')).default
-global.p3x.onenote.createWindow.onenote = (await import('./main/create/window/onenote.mjs')).default
+registry.action = (await import('./main/action.mjs')).default
+registry.menus = (await import('./main/menus.mjs')).default
+registry.mainMenu = (await import('./main/create/menu.mjs')).default
+registry.mainTray = (await import('./main/create/tray.mjs')).default
+registry.setVisible = (await import('./main/set-visible.mjs')).default
+registry.createWindow.onenote = (await import('./main/create/window/onenote.mjs')).default
 
 
 const gotTheLock = app.requestSingleInstanceLock()
 
 app.on('second-instance', (event, commandLine, workingDirectory) => {
-    global.p3x.onenote.setVisible(true);
+    registry.setVisible(true);
 })
 
 if (!gotTheLock) {

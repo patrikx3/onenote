@@ -1,37 +1,38 @@
 import { shell, app } from 'electron'
 import setProxy from './actions/set-proxy.mjs'
+import registry from '../registry.mjs'
 
 const action = {
     setProxy: setProxy,
 
     restart: () => {
-        global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-action', {
+        registry.window.onenote.webContents.send('p3x-onenote-action', {
             action: 'restart'
         })
     },
     sessionClear: (mode) => {
-        global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-action', {
+        registry.window.onenote.webContents.send('p3x-onenote-action', {
             action: 'session-clear',
             mode: mode,
         })
     },
     home: () => {
-        global.p3x.onenote.window.onenote.show();
-        global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-action', {
+        registry.window.onenote.show();
+        registry.window.onenote.webContents.send('p3x-onenote-action', {
             action: 'home'
         })
     },
     corporate: () => {
-        global.p3x.onenote.window.onenote.show();
-        global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-action', {
+        registry.window.onenote.show();
+        registry.window.onenote.webContents.send('p3x-onenote-action', {
             action: 'corporate'
         })
     },
     toggleVisible: () => {
-        if (global.p3x.onenote.window.onenote === undefined) {
+        if (registry.window.onenote === undefined) {
             return;
         }
-        global.p3x.onenote.setVisible(!global.p3x.onenote.isVisible());
+        registry.setVisible(!registry.isVisible());
     },
     quit: function () {
         app.isQuiting = true;

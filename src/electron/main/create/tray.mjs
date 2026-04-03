@@ -2,12 +2,13 @@ import { app, Menu, Tray } from 'electron'
 import menus from '../menus.mjs'
 import action from '../action.mjs'
 import relaunch from '../actions/relaunch.mjs'
+import registry from '../../registry.mjs'
 
 /*
 const destroyTray  = () => {
-    if (global.p3x.onenote.tray !== undefined) {
-        global.p3x.onenote.tray.destroy()
-        global.p3x.onenote.tray = undefined
+    if (registry.tray !== undefined) {
+        registry.tray.destroy()
+        registry.tray = undefined
     }
 }
 */
@@ -23,25 +24,25 @@ function mainTray(opts) {
 //    app.whenReady().then(() => {
         //destroyTray();
 
-        if (!global.p3x.onenote.disableHide) {
+        if (!registry.disableHide) {
 
-            if (global.p3x.onenote.tray === undefined ) {
-                global.p3x.onenote.tray = new Tray(global.p3x.onenote.iconFile)
+            if (registry.tray === undefined ) {
+                registry.tray = new Tray(registry.iconFile)
                 const click = () => {
                     //console.info('tray on click is executed - if not shown in console. this click is not executed.')
                     action.toggleVisible()
                 }
-                global.p3x.onenote.tray.on('click', click)
+                registry.tray.on('click', click)
             }
 
-            global.p3x.onenote.tray.setToolTip(`${global.p3x.onenote.title} v${global.p3x.onenote.pkg.version}`)
+            registry.tray.setToolTip(`${registry.title} v${registry.pkg.version}`)
 
             const menu = menus.default()
 
             const contextMenu = Menu.buildFromTemplate(menu)
-            global.p3x.onenote.tray.setContextMenu(contextMenu)
+            registry.tray.setContextMenu(contextMenu)
 
-        } else if (global.p3x.onenote.tray !== undefined && opts.allowQuit === true) {
+        } else if (registry.tray !== undefined && opts.allowQuit === true) {
             relaunch()
         }
 //    })

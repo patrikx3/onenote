@@ -4,37 +4,38 @@ import action from '../action.mjs'
 import mainTray from './tray.mjs'
 import naturalCompareDocument from '../../lib/natural-compare-document.mjs'
 import relaunch from '../actions/relaunch.mjs'
+import registry from '../../registry.mjs'
 
 function mainMenu() {
 
 
     const copyLocation = {
-        label: global.p3x.onenote.lang.label.copyLocation,
+        label: registry.lang.label.copyLocation,
         click: () => {
-            global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-action', {
+            registry.window.onenote.webContents.send('p3x-onenote-action', {
                 action: 'get-location'
             })
         }
     }
 
-    const minimizationBehaviorLabel = !global.p3x.onenote.disableHide ? global.p3x.onenote.lang.label.disableHide.no : global.p3x.onenote.lang.label.disableHide.yes
+    const minimizationBehaviorLabel = !registry.disableHide ? registry.lang.label.disableHide.no : registry.lang.label.disableHide.yes
 
 
     const languageCheckbox = [];
-    for (let trans of Object.keys(global.p3x.onenote.lang.menu.language.translations)) {
-        const transLabel = global.p3x.onenote.lang.menu.language.translations[trans]
+    for (let trans of Object.keys(registry.lang.menu.language.translations)) {
+        const transLabel = registry.lang.menu.language.translations[trans]
         const transMenu = ((trans) => {
             return {
                 label: transLabel,
                 type: 'radio',
-                checked: global.p3x.onenote.conf.get('lang') === trans,
+                checked: registry.conf.get('lang') === trans,
                 click: () => {
-                    global.p3x.onenote.conf.set('lang', trans)
-                    global.p3x.onenote.translationKey = trans
-                    global.p3x.onenote.lang = global.p3x.onenote.translations[trans]
+                    registry.conf.set('lang', trans)
+                    registry.translationKey = trans
+                    registry.lang = registry.translations[trans]
                     mainMenu()
                     mainTray()
-                    global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-language', {
+                    registry.window.onenote.webContents.send('p3x-onenote-language', {
                         translation: trans,
                     })
                 }
@@ -45,25 +46,25 @@ function mainMenu() {
 
     const bookmarksMenu = [
         {
-            label: global.p3x.onenote.lang.bookmarks.add,
+            label: registry.lang.bookmarks.add,
             click: () => {
-                global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-action-bookmark-add', {
+                registry.window.onenote.webContents.send('p3x-onenote-action-bookmark-add', {
                     edit: false,
                 })
             }
         },
         {
-            label: global.p3x.onenote.lang.bookmarks.importBookmarks || 'Import bookmarks',
+            label: registry.lang.bookmarks.importBookmarks || 'Import bookmarks',
             click: async () => {
                 try {
-                    const result = await global.p3x.onenote.window.onenote.webContents.executeJavaScript(
+                    const result = await registry.window.onenote.webContents.executeJavaScript(
                         `window.electronShim.ipcRenderer.invoke('p3x-onenote-bookmarks-import')`
                     )
                     if (result && result.success) {
-                        const msg = global.p3x.onenote.lang.bookmarks.imported
-                            ? global.p3x.onenote.lang.bookmarks.imported(result.added)
+                        const msg = registry.lang.bookmarks.imported
+                            ? registry.lang.bookmarks.imported(result.added)
                             : `Imported ${result.added} bookmark(s).`
-                        global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-action', {
+                        registry.window.onenote.webContents.send('p3x-onenote-action', {
                             action: 'toast',
                             message: msg,
                         })
@@ -75,20 +76,20 @@ function mainMenu() {
         },
     ]
 
-    const bookmarks = global.p3x.onenote.conf.get('bookmarks') || []
+    const bookmarks = registry.conf.get('bookmarks') || []
 
     if (bookmarks.length > 0) {
         bookmarksMenu.push({
-            label: global.p3x.onenote.lang.bookmarks.exportBookmarks || 'Export bookmarks',
+            label: registry.lang.bookmarks.exportBookmarks || 'Export bookmarks',
             click: async () => {
                 try {
-                    const result = await global.p3x.onenote.window.onenote.webContents.executeJavaScript(
+                    const result = await registry.window.onenote.webContents.executeJavaScript(
                         `window.electronShim.ipcRenderer.invoke('p3x-onenote-bookmarks-export')`
                     )
                     if (result && result.success) {
-                        global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-action', {
+                        registry.window.onenote.webContents.send('p3x-onenote-action', {
                             action: 'toast',
-                            message: global.p3x.onenote.lang.bookmarks.exported || 'Bookmarks exported.',
+                            message: registry.lang.bookmarks.exported || 'Bookmarks exported.',
                         })
                     }
                 } catch (e) {
@@ -97,9 +98,9 @@ function mainMenu() {
             }
         })
         bookmarksMenu.push({
-            label: global.p3x.onenote.lang.bookmarks?.manager || 'Manage bookmarks',
+            label: registry.lang.bookmarks?.manager || 'Manage bookmarks',
             click: () => {
-                global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-action', {
+                registry.window.onenote.webContents.send('p3x-onenote-action', {
                     action: 'bookmark-manager',
                 })
             }
@@ -122,7 +123,7 @@ function mainMenu() {
         const menuItem = {
             label: bookmark.title,
             click: () => {
-                global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-action-bookmark-open', bookmark)
+                registry.window.onenote.webContents.send('p3x-onenote-action-bookmark-open', bookmark)
             }
         }
 
@@ -166,28 +167,28 @@ function mainMenu() {
 
     const template = [
         {
-            label: global.p3x.onenote.title,
+            label: registry.title,
             submenu: menus.default(),
         },
         {
-            label: global.p3x.onenote.lang.bookmarks.title,
+            label: registry.lang.bookmarks.title,
             submenu: bookmarksMenu
         },
         {
-            label: p3x.onenote.lang.menu.action,
+            label: registry.lang.menu.action,
             submenu: [
                 copyLocation,
                 {
-                    label: global.p3x.onenote.lang.label.openUrl,
+                    label: registry.lang.label.openUrl,
                     click: () => {
-                        global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-action-open-url')
+                        registry.window.onenote.webContents.send('p3x-onenote-action-open-url')
                     }
                 },
                 {type: 'separator'},
                 {
-                    label: global.p3x.onenote.lang.tabs?.restoreClosedTab || 'Restore last closed tab',
+                    label: registry.lang.tabs?.restoreClosedTab || 'Restore last closed tab',
                     click: () => {
-                        global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-action', {
+                        registry.window.onenote.webContents.send('p3x-onenote-action', {
                             action: 'restore-closed-tab',
                         })
                     }
@@ -195,35 +196,35 @@ function mainMenu() {
             ]
         },
         {
-            label: global.p3x.onenote.lang.label.settings,
+            label: registry.lang.label.settings,
             submenu: [
                 {
-                    label: global.p3x.onenote.lang.label.hideMenu,
+                    label: registry.lang.label.hideMenu,
                     type: 'checkbox',
-                    checked: global.p3x.onenote.optionToHideMenu,
+                    checked: registry.optionToHideMenu,
                     click: () => {
                         try {
 
-                            global.p3x.onenote.optionToHideMenu = !global.p3x.onenote.optionToHideMenu
-                            global.p3x.onenote.conf.set('option-to-hide-menu', global.p3x.onenote.optionToHideMenu,);
+                            registry.optionToHideMenu = !registry.optionToHideMenu
+                            registry.conf.set('option-to-hide-menu', registry.optionToHideMenu,);
 
-                            if (!global.p3x.onenote.optionToHideMenu) {
-                                global.p3x.onenote.window.onenote.setAutoHideMenuBar(false)
-                                global.p3x.onenote.window.onenote.setMenuBarVisibility(true)
+                            if (!registry.optionToHideMenu) {
+                                registry.window.onenote.setAutoHideMenuBar(false)
+                                registry.window.onenote.setMenuBarVisibility(true)
                             } else {
                                 const message = `
-${global.p3x.onenote.lang.label.optionToHideMenuState.yes}
+${registry.lang.label.optionToHideMenuState.yes}
 
-${global.p3x.onenote.lang.restart}
+${registry.lang.restart}
 
-${global.p3x.onenote.lang.slow}
+${registry.lang.slow}
 `
 
-                                dialog.showMessageBox( global.p3x.onenote.window.onenote, {
+                                dialog.showMessageBox( registry.window.onenote, {
                                     type: 'info',
-//                                title: global.p3x.onenote.lang.dialog.minimizationBehavior.title,
+//                                title: registry.lang.dialog.minimizationBehavior.title,
                                     message: message,
-                                    buttons: [global.p3x.onenote.lang.button.ok]
+                                    buttons: [registry.lang.button.ok]
                                 }).then(() => {
                                     relaunch()
                                 }).catch(e => console.error(e))
@@ -237,30 +238,30 @@ ${global.p3x.onenote.lang.slow}
                     }
                 },
                 {
-                    label: global.p3x.onenote.lang.label.disableHide.checkbox,
+                    label: registry.lang.label.disableHide.checkbox,
                     type: 'checkbox',
-                    checked: !global.p3x.onenote.disableHide,
+                    checked: !registry.disableHide,
                     click: () => {
                         try {
-                            global.p3x.onenote.disableHide = !global.p3x.onenote.disableHide;
-                            global.p3x.onenote.conf.set('disable-hide', global.p3x.onenote.disableHide);
+                            registry.disableHide = !registry.disableHide;
+                            registry.conf.set('disable-hide', registry.disableHide);
 
-                            let message = global.p3x.onenote.disableHide ? global.p3x.onenote.lang.label.disableHide.message.yes : global.p3x.onenote.lang.label.disableHide.message.no
+                            let message = registry.disableHide ? registry.lang.label.disableHide.message.yes : registry.lang.label.disableHide.message.no
 
-                            if (global.p3x.onenote.disableHide === true && global.p3x.onenote.tray !== undefined) {
+                            if (registry.disableHide === true && registry.tray !== undefined) {
                                 message += `
 
-${global.p3x.onenote.lang.restart}
+${registry.lang.restart}
 
-${global.p3x.onenote.lang.slow}
+${registry.lang.slow}
 `
                             }
 
-                            dialog.showMessageBox( global.p3x.onenote.window.onenote, {
+                            dialog.showMessageBox( registry.window.onenote, {
                                 type: 'info',
-                                title: global.p3x.onenote.lang.dialog.minimizationBehavior.title,
+                                title: registry.lang.dialog.minimizationBehavior.title,
                                 message: message,
-                                buttons: [global.p3x.onenote.lang.button.ok]
+                                buttons: [registry.lang.button.ok]
                             }).then(() => {
                                 console.log('reloading tray settings')
                                 mainMenu()
@@ -273,66 +274,66 @@ ${global.p3x.onenote.lang.slow}
                     }
                 },
                 {
-                    label: global.p3x.onenote.lang.label.optionToDisableInternalExternalPopup,
+                    label: registry.lang.label.optionToDisableInternalExternalPopup,
                     type: 'checkbox',
-                    checked: global.p3x.onenote.optionToDisableInternalExternalPopup,
+                    checked: registry.optionToDisableInternalExternalPopup,
                     click: () => {
-                        global.p3x.onenote.optionToDisableInternalExternalPopup = !global.p3x.onenote.optionToDisableInternalExternalPopup;
-                        global.p3x.onenote.conf.set('option-to-disable-internal-external-popup', global.p3x.onenote.optionToDisableInternalExternalPopup);
+                        registry.optionToDisableInternalExternalPopup = !registry.optionToDisableInternalExternalPopup;
+                        registry.conf.set('option-to-disable-internal-external-popup', registry.optionToDisableInternalExternalPopup);
 
                         mainMenu()
                         mainTray()
                     }
                 },
                 {
-                    label: global.p3x.onenote.lang.label.setProxy,
+                    label: registry.lang.label.setProxy,
                     click: action.setProxy,
                 },
                 {
-                    label: global.p3x.onenote.lang.label.darkThemeInvert?.title || 'Dark mode (using invert)',
+                    label: registry.lang.label.darkThemeInvert?.title || 'Dark mode (using invert)',
                     submenu: [
                         {
-                            label: global.p3x.onenote.lang.label.darkThemeInvert?.off || 'Off',
+                            label: registry.lang.label.darkThemeInvert?.off || 'Off',
                             type: 'radio',
-                            checked: global.p3x.onenote.darkThemeMode === 'off',
+                            checked: registry.darkThemeMode === 'off',
                             click: () => {
-                                global.p3x.onenote.darkThemeMode = 'off'
-                                global.p3x.onenote.conf.set('darkThemeMode', 'off')
-                                global.p3x.onenote.darkThemeInvert = false
-                                global.p3x.onenote.conf.set('darkThemeInvert', false)
-                                global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-action', {
+                                registry.darkThemeMode = 'off'
+                                registry.conf.set('darkThemeMode', 'off')
+                                registry.darkThemeInvert = false
+                                registry.conf.set('darkThemeInvert', false)
+                                registry.window.onenote.webContents.send('p3x-onenote-action', {
                                     action: 'dark-theme-invert',
                                     darkThemeInvert: false,
                                 })
                             },
                         },
                         {
-                            label: global.p3x.onenote.lang.label.darkThemeInvert?.on || 'On',
+                            label: registry.lang.label.darkThemeInvert?.on || 'On',
                             type: 'radio',
-                            checked: global.p3x.onenote.darkThemeMode === 'on',
+                            checked: registry.darkThemeMode === 'on',
                             click: () => {
-                                global.p3x.onenote.darkThemeMode = 'on'
-                                global.p3x.onenote.conf.set('darkThemeMode', 'on')
-                                global.p3x.onenote.darkThemeInvert = true
-                                global.p3x.onenote.conf.set('darkThemeInvert', true)
-                                global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-action', {
+                                registry.darkThemeMode = 'on'
+                                registry.conf.set('darkThemeMode', 'on')
+                                registry.darkThemeInvert = true
+                                registry.conf.set('darkThemeInvert', true)
+                                registry.window.onenote.webContents.send('p3x-onenote-action', {
                                     action: 'dark-theme-invert',
                                     darkThemeInvert: true,
                                 })
                             },
                         },
                         {
-                            label: global.p3x.onenote.lang.label.darkThemeInvert?.system || 'Follow system',
+                            label: registry.lang.label.darkThemeInvert?.system || 'Follow system',
                             type: 'radio',
-                            checked: global.p3x.onenote.darkThemeMode === 'system',
+                            checked: registry.darkThemeMode === 'system',
                             click: () => {
                                 
-                                global.p3x.onenote.darkThemeMode = 'system'
-                                global.p3x.onenote.conf.set('darkThemeMode', 'system')
+                                registry.darkThemeMode = 'system'
+                                registry.conf.set('darkThemeMode', 'system')
                                 const shouldDark = nativeTheme.shouldUseDarkColors
-                                global.p3x.onenote.darkThemeInvert = shouldDark
-                                global.p3x.onenote.conf.set('darkThemeInvert', shouldDark)
-                                global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-action', {
+                                registry.darkThemeInvert = shouldDark
+                                registry.conf.set('darkThemeInvert', shouldDark)
+                                registry.window.onenote.webContents.send('p3x-onenote-action', {
                                     action: 'dark-theme-invert',
                                     darkThemeInvert: shouldDark,
                                 })
@@ -344,90 +345,90 @@ ${global.p3x.onenote.lang.slow}
             ],
         },
         {
-            label: global.p3x.onenote.lang.menu.language.label,
+            label: registry.lang.menu.language.label,
             submenu: languageCheckbox,
         },
         {
-            label: global.p3x.onenote.lang.label.edit,
+            label: registry.lang.label.edit,
             submenu: [
                 copyLocation,
                 {type: 'separator'},
                 {
-                    label: p3x.onenote.lang.menu.role.edit.undo,
+                    label: registry.lang.menu.role.edit.undo,
                     role: 'undo'
                 },
                 {
-                    label: p3x.onenote.lang.menu.role.edit.redo,
+                    label: registry.lang.menu.role.edit.redo,
                     role: 'redo'
                 },
                 {type: 'separator'},
                 {
-                    label: p3x.onenote.lang.menu.role.edit.cut,
+                    label: registry.lang.menu.role.edit.cut,
                     role: 'cut'
                 },
                 {
-                    label: p3x.onenote.lang.menu.role.edit.copy,
+                    label: registry.lang.menu.role.edit.copy,
                     role: 'copy'
                 },
                 {
-                    label: p3x.onenote.lang.menu.role.edit.paste,
+                    label: registry.lang.menu.role.edit.paste,
                     role: 'paste'
                 },
                 {
-                    label: p3x.onenote.lang.menu.role.edit.pasteandmatchstyle,
+                    label: registry.lang.menu.role.edit.pasteandmatchstyle,
                     role: 'pasteandmatchstyle'
                 },
                 {
-                    label: p3x.onenote.lang.menu.role.edit.delete,
+                    label: registry.lang.menu.role.edit.delete,
                     role: 'delete'
                 },
                 {
-                    label: p3x.onenote.lang.menu.role.edit.selectall,
+                    label: registry.lang.menu.role.edit.selectall,
                     role: 'selectall'
                 }
             ]
         },
         {
-            label: global.p3x.onenote.lang.label.view,
+            label: registry.lang.label.view,
             submenu: [
                 {
-                    label: p3x.onenote.lang.menu.role.view.reload,
+                    label: registry.lang.menu.role.view.reload,
                     role: 'reload'
                 },
                 {
-                    label: p3x.onenote.lang.menu.role.view.forcereload,
+                    label: registry.lang.menu.role.view.forcereload,
                     role: 'forcereload'
                 },
                 {
-                    label: p3x.onenote.lang.menu.role.view.toggledevtools,
+                    label: registry.lang.menu.role.view.toggledevtools,
                     role: 'toggledevtools'
                 },
                 {type: 'separator'},
                 {
-                    label: p3x.onenote.lang.menu.role.view.resetzoom,
+                    label: registry.lang.menu.role.view.resetzoom,
                     role: 'resetzoom'
                 },
                 {
-                    label: p3x.onenote.lang.menu.role.view.zoomin,
+                    label: registry.lang.menu.role.view.zoomin,
                     role: 'zoomin'
                 },
                 {
-                    label: p3x.onenote.lang.menu.role.view.zoomout,
+                    label: registry.lang.menu.role.view.zoomout,
                     role: 'zoomout'
                 },
                 {type: 'separator'},
                 {
-                    label: p3x.onenote.lang.menu.role.view.togglefullscreen,
+                    label: registry.lang.menu.role.view.togglefullscreen,
                     role: 'togglefullscreen'
                 }
             ]
         },
         {
-            label: global.p3x.onenote.lang.menu.help.title,
+            label: registry.lang.menu.help.title,
             role: 'help',
             submenu: [
                 {
-                    label: global.p3x.onenote.lang.label.download,
+                    label: registry.lang.label.download,
                     click: action.download
                 },
                 {
@@ -435,7 +436,7 @@ ${global.p3x.onenote.lang.slow}
                     click: action.github
                 },
                 {
-                    label: global.p3x.onenote.lang.label.developer,
+                    label: registry.lang.label.developer,
                     click: action.patrik
                 },
                 {
@@ -453,7 +454,7 @@ ${global.p3x.onenote.lang.slow}
             ]
         },
         {
-            label: global.p3x.onenote.lang.label.donate,
+            label: registry.lang.label.donate,
             click: () => {
                 shell.openExternal('https://paypal.me/patrikx3')
             }
@@ -463,7 +464,7 @@ ${global.p3x.onenote.lang.slow}
     //if (process.env.APPIMAGE !== undefined) {
         template[7].submenu.push({type: 'separator'})
         template[7].submenu.push({
-                label: global.p3x.onenote.lang.menu.help.checkUpdates,
+                label: registry.lang.menu.help.checkUpdates,
                 click: async () => {
                     const electronUpdater = await import("electron-updater");
                     const { autoUpdater } = electronUpdater.default ?? electronUpdater;

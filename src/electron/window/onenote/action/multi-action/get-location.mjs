@@ -1,3 +1,5 @@
+import registry from '../../registry.mjs'
+
 let text;
 const getLocation = () => {
     const copy = function (e) {
@@ -8,11 +10,11 @@ const getLocation = () => {
             window.clipboardData.setData('Text', text);
         }
     };
-    text = global.p3x.onenote.webview.src;
+    text = registry.webview.src;
     window.addEventListener('copy', copy);
     document.execCommand('copy');
     window.removeEventListener('copy', copy);
-    global.p3x.onenote.toast.action(global.p3x.onenote.lang.label.copyLocationCopied);
+    registry.toast.action(registry.lang.label.copyLocationCopied);
 };
 
 export default getLocation;

@@ -1,3 +1,5 @@
+import registry from './registry.mjs'
+
 const { ipcRenderer } = window.electronShim;
 
 const tabs = [];
@@ -5,12 +7,12 @@ let activeTabId = null;
 
 const tabBar = () => document.getElementById('p3x-onenote-tab-bar');
 const container = () => document.getElementById('p3x-onenote-webview-container');
-const conf = () => global.p3x.onenote.conf;
+const conf = () => registry.conf;
 
 // Always compute label from type + account + current language
 function getTabLabel(tab) {
     if (tab.customName) return tab.customName;
-    const lang = global.p3x.onenote.lang;
+    const lang = registry.lang;
     const typeLabel = tab.type === 'corporate'
         ? (lang.menu?.language?.dialog?.corporate || lang.tabs?.corporate || 'Corporate')
         : (lang.menu?.language?.dialog?.personal || lang.tabs?.personal || 'Personal');
@@ -64,10 +66,10 @@ function setupWebviewHandlers(tab) {
             }
 
             if (tab.id === activeTabId) {
-                global.p3x.onenote.data.url = tab.url;
-                ipcRenderer.send('p3x-onenote-save', global.p3x.onenote.data);
-                p3x.onenote.wait.angular(() => {
-                    global.p3x.onenote.updateLocation(webview.src);
+                registry.data.url = tab.url;
+                ipcRenderer.send('p3x-onenote-save', registry.data);
+                registry.wait.angular(() => {
+                    registry.updateLocation(webview.src);
                 });
             }
             persistState();
@@ -98,8 +100,8 @@ function setupWebviewHandlers(tab) {
             webview.blur();
             webview.focus();
 
-            if (global.p3x.onenote.updateZoomDisplay) {
-                global.p3x.onenote.updateZoomDisplay();
+            if (registry.updateZoomDisplay) {
+                registry.updateZoomDisplay();
             }
 
             if (process.env.NODE_ENV === 'debug') {
@@ -167,8 +169,8 @@ function createTab(opts = {}) {
 
 function removeTab(id) {
     if (tabs.length <= 1) {
-        global.p3x.onenote.toast.action(
-            global.p3x.onenote.lang.tabs?.cannotCloseLastTab || 'Cannot close the last tab.'
+        registry.toast.action(
+            registry.lang.tabs?.cannotCloseLastTab || 'Cannot close the last tab.'
         );
         return;
     }
@@ -179,8 +181,8 @@ function removeTab(id) {
     const tab = tabs[idx];
 
     if (tab.pinned) {
-        global.p3x.onenote.toast.action(
-            global.p3x.onenote.lang.tabs?.cannotClosePinned || 'Cannot close a pinned tab.'
+        registry.toast.action(
+            registry.lang.tabs?.cannotClosePinned || 'Cannot close a pinned tab.'
         );
         return;
     }
@@ -220,11 +222,11 @@ function switchTab(id) {
                 const zoom = tab.zoom !== undefined ? tab.zoom : 1.0;
                 tab.webview.setZoomFactor(zoom);
             }
-            global.p3x.onenote.data.url = tab.url;
-            p3x.onenote.wait.angular(() => {
-                global.p3x.onenote.updateLocation(tab.url);
-                if (global.p3x.onenote.updateZoomDisplay) {
-                    global.p3x.onenote.updateZoomDisplay();
+            registry.data.url = tab.url;
+            registry.wait.angular(() => {
+                registry.updateLocation(tab.url);
+                if (registry.updateZoomDisplay) {
+                    registry.updateZoomDisplay();
                 }
             });
         } else {
@@ -323,12 +325,12 @@ function renderTabBar() {
             const { remote } = window.electronShim;
             const { Menu, MenuItem } = remote;
             const menu = new Menu();
-            const lang = global.p3x.onenote.lang;
+            const lang = registry.lang;
             menu.append(new MenuItem({
                 label: lang.tabs?.renameTab || 'Rename tab',
                 click: async () => {
                     try {
-                        const name = await global.p3x.onenote.prompt.renameTab(tab.customName || '');
+                        const name = await registry.prompt.renameTab(tab.customName || '');
                         tab.customName = name || '';
                         persistState();
                         renderTabBar();
@@ -373,12 +375,12 @@ function renderTabBar() {
             close.addEventListener('click', async (e) => {
                 e.stopPropagation();
                 try {
-                    const lang = global.p3x.onenote.lang;
+                    const lang = registry.lang;
                     const tabLabel = getTabLabel(tab);
                     const confirmMsg = lang.tabs?.confirmClose
                         ? lang.tabs.confirmClose(tabLabel)
                         : `Are you sure you want to close "${tabLabel}"? You will be signed out of this account.`;
-                    await global.p3x.onenote.prompt.confirmCloseTab(confirmMsg);
+                    await registry.prompt.confirmCloseTab(confirmMsg);
                     removeTab(tab.id);
                 } catch (e) {
                     // cancelled
@@ -395,7 +397,7 @@ function renderTabBar() {
     addBtn.innerHTML = '<i class="fas fa-plus"></i>';
     addBtn.addEventListener('click', async () => {
         try {
-            const type = await global.p3x.onenote.prompt.addTab();
+            const type = await registry.prompt.addTab();
             if (type === 'personal') {
                 createTab({ type: 'personal', url: 'https://www.onenote.com/notebooks' });
             } else if (type === 'corporate') {
@@ -411,8 +413,8 @@ function renderTabBar() {
 function restoreClosedTab() {
     const closedTabs = conf().get('closedTabsHistory') || [];
     if (closedTabs.length === 0) {
-        global.p3x.onenote.toast.action(
-            global.p3x.onenote.lang.tabs?.noClosedTabs || 'No closed tabs to restore.'
+        registry.toast.action(
+            registry.lang.tabs?.noClosedTabs || 'No closed tabs to restore.'
         );
         return;
     }

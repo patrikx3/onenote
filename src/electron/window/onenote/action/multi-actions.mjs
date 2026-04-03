@@ -1,3 +1,5 @@
+import registry from '../registry.mjs'
+
 const { remote } = window.electronShim;
 
 const p3xDarkInvertCss = 'img, video, image, svg image, picture, canvas, [style*="background-image"], [role="img"] { filter: invert(1) hue-rotate(180deg) !important; }';
@@ -16,7 +18,7 @@ const p3xDarkInvertJs = `
 
 function p3xInjectDarkInvertAllFrames(enabled) {
     // Inject into ALL tab webviews, not just the active one
-    const allWebviews = global.p3x.onenote.tabManager?.getAllWebviews() || [];
+    const allWebviews = registry.tabManager?.getAllWebviews() || [];
     for (const webview of allWebviews) {
         try {
             const wc = remote.webContents.fromId(webview.getWebContentsId());
@@ -31,7 +33,7 @@ function p3xInjectDarkInvertAllFrames(enabled) {
 }
 
 const multiActions = (data) => {
-    const webview = global.p3x.onenote.webview;
+    const webview = registry.webview;
 
     switch (data.action) {
         case 'focus':
@@ -46,7 +48,7 @@ const multiActions = (data) => {
                 try {
                     const wc = remote.webContents.fromId(webview.getWebContentsId());
                     wc.session.clearStorageData().then(() => {
-                        const tab = global.p3x.onenote.tabManager?.getActiveTab();
+                        const tab = registry.tabManager?.getActiveTab();
                         const url = (tab && tab.url && !tab.url.startsWith('about:'))
                             ? tab.url
                             : 'https://www.onenote.com/notebooks';
@@ -60,7 +62,7 @@ const multiActions = (data) => {
 
         case 'session-clear':
             {
-                const tabManager = global.p3x.onenote.tabManager;
+                const tabManager = registry.tabManager;
                 if (!tabManager) break;
 
                 const mode = data.mode || 'current-everything';
@@ -82,7 +84,7 @@ const multiActions = (data) => {
                     cleared++;
                     if (cleared === total) {
                         // Navigate affected webviews to their saved URL
-                        const allTabs = global.p3x.onenote.tabManager?.tabs || [];
+                        const allTabs = registry.tabManager?.tabs || [];
                         for (const wv of webviews) {
                             try {
                                 const tab = allTabs.find(t => t.webview === wv);
@@ -92,11 +94,11 @@ const multiActions = (data) => {
                                 wv.src = url;
                             } catch (e) {}
                         }
-                        const lang = global.p3x.onenote.lang;
+                        const lang = registry.lang;
                         const msg = lang.label.clearCache?.done
                             ? lang.label.clearCache.done(scope === 'all' ? (lang.label.clearCache?.allLabel || 'all tabs') : (lang.label.clearCache?.currentLabel || 'current tab'), type)
                             : `Cleared ${type} for ${scope === 'all' ? 'all tabs' : 'current tab'}.`;
-                        global.p3x.onenote.toast.action(msg);
+                        registry.toast.action(msg);
                     }
                 };
 
@@ -112,7 +114,7 @@ const multiActions = (data) => {
             break;
 
         case 'home':
-            if (webview) webview.src = global.p3x.onenote.url.notebooks;
+            if (webview) webview.src = registry.url.notebooks;
             break;
 
         case 'corporate':
@@ -130,20 +132,20 @@ const multiActions = (data) => {
         case 'reload-webview':
             if (webview !== undefined) {
                 console.log('[P3X-OneNote] Reloading webview after resume');
-                global.p3x.onenote.toast.action({ message: global.p3x.onenote.lang.restart, sticky: true });
+                registry.toast.action({ message: registry.lang.restart, sticky: true });
                 webview.reload();
             }
             break;
 
         case 'bookmark-manager':
-            if (global.p3x.onenote.prompt) {
-                global.p3x.onenote.prompt.bookmarkManager();
+            if (registry.prompt) {
+                registry.prompt.bookmarkManager();
             }
             break;
 
         case 'restore-closed-tab':
-            if (global.p3x.onenote.tabManager) {
-                global.p3x.onenote.tabManager.restoreClosedTab();
+            if (registry.tabManager) {
+                registry.tabManager.restoreClosedTab();
             }
             break;
 

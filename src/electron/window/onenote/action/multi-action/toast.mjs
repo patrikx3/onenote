@@ -1,5 +1,7 @@
+import registry from '../../registry.mjs'
+
 const toast = (data) => {
-    global.p3x.onenote.toast.action({
+    registry.toast.action({
         message: data.message
     });
 };

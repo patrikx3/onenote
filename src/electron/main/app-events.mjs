@@ -1,4 +1,5 @@
 import { app, powerMonitor, net, nativeTheme } from 'electron';
+import registry from '../registry.mjs'
 
 let isInSuspended = false;
 
@@ -31,24 +32,24 @@ app.on('ready', () => {
     console.log('P3X-OneNote is ready');
 
     // Create the main window
-    global.p3x.onenote.createWindow.onenote();
+    registry.createWindow.onenote();
 
     // Follow system dark/light theme when mode is 'system'
     nativeTheme.on('updated', () => {
-        if (global.p3x.onenote.darkThemeMode !== 'system') return;
+        if (registry.darkThemeMode !== 'system') return;
         const shouldDark = nativeTheme.shouldUseDarkColors;
-        if (global.p3x.onenote.darkThemeInvert === shouldDark) return;
-        global.p3x.onenote.darkThemeInvert = shouldDark;
-        global.p3x.onenote.conf.set('darkThemeInvert', shouldDark);
-        const win = global.p3x.onenote.window.onenote;
+        if (registry.darkThemeInvert === shouldDark) return;
+        registry.darkThemeInvert = shouldDark;
+        registry.conf.set('darkThemeInvert', shouldDark);
+        const win = registry.window.onenote;
         if (win) {
             win.webContents.send('p3x-onenote-action', {
                 action: 'dark-theme-invert',
                 darkThemeInvert: shouldDark,
             });
         }
-        global.p3x.onenote.mainMenu();
-        global.p3x.onenote.mainTray();
+        registry.mainMenu();
+        registry.mainTray();
     });
 
     // Handle power events — fix sync loss after standby (#204)
@@ -67,7 +68,7 @@ app.on('ready', () => {
         isInSuspended = false;
         console.log('[P3X-OneNote] System has resumed, waiting for network...');
 
-        const win = global.p3x.onenote.window.onenote;
+        const win = registry.window.onenote;
         if (!win) return;
 
         waitForNetworkConnectivity(() => {
@@ -87,8 +88,8 @@ app.on('window-all-closed', function () {
 });
 
 app.on('activate', function () {
-    if (global.p3x.onenote.window.onenote === null) {
-        global.p3x.onenote.createWindow.onenote();
+    if (registry.window.onenote === null) {
+        registry.createWindow.onenote();
     }
 });
 

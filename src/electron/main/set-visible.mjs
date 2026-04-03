@@ -1,3 +1,5 @@
+import registry from '../registry.mjs'
+
 function setVisible(visible = true, force = false) {
     if (visible === null) {
         visible = true;
@@ -12,27 +14,27 @@ function setVisible(visible = true, force = false) {
     }
     */
 
-    if (global.p3x.onenote.window.onenote !== undefined) {
+    if (registry.window.onenote !== undefined) {
 
-        if (visible || (global.p3x.onenote.window.onenote.isMinimized() && !force)) {
+        if (visible || (registry.window.onenote.isMinimized() && !force)) {
             visible = true;
-            global.p3x.onenote.window.onenote.show();
+            registry.window.onenote.show();
         } else {
-            global.p3x.onenote.window.onenote.minimize()
-            if (!global.p3x.onenote.disableHide) {
-                global.p3x.onenote.window.onenote.hide();
+            registry.window.onenote.minimize()
+            if (!registry.disableHide) {
+                registry.window.onenote.hide();
             }
         }
     }
-    global.p3x.onenote.conf.set('visible', visible);
-    global.p3x.onenote.mainMenu();
-    global.p3x.onenote.mainTray()
+    registry.conf.set('visible', visible);
+    registry.mainMenu();
+    registry.mainTray()
 
 
     if (visible || force) {
-        global.p3x.onenote.window.onenote.focus();
+        registry.window.onenote.focus();
 
-        global.p3x.onenote.window.onenote.webContents.send('p3x-onenote-action', {
+        registry.window.onenote.webContents.send('p3x-onenote-action', {
             action: 'focus'
         })
     }

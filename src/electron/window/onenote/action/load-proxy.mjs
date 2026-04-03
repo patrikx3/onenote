@@ -1,11 +1,13 @@
+import registry from '../registry.mjs'
+
 const { remote } = window.electronShim;
 
 const loadProxy = async () => {
-    await p3x.onenote.wait.domReady();
+    await registry.wait.domReady();
 
-    const webview = global.p3x.onenote.webview;
+    const webview = registry.webview;
     const wc = remote.getCurrentWebContents();
-    const proxy = global.p3x.onenote.data.proxy.trim();
+    const proxy = registry.data.proxy.trim();
 
     await wc.session.setProxy({
         proxyRules: proxy

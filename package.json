@@ -22,7 +22,9 @@
     },
     "scripts": {
         "run": "electron --no-sandbox .",
-        "test": "grunt",
+        "test": "vitest run",
+        "test:watch": "vitest",
+        "test:grunt": "grunt",
         "dist": "electron-builder",
         "build": "electron-builder --x64  build/dist",
         "build-test": "electron-builder build/dist -p always",
@@ -60,15 +62,16 @@
         "@electron/remote": "2.1.3",
         "@fortawesome/fontawesome-free": "7.2.0",
         "corifeus-utils": "2025.4.123",
+        "electron": "^41.1.0",
         "electron-store": "11.0.2",
         "electron-updater": "6.8.3",
-        "semver": "7.7.4",
-        "electron": "^41.1.0"
+        "semver": "7.7.4"
     },
     "devDependencies": {
         "corifeus-builder": "2025.4.135",
         "electron-builder": "26.8.1",
-        "node-fetch": "^3.3.2"
+        "node-fetch": "^3.3.2",
+        "vitest": "^4.1.2"
     },
     "engines": {
         "node": ">=12.13.0"
@@ -81,6 +84,13 @@
         }
     },
     "build": {
+        "files": [
+            "**/*",
+            "!test/**",
+            "!vitest.config.mjs",
+            "!agents/**",
+            "!AGENTS.md"
+        ],
         "afterAllArtifactBuild": "./node_modules/corifeus-builder/src/utils/appimage/after-all-artifact-build.js",
         "publish": [
             {

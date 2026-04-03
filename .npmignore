@@ -2,6 +2,9 @@
 /artifacts
 /build
 /test
+/vitest.config.mjs
+/agents
+/AGENTS.md
 /node_modules
 /*.iml
 /*.ipr
