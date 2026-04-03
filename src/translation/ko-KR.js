@@ -50,6 +50,7 @@ const translation = {
         copyLocationCopied: '위치가 클립보드에 복사되었습니다.',
         back: '뒤로',
         forward: '앞으로',
+        reportIssue: '문제 보고 / 기능 요청',
     },
     dialog: {
         info: 'Info',

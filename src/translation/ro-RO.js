@@ -50,6 +50,7 @@ const translation = {
         copyLocationCopied: 'Locația a fost copiată în clipboard.',
         back: 'Înapoi',
         forward: 'Înainte',
+        reportIssue: 'Raportează problemă / Solicită funcție',
     },
     dialog: {
         info: 'Info',

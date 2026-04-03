@@ -50,6 +50,7 @@ const translation = {
         copyLocationCopied: 'Die ligging is na die knipbord gekopieer.',
         back: 'Terug',
         forward: 'Vorentoe',
+        reportIssue: 'Rapporteer probleem / Versoek funksie',
     },
     dialog: {
         info: 'Info',

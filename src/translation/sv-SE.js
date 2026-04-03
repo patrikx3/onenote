@@ -50,6 +50,7 @@ const translation = {
         copyLocationCopied: 'Platsen har kopierats till urklipp.',
         back: 'Bakåt',
         forward: 'Framåt',
+        reportIssue: 'Rapportera problem / Begär funktion',
     },
     dialog: {
         info: 'Info',

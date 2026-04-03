@@ -55,6 +55,7 @@ const translation = {
         unknownLink: 'Espere um pouco, pode mudar durante o carregamento para o destino. Se esta não for uma página do OneNote, sinta-se livre para clicar na página inicial do P3X no menu',
         back: 'Voltar',
         forward: 'Prosseguir',
+        reportIssue: 'Reportar problema / Solicitar recurso',
     },
     dialog: {
         info: 'Informações',

@@ -55,6 +55,7 @@ const translation = {
         //unknownLink: 'Bekle, hedefe yüklenirken değişebilir. Bu bir OneNote sayfası değilse, P3X OneNote ana menüsüne tıklayarak ücretsiz',
         back: 'Geri',
         forward: 'İleri',
+        reportIssue: 'Sorun bildir / Özellik iste',
     },
     dialog: {
         info: 'Bilgi',

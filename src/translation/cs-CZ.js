@@ -50,6 +50,7 @@ const translation = {
         copyLocationCopied: 'Umístění bylo zkopírováno do schránky.',
         back: 'Zpět',
         forward: 'Vpřed',
+        reportIssue: 'Nahlásit problém / Požádat o funkci',
     },
     dialog: {
         info: 'Info',

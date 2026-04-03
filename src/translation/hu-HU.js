@@ -50,6 +50,7 @@ const translation = {
         copyLocationCopied: 'A hely a vágólapra másolva.',
         back: 'Vissza',
         forward: 'Előre',
+        reportIssue: 'Hiba bejelentése / Funkció kérése',
     },
     dialog: {
         info: 'Info',

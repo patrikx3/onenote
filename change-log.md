@@ -7,6 +7,12 @@
 
 ## Change log
 
+### v2026.4.119
+Released on 04/03/2026
+* FEATURE: Added report issue / request feature menu item.
+* REFACTOR: Replaced global state with registry singleton pattern.
+* DOCS: Added tab right-click menu documentation to README.
+
 ### v2026.4.118
 Released on 04/01/2026
 * FEATURE: Tab drag-and-drop reordering.
@@ -156,7 +162,7 @@ All my domains, including [patrikx3.com](https://patrikx3.com), [corifeus.eu](ht
 ---
 
 
-[**P3X-ONENOTE**](https://corifeus.com/onenote) Build v2026.4.118
+[**P3X-ONENOTE**](https://corifeus.com/onenote) Build v2026.4.119
 
  [![NPM](https://img.shields.io/npm/v/p3x-onenote.svg)](https://www.npmjs.com/package/p3x-onenote)  [![Donate for PatrikX3 / P3X](https://img.shields.io/badge/Donate-PatrikX3-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software)
 

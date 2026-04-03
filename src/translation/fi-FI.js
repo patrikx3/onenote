@@ -50,6 +50,7 @@ const translation = {
         copyLocationCopied: 'Sijainti on kopioitu leikepöydälle.',
         back: 'Takaisin',
         forward: 'Eteenpäin',
+        reportIssue: 'Ilmoita ongelma / Pyydä ominaisuutta',
     },
     dialog: {
         info: 'Info',

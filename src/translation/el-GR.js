@@ -50,6 +50,7 @@ const translation = {
         copyLocationCopied: 'Η τοποθεσία αντιγράφηκε στο πρόχειρο.',
         back: 'Πίσω',
         forward: 'Εμπρός',
+        reportIssue: 'Αναφορά προβλήματος / Αίτημα λειτουργίας',
     },
     dialog: {
         info: 'Info',

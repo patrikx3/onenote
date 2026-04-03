@@ -50,6 +50,7 @@ const translation = {
         copyLocationCopied: 'Локација је копирана у клипборд.',
         back: 'Назад',
         forward: 'Напред',
+        reportIssue: 'Пријави проблем / Затражи функцију',
     },
     dialog: {
         info: 'Info',

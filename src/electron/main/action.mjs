@@ -53,6 +53,9 @@ const action = {
     npm: () => {
         shell.openExternal('https://www.npmjs.com/~patrikx3')
     },
+    reportIssue: () => {
+        shell.openExternal('https://patrikx3.com/en/front/contact')
+    },
     download: () => {
         shell.openExternal('https://github.com/patrikx3/onenote/releases')
     },

@@ -50,6 +50,7 @@ const translation = {
         copyLocationCopied: 'অবস্থানটি ক্লিপবোর্ডে কপি হয়েছে।',
         back: 'পিছনে',
         forward: 'সামনে',
+        reportIssue: 'সমস্যা রিপোর্ট / বৈশিষ্ট্য অনুরোধ',
     },
     dialog: {
         info: 'Info',

@@ -50,6 +50,7 @@ const translation = {
         copyLocationCopied: 'המיקום הועתק ללוח.',
         back: 'אחורה',
         forward: 'קדימה',
+        reportIssue: 'דווח על בעיה / בקש תכונה',
     },
     dialog: {
         info: 'Info',

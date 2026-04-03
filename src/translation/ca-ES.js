@@ -50,6 +50,7 @@ const translation = {
         copyLocationCopied: 'La ubicació s\'ha copiat al porta-retalls.',
         back: 'Enrere',
         forward: 'Endavant',
+        reportIssue: 'Informar d\'un problema / Sol·licitar funció',
     },
     dialog: {
         info: 'Info',

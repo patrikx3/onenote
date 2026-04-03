@@ -50,6 +50,7 @@ const translation = {
         copyLocationCopied: 'تم نسخ الموقع إلى الحافظة.',
         back: 'رجوع',
         forward: 'تقدم',
+        reportIssue: 'الإبلاغ عن مشكلة / طلب ميزة',
     },
     dialog: {
         info: 'Info',

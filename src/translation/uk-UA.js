@@ -50,6 +50,7 @@ const translation = {
         copyLocationCopied: 'Адресу скопійовано в буфер обміну.',
         back: 'Назад',
         forward: 'Вперед',
+        reportIssue: 'Повідомити про проблему / Запросити функцію',
     },
     dialog: {
         info: 'Info',

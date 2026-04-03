@@ -436,6 +436,10 @@ ${registry.lang.slow}
                     click: action.github
                 },
                 {
+                    label: registry.lang.label.reportIssue || 'Report issue / Request feature',
+                    click: action.reportIssue
+                },
+                {
                     label: registry.lang.label.developer,
                     click: action.patrik
                 },

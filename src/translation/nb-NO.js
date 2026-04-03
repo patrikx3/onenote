@@ -50,6 +50,7 @@ const translation = {
         copyLocationCopied: 'Plasseringen er kopiert til utklippstavlen.',
         back: 'Tilbake',
         forward: 'Fremover',
+        reportIssue: 'Rapporter problem / Be om funksjon',
     },
     dialog: {
         info: 'Info',

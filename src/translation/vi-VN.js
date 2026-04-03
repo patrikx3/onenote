@@ -50,6 +50,7 @@ const translation = {
         copyLocationCopied: 'Địa chỉ đã được sao chép vào bộ nhớ tạm.',
         back: 'Quay lại',
         forward: 'Tiến tới',
+        reportIssue: 'Báo lỗi / Yêu cầu tính năng',
     },
     dialog: {
         info: 'Info',
