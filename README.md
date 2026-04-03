@@ -99,6 +99,18 @@ P3X OneNote Linux is an independent browser window for the online OneNote, so yo
       Afrikaans, العربية (Arabic), বাংলা (Bengali), Català (Catalan), Čeština (Czech), Dansk (Danish), Deutsch (German), Ελληνικά (Greek), English, Español (Spanish), Suomi (Finnish), Français (French), עברית (Hebrew), Magyar (Hungarian), Italiano (Italian), 日本語 (Japanese), 한국어 (Korean), Norsk (Norwegian), Nederlands (Dutch), Polski (Polish), Português (Portuguese), Română (Romanian), Русский (Russian), Српски (Serbian), Svenska (Swedish), Türkçe (Turkish), Українська (Ukrainian), Tiếng Việt (Vietnamese), 简体中文 (Simplified Chinese), 繁體中文 (Traditional Chinese)
 * Single instance enforced — launching the app again brings the existing window to the foreground
 
+## Tab Right-Click Menu
+
+Right-click any tab to access:
+
+| Option | Description |
+|--------|-------------|
+| Rename tab | Set a custom label for the tab |
+| Clear custom name | Revert to default label (account type + email) |
+| Pin tab | Prevent accidental closure |
+| Unpin tab | Allow closing again |
+| Close tab | Close the tab (with confirmation for non-pinned tabs) |
+
 <!-- (`````~/.local/share/applications/p3x-onenote.desktop`````) -->
 
 ---

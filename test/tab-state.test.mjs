@@ -115,6 +115,41 @@ describe('tab label', () => {
     })
 })
 
+describe('switch tab by index', () => {
+    const mockTabs = [
+        { id: 5, type: 'personal' },
+        { id: 12, type: 'corporate' },
+        { id: 7, type: 'personal' },
+    ]
+
+    function getTabIdByIndex(tabs, index) {
+        if (index >= 0 && index < tabs.length) {
+            return tabs[index].id
+        }
+        return null
+    }
+
+    it('returns correct tab id for index 0', () => {
+        expect(getTabIdByIndex(mockTabs, 0)).toBe(5)
+    })
+
+    it('returns correct tab id for index 1', () => {
+        expect(getTabIdByIndex(mockTabs, 1)).toBe(12)
+    })
+
+    it('returns correct tab id for last index', () => {
+        expect(getTabIdByIndex(mockTabs, 2)).toBe(7)
+    })
+
+    it('returns null for out of range index', () => {
+        expect(getTabIdByIndex(mockTabs, 9)).toBeNull()
+    })
+
+    it('returns null for negative index', () => {
+        expect(getTabIdByIndex(mockTabs, -1)).toBeNull()
+    })
+})
+
 describe('migration from old format', () => {
     it('migrates old data with valid URL', () => {
         const result = migrateOldData({ url: 'https://onenote.com/notebooks?page=123' })
