@@ -22,7 +22,8 @@ Released on 04/04/2026
 
 ### v2026.4.124
 Released on 04/04/2026
-* CHORE: Release v2026.4.124.
+* CHORE: First fully working arm64 snap CI build with Snap Store upload.
+* CHORE: Updated Snapcraft Store credentials (valid until 2036).
 
 ### v2026.4.123
 Released on 04/04/2026
