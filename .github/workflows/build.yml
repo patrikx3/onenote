@@ -98,8 +98,10 @@ jobs:
         run: |
           npm install
           rm -rf node_modules/cpu-features/ || true
-      - name: Install snapcraft
-        run: sudo snap install snapcraft --classic
+      - name: Update apt and install snapcraft
+        run: |
+          sudo apt-get update
+          sudo snap install snapcraft --classic
       - name: Fix dependencies before
         run: node ./scripts/fix-packages-publish.js before
       - name: Build arm64 snap
