@@ -4,9 +4,9 @@ const translation = {
     label: {
         darkThemeInvert: {
             title: 'Abilita la modalità oscura (usando invert)',
-          off: 'Disattivato',
-          on: 'Attivato',
-          system: 'Segui il sistema',
+            off: 'Disattivato',
+            on: 'Attivato',
+            system: 'Segui il sistema',
         },
         hideMenu: 'Nascondi menu principale (mostra con ALT)',
         optionToHideMenuState: {
@@ -14,14 +14,11 @@ const translation = {
         },
         donate: 'Dona',
         disableHide: {
-            //yes: 'Set the close button behaviour that will minimize to the tray instead of quitting',
-            //no: 'Set the close button behaviour as to really quit the app',
             checkbox: 'Chiudi nell\'area di notifica',
             message: {
                 yes: 'Il pulsante chiudi chiude veramente l\'app.',
                 no: 'Il pulsante chiudi, invece di chiudere l\'app, la minimizza nell\'area di notifica.',
-
-            }
+            },
         },
         optionToDisableInternalExternalPopup: 'Disabilita popup interni/esterni (tutti i link interni)',
         settings: 'Impostazioni',
@@ -51,18 +48,24 @@ const translation = {
         hide: 'Nascondi',
         copyLocation: 'Copia questa posizione nella clipboard',
         copyLocationCopied: 'La posizione è stata copiata nella clipboard.',
-        //disallowedContent: 'Disallowed content! If not working, hang on, it will reset to the default home. (Max 5 seconds).',
-        //unknownLink: 'Hang on, it might change while loading to the destination. If this is not a OneNote page, free to click on the P3X OneNote menu home',
         back: 'Indietro',
         forward: 'Inoltra',
         reportIssue: 'Segnala problema / Richiedi funzionalità',
+        desktopNotifications: 'Abilita le notifiche desktop',
+        offlineNotice: 'Sei offline',
+        backOnline: 'Di nuovo online',
+        startOnLogin: 'Avvia all\'accesso',
+        exportSettings: 'Esporta impostazioni',
+        importSettings: 'Importa impostazioni',
+        importSettingsWarning: 'Questa operazione sostituirà tutte le impostazioni attuali. Dovrai effettuare nuovamente l\'accesso in ogni scheda. Continuare?',
+        settingsExported: 'Impostazioni esportate.',
+        settingsImported: 'Impostazioni importate. Riavvio in corso...',
     },
     dialog: {
         info: 'Info',
         openUrl: {
             info: 'Tu puoi andare in qualsiasi URL vuoi',
             placeholder: 'un URL valido',
-
         },
         minimizationBehavior: {
             title: 'Comportamento minimizzazione',
@@ -73,7 +76,7 @@ const translation = {
             clear: 'Il proxy è spento.',
             set: (value) => {
                 return `Il proxy è impostato come ${value}`
-            }
+            },
         },
         redirect: {
             url: (opts) => {
@@ -81,7 +84,7 @@ const translation = {
             },
             urlExternal: 'Esterno',
             urlInternal: 'Interno',
-        }
+        },
     },
     button: {
         yes: 'Si',
@@ -114,11 +117,11 @@ const translation = {
                 zoomin: 'Zoom In',
                 zoomout: 'Zoom out',
                 togglefullscreen: 'Attiva/Disattiva Schermo intero',
-            }
+            },
         },
         help: {
             title: 'Aiuto',
-            checkUpdates: 'Controlla aggiornamenti'
+            checkUpdates: 'Controlla aggiornamenti',
         },
         language: {
             label: 'Lingua / Language',
@@ -159,7 +162,7 @@ const translation = {
                 'vi-VN': 'Tiếng Việt / Vietnamese',
                 'zh-CN': '简体中文 / Simplified Chinese',
                 'zh-TW': '繁體中文 / Traditional Chinese',
-            }
+            },
         },
     },
     redirecting: 'Attendi, ti sto reindirizzando ad un nuovo blocco appunti. Potrebbe richiedere un pò di tempo...',
@@ -174,7 +177,7 @@ const translation = {
         'download-progress': (opts) => {
             return 'Scaricato ' + opts.progressObj.percent + '%'
         },
-        'update-downloaded': 'Aggiornamento scaricato. Potresti riavviare l\'app per aggiornare.'
+        'update-downloaded': 'Aggiornamento scaricato. Potresti riavviare l\'app per aggiornare.',
     },
     bookmarks: {
         title: 'Segnalibri',
@@ -195,7 +198,7 @@ const translation = {
             url: 'URL',
             category: 'Cartella',
             categoryPlaceholder: 'es. Lavoro/Progetti (usa / per sottocartelle)',
-        }
+        },
     },
     tabs: {
         addTab: 'Aggiungi scheda',
@@ -213,6 +216,7 @@ const translation = {
         unpinTab: 'Sblocca scheda',
         cannotClosePinned: 'Impossibile chiudere una scheda fissata.',
         confirmClose: (tabLabel) => `Sei sicuro di voler chiudere "${tabLabel}"? Verrai disconnesso da questo account.`,
+        duplicateTab: 'Duplica scheda',
     },
     validation: {
         required: 'Richiesto',

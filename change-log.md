@@ -7,6 +7,19 @@
 
 ## Change log
 
+### v2026.4.125
+Released on 04/04/2026
+* FEATURE: Desktop notifications — enable native OS notifications via Settings toggle. All toasts (updates, bookmarks, offline status) also fire as system notifications when enabled. Clicking a notification brings the app to foreground.
+* FEATURE: Offline detection and auto-reload — detects network loss, shows "You are offline" notification, and automatically reloads all tabs when connectivity returns. Debounced to avoid reload spam on flaky connections.
+* FEATURE: Tab duplicate — right-click a tab and choose "Duplicate tab" to create a new tab with the same URL and account type. The duplicated tab persists its URL across restarts.
+* FEATURE: Auto-launch on login — Settings checkbox to start P3X OneNote on OS login, minimized to system tray. Available on AppImage, deb, and rpm (hidden on Snap/Flatpak).
+* FEATURE: Settings backup/restore — export all app settings (tabs, bookmarks, preferences) to a single JSON file and import them back. Useful when switching machines or reinstalling.
+* FEATURE: Auto-translate script — new developer tool (`node scripts/auto-translate.js`) that uses Claude CLI to automatically translate missing UI strings from English to all 30 supported locales.
+* FEATURE: Dynamic snap description — Snap Store listing description is now automatically generated from README.md features section during publish.
+* CHORE: Fixed arm64 snap CI build (host mode instead of LXD, apt-get update for fresh package index).
+* CHORE: Updated Snapcraft Store credentials for CI (valid until 2036).
+* CHORE: Removed pull_request trigger from test workflow (solo developer with AI).
+
 ### v2026.4.124
 Released on 04/04/2026
 * CHORE: Release v2026.4.124.
@@ -182,7 +195,7 @@ All my domains, including [patrikx3.com](https://patrikx3.com), [corifeus.eu](ht
 ---
 
 
-[**P3X-ONENOTE**](https://corifeus.com/onenote) Build v2026.4.124
+[**P3X-ONENOTE**](https://corifeus.com/onenote) Build v2026.4.125
 
  [![NPM](https://img.shields.io/npm/v/p3x-onenote.svg)](https://www.npmjs.com/package/p3x-onenote)  [![Donate for PatrikX3 / P3X](https://img.shields.io/badge/Donate-PatrikX3-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software)
 

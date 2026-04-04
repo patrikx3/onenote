@@ -360,6 +360,16 @@ function renderTabBar() {
                     renderTabBar();
                 }
             }));
+            menu.append(new MenuItem({
+                label: lang.tabs?.duplicateTab || 'Duplicate tab',
+                click: () => {
+                    const currentUrl = tab.webview.getURL() || tab.url;
+                    createTab({
+                        type: tab.type,
+                        url: currentUrl,
+                    });
+                }
+            }));
             menu.popup();
         });
 

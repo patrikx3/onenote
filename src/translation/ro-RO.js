@@ -3,10 +3,10 @@ const translation = {
     restart: 'Vă rugăm așteptați, aplicația repornește.',
     label: {
         darkThemeInvert: {
-          title: 'Activează modul întunecat (folosind inversare)',
-          off: 'Dezactivat',
-          on: 'Activat',
-          system: 'Urmează sistemul',
+            title: 'Activează modul întunecat (folosind inversare)',
+            off: 'Dezactivat',
+            on: 'Activat',
+            system: 'Urmează sistemul',
         },
         hideMenu: 'Ascunde meniul principal (afișează cu ALT)',
         optionToHideMenuState: {
@@ -18,7 +18,7 @@ const translation = {
             message: {
                 yes: 'Butonul de închidere chiar închide aplicația.',
                 no: 'Butonul de închidere, în loc să iasă, minimizează aplicația în zona de notificare.',
-            }
+            },
         },
         optionToDisableInternalExternalPopup: 'Dezactivează fereastra pop-up internă / externă (toate linkurile interne)',
         settings: 'Setări',
@@ -51,6 +51,15 @@ const translation = {
         back: 'Înapoi',
         forward: 'Înainte',
         reportIssue: 'Raportează problemă / Solicită funcție',
+        desktopNotifications: 'Activează notificările desktop',
+        offlineNotice: 'Ești offline',
+        backOnline: 'Înapoi online',
+        startOnLogin: 'Pornire la autentificare',
+        exportSettings: 'Exportă setările',
+        importSettings: 'Importă setările',
+        importSettingsWarning: 'Aceasta va înlocui toate setările curente. Va trebui să vă reconectați pe fiecare filă. Continuați?',
+        settingsExported: 'Setările au fost exportate.',
+        settingsImported: 'Setările au fost importate. Se repornește...',
     },
     dialog: {
         info: 'Info',
@@ -67,7 +76,7 @@ const translation = {
             clear: 'Proxy-ul este dezactivat.',
             set: (value) => {
                 return `Proxy-ul este setat ca ${value}`
-            }
+            },
         },
         redirect: {
             url: (opts) => {
@@ -75,7 +84,7 @@ const translation = {
             },
             urlExternal: 'Extern',
             urlInternal: 'Intern',
-        }
+        },
     },
     button: {
         yes: 'Da',
@@ -108,11 +117,11 @@ const translation = {
                 zoomin: 'Mărește',
                 zoomout: 'Micșorează',
                 togglefullscreen: 'Comută ecran complet',
-            }
+            },
         },
         help: {
             title: 'Ajutor',
-            checkUpdates: 'Verifică actualizări'
+            checkUpdates: 'Verifică actualizări',
         },
         language: {
             label: 'Română / Language',
@@ -153,7 +162,7 @@ const translation = {
                 'vi-VN': 'Tiếng Việt / Vietnamese',
                 'zh-CN': '简体中文 / Simplified Chinese',
                 'zh-TW': '繁體中文 / Traditional Chinese',
-            }
+            },
         },
     },
     redirecting: 'Așteptați, redirecționare către un nou caiet. Durează ceva timp...',
@@ -168,7 +177,7 @@ const translation = {
         'download-progress': (opts) => {
             return 'Descărcat ' + opts.progressObj.percent + '%'
         },
-        'update-downloaded': 'Actualizare descărcată. Puteți reporni aplicația pentru a actualiza.'
+        'update-downloaded': 'Actualizare descărcată. Puteți reporni aplicația pentru a actualiza.',
     },
     bookmarks: {
         title: 'Marcaje',
@@ -189,7 +198,7 @@ const translation = {
             url: 'URL',
             category: 'Dosar',
             categoryPlaceholder: 'ex. Muncă/Proiecte (folosește / pentru subdosare)',
-        }
+        },
     },
     tabs: {
         addTab: 'Adaugă filă',
@@ -207,6 +216,7 @@ const translation = {
         unpinTab: 'Anulează fixarea filei',
         cannotClosePinned: 'O filă fixată nu poate fi închisă.',
         confirmClose: (tabLabel) => `Sunteți sigur că doriți să închideți „${tabLabel}"? Veți fi deconectat din acest cont.`,
+        duplicateTab: 'Duplică fila',
     },
     validation: {
         required: 'Obligatoriu',

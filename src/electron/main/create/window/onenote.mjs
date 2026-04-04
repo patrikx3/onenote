@@ -3,6 +3,7 @@ import remoteMain from '@electron/remote/main/index.js'
 import path from 'path'
 import electronUpdater from 'electron-updater'
 import registry from '../../../registry.mjs'
+import notify from '../../notify.mjs'
 const { autoUpdater } = electronUpdater
 
 remoteMain.initialize()
@@ -141,17 +142,11 @@ function createWindow() {
 
     autoUpdater.on('checking-for-update', (info) => {
         console.log('checking-for-update', info)
-        win.webContents.send('p3x-onenote-action', {
-            action: 'toast',
-            message: registry.lang.updater["checking-for-update"]
-        })
+        notify(registry.lang.updater["checking-for-update"])
     })
     autoUpdater.on('update-available', (info) => {
         console.log('update-available', info)
-        win.webContents.send('p3x-onenote-action', {
-            action: 'toast',
-            message: registry.lang.updater["update-available"]
-        })
+        notify(registry.lang.updater["update-available"])
     })
 
     let firstCheck = true
@@ -163,21 +158,14 @@ function createWindow() {
             return
         }
 
-        win.webContents.send('p3x-onenote-action', {
-            action: 'toast',
-            message: registry.lang.updater["update-not-available"]
-        })
+        notify(registry.lang.updater["update-not-available"])
     })
     autoUpdater.on('error', (error) => {
         console.error('error', error)
     })
 
     autoUpdater.on('update-downloaded', (info) => {
-        win.webContents.send('p3x-onenote-action', {
-            action: 'toast',
-            message: registry.lang.updater["update-downloaded"],
-        })
-
+        notify(registry.lang.updater["update-downloaded"])
     });
     autoUpdater.checkForUpdatesAndNotify();
 

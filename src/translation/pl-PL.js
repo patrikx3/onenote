@@ -3,10 +3,10 @@ const translation = {
     restart: 'Proszę czekać, aplikacja jest restartowana.',
     label: {
         darkThemeInvert: {
-          title: 'Włącz tryb ciemny (używając invert)',
-          off: 'Wyłączone',
-          on: 'Włączone',
-          system: 'Zgodnie z systemem',
+            title: 'Włącz tryb ciemny (używając invert)',
+            off: 'Wyłączone',
+            on: 'Włączone',
+            system: 'Zgodnie z systemem',
         },
         hideMenu: 'Ukryj główne menu (pokaż z ALT)',
         optionToHideMenuState: {
@@ -14,14 +14,11 @@ const translation = {
         },
         donate: 'Darowizna',
         disableHide: {
-            //yes: 'Set the close button behaviour that will minimize to the tray instead of quitting',
-            //no: 'Set the close button behaviour as to really quit the app',
             checkbox: 'Zminimalizuj do paska zadań',
             message: {
                 yes: 'Przycisk zamknij naprawdę zamyka aplikację.',
                 no: 'Przycisk zamknij, zamiast zamykać, minimalizuje aplikację do paska zadań.',
-
-            }
+            },
         },
         optionToDisableInternalExternalPopup: 'Wyłącz wewnętrzne / zewnętrzne wyskakujące okienka (wszyskie otwieraj wewnątrz)',
         settings: 'Ustawienia',
@@ -51,18 +48,24 @@ const translation = {
         hide: 'Ukryj',
         copyLocation: 'Skopiuj tę ścieżkę do schowka',
         copyLocationCopied: 'Ścieżka została skopiowana do schowka.',
-        //disallowedContent: 'Disallowed content! If not working, hang on, it will reset to the default home. (Max 5 seconds).',
-        //unknownLink: 'Hang on, it might change while loading to the destination. If this is not a OneNote page, free to click on the P3X OneNote menu home',
         back: 'Cofnij',
         forward: 'Dalej',
         reportIssue: 'Zgłoś problem / Poproś o funkcję',
+        desktopNotifications: 'Włącz powiadomienia na pulpicie',
+        offlineNotice: 'Jesteś offline',
+        backOnline: 'Z powrotem online',
+        startOnLogin: 'Uruchom przy logowaniu',
+        exportSettings: 'Eksportuj ustawienia',
+        importSettings: 'Importuj ustawienia',
+        importSettingsWarning: 'Spowoduje to zastąpienie wszystkich bieżących ustawień. Konieczne będzie ponowne zalogowanie się na każdej karcie. Kontynuować?',
+        settingsExported: 'Ustawienia wyeksportowane.',
+        settingsImported: 'Ustawienia zaimportowane. Ponowne uruchamianie...',
     },
     dialog: {
         info: 'Informacje',
         openUrl: {
             info: 'Możesz przejść do dowolnego URL',
             placeholder: 'prawidłowy URL',
-
         },
         minimizationBehavior: {
             title: 'Ustawienia minimalizacji',
@@ -73,7 +76,7 @@ const translation = {
             clear: 'Proxy jest wyłączone.',
             set: (value) => {
                 return `Adres serwera proxy ustawiony na ${value}`
-            }
+            },
         },
         redirect: {
             url: (opts) => {
@@ -81,7 +84,7 @@ const translation = {
             },
             urlExternal: 'Zewnętrzny',
             urlInternal: 'Wewnętrzny',
-        }
+        },
     },
     button: {
         yes: 'Tak',
@@ -114,11 +117,11 @@ const translation = {
                 zoomin: 'Powiększ',
                 zoomout: 'Pomniejsz',
                 togglefullscreen: 'Włącz/wyłącz pełny ekran',
-            }
+            },
         },
         help: {
             title: 'Pomoc',
-            checkUpdates: 'Sprawdź dostępne aktualizacje'
+            checkUpdates: 'Sprawdź dostępne aktualizacje',
         },
         language: {
             label: 'Język / Language',
@@ -159,7 +162,7 @@ const translation = {
                 'vi-VN': 'Tiếng Việt / Vietnamese',
                 'zh-CN': '简体中文 / Simplified Chinese',
                 'zh-TW': '繁體中文 / Traditional Chinese',
-            }
+            },
         },
     },
     redirecting: 'Proszę czekać, przekierowywanie do nowego notatnika trwa ...',
@@ -174,7 +177,7 @@ const translation = {
         'download-progress': (opts) => {
             return 'Pobrano ' + opts.progressObj.percent + '%'
         },
-        'update-downloaded': 'Aktualizacja pobrana. Proszę uruchomić aplikację ponownie aby zainstalować.'
+        'update-downloaded': 'Aktualizacja pobrana. Proszę uruchomić aplikację ponownie aby zainstalować.',
     },
     bookmarks: {
         title: 'Zakładki',
@@ -195,7 +198,7 @@ const translation = {
             url: 'URL',
             category: 'Folder',
             categoryPlaceholder: 'np. Praca/Projekty (użyj / dla podfolderów)',
-        }
+        },
     },
     tabs: {
         addTab: 'Dodaj kartę',
@@ -213,6 +216,7 @@ const translation = {
         unpinTab: 'Odepnij kartę',
         cannotClosePinned: 'Nie można zamknąć przypiętej karty.',
         confirmClose: (tabLabel) => `Czy na pewno chcesz zamknąć „${tabLabel}"? Zostaniesz wylogowany z tego konta.`,
+        duplicateTab: 'Duplikuj kartę',
     },
     validation: {
         required: 'Wymagane',

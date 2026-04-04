@@ -1,10 +1,11 @@
-import { dialog, Menu, shell, nativeTheme } from 'electron'
+import { app, dialog, Menu, shell, nativeTheme } from 'electron'
 import menus from '../menus.mjs'
 import action from '../action.mjs'
 import mainTray from './tray.mjs'
 import naturalCompareDocument from '../../lib/natural-compare-document.mjs'
 import relaunch from '../actions/relaunch.mjs'
 import registry from '../../registry.mjs'
+import notify from '../notify.mjs'
 
 function mainMenu() {
 
@@ -64,10 +65,7 @@ function mainMenu() {
                         const msg = registry.lang.bookmarks.imported
                             ? registry.lang.bookmarks.imported(result.added)
                             : `Imported ${result.added} bookmark(s).`
-                        registry.window.onenote.webContents.send('p3x-onenote-action', {
-                            action: 'toast',
-                            message: msg,
-                        })
+                        notify(msg)
                     }
                 } catch (e) {
                     console.error(e)
@@ -87,10 +85,7 @@ function mainMenu() {
                         `window.electronShim.ipcRenderer.invoke('p3x-onenote-bookmarks-export')`
                     )
                     if (result && result.success) {
-                        registry.window.onenote.webContents.send('p3x-onenote-action', {
-                            action: 'toast',
-                            message: registry.lang.bookmarks.exported || 'Bookmarks exported.',
-                        })
+                        notify(registry.lang.bookmarks.exported || 'Bookmarks exported.')
                     }
                 } catch (e) {
                     console.error(e)
@@ -286,6 +281,32 @@ ${registry.lang.slow}
                     }
                 },
                 {
+                    label: registry.lang.label.desktopNotifications || 'Enable desktop notifications',
+                    type: 'checkbox',
+                    checked: registry.conf.get('desktopNotifications', false),
+                    click: () => {
+                        const current = registry.conf.get('desktopNotifications', false)
+                        registry.conf.set('desktopNotifications', !current)
+                        mainMenu()
+                        mainTray()
+                    }
+                },
+                // Auto-launch on login — not available on Snap/Flatpak
+                ...(!process.env.SNAP && !process.env.SNAP_NAME && !process.env.FLATPAK_ID ? [{
+                    label: registry.lang.label.startOnLogin || 'Start on login',
+                    type: 'checkbox',
+                    checked: app.getLoginItemSettings().openAtLogin,
+                    click: () => {
+                        const current = app.getLoginItemSettings().openAtLogin
+                        app.setLoginItemSettings({
+                            openAtLogin: !current,
+                            openAsHidden: true,
+                        })
+                        mainMenu()
+                        mainTray()
+                    }
+                }] : []),
+                {
                     label: registry.lang.label.setProxy,
                     click: action.setProxy,
                 },
@@ -340,6 +361,40 @@ ${registry.lang.slow}
                             },
                         },
                     ],
+                },
+                { type: 'separator' },
+                {
+                    label: registry.lang.label?.exportSettings || 'Export settings',
+                    click: async () => {
+                        try {
+                            const result = await registry.window.onenote.webContents.executeJavaScript(
+                                `window.electronShim.ipcRenderer.invoke('p3x-onenote-settings-export')`
+                            )
+                            if (result && result.success) {
+                                notify(registry.lang.label?.settingsExported || 'Settings exported.')
+                            }
+                        } catch (e) {
+                            console.error(e)
+                        }
+                    }
+                },
+                {
+                    label: registry.lang.label?.importSettings || 'Import settings',
+                    click: async () => {
+                        try {
+                            const result = await registry.window.onenote.webContents.executeJavaScript(
+                                `window.electronShim.ipcRenderer.invoke('p3x-onenote-settings-import')`
+                            )
+                            if (result && result.success) {
+                                notify(registry.lang.label?.settingsImported || 'Settings imported. Restarting...')
+                                setTimeout(() => {
+                                    relaunch()
+                                }, 1500)
+                            }
+                        } catch (e) {
+                            console.error(e)
+                        }
+                    }
                 },
 
             ],

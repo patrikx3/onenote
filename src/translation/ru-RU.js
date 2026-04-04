@@ -3,10 +3,10 @@ const translation = {
     restart: 'Пожалуйста подождите, приложение перезапускается.',
     label: {
         darkThemeInvert: {
-          title: 'Включить тёмную тему (применяя инверсию)',
-          off: 'Выкл',
-          on: 'Вкл',
-          system: 'Как в системе',
+            title: 'Включить тёмную тему (применяя инверсию)',
+            off: 'Выкл',
+            on: 'Вкл',
+            system: 'Как в системе',
         },
         hideMenu: 'Переключать строку меню через ALT',
         optionToHideMenuState: {
@@ -14,14 +14,11 @@ const translation = {
         },
         donate: 'Пожертвовать',
         disableHide: {
-            //yes: 'Set the close button behaviour that will minimize to the tray instead of quitting',
-            //no: 'Set the close button behaviour as to really quit the app',
             checkbox: 'Сворачивать в трей вместо выхода',
             message: {
                 yes: 'Кнопка закрытия приложения завершает приложение.',
                 no: 'Кнопка закрытия приложения сворачивает приложение в трей.',
-
-            }
+            },
         },
         optionToDisableInternalExternalPopup: 'Не предупреждать о внешней ссылке (все ссылки внутренние)',
         settings: 'Настройки',
@@ -51,18 +48,24 @@ const translation = {
         hide: 'Скрыть',
         copyLocation: 'Скопировать этот адрес в буфер обмена',
         copyLocationCopied: 'Адрес скопирован в буфер обмена.',
-        //disallowedContent: 'Disallowed content! If not working, hang on, it will reset to the default home. (Max 5 seconds).',
-        //unknownLink: 'Hang on, it might change while loading to the destination. If this is not a OneNote page, free to click on the P3X OneNote menu home',
         back: 'Назад',
         forward: 'Вперёд',
         reportIssue: 'Сообщить о проблеме / Запросить функцию',
+        desktopNotifications: 'Включить уведомления на рабочем столе',
+        offlineNotice: 'Вы не в сети',
+        backOnline: 'Снова в сети',
+        startOnLogin: 'Запускать при входе в систему',
+        exportSettings: 'Экспорт настроек',
+        importSettings: 'Импорт настроек',
+        importSettingsWarning: 'Это заменит все текущие настройки. Вам потребуется повторно войти в каждую вкладку. Продолжить?',
+        settingsExported: 'Настройки экспортированы.',
+        settingsImported: 'Настройки импортированы. Перезапуск...',
     },
     dialog: {
         info: 'Информация',
         openUrl: {
             info: 'Вы можете перейти по любой ссылке',
             placeholder: 'введите ссылку',
-
         },
         minimizationBehavior: {
             title: 'Поведение сворачивания',
@@ -73,7 +76,7 @@ const translation = {
             clear: 'Прокси отключен.',
             set: (value) => {
                 return `Прокси установлен как ${value}`
-            }
+            },
         },
         redirect: {
             url: (opts) => {
@@ -81,7 +84,7 @@ const translation = {
             },
             urlExternal: 'Внешняя ссылка',
             urlInternal: 'Внутренняя ссылка',
-        }
+        },
     },
     button: {
         yes: 'Да',
@@ -114,7 +117,7 @@ const translation = {
                 zoomin: 'Увеличить масштаб',
                 zoomout: 'Уменьшить масштаб',
                 togglefullscreen: 'Полноэкранный режим',
-            }
+            },
         },
         help: {
             title: 'Помощь',
@@ -124,7 +127,6 @@ const translation = {
             label: 'Язык / Language',
             alert: 'Язык изменён на русский.',
             dialog: {
-                label: 'Try to configure Online OneNote language?',
                 label: 'Попробовать настроить язык OneNote онлайн?',
                 corporate: 'Корпоративный',
                 personal: 'Личный',
@@ -160,7 +162,7 @@ const translation = {
                 'vi-VN': 'Tiếng Việt / Vietnamese',
                 'zh-CN': '简体中文 / Simplified Chinese',
                 'zh-TW': '繁體中文 / Traditional Chinese',
-            }
+            },
         },
     },
     redirecting: 'Подождите, перенаправление на новую книгу. Это займёт некоторое время...',
@@ -175,7 +177,7 @@ const translation = {
         'download-progress': (opts) => {
             return 'Загружено ' + opts.progressObj.percent + '%'
         },
-        'update-downloaded': 'Обновление загружено. Вы можете перезапустить приложение для обновления.'
+        'update-downloaded': 'Обновление загружено. Вы можете перезапустить приложение для обновления.',
     },
     bookmarks: {
         title: 'Закладки',
@@ -196,7 +198,7 @@ const translation = {
             url: 'ссылка',
             category: 'Папка',
             categoryPlaceholder: 'напр. Работа/Проекты (/ для подпапок)',
-        }
+        },
     },
     tabs: {
         addTab: 'Добавить вкладку',
@@ -214,6 +216,7 @@ const translation = {
         unpinTab: 'Открепить вкладку',
         cannotClosePinned: 'Невозможно закрыть закреплённую вкладку.',
         confirmClose: (tabLabel) => `Вы уверены, что хотите закрыть «${tabLabel}»? Вы будете выходить из этого аккаунта.`,
+        duplicateTab: 'Дублировать вкладку',
     },
     validation: {
         required: 'Обязательное поле',

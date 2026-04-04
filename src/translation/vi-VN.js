@@ -3,10 +3,10 @@ const translation = {
     restart: 'Vui lòng chờ, ứng dụng đang khởi động lại.',
     label: {
         darkThemeInvert: {
-          title: 'Bật chế độ tối (sử dụng đảo ngược)',
-          off: 'Tắt',
-          on: 'Bật',
-          system: 'Theo hệ thống',
+            title: 'Bật chế độ tối (sử dụng đảo ngược)',
+            off: 'Tắt',
+            on: 'Bật',
+            system: 'Theo hệ thống',
         },
         hideMenu: 'Ẩn menu chính (hiển thị bằng ALT)',
         optionToHideMenuState: {
@@ -18,7 +18,7 @@ const translation = {
             message: {
                 yes: 'Nút đóng thực sự đóng ứng dụng.',
                 no: 'Nút đóng, thay vì thoát, sẽ thu nhỏ ứng dụng vào khay hệ thống.',
-            }
+            },
         },
         optionToDisableInternalExternalPopup: 'Tắt cửa sổ bật lên nội bộ / bên ngoài (tất cả liên kết nội bộ)',
         settings: 'Cài đặt',
@@ -51,6 +51,15 @@ const translation = {
         back: 'Quay lại',
         forward: 'Tiến tới',
         reportIssue: 'Báo lỗi / Yêu cầu tính năng',
+        desktopNotifications: 'Bật thông báo trên màn hình',
+        offlineNotice: 'Bạn đang ngoại tuyến',
+        backOnline: 'Đã kết nối lại',
+        startOnLogin: 'Khởi động khi đăng nhập',
+        exportSettings: 'Xuất cài đặt',
+        importSettings: 'Nhập cài đặt',
+        importSettingsWarning: 'Thao tác này sẽ thay thế tất cả cài đặt hiện tại. Bạn sẽ cần đăng nhập lại trên mỗi tab. Tiếp tục?',
+        settingsExported: 'Đã xuất cài đặt.',
+        settingsImported: 'Đã nhập cài đặt. Đang khởi động lại...',
     },
     dialog: {
         info: 'Info',
@@ -67,7 +76,7 @@ const translation = {
             clear: 'Proxy đã được tắt.',
             set: (value) => {
                 return `Proxy được đặt là ${value}`
-            }
+            },
         },
         redirect: {
             url: (opts) => {
@@ -75,7 +84,7 @@ const translation = {
             },
             urlExternal: 'Bên ngoài',
             urlInternal: 'Nội bộ',
-        }
+        },
     },
     button: {
         yes: 'Có',
@@ -108,11 +117,11 @@ const translation = {
                 zoomin: 'Phóng to',
                 zoomout: 'Thu nhỏ',
                 togglefullscreen: 'Bật/tắt toàn màn hình',
-            }
+            },
         },
         help: {
             title: 'Trợ giúp',
-            checkUpdates: 'Kiểm tra cập nhật'
+            checkUpdates: 'Kiểm tra cập nhật',
         },
         language: {
             label: 'Tiếng Việt / Language',
@@ -153,7 +162,7 @@ const translation = {
                 'vi-VN': 'Tiếng Việt / Vietnamese',
                 'zh-CN': '简体中文 / Simplified Chinese',
                 'zh-TW': '繁體中文 / Traditional Chinese',
-            }
+            },
         },
     },
     redirecting: 'Vui lòng chờ, đang chuyển hướng đến sổ ghi chép mới. Quá trình này mất một chút thời gian...',
@@ -168,7 +177,7 @@ const translation = {
         'download-progress': (opts) => {
             return 'Đã tải xuống ' + opts.progressObj.percent + '%'
         },
-        'update-downloaded': 'Cập nhật đã tải xuống. Bạn có thể khởi động lại ứng dụng để cập nhật.'
+        'update-downloaded': 'Cập nhật đã tải xuống. Bạn có thể khởi động lại ứng dụng để cập nhật.',
     },
     bookmarks: {
         title: 'Dấu trang',
@@ -189,7 +198,7 @@ const translation = {
             url: 'URL',
             category: 'Thư mục',
             categoryPlaceholder: 'vd: Công việc/Dự án (dùng / cho thư mục con)',
-        }
+        },
     },
     tabs: {
         addTab: 'Thêm thẻ',
@@ -207,6 +216,7 @@ const translation = {
         unpinTab: 'Bỏ ghim tab',
         cannotClosePinned: 'Không thể đóng tab đã ghim.',
         confirmClose: (tabLabel) => `Bạn có chắc chắn muốn đóng "${tabLabel}" không? Bạn sẽ bị đăng xuất khỏi tài khoản này.`,
+        duplicateTab: 'Nhân đôi tab',
     },
     validation: {
         required: 'Bắt buộc',

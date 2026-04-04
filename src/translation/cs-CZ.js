@@ -3,10 +3,10 @@ const translation = {
     restart: 'Prosím čekejte, aplikace se restartuje.',
     label: {
         darkThemeInvert: {
-          title: 'Povolit tmavý režim (pomocí inverze)',
-          off: 'Vypnuto',
-          on: 'Zapnuto',
-          system: 'Podle systému',
+            title: 'Povolit tmavý režim (pomocí inverze)',
+            off: 'Vypnuto',
+            on: 'Zapnuto',
+            system: 'Podle systému',
         },
         hideMenu: 'Skrýt hlavní nabídku (zobrazit pomocí ALT)',
         optionToHideMenuState: {
@@ -18,7 +18,7 @@ const translation = {
             message: {
                 yes: 'Tlačítko zavřít skutečně zavře aplikaci.',
                 no: 'Tlačítko zavřít místo ukončení minimalizuje aplikaci do systémové lišty.',
-            }
+            },
         },
         optionToDisableInternalExternalPopup: 'Zakázat vyskakovací okno Interní / Externí (všechny odkazy interní)',
         settings: 'Nastavení',
@@ -51,6 +51,15 @@ const translation = {
         back: 'Zpět',
         forward: 'Vpřed',
         reportIssue: 'Nahlásit problém / Požádat o funkci',
+        desktopNotifications: 'Povolit desktopová oznámení',
+        offlineNotice: 'Jste offline',
+        backOnline: 'Zpět online',
+        startOnLogin: 'Spustit při přihlášení',
+        exportSettings: 'Exportovat nastavení',
+        importSettings: 'Importovat nastavení',
+        importSettingsWarning: 'Toto nahradí všechna aktuální nastavení. Na každé kartě se budete muset znovu přihlásit. Pokračovat?',
+        settingsExported: 'Nastavení exportováno.',
+        settingsImported: 'Nastavení importováno. Restartování...',
     },
     dialog: {
         info: 'Info',
@@ -67,7 +76,7 @@ const translation = {
             clear: 'Proxy je vypnuto.',
             set: (value) => {
                 return `Proxy je nastaveno na ${value}`
-            }
+            },
         },
         redirect: {
             url: (opts) => {
@@ -75,7 +84,7 @@ const translation = {
             },
             urlExternal: 'Externí',
             urlInternal: 'Interní',
-        }
+        },
     },
     button: {
         yes: 'Ano',
@@ -108,11 +117,11 @@ const translation = {
                 zoomin: 'Přiblížit',
                 zoomout: 'Oddálit',
                 togglefullscreen: 'Přepnout celou obrazovku',
-            }
+            },
         },
         help: {
             title: 'Nápověda',
-            checkUpdates: 'Zkontrolovat aktualizace'
+            checkUpdates: 'Zkontrolovat aktualizace',
         },
         language: {
             label: 'Čeština / Language',
@@ -153,7 +162,7 @@ const translation = {
                 'vi-VN': 'Tiếng Việt / Vietnamese',
                 'zh-CN': '简体中文 / Simplified Chinese',
                 'zh-TW': '繁體中文 / Traditional Chinese',
-            }
+            },
         },
     },
     redirecting: 'Počkejte prosím, přesměrování na nový poznámkový blok. Chvíli to trvá...',
@@ -168,7 +177,7 @@ const translation = {
         'download-progress': (opts) => {
             return 'Staženo ' + opts.progressObj.percent + '%'
         },
-        'update-downloaded': 'Aktualizace stažena. Můžete restartovat aplikaci pro aktualizaci.'
+        'update-downloaded': 'Aktualizace stažena. Můžete restartovat aplikaci pro aktualizaci.',
     },
     bookmarks: {
         title: 'Záložky',
@@ -189,7 +198,7 @@ const translation = {
             url: 'URL',
             category: 'Složka',
             categoryPlaceholder: 'např. Práce/Projekty (/ pro podsložky)',
-        }
+        },
     },
     tabs: {
         addTab: 'Přidat kartu',
@@ -207,6 +216,7 @@ const translation = {
         unpinTab: 'Odepnout kartu',
         cannotClosePinned: 'Připnutou kartu nelze zavřít.',
         confirmClose: (tabLabel) => `Opravdu chcete zavřít „${tabLabel}"? Budete odhlášeni z tohoto účtu.`,
+        duplicateTab: 'Duplikovat kartu',
     },
     validation: {
         required: 'Povinné',

@@ -3,10 +3,10 @@ const translation = {
     restart: 'Lütfen bekleyin, uygulama yeniden başlatılıyor.',
     label: {
         darkThemeInvert: {
-          title: 'Enable dark mode (using invert)',
-          off: 'Kapalı',
-          on: 'Açık',
-          system: 'Sistemi takip et',
+            title: 'Enable dark mode (using invert)',
+            off: 'Kapalı',
+            on: 'Açık',
+            system: 'Sistemi takip et',
         },
         hideMenu: 'Ana menüyü gizle (ALT tuşu ile göster)',
         optionToHideMenuState: {
@@ -14,14 +14,11 @@ const translation = {
         },
         donate: 'Bağış',
         disableHide: {
-            //yes: 'Çıkmak yerine tepsiye simge durumuna küçültecek kapatma düğmesi davranışını ayarlayın',
-            //no: 'Uygulamadan gerçekten çıkmak için kapatma düğmesi davranışını ayarlayın',
             checkbox: 'Kapatınca uygulama simgesine(tray) küçült',
             message: {
                 yes: 'Kapat düğmesi, uygulamayı gerçekten kapatır.',
                 no: 'Kapat düğmesi, çıkmak yerine uygulamayı tepsiye(tray) küçültür.',
-
-            }
+            },
         },
         optionToDisableInternalExternalPopup: 'Dahili / Harici Açılır Pencereyi Devre Dışı Bırak (tüm bağlantılar dahili)',
         settings: 'Ayarlar',
@@ -51,18 +48,24 @@ const translation = {
         hide: 'Gizle',
         copyLocation: 'Bu konumu panoya kopyala',
         copyLocationCopied: 'Konum panoya kopyalanır.',
-        //disallowedContent: 'İzin verilmeyen içerik! Çalışmıyorsa, bekleyin, varsayılan eve sıfırlanacaktır. (En fazla 5 saniye).',
-        //unknownLink: 'Bekle, hedefe yüklenirken değişebilir. Bu bir OneNote sayfası değilse, P3X OneNote ana menüsüne tıklayarak ücretsiz',
         back: 'Geri',
         forward: 'İleri',
         reportIssue: 'Sorun bildir / Özellik iste',
+        desktopNotifications: 'Masaüstü bildirimlerini etkinleştir',
+        offlineNotice: 'Çevrimdışısınız',
+        backOnline: 'Tekrar çevrimiçi',
+        startOnLogin: 'Oturum açılışında başlat',
+        exportSettings: 'Ayarları dışa aktar',
+        importSettings: 'Ayarları içe aktar',
+        importSettingsWarning: 'Bu, mevcut tüm ayarların yerini alacaktır. Her sekmede yeniden giriş yapmanız gerekecektir. Devam edilsin mi?',
+        settingsExported: 'Ayarlar dışa aktarıldı.',
+        settingsImported: 'Ayarlar içe aktarıldı. Yeniden başlatılıyor...',
     },
     dialog: {
         info: 'Bilgi',
         openUrl: {
             info: 'İstediğiniz herhangi bir URL\'ye gidebilirsiniz',
             placeholder: 'geçerli bir URL',
-
         },
         minimizationBehavior: {
             title: 'Minimizasyon davranışı',
@@ -73,7 +76,7 @@ const translation = {
             clear: 'Proxy kapalı.',
             set: (value) => {
                 return `Proxy, ${value} olarak değiştirildi.`
-            }
+            },
         },
         redirect: {
             url: (opts) => {
@@ -81,7 +84,7 @@ const translation = {
             },
             urlExternal: 'Harici',
             urlInternal: 'Dahili',
-        }
+        },
     },
     button: {
         yes: 'Evet',
@@ -114,11 +117,11 @@ const translation = {
                 zoomin: 'Yakınlaştır',
                 zoomout: 'Uzaklaştır',
                 togglefullscreen: 'Tam ekrana geç',
-            }
+            },
         },
         help: {
             title: 'Yardım',
-            checkUpdates: 'Güncellemeleri kontrol et'
+            checkUpdates: 'Güncellemeleri kontrol et',
         },
         language: {
             label: 'Dil / Language',
@@ -159,7 +162,7 @@ const translation = {
                 'vi-VN': 'Tiếng Việt / Vietnamese',
                 'zh-CN': '简体中文 / Simplified Chinese',
                 'zh-TW': '繁體中文 / Traditional Chinese',
-            }
+            },
         },
     },
     redirecting: 'Bekle, yeni bir not defterine yönlendiriliyor. Biraz zaman alır...',
@@ -174,7 +177,7 @@ const translation = {
         'download-progress': (opts) => {
             return 'Downloaded ' + opts.progressObj.percent + '%'
         },
-        'update-downloaded': 'Güncelleme indirildi. Güncellemek için uygulamayı yeniden başlatabilirsiniz.'
+        'update-downloaded': 'Güncelleme indirildi. Güncellemek için uygulamayı yeniden başlatabilirsiniz.',
     },
     bookmarks: {
         title: 'Yer imleri',
@@ -195,7 +198,7 @@ const translation = {
             url: 'URL',
             category: 'Klasör',
             categoryPlaceholder: 'örn. İş/Projeler (alt klasörler için / kullanın)',
-        }
+        },
     },
     tabs: {
         addTab: 'Sekme ekle',
@@ -213,6 +216,7 @@ const translation = {
         unpinTab: 'Sekmeyi çöz',
         cannotClosePinned: 'Sabitlenmiş bir sekme kapatılamaz.',
         confirmClose: (tabLabel) => `"${tabLabel}" sekmesini kapatmak istediğinizden emin misiniz? Bu hesaptan çıkış yapılacaktır.`,
+        duplicateTab: 'Sekmeyi çoğalt',
     },
     validation: {
         required: 'Gerekli',

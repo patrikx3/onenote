@@ -23,6 +23,15 @@ const translation = {
 
             }
         },
+        desktopNotifications: 'Enable desktop notifications',
+        startOnLogin: 'Start on login',
+        exportSettings: 'Export settings',
+        importSettings: 'Import settings',
+        importSettingsWarning: 'This will replace all current settings. You will need to re-login on each tab. Continue?',
+        settingsExported: 'Settings exported.',
+        settingsImported: 'Settings imported. Restarting...',
+        offlineNotice: 'You are offline',
+        backOnline: 'Back online',
         optionToDisableInternalExternalPopup: 'Disable Internal / External Popup (all link internal)',
         settings: 'Settings',
         setProxy: 'Set proxy',
@@ -211,6 +220,7 @@ const translation = {
         renamePlaceholder: 'Custom tab name',
         pinTab: 'Pin tab',
         unpinTab: 'Unpin tab',
+        duplicateTab: 'Duplicate tab',
         cannotClosePinned: 'Cannot close a pinned tab.',
         confirmClose: (tabLabel) => `Are you sure you want to close "${tabLabel}"? You will be signed out of this account.`,
     },

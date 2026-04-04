@@ -3,10 +3,10 @@ const translation = {
     restart: 'Будь ласка, зачекайте, програма перезапускається.',
     label: {
         darkThemeInvert: {
-          title: 'Увімкнути темний режим (використовуючи інверсію)',
-          off: 'Вимк',
-          on: 'Увімк',
-          system: 'Як у системі',
+            title: 'Увімкнути темний режим (використовуючи інверсію)',
+            off: 'Вимк',
+            on: 'Увімк',
+            system: 'Як у системі',
         },
         hideMenu: 'Сховати головне меню (показати за допомогою ALT)',
         optionToHideMenuState: {
@@ -18,7 +18,7 @@ const translation = {
             message: {
                 yes: 'Кнопка закриття дійсно закриває програму.',
                 no: 'Кнопка закриття, замість виходу, згортає програму в системний трей.',
-            }
+            },
         },
         optionToDisableInternalExternalPopup: 'Вимкнути внутрішнє / зовнішнє спливаюче вікно (всі посилання внутрішні)',
         settings: 'Налаштування',
@@ -51,6 +51,15 @@ const translation = {
         back: 'Назад',
         forward: 'Вперед',
         reportIssue: 'Повідомити про проблему / Запросити функцію',
+        desktopNotifications: 'Увімкнути сповіщення на робочому столі',
+        offlineNotice: 'Ви офлайн',
+        backOnline: 'Знову онлайн',
+        startOnLogin: 'Запускати при вході в систему',
+        exportSettings: 'Експорт налаштувань',
+        importSettings: 'Імпорт налаштувань',
+        importSettingsWarning: 'Це замінить усі поточні налаштування. Вам потрібно буде повторно увійти на кожній вкладці. Продовжити?',
+        settingsExported: 'Налаштування експортовано.',
+        settingsImported: 'Налаштування імпортовано. Перезапуск...',
     },
     dialog: {
         info: 'Info',
@@ -67,7 +76,7 @@ const translation = {
             clear: 'Проксі вимкнено.',
             set: (value) => {
                 return `Проксі встановлено як ${value}`
-            }
+            },
         },
         redirect: {
             url: (opts) => {
@@ -75,7 +84,7 @@ const translation = {
             },
             urlExternal: 'Зовнішнє',
             urlInternal: 'Внутрішнє',
-        }
+        },
     },
     button: {
         yes: 'Так',
@@ -108,11 +117,11 @@ const translation = {
                 zoomin: 'Збільшити',
                 zoomout: 'Зменшити',
                 togglefullscreen: 'Перемкнути повноекранний режим',
-            }
+            },
         },
         help: {
             title: 'Допомога',
-            checkUpdates: 'Перевірити оновлення'
+            checkUpdates: 'Перевірити оновлення',
         },
         language: {
             label: 'Українська / Language',
@@ -153,7 +162,7 @@ const translation = {
                 'vi-VN': 'Tiếng Việt / Vietnamese',
                 'zh-CN': '简体中文 / Simplified Chinese',
                 'zh-TW': '繁體中文 / Traditional Chinese',
-            }
+            },
         },
     },
     redirecting: 'Зачекайте, перенаправлення на новий блокнот. Це займе деякий час...',
@@ -168,7 +177,7 @@ const translation = {
         'download-progress': (opts) => {
             return 'Завантажено ' + opts.progressObj.percent + '%'
         },
-        'update-downloaded': 'Оновлення завантажено. Ви можете перезапустити програму для оновлення.'
+        'update-downloaded': 'Оновлення завантажено. Ви можете перезапустити програму для оновлення.',
     },
     bookmarks: {
         title: 'Закладки',
@@ -189,7 +198,7 @@ const translation = {
             url: 'URL',
             category: 'Тека',
             categoryPlaceholder: 'напр. Робота/Проекти (/ для підтек)',
-        }
+        },
     },
     tabs: {
         addTab: 'Додати вкладку',
@@ -207,6 +216,7 @@ const translation = {
         unpinTab: 'Відкріпити вкладку',
         cannotClosePinned: 'Неможливо закрити закріплену вкладку.',
         confirmClose: (tabLabel) => `Ви впевнені, що хочете закрити «${tabLabel}»? Вас буде виходжено з цього облікового запису.`,
+        duplicateTab: 'Дублювати вкладку',
     },
     validation: {
         required: 'Обов\'язково',

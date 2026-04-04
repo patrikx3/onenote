@@ -3,10 +3,10 @@ const translation = {
     restart: '请稍等，应用程序正在重启',
     label: {
         darkThemeInvert: {
-          title: '开启暗黑模式 (使用反色)',
-          off: '关闭',
-          on: '开启',
-          system: '跟随系统',
+            title: '开启暗黑模式 (使用反色)',
+            off: '关闭',
+            on: '开启',
+            system: '跟随系统',
         },
         hideMenu: '隐藏菜单栏（按下Alt键显示）',
         optionToHideMenuState: {
@@ -14,14 +14,11 @@ const translation = {
         },
         donate: '捐赠',
         disableHide: {
-            //yes: 'Set the close button behaviour that will minimize to the tray instead of quitting',
-            //no: 'Set the close button behaviour as to really quit the app',
             checkbox: '关闭至托盘',
             message: {
                 yes: '按下关闭按钮会真正关闭这个应用',
                 no: '按下关闭按钮不会退出而是最小化应用至托盘',
-
-            }
+            },
         },
         optionToDisableInternalExternalPopup: '禁用内部 / 外部弹出窗口 (所有内部链接)',
         settings: '设置',
@@ -51,18 +48,24 @@ const translation = {
         hide: '隐藏',
         copyLocation: '复制页面地址至剪贴板',
         copyLocationCopied: '页面地址已经被复制到剪贴板',
-        //disallowedContent: 'Disallowed content! If not working, hang on, it will reset to the default home. (Max 5 seconds).',
-        //unknownLink: 'Hang on, it might change while loading to the destination. If this is not a OneNote page, free to click on the P3X OneNote menu home',
         back: '后退',
         forward: '前进',
         reportIssue: '报告问题 / 请求功能',
+        desktopNotifications: '启用桌面通知',
+        offlineNotice: '您已离线',
+        backOnline: '已恢复在线',
+        startOnLogin: '登录时启动',
+        exportSettings: '导出设置',
+        importSettings: '导入设置',
+        importSettingsWarning: '这将替换所有当前设置。您需要在每个标签页上重新登录。是否继续？',
+        settingsExported: '设置已导出。',
+        settingsImported: '设置已导入。正在重启...',
     },
     dialog: {
         info: '信息',
         openUrl: {
             info: '你可以访问任何URL',
             placeholder: '一个有效的URL',
-
         },
         minimizationBehavior: {
             title: '最小化表现',
@@ -73,7 +76,7 @@ const translation = {
             clear: '代理已经被关闭',
             set: (value) => {
                 return `代理已被设为 ${value}`
-            }
+            },
         },
         redirect: {
             url: (opts) => {
@@ -81,7 +84,7 @@ const translation = {
             },
             urlExternal: '外部',
             urlInternal: '内部',
-        }
+        },
     },
     button: {
         yes: '是',
@@ -114,11 +117,11 @@ const translation = {
                 zoomin: '放大文字',
                 zoomout: '缩小文字',
                 togglefullscreen: '全屏',
-            }
+            },
         },
         help: {
             title: '帮助',
-            checkUpdates: '检查更新'
+            checkUpdates: '检查更新',
         },
         language: {
             label: '语言 / Language',
@@ -159,7 +162,7 @@ const translation = {
                 'vi-VN': 'Tiếng Việt / Vietnamese',
                 'zh-CN': '简体中文 / Simplified Chinese',
                 'zh-TW': '繁體中文 / Traditional Chinese',
-            }
+            },
         },
     },
     redirecting: '请稍等，正在重定向至新笔记本，这会花费一些时间',
@@ -174,7 +177,7 @@ const translation = {
         'download-progress': (opts) => {
             return '已下载 ' + opts.progressObj.percent + '%'
         },
-        'update-downloaded': '更新已下载，重启应用以更新'
+        'update-downloaded': '更新已下载，重启应用以更新',
     },
     bookmarks: {
         title: '书签',
@@ -195,7 +198,7 @@ const translation = {
             url: 'URL',
             category: '文件夹',
             categoryPlaceholder: '例如：工作/项目（使用 / 表示子文件夹）',
-        }
+        },
     },
     tabs: {
         addTab: '添加标签页',
@@ -213,6 +216,7 @@ const translation = {
         unpinTab: '取消固定标签页',
         cannotClosePinned: '无法关闭固定的标签页。',
         confirmClose: (tabLabel) => `确定要关闭"${tabLabel}"吗？您将从此账户退出登录。`,
+        duplicateTab: '复制标签页',
     },
     validation: {
         required: 'Required',

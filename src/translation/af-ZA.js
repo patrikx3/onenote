@@ -3,10 +3,10 @@ const translation = {
     restart: 'Wag asseblief, die toepassing herbegin.',
     label: {
         darkThemeInvert: {
-          title: 'Aktiveer donker modus (gebruik omkeer)',
-          off: 'Af',
-          on: 'Aan',
-          system: 'Volg stelsel',
+            title: 'Aktiveer donker modus (gebruik omkeer)',
+            off: 'Af',
+            on: 'Aan',
+            system: 'Volg stelsel',
         },
         hideMenu: 'Versteek hoofkieslys (wys met ALT)',
         optionToHideMenuState: {
@@ -18,7 +18,7 @@ const translation = {
             message: {
                 yes: 'Die sluitknoppie sluit werklik die toepassing.',
                 no: 'Die sluitknoppie, in plaas van om te sluit, minimeer die toepassing na die stelselbalk.',
-            }
+            },
         },
         optionToDisableInternalExternalPopup: 'Deaktiveer Interne / Eksterne Opspring (alle skakels intern)',
         settings: 'Instellings',
@@ -51,6 +51,15 @@ const translation = {
         back: 'Terug',
         forward: 'Vorentoe',
         reportIssue: 'Rapporteer probleem / Versoek funksie',
+        desktopNotifications: 'Aktiveer lessenaarkennisgewings',
+        offlineNotice: 'Jy is vanlyn',
+        backOnline: 'Terug aanlyn',
+        startOnLogin: 'Begin by aanmelding',
+        exportSettings: 'Voer instellings uit',
+        importSettings: 'Voer instellings in',
+        importSettingsWarning: 'Dit sal alle huidige instellings vervang. Jy sal op elke oortjie weer moet aanmeld. Gaan voort?',
+        settingsExported: 'Instellings uitgevoer.',
+        settingsImported: 'Instellings ingevoer. Herbegin tans...',
     },
     dialog: {
         info: 'Info',
@@ -67,7 +76,7 @@ const translation = {
             clear: 'Die instaanbediener is afgeskakel.',
             set: (value) => {
                 return `Die instaanbediener is gestel as ${value}`
-            }
+            },
         },
         redirect: {
             url: (opts) => {
@@ -75,7 +84,7 @@ const translation = {
             },
             urlExternal: 'Ekstern',
             urlInternal: 'Intern',
-        }
+        },
     },
     button: {
         yes: 'Ja',
@@ -108,11 +117,11 @@ const translation = {
                 zoomin: 'Zoem in',
                 zoomout: 'Zoem uit',
                 togglefullscreen: 'Wissel volskerm',
-            }
+            },
         },
         help: {
             title: 'Hulp',
-            checkUpdates: 'Kyk vir opdaterings'
+            checkUpdates: 'Kyk vir opdaterings',
         },
         language: {
             label: 'Afrikaans / Language',
@@ -153,7 +162,7 @@ const translation = {
                 'vi-VN': 'Tiếng Việt / Vietnamese',
                 'zh-CN': '简体中文 / Simplified Chinese',
                 'zh-TW': '繁體中文 / Traditional Chinese',
-            }
+            },
         },
     },
     redirecting: 'Wag asseblief, herlei na \'n nuwe notaboek. Dit neem \'n rukkie...',
@@ -168,7 +177,7 @@ const translation = {
         'download-progress': (opts) => {
             return 'Afgelaai ' + opts.progressObj.percent + '%'
         },
-        'update-downloaded': 'Opdatering afgelaai. Jy kan die toepassing herbegin om op te dateer.'
+        'update-downloaded': 'Opdatering afgelaai. Jy kan die toepassing herbegin om op te dateer.',
     },
     bookmarks: {
         title: 'Boekmerke',
@@ -189,7 +198,7 @@ const translation = {
             url: 'URL',
             category: 'Vouer',
             categoryPlaceholder: 'bv. Werk/Projekte (gebruik / vir subvouers)',
-        }
+        },
     },
     tabs: {
         addTab: 'Voeg oortjie by',
@@ -207,6 +216,7 @@ const translation = {
         unpinTab: 'Maak oortjie los',
         cannotClosePinned: 'Kan nie n vasgespelde oortjie sluit nie.',
         confirmClose: (tabLabel) => `Is jy seker jy wil "${tabLabel}" sluit? Jy sal van hierdie rekening afgeteken word.`,
+        duplicateTab: 'Dupliseer oortjie',
     },
     validation: {
         required: 'Vereis',

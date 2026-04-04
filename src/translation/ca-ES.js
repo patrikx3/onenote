@@ -3,10 +3,10 @@ const translation = {
     restart: 'Si us plau, espereu, l\'aplicació s\'està reiniciant.',
     label: {
         darkThemeInvert: {
-          title: 'Activa el mode fosc (usant inversió)',
-          off: 'Desactivat',
-          on: 'Activat',
-          system: 'Seguir el sistema',
+            title: 'Activa el mode fosc (usant inversió)',
+            off: 'Desactivat',
+            on: 'Activat',
+            system: 'Seguir el sistema',
         },
         hideMenu: 'Amaga el menú principal (mostra amb ALT)',
         optionToHideMenuState: {
@@ -18,7 +18,7 @@ const translation = {
             message: {
                 yes: 'El botó de tancar realment tanca l\'aplicació.',
                 no: 'El botó de tancar, en lloc de sortir, minimitza l\'aplicació a la safata del sistema.',
-            }
+            },
         },
         optionToDisableInternalExternalPopup: 'Desactiva la finestra emergent Interna / Externa (tots els enllaços interns)',
         settings: 'Configuració',
@@ -51,6 +51,15 @@ const translation = {
         back: 'Enrere',
         forward: 'Endavant',
         reportIssue: 'Informar d\'un problema / Sol·licitar funció',
+        desktopNotifications: 'Activa les notificacions d\'escriptori',
+        offlineNotice: 'Esteu fora de línia',
+        backOnline: 'De nou en línia',
+        startOnLogin: 'Inicia en iniciar sessió',
+        exportSettings: 'Exporta la configuració',
+        importSettings: 'Importa la configuració',
+        importSettingsWarning: 'Això substituirà tota la configuració actual. Haureu de tornar a iniciar sessió a cada pestanya. Voleu continuar?',
+        settingsExported: 'Configuració exportada.',
+        settingsImported: 'Configuració importada. Reiniciant...',
     },
     dialog: {
         info: 'Info',
@@ -67,7 +76,7 @@ const translation = {
             clear: 'El proxy s\'ha desactivat.',
             set: (value) => {
                 return `El proxy s'ha establert com ${value}`
-            }
+            },
         },
         redirect: {
             url: (opts) => {
@@ -75,7 +84,7 @@ const translation = {
             },
             urlExternal: 'Extern',
             urlInternal: 'Intern',
-        }
+        },
     },
     button: {
         yes: 'Sí',
@@ -108,11 +117,11 @@ const translation = {
                 zoomin: 'Amplia',
                 zoomout: 'Redueix',
                 togglefullscreen: 'Commuta la pantalla completa',
-            }
+            },
         },
         help: {
             title: 'Ajuda',
-            checkUpdates: 'Comprova actualitzacions'
+            checkUpdates: 'Comprova actualitzacions',
         },
         language: {
             label: 'Català / Language',
@@ -153,7 +162,7 @@ const translation = {
                 'vi-VN': 'Tiếng Việt / Vietnamese',
                 'zh-CN': '简体中文 / Simplified Chinese',
                 'zh-TW': '繁體中文 / Traditional Chinese',
-            }
+            },
         },
     },
     redirecting: 'Espera, redirigint a una llibreta nova. Triga una estona...',
@@ -168,28 +177,28 @@ const translation = {
         'download-progress': (opts) => {
             return 'Descarregat ' + opts.progressObj.percent + '%'
         },
-        'update-downloaded': 'Actualització descarregada. Pots reiniciar l\'aplicació per actualitzar.'
+        'update-downloaded': 'Actualització descarregada. Pots reiniciar l\'aplicació per actualitzar.',
     },
     bookmarks: {
         title: 'Marcadors',
         add: 'Afegeix un marcador',
         edit: 'Edita els marcadors',
-        manager: "Gestiona les adreces d'interès",
-        managerSearch: "Cerca adreces d'interès...",
-        managerEmpty: "No s'han trobat adreces d'interès.",
+        manager: 'Gestiona les adreces d\'interès',
+        managerSearch: 'Cerca adreces d\'interès...',
+        managerEmpty: 'No s\'han trobat adreces d\'interès.',
         confirmDelete: 'Eliminar?',
-        exportBookmarks: "Exporta les adreces d'interès",
-        importBookmarks: "Importa les adreces d'interès",
-        exported: "Adreces d'interès exportades.",
+        exportBookmarks: 'Exporta les adreces d\'interès',
+        importBookmarks: 'Importa les adreces d\'interès',
+        exported: 'Adreces d\'interès exportades.',
         imported: (count) => `S'han importat ${count} adreces d'interès.`,
-        exportTitle: "Exporta les adreces d'interès",
-        importTitle: "Importa les adreces d'interès",
+        exportTitle: 'Exporta les adreces d\'interès',
+        importTitle: 'Importa les adreces d\'interès',
         form: {
             title: 'Títol',
             url: 'URL',
             category: 'Carpeta',
             categoryPlaceholder: 'p.ex. Feina/Projectes (usa / per subcarpetes)',
-        }
+        },
     },
     tabs: {
         addTab: 'Afegeix pestanya',
@@ -207,6 +216,7 @@ const translation = {
         unpinTab: 'Desfixa la pestanya',
         cannotClosePinned: 'No es pot tancar una pestanya fixada.',
         confirmClose: (tabLabel) => `Esteu segur que voleu tancar "${tabLabel}"? Es tancarà la sessió d'aquest compte.`,
+        duplicateTab: 'Duplicar pestanya',
     },
     validation: {
         required: 'Obligatori',

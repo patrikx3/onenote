@@ -4,9 +4,9 @@ const translation = {
     label: {
         darkThemeInvert: {
             title: 'ダークモードを有効にする（色の反転）',
-          off: 'オフ',
-          on: 'オン',
-          system: 'システムに従う',
+            off: 'オフ',
+            on: 'オン',
+            system: 'システムに従う',
         },
         hideMenu: 'メインメニューを隠す（Altキーで表示）',
         optionToHideMenuState: {
@@ -14,14 +14,11 @@ const translation = {
         },
         donate: '寄付',
         disableHide: {
-            //yes: '閉じるボタンの動作を設定し、終了する代わりにトレイに最小化します',
-            //no: '閉じるボタンの動作を設定し、アプリを終了します',
             checkbox: 'メニューバーにアプリを常駐させる',
             message: {
                 yes: '閉じるボタンはアプリを終了するようになります。',
                 no: '閉じるボタンは、終了せずアプリをメニューバーへしまいます。',
-
-            }
+            },
         },
         optionToDisableInternalExternalPopup: 'リンクのポップアップ確認を無効にする（全て内部リンク扱いにする）',
         settings: '設定',
@@ -51,18 +48,24 @@ const translation = {
         hide: '隠す',
         copyLocation: 'URLをクリップボードにコピーする',
         copyLocationCopied: 'URLがクリップボードにコピーされました。',
-        //disallowedContent: '許可されていないコンテンツです！ 動作しない場合は、リセットしてデフォルトのホームに戻します。 （最大5秒）。',
-        //unknownLink: 'しばらくお待ちください。 ロード中に変更される可能性があります。 これがOneNoteページでない場合は、P3X OneNoteメニューホームをクリックしてください',
         back: '戻る',
         forward: '前へ',
         reportIssue: '問題を報告 / 機能をリクエスト',
+        desktopNotifications: 'デスクトップ通知を有効にする',
+        offlineNotice: 'オフラインです',
+        backOnline: 'オンラインに復帰しました',
+        startOnLogin: 'ログイン時に起動',
+        exportSettings: '設定をエクスポート',
+        importSettings: '設定をインポート',
+        importSettingsWarning: '現在のすべての設定が置き換えられます。各タブで再ログインが必要になります。続行しますか？',
+        settingsExported: '設定をエクスポートしました。',
+        settingsImported: '設定をインポートしました。再起動しています...',
     },
     dialog: {
         info: '情報',
         openUrl: {
             info: '任意のURLに移動できます',
             placeholder: '有効なURL',
-
         },
         minimizationBehavior: {
             title: '最小化の動作',
@@ -73,7 +76,7 @@ const translation = {
             clear: 'プロキシ設定を無効にしました。',
             set: (value) => {
                 return `プロキシを${value}に設定しました。`
-            }
+            },
         },
         redirect: {
             url: (opts) => {
@@ -81,7 +84,7 @@ const translation = {
             },
             urlExternal: '外部アプリ',
             urlInternal: 'アプリ内',
-        }
+        },
     },
     button: {
         yes: 'はい',
@@ -114,11 +117,11 @@ const translation = {
                 zoomin: '拡大',
                 zoomout: '縮小',
                 togglefullscreen: 'フルスクリーンの表示切り替え',
-            }
+            },
         },
         help: {
             title: 'ヘルプ',
-            checkUpdates: '更新を確認する'
+            checkUpdates: '更新を確認する',
         },
         language: {
             label: '言語 / Language',
@@ -159,7 +162,7 @@ const translation = {
                 'vi-VN': 'Tiếng Việt / Vietnamese',
                 'zh-CN': '简体中文 / Simplified Chinese',
                 'zh-TW': '繁體中文 / Traditional Chinese',
-            }
+            },
         },
     },
     redirecting: 'しばらくお待ちください。 新しいノートブックにリダイレクトしています。 少し時間がかかります...',
@@ -174,7 +177,7 @@ const translation = {
         'download-progress': (opts) => {
             return opts.progressObj.percent + '%ダウンロード済み'
         },
-        'update-downloaded': '更新がダウンロードされました。 アプリを再起動して更新できます。'
+        'update-downloaded': '更新がダウンロードされました。 アプリを再起動して更新できます。',
     },
     bookmarks: {
         title: 'ブックマーク',
@@ -195,7 +198,7 @@ const translation = {
             url: 'URL',
             category: 'フォルダ',
             categoryPlaceholder: '例: 仕事/プロジェクト（サブフォルダには/を使用）',
-        }
+        },
     },
     tabs: {
         addTab: 'タブを追加',
@@ -213,6 +216,7 @@ const translation = {
         unpinTab: 'タブの固定を解除',
         cannotClosePinned: '固定されたタブは閉じられません。',
         confirmClose: (tabLabel) => `「${tabLabel}」を閉じてもよろしいですか？このアカウントからサインアウトされます。`,
+        duplicateTab: 'タブを複製',
     },
     validation: {
         required: '必須項目です。',

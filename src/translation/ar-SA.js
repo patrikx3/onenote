@@ -3,10 +3,10 @@ const translation = {
     restart: 'يرجى الانتظار، التطبيق يعيد التشغيل.',
     label: {
         darkThemeInvert: {
-          title: 'تفعيل الوضع الداكن (باستخدام العكس)',
-          off: 'إيقاف',
-          on: 'تشغيل',
-          system: 'اتباع النظام',
+            title: 'تفعيل الوضع الداكن (باستخدام العكس)',
+            off: 'إيقاف',
+            on: 'تشغيل',
+            system: 'اتباع النظام',
         },
         hideMenu: 'إخفاء القائمة الرئيسية (إظهار بمفتاح ALT)',
         optionToHideMenuState: {
@@ -18,7 +18,7 @@ const translation = {
             message: {
                 yes: 'زر الإغلاق يغلق التطبيق فعلياً.',
                 no: 'زر الإغلاق، بدلاً من الإنهاء، يصغّر التطبيق إلى شريط النظام.',
-            }
+            },
         },
         optionToDisableInternalExternalPopup: 'تعطيل النافذة المنبثقة الداخلية / الخارجية (جميع الروابط داخلية)',
         settings: 'الإعدادات',
@@ -51,6 +51,15 @@ const translation = {
         back: 'رجوع',
         forward: 'تقدم',
         reportIssue: 'الإبلاغ عن مشكلة / طلب ميزة',
+        desktopNotifications: 'تفعيل إشعارات سطح المكتب',
+        offlineNotice: 'أنت غير متصل بالإنترنت',
+        backOnline: 'عدت متصلاً بالإنترنت',
+        startOnLogin: 'البدء عند تسجيل الدخول',
+        exportSettings: 'تصدير الإعدادات',
+        importSettings: 'استيراد الإعدادات',
+        importSettingsWarning: 'سيؤدي هذا إلى استبدال جميع الإعدادات الحالية. ستحتاج إلى إعادة تسجيل الدخول في كل علامة تبويب. هل تريد المتابعة؟',
+        settingsExported: 'تم تصدير الإعدادات.',
+        settingsImported: 'تم استيراد الإعدادات. جارٍ إعادة التشغيل...',
     },
     dialog: {
         info: 'Info',
@@ -67,7 +76,7 @@ const translation = {
             clear: 'تم إيقاف الوكيل.',
             set: (value) => {
                 return `تم تعيين الوكيل كـ ${value}`
-            }
+            },
         },
         redirect: {
             url: (opts) => {
@@ -75,7 +84,7 @@ const translation = {
             },
             urlExternal: 'خارجي',
             urlInternal: 'داخلي',
-        }
+        },
     },
     button: {
         yes: 'نعم',
@@ -108,11 +117,11 @@ const translation = {
                 zoomin: 'تكبير',
                 zoomout: 'تصغير',
                 togglefullscreen: 'تبديل ملء الشاشة',
-            }
+            },
         },
         help: {
             title: 'مساعدة',
-            checkUpdates: 'التحقق من التحديثات'
+            checkUpdates: 'التحقق من التحديثات',
         },
         language: {
             label: 'العربية / Language',
@@ -153,7 +162,7 @@ const translation = {
                 'vi-VN': 'Tiếng Việt / Vietnamese',
                 'zh-CN': '简体中文 / Simplified Chinese',
                 'zh-TW': '繁體中文 / Traditional Chinese',
-            }
+            },
         },
     },
     redirecting: 'انتظر، جارٍ إعادة التوجيه إلى دفتر ملاحظات جديد. يستغرق الأمر بعض الوقت...',
@@ -168,7 +177,7 @@ const translation = {
         'download-progress': (opts) => {
             return 'تم التنزيل ' + opts.progressObj.percent + '%'
         },
-        'update-downloaded': 'تم تنزيل التحديث. يمكنك إعادة تشغيل التطبيق للتحديث.'
+        'update-downloaded': 'تم تنزيل التحديث. يمكنك إعادة تشغيل التطبيق للتحديث.',
     },
     bookmarks: {
         title: 'الإشارات المرجعية',
@@ -189,7 +198,7 @@ const translation = {
             url: 'URL',
             category: 'مجلد',
             categoryPlaceholder: 'مثال: عمل/مشاريع (استخدم / للمجلدات الفرعية)',
-        }
+        },
     },
     tabs: {
         addTab: 'إضافة علامة تبويب',
@@ -207,6 +216,7 @@ const translation = {
         unpinTab: 'إلغاء تثبيت علامة التبويب',
         cannotClosePinned: 'لا يمكن إغلاق علامة تبويب مثبتة.',
         confirmClose: (tabLabel) => `هل أنت متأكد أنك تريد إغلاق "${tabLabel}"؟ سيتم تسجيل خروجك من هذا الحساب.`,
+        duplicateTab: 'تكرار علامة التبويب',
     },
     validation: {
         required: 'مطلوب',

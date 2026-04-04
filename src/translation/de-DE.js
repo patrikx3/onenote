@@ -4,9 +4,9 @@ const translation = {
     label: {
         darkThemeInvert: {
             title: 'Aktivieren Sie den Dunkelmodus (mit invertieren)',
-          off: 'Aus',
-          on: 'Ein',
-          system: 'System folgen',
+            off: 'Aus',
+            on: 'Ein',
+            system: 'System folgen',
         },
         hideMenu: 'Hauptmenü ausblenden (mit ALT anzeigen)',
         optionToHideMenuState: {
@@ -14,14 +14,11 @@ const translation = {
         },
         donate: 'Spenden',
         disableHide: {
-            //yes: 'Set the close button behaviour that will minimize to the tray instead of quitting',
-            //no: 'Set the close button behaviour as to really quit the app',
             checkbox: 'Schließen-Knopf Einstellung',
             message: {
                 yes: 'Schließen-Knopf beendet die Anwendung.',
                 no: 'Schließen-Knopf minimiert die Anwendung.',
-
-            }
+            },
         },
         optionToDisableInternalExternalPopup: 'Deaktivere Popup beim öffnen externener Links (alle Links intern öffnen)',
         settings: 'Einstellungen',
@@ -51,18 +48,24 @@ const translation = {
         hide: 'Minimieren',
         copyLocation: 'Speicherort in Zwischenablage kopieren',
         copyLocationCopied: 'Speicherort in Zwischenablage kopiert.',
-        //disallowedContent: 'Disallowed content! If not working, hang on, it will reset to the default home. (Max 5 seconds).',
-        //unknownLink: 'Hang on, it might change while loading to the destination. If this is not a OneNote page, free to click on the P3X OneNote menu home'
         back: 'Zurück',
         forward: 'Weiter',
         reportIssue: 'Problem melden / Funktion anfragen',
+        desktopNotifications: 'Desktop-Benachrichtigungen aktivieren',
+        offlineNotice: 'Sie sind offline',
+        backOnline: 'Wieder online',
+        startOnLogin: 'Bei Anmeldung starten',
+        exportSettings: 'Einstellungen exportieren',
+        importSettings: 'Einstellungen importieren',
+        importSettingsWarning: 'Dies ersetzt alle aktuellen Einstellungen. Sie müssen sich in jedem Tab erneut anmelden. Fortfahren?',
+        settingsExported: 'Einstellungen exportiert.',
+        settingsImported: 'Einstellungen importiert. Neustart...',
     },
     dialog: {
         info: 'Info',
         openUrl: {
             info: 'Sie können zu jeder gewünschten URL gelangen',
             placeholder: 'Eine gültige URL',
-
         },
         minimizationBehavior: {
             title: 'Minimiere Einstellungen',
@@ -73,7 +76,7 @@ const translation = {
             clear: 'Der Proxy ist deaktiviert.',
             set: (value) => {
                 return `Proxyserver-Adresse ist ${value}`
-            }
+            },
         },
         redirect: {
             url: (opts) => {
@@ -81,7 +84,7 @@ const translation = {
             },
             urlExternal: 'Extern',
             urlInternal: 'Intern',
-        }
+        },
     },
     button: {
         yes: 'Ja',
@@ -114,11 +117,11 @@ const translation = {
                 zoomin: 'Vergrößern',
                 zoomout: 'Verkleinern',
                 togglefullscreen: 'Vollbild',
-            }
+            },
         },
         help: {
             title: 'Hilfe',
-            checkUpdates: 'Auf Updates prüfen'
+            checkUpdates: 'Auf Updates prüfen',
         },
         language: {
             label: 'Sprache / Language',
@@ -174,7 +177,7 @@ const translation = {
         'download-progress': (opts) => {
             return 'Heruntergeladen ' + opts.progressObj.percent + '%'
         },
-        'update-downloaded': 'Aktuellste Version heruntergeladen. Neustarten um den Updatevorgang abzuschließen.'
+        'update-downloaded': 'Aktuellste Version heruntergeladen. Neustarten um den Updatevorgang abzuschließen.',
     },
     bookmarks: {
         title: 'Lesezeichen',
@@ -195,7 +198,7 @@ const translation = {
             url: 'URL',
             category: 'Ordner',
             categoryPlaceholder: 'z.B. Arbeit/Projekte (/ für Unterordner)',
-        }
+        },
     },
     tabs: {
         addTab: 'Tab hinzufügen',
@@ -213,6 +216,7 @@ const translation = {
         unpinTab: 'Tab lösen',
         cannotClosePinned: 'Ein angehefteter Tab kann nicht geschlossen werden.',
         confirmClose: (tabLabel) => `Möchten Sie „${tabLabel}" wirklich schließen? Sie werden von diesem Konto abgemeldet.`,
+        duplicateTab: 'Tab duplizieren',
     },
     validation: {
         required: 'Erforderlich',

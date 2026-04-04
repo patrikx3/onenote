@@ -3,10 +3,10 @@ const translation = {
     restart: 'Παρακαλώ περιμένετε, η εφαρμογή επανεκκινείται.',
     label: {
         darkThemeInvert: {
-          title: 'Ενεργοποίηση σκοτεινής λειτουργίας (χρήση αντιστροφής)',
-          off: 'Ανενεργό',
-          on: 'Ενεργό',
-          system: 'Ακολουθεί σύστημα',
+            title: 'Ενεργοποίηση σκοτεινής λειτουργίας (χρήση αντιστροφής)',
+            off: 'Ανενεργό',
+            on: 'Ενεργό',
+            system: 'Ακολουθεί σύστημα',
         },
         hideMenu: 'Απόκρυψη κύριου μενού (εμφάνιση με ALT)',
         optionToHideMenuState: {
@@ -18,7 +18,7 @@ const translation = {
             message: {
                 yes: 'Το κουμπί κλεισίματος κλείνει πραγματικά την εφαρμογή.',
                 no: 'Το κουμπί κλεισίματος, αντί να τερματίσει, ελαχιστοποιεί την εφαρμογή στην περιοχή ειδοποιήσεων.',
-            }
+            },
         },
         optionToDisableInternalExternalPopup: 'Απενεργοποίηση αναδυόμενου παραθύρου Εσωτερικό / Εξωτερικό (όλοι οι σύνδεσμοι εσωτερικοί)',
         settings: 'Ρυθμίσεις',
@@ -51,6 +51,15 @@ const translation = {
         back: 'Πίσω',
         forward: 'Εμπρός',
         reportIssue: 'Αναφορά προβλήματος / Αίτημα λειτουργίας',
+        desktopNotifications: 'Ενεργοποίηση ειδοποιήσεων επιφάνειας εργασίας',
+        offlineNotice: 'Είστε εκτός σύνδεσης',
+        backOnline: 'Επιστροφή σε σύνδεση',
+        startOnLogin: 'Εκκίνηση κατά τη σύνδεση',
+        exportSettings: 'Εξαγωγή ρυθμίσεων',
+        importSettings: 'Εισαγωγή ρυθμίσεων',
+        importSettingsWarning: 'Αυτό θα αντικαταστήσει όλες τις τρέχουσες ρυθμίσεις. Θα χρειαστεί να συνδεθείτε ξανά σε κάθε καρτέλα. Συνέχεια;',
+        settingsExported: 'Οι ρυθμίσεις εξήχθησαν.',
+        settingsImported: 'Οι ρυθμίσεις εισήχθησαν. Επανεκκίνηση...',
     },
     dialog: {
         info: 'Info',
@@ -67,7 +76,7 @@ const translation = {
             clear: 'Το proxy απενεργοποιήθηκε.',
             set: (value) => {
                 return `Το proxy ορίστηκε ως ${value}`
-            }
+            },
         },
         redirect: {
             url: (opts) => {
@@ -75,7 +84,7 @@ const translation = {
             },
             urlExternal: 'Εξωτερικό',
             urlInternal: 'Εσωτερικό',
-        }
+        },
     },
     button: {
         yes: 'Ναι',
@@ -108,11 +117,11 @@ const translation = {
                 zoomin: 'Μεγέθυνση',
                 zoomout: 'Σμίκρυνση',
                 togglefullscreen: 'Εναλλαγή πλήρους οθόνης',
-            }
+            },
         },
         help: {
             title: 'Βοήθεια',
-            checkUpdates: 'Έλεγχος ενημερώσεων'
+            checkUpdates: 'Έλεγχος ενημερώσεων',
         },
         language: {
             label: 'Ελληνικά / Language',
@@ -153,7 +162,7 @@ const translation = {
                 'vi-VN': 'Tiếng Việt / Vietnamese',
                 'zh-CN': '简体中文 / Simplified Chinese',
                 'zh-TW': '繁體中文 / Traditional Chinese',
-            }
+            },
         },
     },
     redirecting: 'Περιμένετε, ανακατεύθυνση σε νέο σημειωματάριο. Χρειάζεται λίγο χρόνο...',
@@ -168,7 +177,7 @@ const translation = {
         'download-progress': (opts) => {
             return 'Λήφθηκε ' + opts.progressObj.percent + '%'
         },
-        'update-downloaded': 'Η ενημέρωση λήφθηκε. Μπορείτε να επανεκκινήσετε την εφαρμογή για ενημέρωση.'
+        'update-downloaded': 'Η ενημέρωση λήφθηκε. Μπορείτε να επανεκκινήσετε την εφαρμογή για ενημέρωση.',
     },
     bookmarks: {
         title: 'Σελιδοδείκτες',
@@ -189,7 +198,7 @@ const translation = {
             url: 'URL',
             category: 'Φάκελος',
             categoryPlaceholder: 'π.χ. Εργασία/Έργα (/ για υποφακέλους)',
-        }
+        },
     },
     tabs: {
         addTab: 'Προσθήκη καρτέλας',
@@ -207,6 +216,7 @@ const translation = {
         unpinTab: 'Ξεκαρφίτσωμα καρτέλας',
         cannotClosePinned: 'Δεν είναι δυνατό το κλείσιμο καρφιτσωμένης καρτέλας.',
         confirmClose: (tabLabel) => `Είστε σίγουροι ότι θέλετε να κλείσετε το "${tabLabel}"; Θα αποσυνδεθείτε από αυτόν τον λογαριασμό.`,
+        duplicateTab: 'Διπλότυπη καρτέλα',
     },
     validation: {
         required: 'Απαιτείται',

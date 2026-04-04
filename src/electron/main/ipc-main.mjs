@@ -2,6 +2,7 @@ import { ipcMain, dialog } from 'electron'
 import { writeFile, readFile } from 'fs/promises'
 import naturalCompareDocument from '../lib/natural-compare-document.mjs'
 import registry from '../registry.mjs'
+import notify from './notify.mjs'
 
 ipcMain.on('did-finish-load', function () {
     const toWebview = registry.conf.get('webview-onenote');
@@ -88,4 +89,46 @@ ipcMain.handle('p3x-onenote-bookmarks-import', async () => {
     registry.mainMenu()
     registry.mainTray()
     return { success: true, added }
+})
+
+ipcMain.handle('p3x-onenote-settings-export', async () => {
+    const allConfig = registry.conf.store
+    const result = await dialog.showSaveDialog(registry.window.onenote, {
+        title: registry.lang.label?.exportSettings || 'Export settings',
+        defaultPath: 'p3x-onenote-settings.json',
+        filters: [{ name: 'JSON', extensions: ['json'] }],
+    })
+    if (result.canceled || !result.filePath) return { success: false }
+    await writeFile(result.filePath, JSON.stringify(allConfig, null, 2), 'utf-8')
+    return { success: true }
+})
+
+ipcMain.handle('p3x-onenote-settings-import', async () => {
+    const lang = registry.lang
+    const confirmResult = await dialog.showMessageBox(registry.window.onenote, {
+        type: 'warning',
+        title: lang.label?.importSettings || 'Import settings',
+        message: lang.label?.importSettingsWarning || 'This will replace all current settings. You will need to re-login on each tab. Continue?',
+        buttons: [lang.button?.yes || 'Yes', lang.button?.cancel || 'Cancel'],
+        defaultId: 1,
+        cancelId: 1,
+    })
+    if (confirmResult.response !== 0) return { success: false }
+
+    const result = await dialog.showOpenDialog(registry.window.onenote, {
+        title: lang.label?.importSettings || 'Import settings',
+        filters: [{ name: 'JSON', extensions: ['json'] }],
+        properties: ['openFile'],
+    })
+    if (result.canceled || !result.filePaths || result.filePaths.length === 0) return { success: false }
+
+    const content = await readFile(result.filePaths[0], 'utf-8')
+    const imported = JSON.parse(content)
+    if (!imported || typeof imported !== 'object') return { success: false }
+
+    // Validate it looks like a p3x-onenote config
+    if (!imported.tabs && !imported.bookmarks) return { success: false }
+
+    registry.conf.store = imported
+    return { success: true }
 })

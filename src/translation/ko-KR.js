@@ -3,10 +3,10 @@ const translation = {
     restart: '잠시만 기다려 주세요, 애플리케이션이 다시 시작됩니다.',
     label: {
         darkThemeInvert: {
-          title: '다크 모드 활성화 (반전 사용)',
-          off: '끄기',
-          on: '켜기',
-          system: '시스템 설정 따르기',
+            title: '다크 모드 활성화 (반전 사용)',
+            off: '끄기',
+            on: '켜기',
+            system: '시스템 설정 따르기',
         },
         hideMenu: '메인 메뉴 숨기기 (ALT로 표시)',
         optionToHideMenuState: {
@@ -18,7 +18,7 @@ const translation = {
             message: {
                 yes: '닫기 버튼이 실제로 앱을 종료합니다.',
                 no: '닫기 버튼은 종료 대신 앱을 트레이로 최소화합니다.',
-            }
+            },
         },
         optionToDisableInternalExternalPopup: '내부 / 외부 팝업 비활성화 (모든 링크 내부)',
         settings: '설정',
@@ -51,6 +51,15 @@ const translation = {
         back: '뒤로',
         forward: '앞으로',
         reportIssue: '문제 보고 / 기능 요청',
+        desktopNotifications: '데스크톱 알림 활성화',
+        offlineNotice: '오프라인 상태입니다',
+        backOnline: '온라인으로 복귀',
+        startOnLogin: '로그인 시 시작',
+        exportSettings: '설정 내보내기',
+        importSettings: '설정 가져오기',
+        importSettingsWarning: '현재 모든 설정이 대체됩니다. 각 탭에서 다시 로그인해야 합니다. 계속하시겠습니까?',
+        settingsExported: '설정을 내보냈습니다.',
+        settingsImported: '설정을 가져왔습니다. 다시 시작하는 중...',
     },
     dialog: {
         info: 'Info',
@@ -67,7 +76,7 @@ const translation = {
             clear: '프록시가 꺼졌습니다.',
             set: (value) => {
                 return `프록시가 ${value}(으)로 설정되었습니다`
-            }
+            },
         },
         redirect: {
             url: (opts) => {
@@ -75,7 +84,7 @@ const translation = {
             },
             urlExternal: '외부',
             urlInternal: '내부',
-        }
+        },
     },
     button: {
         yes: '예',
@@ -108,11 +117,11 @@ const translation = {
                 zoomin: '확대',
                 zoomout: '축소',
                 togglefullscreen: '전체 화면 전환',
-            }
+            },
         },
         help: {
             title: '도움말',
-            checkUpdates: '업데이트 확인'
+            checkUpdates: '업데이트 확인',
         },
         language: {
             label: '한국어 / Language',
@@ -153,7 +162,7 @@ const translation = {
                 'vi-VN': 'Tiếng Việt / Vietnamese',
                 'zh-CN': '简体中文 / Simplified Chinese',
                 'zh-TW': '繁體中文 / Traditional Chinese',
-            }
+            },
         },
     },
     redirecting: '잠시만 기다려 주세요, 새 노트북으로 리디렉션 중입니다. 시간이 좀 걸립니다...',
@@ -168,7 +177,7 @@ const translation = {
         'download-progress': (opts) => {
             return '다운로드됨 ' + opts.progressObj.percent + '%'
         },
-        'update-downloaded': '업데이트가 다운로드되었습니다. 앱을 다시 시작하여 업데이트할 수 있습니다.'
+        'update-downloaded': '업데이트가 다운로드되었습니다. 앱을 다시 시작하여 업데이트할 수 있습니다.',
     },
     bookmarks: {
         title: '북마크',
@@ -189,7 +198,7 @@ const translation = {
             url: 'URL',
             category: '폴더',
             categoryPlaceholder: '예: 업무/프로젝트 (하위 폴더는 / 사용)',
-        }
+        },
     },
     tabs: {
         addTab: '탭 추가',
@@ -207,6 +216,7 @@ const translation = {
         unpinTab: '탭 고정 해제',
         cannotClosePinned: '고정된 탭은 닫을 수 없습니다.',
         confirmClose: (tabLabel) => `"${tabLabel}"을(를) 닫으시겠습니까? 이 계정에서 로그아웃됩니다.`,
+        duplicateTab: '탭 복제',
     },
     validation: {
         required: '필수',

@@ -3,10 +3,10 @@ const translation = {
     restart: '請稍等，程式正在重新啟動',
     label: {
         darkThemeInvert: {
-          title: '使用深色模式 (using invert)',
-          off: '關閉',
-          on: '開啟',
-          system: '跟隨系統',
+            title: '使用深色模式 (using invert)',
+            off: '關閉',
+            on: '開啟',
+            system: '跟隨系統',
         },
         hideMenu: '隱藏主選單 (按ALT鍵顯示)',
         optionToHideMenuState: {
@@ -14,14 +14,11 @@ const translation = {
         },
         donate: '捐助',
         disableHide: {
-            //yes: 'Set the close button behaviour that will minimize to the tray instead of quitting',
-            //no: 'Set the close button behaviour as to really quit the app',
             checkbox: '最小化',
             message: {
                 yes: '按關閉扭，即關閉程式',
                 no: '按關閉扭，最小化',
-
-            }
+            },
         },
         optionToDisableInternalExternalPopup: 'Disable Internal / External Popup (all link internal)',
         settings: '設定',
@@ -51,18 +48,24 @@ const translation = {
         hide: '隱藏',
         copyLocation: '複製當前頁面路徑到剪貼簿',
         copyLocationCopied: '已複製當前頁面路徑到剪貼簿',
-        //disallowedContent: 'Disallowed content! If not working, hang on, it will reset to the default home. (Max 5 seconds).',
-        //unknownLink: 'Hang on, it might change while loading to the destination. If this is not a OneNote page, free to click on the P3X OneNote menu home',
         back: 'Back',
         forward: 'Forward',
         reportIssue: '回報問題 / 請求功能',
+        desktopNotifications: '啟用桌面通知',
+        offlineNotice: '您已離線',
+        backOnline: '已恢復連線',
+        startOnLogin: '登入時啟動',
+        exportSettings: '匯出設定',
+        importSettings: '匯入設定',
+        importSettingsWarning: '這將會取代所有目前的設定。您需要在每個分頁重新登入。是否繼續？',
+        settingsExported: '設定已匯出。',
+        settingsImported: '設定已匯入。正在重新啟動...',
     },
     dialog: {
         info: 'Info',
         openUrl: {
             info: '你可以開啟任意想要開啟的網址',
             placeholder: '一個有效網址',
-
         },
         minimizationBehavior: {
             title: '最小化行為',
@@ -73,7 +76,7 @@ const translation = {
             clear: '代理伺服器被關閉',
             set: (value) => {
                 return `代理伺服器設定為 ${value}`
-            }
+            },
         },
         redirect: {
             url: (opts) => {
@@ -81,7 +84,7 @@ const translation = {
             },
             urlExternal: 'External',
             urlInternal: 'Internal',
-        }
+        },
     },
     button: {
         yes: '是',
@@ -114,11 +117,11 @@ const translation = {
                 zoomin: '放大',
                 zoomout: '縮小',
                 togglefullscreen: '使用全螢幕模式',
-            }
+            },
         },
         help: {
             title: 'Help',
-            checkUpdates: '檢查更新'
+            checkUpdates: '檢查更新',
         },
         language: {
             label: '語言 / Language',
@@ -159,7 +162,7 @@ const translation = {
                 'vi-VN': 'Tiếng Việt / Vietnamese',
                 'zh-CN': '简体中文 / Simplified Chinese',
                 'zh-TW': '繁體中文 / Traditional Chinese',
-            }
+            },
         },
     },
     redirecting: '請稍等，正在導至新的筆記本需要再一些時間...',
@@ -174,7 +177,7 @@ const translation = {
         'download-progress': (opts) => {
             return '下載 ' + opts.progressObj.percent + '%'
         },
-        'update-downloaded': '更信下載完畢，請重新啟動套用'
+        'update-downloaded': '更信下載完畢，請重新啟動套用',
     },
     bookmarks: {
         title: '書籤',
@@ -195,7 +198,7 @@ const translation = {
             url: 'URL',
             category: '資料夾',
             categoryPlaceholder: '例如：工作/專案（使用 / 表示子資料夾）',
-        }
+        },
     },
     tabs: {
         addTab: '新增分頁',
@@ -213,6 +216,7 @@ const translation = {
         unpinTab: '取消釘選分頁',
         cannotClosePinned: '無法關閉釘選的分頁。',
         confirmClose: (tabLabel) => `確定要關閉「${tabLabel}」嗎？您將從此帳戶登出。`,
+        duplicateTab: '複製分頁',
     },
     validation: {
         required: 'Required',

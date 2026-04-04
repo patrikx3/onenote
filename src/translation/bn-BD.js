@@ -3,10 +3,10 @@ const translation = {
     restart: 'অনুগ্রহ করে অপেক্ষা করুন, অ্যাপ্লিকেশনটি পুনরায় চালু হচ্ছে।',
     label: {
         darkThemeInvert: {
-          title: 'ডার্ক মোড সক্রিয় করুন (ইনভার্ট ব্যবহার করে)',
-          off: 'বন্ধ',
-          on: 'চালু',
-          system: 'সিস্টেম অনুসরণ',
+            title: 'ডার্ক মোড সক্রিয় করুন (ইনভার্ট ব্যবহার করে)',
+            off: 'বন্ধ',
+            on: 'চালু',
+            system: 'সিস্টেম অনুসরণ',
         },
         hideMenu: 'প্রধান মেনু লুকান (ALT দিয়ে দেখান)',
         optionToHideMenuState: {
@@ -18,7 +18,7 @@ const translation = {
             message: {
                 yes: 'বন্ধ বোতামটি সত্যিই অ্যাপটি বন্ধ করে।',
                 no: 'বন্ধ বোতামটি, বন্ধ করার পরিবর্তে, অ্যাপটিকে ট্রেতে ছোট করে।',
-            }
+            },
         },
         optionToDisableInternalExternalPopup: 'অভ্যন্তরীণ / বাহ্যিক পপআপ নিষ্ক্রিয় করুন (সমস্ত লিংক অভ্যন্তরীণ)',
         settings: 'সেটিংস',
@@ -51,6 +51,15 @@ const translation = {
         back: 'পিছনে',
         forward: 'সামনে',
         reportIssue: 'সমস্যা রিপোর্ট / বৈশিষ্ট্য অনুরোধ',
+        desktopNotifications: 'ডেস্কটপ বিজ্ঞপ্তি সক্রিয় করুন',
+        offlineNotice: 'আপনি অফলাইনে আছেন',
+        backOnline: 'আবার অনলাইনে',
+        startOnLogin: 'লগইনে শুরু করুন',
+        exportSettings: 'সেটিংস এক্সপোর্ট করুন',
+        importSettings: 'সেটিংস ইম্পোর্ট করুন',
+        importSettingsWarning: 'এটি সমস্ত বর্তমান সেটিংস প্রতিস্থাপন করবে। আপনাকে প্রতিটি ট্যাবে পুনরায় লগইন করতে হবে। চালিয়ে যেতে চান?',
+        settingsExported: 'সেটিংস এক্সপোর্ট করা হয়েছে।',
+        settingsImported: 'সেটিংস ইম্পোর্ট করা হয়েছে। পুনরায় চালু হচ্ছে...',
     },
     dialog: {
         info: 'Info',
@@ -67,7 +76,7 @@ const translation = {
             clear: 'প্রক্সি বন্ধ করা হয়েছে।',
             set: (value) => {
                 return `প্রক্সি ${value} হিসেবে সেট করা হয়েছে`
-            }
+            },
         },
         redirect: {
             url: (opts) => {
@@ -75,7 +84,7 @@ const translation = {
             },
             urlExternal: 'বাহ্যিক',
             urlInternal: 'অভ্যন্তরীণ',
-        }
+        },
     },
     button: {
         yes: 'হ্যাঁ',
@@ -108,11 +117,11 @@ const translation = {
                 zoomin: 'জুম ইন',
                 zoomout: 'জুম আউট',
                 togglefullscreen: 'পূর্ণ স্ক্রিন টগল করুন',
-            }
+            },
         },
         help: {
             title: 'সাহায্য',
-            checkUpdates: 'আপডেট পরীক্ষা করুন'
+            checkUpdates: 'আপডেট পরীক্ষা করুন',
         },
         language: {
             label: 'বাংলা / Language',
@@ -153,7 +162,7 @@ const translation = {
                 'vi-VN': 'Tiếng Việt / Vietnamese',
                 'zh-CN': '简体中文 / Simplified Chinese',
                 'zh-TW': '繁體中文 / Traditional Chinese',
-            }
+            },
         },
     },
     redirecting: 'অপেক্ষা করুন, একটি নতুন নোটবুকে পুনঃনির্দেশ করা হচ্ছে। এতে কিছু সময় লাগে...',
@@ -168,7 +177,7 @@ const translation = {
         'download-progress': (opts) => {
             return 'ডাউনলোড হয়েছে ' + opts.progressObj.percent + '%'
         },
-        'update-downloaded': 'আপডেট ডাউনলোড হয়েছে। আপডেট করতে আপনি অ্যাপটি পুনরায় চালু করতে পারেন।'
+        'update-downloaded': 'আপডেট ডাউনলোড হয়েছে। আপডেট করতে আপনি অ্যাপটি পুনরায় চালু করতে পারেন।',
     },
     bookmarks: {
         title: 'বুকমার্ক',
@@ -189,7 +198,7 @@ const translation = {
             url: 'URL',
             category: 'ফোল্ডার',
             categoryPlaceholder: 'যেমন: কাজ/প্রকল্প (সাবফোল্ডারের জন্য / ব্যবহার করুন)',
-        }
+        },
     },
     tabs: {
         addTab: 'ট্যাব যোগ করুন',
@@ -207,6 +216,7 @@ const translation = {
         unpinTab: 'ট্যাব আনপিন করুন',
         cannotClosePinned: 'পিন করা ট্যাব বন্ধ করা যাবে না।',
         confirmClose: (tabLabel) => `আপনি কি নিশ্চিত যে আপনি "${tabLabel}" বন্ধ করতে চান? আপনি এই অ্যাকাউন্ট থেকে সাইন আউট হয়ে যাবেন।`,
+        duplicateTab: 'ট্যাব ডুপ্লিকেট করুন',
     },
     validation: {
         required: 'আবশ্যক',

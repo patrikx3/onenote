@@ -4,9 +4,9 @@ const translation = {
     label: {
         darkThemeInvert: {
             title: 'Schakel de donkere modus in (met behulp van omkeren)',
-          off: 'Uit',
-          on: 'Aan',
-          system: 'Systeem volgen',
+            off: 'Uit',
+            on: 'Aan',
+            system: 'Systeem volgen',
         },
         hideMenu: 'Verberg hoofd menu (maak zichtbaar met ALT)',
         optionToHideMenuState: {
@@ -14,14 +14,11 @@ const translation = {
         },
         donate: 'Donatie',
         disableHide: {
-            //yes: 'Set the close button behaviour that will minimize to the tray instead of quitting',
-            //no: 'Set the close button behaviour as to really quit the app',
             checkbox: 'Minimaliseren naar taakbalk',
             message: {
                 yes: 'Om de applicatie te sluiten moet u de afsluiten knop gebruiken.',
                 no: 'De afsluit knop zal het venster minimaliseren naar de taakbalk, ipv af te sluiten.',
-
-            }
+            },
         },
         optionToDisableInternalExternalPopup: 'Schakel Interne / Externe popup uit (alle links intern)',
         settings: 'Instellingen',
@@ -51,18 +48,24 @@ const translation = {
         hide: 'Verbergen',
         copyLocation: 'Kopieer deze locatie naar het clipboard',
         copyLocationCopied: 'De locatie is naar het clipboard gekopieerd.',
-        //disallowedContent: 'Disallowed content! If not working, hang on, it will reset to the default home. (Max 5 seconds).',
-        //unknownLink: 'Hang on, it might change while loading to the destination. If this is not a OneNote page, free to click on the P3X OneNote menu home',
         back: 'Terug',
         forward: 'Vooruit',
         reportIssue: 'Probleem melden / Functie aanvragen',
+        desktopNotifications: 'Bureaumeldingen inschakelen',
+        offlineNotice: 'Je bent offline',
+        backOnline: 'Weer online',
+        startOnLogin: 'Starten bij inloggen',
+        exportSettings: 'Instellingen exporteren',
+        importSettings: 'Instellingen importeren',
+        importSettingsWarning: 'Dit vervangt alle huidige instellingen. Je moet opnieuw inloggen op elk tabblad. Doorgaan?',
+        settingsExported: 'Instellingen geëxporteerd.',
+        settingsImported: 'Instellingen geïmporteerd. Herstarten...',
     },
     dialog: {
         info: 'Info',
         openUrl: {
             info: 'U kunt elke gewensten URL invullen',
             placeholder: 'een geldige URL',
-
         },
         minimizationBehavior: {
             title: 'Minimalisatiegedrag',
@@ -73,7 +76,7 @@ const translation = {
             clear: 'De proxy is uitgeschakeld.',
             set: (value) => {
                 return `De proxy is ingesteld naar ${value}`
-            }
+            },
         },
         redirect: {
             url: (opts) => {
@@ -81,7 +84,7 @@ const translation = {
             },
             urlExternal: 'Extern',
             urlInternal: 'Intern',
-        }
+        },
     },
     button: {
         yes: 'Ja',
@@ -114,11 +117,11 @@ const translation = {
                 zoomin: 'Zoom In',
                 zoomout: 'Zoom out',
                 togglefullscreen: 'Schakel volledig scherm',
-            }
+            },
         },
         help: {
             title: 'Help',
-            checkUpdates: 'Controleer op updates'
+            checkUpdates: 'Controleer op updates',
         },
         language: {
             label: 'Taal / Language',
@@ -159,7 +162,7 @@ const translation = {
                 'vi-VN': 'Tiếng Việt / Vietnamese',
                 'zh-CN': '简体中文 / Simplified Chinese',
                 'zh-TW': '繁體中文 / Traditional Chinese',
-            }
+            },
         },
     },
     redirecting: 'Even geduld, doorverwijzen naar een nieuwe notebook. Dit kan even duren...',
@@ -174,7 +177,7 @@ const translation = {
         'download-progress': (opts) => {
             return opts.progressObj.percent + '%' + ' gedownload'
         },
-        'update-downloaded': 'Update gedownload. U kunt de applicatie opnieuw opstarten om de update door te voeren.'
+        'update-downloaded': 'Update gedownload. U kunt de applicatie opnieuw opstarten om de update door te voeren.',
     },
     bookmarks: {
         title: 'Bookmarks',
@@ -195,7 +198,7 @@ const translation = {
             url: 'URL',
             category: 'Map',
             categoryPlaceholder: 'bijv. Werk/Projecten (gebruik / voor submappen)',
-        }
+        },
     },
     tabs: {
         addTab: 'Tabblad toevoegen',
@@ -213,6 +216,7 @@ const translation = {
         unpinTab: 'Tabblad losmaken',
         cannotClosePinned: 'Een vastgezet tabblad kan niet worden gesloten.',
         confirmClose: (tabLabel) => `Weet u zeker dat u "${tabLabel}" wilt sluiten? U wordt afgemeld bij dit account.`,
+        duplicateTab: 'Tabblad dupliceren',
     },
     validation: {
         required: 'Nodig',

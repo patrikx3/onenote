@@ -3,10 +3,10 @@ const translation = {
     restart: 'Молимо сачекајте, апликација се поново покреће.',
     label: {
         darkThemeInvert: {
-          title: 'Укључи тамни режим (користећи инверзију)',
-          off: 'Искључено',
-          on: 'Укључено',
-          system: 'Прати систем',
+            title: 'Укључи тамни режим (користећи инверзију)',
+            off: 'Искључено',
+            on: 'Укључено',
+            system: 'Прати систем',
         },
         hideMenu: 'Сакриј главни мени (прикажи са ALT)',
         optionToHideMenuState: {
@@ -18,7 +18,7 @@ const translation = {
             message: {
                 yes: 'Дугме за затварање заиста затвара апликацију.',
                 no: 'Дугме за затварање, уместо да изађе, минимизује апликацију у системску траку.',
-            }
+            },
         },
         optionToDisableInternalExternalPopup: 'Онемогући интерни / екстерни искачући прозор (сви линкови интерни)',
         settings: 'Подешавања',
@@ -51,6 +51,15 @@ const translation = {
         back: 'Назад',
         forward: 'Напред',
         reportIssue: 'Пријави проблем / Затражи функцију',
+        desktopNotifications: 'Омогући обавештења на радној површини',
+        offlineNotice: 'Нисте повезани на интернет',
+        backOnline: 'Поново на мрежи',
+        startOnLogin: 'Покрени при пријави',
+        exportSettings: 'Извези подешавања',
+        importSettings: 'Увези подешавања',
+        importSettingsWarning: 'Ово ће заменити сва тренутна подешавања. Мораћете поново да се пријавите на свакој картици. Наставити?',
+        settingsExported: 'Подешавања су извезена.',
+        settingsImported: 'Подешавања су увезена. Поновно покретање...',
     },
     dialog: {
         info: 'Info',
@@ -67,7 +76,7 @@ const translation = {
             clear: 'Прокси је искључен.',
             set: (value) => {
                 return `Прокси је подешен као ${value}`
-            }
+            },
         },
         redirect: {
             url: (opts) => {
@@ -75,7 +84,7 @@ const translation = {
             },
             urlExternal: 'Екстерни',
             urlInternal: 'Интерни',
-        }
+        },
     },
     button: {
         yes: 'Да',
@@ -108,11 +117,11 @@ const translation = {
                 zoomin: 'Увећај',
                 zoomout: 'Умањи',
                 togglefullscreen: 'Пребаци цео екран',
-            }
+            },
         },
         help: {
             title: 'Помоћ',
-            checkUpdates: 'Провери ажурирања'
+            checkUpdates: 'Провери ажурирања',
         },
         language: {
             label: 'Српски / Language',
@@ -153,7 +162,7 @@ const translation = {
                 'vi-VN': 'Tiếng Việt / Vietnamese',
                 'zh-CN': '简体中文 / Simplified Chinese',
                 'zh-TW': '繁體中文 / Traditional Chinese',
-            }
+            },
         },
     },
     redirecting: 'Сачекајте, преусмеравање на нову бележницу. Потребно је неко време...',
@@ -168,7 +177,7 @@ const translation = {
         'download-progress': (opts) => {
             return 'Преузето ' + opts.progressObj.percent + '%'
         },
-        'update-downloaded': 'Ажурирање преузето. Можете поново покренути апликацију да бисте ажурирали.'
+        'update-downloaded': 'Ажурирање преузето. Можете поново покренути апликацију да бисте ажурирали.',
     },
     bookmarks: {
         title: 'Обележивачи',
@@ -189,7 +198,7 @@ const translation = {
             url: 'URL',
             category: 'Фасцикла',
             categoryPlaceholder: 'нпр. Посао/Пројекти (/ за потфасцикле)',
-        }
+        },
     },
     tabs: {
         addTab: 'Додај картицу',
@@ -207,6 +216,7 @@ const translation = {
         unpinTab: 'Откачи картицу',
         cannotClosePinned: 'Закачена картица не може да се затвори.',
         confirmClose: (tabLabel) => `Да ли сте сигурни да желите да затворите „${tabLabel}"? Бићете одјављени са овог налога.`,
+        duplicateTab: 'Дуплирај картицу',
     },
     validation: {
         required: 'Обавезно',

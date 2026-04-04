@@ -4,9 +4,9 @@ const translation = {
     label: {
         darkThemeInvert: {
             title: 'Habilite el modo oscuro (usando invertir)',
-          off: 'Desactivado',
-          on: 'Activado',
-          system: 'Seguir sistema',
+            off: 'Desactivado',
+            on: 'Activado',
+            system: 'Seguir sistema',
         },
         hideMenu: 'Ocultar el menú principal (mostrar con ALT)',
         optionToHideMenuState: {
@@ -14,14 +14,11 @@ const translation = {
         },
         donate: 'Donar',
         disableHide: {
-            //yes: 'Configurar el cierre de manera que la aplicación se minimice a la barra de tareas',
-            //no: 'Configurar el botónn de cierre de manera que se quite la aplicación',
             checkbox: 'Minimizar a la barra de tareas',
             message: {
                 yes: 'El botón de cierre cerrará directamente la aplicación.',
                 no: 'El botón de cierre, en vez de cerrar la aplicación, la minimizará a la barra de tareas.',
-
-            }
+            },
         },
         optionToDisableInternalExternalPopup: 'Deaktivieren Sie das interne / externe Popup (Toda enlace interna)',
         settings: 'Configuración',
@@ -51,19 +48,24 @@ const translation = {
         hide: 'Esconder',
         copyLocation: 'Copiar esta dirección al portapapeles',
         copyLocationCopied: 'Dirección copiada al portapapeles.',
-        //disallowedContent: '¡Contenido no permitido!.Si no funciona, espere. Se reseteará al home por defecto. (Máx 5 segundos).',
-        //unknownLink: 'Espere, cambiará mientras carga el destino. Si esto no es una página de OneNote, haga clic en el menú dentro de P3X OneNote home'
         back: 'Espalda',
         forward: 'Adelante',
         reportIssue: 'Reportar problema / Solicitar función',
-
+        desktopNotifications: 'Habilitar notificaciones de escritorio',
+        offlineNotice: 'Estás sin conexión',
+        backOnline: 'De nuevo en línea',
+        startOnLogin: 'Iniciar al iniciar sesión',
+        exportSettings: 'Exportar configuración',
+        importSettings: 'Importar configuración',
+        importSettingsWarning: 'Esto reemplazará toda la configuración actual. Necesitarás volver a iniciar sesión en cada pestaña. ¿Continuar?',
+        settingsExported: 'Configuración exportada.',
+        settingsImported: 'Configuración importada. Reiniciando...',
     },
     dialog: {
         info: 'Info',
         openUrl: {
             info: 'Puede ir a cualquier URL que desee.',
             placeholder: 'Inserte una URL válida',
-
         },
         minimizationBehavior: {
             title: 'Comportamiento al minimizar',
@@ -74,7 +76,7 @@ const translation = {
             clear: 'Proxy apagado.',
             set: (value) => {
                 return `Proxy configurado como ${value}`
-            }
+            },
         },
         redirect: {
             url: (opts) => {
@@ -82,7 +84,7 @@ const translation = {
             },
             urlExternal: 'Externa',
             urlInternal: 'Interna',
-        }
+        },
     },
     button: {
         yes: 'Si',
@@ -115,11 +117,11 @@ const translation = {
                 zoomin: 'Aumentar zoom',
                 zoomout: 'Disminuir zoom',
                 togglefullscreen: 'Cambiar a pantalla completa',
-            }
+            },
         },
         help: {
             title: 'Ayuda',
-            checkUpdates: 'Revisar actualizaciones'
+            checkUpdates: 'Revisar actualizaciones',
         },
         language: {
             label: 'Lenguaje / Language',
@@ -160,7 +162,7 @@ const translation = {
                 'vi-VN': 'Tiếng Việt / Vietnamese',
                 'zh-CN': '简体中文 / Simplified Chinese',
                 'zh-TW': '繁體中文 / Traditional Chinese',
-            }
+            },
         },
     },
     redirecting: 'Espere... redireccionando a una nueva libreta. Tardará un poco...',
@@ -175,7 +177,7 @@ const translation = {
         'download-progress': (opts) => {
             return 'Bajado ' + opts.progressObj.percent + '%'
         },
-        'update-downloaded': 'Actualización bajada. Reinicie la aplicación para actualizar.'
+        'update-downloaded': 'Actualización bajada. Reinicie la aplicación para actualizar.',
     },
     bookmarks: {
         title: 'Marcadores',
@@ -196,7 +198,7 @@ const translation = {
             url: 'URL',
             category: 'Carpeta',
             categoryPlaceholder: 'ej. Trabajo/Proyectos (usa / para subcarpetas)',
-        }
+        },
     },
     tabs: {
         addTab: 'Añadir pestaña',
@@ -214,6 +216,7 @@ const translation = {
         unpinTab: 'Desfijar pestaña',
         cannotClosePinned: 'No se puede cerrar una pestaña fijada.',
         confirmClose: (tabLabel) => `¿Estás seguro de que quieres cerrar "${tabLabel}"? Se cerrará la sesión de esta cuenta.`,
+        duplicateTab: 'Duplicar pestaña',
     },
     validation: {
         required: 'Necesaria',

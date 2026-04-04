@@ -3,10 +3,10 @@ const translation = {
     restart: 'Vennligst vent, applikasjonen starter på nytt.',
     label: {
         darkThemeInvert: {
-          title: 'Aktiver mørk modus (ved bruk av invertering)',
-          off: 'Av',
-          on: 'På',
-          system: 'Følg system',
+            title: 'Aktiver mørk modus (ved bruk av invertering)',
+            off: 'Av',
+            on: 'På',
+            system: 'Følg system',
         },
         hideMenu: 'Skjul hovedmeny (vis med ALT)',
         optionToHideMenuState: {
@@ -18,7 +18,7 @@ const translation = {
             message: {
                 yes: 'Lukk-knappen lukker virkelig appen.',
                 no: 'Lukk-knappen, i stedet for å avslutte, minimerer appen til systemstatusfeltet.',
-            }
+            },
         },
         optionToDisableInternalExternalPopup: 'Deaktiver intern / ekstern popup (alle lenker interne)',
         settings: 'Innstillinger',
@@ -51,6 +51,15 @@ const translation = {
         back: 'Tilbake',
         forward: 'Fremover',
         reportIssue: 'Rapporter problem / Be om funksjon',
+        desktopNotifications: 'Aktiver skrivebordsvarsler',
+        offlineNotice: 'Du er frakoblet',
+        backOnline: 'Tilbake på nett',
+        startOnLogin: 'Start ved innlogging',
+        exportSettings: 'Eksporter innstillinger',
+        importSettings: 'Importer innstillinger',
+        importSettingsWarning: 'Dette vil erstatte alle gjeldende innstillinger. Du må logge inn på nytt på hver fane. Fortsette?',
+        settingsExported: 'Innstillinger eksportert.',
+        settingsImported: 'Innstillinger importert. Starter på nytt...',
     },
     dialog: {
         info: 'Info',
@@ -67,7 +76,7 @@ const translation = {
             clear: 'Proxyen er slått av.',
             set: (value) => {
                 return `Proxyen er satt til ${value}`
-            }
+            },
         },
         redirect: {
             url: (opts) => {
@@ -75,7 +84,7 @@ const translation = {
             },
             urlExternal: 'Ekstern',
             urlInternal: 'Intern',
-        }
+        },
     },
     button: {
         yes: 'Ja',
@@ -108,11 +117,11 @@ const translation = {
                 zoomin: 'Zoom inn',
                 zoomout: 'Zoom ut',
                 togglefullscreen: 'Veksle fullskjerm',
-            }
+            },
         },
         help: {
             title: 'Hjelp',
-            checkUpdates: 'Se etter oppdateringer'
+            checkUpdates: 'Se etter oppdateringer',
         },
         language: {
             label: 'Norsk / Language',
@@ -153,7 +162,7 @@ const translation = {
                 'vi-VN': 'Tiếng Việt / Vietnamese',
                 'zh-CN': '简体中文 / Simplified Chinese',
                 'zh-TW': '繁體中文 / Traditional Chinese',
-            }
+            },
         },
     },
     redirecting: 'Vennligst vent, omdirigerer til en ny notatbok. Det tar litt tid...',
@@ -168,7 +177,7 @@ const translation = {
         'download-progress': (opts) => {
             return 'Lastet ned ' + opts.progressObj.percent + '%'
         },
-        'update-downloaded': 'Oppdatering lastet ned. Du kan starte appen på nytt for å oppdatere.'
+        'update-downloaded': 'Oppdatering lastet ned. Du kan starte appen på nytt for å oppdatere.',
     },
     bookmarks: {
         title: 'Bokmerker',
@@ -189,7 +198,7 @@ const translation = {
             url: 'URL',
             category: 'Mappe',
             categoryPlaceholder: 'f.eks. Arbeid/Prosjekter (bruk / for undermapper)',
-        }
+        },
     },
     tabs: {
         addTab: 'Legg til fane',
@@ -207,6 +216,7 @@ const translation = {
         unpinTab: 'Løsne fane',
         cannotClosePinned: 'En festet fane kan ikke lukkes.',
         confirmClose: (tabLabel) => `Er du sikker på at du vil lukke "${tabLabel}"? Du vil bli logget ut av denne kontoen.`,
+        duplicateTab: 'Dupliser fane',
     },
     validation: {
         required: 'Påkrevd',

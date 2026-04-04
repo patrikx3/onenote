@@ -3,10 +3,10 @@ const translation = {
     restart: 'Odota hetki, sovellus käynnistyy uudelleen.',
     label: {
         darkThemeInvert: {
-          title: 'Ota tumma tila käyttöön (käyttäen kääntöä)',
-          off: 'Pois',
-          on: 'Päällä',
-          system: 'Seuraa järjestelmää',
+            title: 'Ota tumma tila käyttöön (käyttäen kääntöä)',
+            off: 'Pois',
+            on: 'Päällä',
+            system: 'Seuraa järjestelmää',
         },
         hideMenu: 'Piilota päävalikko (näytä ALT-näppäimellä)',
         optionToHideMenuState: {
@@ -18,7 +18,7 @@ const translation = {
             message: {
                 yes: 'Sulje-painike todella sulkee sovelluksen.',
                 no: 'Sulje-painike pienentää sovelluksen ilmaisinalueelle lopettamisen sijaan.',
-            }
+            },
         },
         optionToDisableInternalExternalPopup: 'Poista Sisäinen / Ulkoinen ponnahdusikkuna käytöstä (kaikki linkit sisäisiä)',
         settings: 'Asetukset',
@@ -51,6 +51,15 @@ const translation = {
         back: 'Takaisin',
         forward: 'Eteenpäin',
         reportIssue: 'Ilmoita ongelma / Pyydä ominaisuutta',
+        desktopNotifications: 'Ota työpöytäilmoitukset käyttöön',
+        offlineNotice: 'Olet offline-tilassa',
+        backOnline: 'Takaisin online-tilassa',
+        startOnLogin: 'Käynnistä kirjautumisen yhteydessä',
+        exportSettings: 'Vie asetukset',
+        importSettings: 'Tuo asetukset',
+        importSettingsWarning: 'Tämä korvaa kaikki nykyiset asetukset. Sinun täytyy kirjautua uudelleen jokaisella välilehdellä. Jatketaanko?',
+        settingsExported: 'Asetukset viety.',
+        settingsImported: 'Asetukset tuotu. Käynnistetään uudelleen...',
     },
     dialog: {
         info: 'Info',
@@ -67,7 +76,7 @@ const translation = {
             clear: 'Välityspalvelin on poistettu käytöstä.',
             set: (value) => {
                 return `Välityspalvelin on asetettu arvoon ${value}`
-            }
+            },
         },
         redirect: {
             url: (opts) => {
@@ -75,7 +84,7 @@ const translation = {
             },
             urlExternal: 'Ulkoinen',
             urlInternal: 'Sisäinen',
-        }
+        },
     },
     button: {
         yes: 'Kyllä',
@@ -108,11 +117,11 @@ const translation = {
                 zoomin: 'Lähennä',
                 zoomout: 'Loitonna',
                 togglefullscreen: 'Vaihda koko näyttö',
-            }
+            },
         },
         help: {
             title: 'Ohje',
-            checkUpdates: 'Tarkista päivitykset'
+            checkUpdates: 'Tarkista päivitykset',
         },
         language: {
             label: 'Suomi / Language',
@@ -153,7 +162,7 @@ const translation = {
                 'vi-VN': 'Tiếng Việt / Vietnamese',
                 'zh-CN': '简体中文 / Simplified Chinese',
                 'zh-TW': '繁體中文 / Traditional Chinese',
-            }
+            },
         },
     },
     redirecting: 'Odota, uudelleenohjataan uuteen muistikirjaan. Se kestää hetken...',
@@ -168,7 +177,7 @@ const translation = {
         'download-progress': (opts) => {
             return 'Ladattu ' + opts.progressObj.percent + '%'
         },
-        'update-downloaded': 'Päivitys ladattu. Voit käynnistää sovelluksen uudelleen päivittääksesi.'
+        'update-downloaded': 'Päivitys ladattu. Voit käynnistää sovelluksen uudelleen päivittääksesi.',
     },
     bookmarks: {
         title: 'Kirjanmerkit',
@@ -189,7 +198,7 @@ const translation = {
             url: 'URL',
             category: 'Kansio',
             categoryPlaceholder: 'esim. Työ/Projektit (käytä / alikansioihin)',
-        }
+        },
     },
     tabs: {
         addTab: 'Lisää välilehti',
@@ -207,6 +216,7 @@ const translation = {
         unpinTab: 'Irrota välilehti',
         cannotClosePinned: 'Kiinnitettyä välilehteä ei voi sulkea.',
         confirmClose: (tabLabel) => `Haluatko varmasti sulkea "${tabLabel}"? Sinut kirjataan ulos tältä tililtä.`,
+        duplicateTab: 'Kopioi välilehti',
     },
     validation: {
         required: 'Pakollinen',

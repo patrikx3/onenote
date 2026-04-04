@@ -3,10 +3,10 @@ const translation = {
     restart: 'אנא המתן, האפליקציה מופעלת מחדש.',
     label: {
         darkThemeInvert: {
-          title: 'הפעל מצב כהה (באמצעות היפוך)',
-          off: 'כבוי',
-          on: 'פעיל',
-          system: 'עקוב אחרי המערכת',
+            title: 'הפעל מצב כהה (באמצעות היפוך)',
+            off: 'כבוי',
+            on: 'פעיל',
+            system: 'עקוב אחרי המערכת',
         },
         hideMenu: 'הסתר תפריט ראשי (הצג עם ALT)',
         optionToHideMenuState: {
@@ -18,7 +18,7 @@ const translation = {
             message: {
                 yes: 'כפתור הסגירה באמת סוגר את האפליקציה.',
                 no: 'כפתור הסגירה, במקום לצאת, ממזער את האפליקציה למגש המערכת.',
-            }
+            },
         },
         optionToDisableInternalExternalPopup: 'השבת חלון קופץ פנימי / חיצוני (כל הקישורים פנימיים)',
         settings: 'הגדרות',
@@ -51,6 +51,15 @@ const translation = {
         back: 'אחורה',
         forward: 'קדימה',
         reportIssue: 'דווח על בעיה / בקש תכונה',
+        desktopNotifications: 'הפעל התראות שולחן עבודה',
+        offlineNotice: 'אתה במצב לא מקוון',
+        backOnline: 'חזרת לרשת',
+        startOnLogin: 'הפעל בעת התחברות',
+        exportSettings: 'ייצוא הגדרות',
+        importSettings: 'ייבוא הגדרות',
+        importSettingsWarning: 'פעולה זו תחליף את כל ההגדרות הנוכחיות. יהיה עליך להתחבר מחדש בכל לשונית. להמשיך?',
+        settingsExported: 'ההגדרות יוצאו.',
+        settingsImported: 'ההגדרות יובאו. מפעיל מחדש...',
     },
     dialog: {
         info: 'Info',
@@ -67,7 +76,7 @@ const translation = {
             clear: 'הפרוקסי כבוי.',
             set: (value) => {
                 return `הפרוקסי הוגדר כ-${value}`
-            }
+            },
         },
         redirect: {
             url: (opts) => {
@@ -75,7 +84,7 @@ const translation = {
             },
             urlExternal: 'חיצוני',
             urlInternal: 'פנימי',
-        }
+        },
     },
     button: {
         yes: 'כן',
@@ -108,11 +117,11 @@ const translation = {
                 zoomin: 'הגדל תקריב',
                 zoomout: 'הקטן תקריב',
                 togglefullscreen: 'הצג/הסתר מסך מלא',
-            }
+            },
         },
         help: {
             title: 'עזרה',
-            checkUpdates: 'בדוק עדכונים'
+            checkUpdates: 'בדוק עדכונים',
         },
         language: {
             label: 'עברית / Language',
@@ -153,7 +162,7 @@ const translation = {
                 'vi-VN': 'Tiếng Việt / Vietnamese',
                 'zh-CN': '简体中文 / Simplified Chinese',
                 'zh-TW': '繁體中文 / Traditional Chinese',
-            }
+            },
         },
     },
     redirecting: 'אנא המתן, מפנה למחברת חדשה. זה לוקח קצת זמן...',
@@ -168,7 +177,7 @@ const translation = {
         'download-progress': (opts) => {
             return 'הורד ' + opts.progressObj.percent + '%'
         },
-        'update-downloaded': 'העדכון הורד. ניתן להפעיל מחדש את האפליקציה כדי לעדכן.'
+        'update-downloaded': 'העדכון הורד. ניתן להפעיל מחדש את האפליקציה כדי לעדכן.',
     },
     bookmarks: {
         title: 'סימניות',
@@ -189,7 +198,7 @@ const translation = {
             url: 'URL',
             category: 'תיקייה',
             categoryPlaceholder: 'לדוגמה: עבודה/פרויקטים (/ לתיקיות משנה)',
-        }
+        },
     },
     tabs: {
         addTab: 'הוסף כרטיסייה',
@@ -207,6 +216,7 @@ const translation = {
         unpinTab: 'בטל הצמדת כרטיסייה',
         cannotClosePinned: 'לא ניתן לסגור כרטיסייה מוצמדת.',
         confirmClose: (tabLabel) => `האם אתה בטוח שברצונך לסגור את "${tabLabel}"? תנותק מחשבון זה.`,
+        duplicateTab: 'שכפל כרטיסייה',
     },
     validation: {
         required: 'שדה חובה',

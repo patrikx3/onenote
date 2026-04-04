@@ -3,10 +3,10 @@ const translation = {
     restart: 'Vänligen vänta, applikationen startar om.',
     label: {
         darkThemeInvert: {
-          title: 'Aktivera mörkt läge (med invertering)',
-          off: 'Av',
-          on: 'På',
-          system: 'Följ system',
+            title: 'Aktivera mörkt läge (med invertering)',
+            off: 'Av',
+            on: 'På',
+            system: 'Följ system',
         },
         hideMenu: 'Dölj huvudmenyn (visa med ALT)',
         optionToHideMenuState: {
@@ -18,7 +18,7 @@ const translation = {
             message: {
                 yes: 'Stäng-knappen stänger verkligen appen.',
                 no: 'Stäng-knappen, istället för att avsluta, minimerar appen till systemfältet.',
-            }
+            },
         },
         optionToDisableInternalExternalPopup: 'Inaktivera intern / extern popup (alla länkar interna)',
         settings: 'Inställningar',
@@ -51,6 +51,15 @@ const translation = {
         back: 'Bakåt',
         forward: 'Framåt',
         reportIssue: 'Rapportera problem / Begär funktion',
+        desktopNotifications: 'Aktivera skrivbordsaviseringar',
+        offlineNotice: 'Du är offline',
+        backOnline: 'Tillbaka online',
+        startOnLogin: 'Starta vid inloggning',
+        exportSettings: 'Exportera inställningar',
+        importSettings: 'Importera inställningar',
+        importSettingsWarning: 'Detta kommer att ersätta alla nuvarande inställningar. Du behöver logga in igen på varje flik. Fortsätta?',
+        settingsExported: 'Inställningar exporterade.',
+        settingsImported: 'Inställningar importerade. Startar om...',
     },
     dialog: {
         info: 'Info',
@@ -67,7 +76,7 @@ const translation = {
             clear: 'Proxyn är avstängd.',
             set: (value) => {
                 return `Proxyn är inställd som ${value}`
-            }
+            },
         },
         redirect: {
             url: (opts) => {
@@ -75,7 +84,7 @@ const translation = {
             },
             urlExternal: 'Extern',
             urlInternal: 'Intern',
-        }
+        },
     },
     button: {
         yes: 'Ja',
@@ -108,11 +117,11 @@ const translation = {
                 zoomin: 'Zooma in',
                 zoomout: 'Zooma ut',
                 togglefullscreen: 'Växla fullskärm',
-            }
+            },
         },
         help: {
             title: 'Hjälp',
-            checkUpdates: 'Sök efter uppdateringar'
+            checkUpdates: 'Sök efter uppdateringar',
         },
         language: {
             label: 'Svenska / Language',
@@ -153,7 +162,7 @@ const translation = {
                 'vi-VN': 'Tiếng Việt / Vietnamese',
                 'zh-CN': '简体中文 / Simplified Chinese',
                 'zh-TW': '繁體中文 / Traditional Chinese',
-            }
+            },
         },
     },
     redirecting: 'Vänta, omdirigerar till en ny anteckningsbok. Det tar lite tid...',
@@ -168,7 +177,7 @@ const translation = {
         'download-progress': (opts) => {
             return 'Nedladdat ' + opts.progressObj.percent + '%'
         },
-        'update-downloaded': 'Uppdatering nedladdad. Du kan starta om appen för att uppdatera.'
+        'update-downloaded': 'Uppdatering nedladdad. Du kan starta om appen för att uppdatera.',
     },
     bookmarks: {
         title: 'Bokmärken',
@@ -189,7 +198,7 @@ const translation = {
             url: 'URL',
             category: 'Mapp',
             categoryPlaceholder: 't.ex. Arbete/Projekt (använd / för undermappar)',
-        }
+        },
     },
     tabs: {
         addTab: 'Lägg till flik',
@@ -207,6 +216,7 @@ const translation = {
         unpinTab: 'Lossa flik',
         cannotClosePinned: 'En fäst flik kan inte stängas.',
         confirmClose: (tabLabel) => `Är du säker på att du vill stänga "${tabLabel}"? Du kommer att loggas ut från detta konto.`,
+        duplicateTab: 'Duplicera flik',
     },
     validation: {
         required: 'Obligatorisk',

@@ -1,7 +1,10 @@
 import { app, powerMonitor, net, nativeTheme } from 'electron';
 import registry from '../registry.mjs'
+import notify from './notify.mjs'
 
 let isInSuspended = false;
+let isOffline = false;
+let offlineDebounceTimer = null;
 
 function waitForNetworkConnectivity(callback, retries = 60, interval = 1000) {
     let attempts = 0;
@@ -79,6 +82,40 @@ app.on('ready', () => {
             });
         });
     });
+
+    // Network connectivity monitoring — detect intermittent drops while awake
+    const OFFLINE_CHECK_INTERVAL = 10000; // 10 seconds
+    const RELOAD_DEBOUNCE = 3000; // 3 seconds debounce before reload
+
+    function checkOnlineStatus() {
+        if (isInSuspended) return; // power resume handler takes care of this
+
+        const online = net.isOnline();
+
+        if (!online && !isOffline) {
+            // Went offline
+            isOffline = true;
+            console.log('[P3X-OneNote] Network lost');
+            notify(registry.lang.label?.offlineNotice || 'You are offline', { sticky: true });
+        } else if (online && isOffline) {
+            // Back online — debounce to avoid reload spam on flaky connections
+            console.log('[P3X-OneNote] Network restored');
+            if (offlineDebounceTimer) clearTimeout(offlineDebounceTimer);
+            offlineDebounceTimer = setTimeout(() => {
+                if (!net.isOnline()) return; // still flaky, skip
+                isOffline = false;
+                notify(registry.lang.label?.backOnline || 'Back online');
+                const win = registry.window.onenote;
+                if (win) {
+                    win.webContents.send('p3x-onenote-action', {
+                        action: 'reload-webview',
+                    });
+                }
+            }, RELOAD_DEBOUNCE);
+        }
+    }
+
+    setInterval(checkOnlineStatus, OFFLINE_CHECK_INTERVAL);
 });
 
 app.on('window-all-closed', function () {

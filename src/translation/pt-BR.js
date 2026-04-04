@@ -4,9 +4,9 @@ const translation = {
     label: {
         darkThemeInvert: {
             title: 'Ative o modo escuro (usando inverter)',
-          off: 'Desligado',
-          on: 'Ligado',
-          system: 'Seguir sistema',
+            off: 'Desligado',
+            on: 'Ligado',
+            system: 'Seguir sistema',
         },
         hideMenu: 'Esconder o menu principal (mostrar com ALT)',
         optionToHideMenuState: {
@@ -20,8 +20,7 @@ const translation = {
             message: {
                 yes: 'O botão de fechar realmente fecha o app.',
                 no: 'O botão de fechar, ao invés de sair, minimiza o app na bandeja.',
-
-            }
+            },
         },
         optionToDisableInternalExternalPopup: 'Desativar pop-up interno / externo (todos link interno)',
         settings: 'Configurações',
@@ -56,13 +55,21 @@ const translation = {
         back: 'Voltar',
         forward: 'Prosseguir',
         reportIssue: 'Reportar problema / Solicitar recurso',
+        desktopNotifications: 'Ativar notificações da área de trabalho',
+        offlineNotice: 'Você está offline',
+        backOnline: 'De volta online',
+        startOnLogin: 'Iniciar ao fazer login',
+        exportSettings: 'Exportar configurações',
+        importSettings: 'Importar configurações',
+        importSettingsWarning: 'Isso substituirá todas as configurações atuais. Você precisará fazer login novamente em cada aba. Continuar?',
+        settingsExported: 'Configurações exportadas.',
+        settingsImported: 'Configurações importadas. Reiniciando...',
     },
     dialog: {
         info: 'Informações',
         openUrl: {
             info: 'Você pode ir para qualquer URL que deseja',
             placeholder: 'uma URL válida',
-
         },
         minimizationBehavior: {
             title: 'Comportamento de minimização',
@@ -73,7 +80,7 @@ const translation = {
             clear: 'O proxy é desligado.',
             set: (value) => {
                 return `O proxy é definido como ${value}`
-            }
+            },
         },
         redirect: {
             url: (opts) => {
@@ -81,7 +88,7 @@ const translation = {
             },
             urlExternal: 'Externo',
             urlInternal: 'Interno',
-        }
+        },
     },
     button: {
         yes: 'Sim',
@@ -114,11 +121,11 @@ const translation = {
                 zoomin: 'Aumentar zoom',
                 zoomout: 'Diminuir zoom',
                 togglefullscreen: 'Tela cheia',
-            }
+            },
         },
         help: {
             title: 'Ajuda',
-            checkUpdates: 'Verificar atualizações'
+            checkUpdates: 'Verificar atualizações',
         },
         language: {
             label: 'Idioma / Language',
@@ -159,7 +166,7 @@ const translation = {
                 'vi-VN': 'Tiếng Việt / Vietnamese',
                 'zh-CN': '简体中文 / Simplified Chinese',
                 'zh-TW': '繁體中文 / Traditional Chinese',
-            }
+            },
         },
     },
     redirecting: 'Aguarde, redirecionando para um novo caderno. Isso leva algum tempo...',
@@ -174,7 +181,7 @@ const translation = {
         'download-progress': (opts) => {
             return 'Baixado ' + opts.progressObj.percent + '%'
         },
-        'update-downloaded': 'Atualização baixada. Você precisa reiniciar o app para fazer efeito.'
+        'update-downloaded': 'Atualização baixada. Você precisa reiniciar o app para fazer efeito.',
     },
     bookmarks: {
         title: 'Favoritas',
@@ -195,7 +202,7 @@ const translation = {
             url: 'URL',
             category: 'Pasta',
             categoryPlaceholder: 'ex. Trabalho/Projetos (use / para subpastas)',
-        }
+        },
     },
     tabs: {
         addTab: 'Adicionar aba',
@@ -213,6 +220,7 @@ const translation = {
         unpinTab: 'Desfixar aba',
         cannotClosePinned: 'Não é possível fechar uma aba fixada.',
         confirmClose: (tabLabel) => `Tem certeza de que deseja fechar "${tabLabel}"? Você será desconectado desta conta.`,
+        duplicateTab: 'Duplicar aba',
     },
     validation: {
         required: 'Requeridas',
