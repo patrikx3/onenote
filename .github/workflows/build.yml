@@ -104,9 +104,14 @@ jobs:
           sudo snap install lxd
           sudo lxd init --auto
           sudo usermod -aG lxd $USER
+          # electron-builder defaults snap builds to core20, which otherwise picks Multipass.
+          sudo snap set snapcraft provider=lxd
+          snap get snapcraft provider
       - name: Fix dependencies before
         run: node ./scripts/fix-packages-publish.js before
       - name: Build arm64 snap
+        env:
+          SNAPCRAFT_BUILD_ENVIRONMENT: lxd
         run: sg lxd -c "npm run publish-electron-arm64"
       - name: Fix dependencies after
         run: node ./scripts/fix-packages-publish.js after
