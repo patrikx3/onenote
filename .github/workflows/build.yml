@@ -54,7 +54,6 @@ jobs:
           overwrite_files: true
           files: |
             dist/*.exe
-            dist/*.msi
             dist/*.blockmap
             dist/latest.yml
 
@@ -99,12 +98,16 @@ jobs:
         run: |
           npm install
           rm -rf node_modules/cpu-features/ || true
-      - name: Install snapcraft
-        run: sudo snap install snapcraft --classic
+      - name: Install snapcraft and LXD
+        run: |
+          sudo snap install snapcraft --classic
+          sudo snap install lxd
+          sudo lxd init --auto
+          sudo usermod -aG lxd $USER
       - name: Fix dependencies before
         run: node ./scripts/fix-packages-publish.js before
       - name: Build arm64 snap
-        run: npm run publish-electron-arm64
+        run: sg lxd -c "npm run publish-electron-arm64"
       - name: Fix dependencies after
         run: node ./scripts/fix-packages-publish.js after
       - name: Upload arm64 snap to Snap Store
