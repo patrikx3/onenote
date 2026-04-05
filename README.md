@@ -72,6 +72,8 @@ P3X OneNote Linux is an independent browser window for the online OneNote, so yo
 * **Per-tab zoom** — each tab remembers its own zoom level independently
 * Dark mode (non-official workaround — may have minor inconsistencies since it is not directly supported by Microsoft)
 * **Dark mode follow system** — automatically switches dark mode on/off when your OS theme changes (Settings > Dark mode > Follow system)
+* **Desktop notifications** — enable native OS notifications via Settings toggle. Toasts (updates, bookmarks, offline status) also fire as system notifications when enabled. Clicking a notification brings the app to foreground.
+* **Auto language detection** — auto-detects your OS language on first run and matches it to one of 30 supported translations. You can also select "Auto (system)" anytime from Settings > Language.
 * Launch minimized with the `--minimized` argument
 
 **Navigation and clipboard:**
@@ -84,9 +86,13 @@ P3X OneNote Linux is an independent browser window for the online OneNote, so yo
 
 * **Close to the tray** — when checked, minimizes to tray instead of exiting; when unchecked, closes completely on quit
 * **Proxy settings** — configurable through the settings menu
+* **Auto-launch on login** — start P3X OneNote on OS login, minimized to system tray. Available on AppImage, deb, and rpm (hidden on Snap/Flatpak where the OS manages autostart).
+* **Settings backup/restore** — export all app settings (tabs, bookmarks, preferences) to a single JSON file and import them back. Useful when switching machines or reinstalling.
 
 **Other:**
 
+* **Offline detection and auto-reload** — detects network loss, shows "You are offline" notification, and automatically reloads all tabs when connectivity returns. Debounced to avoid reload spam on flaky connections.
+* **Report issue / request feature** — quick menu item (Help > Report issue) to open a new GitHub issue directly from the app.
 * **Granular session cleaner** — clear cookies, cache, or everything for all tabs or just the current tab (P3X OneNote menu > Clear data and restart)
 * **Multi-monitor safety** — if you disconnect a monitor and the window would appear off-screen, it automatically centers on the primary display
 * **Bookmark folders** — organize bookmarks into nested folders using `/` separator (e.g. `Work/Projects`). Folders appear as submenus with 📁 icons in the Bookmarks menu.
@@ -109,6 +115,7 @@ Right-click any tab to access:
 | Clear custom name | Revert to default label (account type + email) |
 | Pin tab | Prevent accidental closure |
 | Unpin tab | Allow closing again |
+| Duplicate tab | Create a new tab with the same URL and account type |
 | Close tab | Close the tab (with confirmation for non-pinned tabs) |
 
 <!-- (`````~/.local/share/applications/p3x-onenote.desktop`````) -->
@@ -120,6 +127,8 @@ Right-click any tab to access:
 All releases are available on the [GitHub Releases](https://github.com/patrikx3/onenote/releases) page.
 
 ## Snap
+
+Available for **amd64** and **arm64** architectures.
 
 [![Snap Store](https://cdn.corifeus.com/assets/svg/snap-store-black.svg)](https://snapcraft.io/p3x-onenote#cory-non-external)
 
@@ -283,6 +292,8 @@ https://github.com/patrikx3/onenote/issues/3#issuecomment-312711801
 * Apply the `.editorconfig` settings in your IDE
 * To generate `rpm` on Ubuntu: `sudo apt-get install rpm`
 * To build with NPM, move `electron` from `devDependencies` to `dependencies` (the default setup is designed for AppImage distribution, not NPM)
+* **Unit tests** — the project uses [Vitest](https://vitest.dev/) for unit testing with CI integration via GitHub Actions
+* **GitHub mirror** — the repository is automatically mirrored to GitHub during the publish flow using `p3x github mirror`
 
 ---
 
