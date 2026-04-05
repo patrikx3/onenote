@@ -4,8 +4,13 @@ const { ipcRenderer, shell, Store, pkg, translations } = window.electronShim;
 
 const conf = new Store();
 let translationKey = conf.get('lang');
-if (!translationKey) {
-    translationKey = 'en-US';
+if (!translationKey || translationKey === 'auto') {
+    const osLocale = navigator.language || 'en-US';
+    const supported = Object.keys(translations);
+    translationKey = supported.find(l => l === osLocale)
+        || supported.find(l => l.startsWith(osLocale + '-'))
+        || supported.find(l => osLocale.startsWith(l.split('-')[0]))
+        || 'en-US';
 }
 const translation = translations[translationKey];
 

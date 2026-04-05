@@ -39,7 +39,6 @@ function mainMenu() {
             })
         }
     });
-    languageCheckbox.push({ type: 'separator' });
     for (let trans of Object.keys(registry.lang.menu.language.translations)) {
         const transLabel = registry.lang.menu.language.translations[trans]
         const transMenu = ((trans) => {
