@@ -163,6 +163,7 @@ const translation = {
                 'zh-CN': '简体中文 / Simplified Chinese',
                 'zh-TW': '繁體中文 / Traditional Chinese',
             },
+            auto: 'Automatico (sistema)',
         },
     },
     redirecting: 'Attendi, ti sto reindirizzando ad un nuovo blocco appunti. Potrebbe richiedere un pò di tempo...',
@@ -217,6 +218,7 @@ const translation = {
         cannotClosePinned: 'Impossibile chiudere una scheda fissata.',
         confirmClose: (tabLabel) => `Sei sicuro di voler chiudere "${tabLabel}"? Verrai disconnesso da questo account.`,
         duplicateTab: 'Duplica scheda',
+        duplicateTabNotice: 'Scheda duplicata. Effettua l\'accesso nella nuova scheda.',
     },
     validation: {
         required: 'Richiesto',

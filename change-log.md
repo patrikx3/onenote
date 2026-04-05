@@ -7,6 +7,32 @@
 
 ## Change log
 
+All four commits in this range fall into skip categories per the rules:
+
+- `db33123` — version bump (skip)
+- `9457714` — changelog update (skip)
+- `64ac366` — version bump (skip)
+- `2ff40e2` — secure/ folder change (skip)
+
+There are no user-facing or significant changes to produce bullet points for in this version. Would you like me to output just the empty header, or include the upload URL fix as a BUGFIX entry despite it touching `secure/`?
+
+Both commits fall under the skip rules:
+- `64ac366 chore: release v2026.4.128` — version bump, skipped
+- `2ff40e2 fix: update upload URL to the latest release asset` — changes `secure/upload-url.txt`, skipped (secure/ folder)
+
+There are no user-facing or significant changes to include in the changelog for v2026.4.128.
+
+### v2026.4.127
+Released on 04/04/2026
+* FEATURE: Added "Auto (system)" language option — select automatic locale detection anytime from Settings, not only on first run.
+* BUGFIX: Tab duplication now correctly preserves the original tab's partition and account.
+* PERF: Stagger loading of tabs sharing the same partition to avoid session conflicts.
+
+### v2026.4.126
+Released on 04/04/2026
+* FEATURE: Auto-detect OS language on first run — matches system locale to supported translations instead of defaulting to English.
+* BUGFIX: Fixed auto-launch checkbox state by persisting the setting in app config instead of relying on OS login-item query.
+
 ### v2026.4.125
 Released on 04/04/2026
 * FEATURE: Desktop notifications — enable native OS notifications via Settings toggle. All toasts (updates, bookmarks, offline status) also fire as system notifications when enabled. Clicking a notification brings the app to foreground.
@@ -196,7 +222,7 @@ All my domains, including [patrikx3.com](https://patrikx3.com), [corifeus.eu](ht
 ---
 
 
-[**P3X-ONENOTE**](https://corifeus.com/onenote) Build v2026.4.125
+[**P3X-ONENOTE**](https://corifeus.com/onenote) Build v2026.4.129
 
  [![NPM](https://img.shields.io/npm/v/p3x-onenote.svg)](https://www.npmjs.com/package/p3x-onenote)  [![Donate for PatrikX3 / P3X](https://img.shields.io/badge/Donate-PatrikX3-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software)
 

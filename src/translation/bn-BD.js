@@ -163,6 +163,7 @@ const translation = {
                 'zh-CN': '简体中文 / Simplified Chinese',
                 'zh-TW': '繁體中文 / Traditional Chinese',
             },
+            auto: 'স্বয়ংক্রিয় (সিস্টেম)',
         },
     },
     redirecting: 'অপেক্ষা করুন, একটি নতুন নোটবুকে পুনঃনির্দেশ করা হচ্ছে। এতে কিছু সময় লাগে...',
@@ -217,6 +218,7 @@ const translation = {
         cannotClosePinned: 'পিন করা ট্যাব বন্ধ করা যাবে না।',
         confirmClose: (tabLabel) => `আপনি কি নিশ্চিত যে আপনি "${tabLabel}" বন্ধ করতে চান? আপনি এই অ্যাকাউন্ট থেকে সাইন আউট হয়ে যাবেন।`,
         duplicateTab: 'ট্যাব ডুপ্লিকেট করুন',
+        duplicateTabNotice: 'ট্যাব ডুপ্লিকেট করা হয়েছে। অনুগ্রহ করে নতুন ট্যাবে সাইন ইন করুন।',
     },
     validation: {
         required: 'আবশ্যক',

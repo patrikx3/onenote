@@ -130,6 +130,7 @@ const translation = {
             checkUpdates: 'Check updates'
         },
         language: {
+            auto: 'Auto (system)',
             label: 'Language',
             alert: 'Language set to english.',
             dialog: {
@@ -221,6 +222,7 @@ const translation = {
         pinTab: 'Pin tab',
         unpinTab: 'Unpin tab',
         duplicateTab: 'Duplicate tab',
+        duplicateTabNotice: 'Tab duplicated. Please sign in on the new tab.',
         cannotClosePinned: 'Cannot close a pinned tab.',
         confirmClose: (tabLabel) => `Are you sure you want to close "${tabLabel}"? You will be signed out of this account.`,
     },

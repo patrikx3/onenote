@@ -163,6 +163,7 @@ const translation = {
                 'zh-CN': '简体中文 / Simplified Chinese',
                 'zh-TW': '繁體中文 / Traditional Chinese',
             },
+            auto: 'אוטומטי (מערכת)',
         },
     },
     redirecting: 'אנא המתן, מפנה למחברת חדשה. זה לוקח קצת זמן...',
@@ -217,6 +218,7 @@ const translation = {
         cannotClosePinned: 'לא ניתן לסגור כרטיסייה מוצמדת.',
         confirmClose: (tabLabel) => `האם אתה בטוח שברצונך לסגור את "${tabLabel}"? תנותק מחשבון זה.`,
         duplicateTab: 'שכפל כרטיסייה',
+        duplicateTabNotice: 'הלשונית שוכפלה. אנא התחבר בלשונית החדשה.',
     },
     validation: {
         required: 'שדה חובה',

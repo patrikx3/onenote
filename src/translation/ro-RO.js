@@ -163,6 +163,7 @@ const translation = {
                 'zh-CN': '简体中文 / Simplified Chinese',
                 'zh-TW': '繁體中文 / Traditional Chinese',
             },
+            auto: 'Automat (sistem)',
         },
     },
     redirecting: 'Așteptați, redirecționare către un nou caiet. Durează ceva timp...',
@@ -217,6 +218,7 @@ const translation = {
         cannotClosePinned: 'O filă fixată nu poate fi închisă.',
         confirmClose: (tabLabel) => `Sunteți sigur că doriți să închideți „${tabLabel}"? Veți fi deconectat din acest cont.`,
         duplicateTab: 'Duplică fila',
+        duplicateTabNotice: 'Tab duplicat. Vă rugăm să vă conectați în noul tab.',
     },
     validation: {
         required: 'Obligatoriu',

@@ -163,6 +163,7 @@ const translation = {
                 'zh-CN': '简体中文 / Simplified Chinese',
                 'zh-TW': '繁體中文 / Traditional Chinese',
             },
+            auto: 'Авто (системный)',
         },
     },
     redirecting: 'Подождите, перенаправление на новую книгу. Это займёт некоторое время...',
@@ -217,6 +218,7 @@ const translation = {
         cannotClosePinned: 'Невозможно закрыть закреплённую вкладку.',
         confirmClose: (tabLabel) => `Вы уверены, что хотите закрыть «${tabLabel}»? Вы будете выходить из этого аккаунта.`,
         duplicateTab: 'Дублировать вкладку',
+        duplicateTabNotice: 'Вкладка продублирована. Пожалуйста, войдите в аккаунт на новой вкладке.',
     },
     validation: {
         required: 'Обязательное поле',

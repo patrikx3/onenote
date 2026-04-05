@@ -163,6 +163,7 @@ const translation = {
                 'zh-CN': '简体中文 / Simplified Chinese',
                 'zh-TW': '繁體中文 / Traditional Chinese',
             },
+            auto: 'Auto (system)',
         },
     },
     redirecting: 'Vennligst vent, omdirigerer til en ny notatbok. Det tar litt tid...',
@@ -217,6 +218,7 @@ const translation = {
         cannotClosePinned: 'En festet fane kan ikke lukkes.',
         confirmClose: (tabLabel) => `Er du sikker på at du vil lukke "${tabLabel}"? Du vil bli logget ut av denne kontoen.`,
         duplicateTab: 'Dupliser fane',
+        duplicateTabNotice: 'Fane duplisert. Vennligst logg inn på den nye fanen.',
     },
     validation: {
         required: 'Påkrevd',

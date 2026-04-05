@@ -163,6 +163,7 @@ const translation = {
                 'zh-CN': '简体中文 / Simplified Chinese',
                 'zh-TW': '繁體中文 / Traditional Chinese',
             },
+            auto: 'Auto (système)',
         },
     },
     redirecting: 'Veuillez patienter, redirection en cours ...',
@@ -217,6 +218,7 @@ const translation = {
         cannotClosePinned: 'Impossible de fermer un onglet épinglé.',
         confirmClose: (tabLabel) => `Êtes-vous sûr de vouloir fermer « ${tabLabel} » ? Vous serez déconnecté de ce compte.`,
         duplicateTab: 'Dupliquer l\'onglet',
+        duplicateTabNotice: 'Onglet dupliqué. Veuillez vous connecter sur le nouvel onglet.',
     },
     validation: {
         required: 'Obligatoire',

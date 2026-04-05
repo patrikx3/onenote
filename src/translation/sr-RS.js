@@ -163,6 +163,7 @@ const translation = {
                 'zh-CN': '简体中文 / Simplified Chinese',
                 'zh-TW': '繁體中文 / Traditional Chinese',
             },
+            auto: 'Аутоматски (системски)',
         },
     },
     redirecting: 'Сачекајте, преусмеравање на нову бележницу. Потребно је неко време...',
@@ -217,6 +218,7 @@ const translation = {
         cannotClosePinned: 'Закачена картица не може да се затвори.',
         confirmClose: (tabLabel) => `Да ли сте сигурни да желите да затворите „${tabLabel}"? Бићете одјављени са овог налога.`,
         duplicateTab: 'Дуплирај картицу',
+        duplicateTabNotice: 'Картица је дуплирана. Молимо вас да се пријавите на новој картици.',
     },
     validation: {
         required: 'Обавезно',

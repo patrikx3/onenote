@@ -163,6 +163,7 @@ const translation = {
                 'zh-CN': '简体中文 / Simplified Chinese',
                 'zh-TW': '繁體中文 / Traditional Chinese',
             },
+            auto: '自動（系統）',
         },
     },
     redirecting: '請稍等，正在導至新的筆記本需要再一些時間...',
@@ -217,6 +218,7 @@ const translation = {
         cannotClosePinned: '無法關閉釘選的分頁。',
         confirmClose: (tabLabel) => `確定要關閉「${tabLabel}」嗎？您將從此帳戶登出。`,
         duplicateTab: '複製分頁',
+        duplicateTabNotice: '分頁已複製。請在新分頁上登入。',
     },
     validation: {
         required: 'Required',

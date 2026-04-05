@@ -163,6 +163,7 @@ const translation = {
                 'zh-CN': '简体中文 / Simplified Chinese',
                 'zh-TW': '繁體中文 / Traditional Chinese',
             },
+            auto: 'Αυτόματο (σύστημα)',
         },
     },
     redirecting: 'Περιμένετε, ανακατεύθυνση σε νέο σημειωματάριο. Χρειάζεται λίγο χρόνο...',
@@ -217,6 +218,7 @@ const translation = {
         cannotClosePinned: 'Δεν είναι δυνατό το κλείσιμο καρφιτσωμένης καρτέλας.',
         confirmClose: (tabLabel) => `Είστε σίγουροι ότι θέλετε να κλείσετε το "${tabLabel}"; Θα αποσυνδεθείτε από αυτόν τον λογαριασμό.`,
         duplicateTab: 'Διπλότυπη καρτέλα',
+        duplicateTabNotice: 'Η καρτέλα αντιγράφηκε. Παρακαλώ συνδεθείτε στη νέα καρτέλα.',
     },
     validation: {
         required: 'Απαιτείται',

@@ -163,6 +163,7 @@ const translation = {
                 'zh-CN': '简体中文 / Simplified Chinese',
                 'zh-TW': '繁體中文 / Traditional Chinese',
             },
+            auto: 'Otomatik (sistem)',
         },
     },
     redirecting: 'Bekle, yeni bir not defterine yönlendiriliyor. Biraz zaman alır...',
@@ -217,6 +218,7 @@ const translation = {
         cannotClosePinned: 'Sabitlenmiş bir sekme kapatılamaz.',
         confirmClose: (tabLabel) => `"${tabLabel}" sekmesini kapatmak istediğinizden emin misiniz? Bu hesaptan çıkış yapılacaktır.`,
         duplicateTab: 'Sekmeyi çoğalt',
+        duplicateTabNotice: 'Sekme çoğaltıldı. Lütfen yeni sekmede oturum açın.',
     },
     validation: {
         required: 'Gerekli',

@@ -163,6 +163,7 @@ const translation = {
                 'zh-CN': '简体中文 / Simplified Chinese',
                 'zh-TW': '繁體中文 / Traditional Chinese',
             },
+            auto: 'Automàtic (sistema)',
         },
     },
     redirecting: 'Espera, redirigint a una llibreta nova. Triga una estona...',
@@ -217,6 +218,7 @@ const translation = {
         cannotClosePinned: 'No es pot tancar una pestanya fixada.',
         confirmClose: (tabLabel) => `Esteu segur que voleu tancar "${tabLabel}"? Es tancarà la sessió d'aquest compte.`,
         duplicateTab: 'Duplicar pestanya',
+        duplicateTabNotice: 'Pestanya duplicada. Si us plau, inicieu sessió a la nova pestanya.',
     },
     validation: {
         required: 'Obligatori',

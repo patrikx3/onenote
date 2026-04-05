@@ -163,6 +163,7 @@ const translation = {
                 'zh-CN': '简体中文 / Simplified Chinese',
                 'zh-TW': '繁體中文 / Traditional Chinese',
             },
+            auto: 'Automaattinen (järjestelmä)',
         },
     },
     redirecting: 'Odota, uudelleenohjataan uuteen muistikirjaan. Se kestää hetken...',
@@ -217,6 +218,7 @@ const translation = {
         cannotClosePinned: 'Kiinnitettyä välilehteä ei voi sulkea.',
         confirmClose: (tabLabel) => `Haluatko varmasti sulkea "${tabLabel}"? Sinut kirjataan ulos tältä tililtä.`,
         duplicateTab: 'Kopioi välilehti',
+        duplicateTabNotice: 'Välilehti kopioitu. Kirjaudu sisään uudella välilehdellä.',
     },
     validation: {
         required: 'Pakollinen',

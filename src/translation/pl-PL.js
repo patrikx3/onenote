@@ -163,6 +163,7 @@ const translation = {
                 'zh-CN': '简体中文 / Simplified Chinese',
                 'zh-TW': '繁體中文 / Traditional Chinese',
             },
+            auto: 'Automatyczny (systemowy)',
         },
     },
     redirecting: 'Proszę czekać, przekierowywanie do nowego notatnika trwa ...',
@@ -217,6 +218,7 @@ const translation = {
         cannotClosePinned: 'Nie można zamknąć przypiętej karty.',
         confirmClose: (tabLabel) => `Czy na pewno chcesz zamknąć „${tabLabel}"? Zostaniesz wylogowany z tego konta.`,
         duplicateTab: 'Duplikuj kartę',
+        duplicateTabNotice: 'Karta zduplikowana. Zaloguj się na nowej karcie.',
     },
     validation: {
         required: 'Wymagane',

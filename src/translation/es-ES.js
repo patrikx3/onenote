@@ -163,6 +163,7 @@ const translation = {
                 'zh-CN': '简体中文 / Simplified Chinese',
                 'zh-TW': '繁體中文 / Traditional Chinese',
             },
+            auto: 'Automático (sistema)',
         },
     },
     redirecting: 'Espere... redireccionando a una nueva libreta. Tardará un poco...',
@@ -217,6 +218,7 @@ const translation = {
         cannotClosePinned: 'No se puede cerrar una pestaña fijada.',
         confirmClose: (tabLabel) => `¿Estás seguro de que quieres cerrar "${tabLabel}"? Se cerrará la sesión de esta cuenta.`,
         duplicateTab: 'Duplicar pestaña',
+        duplicateTabNotice: 'Pestaña duplicada. Por favor, inicia sesión en la nueva pestaña.',
     },
     validation: {
         required: 'Necesaria',

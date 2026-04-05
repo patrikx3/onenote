@@ -367,6 +367,8 @@ function renderTabBar() {
                     createTab({
                         type: tab.type,
                         url: currentUrl,
+                        partition: tab.partition,
+                        account: tab.account,
                     });
                 }
             }));
@@ -479,6 +481,10 @@ function init() {
 
     const savedActiveId = conf().get('activeTabId') ?? tabsData[0].id;
 
+    // Track which partitions have already been loaded — stagger duplicates
+    const loadedPartitions = new Set();
+    const deferredTabs = [];
+
     for (const data of tabsData) {
         const webview = createWebview(data.partition);
         const tab = {
@@ -495,7 +501,31 @@ function init() {
         };
         tabs.push(tab);
         setupWebviewHandlers(tab);
-        webview.src = data.url;
+
+        if (!loadedPartitions.has(data.partition)) {
+            // First tab with this partition — load immediately
+            loadedPartitions.add(data.partition);
+            webview.src = data.url;
+        } else {
+            // Shared partition — defer loading until the first tab is ready
+            deferredTabs.push(tab);
+        }
+    }
+
+    // Load deferred tabs after a delay to let the shared session initialize
+    if (deferredTabs.length > 0) {
+        const loadDeferred = () => {
+            for (const tab of deferredTabs) {
+                tab.webview.src = tab.url;
+            }
+        };
+        // Wait for any tab with a shared partition to be dom-ready, then load deferred
+        const firstSharedTab = tabs.find(t => deferredTabs.some(d => d.partition === t.partition) && !deferredTabs.includes(t));
+        if (firstSharedTab) {
+            firstSharedTab.webview.addEventListener('dom-ready', loadDeferred, { once: true });
+        } else {
+            setTimeout(loadDeferred, 3000);
+        }
     }
 
     activeTabId = savedActiveId;

@@ -163,6 +163,7 @@ const translation = {
                 'zh-CN': '简体中文 / Simplified Chinese',
                 'zh-TW': '繁體中文 / Traditional Chinese',
             },
+            auto: 'Outomaties (stelsel)',
         },
     },
     redirecting: 'Wag asseblief, herlei na \'n nuwe notaboek. Dit neem \'n rukkie...',
@@ -217,6 +218,7 @@ const translation = {
         cannotClosePinned: 'Kan nie n vasgespelde oortjie sluit nie.',
         confirmClose: (tabLabel) => `Is jy seker jy wil "${tabLabel}" sluit? Jy sal van hierdie rekening afgeteken word.`,
         duplicateTab: 'Dupliseer oortjie',
+        duplicateTabNotice: 'Oortjie gedupliseer. Meld asseblief aan op die nuwe oortjie.',
     },
     validation: {
         required: 'Vereis',

@@ -167,6 +167,7 @@ const translation = {
                 'zh-CN': '简体中文 / Simplified Chinese',
                 'zh-TW': '繁體中文 / Traditional Chinese',
             },
+            auto: 'Automático (sistema)',
         },
     },
     redirecting: 'Aguarde, redirecionando para um novo caderno. Isso leva algum tempo...',
@@ -221,6 +222,7 @@ const translation = {
         cannotClosePinned: 'Não é possível fechar uma aba fixada.',
         confirmClose: (tabLabel) => `Tem certeza de que deseja fechar "${tabLabel}"? Você será desconectado desta conta.`,
         duplicateTab: 'Duplicar aba',
+        duplicateTabNotice: 'Aba duplicada. Por favor, faça login na nova aba.',
     },
     validation: {
         required: 'Requeridas',

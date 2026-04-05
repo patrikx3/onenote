@@ -163,6 +163,7 @@ const translation = {
                 'zh-CN': '简体中文 / Simplified Chinese',
                 'zh-TW': '繁體中文 / Traditional Chinese',
             },
+            auto: 'Automatisch (System)',
         },
     },
     redirecting: 'Einen Moment, es wird zu einem neuen Notzibuch umgeleitet. Dies kann eine Weile dauern...',
@@ -217,6 +218,7 @@ const translation = {
         cannotClosePinned: 'Ein angehefteter Tab kann nicht geschlossen werden.',
         confirmClose: (tabLabel) => `Möchten Sie „${tabLabel}" wirklich schließen? Sie werden von diesem Konto abgemeldet.`,
         duplicateTab: 'Tab duplizieren',
+        duplicateTabNotice: 'Tab dupliziert. Bitte melden Sie sich im neuen Tab an.',
     },
     validation: {
         required: 'Erforderlich',

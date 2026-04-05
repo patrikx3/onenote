@@ -163,6 +163,7 @@ const translation = {
                 'zh-CN': '简体中文 / Simplified Chinese',
                 'zh-TW': '繁體中文 / Traditional Chinese',
             },
+            auto: '自動（システム）',
         },
     },
     redirecting: 'しばらくお待ちください。 新しいノートブックにリダイレクトしています。 少し時間がかかります...',
@@ -217,6 +218,7 @@ const translation = {
         cannotClosePinned: '固定されたタブは閉じられません。',
         confirmClose: (tabLabel) => `「${tabLabel}」を閉じてもよろしいですか？このアカウントからサインアウトされます。`,
         duplicateTab: 'タブを複製',
+        duplicateTabNotice: 'タブが複製されました。新しいタブでサインインしてください。',
     },
     validation: {
         required: '必須項目です。',

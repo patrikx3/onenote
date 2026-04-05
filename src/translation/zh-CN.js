@@ -163,6 +163,7 @@ const translation = {
                 'zh-CN': '简体中文 / Simplified Chinese',
                 'zh-TW': '繁體中文 / Traditional Chinese',
             },
+            auto: '自动（系统）',
         },
     },
     redirecting: '请稍等，正在重定向至新笔记本，这会花费一些时间',
@@ -217,6 +218,7 @@ const translation = {
         cannotClosePinned: '无法关闭固定的标签页。',
         confirmClose: (tabLabel) => `确定要关闭"${tabLabel}"吗？您将从此账户退出登录。`,
         duplicateTab: '复制标签页',
+        duplicateTabNotice: '标签页已复制。请在新标签页上登录。',
     },
     validation: {
         required: 'Required',

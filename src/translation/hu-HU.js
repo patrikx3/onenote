@@ -124,6 +124,7 @@ const translation = {
             checkUpdates: 'Frissítések keresése'
         },
         language: {
+            auto: 'Automatikus (rendszer)',
             label: 'Magyar / Language',
             alert: 'A nyelv magyarra van állítva.',
             dialog: {
@@ -215,6 +216,7 @@ const translation = {
         pinTab: 'Fül rögzítése',
         unpinTab: 'Fül rögzítésének feloldása',
         duplicateTab: 'Fül duplikálása',
+        duplicateTabNotice: 'Fül duplikálva. Kérjük, jelentkezzen be az új fülön.',
         cannotClosePinned: 'Rögzített fül nem zárható be.',
         confirmClose: (tabLabel) => `Biztosan bezárja a(z) "${tabLabel}" lapot? Ki lesz jelentkezve ebből a fiókból.`,
     },

@@ -163,6 +163,7 @@ const translation = {
                 'zh-CN': '简体中文 / Simplified Chinese',
                 'zh-TW': '繁體中文 / Traditional Chinese',
             },
+            auto: 'تلقائي (النظام)',
         },
     },
     redirecting: 'انتظر، جارٍ إعادة التوجيه إلى دفتر ملاحظات جديد. يستغرق الأمر بعض الوقت...',
@@ -217,6 +218,7 @@ const translation = {
         cannotClosePinned: 'لا يمكن إغلاق علامة تبويب مثبتة.',
         confirmClose: (tabLabel) => `هل أنت متأكد أنك تريد إغلاق "${tabLabel}"؟ سيتم تسجيل خروجك من هذا الحساب.`,
         duplicateTab: 'تكرار علامة التبويب',
+        duplicateTabNotice: 'تم تكرار علامة التبويب. يرجى تسجيل الدخول في علامة التبويب الجديدة.',
     },
     validation: {
         required: 'مطلوب',

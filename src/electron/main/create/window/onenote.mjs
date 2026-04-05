@@ -140,16 +140,18 @@ function createWindow() {
         registry.conf.set('maximized', false)
     })
 
+    let firstCheck = true
     autoUpdater.on('checking-for-update', (info) => {
         console.log('checking-for-update', info)
-        notify(registry.lang.updater["checking-for-update"])
+        if (!firstCheck) {
+            notify(registry.lang.updater["checking-for-update"])
+        }
     })
     autoUpdater.on('update-available', (info) => {
         console.log('update-available', info)
         notify(registry.lang.updater["update-available"])
     })
 
-    let firstCheck = true
     autoUpdater.on('update-not-available', (info) => {
         console.log('update-not-available', info)
 

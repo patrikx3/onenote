@@ -64,11 +64,30 @@ try {
 //app.allowRendererProcessReuse = true
 //app.disableHardwareAcceleration()
 
-let translationKey = conf.get('lang')
-if (translationKey === undefined) {
-    translationKey = 'en-US'
-    conf.set('lang', translationKey)
+const supportedLocales = [
+    'en-US', 'af-ZA', 'ar-SA', 'bn-BD', 'ca-ES', 'cs-CZ', 'da-DK',
+    'de-DE', 'el-GR', 'es-ES', 'fi-FI', 'fr-FR', 'he-IL', 'hu-HU',
+    'it-IT', 'ja-JP', 'ko-KR', 'nb-NO', 'nl-NL', 'pl-PL', 'pt-BR',
+    'ro-RO', 'ru-RU', 'sr-RS', 'sv-SE', 'tr-TR', 'uk-UA', 'vi-VN',
+    'zh-CN', 'zh-TW',
+]
+
+function detectOsLocale() {
+    const osLocale = app.getLocale()
+    return supportedLocales.find(l => l === osLocale)
+        || supportedLocales.find(l => l.startsWith(osLocale + '-'))
+        || supportedLocales.find(l => osLocale.startsWith(l.split('-')[0]))
+        || 'en-US'
 }
+
+let langSetting = conf.get('lang')
+if (langSetting === undefined) {
+    // First run — default to auto
+    langSetting = 'auto'
+    conf.set('lang', 'auto')
+}
+
+let translationKey = langSetting === 'auto' ? detectOsLocale() : langSetting
 
 // Set Chromium locale to match the selected language.
 // This affects navigator.language, navigator.languages, and the default Accept-Language header,
@@ -122,6 +141,7 @@ const translation = langTranslations[translationKey]
 
 Object.assign(registry, {
     pkg: pkg,
+    detectOsLocale: detectOsLocale,
     darkThemeInvert: darkThemeInvert,
     darkThemeMode: darkThemeMode,
     lang: translation,

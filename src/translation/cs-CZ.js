@@ -163,6 +163,7 @@ const translation = {
                 'zh-CN': '简体中文 / Simplified Chinese',
                 'zh-TW': '繁體中文 / Traditional Chinese',
             },
+            auto: 'Automaticky (systém)',
         },
     },
     redirecting: 'Počkejte prosím, přesměrování na nový poznámkový blok. Chvíli to trvá...',
@@ -217,6 +218,7 @@ const translation = {
         cannotClosePinned: 'Připnutou kartu nelze zavřít.',
         confirmClose: (tabLabel) => `Opravdu chcete zavřít „${tabLabel}"? Budete odhlášeni z tohoto účtu.`,
         duplicateTab: 'Duplikovat kartu',
+        duplicateTabNotice: 'Karta byla zduplikována. Přihlaste se prosím na nové kartě.',
     },
     validation: {
         required: 'Povinné',

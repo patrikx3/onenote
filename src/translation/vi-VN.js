@@ -163,6 +163,7 @@ const translation = {
                 'zh-CN': '简体中文 / Simplified Chinese',
                 'zh-TW': '繁體中文 / Traditional Chinese',
             },
+            auto: 'Tự động (hệ thống)',
         },
     },
     redirecting: 'Vui lòng chờ, đang chuyển hướng đến sổ ghi chép mới. Quá trình này mất một chút thời gian...',
@@ -217,6 +218,7 @@ const translation = {
         cannotClosePinned: 'Không thể đóng tab đã ghim.',
         confirmClose: (tabLabel) => `Bạn có chắc chắn muốn đóng "${tabLabel}" không? Bạn sẽ bị đăng xuất khỏi tài khoản này.`,
         duplicateTab: 'Nhân đôi tab',
+        duplicateTabNotice: 'Tab đã được nhân bản. Vui lòng đăng nhập trên tab mới.',
     },
     validation: {
         required: 'Bắt buộc',

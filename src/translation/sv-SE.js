@@ -163,6 +163,7 @@ const translation = {
                 'zh-CN': '简体中文 / Simplified Chinese',
                 'zh-TW': '繁體中文 / Traditional Chinese',
             },
+            auto: 'Auto (system)',
         },
     },
     redirecting: 'Vänta, omdirigerar till en ny anteckningsbok. Det tar lite tid...',
@@ -217,6 +218,7 @@ const translation = {
         cannotClosePinned: 'En fäst flik kan inte stängas.',
         confirmClose: (tabLabel) => `Är du säker på att du vill stänga "${tabLabel}"? Du kommer att loggas ut från detta konto.`,
         duplicateTab: 'Duplicera flik',
+        duplicateTabNotice: 'Fliken har duplicerats. Vänligen logga in på den nya fliken.',
     },
     validation: {
         required: 'Obligatorisk',

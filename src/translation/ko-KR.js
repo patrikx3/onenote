@@ -163,6 +163,7 @@ const translation = {
                 'zh-CN': '简体中文 / Simplified Chinese',
                 'zh-TW': '繁體中文 / Traditional Chinese',
             },
+            auto: '자동 (시스템)',
         },
     },
     redirecting: '잠시만 기다려 주세요, 새 노트북으로 리디렉션 중입니다. 시간이 좀 걸립니다...',
@@ -217,6 +218,7 @@ const translation = {
         cannotClosePinned: '고정된 탭은 닫을 수 없습니다.',
         confirmClose: (tabLabel) => `"${tabLabel}"을(를) 닫으시겠습니까? 이 계정에서 로그아웃됩니다.`,
         duplicateTab: '탭 복제',
+        duplicateTabNotice: '탭이 복제되었습니다. 새 탭에서 로그인해 주세요.',
     },
     validation: {
         required: '필수',

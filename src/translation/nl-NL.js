@@ -163,6 +163,7 @@ const translation = {
                 'zh-CN': '简体中文 / Simplified Chinese',
                 'zh-TW': '繁體中文 / Traditional Chinese',
             },
+            auto: 'Automatisch (systeem)',
         },
     },
     redirecting: 'Even geduld, doorverwijzen naar een nieuwe notebook. Dit kan even duren...',
@@ -217,6 +218,7 @@ const translation = {
         cannotClosePinned: 'Een vastgezet tabblad kan niet worden gesloten.',
         confirmClose: (tabLabel) => `Weet u zeker dat u "${tabLabel}" wilt sluiten? U wordt afgemeld bij dit account.`,
         duplicateTab: 'Tabblad dupliceren',
+        duplicateTabNotice: 'Tabblad gedupliceerd. Log in op het nieuwe tabblad.',
     },
     validation: {
         required: 'Nodig',

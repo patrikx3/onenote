@@ -23,6 +23,23 @@ function mainMenu() {
 
 
     const languageCheckbox = [];
+    languageCheckbox.push({
+        label: registry.lang.menu.language.auto || 'Auto (system)',
+        type: 'radio',
+        checked: registry.conf.get('lang') === 'auto',
+        click: () => {
+            registry.conf.set('lang', 'auto')
+            const detected = registry.detectOsLocale()
+            registry.translationKey = detected
+            registry.lang = registry.translations[detected]
+            mainMenu()
+            mainTray()
+            registry.window.onenote.webContents.send('p3x-onenote-language', {
+                translation: detected,
+            })
+        }
+    });
+    languageCheckbox.push({ type: 'separator' });
     for (let trans of Object.keys(registry.lang.menu.language.translations)) {
         const transLabel = registry.lang.menu.language.translations[trans]
         const transMenu = ((trans) => {
@@ -244,21 +261,15 @@ ${registry.lang.slow}
                             let message = registry.disableHide ? registry.lang.label.disableHide.message.yes : registry.lang.label.disableHide.message.no
 
                             if (registry.disableHide === true && registry.tray !== undefined) {
-                                message += `
-
-${registry.lang.restart}
-
-${registry.lang.slow}
-`
+                                message += `\n\n${registry.lang.restart}\n\n${registry.lang.slow}`
                             }
 
-                            dialog.showMessageBox( registry.window.onenote, {
+                            dialog.showMessageBox(registry.window.onenote, {
                                 type: 'info',
                                 title: registry.lang.dialog.minimizationBehavior.title,
                                 message: message,
                                 buttons: [registry.lang.button.ok]
                             }).then(() => {
-                                console.log('reloading tray settings')
                                 mainMenu()
                                 mainTray({ allowQuit: true })
                             })
@@ -295,11 +306,12 @@ ${registry.lang.slow}
                 ...(!process.env.SNAP && !process.env.SNAP_NAME && !process.env.FLATPAK_ID ? [{
                     label: registry.lang.label.startOnLogin || 'Start on login',
                     type: 'checkbox',
-                    checked: app.getLoginItemSettings().openAtLogin,
+                    checked: registry.conf.get('startOnLogin', false),
                     click: () => {
-                        const current = app.getLoginItemSettings().openAtLogin
+                        const newValue = !registry.conf.get('startOnLogin', false)
+                        registry.conf.set('startOnLogin', newValue)
                         app.setLoginItemSettings({
-                            openAtLogin: !current,
+                            openAtLogin: newValue,
                             openAsHidden: true,
                         })
                         mainMenu()

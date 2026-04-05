@@ -163,6 +163,7 @@ const translation = {
                 'zh-CN': '简体中文 / Simplified Chinese',
                 'zh-TW': '繁體中文 / Traditional Chinese',
             },
+            auto: 'Авто (системна)',
         },
     },
     redirecting: 'Зачекайте, перенаправлення на новий блокнот. Це займе деякий час...',
@@ -217,6 +218,7 @@ const translation = {
         cannotClosePinned: 'Неможливо закрити закріплену вкладку.',
         confirmClose: (tabLabel) => `Ви впевнені, що хочете закрити «${tabLabel}»? Вас буде виходжено з цього облікового запису.`,
         duplicateTab: 'Дублювати вкладку',
+        duplicateTabNotice: 'Вкладку продубльовано. Будь ласка, увійдіть у новій вкладці.',
     },
     validation: {
         required: 'Обов\'язково',
