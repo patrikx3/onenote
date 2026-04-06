@@ -99,11 +99,11 @@ const handler = (options) => {
             return;
         }
         if (registry.conf.get('option-to-disable-internal-external-popup') === true) {
-            webview.src = url;
+            registry.webview.src = url;
         } else {
             registry.prompt.redirect({ url: url }).then((answer) => {
                 if (answer === 'internal') {
-                    webview.src = url;
+                    registry.webview.src = url;
                 } else {
                     shell.openExternal(url);
                 }

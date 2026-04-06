@@ -7,6 +7,10 @@
 
 ## Change log
 
+### v2026.4.132
+Released on 04/07/2026
+* BUGFIX: Fixed internal popup redirect ("set link") not working — new-window handler was using a null webview reference instead of the active tab's webview.
+
 ### v2026.4.131
 Released on 04/05/2026
 * BUGFIX: Restored Electron to dependencies after interrupted publish left it missing from the package.
@@ -218,7 +222,7 @@ All my domains, including [patrikx3.com](https://patrikx3.com), [corifeus.eu](ht
 ---
 
 
-[**P3X-ONENOTE**](https://corifeus.com/onenote) Build v2026.4.131
+[**P3X-ONENOTE**](https://corifeus.com/onenote) Build v2026.4.132
 
  [![NPM](https://img.shields.io/npm/v/p3x-onenote.svg)](https://www.npmjs.com/package/p3x-onenote)  [![Donate for PatrikX3 / P3X](https://img.shields.io/badge/Donate-PatrikX3-003087.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QZVM4V6HVZJW6)  [![Contact Corifeus / P3X](https://img.shields.io/badge/Contact-P3X-ff9900.svg)](https://www.patrikx3.com/en/front/contact) [![Like Corifeus @ Facebook](https://img.shields.io/badge/LIKE-Corifeus-3b5998.svg)](https://www.facebook.com/corifeus.software)
 
