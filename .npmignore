@@ -24,3 +24,6 @@
 /repo
 /generated-sources.json
 /com.patrikx3.onenote.yml
+.claude/
+.codex/
+CLAUDE.md
